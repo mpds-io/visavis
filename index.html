@@ -3,7 +3,7 @@ Vis-à-vis web-viewer
 Author: Evgeny Blokhin /
 Tilde Materials Informatics
 eb@tilde.pro
-Version: 0.5.7
+Version: 0.6.0
 -->
 <!DOCTYPE html>
 <html>
@@ -22,6 +22,7 @@ html, body{height:100%;user-select:none;}
 #cross{display:none;position:fixed;top:6px;right:6px;width:24px;height:24px;z-index:10;cursor:pointer;background:url(data:image/gif;base64,R0lGODlhEAAQAJEAAAAAAP///1VVVf///yH5BAEAAAMALAAAAAAQABAAAAIjnI+py6L+BDRy0gqxHVqvLjGcJ3Yl+IEhQpLX+m7wMYv2PRQAOw==) center center no-repeat;}
 #demobox{display:none;position:fixed;z-index:9;top:0;left:50%;width:500px;height:20px;margin-left:-250px;font-size:0.7em;text-align:center;line-height:20px;}
 #demobox a{color:#333;text-decoration:none;border-bottom:1px solid #333;}
+#pdtracer{display:none;position:fixed;z-index:9;top:0;left:50%;width:500px;height:20px;margin-left:-250px;font-size:0.9em;text-align:center;line-height:40px;letter-spacing:0.5px;}
 #overlay{display:none;position:fixed;left:0;top:0;width:100%;height:100%;background:#fff;z-index:8;overflow:hidden;}
 #urge{display:none;position:fixed;left:0;top:0;width:100%;height:100%;background:#fff;z-index:6;overflow:hidden;text-align:center;font-size:1.25em;padding-top:6em;}
 #landing{display:none;position:fixed;left:0;top:0;right:0;bottom:0;height:auto;z-index:5;background:#fff;margin:0;text-align:center;font-size:2vmin;padding:10px;line-height:4vmin;}
@@ -36,8 +37,9 @@ html, body{height:100%;user-select:none;}
 #cmplegend span{display:inline-block;margin:0 7px;padding:0 5px;font-size:0.8em;}
 #expander{display:none;position:fixed;top:25px;right:1.5%;width:32px;height:32px;z-index:10;cursor:pointer;background:url(data:image/gif;base64,R0lGODlhIAAgAIABAMzMzP///yH5BAEKAAEALAAAAAAgACAAAAJgDI4Jwc0KDYxOzourxRzp13VfE3IjWE7nlipja1awSM60vaBtfUjy7uidKJTVJxH0GIe55HIldD6PSt30h2Q1qdjSb8MDar1jXLWM05hd1DXUzTS/4er1WWevi2j6S6AAADs=) center center no-repeat;}
 #switcher{display:none;position:fixed;top:16px;left:16px;width:30px;height:23px;z-index:10;cursor:pointer;background:url(data:image/gif;base64,R0lGODlhHgAXAIABAAAAAP///yH5BAEKAAEALAAAAAAeABcAAAJVjA0Jx63bzkuRTegorXapjHHiJ23iaAbkya1qyFamG0ckXXcQniNb2su8do/TxHdJhpTMpvMJhbaS06LsByxZbViYdvtFeovgssv61DG/F67SzWOHCgA7) center center no-repeat;}
-#nonformers{display:none;position:fixed;top:46%;right:-4%;z-index:10;padding:3px;transform:rotate(-90deg);background:#fff;}
-#nonformers input, #nonformers label{cursor:pointer;font-size:1.2vw;text-rendering:optimizeSpeed;}
+#nonformers{display:none;position:fixed;top:50%;right:-4%;z-index:10;padding:3px;width:180px;height:20px;text-align:center;transform:rotate(-90deg);background:#fff;margin-top:-90px;}
+#fixel{     display:none;position:fixed;top:16%;right:-4%;z-index:10;padding:3px;width:180px;height:20px;text-align:center;transform:rotate(-90deg);background:#fff;}
+#nonformers input, #nonformers label, #fixel input, #fixel label{cursor:pointer;font-size:1.2vw;text-rendering:optimizeSpeed;font-style:italic;line-height:0.5vw;}
 
 g.slice{cursor:pointer;}
 path{pointer-events:painted;}
@@ -100,22 +102,79 @@ transform: scaleY(1.0);
 }
 g.aaxis, g.baxis, g.caxis{display:none;}
 </style>
-<script type="text/javascript" charset="utf-8" src="/visavis/plotly.custom.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="/visavis/visavis.js?300120"></script>
 </head>
 <body>
+
+<!-- LOADING ANIMATION -->
 <div id="preloader"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div>
+
+<!-- POSSIBILITY TO CLOSE FROM IFRAME -->
 <div id="cross" title="Close"></div>
+
+<!-- ICON UI COMMAND -->
 <div id="expander" title="Maximize in window"></div>
+
+<!-- ICON UI COMMAND -->
 <div id="switcher" title="Show raster plot"></div>
+
+<!-- CHECKBOX UI COMMAND -->
 <div id="nonformers" title="Continuous solid solutions and complete insolubility systems"><input type="checkbox" id="nonformers_shown" /><label for="nonformers_shown">&nbsp;Show non-formers</label></div>
+
+<!-- CHECKBOX UI COMMAND -->
+<div id="fixel"><input type="checkbox" id="fixel_do" /><label for="fixel_do">&nbsp;Project on 2d</label></div>
+
+<!-- STUB LAYER -->
 <div id="overlay"></div>
-<div id="demobox">You are using demo: some details are omitted. Please, <a href="/#products" target="_blank">support our work</a>.</div>
+
+<!-- SIMPLE MESSAGE -->
+<div id="demobox">You are using the limited demo. Buy the <a href="/#products" target="_blank">full version</a> now and support our work!</div>
+
+<!-- SIMPLE MESSAGE -->
 <div id="urge"></div>
-<div id="landing"><div id="legend">Choose a plot file in <b>JSON</b> format (drag and drop is supported). Files are processed offline in the browser, no remote server is required.</div><div id="triangle"></div><input type="file" id="fileapi" /></div>
+
+<!-- SIMPLE MESSAGE -->
+<div id="pdtracer"></div>
+
+<!-- RICH MESSAGE -->
+<div id="landing"><div id="legend">Choose a plot from the MPDS in <b>JSON</b> format (drag and drop is supported). Files are processed offline in the browser, no remote server is required.</div><div id="triangle"></div><input type="file" id="fileapi" /></div>
+
+<!-- MAIN CONTENT -->
 <div id="visavis"></div>
+
+<!-- RICH MESSAGE -->
 <div id="heatmaplegend"><span>lowest</span><b style="background:rgb(150,0,90)"></b><b style="background:rgb(0,0,200)"></b><b style="background:rgb(0,25,255)"></b><b style="background:rgb(0,152,255)"></b><b style="background:rgb(44,255,150)"></b><b style="background:rgb(151,255,0)"></b><b style="background:rgb(255,234,0)"></b><b style="background:rgb(255,111,0)"></b><b style="background:rgb(255,0,0)"></b><span>highest</span></div>
+
+<!-- RICH MESSAGE -->
 <div id="cmplegend"><span id="leg_cmp_sel" style="background:#900;color:#fff;"></span><span>vs.</span><span id="leg_cmp_ref" style="background:#3e3f95;color:#fff;"></span></div>
-<!-- div id="terfixel"><span>Fix one element:</span><select><option value="X" selected>Choose...</option></select></div -->
+
+<script type="text/javascript">
+// a very simple env loader
+var to_load;
+if (window.location.host.indexOf('localhost') == -1){ // production
+    to_load = [
+        '/visavis/plotly.custom.min.js',
+        '/visavis/visavis.js?270420',
+        '/visavis/pca.js'
+    ];
+} else { // development
+    to_load = [
+        'plotly.custom.min.js',
+        'visavis.js?' + Math.floor(Math.random() * 1000),
+        'pca.js'
+    ];
+}
+
+// PCA ES6 compiled implementation is not supported for IE11
+if (window.MSInputMethodContext && document.documentMode) to_load.pop();
+
+var head = document.getElementsByTagName('head')[0];
+for (var i = 0; i < to_load.length; i++){
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = to_load[i];
+    script.async = false;
+    head.appendChild(script);
+}
+</script>
 </body>
 </html>
