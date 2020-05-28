@@ -1536,8 +1536,6 @@ function visavis__eigenplot(json){
             x_labels.push( (array.kpoints[i][0] == 0 && array.kpoints[i][1] == 0 && array.kpoints[i][2] == 0) ? 'Г' : '' );
         }
         for (var i = 0; i < array.bands.length; i++){
-            if (array.bands[i][0] < -15 || array.bands[i][0] > 20)
-                continue;
             dataset.push({
                 x: Plotly.d3.range(array.bands[i].length),
                 y: array.bands[i],
@@ -1547,28 +1545,27 @@ function visavis__eigenplot(json){
             });
         };
         var x_title = 'k',
-            y_title = 'E, eV',
+            y_title = 'E - E<sub>F</sub>, eV',
             xaxis = {
                 showgrid: false,
                 showline: true,
                 zeroline: false,
                 tickmode: 'array',
                 tickvals: Plotly.d3.range(array.kpoints.length),
-                ticktext: x_labels
+                ticktext: x_labels,
+                tickfont: {size: 20}
             };
-    } else {
-        // dos; CRYSTAL format only
-        array.forEach(function(deck){
-            dataset.push({
-                x: Plotly.d3.range(deck.length),
-                y: deck,
-                mode: "lines",
-                type: "scatter",
-                marker: {color: "#000"}
-            });
+    } else if (array.dos){
+        // dos
+        dataset.push({
+            x: array.levels,
+            y: array.dos,
+            mode: "lines",
+            type: "scatter",
+            marker: {color: "#000"}
         });
-        var x_title = 'E, eV',
-            y_title = 'Density of states, arb. units',
+        var x_title = 'E - E<sub>F</sub>, eV',
+            y_title = 'Total density of states',
             xaxis = {
                 autorange: true,
                 showgrid: true,
@@ -1591,7 +1588,9 @@ function visavis__eigenplot(json){
                 showgrid: false,
                 showline: true,
                 showticklabels: true,
-                zeroline: false,
+                zeroline: true,
+                zerolinecolor: '#6cf',
+                zerolinewidth: 3,
                 ticklen: 4,
                 title: y_title
             },
