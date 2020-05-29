@@ -3,7 +3,7 @@
  * Author: Evgeny Blokhin /
  * Tilde Materials Informatics
  * eb@tilde.pro
- * Version: 0.6.0
+ * Version: 0.6.5
  */
 "use strict";
 
@@ -129,6 +129,8 @@ visavis.pd_phases = {};
 visavis.fixel_shown = false;
 
 visavis.nonformers_shown = true;
+
+visavis.cmp_shown = false; // flag to control the display of widgets irrelevant for cmp mode
 
 visavis.pd_bin_nonformers = [[88, 23], [88, 41], [46, 78], [46, 82], [46, 5], [46, 26], [46, 23], [46, 28], [46, 25], [46, 31], [46, 76], [46, 24], [46, 41], [46, 27], [46, 75], [46, 81], [46, 77], [46, 74], [46, 44], [46, 43], [46, 13], [46, 80], [46, 91], [46, 22], [12, 3], [12, 82], [12, 47], [12, 54], [12, 30], [12, 31], [12, 79], [12, 48], [12, 18], [12, 10], [12, 81], [12, 13], [12, 49], [12, 80], [12, 29], [94, 23], [94, 41], [94, 92], [94, 93], [94, 91], [17, 6], [32, 78], [32, 82], [32, 81], [32, 80], [78, 82], [78, 25], [78, 31], [78, 41], [78, 14], [78, 77], [78, 44], [78, 43], [78, 13], [78, 73], [55, 19], [55, 62], [55, 25], [55, 63], [55, 56], [55, 24], [55, 41], [55, 59], [55, 27], [55, 60], [55, 58], [55, 20], [55, 61], [55, 37], [55, 21], [55, 22], [55, 38], [55, 69], [4, 82], [4, 47], [4, 28], [3, 82], [3, 30], [3, 31], [3, 48], [3, 2], [3, 10], [3, 13], [3, 49], [3, 29], [4, 30], [4, 31], [4, 79], [82, 47], [82, 23], [82, 28], [82, 25], [82, 30], [82, 31], [82, 79], [82, 41], [82, 40], [82, 75], [82, 14], [82, 81], [82, 74], [82, 50], [82, 13], [82, 49], [82, 72], [82, 22], [82, 29], [4, 81], [4, 50], [4, 49], [4, 51], [4, 80], [4, 29], [19, 57], [19, 26], [19, 62], [19, 25], [19, 56], [19, 70], [19, 24], [19, 41], [19, 10], [19, 59], [19, 60], [19, 93], [19, 20], [19, 37], [19, 64], [19, 21], [19, 68], [19, 22], [19, 38], [19, 69], [47, 23], [47, 25], [47, 30], [47, 31], [47, 48], [47, 2], [47, 24], [47, 41], [47, 81], [47, 13], [47, 49], [47, 80], [47, 29], [57, 23], [57, 62], [57, 71], [57, 56], [57, 2], [57, 24], [57, 41], [57, 40], [57, 59], [57, 60], [57, 58], [57, 93], [57, 20], [57, 61], [57, 72], [57, 89], [57, 21], [57, 91], [57, 22], [57, 73], [57, 39], [5, 25], [5, 31], [5, 76], [5, 27], [26, 28], [26, 79], [26, 24], [26, 27], [26, 75], [26, 81], [26, 45], [26, 74], [26, 44], [26, 43], [5, 45], [5, 77], [23, 54], [23, 28], [23, 65], [23, 67], [23, 62], [23, 63], [5, 44], [23, 79], [23, 66], [23, 18], [23, 56], [23, 2], [23, 70], [23, 11], [23, 41], [23, 10], [23, 59], [23, 92], [23, 81], [23, 45], [23, 60], [23, 58], [23, 93], [23, 36], [23, 20], [23, 61], [23, 64], [23, 89], [23, 68], [23, 91], [23, 22], [23, 73], [23, 38], [23, 69], [54, 71], [54, 2], [54, 11], [54, 41], [54, 40], [54, 58], [54, 36], [54, 72], [54, 21], [54, 22], [54, 39], [5, 42], [28, 25], [28, 76], [28, 2], [28, 41], [28, 10], [28, 40], [28, 27], [28, 75], [28, 81], [28, 74], [28, 44], [28, 43], [28, 72], [28, 42], [28, 80], [28, 22], [28, 73], [65, 67], [65, 63], [65, 66], [65, 70], [65, 41], [65, 93], [65, 61], [65, 72], [65, 64], [65, 89], [65, 21], [65, 68], [65, 22], [65, 73], [65, 38], [65, 69], [65, 39], [67, 63], [67, 71], [67, 66], [67, 2], [67, 70], [67, 41], [67, 40], [67, 93], [67, 20], [67, 61], [67, 72], [67, 64], [67, 89], [67, 21], [67, 68], [67, 22], [67, 73], [67, 38], [67, 69], [67, 39], [62, 71], [62, 56], [62, 24], [62, 41], [62, 40], [62, 93], [62, 20], [62, 72], [62, 89], [62, 91], [62, 22], [62, 73], [62, 38], [62, 69], [62, 39], [25, 48], [25, 18], [25, 56], [25, 2], [25, 11], [25, 10], [25, 75], [25, 81], [25, 43], [25, 37], [86, 41], [30, 31], [30, 79], [30, 48], [30, 81], [30, 13], [30, 49], [30, 80], [30, 29], [63, 66], [63, 2], [63, 70], [63, 41], [63, 93], [63, 20], [63, 61], [63, 72], [63, 64], [63, 89], [63, 21], [63, 68], [63, 22], [63, 73], [63, 38], [63, 69], [63, 39], [31, 79], [31, 48], [31, 81], [31, 13], [31, 49], [31, 80], [31, 29], [71, 18], [71, 2], [71, 11], [71, 10], [71, 40], [71, 58], [71, 36], [71, 20], [71, 72], [71, 89], [71, 21], [71, 91], [71, 38], [71, 69], [71, 39], [79, 76], [79, 41], [79, 40], [79, 75], [79, 81], [79, 74], [79, 43], [79, 50], [79, 22], [0, 41], [66, 2], [66, 70], [66, 41], [66, 93], [66, 20], [66, 61], [66, 72], [66, 64], [66, 89], [66, 68], [66, 22], [66, 73], [66, 38], [66, 69], [66, 39], [0, 29], [48, 41], [48, 13], [48, 72], [48, 22], [48, 29], [76, 75], [76, 45], [76, 77], [76, 74], [76, 44], [76, 43], [76, 42], [52, 15], [52, 33], [18, 2], [18, 11], [18, 41], [18, 40], [18, 36], [18, 72], [18, 21], [18, 22], [18, 39], [56, 2], [56, 70], [56, 24], [56, 41], [56, 40], [56, 59], [56, 60], [56, 58], [56, 93], [56, 74], [56, 20], [56, 61], [56, 72], [56, 89], [56, 21], [56, 91], [56, 22], [56, 73], [56, 69], [2, 70], [2, 11], [2, 24], [2, 41], [2, 10], [2, 40], [2, 59], [2, 27], [2, 60], [2, 58], [2, 93], [2, 36], [2, 61], [2, 72], [2, 64], [2, 21], [2, 68], [2, 22], [2, 38], [2, 39], [70, 41], [70, 40], [70, 59], [70, 93], [70, 61], [70, 72], [70, 64], [70, 89], [70, 21], [70, 68], [70, 22], [70, 73], [70, 38], [70, 69], [70, 39], [11, 24], [11, 41], [11, 10], [11, 40], [11, 36], [11, 21], [11, 91], [11, 22], [11, 39], [24, 81], [24, 37], [24, 80], [24, 69], [41, 10], [41, 40], [41, 59], [41, 92], [41, 90], [41, 60], [41, 58], [41, 93], [41, 87], [41, 36], [41, 20], [41, 61], [41, 37], [41, 72], [41, 64], [41, 42], [41, 89], [41, 21], [41, 80], [41, 68], [41, 22], [41, 73], [41, 38], [41, 69], [10, 40], [10, 36], [10, 37], [10, 72], [10, 21], [10, 22], [10, 39], [40, 93], [40, 36], [40, 20], [40, 61], [40, 72], [40, 89], [40, 21], [40, 80], [40, 91], [40, 22], [40, 73], [40, 38], [40, 69], [40, 39], [59, 60], [59, 58], [59, 93], [59, 20], [59, 61], [59, 37], [59, 72], [59, 89], [59, 21], [59, 91], [59, 22], [59, 73], [59, 69], [27, 75], [27, 81], [27, 45], [27, 74], [27, 44], [27, 43], [27, 42], [27, 80], [27, 73], [75, 45], [75, 77], [75, 74], [75, 44], [75, 43], [81, 50], [81, 13], [81, 49], [81, 80], [81, 73], [81, 29], [45, 77], [45, 74], [45, 44], [45, 43], [45, 42], [45, 73], [60, 58], [60, 93], [60, 61], [60, 89], [60, 22], [58, 93], [58, 61], [58, 72], [58, 89], [58, 21], [58, 91], [58, 22], [58, 73], [58, 69], [14, 50], [77, 43], [77, 42], [93, 61], [93, 72], [93, 64], [93, 21], [93, 68], [93, 22], [93, 73], [93, 38], [93, 69], [36, 72], [36, 21], [36, 22], [36, 39], [74, 44], [74, 43], [74, 50], [74, 49], [74, 42], [44, 43], [44, 42], [50, 13], [50, 73], [20, 37], [20, 72], [20, 64], [20, 89], [20, 21], [20, 91], [20, 22], [20, 73], [20, 38], [20, 69], [20, 39], [33, 51], [13, 49], [13, 80], [13, 29], [61, 72], [61, 64], [61, 89], [61, 68], [61, 91], [61, 22], [61, 73], [61, 38], [49, 80], [49, 29], [37, 21], [37, 22], [37, 38], [15, 51], [72, 64], [72, 89], [72, 21], [72, 80], [72, 68], [72, 91], [72, 38], [72, 69], [72, 39], [64, 89], [64, 21], [64, 68], [64, 22], [64, 73], [64, 38], [64, 69], [64, 39], [89, 21], [89, 68], [89, 91], [89, 22], [89, 73], [89, 38], [89, 69], [89, 39], [21, 68], [21, 22], [21, 73], [21, 38], [21, 69], [21, 39], [80, 22], [80, 29], [68, 22], [68, 73], [68, 38], [68, 69], [91, 22], [91, 73], [91, 38], [91, 69], [22, 73], [22, 38], [22, 69], [73, 38], [73, 69], [38, 69], [38, 39], [46, 45], [78, 23], [78, 28], [78, 24], [78, 45], [47, 11], [57, 67], [57, 63], [57, 66], [57, 70], [57, 64], [57, 68], [57, 38], [26, 25], [26, 76], [26, 77], [23, 25], [23, 27], [23, 21], [54, 18], [28, 24], [28, 45], [28, 77], [65, 56], [65, 59], [65, 60], [65, 58], [67, 56], [67, 59], [67, 60], [67, 58], [25, 76], [25, 24], [25, 27], [25, 45], [25, 44], [25, 22], [63, 56], [63, 59], [63, 60], [63, 58], [66, 56], [66, 59], [66, 60], [66, 58], [48, 80], [76, 27], [56, 64], [56, 68], [56, 38], [70, 60], [70, 58], [24, 27], [24, 22], [59, 64], [59, 68], [59, 38], [27, 77], [45, 22], [60, 64], [60, 68], [60, 38], [58, 64], [58, 68], [58, 38], [77, 74], [77, 44], [77, 73], [93, 39], [43, 22], [72, 22], [72, 73], [21, 91]]; // 759 non-formers + ordered phases, 03/2020 by PV
 
@@ -287,6 +289,8 @@ function init_download(given){
         visavis.cache = null;
     }
 
+    visavis.cmp_shown = false;
+
     if (given.indexOf('://') > 3)
         call_ajax(given, initialize);
     else
@@ -322,15 +326,11 @@ function run(data, layout, options, clickhandler){
 function reset_canvas(){
     Plotly.d3.selectAll('svg').remove();
     Plotly.purge('visavis');
-    document.getElementById('demobox').style.display = 'none';
-    document.getElementById('cross').style.display = 'none';
-    document.getElementById('heatmaplegend').style.display = 'none';
-    document.getElementById('cmplegend').style.display = 'none';
-    document.getElementById('expander').style.display = 'none';
-    document.getElementById('switcher').style.display = 'none';
-    document.getElementById('nonformers').style.display = 'none';
-    document.getElementById('pdtracer').style.display = 'none';
-    document.getElementById('fixel').style.display = 'none';
+
+    var uielems = document.getElementsByClassName('uielem');
+    for (var i = 0; i < uielems.length; i++){
+        uielems[i].style.display = 'none';
+    }
 }
 
 function set_cmp_legend(cmp, ref){
@@ -338,6 +338,10 @@ function set_cmp_legend(cmp, ref){
     document.getElementById('leg_cmp_ref').innerHTML = ref;
     document.getElementById('heatmaplegend').style.display = 'none';
     document.getElementById('cmplegend').style.display = 'block';
+
+    if (visavis.cache.type == 'matrix' || visavis.cache.type == 'cube'){
+        document.getElementById('diffplot').style.display = 'block';
+    }
 }
 
 /**
@@ -551,12 +555,52 @@ function get_tri_pd_compound(a, b, c, obj_a, obj_b, obj_c){
     return formula.substr(0, formula.length-2);
 }
 
+function get_matrix_diff(ref, cmp){
+    var result = [],
+        i = 0,
+        j = 0,
+        reflen = ref.payload.links.length,
+        cmplen = cmp.payload.links.length;
+    for (i; i < reflen; i++){
+        for (j = 0; j < cmplen; j++){
+            if (ref.payload.links[i].cmt == cmp.payload.links[j].cmt){
+                result.push({
+                    source: ref.payload.links[i].source,
+                    target: ref.payload.links[i].target,
+                    cmt: ref.payload.links[i].cmt,
+                    value: Math.abs(ref.payload.links[i].value - cmp.payload.links[j].value)
+                });
+            }
+        }
+    }
+    return result;
+}
+
+function get_cube_diff(ref, cmp){
+    var result = {x: [], y: [], z: [], v: [], labels:[]},
+        i = 0,
+        j = 0,
+        reflen = ref.payload.points.labels.length,
+        cmplen = cmp.payload.points.labels.length;
+    for (i; i < reflen; i++){
+        for (j = 0; j < cmplen; j++){
+            if (ref.payload.points.labels[i] == cmp.payload.points.labels[j]){
+                result.x.push(ref.payload.points.x[i]);
+                result.y.push(ref.payload.points.y[i]);
+                result.z.push(ref.payload.points.z[i]);
+                result.labels.push(ref.payload.points.labels[i]);
+                result.v.push(Math.abs(ref.payload.points.v[i] - cmp.payload.points.v[j]));
+            }
+        }
+    }
+    return result;
+}
+
 /**
  *
  * External control methods (iframe-API)
  *
  */
-
 function matrix_order(x_value, y_value){
     if (!visavis.svg || !visavis.svgdim) return;
     if (!y_value) y_value = x_value;
@@ -602,24 +646,26 @@ function cmp_download(url, type){
         if (cmp_data && cmp_data.error) return urge(cmp_data.error);
         if (!cmp_data || !cmp_data.use_visavis_type) return urge('Error: unknown data format');
         if (cmp_data.warning) notify(cmp_data.warning);
+        visavis.cmp_shown = true;
 
         if (type == 'matrix'){
             visavis.nonformers_shown = false;
 
-            // Prepare a master matrix for vis from ref and cmp
+            // Prepare a master merged matrix from ref and cmp
             var cpmatrix = JSON.parse(JSON.stringify(visavis.cache.ref));
             cmp_data.payload.links.forEach(function(item){
                 item.cmp = true;
                 cpmatrix.payload.links.push(item);
             });
             visavis__matrix(cpmatrix);
-            set_cmp_legend(cmp_data.answerto, visavis.cache.ref.answerto);
+            visavis.cache.cmp = {payload: {links: cmp_data.payload.links}, answerto: cmp_data.answerto};
+            set_cmp_legend(visavis.cache.cmp.answerto, visavis.cache.ref.answerto);
 
         } else if (type == 'cube'){
             visavis.nonformers_shown = false;
-            visavis.cache.cmp = {payload: {points: cmp_data.payload.points}};
+            visavis.cache.cmp = {payload: {points: cmp_data.payload.points}, answerto: cmp_data.answerto};
             visavis__plot3d();
-            set_cmp_legend(cmp_data.answerto, visavis.cache.ref.answerto);
+            set_cmp_legend(visavis.cache.cmp.answerto, visavis.cache.ref.answerto);
 
         } else if (type == 'discovery'){
             visavis__discovery(cmp_data);
@@ -629,12 +675,13 @@ function cmp_download(url, type){
 }
 
 function cmp_discard(type){
-    if (!visavis.cache || visavis.cache.type != type || (type != 'matrix' && !visavis.cache.cmp))
-        return notify('Cannot reset comparison');
+    if (!visavis.cache || visavis.cache.type != type || !visavis.cache.cmp)
+        return notify('Comparison was reset');
 
     reset_canvas();
 
     if (type == 'matrix'){
+        delete visavis.cache.cmp;
         visavis__matrix(visavis.cache.ref);
 
     } else if (type == 'cube'){
@@ -790,10 +837,11 @@ function visavis__matrix(json){
     if (heatmap) document.getElementById('heatmaplegend').style.display = 'block';
     if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
 
-    document.getElementById('nonformers').style.display = 'block';
-    document.getElementById('nonformers_shown').checked = visavis.nonformers_shown;
-
-    if (visavis.fixel_shown) document.getElementById('fixel').style.display = 'block';
+    if (!visavis.cmp_shown){
+        document.getElementById('nonformers').style.display = 'block';
+        document.getElementById('nonformers_shown').checked = visavis.nonformers_shown;
+        if (visavis.fixel_shown) document.getElementById('fixel').style.display = 'block';
+    }
 
     function process(row){
         var cell = Plotly.d3.select(this).selectAll(".cell")
@@ -1170,10 +1218,16 @@ function visavis__plot3d(json, x_sort, y_sort, z_sort){
             if (heatmap) document.getElementById('heatmaplegend').style.display = 'block';
             if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
 
+            if (visavis.cmp_shown) return;
+
             document.getElementById('nonformers').style.display = 'block';
             document.getElementById('nonformers_shown').checked = visavis.nonformers_shown;
 
             if (visavis.fixel_shown) document.getElementById('fixel').style.display = 'block';
+            else {
+                document.getElementById('fixel_list_select').value = 'X';
+                document.getElementById('fixel_list').style.display = 'block';
+            }
         }
     );
 }
@@ -2085,9 +2139,42 @@ function visavis__heatmap(json){
         }
     }
 
+    document.getElementById('diffplot_do').onchange = function(){ // NB pseudo-checkbox
+
+        //console.log(visavis.cache);
+        if (!visavis.cache || !visavis.cache.ref || !visavis.cache.cmp)
+            return urge('Warning: internal error while rendering difference plot');
+
+        if (visavis.mpds_embedded)
+            window.parent.rebuild_visavis();
+
+        setTimeout(function(){
+            reset_canvas();
+            document.getElementById('diffplot_do').checked = false;
+            document.getElementById('difflegend').innerHTML = 'Intersection of <span>' + visavis.cache.cmp.answerto + '</span> and <span>' + visavis.cache.ref.answerto + '</span>';
+            document.getElementById('difflegend').style.display = 'block';
+
+            if (visavis.cache.type == 'matrix'){
+                var diff = get_matrix_diff(visavis.cache.ref, visavis.cache.cmp);
+                visavis__matrix({payload: {links: diff, nodes: visavis.cache.ref.payload.nodes}});
+
+            } else if (visavis.cache.type == 'cube'){
+                var diff = get_cube_diff(visavis.cache.ref, visavis.cache.cmp);
+                visavis.cache.ref.payload.points = diff;
+                delete visavis.cache.cmp;
+                visavis__plot3d();
+
+            } else
+                return urge('Warning: unsupported plot type');
+        }, 500);
+    }
+
     document.getElementById('nonformers_shown').onchange = function(){
         visavis.nonformers_shown = visavis.nonformers_shown ? false : true;
         reset_canvas();
+
+        if (visavis.mpds_embedded)
+            window.parent.rebuild_visavis();
 
         if (visavis.cache.type == 'matrix')
             visavis__matrix(visavis.cache.ref);
@@ -2095,16 +2182,23 @@ function visavis__heatmap(json){
             visavis__plot3d(visavis.cache.ref);
         else
             return urge('Warning: unsupported plot type');
-
-        if (visavis.mpds_embedded)
-            window.parent.rebuild_visavis();
     }
 
     document.getElementById('fixel_do').onchange = function(){
+        if (visavis.mpds_embedded)
+            window.parent.rebuild_visavis();
+
         if (window.location.hash.indexOf('fixel=1') == -1)
             window.location.hash += '&fixel=1';
         else
             window.history.go(-1);
+    }
+
+    document.getElementById('fixel_list_select').onchange = function(){
+        if (this.value == 'X')
+            return;
+        if (visavis.mpds_embedded)
+            window.parent.location.hash = window.parent.wmgui.aug_search_cmd('elements', this.value);
     }
 
     if (visavis.mpds_embedded){
@@ -2124,8 +2218,13 @@ function visavis__heatmap(json){
 
         if (document.location.hash.length)
             init_download();
-
         else
             display_landing();
     }
+
+    var fixel_list_select_html = '<option value="X" selected>...</option>';
+    visavis.chem_els.slice(1).sort().forEach(function(el){
+        fixel_list_select_html += '<option value="' + el + '">' + el + '</option>';
+    });
+    document.getElementById('fixel_list_select').innerHTML = fixel_list_select_html;
 })();

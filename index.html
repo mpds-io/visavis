@@ -3,7 +3,7 @@ Vis-à-vis web-viewer
 Author: Evgeny Blokhin /
 Tilde Materials Informatics
 eb@tilde.pro
-Version: 0.6.0
+Version: 0.6.5
 -->
 <!DOCTYPE html>
 <html>
@@ -33,13 +33,19 @@ html, body{height:100%;user-select:none;}
 #heatmaplegend{display:none;position:absolute;z-index:100;bottom:50px;left:50%;width:600px;height:auto;margin-left:-300px;text-align:center;}
 #heatmaplegend b{display:inline-block;height:0.7em;width:0.7em;}
 #heatmaplegend span{display:inline-block;margin:0 15px;font-size:1em;letter-spacing:1px;}
-#cmplegend{display:none;position:absolute;z-index:101;bottom:50px;left:50%;width:1000px;height:auto;margin-left:-500px;text-align:center;}
+#cmplegend{display:none;position:absolute;z-index:101;bottom:50px;left:50%;width:1000px;height:auto;margin-left:-500px;text-align:center;background:#fff;}
 #cmplegend span{display:inline-block;margin:0 7px;padding:0 5px;font-size:0.8em;}
+#difflegend{display:none;position:absolute;z-index:100;bottom:75px;left:50%;width:800px;height:auto;margin-left:-400px;text-align:center;font-size:0.8em;padding:3px;letter-spacing:0.5px;}
+#difflegend span{display:inline-block;padding:0 3px;background:#666;color:#fff;}
 #expander{display:none;position:fixed;top:25px;right:1.5%;width:32px;height:32px;z-index:100;cursor:pointer;background:url(data:image/gif;base64,R0lGODlhIAAgAIABAMzMzP///yH5BAEKAAEALAAAAAAgACAAAAJgDI4Jwc0KDYxOzourxRzp13VfE3IjWE7nlipja1awSM60vaBtfUjy7uidKJTVJxH0GIe55HIldD6PSt30h2Q1qdjSb8MDar1jXLWM05hd1DXUzTS/4er1WWevi2j6S6AAADs=) center center no-repeat;}
 #switcher{display:none;position:fixed;top:16px;left:16px;width:30px;height:23px;z-index:10;cursor:pointer;background:url(data:image/gif;base64,R0lGODlhHgAXAIABAAAAAP///yH5BAEKAAEALAAAAAAeABcAAAJVjA0Jx63bzkuRTegorXapjHHiJ23iaAbkya1qyFamG0ckXXcQniNb2su8do/TxHdJhpTMpvMJhbaS06LsByxZbViYdvtFeovgssv61DG/F67SzWOHCgA7) center center no-repeat;}
+
+#diffplot{  display:none;position:fixed;top:50%;right:-4%;z-index:13;padding:3px;width:200px;height:20px;text-align:center;transform:rotate(-90deg);background:#fff;}
 #nonformers{display:none;position:fixed;top:50%;right:-4%;z-index:10;padding:3px;width:200px;height:20px;text-align:center;transform:rotate(-90deg);background:#fff;margin-top:-100px;}
-#fixel{     display:none;position:fixed;top:16%;right:-4%;z-index:10;padding:3px;width:200px;height:20px;text-align:center;transform:rotate(-90deg);background:#fff;}
-#nonformers input, #nonformers label, #fixel input, #fixel label{cursor:pointer;font-size:1.2vw;text-rendering:optimizeSpeed;font-style:italic;line-height:0.5vw;}
+#fixel{     display:none;position:fixed;top:16%;right:-4%;z-index:11;padding:3px;width:200px;height:20px;text-align:center;transform:rotate(-90deg);background:#fff;}
+#fixel_list{display:none;position:fixed;top:16%;right:-4%;z-index:12;padding:3px;width:200px;height:20px;text-align:center;transform:rotate(-90deg);background:#fff;font-size:1.2vw;font-style:italic;}
+#fixel_list_select{font-family:Exo2,Arial;font-size:1.2vw;}
+#diffplot input, #diffplot label, #nonformers input, #nonformers label, #fixel input, #fixel label{cursor:pointer;font-size:1.2vw;text-rendering:optimizeSpeed;font-style:italic;line-height:0.5vw;}
 
 g.slice{cursor:pointer;}
 path{pointer-events:painted;}
@@ -109,31 +115,37 @@ g.aaxis, g.baxis, g.caxis{display:none;}
 <div id="preloader"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div>
 
 <!-- POSSIBILITY TO CLOSE FROM IFRAME -->
-<div id="cross" title="Close"></div>
+<div id="cross" title="Close" class="uielem"></div>
 
 <!-- ICON UI COMMAND -->
-<div id="expander" title="Maximize in window"></div>
+<div id="expander" title="Maximize in window" class="uielem"></div>
 
 <!-- ICON UI COMMAND -->
-<div id="switcher" title="Show raster plot"></div>
+<div id="switcher" title="Show raster plot" class="uielem"></div>
 
-<!-- CHECKBOX UI COMMAND -->
-<div id="nonformers" title="Continuous solid solutions and complete insolubility systems"><input type="checkbox" id="nonformers_shown" /><label for="nonformers_shown">&nbsp;Show non-formers</label></div>
+<!-- CHECKBOX UI RIGHT-SIDE WIDGET -->
+<div id="diffplot" class="uielem"><input type="checkbox" id="diffplot_do" /><label for="diffplot_do">&nbsp;Show difference</label></div>
 
-<!-- CHECKBOX UI COMMAND -->
-<div id="fixel"><input type="checkbox" id="fixel_do" /><label for="fixel_do">&nbsp;Project on 2d</label></div>
+<!-- CHECKBOX UI RIGHT-SIDE WIDGET -->
+<div id="nonformers" title="Continuous solid solutions and complete insolubility systems" class="uielem"><input type="checkbox" id="nonformers_shown" /><label for="nonformers_shown">&nbsp;Show non-formers</label></div>
+
+<!-- CHECKBOX UI RIGHT-SIDE WIDGET -->
+<div id="fixel" class="uielem"><input type="checkbox" id="fixel_do" /><label for="fixel_do">&nbsp;Project on 2d</label></div>
+
+<!-- SELECT OPT UI RIGHT-SIDE WIDGET -->
+<div id="fixel_list" class="uielem">Fix element&nbsp;&nbsp;<select id="fixel_list_select"></select></div>
 
 <!-- STUB LAYER -->
 <div id="overlay"></div>
 
 <!-- SIMPLE MESSAGE -->
-<div id="demobox">You are using the limited demo. Buy the <a href="/#products" target="_blank">full version</a> now and support our work!</div>
+<div id="demobox" class="uielem">You are using the limited demo. Buy the <a href="/#products" target="_blank">full version</a> now and support our work.</div>
 
 <!-- SIMPLE MESSAGE -->
 <div id="urge"></div>
 
 <!-- SIMPLE MESSAGE -->
-<div id="pdtracer"></div>
+<div id="pdtracer" class="uielem"></div>
 
 <!-- RICH MESSAGE -->
 <div id="landing"><div id="legend">Choose a plot from the MPDS in <b>JSON</b> format (drag and drop is supported). Files are processed offline in the browser, no remote server is required.</div><div id="triangle"></div><input type="file" id="fileapi" /></div>
@@ -142,10 +154,13 @@ g.aaxis, g.baxis, g.caxis{display:none;}
 <div id="visavis"></div>
 
 <!-- RICH MESSAGE -->
-<div id="heatmaplegend"><span>lowest</span><b style="background:rgb(150,0,90)"></b><b style="background:rgb(0,0,200)"></b><b style="background:rgb(0,25,255)"></b><b style="background:rgb(0,152,255)"></b><b style="background:rgb(44,255,150)"></b><b style="background:rgb(151,255,0)"></b><b style="background:rgb(255,234,0)"></b><b style="background:rgb(255,111,0)"></b><b style="background:rgb(255,0,0)"></b><span>highest</span></div>
+<div id="heatmaplegend" class="uielem"><span>lowest</span><b style="background:rgb(150,0,90)"></b><b style="background:rgb(0,0,200)"></b><b style="background:rgb(0,25,255)"></b><b style="background:rgb(0,152,255)"></b><b style="background:rgb(44,255,150)"></b><b style="background:rgb(151,255,0)"></b><b style="background:rgb(255,234,0)"></b><b style="background:rgb(255,111,0)"></b><b style="background:rgb(255,0,0)"></b><span>highest</span></div>
 
 <!-- RICH MESSAGE -->
-<div id="cmplegend"><span id="leg_cmp_sel" style="background:#900;color:#fff;"></span><span>vs.</span><span id="leg_cmp_ref" style="background:#3e3f95;color:#fff;"></span></div>
+<div id="cmplegend" class="uielem"><span id="leg_cmp_sel" style="background:#900;color:#fff;"></span><span>vs.</span><span id="leg_cmp_ref" style="background:#3e3f95;color:#fff;"></span></div>
+
+<!-- RICH MESSAGE -->
+<div id="difflegend" class="uielem"></div>
 
 <script type="text/javascript">
 // a very simple env loader
@@ -153,7 +168,7 @@ var to_load;
 if (window.location.host.indexOf('localhost') == -1){ // production
     to_load = [
         '/visavis/plotly.custom.min.js',
-        '/visavis/visavis.js?270420',
+        '/visavis/visavis.js?290520',
         '/visavis/pca.js'
     ];
 } else { // development
