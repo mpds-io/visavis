@@ -1211,14 +1211,14 @@ function visavis__plot3d(json, x_sort, y_sort, z_sort){
             window.addEventListener("DOMMouseScroll", function(event){ event.stopPropagation(); }, true); // FIXME memory leak?
             document.querySelector('#scene svg').addEventListener('click', function(event){ // FIXME memory leak?
                 if (visavis.mpds_embedded && event.target.tagName == 'text' && event.target.classList.contains('nums')){
-                    window.open(window.location.protocol + "//" + window.location.host + '#search/ternary%20' + event.target.textContent);
+                    window.open(window.location.protocol + "//" + window.location.host + '#search/' + event.target.textContent);
                 }
             });
             warn_demo();
             if (heatmap) document.getElementById('heatmaplegend').style.display = 'block';
             if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
 
-            if (visavis.cmp_shown) return;
+            if (visavis.cmp_shown || json.payload.fixel) return;
 
             document.getElementById('nonformers').style.display = 'block';
             document.getElementById('nonformers_shown').checked = visavis.nonformers_shown;
@@ -2097,6 +2097,43 @@ function visavis__heatmap(json){
             }
         },
         {displaylogo: false, displayModeBar: false, staticPlot: false}
+    );
+}
+
+/**
+ *
+ * X. Custom scatter
+ *
+ */
+function visavis__customscatter(json){
+    run(
+        json.plots,
+        {
+            height: document.body.clientHeight,
+            width: document.body.clientWidth,
+            showlegend: true,
+            legend: {x: 100, y: 1, font: {family: "Exo2", size: 14}},
+            xaxis: {
+                autorange: true,
+                showgrid: true,
+                showline: true,
+                showticklabels: true,
+                zeroline: false,
+                ticklen: 4,
+                title: json.xtitle
+            },
+            yaxis: {
+                autorange: true,
+                showgrid: true,
+                showline: true,
+                showticklabels: true,
+                zeroline: false,
+                ticklen: 4,
+                title: json.ytitle
+            },
+            font: {family: "Exo2", size: 13}
+        },
+        {displaylogo: false, displayModeBar: false, staticPlot: true}
     );
 }
 
