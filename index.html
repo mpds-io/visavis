@@ -40,12 +40,12 @@ html, body{height:100%;user-select:none;}
 #expander{display:none;position:fixed;top:25px;right:1.5%;width:32px;height:32px;z-index:100;cursor:pointer;background:url(data:image/gif;base64,R0lGODlhIAAgAIABAMzMzP///yH5BAEKAAEALAAAAAAgACAAAAJgDI4Jwc0KDYxOzourxRzp13VfE3IjWE7nlipja1awSM60vaBtfUjy7uidKJTVJxH0GIe55HIldD6PSt30h2Q1qdjSb8MDar1jXLWM05hd1DXUzTS/4er1WWevi2j6S6AAADs=) center center no-repeat;}
 #switcher{display:none;position:fixed;top:16px;left:16px;width:30px;height:23px;z-index:10;cursor:pointer;background:url(data:image/gif;base64,R0lGODlhHgAXAIABAAAAAP///yH5BAEKAAEALAAAAAAeABcAAAJVjA0Jx63bzkuRTegorXapjHHiJ23iaAbkya1qyFamG0ckXXcQniNb2su8do/TxHdJhpTMpvMJhbaS06LsByxZbViYdvtFeovgssv61DG/F67SzWOHCgA7) center center no-repeat;}
 
-#diffplot{  display:none;position:fixed;top:50%;right:-4%;z-index:13;padding:3px;width:200px;height:20px;text-align:center;transform:rotate(-90deg);background:#fff;}
-#nonformers{display:none;position:fixed;top:50%;right:-4%;z-index:10;padding:3px;width:200px;height:20px;text-align:center;transform:rotate(-90deg);background:#fff;margin-top:-100px;}
-#fixel{     display:none;position:fixed;top:16%;right:-4%;z-index:11;padding:3px;width:200px;height:20px;text-align:center;transform:rotate(-90deg);background:#fff;}
-#fixel_list{display:none;position:fixed;top:16%;right:-4%;z-index:12;padding:3px;width:200px;height:20px;text-align:center;transform:rotate(-90deg);background:#fff;font-size:1.2vw;font-style:italic;}
+#diffplot{  display:none;position:fixed;top:55%;right:-4%;z-index:13;padding:3px;width:200px;height:20px;text-align:center;transform:rotate(-90deg);background:#fff;}
+#nonformers{display:none;position:fixed;top:55%;right:-4%;z-index:10;padding:3px;width:200px;height:20px;text-align:center;transform:rotate(-90deg);background:#fff;margin-top:-100px;}
+#fixel{     display:none;position:fixed;top:13%;right:-4%;z-index:11;padding:3px;width:200px;height:20px;text-align:center;transform:rotate(-90deg);background:#fff;}
+#fixel_list{display:none;position:fixed;top:13%;right:-4%;z-index:12;padding:3px;width:200px;height:20px;text-align:center;transform:rotate(-90deg);background:#fff;font-size:1.2vw;font-style:italic;}
 #fixel_list_select{font-family:Exo2,Arial;font-size:1.2vw;}
-#diffplot input, #diffplot label, #nonformers input, #nonformers label, #fixel input, #fixel label{cursor:pointer;font-size:1.2vw;text-rendering:optimizeSpeed;font-style:italic;line-height:0.5vw;}
+#diffplot input, #diffplot label, #nonformers input, #nonformers label, #fixel input, #fixel label{cursor:pointer;font-size:1.1vw;text-rendering:optimizeSpeed;font-style:italic;line-height:0.5vw;}
 
 g.slice{cursor:pointer;}
 path{pointer-events:painted;}
@@ -169,13 +169,15 @@ if (window.location.host.indexOf('localhost') == -1){ // production
     to_load = [
         '/visavis/plotly.custom.min.js',
         '/visavis/visavis.js?270820',
-        '/visavis/pca.js'
+        '/visavis/pca.js',
+        '/visavis/nonformers.js'
     ];
 } else { // development
     to_load = [
         'plotly.custom.min.js',
         'visavis.js?' + Math.floor(Math.random() * 1000),
-        'pca.js'
+        'pca.js',
+        'nonformers.js'
     ];
 }
 
