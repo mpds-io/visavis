@@ -2110,7 +2110,9 @@ function visavis__customscatter(json){
                 showgrid: true,
                 showline: true,
                 showticklabels: true,
-                zeroline: false,
+                zeroline: true,
+                zerolinecolor: '#999',
+                zerolinewidth: 0.5,
                 ticklen: 4,
                 title: json.xtitle
             },
@@ -2119,17 +2121,16 @@ function visavis__customscatter(json){
                 showgrid: true,
                 showline: true,
                 showticklabels: true,
-                zeroline: false,
+                zeroline: true,
+                zerolinecolor: '#999',
+                zerolinewidth: 0.5,
                 ticklen: 4,
                 title: json.ytitle
             },
             font: {family: "Exo2", size: 13},
             margin: {
-                l: 0,
-                r: 0,
-                b: 0,
                 t: 0,
-                pad: 0
+                r: 0
             }
         },
         {displaylogo: false, displayModeBar: false, staticPlot: true}
