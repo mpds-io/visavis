@@ -510,28 +510,67 @@ function inside_triangle(x,y,x1,y1,x2,y2,x3,y3){
     else return false;
 }
 
+function fix_comp_impossible(comp_range, obj_left, obj_right){
+    // TODO FIXME this should NOT be dynamically done!
+    if (comp_range[1] - comp_range[0] == 100)
+        return false;
+
+    var count = 0,
+        els = Object.keys(obj_left),
+        fixed = {};
+
+    if (els.length > 2)
+        return false;
+
+    for (var el in obj_left){
+        if ((obj_right[el] == 0 && obj_left[el] == 1) || (obj_left[el] == 0 && obj_right[el] == 1))
+            count++;
+    }
+
+    if (count == els.length){
+        fixed = {comp_start: obj_left, comp_end: obj_right};
+
+        if (fixed.comp_start[els[0]] == 0){
+            fixed.comp_start[els[0]] = comp_range[0] / 100;
+            fixed.comp_start[els[1]] = 1 - (comp_range[0] / 100);
+            fixed.comp_end[els[0]] = comp_range[1] / 100;
+            fixed.comp_end[els[1]] = 1 - (comp_range[1] / 100);
+        } else {
+            fixed.comp_start[els[0]] = 1 - (comp_range[0] / 100);
+            fixed.comp_start[els[1]] = comp_range[0] / 100;
+            fixed.comp_end[els[0]] = 1 - (comp_range[1] / 100);
+            fixed.comp_end[els[1]] = comp_range[1] / 100;
+        }
+        return fixed;
+    }
+    return false;
+}
+
 function get_rect_pd_compound(comp, obj_left, obj_right){
     var formula = '',
         els = Object.keys(obj_left).sort(),
         coeff = 0;
     els.forEach(function(el){
+        //console.log(el);
         if (obj_right[el] == obj_left[el])
-            formula += el + ' &times; ' + obj_left[el] + ', ';
+            formula += el + ' &times; ' + obj_left[el].toFixed(2) + ', ';
 
         else if (obj_right[el] > obj_left[el]){
-            coeff = comp * (obj_right[el] - obj_left[el]);
+            coeff = obj_left[el] + comp * (obj_right[el] - obj_left[el]);
             coeff = Math.round(coeff * 100) / 100;
+            //console.log(coeff);
             if (!coeff) return;
             formula += el + ' &times; ' + coeff.toFixed(2) + ', ';
 
         } else {
             coeff = obj_left[el] - (comp * (obj_left[el] - obj_right[el]));
             coeff = Math.round(coeff * 100) / 100;
+            //console.log(coeff);
             if (!coeff) return;
             formula += el + ' &times; ' + coeff.toFixed(2) + ', ';
         }
     });
-    return formula.substr(0, formula.length-2);
+    return formula.substr(0, formula.length - 2);
 }
 
 function get_tri_pd_compound(a, b, c, obj_a, obj_b, obj_c){
@@ -1677,7 +1716,8 @@ function visavis__pd(json){
             layout_shapes.push({
                 type: 'path',
                 path: json.shapes[i].svgpath,
-                line: {width: 2.5, color: '#d1cde6'}
+                //line: {width: 2.5, color: '#d1cde6'}
+                line: {width: 5, color: '#d1cde6'}
             });
             //if (json.shapes[i].is_ordered === false) layout_shapes[layout_shapes.length - 1].line.color = '#cbf';
 
@@ -1685,7 +1725,8 @@ function visavis__pd(json){
             layout_shapes.push({
                 type: 'path',
                 path: json.shapes[i].svgpath,
-                line: {width: 0.5, color: '#666'},
+                //line: {width: 0.5, color: '#666'},
+                line: {width: 3, color: '#666'},
                 fillOpacity: 0
             });
         }
@@ -1805,28 +1846,28 @@ function visavis__pd(json){
             y: json.labels[i][1][1],
             text: json.labels[i][0],
             showarrow: false,
-            font: {size: 15, family: "Exo2"},
+            font: {size: 13, family: "Exo2"},
             textangle: (json.labels[i][0].replace(/<\/?sub>/g, "").length > 10) ? -65 : 0
         });
     }
-    if (json.title_c && json.arity > 2) layout.annotations.push({text: (json.diatype ? json.diatype + " " : "") + (json.temp[0] ? json.temp[0] + " &deg;C" : ""), x: -0.25, y: 0.96, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 15, family: "Exo2"}});
-    if (json.naxes == 2) layout.annotations.extend([{text: json.title_a, x: -0.03, y: -0.12, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 20, family: "Exo2"}}, {text: json.title_b, x: 1.03, y: -0.12, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 20, family: "Exo2"}}])
+
+    if (json.title_c && json.arity > 2)
+        layout.annotations.push({
+            text: (json.diatype ? json.diatype + " " : "") + (json.temp[0] ? json.temp[0] + " &deg;C" : ""), x: -0.25, y: 0.96, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 15, family: "Exo2"}
+        });
+    if (json.naxes == 2)
+        layout.annotations.extend([{
+            text: json.title_a, x: -0.03, y: -0.09, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 20, family: "Exo2"}
+        }, {
+            text: json.title_b, x: 1.03, y: -0.09, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 20, family: "Exo2"}
+        }]);
 
     run(pd_datamock, layout, {displaylogo: false, displayModeBar: false, staticPlot: true},
     function(){
 
         var canvas = document.getElementById('visavis');
-        if (json.naxes == 3){
-            // triangle
+        if (json.naxes == 3) // triangle
             pd_fix_triangle();
-
-        } else {
-            // rectangle
-            var xaxis = canvas._fullLayout.xaxis,
-                yaxis = canvas._fullLayout.yaxis,
-                margin_l = canvas._fullLayout.margin.l,
-                margin_t = canvas._fullLayout.margin.t;
-        }
 
         if (visavis.mpds_embedded)
             document.getElementById('cross').style.display = 'block';
@@ -1890,22 +1931,27 @@ function visavis__pd(json){
                     //console.log(['x ' + x0, 'y ' + y0].join(', '));
                     document.getElementById('pdtracer').innerHTML = get_tri_pd_compound(triangle[0], triangle[1], triangle[2], json.comp_a, json.comp_b, json.comp_c);
                     document.getElementById('pdtracer').style.display = 'block';
+
                 } else document.getElementById('pdtracer').style.display = 'none';
             });
         } else {
             // rectangle
-            var temp_only = (json.comp_range[1] - json.comp_range[0] !== 100);
+            var fixed = fix_comp_impossible(json.comp_range, json.comp_start, json.comp_end);
+            if (fixed){ json.comp_start = fixed.comp_start; json.comp_end = fixed.comp_end; }
+
+            var xaxis = canvas._fullLayout.xaxis,
+                yaxis = canvas._fullLayout.yaxis,
+                margin_l = canvas._fullLayout.margin.l,
+                margin_t = canvas._fullLayout.margin.t;
 
             canvas.addEventListener('mousemove', function(evt){
                 var comp = xaxis.p2c(evt.x - margin_l),
                     temp = parseInt(yaxis.p2c(evt.y - margin_t));
                 if (comp > json.comp_range[0] && comp < json.comp_range[1] && temp > json.temp[0] && temp < json.temp[1]){
-                    //console.log(['x: ' + comp, 'y : ' + temp].join(' and '));
-                    if (temp_only)
-                        document.getElementById('pdtracer').innerHTML = 'T = ' + temp + ' &deg;C';
-                    else
-                        document.getElementById('pdtracer').innerHTML = get_rect_pd_compound((comp - json.comp_range[0]) / (json.comp_range[1] - json.comp_range[0]), json.comp_start, json.comp_end) + ' at T = ' + temp + ' &deg;C';
+                    //console.log(['x: ' + comp, 'y: ' + temp].join(' and '));
+                    document.getElementById('pdtracer').innerHTML = get_rect_pd_compound((comp - json.comp_range[0]) / (json.comp_range[1] - json.comp_range[0]), json.comp_start, json.comp_end) + ' at T = ' + temp + ' &deg;C';
                     document.getElementById('pdtracer').style.display = 'block';
+
                 } else document.getElementById('pdtracer').style.display = 'none';
             });
         }
