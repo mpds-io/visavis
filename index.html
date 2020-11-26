@@ -3,7 +3,7 @@ Vis-à-vis web-viewer
 Author: Evgeny Blokhin /
 Tilde Materials Informatics
 eb@tilde.pro
-Version: 0.6.6
+Version: 0.7.0
 -->
 <!DOCTYPE html>
 <html>
@@ -30,11 +30,17 @@ html, body{height:100%;user-select:none;}
 #legend{width:350px;margin:100px auto 0;border-radius:15px;background:#bfbfbf;color:#fff;padding:5px 15px;}
 #triangle{width:0;height:0;margin:-2px auto 0;border-left:20px solid transparent;border-right:20px solid transparent;border-top:20px solid #bfbfbf;}
 #visavis{width:100%;height:100%;z-index:0;}
+
+#matrix_xtitle{display:none;position:absolute;z-index:100;top:3px;left:50%;width:400px;height:auto;margin-left:-200px;text-align:center;font-size:1.2vw;font-style:italic;letter-spacing:1px;}
+#matrix_ytitle{display:none;position:absolute;z-index:100;top:50%;left:3%;width:400px;height:auto;margin-left:-200px;text-align:center;font-size:1.2vw;font-style:italic;letter-spacing:1px;transform:rotate(-90deg);}
+
 #heatmaplegend{display:none;position:absolute;z-index:100;bottom:50px;left:50%;width:600px;height:auto;margin-left:-300px;text-align:center;}
 #heatmaplegend b{display:inline-block;height:0.7em;width:0.7em;}
 #heatmaplegend span{display:inline-block;margin:0 15px;font-size:1em;letter-spacing:1px;}
+
 #cmplegend{display:none;position:absolute;z-index:101;bottom:50px;left:50%;width:1000px;height:auto;margin-left:-500px;text-align:center;background:#fff;}
 #cmplegend span{display:inline-block;margin:0 7px;padding:0 5px;font-size:0.8em;}
+
 #difflegend{display:none;position:absolute;z-index:100;bottom:75px;left:50%;width:800px;height:auto;margin-left:-400px;text-align:center;font-size:0.8em;padding:3px;letter-spacing:0.5px;}
 #difflegend span{display:inline-block;padding:0 3px;background:#666;color:#fff;}
 #expander{display:none;position:fixed;top:25px;right:1.5%;width:32px;height:32px;z-index:100;cursor:pointer;background:url(data:image/gif;base64,R0lGODlhIAAgAIABAMzMzP///yH5BAEKAAEALAAAAAAgACAAAAJgDI4Jwc0KDYxOzourxRzp13VfE3IjWE7nlipja1awSM60vaBtfUjy7uidKJTVJxH0GIe55HIldD6PSt30h2Q1qdjSb8MDar1jXLWM05hd1DXUzTS/4er1WWevi2j6S6AAADs=) center center no-repeat;}
@@ -55,8 +61,10 @@ path{pointer-events:painted;}
 rect.nonformer{fill:url(#nonformer) !important;fill-opacity:1.0 !important;}
 rect.visited{fill:#0f0 !important;fill-opacity:1.0 !important;}
 rect.bgmatrix{fill:#f6f6f6;}
+rect.bgmatrix.hidden{fill:#fff;}
 line{stroke:#fff;}
 text.active{fill:#f00;font-weight:bold;}
+text.hidden{display:none;}
 div.plotly-notifier, .hoverlayer text {font-family:Exo2,Arial !important;}
 path.point{cursor:pointer;}
 g.hovertext{cursor:pointer;pointer-events:all;}
@@ -147,6 +155,12 @@ g.aaxis, g.baxis, g.caxis{display:none;}
 <!-- SIMPLE MESSAGE -->
 <div id="pdtracer" class="uielem"></div>
 
+<!-- SIMPLE MESSAGE -->
+<div id="matrix_xtitle" class="uielem"></div>
+
+<!-- SIMPLE MESSAGE -->
+<div id="matrix_ytitle" class="uielem"></div>
+
 <!-- RICH MESSAGE -->
 <div id="landing"><div id="legend">Choose a plot from the MPDS in <b>JSON</b> format (drag and drop is supported). Files are processed offline in the browser, no remote server is required.</div><div id="triangle"></div><input type="file" id="fileapi" /></div>
 
@@ -168,7 +182,7 @@ var to_load;
 if (window.location.host.indexOf('localhost') == -1){ // production
     to_load = [
         '/visavis/plotly.custom.min.js',
-        '/visavis/visavis.js?141120',
+        '/visavis/visavis.js?261120',
         '/visavis/pca.js',
         '/visavis/nonformers.js'
     ];

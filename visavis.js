@@ -3,7 +3,7 @@
  * Author: Evgeny Blokhin /
  * Tilde Materials Informatics
  * eb@tilde.pro
- * Version: 0.6.5
+ * Version: 0.7.0
  */
 "use strict";
 
@@ -90,6 +90,7 @@ Array.prototype.extend = function(other_array){
 var visavis = {};
 
 visavis.local_supported = window.File && window.FileReader && window.FileList && window.Blob;
+
 try {
     visavis.mpds_embedded = window.parent && window.parent.wmgui;
 } catch (e){
@@ -106,7 +107,33 @@ visavis.graph_default_rel = 'prel';
 
 visavis.force = null;
 
-visavis.elementals = null; // object of arrays of concrete values (repeating server's ELEMENTALS), 96 elements each (0 and 1-95 i.e. H-Am)
+// object of arrays of concrete values (repeating server's ELEMENTALS), 96 elements each (0 and 1-95 i.e. H-Am)
+// FIXME first item belongs to X, i.e. 0
+visavis.elementals = {
+    "num":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95],
+    "nump":[0,1,112,2,8,82,88,94,100,106,113,3,9,83,89,95,101,107,114,4,10,14,46,50,54,58,62,66,70,74,78,84,90,96,102,108,115,5,11,15,47,51,55,59,63,67,71,75,79,85,91,97,103,109,116,6,12,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,48,52,56,60,64,68,72,76,80,86,92,98,104,110,117,7,13,17,19,21,23,25,27,29],
+    "size":[0,0.040000098,0.05525814,0.32352134,0.149871021,0.15316946,0.152079019,0.147837836,0.141252647,0.130400994,0.118123987,0.578463822,0.235527361,0.222322819,0.208407341,0.19392461,0.178988166,0.160596861,0.14201091,0.692195698,0.671411055,0.64709144,0.440998616,0.425579654,0.410235863,0.394967358,0.379774576,0.364658122,0.349618659,0.334656835,0.310912262,0.287688252,0.264934676,0.242609734,0.220678182,0.195297025,0.170450145,0.832019702,0.797564264,0.762242103,0.515950935,0.494387183,0.473421463,0.452993466,0.433052136,0.413553912,0.394461351,0.375742041,0.347395886,0.319938571,0.293280312,0.267345197,0.242068451,0.213172397,0.185071259,0.910157427,0.868793456,0.828185801,0.810462652,0.793233638,0.776484764,0.760190637,0.744322073,0.728849599,0.713745039,0.698982175,0.684536953,0.670387461,0.65651381,0.642897972,0.629523601,0.616375866,0.588840308,0.562314966,0.536696361,0.51189659,0.487840384,0.464462811,0.441707474,0.419525064,0.386690726,0.355029594,0.324425963,0.294781292,0.266010922,0.233351806,0.201712905,1.0,0.952025289,0.905996701,0.885161237,0.864979518,0.845420273,0.826445343,0.808015348,0.790092251],
+    "rea":[0,2.953092434,2.137675759,0.365119614,0.788170962,0.771198036,0.776727701,0.799010527,0.836260342,0.905851889,0.999999998,0.204202895,0.501529786,0.531317421,0.56679379,0.609123241,0.659954172,0.735531107,0.831795156,0.170651143,0.175933932,0.182546051,0.267855686,0.27756023,0.28794164,0.299072783,0.311037111,0.323930772,0.337865225,0.352970489,0.379927077,0.410597187,0.445860802,0.486888901,0.535277144,0.604842736,0.693011946,0.141972584,0.148105917,0.154969119,0.228944225,0.238930116,0.249511262,0.260763114,0.272770822,0.28563141,0.299456427,0.31437522,0.340027017,0.369208334,0.402768213,0.441840692,0.487977621,0.554124213,0.63826219,0.129784127,0.135963256,0.142629814,0.145748835,0.148914495,0.1521266,0.155387322,0.158700099,0.162069084,0.165498855,0.168994276,0.172560424,0.17620256,0.179926127,0.183736755,0.187640284,0.191642784,0.200604451,0.210067301,0.22009463,0.230757519,0.242136549,0.254323886,0.267425828,0.281565982,0.305474062,0.332715889,0.364101522,0.400717379,0.444056906,0.506205582,0.58560451,0.118123987,0.124076522,0.130380151,0.133449119,0.136562756,0.139722208,0.142930186,0.146190276,0.149506576],
+    "rpp":[0,1.25,0,1.61,1.08,0.795,0.64,0.54,0.465,0.405,0,2.65,2.03,1.675,1.42,1.24,1.1,1.01,0,3.69,3.0,2.75,2.58,2.43,2.44,2.22,2.11,2.02,2.18,2.04,1.88,1.695,1.56,1.415,1.285,1.2,0,4.1,3.21,2.94,2.825,2.76,2.72,2.65,2.605,2.52,2.45,2.375,2.215,2.05,1.88,1.765,1.67,1.585,0,4.31,3.402,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2.91,2.79,2.735,2.68,2.65,2.628,2.7,2.66,2.41,2.235,2.09,1.997,1.9,1.83,0,4.37,3.53,0,0,0,0,0,0,0],
+    "rion":[0,0,0,0.6,0.3,0.2,0.15,0.12,0.1,0.09,0,0.96,0.63,0.5,0.42,0.36,0.32,0.28,0,1.33,0.96,0.8,0.68,0.65,0.62,0.6,0.59,0.62,0.59,0.96,0.78,0.63,0.53,0.46,0.41,0.37,0,1.49,1.11,0.93,0.8,0.77,0.75,0.72,0.69,0.75,0.85,1.12,0.93,0.76,0.65,0.57,0.51,0.46,0,1.65,1.26,1.06,1.05,1.04,1.03,1.02,1.01,1.01,1.0,0.99,0.98,0.97,0.96,0.95,0.94,0.93,0.8,0.77,0.75,0.72,0.69,0.81,0.9,1.11,0.97,0.9,0.83,0.77,0.56,0.51,0,1.74,1.34,1.14,1.11,1.08,1.05,1.04,1.03,1.02],
+    "rcov":[0,30.0,0,123.0,89.0,88.0,77.0,70.0,66.0,58.0,0,0,136.0,125.0,117.0,110.0,104.0,99.0,0,203.0,174.0,144.0,132.0,0,0,117.0,116.0,116.0,115.0,117.0,125.0,125.0,122.0,121.0,117.0,114.0,0,217.0,192.0,162.0,145.0,134.0,129.0,0,124.0,125.0,128.0,134.0,141.0,150.0,140.0,141.0,137.0,133.0,0,235.0,198.0,169.0,165.0,165.0,164.0,0,166.0,185.0,161.0,159.0,159.0,158.0,157.0,156.0,170.0,156.0,144.0,134.0,130.0,128.0,126.0,126.0,129.0,134.0,144.0,155.0,154.0,152.0,153.0,0,0,0,0,0,0,0,0,0,0,0],
+    "rmet":[0,0.78,0,1.562,1.128,0.98,0.916,0.88,0.89,0,0,1.911,1.602,1.432,1.319,1.28,1.27,0,0,2.376,1.974,1.941,1.462,1.346,1.36,1.304,1.274,1.252,1.246,1.278,1.394,1.411,1.369,1.39,1.4,0,0,2.546,2.151,1.801,1.602,1.468,1.4,1.36,1.339,1.345,1.376,1.445,1.568,1.663,1.623,1.59,1.6,0,0,2.731,2.243,1.877,1.715,1.828,1.821,1.81,1.802,1.799,1.802,1.782,1.773,1.766,1.757,1.746,1.74,1.734,1.58,1.467,1.408,1.375,1.353,1.357,1.387,1.442,1.573,1.716,1.75,1.7,1.76,0,0,2.8,2.26,1.878,1.798,1.63,1.56,1.555,1.58,1.81],
+    "tmelt":[0,0.003664921,0.00026178,0.118586387,0.405759162,0.673560209,1.0,0.016492147,0.014397906,0.014136126,0.006544503,0.097120419,0.241361257,0.244240838,0.440575916,0.082984293,0.10104712,0.045026178,0.021989529,0.088219895,0.290837696,0.47434555,0.506020942,0.566230366,0.557591623,0.397382199,0.473298429,0.462827225,0.451832461,0.354973822,0.181413613,0.079319372,0.317015707,0.285340314,0.128272251,0.069633508,0.030628272,0.081675393,0.273036649,0.470157068,0.556282723,0.717539267,0.756544503,0.640052356,0.67617801,0.586125654,0.477748691,0.323036649,0.155497382,0.112565445,0.132198953,0.236649215,0.189267016,0.101308901,0.042146597,0.079057592,0.261256545,0.312303665,0.280366492,0.315183246,0.338743455,0.377225131,0.352094241,0.286649215,0.414921466,0.427486911,0.439790576,0.456282723,0.469895288,0.47591623,0.287172775,0.504973822,0.653141361,0.856806283,0.964136126,0.903926702,0.868586387,0.702356021,0.535340314,0.35,0.061256545,0.15104712,0.157329843,0.142408377,0.137958115,0.15052356,0.052879581,0.078534031,0.254712042,0.346335079,0.528795812,0.553141361,0.368062827,0.239005236,0.239267016,0.331675393],
+    "eneg":[0,3.69,6.29,2.32,3.71,4.88,6.08,7.31,8.5,9.7,10.92,2.27,3.37,4.21,5.08,5.95,6.79,7.64,8.5,2.08,3.0,3.11,3.19,3.27,3.41,3.4,3.47,3.53,3.59,3.74,3.7,4.37,5.09,5.82,6.53,7.21,7.93,2.04,2.89,3.04,3.14,3.25,3.41,3.35,3.47,3.57,3.73,3.81,3.6,4.19,4.83,5.47,6.08,6.69,7.29,1.97,2.76,2.89,2.86,2.83,2.85,2.87,2.89,2.91,3.02,2.95,2.97,2.99,3.0,3.02,3.04,3.11,3.3,3.45,3.48,3.5,3.57,3.6,3.71,3.84,3.82,4.34,4.92,5.47,6.01,6.56,7.12,2.02,2.78,2.93,3.02,2.98,2.98,2.98,2.96,2.97]
+};
+
+visavis.elemental_names = {
+    "num": "atomic number",
+    "nump": "periodic number",
+    "size": "atomic size",
+    "rea": "atomic reactivity",
+    "rpp": "pseudopotential radii",
+    "rion": "ionic radii",
+    "rcov": "covalent radii",
+    "rmet": "metallic radii",
+    "tmelt": "melting temperature",
+    "eneg": "electronegativity"
+};
 
 visavis.elementals_on = [];
 
@@ -234,14 +261,92 @@ function order_els(how){
     });
 }
 
-function convert_to_axis(array, how){
-    if (how == 'num') return array;
+function convert_to_axes(x_src, y_src, z_src, x_sort, y_sort, z_sort, x_op, y_op, z_op){
+    //console.log(x_src, y_src, z_src, x_sort, y_sort, z_sort, x_op, y_op, z_op);
+    var converted = {'x': [], 'y': [], 'z': []};
 
-    var converted = [];
-    array.forEach(function(el){
-        converted.push(visavis.el_orders[how].indexOf(el - 1) + 1);
-    });
+    if (x_op){
+        var x_temp = [];
+        for (var i = 0; i < x_src.length; i++){
+            //console.log('x', visavis.elementals[x_sort][x_src[i]], visavis.elementals[x_sort][y_src[i]], visavis.elementals[x_sort][z_src[i]], ter_op(x_op, visavis.elementals[x_sort][x_src[i]], visavis.elementals[x_sort][y_src[i]], visavis.elementals[x_sort][z_src[i]]));
+
+            x_temp.push( ter_op(x_op, visavis.elementals[x_sort][x_src[i]], visavis.elementals[x_sort][y_src[i]], visavis.elementals[x_sort][z_src[i]]) );
+        }
+        var x_renorm = Plotly.d3.scale.quantize().range(visavis.elementals.num.slice(1)).domain([Plotly.d3.min(x_temp), Plotly.d3.max(x_temp)]);
+        //console.log(x_temp);
+        converted['x'] = x_temp.map(x_renorm);
+
+    } else {
+        for (var i = 0; i < x_src.length; i++){
+            converted['x'].push( (x_sort == 'num') ? x_src[i] : visavis.el_orders[x_sort].indexOf(x_src[i] - 1) + 1 ); // FIXME first elementals item belongs to X, i.e. 0
+        }
+    }
+    if (y_op){
+        var y_temp = [];
+        for (var i = 0; i < y_src.length; i++){
+            //console.log('y', visavis.elementals[y_sort][x_src[i]], visavis.elementals[y_sort][y_src[i]], visavis.elementals[y_sort][z_src[i]], ter_op(y_op, visavis.elementals[y_sort][x_src[i]], visavis.elementals[y_sort][y_src[i]], visavis.elementals[y_sort][z_src[i]]));
+
+            y_temp.push( ter_op(y_op, visavis.elementals[y_sort][x_src[i]], visavis.elementals[y_sort][y_src[i]], visavis.elementals[y_sort][z_src[i]]) );
+        }
+        var y_renorm = Plotly.d3.scale.quantize().range(visavis.elementals.num.slice(1)).domain([Plotly.d3.min(y_temp), Plotly.d3.max(y_temp)]);
+        //console.log(y_temp);
+        converted['y'] = y_temp.map(y_renorm);
+
+    } else {
+        for (var i = 0; i < y_src.length; i++){
+            converted['y'].push( (y_sort == 'num') ? y_src[i] : visavis.el_orders[y_sort].indexOf(y_src[i] - 1) + 1 ); // FIXME first elementals item belongs to X, i.e. 0
+        }
+    }
+    if (z_op){
+        var z_temp = [];
+        for (var i = 0; i < z_src.length; i++){
+            //console.log('z', visavis.elementals[z_sort][x_src[i]], visavis.elementals[z_sort][y_src[i]], visavis.elementals[z_sort][z_src[i]], ter_op(z_op, visavis.elementals[z_sort][x_src[i]], visavis.elementals[z_sort][y_src[i]], visavis.elementals[z_sort][z_src[i]]));
+
+            z_temp.push( ter_op(z_op, visavis.elementals[z_sort][x_src[i]], visavis.elementals[z_sort][y_src[i]], visavis.elementals[z_sort][z_src[i]]) );
+        }
+        var z_renorm = Plotly.d3.scale.quantize().range(visavis.elementals.num.slice(1)).domain([Plotly.d3.min(z_temp), Plotly.d3.max(z_temp)]);
+        //console.log(z_temp);
+        converted['z'] = z_temp.map(z_renorm);
+
+    } else {
+        for (var i = 0; i < z_src.length; i++){
+            converted['z'].push( (z_sort == 'num') ? z_src[i] : visavis.el_orders[z_sort].indexOf(z_src[i] - 1) + 1 ); // FIXME first elementals item belongs to X, i.e. 0
+        }
+    }
+    //console.log(converted);
     return converted;
+}
+
+function get_bin_domain(sort, op){
+
+    var cond_slice = visavis.elementals[sort].slice(1);
+
+    switch (op){
+        case 'sum': return [
+            Plotly.d3.min(cond_slice) * 2,
+            Plotly.d3.max(visavis.elementals[sort]) * 2
+        ];
+        case 'diff': return [
+            Plotly.d3.min(cond_slice),
+            Plotly.d3.max(visavis.elementals[sort]) - Plotly.d3.min(cond_slice)
+        ];
+        case 'product': return [
+            Math.pow( Plotly.d3.min(cond_slice), 2 ),
+            Math.pow( Plotly.d3.max(visavis.elementals[sort]), 2 )
+        ];
+        case 'ratio': return [
+            Plotly.d3.min(cond_slice) / Plotly.d3.max(visavis.elementals[sort]),
+            Plotly.d3.max(visavis.elementals[sort]) / Plotly.d3.min(cond_slice)
+        ];
+        case 'max': return [
+            Plotly.d3.min(cond_slice),
+            Plotly.d3.max(visavis.elementals[sort])
+        ];
+        case 'min': return [
+            Plotly.d3.min(cond_slice),
+            Plotly.d3.max(visavis.elementals[sort])
+        ];
+    }
 }
 
 // Get pre-define coordinates for piechart labels (FIXME?)
@@ -551,21 +656,18 @@ function get_rect_pd_compound(comp, obj_left, obj_right){
         els = Object.keys(obj_left).sort(),
         coeff = 0;
     els.forEach(function(el){
-        //console.log(el);
         if (obj_right[el] == obj_left[el])
             formula += el + ' &times; ' + obj_left[el].toFixed(2) + ', ';
 
         else if (obj_right[el] > obj_left[el]){
             coeff = obj_left[el] + comp * (obj_right[el] - obj_left[el]);
             coeff = Math.round(coeff * 100) / 100;
-            //console.log(coeff);
             if (!coeff) return;
             formula += el + ' &times; ' + coeff.toFixed(2) + ', ';
 
         } else {
             coeff = obj_left[el] - (comp * (obj_left[el] - obj_right[el]));
             coeff = Math.round(coeff * 100) / 100;
-            //console.log(coeff);
             if (!coeff) return;
             formula += el + ' &times; ' + coeff.toFixed(2) + ', ';
         }
@@ -626,36 +728,108 @@ function get_cube_diff(ref, cmp){
     return result;
 }
 
+function bin_op(op, a, b){
+    switch (op){
+        case 'sum': return a + b;
+        case 'diff': return Math.abs(a - b);
+        case 'product': return a * b;
+        case 'ratio': return a / b;
+        case 'max': return (a > b) ? a : b;
+        case 'min': return (a < b) ? a : b;
+    }
+}
+
+function ter_op(op, a, b, c){
+    switch (op){
+        case 'sum': return a + b + c;
+        case 'diff': return Math.abs(a - b) + Math.abs(a - c) + Math.abs(b - c);
+        case 'product': return (a * b) + (a * c) + (b * c);
+        case 'ratio': return (a / b) + (a / c) + (b / c);
+        case 'max': return ((a > b && a > c) ? a : ((b > a && b > c) ? b : c));
+        case 'min': return ((a < b && a < c) ? a : ((b < a && b < c) ? b : c));
+    }
+}
 /**
  *
  * External control methods (iframe-API)
  *
  */
-function matrix_order(x_value, y_value){
+function matrix_order(x_sort, y_sort, x_op, y_op){
+    //console.log(x_sort, y_sort, x_op, y_op);
     if (!visavis.svg || !visavis.svgdim) return;
-    if (!y_value) y_value = x_value;
+    if (!y_sort) y_sort = x_sort;
 
-    var x_arrange = Plotly.d3.scale.ordinal().rangeBands([0, visavis.svgdim]).domain(visavis.el_orders[x_value]),
-        y_arrange = Plotly.d3.scale.ordinal().rangeBands([0, visavis.svgdim]).domain(visavis.el_orders[y_value]);
+    if (x_op){
+        //console.log('x-domain', get_bin_domain(x_sort, x_op));
+        var x_renorm = Plotly.d3.scale.quantize().range(Plotly.d3.range(0, visavis.svgdim, visavis.svgdim / 95)).domain(get_bin_domain(x_sort, x_op)),
+            x_arrange = function(input, index){
+                var bin = bin_op(x_op, input.x !== undefined ? visavis.elementals[x_sort][input.x + 1] : visavis.elementals[x_sort][index], input.y !== undefined ? visavis.elementals[x_sort][input.y + 1] : visavis.elementals[x_sort][index]);
+
+                //console.log('x_arrange', visavis.elementals[x_sort][input.x + 1], visavis.elementals[x_sort][input.y + 1], bin, x_renorm(bin));
+                return x_renorm(bin);
+            };
+    } else {
+        var x_renorm = Plotly.d3.scale.ordinal().rangeBands([0, visavis.svgdim]).domain(visavis.el_orders[x_sort]),
+            x_arrange = function(input, index){
+                return index !== undefined ? x_renorm(index) : x_renorm(input.x);
+            };
+    }
+    if (y_op){
+        //console.log('y-domain', get_bin_domain(y_sort, y_op));
+        var y_renorm = Plotly.d3.scale.quantize().range(Plotly.d3.range(0, visavis.svgdim, visavis.svgdim / 95)).domain(get_bin_domain(y_sort, y_op)),
+            y_arrange = function(input, index){
+                var bin = bin_op(y_op, input.x !== undefined ? visavis.elementals[y_sort][input.x + 1] : visavis.elementals[y_sort][index], input.y !== undefined ? visavis.elementals[y_sort][input.y + 1] : visavis.elementals[y_sort][index]);
+
+                //console.log('y_arrange', visavis.elementals[y_sort][input.x + 1], visavis.elementals[y_sort][input.y + 1], index, bin, y_renorm(bin));
+                return y_renorm(bin);
+            };
+    } else {
+        var y_renorm = Plotly.d3.scale.ordinal().rangeBands([0, visavis.svgdim]).domain(visavis.el_orders[y_sort]),
+            y_arrange = function(input, index){
+                return y_renorm(index);
+            };
+    }
 
     Plotly.d3.selectAll("rect.visited").classed("visited", false);
+    Plotly.d3.selectAll("g.column text").classed("hidden", x_op);
+    Plotly.d3.selectAll("g.row text").classed("hidden", y_op);
+    Plotly.d3.select("rect.bgmatrix").classed("hidden", (x_op || y_op));
+
+    if (x_op){
+        document.getElementById('matrix_xtitle').innerHTML = x_op + '/' + visavis.elemental_names[x_sort];
+        document.getElementById('matrix_xtitle').style.display = 'block';
+    } else document.getElementById('matrix_xtitle').style.display = 'none';
+
+    if (y_op){
+        document.getElementById('matrix_ytitle').innerHTML = y_op + '/' + visavis.elemental_names[y_sort];
+        document.getElementById('matrix_ytitle').style.display = 'block';
+    } else document.getElementById('matrix_ytitle').style.display = 'none';
 
     var t = visavis.svg.transition().duration(600);
 
+    if (y_op){
     t.selectAll(".row")
-        .delay(function(d, i){ return y_arrange(i); })
-        .attr("transform", function(d, i){ return "translate(0," + y_arrange(i) + ")"; })
+        .attr("transform", null)
         .selectAll(".cell")
-        .delay(function(d){ return x_arrange(d.x); })
-        .attr("x", function(d){ return x_arrange(d.x); });
+        .attr("x", null)
+        .attr("transform", function(d){ return "translate(" + x_arrange(d) + "," + y_arrange(d) + ")" });
 
+    } else {
+    t.selectAll(".row")
+        .attr("transform", function(d, i){ return "translate(0," + y_arrange(d, i) + ")" }) // y-axis
+        .selectAll(".cell")
+        .attr("transform", null)
+        .attr("x", function(d){ return x_arrange(d) }); // points, moved in x-direction
+    }
+
+    if (!x_op){
     t.selectAll(".column")
-        .delay(function(d, i){ return x_arrange(i); })
-        .attr("transform", function(d, i){ return "translate(" + x_arrange(i) + ")rotate(-90)"; });
+        .attr("transform", function(d, i){ return "translate(" + x_arrange(d, i) + ")rotate(-90)" }); // x-axis
+    }
 }
 
-function cube_order(x_value, y_value, z_value){
-    visavis__plot3d(false, x_value, y_value, z_value);
+function cube_order(x_sort, y_sort, z_value, x_op, y_op, z_op){
+    visavis__plot3d(false, x_sort, y_sort, z_value, x_op, y_op, z_op);
 }
 
 function graph_rebuild(rel){
@@ -726,7 +900,7 @@ function cmp_discard(type){
 }
 
 function discovery_rerun(){
-    if (!visavis.cache || visavis.cache.type != 'discovery' || !visavis.elementals || !visavis.elementals_on.length)
+    if (!visavis.cache || visavis.cache.type != 'discovery' || !visavis.elementals_on.length)
         return urge('Error #0002: this feature is not yet supported');
 
     reset_canvas();
@@ -809,9 +983,9 @@ function visavis__matrix(json){
     // precompute the orders
     ['num', 'nump', 'size', 'rea', 'rpp', 'rion', 'rcov', 'rmet', 'tmelt', 'eneg'].forEach(function(order){
         if (!visavis.el_orders[order])
-            visavis.el_orders[order] = Plotly.d3.range(95).sort(function(a, b){ return nodes[a][order] - nodes[b][order]; });
+            visavis.el_orders[order] = Plotly.d3.range(95).sort(function(a, b){ return nodes[a][order] - nodes[b][order] });
     });
-    visavis.el_orders.count = Plotly.d3.range(95).sort(function(a, b){ return nodes[b].count - nodes[a].count; });
+    visavis.el_orders.count = Plotly.d3.range(95).sort(function(a, b){ return nodes[b].count - nodes[a].count });
 
     // set the default sort order (also in GUI logic: *rebuild_visavis* TODO)
     var arrange = Plotly.d3.scale.ordinal().rangeBands([0, visavis.svgdim]).domain(visavis.el_orders.nump);
@@ -829,11 +1003,20 @@ function visavis__matrix(json){
         .attr("width", visavis.svgdim)
         .attr("height", visavis.svgdim);
 
+    // Generate matrix html as follows:
+    // g.row: (horizontal)   <<< y_arrange
+    // -> line
+    // -> text (element by Y)
+    // -> rect.cell x N   <<< x_arrange
+    //
+    // g.column: (vertical)   <<< x_arrange
+    // -> line
+    // -> text (element by X)
     var row = visavis.svg.selectAll(".row")
         .data(matrix)
         .enter().append("g")
         .attr("class", "row")
-        .attr("transform", function(d, i){ return "translate(0," + arrange(i) + ")"; })
+        .attr("transform", function(d, i){ return "translate(0," + arrange(i) + ")" })
         .each(process);
 
     row.append("line")
@@ -844,13 +1027,13 @@ function visavis__matrix(json){
         .attr("y", arrange.rangeBand() / 2)
         .attr("dy", ".32em")
         .attr("text-anchor", "end")
-        .text(function(d, i){ return nodes[i].name; });
+        .text(function(d, i){ return nodes[i].name });
 
     var column = visavis.svg.selectAll(".column")
         .data(matrix)
         .enter().append("g")
         .attr("class", "column")
-        .attr("transform", function(d, i){ return "translate(" + arrange(i) + ")rotate(-90)"; });
+        .attr("transform", function(d, i){ return "translate(" + arrange(i) + ")rotate(-90)" });
 
     column.append("line")
         .attr("x1", -visavis.svgdim);
@@ -860,12 +1043,12 @@ function visavis__matrix(json){
         .attr("y", arrange.rangeBand() / 2)
         .attr("dy", ".32em")
         .attr("text-anchor", "start")
-        .text(function(d, i){ return nodes[i].name; });
+        .text(function(d, i){ return nodes[i].name });
 
     hide_preloader();
     hide_messages();
     if (heatmap) document.getElementById('heatmaplegend').style.display = 'block';
-    if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
+    //if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
 
     if (!visavis.cmp_shown){
         document.getElementById('nonformers').style.display = 'block';
@@ -875,15 +1058,15 @@ function visavis__matrix(json){
 
     function process(row){
         var cell = Plotly.d3.select(this).selectAll(".cell")
-            .data(row.filter(function(d){ return d.z; }))
+            .data(row.filter(function(d){ return d.z }))
             .enter().append("rect")
-            .attr("class", function(d){ return d.nonformer ? "nonformer cell" : "cell"; })
-            .attr("id", function(d){ return "c_" + nodes[d.x].num.toString() + "_" + nodes[d.y].num.toString(); })
-            .attr("x", function(d){ return arrange(d.x); })
+            .attr("class", function(d){ return d.nonformer ? "nonformer cell" : "cell" })
+            .attr("id", function(d){ return "c_" + nodes[d.x].num.toString() + "_" + nodes[d.y].num.toString() })
+            .attr("x", function(d){ return arrange(d.x) })
             .attr("width", arrange.rangeBand())
             .attr("height", arrange.rangeBand())
-            .style("fill-opacity", function(d){ return setopac(d.z); })
-            .style("fill", function(d){ return setcolor(d.z, d.cmp); })
+            .style("fill-opacity", function(d){ return setopac(d.z) })
+            .style("fill", function(d){ return setcolor(d.z, d.cmp) })
             .on("mouseover", mouseover)
             .on("mouseout", mouseout)
             .on("click", click_search)
@@ -896,8 +1079,8 @@ function visavis__matrix(json){
     }
 
     function mouseover(p){
-        Plotly.d3.selectAll(".row text").classed("active", function(d, i){ return i == p.y; });
-        Plotly.d3.selectAll(".column text").classed("active", function(d, i){ return i == p.x; });
+        Plotly.d3.selectAll(".row text").classed("active", function(d, i){ return i == p.y });
+        Plotly.d3.selectAll(".column text").classed("active", function(d, i){ return i == p.x });
     }
 
     function mouseout(){
@@ -1059,7 +1242,7 @@ function visavis__graph(json){
  * III. 3d-cube plot
  *
  */
-function visavis__plot3d(json, x_sort, y_sort, z_sort){
+function visavis__plot3d(json, x_sort, y_sort, z_sort, x_op, y_op, z_op){
     if (json){
         visavis.cache = {
             type: 'cube',
@@ -1094,17 +1277,13 @@ function visavis__plot3d(json, x_sort, y_sort, z_sort){
             }
         },
         data = [],
-        labels = [],
         heatmap = false,
         marker = {};
-
-    if (!visavis.elementals) visavis.elementals = json.payload.elementals;
-    if (!visavis.elementals.num) visavis.elementals.num = Plotly.d3.range(96);
 
     // precompute the orders
     ['num', 'nump', 'size', 'rea', 'rpp', 'rion', 'rcov', 'rmet', 'tmelt', 'eneg'].forEach(function(order){
         if (!visavis.el_orders[order])
-            visavis.el_orders[order] = Plotly.d3.range(95).sort(function(a, b){ return visavis.elementals[order][a + 1] - visavis.elementals[order][b + 1]; });
+            visavis.el_orders[order] = Plotly.d3.range(95).sort(function(a, b){ return visavis.elementals[order][a + 1] - visavis.elementals[order][b + 1] });
     });
 
     // default sort order
@@ -1124,46 +1303,46 @@ function visavis__plot3d(json, x_sort, y_sort, z_sort){
         marker = {color: "#3e3f95", size: 4, opacity: 0.9};
 
     // main render data
-    data.push({
+    data.push(Object.assign(
+        {
         type: "scatter3d",
-        x: convert_to_axis(json.payload.points.x, x_sort),
-        y: convert_to_axis(json.payload.points.y, y_sort),
-        z: convert_to_axis(json.payload.points.z, z_sort),
-        text: json.payload.points.labels || labels,
+        text: json.payload.points.labels,
         mode: "markers",
         hoverinfo: "text",
         marker: marker,
         projection: {x: {show: true, opacity: 0.05}, y: {show: true, opacity: 0.05}, z: {show: true, opacity: 0.05}}
-    });
+        },
+        convert_to_axes(json.payload.points.x, json.payload.points.y, json.payload.points.z, x_sort, y_sort, z_sort, x_op, y_op, z_op)
+    ));
 
     if (visavis.nonformers_shown){
-        data.push({
+        data.push(Object.assign(
+            {
             type: "scatter3d",
-            x: convert_to_axis(visavis.pd_tri_nonformers.x, x_sort),
-            y: convert_to_axis(visavis.pd_tri_nonformers.y, y_sort),
-            z: convert_to_axis(visavis.pd_tri_nonformers.z, z_sort),
             text: visavis.pd_tri_nonformers.labels,
             mode: "markers",
             hoverinfo: "text",
             marker: {color: "#ccc", size: 4, opacity: 0.9},
             projection: {x: {show: true, opacity: 0.25}, y: {show: true, opacity: 0.25}, z: {show: true, opacity: 0.25}}
-        });
+            },
+            convert_to_axes(visavis.pd_tri_nonformers.x, visavis.pd_tri_nonformers.y, visavis.pd_tri_nonformers.z, x_sort, y_sort, z_sort, x_op, y_op, z_op)
+        ));
     }
 
     // cmp render data
     if (visavis.cache.type == 'cube' && visavis.cache.cmp){
         data[0].marker.color = "#3e3f95";
-        data.push({
+        data.push(Object.assign(
+            {
             type: "scatter3d",
-            x: convert_to_axis(visavis.cache.cmp.payload.points.x, x_sort),
-            y: convert_to_axis(visavis.cache.cmp.payload.points.y, y_sort),
-            z: convert_to_axis(visavis.cache.cmp.payload.points.z, z_sort),
-            text: visavis.cache.cmp.payload.points.labels || labels,
+            text: visavis.cache.cmp.payload.points.labels,
             mode: "markers",
             hoverinfo: "text",
             marker: {color: "#900", size: 4, opacity: 0.9},
             projection: {x: {show: true, opacity: 0.05}, y: {show: true, opacity: 0.05}, z: {show: true, opacity: 0.05}}
-        });
+            },
+            convert_to_axes(visavis.cache.cmp.payload.points.x, visavis.cache.cmp.payload.points.y, visavis.cache.cmp.payload.points.z, x_sort, y_sort, z_sort, x_op, y_op, z_op)
+        ));
     }
 
     // mesh mode render data
@@ -1185,35 +1364,41 @@ function visavis__plot3d(json, x_sort, y_sort, z_sort){
         scene = {
             aspectmode: 'cube',
             xaxis: {
+                title: x_op + '/' + visavis.elemental_names[x_sort],
                 range: [1, 95],
-                titlefont: {color:'#fff'},
-                tickfont: {size: 11},
+                titlefont: {color: x_op ? '#000' : '#fff', size: 10},
                 backgroundcolor: '#fbfbfb',
                 gridcolor: '#fff',
                 showbackground: true,
+                showticklabels: !x_op,
                 showline: false,
+                tickfont: {size: 11},
                 ticktext: order_els(x_sort).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
                 tickvals: Plotly.d3.range(1, 96, 2)
             },
             yaxis: {
+                title: y_op + '/' + visavis.elemental_names[y_sort],
                 range: [1, 95],
-                titlefont: {color:'#fff'},
-                tickfont: {size: 11},
+                titlefont: {color: y_op ? '#000' : '#fff', size: 10},
                 backgroundcolor: '#f6f6f6',
                 gridcolor: '#fff',
                 showbackground: true,
+                showticklabels: !y_op,
                 showline: false,
+                tickfont: {size: 11},
                 ticktext: order_els(y_sort).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
                 tickvals: Plotly.d3.range(1, 96, 2)
             },
             zaxis: {
+                title: z_op + '/' + visavis.elemental_names[z_sort],
                 range: [1, 95],
-                titlefont: {color:'#fff'},
-                tickfont: {size: 11},
+                titlefont: {color: z_op ? '#000' : '#fff', size: 10},
                 backgroundcolor: '#eee',
                 gridcolor: '#fff',
                 showbackground: true,
+                showticklabels: !z_op,
                 showline: false,
+                tickfont: {size: 11},
                 ticktext: order_els(z_sort).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
                 tickvals: Plotly.d3.range(1, 96, 2)
             },
@@ -1246,7 +1431,7 @@ function visavis__plot3d(json, x_sort, y_sort, z_sort){
             });
             warn_demo();
             if (heatmap) document.getElementById('heatmaplegend').style.display = 'block';
-            if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
+            //if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
 
             if (visavis.cmp_shown || json.payload.fixel) return;
 
@@ -1857,9 +2042,9 @@ function visavis__pd(json){
         });
     if (json.naxes == 2)
         layout.annotations.extend([{
-            text: json.title_a, x: -0.03, y: -0.09, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 20, family: "Exo2"}
+            text: json.title_a, x: -0.03, y: -0.11, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 20, family: "Exo2"}
         }, {
-            text: json.title_b, x: 1.03, y: -0.09, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 20, family: "Exo2"}
+            text: json.title_b, x: 1.03, y: -0.11, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 20, family: "Exo2"}
         }]);
 
     run(pd_datamock, layout, {displaylogo: false, displayModeBar: false, staticPlot: true},
@@ -1966,10 +2151,6 @@ function visavis__pd(json){
  */
 function visavis__discovery(json){
 
-    if (!visavis.elementals)
-        visavis.elementals = json.payload.elementals;
-    if (!visavis.elementals.num)
-        visavis.elementals.num = Plotly.d3.range(96);
     if (!visavis.elementals_on.length){
         // default axes
         visavis.elementals_on.push('nump');
