@@ -1910,8 +1910,7 @@ function visavis__pd(json){
             layout_shapes.push({
                 type: 'path',
                 path: json.shapes[i].svgpath,
-                //line: {width: 0.5, color: '#666'},
-                line: {width: 3, color: '#666'},
+                line: {width: 0.5, color: '#666'},
                 fillOpacity: 0
             });
         }
@@ -2091,7 +2090,7 @@ function visavis__pd(json){
         'click': function(){
             var idx = Plotly.d3.select(this).attr('data-index');
             if (json.naxes == 3) idx--;
-            if (json.shapes[idx].phase_id){
+            if (json.shapes[idx].phase_id && visavis.mpds_embedded){
                 window.open(window.location.protocol + "//" + window.location.host + '#phase_id/' + json.shapes[idx].phase_id);
             }
         }});
@@ -2138,6 +2137,20 @@ function visavis__pd(json){
                     document.getElementById('pdtracer').style.display = 'block';
 
                 } else document.getElementById('pdtracer').style.display = 'none';
+            });
+
+            canvas.addEventListener('project', function(evt){
+                //console.log('Received', evt.detail.x1, evt.detail.y1, evt.detail.x2, evt.detail.y2);
+                var comp1 = xaxis.p2c(evt.detail.x1 - margin_l),
+                    comp2 = xaxis.p2c(evt.detail.x2 - margin_l),
+                    temp1 = parseInt(yaxis.p2c(evt.detail.y1 - margin_t)),
+                    temp2 = parseInt(yaxis.p2c(evt.detail.y2 - margin_t)),
+                    comp_chk = (comp1 + comp2) / 2,
+                    temp_chk = (temp1 + temp2) / 2;
+                //console.log('Checking', comp_chk, temp_chk);
+
+                if (comp_chk > json.comp_range[0] && comp_chk < json.comp_range[1] && temp_chk > json.temp[0] && temp_chk < json.temp[1])
+                    window.parent.postMessage({comp: [comp1, comp2], temp: [temp1, temp2]}, '*');
             });
         }
     });
@@ -2371,6 +2384,14 @@ function visavis__customscatter(json){
  */
 (function(){
     window.addEventListener('hashchange', init_download, false);
+
+    window.addEventListener('message', function(event){
+        // yet another communication API for mpds-labs via postMessage
+        //console.log('Message', event.data.x1, event.data.y1, event.data.x2, event.data.y2);
+        document.getElementById('visavis').dispatchEvent(new CustomEvent('project', {
+            detail: {x1: event.data.x1, y1: event.data.y1, x2: event.data.x2, y2: event.data.y2}
+        }));
+    });
 
     if (visavis.local_supported){
         window.addEventListener('dragover', handleDragOver, false);
