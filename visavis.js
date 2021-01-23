@@ -3,7 +3,7 @@
  * Author: Evgeny Blokhin /
  * Tilde Materials Informatics
  * eb@tilde.pro
- * Version: 0.7.0
+ * Version: 0.7.1
  */
 "use strict";
 
@@ -157,7 +157,7 @@ visavis.fixel_shown = false;
 
 visavis.nonformers_shown = true;
 
-visavis.cmp_shown = false; // flag to control the display of widgets irrelevant for cmp mode
+visavis.cmp_shown = false; // flag to control the display of widgets, irrelevant for cmp mode
 
 /**
  *
@@ -2149,8 +2149,9 @@ function visavis__pd(json){
                     temp_chk = (temp1 + temp2) / 2;
                 //console.log('Checking', comp_chk, temp_chk);
 
+                // yet another iframe communication API for mpds-labs via postMessage
                 if (comp_chk > json.comp_range[0] && comp_chk < json.comp_range[1] && temp_chk > json.temp[0] && temp_chk < json.temp[1])
-                    window.parent.postMessage({comp: [comp1, comp2], temp: [temp1, temp2]}, '*');
+                    window.parent.postMessage({type: 'pd', comp: [comp1, comp2], temp: [temp1, temp2]}, '*');
             });
         }
     });
@@ -2373,7 +2374,13 @@ function visavis__customscatter(json){
                 r: 0
             }
         },
-        {displaylogo: false, displayModeBar: false, staticPlot: true}
+        {displaylogo: false, displayModeBar: false, staticPlot: true},
+        function(){
+            //document.getElementById('visavis').on('plotly_legendclick', function(){ return false }); // requires at least v1.37
+            // yet another iframe communication API for mpds-labs via postMessage
+            if (json.plots.length == 1 && window.parent)
+                window.parent.postMessage({type: 'nplots', nplots: 1}, '*');
+        }
     );
 }
 
@@ -2386,7 +2393,7 @@ function visavis__customscatter(json){
     window.addEventListener('hashchange', init_download, false);
 
     window.addEventListener('message', function(event){
-        // yet another communication API for mpds-labs via postMessage
+        // yet another iframe communication API for mpds-labs via postMessage
         //console.log('Message', event.data.x1, event.data.y1, event.data.x2, event.data.y2);
         document.getElementById('visavis').dispatchEvent(new CustomEvent('project', {
             detail: {x1: event.data.x1, y1: event.data.y1, x2: event.data.x2, y2: event.data.y2}
