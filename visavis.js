@@ -2378,8 +2378,7 @@ function visavis__customscatter(json){
         function(){
             //document.getElementById('visavis').on('plotly_legendclick', function(){ return false }); // requires at least v1.37
             // yet another iframe communication API for mpds-labs via postMessage
-            if (json.plots.length == 1 && window.parent)
-                window.parent.postMessage({type: 'nplots', nplots: 1}, '*');
+            if (window.parent) window.parent.postMessage({type: 'nplots', nplots: json.plots.length}, '*');
         }
     );
 }
