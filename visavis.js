@@ -380,8 +380,8 @@ function gen_shake(){
 
 function init_download(given){
 
-    if (!given || given.target){ // NB from HashChangeEvent 
-        given = document.location.hash.substr(1);
+    if (!given || given.target){ // NB from HashChangeEvent
+        given = window.location.hash.substr(1);
         visavis.cache = null;
     }
 
@@ -2425,8 +2425,8 @@ function visavis__customscatter(json){
     }
 
     document.getElementById('switcher').onclick = function(){
-        if (document.location.hash){
-            var pic_url = document.location.hash.substr(1);
+        if (window.location.hash){
+            var pic_url = window.location.hash.substr(1);
             window.location = '/pd_stub.html#' + pic_url.replace('fmt=json', 'fmt=png');
         }
     }
@@ -2503,12 +2503,12 @@ function visavis__customscatter(json){
         if (window.parent.wmgui.visavis_starting)
             window.parent.start_visavis();
 
-        else if (document.location.hash.length)
+        else if (window.location.hash.length)
             init_download();
 
     } else {
 
-        if (document.location.hash.length)
+        if (window.location.hash.length)
             init_download();
         else
             display_landing();
