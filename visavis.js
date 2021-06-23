@@ -2347,6 +2347,7 @@ function visavis__customscatter(json){
             showlegend: true,
             legend: {x: 100, y: 1, font: {family: "Exo2", size: 14}},
             xaxis: {
+                type: json.xlog ? 'log' : '-',
                 autorange: true,
                 showgrid: true,
                 showline: true,
@@ -2358,6 +2359,7 @@ function visavis__customscatter(json){
                 title: json.xtitle
             },
             yaxis: {
+                type: json.ylog ? 'log' : '-',
                 autorange: true,
                 showgrid: true,
                 showline: true,
