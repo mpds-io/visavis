@@ -24,7 +24,7 @@ html, body{height:100%;user-select:none;}
 #demobox a{color:#333;text-decoration:none;border-bottom:1px solid #333;}
 #pdtracer{display:none;position:fixed;z-index:9;top:15px;left:50%;width:500px;height:20px;margin-left:-250px;font-size:0.9em;text-align:center;line-height:40px;letter-spacing:0.5px;}
 #overlay{display:none;position:fixed;left:0;top:0;width:100%;height:100%;background:#fff;z-index:8;overflow:hidden;}
-#urge{display:none;position:fixed;left:0;top:0;width:100%;height:100%;background:#fff;z-index:6;overflow:hidden;text-align:center;font-size:1.25em;padding-top:6em;user-select:all;}
+#urge{display:none;position:fixed;left:0;top:0;width:100%;height:100%;background:#fff;z-index:6;overflow:hidden;text-align:center;font-size:1.25em;padding-top:6em;user-select:all;-webkit-user-drag:none;}
 #landing{display:none;position:fixed;left:0;top:0;right:0;bottom:0;height:auto;z-index:5;background:#fff;margin:0;text-align:center;font-size:2vmin;padding:10px;line-height:4vmin;}
 #landing a{color:#666;text-decoration:none;border-bottom:1px solid #999;}
 #legend{width:350px;margin:100px auto 0;border-radius:15px;background:#bfbfbf;color:#fff;padding:5px 15px;}
@@ -150,7 +150,7 @@ g.aaxis, g.baxis, g.caxis{display:none;}
 <div id="demobox" class="uielem">You are using the limited demo. Buy the <a href="/#products" target="_blank">full version</a> and support our work.</div>
 
 <!-- SIMPLE MESSAGE -->
-<div id="urge"></div>
+<div id="urge" draggable="false"></div>
 
 <!-- SIMPLE MESSAGE -->
 <div id="pdtracer" class="uielem"></div>
