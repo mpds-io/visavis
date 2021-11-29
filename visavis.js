@@ -3,7 +3,7 @@
  * Author: Evgeny Blokhin /
  * Tilde Materials Informatics
  * eb@tilde.pro
- * Version: 0.7.1
+ * Version: 0.7.5
  */
 "use strict";
 
@@ -75,12 +75,9 @@ if (!ie_passing_check){
     throw new Error("Unsupported user agent");
 }
 
-if (!console) console = {log: function(){}};
-
 Array.prototype.extend = function(other_array){
     other_array.forEach(function(v){ this.push(v) }, this);
 }
-
 
 /**
  *
@@ -92,7 +89,7 @@ var visavis = {};
 visavis.local_supported = window.File && window.FileReader && window.FileList && window.Blob;
 
 try {
-    visavis.mpds_embedded = window.parent && window.parent.wmgui;
+    visavis.mpds_embedded = !!(window.parent && window.parent.wmgui);
 } catch (e){
     visavis.mpds_embedded = false;
 }
@@ -137,7 +134,7 @@ visavis.elemental_names = {
 
 visavis.elementals_on = [];
 
-visavis.colorset = ['#ccc', '#FE9A2E', '#acc2b3', '#E36868', '#777', '#999', '#c00'];
+visavis.colorset = ['#3e3f95', '#c00', '#FE9A2E', '#090', '#f0f', '#09f', '#666', '#0f3', '#0ff', '#90c']; // max. 10 colors
 
 visavis.heatcolors = ['rgb(150,0,90)', 'rgb(0,0,200)', 'rgb(0,25,255)', 'rgb(0,152,255)', 'rgb(44,255,150)', 'rgb(151,255,0)', 'rgb(255,234,0)', 'rgb(255,111,0)', 'rgb(255,0,0)'];
 
@@ -157,7 +154,7 @@ visavis.fixel_shown = false;
 
 visavis.nonformers_shown = true;
 
-visavis.cmp_shown = false; // flag to control the display of widgets, irrelevant for cmp mode
+visavis.cmp_shown = false; // flag to control the display of those widgets irrelevant for cmp mode
 
 /**
  *
@@ -191,7 +188,7 @@ function cancel_event(evt){
 }
 
 function warn_demo(){
-    if (visavis.mpds_embedded && !window.parent.wmgui.sid) document.getElementById('demobox').style.display = 'block';
+    if (visavis.mpds_embedded && window.parent.wmgui.api_msg && !window.parent.wmgui.sid) document.getElementById('demobox').style.display = 'block';
 }
 
 function display_landing(){
@@ -420,6 +417,7 @@ function run(data, layout, options, clickhandler){
 }
 
 function reset_canvas(){
+    //console.log('Canvas reset');
     Plotly.d3.selectAll('svg').remove();
     Plotly.purge('visavis');
 
@@ -429,15 +427,23 @@ function reset_canvas(){
     }
 }
 
-function set_cmp_legend(cmp, ref){
-    document.getElementById('leg_cmp_sel').innerHTML = cmp;
-    document.getElementById('leg_cmp_ref').innerHTML = ref;
-    document.getElementById('heatmaplegend').style.display = 'none';
-    document.getElementById('cmplegend').style.display = 'block';
+function set_cmp_legend(labels, diffplot){
+    var legend_html = '';
 
-    if (visavis.cache.type == 'matrix' || visavis.cache.type == 'cube'){
-        document.getElementById('diffplot').style.display = 'block';
+    if (labels.length == 2){
+        if (diffplot && (visavis.cache.type == 'matrix' || visavis.cache.type == 'cube'))
+            document.getElementById('diffplot').style.display = 'block';
+        legend_html += '<span style="background:' + visavis.colorset[0] + ';color:#fff;">' + labels[0] + '</span>';
+        legend_html += '<span>vs.</span>';
+        legend_html += '<span style="background:' + visavis.colorset[1] + ';color:#fff;">' + labels[1] + '</span>';
+    } else {
+        for (var i = 0; i < labels.length; i++){
+            legend_html += '<span style="background:' + (visavis.colorset[i] || '#ccc') + ';color:#fff;">' + labels[i] + '</span>';
+        }
     }
+    document.getElementById('cmplegend').innerHTML = legend_html;
+    document.getElementById('cmplegend').style.display = 'block';
+    document.getElementById('heatmaplegend').style.display = 'none';
 }
 
 /**
@@ -590,10 +596,10 @@ function is_integer(num){
     return num % 1 === 0;
 }
 
+// 1x1 Cartesian to the in-place equilateral triange
 function cartesian_to_ternary(x, y){
-    // 1x1 Cartesian to the in-place equilateral triange
-    var b = y / (Math.sqrt(3)/2),
-        a = 1 - (x + (y/Math.sqrt(3))),
+    var b = y / (Math.sqrt(3) / 2),
+        a = 1 - (x + (y / Math.sqrt(3))),
         c = 1 - a - b;
     return [a, b, c];
 }
@@ -615,8 +621,8 @@ function inside_triangle(x,y,x1,y1,x2,y2,x3,y3){
     else return false;
 }
 
+// TODO FIXME this should be done on the server
 function fix_comp_impossible(comp_range, obj_left, obj_right){
-    // TODO FIXME this should NOT be dynamically done!
     if (comp_range[1] - comp_range[0] == 100)
         return false;
 
@@ -693,6 +699,7 @@ function get_matrix_diff(ref, cmp){
         j = 0,
         reflen = ref.payload.links.length,
         cmplen = cmp.payload.links.length;
+
     for (i; i < reflen; i++){
         for (j = 0; j < cmplen; j++){
             if (ref.payload.links[i].cmt == cmp.payload.links[j].cmt){
@@ -714,6 +721,7 @@ function get_cube_diff(ref, cmp){
         j = 0,
         reflen = ref.payload.points.labels.length,
         cmplen = cmp.payload.points.labels.length;
+
     for (i; i < reflen; i++){
         for (j = 0; j < cmplen; j++){
             if (ref.payload.points.labels[i] == cmp.payload.points.labels[j]){
@@ -749,6 +757,7 @@ function ter_op(op, a, b, c){
         case 'min': return ((a < b && a < c) ? a : ((b < a && b < c) ? b : c));
     }
 }
+
 /**
  *
  * External control methods (iframe-API)
@@ -796,12 +805,12 @@ function matrix_order(x_sort, y_sort, x_op, y_op){
     Plotly.d3.select("rect.bgmatrix").classed("hidden", (x_op || y_op));
 
     if (x_op){
-        document.getElementById('matrix_xtitle').innerHTML = x_op + '/' + visavis.elemental_names[x_sort];
+        document.getElementById('matrix_xtitle').innerHTML = x_op + '/' + visavis.elemental_names[x_sort] + ' &rarr;';
         document.getElementById('matrix_xtitle').style.display = 'block';
     } else document.getElementById('matrix_xtitle').style.display = 'none';
 
     if (y_op){
-        document.getElementById('matrix_ytitle').innerHTML = y_op + '/' + visavis.elemental_names[y_sort];
+        document.getElementById('matrix_ytitle').innerHTML = y_op + '/' + visavis.elemental_names[y_sort] + ' &rarr;';
         document.getElementById('matrix_ytitle').style.display = 'block';
     } else document.getElementById('matrix_ytitle').style.display = 'none';
 
@@ -840,44 +849,94 @@ function graph_rebuild(rel){
     visavis__graph();
 }
 
+// pair comparison by given URL
 function cmp_download(url, type){
     if (!visavis.cache || visavis.cache.type != type)
         return urge('Error: cannot compare datasets');
 
     call_ajax(url, function(cmp_data){
 
+        show_preloader();
         reset_canvas();
+
         if (cmp_data && cmp_data.error) return urge(cmp_data.error);
         if (!cmp_data || !cmp_data.use_visavis_type) return urge('Error: unknown data format');
         if (cmp_data.warning) notify(cmp_data.warning);
+
         visavis.cmp_shown = true;
 
         if (type == 'matrix'){
             visavis.nonformers_shown = false;
 
             // Prepare a master merged matrix from ref and cmp
-            var cpmatrix = JSON.parse(JSON.stringify(visavis.cache.ref));
+            var master_matrix = JSON.parse(JSON.stringify(visavis.cache.ref));
             cmp_data.payload.links.forEach(function(item){
-                item.cmp = true;
-                cpmatrix.payload.links.push(item);
+                item.cmp = 1;
+                master_matrix.payload.links.push(item);
             });
-            visavis__matrix(cpmatrix);
+            visavis__matrix(master_matrix);
             visavis.cache.cmp = {payload: {links: cmp_data.payload.links}, answerto: cmp_data.answerto};
-            set_cmp_legend(visavis.cache.cmp.answerto, visavis.cache.ref.answerto);
+            set_cmp_legend([visavis.cache.cmp.answerto, visavis.cache.ref.answerto], true);
 
         } else if (type == 'cube'){
             visavis.nonformers_shown = false;
             visavis.cache.cmp = {payload: {points: cmp_data.payload.points}, answerto: cmp_data.answerto};
             visavis__plot3d();
-            set_cmp_legend(visavis.cache.cmp.answerto, visavis.cache.ref.answerto);
+            set_cmp_legend([visavis.cache.cmp.answerto, visavis.cache.ref.answerto], true);
 
         } else if (type == 'discovery'){
             visavis__discovery(cmp_data);
-            set_cmp_legend(cmp_data.answerto, visavis.cache.ref.name);
+            set_cmp_legend([cmp_data.answerto, visavis.cache.ref.name]);
         }
     });
 }
 
+// multiple comparison by given datasets
+function cmp_multi(datasets, type){
+
+    //console.log(datasets);
+
+    show_preloader();
+    reset_canvas();
+    visavis.cmp_shown = true;
+    visavis.nonformers_shown = false;
+
+    if (type == 'matrix'){
+
+        visavis.cache = {type: type};
+
+        // Prepare a master merged matrix from all
+        var labels = [datasets[0].answerto],
+            master_matrix = datasets[0];
+        for (var i = 1; i < datasets.length; i++){
+            datasets[i].payload.links.forEach(function(item){
+                item.cmp = i;
+                master_matrix.payload.links.push(item);
+            });
+            labels.push(datasets[i].answerto);
+        }
+        setTimeout(function(){
+            visavis__matrix(master_matrix);
+            set_cmp_legend(labels);
+        }, 500);
+
+    } else if (type == 'cube'){
+
+        visavis.cache = {type: type, ref: datasets[0], cmps: []};
+
+        var labels = [datasets[0].answerto];
+        for (var i = 1; i < datasets.length; i++){
+            visavis.cache.cmps.push(datasets[i]);
+            labels.push(datasets[i].answerto);
+        }
+        setTimeout(function(){
+            visavis__plot3d();
+            set_cmp_legend(labels);
+        }, 500);
+    }
+}
+
+// switch off any comparisons
 function cmp_discard(type){
     if (!visavis.cache || visavis.cache.type != type || !visavis.cache.cmp)
         return notify('Comparison was reset');
@@ -907,7 +966,7 @@ function discovery_rerun(){
 
     if (visavis.cache.cmp){
         visavis__discovery({payload: {points: visavis.cache.cmp.points}, answerto: visavis.cache.cmp.name});
-        set_cmp_legend(visavis.cache.cmp.name, visavis.cache.ref.name);
+        set_cmp_legend([visavis.cache.cmp.name, visavis.cache.ref.name]);
 
     } else {
         var rerun = {payload: {points: visavis.cache.ref.points}, answerto: visavis.cache.ref.name};
@@ -929,7 +988,7 @@ function fixel_manage(status){
 function visavis__matrix(json){
     if (!visavis.cache || visavis.cache.type != 'matrix') visavis.cache = {ref: json, type: 'matrix'};
 
-    visavis.svgdim = Math.min(document.body.clientWidth - document.body.clientWidth/12, document.body.clientHeight - document.body.clientHeight/12);
+    visavis.svgdim = Math.min(document.body.clientWidth - document.body.clientWidth / 12, document.body.clientHeight - document.body.clientHeight / 12);
 
     var matrix = [],
         nodes = json.payload.nodes,
@@ -941,7 +1000,7 @@ function visavis__matrix(json){
     visavis.svg = Plotly.d3.select("#visavis").append("svg")
         .attr("width", actual_w)
         .attr("height", visavis.svgdim + visavis.svgmargin.top + visavis.svgmargin.bottom)
-        .style({"position": "absolute", "left": "50%", "font-size": "1.1vmin", "letter-spacing": "1px", "margin-left": -actual_w/2 + "px"})
+        .style({"position": "absolute", "left": "50%", "font-size": "1.1vmin", "letter-spacing": "1px", "margin-left": -actual_w / 2 + "px"})
         .append("g")
         .attr("transform", "translate(" + visavis.svgmargin.left + "," + visavis.svgmargin.top + ")");
 
@@ -949,7 +1008,7 @@ function visavis__matrix(json){
     nodes.forEach(function(node, i){
         node.count = 0;
         matrix[i] = Plotly.d3.range(95).map(function(j){
-            return {x: j, y: i, z: 0, cmt: "", cmp: false};
+            return {x: j, y: i, z: 0, cmt: "", cmp: 0};
         });
     });
 
@@ -959,8 +1018,9 @@ function visavis__matrix(json){
         matrix[link.target][link.source].z += link.value; // NB only AB-all
         matrix[link.source][link.target].cmt = link.cmt;
         matrix[link.target][link.source].cmt = link.cmt; // NB only AB-all
-        matrix[link.source][link.target].cmp = link.cmp || false;
-        matrix[link.target][link.source].cmp = link.cmp || false;
+        matrix[link.source][link.target].cmp = link.cmp || 0;
+        matrix[link.target][link.source].cmp = link.cmp || 0;
+
         nodes[link.source].count += link.value;
         nodes[link.target].count += link.value; // NB only AB-all
 
@@ -980,6 +1040,9 @@ function visavis__matrix(json){
         });
     }
 
+    //console.log(matrix);
+    //console.log('Heatmap mode: ' + heatmap);
+
     // precompute the orders
     ['num', 'nump', 'size', 'rea', 'rpp', 'rion', 'rcov', 'rmet', 'tmelt', 'eneg'].forEach(function(order){
         if (!visavis.el_orders[order])
@@ -994,7 +1057,7 @@ function visavis__matrix(json){
 
     var heatmap_color = Plotly.d3.scale.linear().domain(Plotly.d3.range(0, 1, 1.0 / (visavis.heatcolors.length - 1))).range(visavis.heatcolors);
     var scale_color = Plotly.d3.scale.linear().domain([minvalue, maxvalue]).range([0, 1]);
-    var setcolor = heatmap ? function(d, cmp){ return cmp ? '#c00' : heatmap_color(scale_color(d)) } : function(d, cmp){ return cmp ? '#c00' : '#3e3f95' };
+    var setcolor = heatmap ? function(d, cmp){ return cmp ? visavis.colorset[1] : heatmap_color(scale_color(d)) } : function(d, cmp){ return visavis.colorset[cmp] || '#ccc' };
 
     visavis.svg.html('<defs><pattern id="nonformer" patternUnits="userSpaceOnUse" width="4" height="4"><path d="M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2" style="stroke:#ddd;stroke-width:1" /></pattern></defs>');
 
@@ -1096,7 +1159,6 @@ function visavis__matrix(json){
         }
     }
 }
-
 
 /**
  *
@@ -1236,7 +1298,6 @@ function visavis__graph(json){
     if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
 }
 
-
 /**
  *
  * III. 3d-cube plot
@@ -1300,7 +1361,7 @@ function visavis__plot3d(json, x_sort, y_sort, z_sort, x_op, y_op, z_op){
     if (heatmap)
         marker = {color: json.payload.points.v, colorscale: 'Rainbow', size: 4, opacity: 0.9};
     else
-        marker = {color: "#3e3f95", size: 4, opacity: 0.9};
+        marker = {color: visavis.colorset[0], size: 4, opacity: 0.9};
 
     // main render data
     data.push(Object.assign(
@@ -1331,7 +1392,7 @@ function visavis__plot3d(json, x_sort, y_sort, z_sort, x_op, y_op, z_op){
 
     // cmp render data
     if (visavis.cache.type == 'cube' && visavis.cache.cmp){
-        data[0].marker.color = "#3e3f95";
+        data[0].marker.color = visavis.colorset[0];
         data.push(Object.assign(
             {
             type: "scatter3d",
@@ -1345,7 +1406,26 @@ function visavis__plot3d(json, x_sort, y_sort, z_sort, x_op, y_op, z_op){
         ));
     }
 
-    // mesh mode render data
+    // multi cmps render data
+    if (visavis.cache.cmps){
+        data[0].marker.color = visavis.colorset[0];
+        for (var i = 0; i < visavis.cache.cmps.length; i++){
+            //console.log('Adding ' + visavis.colorset[i + 1]);
+            data.push(Object.assign(
+                {
+                type: "scatter3d",
+                text: visavis.cache.cmps[i].payload.points.labels,
+                mode: "markers",
+                hoverinfo: "text",
+                marker: {color: visavis.colorset[i + 1] || '#ccc', size: 4, opacity: 0.9},
+                projection: {x: {show: true, opacity: 0.05}, y: {show: true, opacity: 0.05}, z: {show: true, opacity: 0.05}}
+                },
+                convert_to_axes(visavis.cache.cmps[i].payload.points.x, visavis.cache.cmps[i].payload.points.y, visavis.cache.cmps[i].payload.points.z, x_sort, y_sort, z_sort, x_op, y_op, z_op)
+            ));
+        }
+    }
+
+    // mesh mode render data (from clustering demo)
     if (!json.payload.meshes) json.payload.meshes = [];
     for (var i = 0; i < json.payload.meshes.length; i++){
         data.push({
@@ -1355,12 +1435,12 @@ function visavis__plot3d(json, x_sort, y_sort, z_sort, x_op, y_op, z_op){
             z: json.payload.meshes[i].z,
             alphahull: 1,
             opacity: 0.075,
-            color: visavis.colorset[i] || "#000",
+            color: visavis.colorset[i] || '#ccc',
             hoverinfo: "none"
         });
     }
 
-    if (json.payload.tcube){ // NB visavis vs. clusters demo
+    if (json.payload.tcube){ // NB visavis vs. clustering demo
         scene = {
             aspectmode: 'cube',
             xaxis: {
@@ -1446,7 +1526,6 @@ function visavis__plot3d(json, x_sort, y_sort, z_sort, x_op, y_op, z_op){
         }
     );
 }
-
 
 /**
  *
@@ -1593,7 +1672,6 @@ function visavis__pie(json){
     );
 }
 
-
 /**
  *
  * V. Occurence (stockade) plot, for literature
@@ -1656,7 +1734,6 @@ function visavis__bar(json){
         {displaylogo: false, displayModeBar: false, staticPlot: true}, callback
     );
 }
-
 
 /**
  *
@@ -1785,7 +1862,6 @@ function visavis__scatter(json){
     );
 }
 
-
 /**
  *
  * VI-B. Scatter plot for ab initio DOS and bands data
@@ -1871,7 +1947,6 @@ function visavis__eigenplot(json){
         }
     );
 }
-
 
 /**
  *
@@ -2157,7 +2232,6 @@ function visavis__pd(json){
     });
 }
 
-
 /**
  *
  * VIII. DISCOVERY
@@ -2438,7 +2512,7 @@ function visavis__customscatter(json){
         if (!visavis.cache || !visavis.cache.ref || !visavis.cache.cmp)
             return urge('Warning: internal error while rendering difference plot');
 
-        if (visavis.mpds_embedded)
+        if (visavis.mpds_embedded && window.parent.rebuild_visavis)
             window.parent.rebuild_visavis();
 
         setTimeout(function(){
@@ -2466,7 +2540,7 @@ function visavis__customscatter(json){
         visavis.nonformers_shown = visavis.nonformers_shown ? false : true;
         reset_canvas();
 
-        if (visavis.mpds_embedded)
+        if (visavis.mpds_embedded && window.parent.rebuild_visavis)
             window.parent.rebuild_visavis();
 
         if (visavis.cache.type == 'matrix')
@@ -2478,7 +2552,7 @@ function visavis__customscatter(json){
     }
 
     document.getElementById('fixel_do').onchange = function(){
-        if (visavis.mpds_embedded)
+        if (visavis.mpds_embedded && window.parent.rebuild_visavis)
             window.parent.rebuild_visavis();
 
         if (window.location.hash.indexOf('fixel=1') == -1)
@@ -2494,6 +2568,8 @@ function visavis__customscatter(json){
             window.parent.location.hash = window.parent.wmgui.aug_search_cmd('elements', this.value);
     }
 
+    //console.log('MPDS-embedded: ' + visavis.mpds_embedded);
+
     if (visavis.mpds_embedded){
         window.parent.wmgui.visavis_ready = true;
 
@@ -2508,7 +2584,6 @@ function visavis__customscatter(json){
             init_download();
 
     } else {
-
         if (window.location.hash.length)
             init_download();
         else
