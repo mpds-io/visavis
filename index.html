@@ -3,7 +3,7 @@ Vis-à-vis web-viewer
 Author: Evgeny Blokhin /
 Tilde Materials Informatics
 eb@tilde.pro
-Version: 0.7.1
+Version: 0.7.5
 -->
 <!DOCTYPE html>
 <html>
@@ -38,8 +38,8 @@ html, body{height:100%;user-select:none;}
 #heatmaplegend b{display:inline-block;height:0.7em;width:0.7em;}
 #heatmaplegend span{display:inline-block;margin:0 15px;font-size:1em;letter-spacing:1px;}
 
-#cmplegend{display:none;position:absolute;z-index:101;bottom:50px;left:50%;width:1000px;height:auto;margin-left:-500px;text-align:center;background:#fff;}
-#cmplegend span{display:inline-block;margin:0 7px;padding:0 5px;font-size:0.8em;}
+#cmplegend{display:none;position:absolute;z-index:101;bottom:50px;left:50%;width:1000px;height:auto;margin-left:-500px;text-align:center;}
+#cmplegend span{display:inline-block;margin:0 4px;padding:0 5px;font-size:0.8em;}
 
 #difflegend{display:none;position:absolute;z-index:100;bottom:75px;left:50%;width:800px;height:auto;margin-left:-400px;text-align:center;font-size:0.8em;padding:3px;letter-spacing:0.5px;}
 #difflegend span{display:inline-block;padding:0 3px;background:#666;color:#fff;}
@@ -171,7 +171,7 @@ g.aaxis, g.baxis, g.caxis{display:none;}
 <div id="heatmaplegend" class="uielem"><span>lowest</span><b style="background:rgb(150,0,90)"></b><b style="background:rgb(0,0,200)"></b><b style="background:rgb(0,25,255)"></b><b style="background:rgb(0,152,255)"></b><b style="background:rgb(44,255,150)"></b><b style="background:rgb(151,255,0)"></b><b style="background:rgb(255,234,0)"></b><b style="background:rgb(255,111,0)"></b><b style="background:rgb(255,0,0)"></b><span>highest</span></div>
 
 <!-- RICH MESSAGE -->
-<div id="cmplegend" class="uielem"><span id="leg_cmp_sel" style="background:#900;color:#fff;"></span><span>vs.</span><span id="leg_cmp_ref" style="background:#3e3f95;color:#fff;"></span></div>
+<div id="cmplegend" class="uielem"></div>
 
 <!-- RICH MESSAGE -->
 <div id="difflegend" class="uielem"></div>
@@ -195,7 +195,7 @@ if (window.location.host.indexOf('localhost') == -1){ // production
     ];
 }
 
-// PCA ES6 compiled implementation is not supported for IE11
+// PCA ES6 compiled implementation is not supported on IE11, so drop it
 if (window.MSInputMethodContext && document.documentMode) to_load.pop();
 
 var head = document.getElementsByTagName('head')[0];
