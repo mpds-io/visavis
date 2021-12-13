@@ -3,7 +3,7 @@
  * Author: Evgeny Blokhin /
  * Tilde Materials Informatics
  * eb@tilde.pro
- * Version: 0.7.5
+ * Version: 0.7.6
  */
 "use strict";
 
@@ -188,7 +188,8 @@ function cancel_event(evt){
 }
 
 function warn_demo(){
-    if (visavis.mpds_embedded && window.parent.wmgui.api_msg && !window.parent.wmgui.sid) document.getElementById('demobox').style.display = 'block';
+    if (!visavis.mpds_embedded) return;
+    if (window.parent.wmgui.api_msg && !window.parent.wmgui.sid) document.getElementById('demobox').style.display = 'block';
 }
 
 function display_landing(){
@@ -1958,7 +1959,8 @@ function visavis__pd(json){
     document.title = json.entry;
 
     var layout_shapes = [],
-        counter = 0;
+        counter = 0,
+        data_demo = (!json.comp_a || !json.comp_start);
 
     for (var i = 0; i < json.shapes.length; i++){
 
@@ -2075,6 +2077,7 @@ function visavis__pd(json){
                 range: json.temp,
                 fixedrange: true,
                 showticks: json.labels.length ? true : false,
+                showticklabels: !data_demo,
                 showline: true,
                 zeroline: false,
                 showgrid: false,
@@ -2086,6 +2089,7 @@ function visavis__pd(json){
                 range: json.temp,
                 fixedrange: true,
                 showticks: json.labels.length ? true : false,
+                showticklabels: !data_demo,
                 showline: true,
                 zeroline: false,
                 showgrid: false,
@@ -2110,7 +2114,7 @@ function visavis__pd(json){
         });
     }
 
-    if (json.title_c && json.arity > 2)
+    if (json.title_c && json.arity > 2 && !data_demo)
         layout.annotations.push({
             text: (json.diatype ? json.diatype + " " : "") + (json.temp[0] ? json.temp[0] + " &deg;C" : ""), x: -0.25, y: 0.96, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 15, family: "Exo2"}
         });
@@ -2131,7 +2135,9 @@ function visavis__pd(json){
         if (visavis.mpds_embedded)
             document.getElementById('cross').style.display = 'block';
 
-        warn_demo();
+        //warn_demo();
+        if (data_demo) document.getElementById('demobox').style.display = 'block';
+
         if (visavis.mpds_embedded && window.parent.wmgui.sid)
             document.getElementById('switcher').style.display = 'block';
 
@@ -2171,7 +2177,7 @@ function visavis__pd(json){
         }});
 
         // skip pd tracing for demo
-        if (!json.comp_start && !json.comp_a) return;
+        if (data_demo) return;
 
         if (json.naxes == 3){
             // triangle
@@ -2225,6 +2231,7 @@ function visavis__pd(json){
                 //console.log('Checking', comp_chk, temp_chk);
 
                 // yet another iframe communication API for mpds-labs via postMessage
+                // API CORRECT
                 if (comp_chk > json.comp_range[0] && comp_chk < json.comp_range[1] && temp_chk > json.temp[0] && temp_chk < json.temp[1])
                     window.parent.postMessage({type: 'pd', comp: [comp1, comp2], temp: [temp1, temp2]}, '*');
             });
@@ -2454,6 +2461,7 @@ function visavis__customscatter(json){
         function(){
             //document.getElementById('visavis').on('plotly_legendclick', function(){ return false }); // requires at least v1.37
             // yet another iframe communication API for mpds-labs via postMessage
+            // API CORRECT
             if (window.parent) window.parent.postMessage({type: 'nplots', nplots: json.plots.length}, '*');
         }
     );
@@ -2496,6 +2504,7 @@ function visavis__customscatter(json){
 
     document.getElementById('expander').onclick = function(){
         var add_qs = (visavis.graph_default_rel == 'prel') ? '' : '&graph_rel=' + visavis.graph_default_rel;
+        // API FIXME
         window.parent.location = window.location + add_qs;
     }
 
