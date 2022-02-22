@@ -1960,7 +1960,7 @@ function visavis__pd(json){
 
     var layout_shapes = [],
         counter = 0,
-        data_demo = (!json.comp_a || !json.comp_start);
+        data_demo = (!json.comp_a && !json.comp_start);
 
     for (var i = 0; i < json.shapes.length; i++){
 
