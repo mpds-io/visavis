@@ -3,7 +3,7 @@
  * Author: Evgeny Blokhin /
  * Tilde Materials Informatics
  * eb@tilde.pro
- * Version: 0.7.6
+ * Version: 0.7.7
  */
 "use strict";
 
@@ -12,38 +12,8 @@
  * SHIMS AND CUSTOMIZATION
  *
  */
-// IE Object.assign polyfill
-if (typeof Object.assign != 'function') {
-  // Must be writable: true, enumerable: false, configurable: true
-  Object.defineProperty(Object, "assign", {
-    value: function assign(target, varArgs) { // .length of function is 2
-      if (target == null) { // TypeError if undefined or null
-        throw new TypeError('Cannot convert undefined or null to object');
-      }
-
-      var to = Object(target);
-
-      for (var index = 1; index < arguments.length; index++) {
-        var nextSource = arguments[index];
-
-        if (nextSource != null) { // Skip over if undefined or null
-          for (var nextKey in nextSource) {
-            // Avoid bugs when hasOwnProperty is shadowed
-            if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
-              to[nextKey] = nextSource[nextKey];
-            }
-          }
-        }
-      }
-      return to;
-    },
-    writable: true,
-    configurable: true
-  });
-}
-
 var ie_passing_check = (function(){
-    function detect_ie(){
+    var version = (function(){
         var ua = window.navigator.userAgent;
 
         var msie = ua.indexOf('MSIE ');
@@ -63,10 +33,12 @@ var ie_passing_check = (function(){
         }
 
         return false;
-    }
-    var version = detect_ie();
+    })();
+
     if (!version) return true;
-    if (version < 11) return false;
+
+    if (version < 12) return false;
+
     return true;
 }());
 
@@ -89,7 +61,7 @@ var visavis = {};
 visavis.local_supported = window.File && window.FileReader && window.FileList && window.Blob;
 
 try {
-    visavis.mpds_embedded = !!(window.parent && window.parent.wmgui);
+    visavis.mpds_embedded = window.parent && window.parent.wmgui;
 } catch (e){
     visavis.mpds_embedded = false;
 }
@@ -221,7 +193,10 @@ function call_ajax(url, callback){
     show_preloader();
 
     Plotly.d3.json(url, function(error, json){
-        if (error) return notify('Connection error, please, retry');
+        if (error){
+            console.error(error);
+            return notify('Connection error, please, retry');
+        }
         callback(json);
     });
 }
@@ -575,9 +550,9 @@ function pd_fix_triangle(){
     graph_node = graph_node.getBoundingClientRect();
     svg_node = svg_node.getBoundingClientRect();
 
-    var scaleX = graph_node.width/svg_node.width,
-        scaleY = graph_node.height/svg_node.height,
-        centerX = graph_coords.x + graph_node.width/2,
+    var scaleX = graph_node.width / svg_node.width,
+        scaleY = graph_node.height / svg_node.height,
+        centerX = graph_coords.x + graph_node.width / 2,
         centerY = graph_coords.y + graph_node.height; // NB!
 
     var origdims = [];
@@ -1199,7 +1174,7 @@ function visavis__graph(json){
             radii[link.source] = link.target + 2;
         }
     });
-    if (!counter) return urge('Warning: not enough data for analysis');
+    if (!counter) return urge('Warning: nothing to show');
 
     var table = {},
         i = 0,
@@ -1210,14 +1185,19 @@ function visavis__graph(json){
         table[p] = i++;
     }
 
-    var width = document.body.clientWidth - 20,
-        height = parseInt(0.8 * width);
+    var predefined_h;
+    if (window.location.hash.indexOf('visavis_height=') !== -1){
+        // internal client-only URL param (to be ignored by the server)
+        predefined_h = window.location.hash.split('visavis_height=');
+        predefined_h = predefined_h[predefined_h.length - 1];
+        predefined_h = parseInt(predefined_h.split('&')[0]);
+    }
+    var width = predefined_h ? document.body.clientWidth : document.body.clientWidth - 15,
+        height = predefined_h || parseInt(0.8 * width);
 
     reset_canvas();
 
-    var svg = Plotly.d3.select("#visavis").append("svg")
-        .attr("width", width)
-        .attr("height", height);
+    var svg = Plotly.d3.select("#visavis").append("svg").attr("width", width).attr("height", height);
 
     visavis.force = Plotly.d3.layout.force()
         .size([width, height])
@@ -1291,7 +1271,7 @@ function visavis__graph(json){
     }
 
     visavis.force.start();
-    for (var i = 500; i > 0; i--) visavis.force.tick();
+    for (var i = 400; i > 0; i--) visavis.force.tick();
     visavis.force.stop();
     hide_preloader();
     hide_messages();
