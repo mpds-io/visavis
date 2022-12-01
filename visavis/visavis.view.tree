@@ -1,0 +1,16 @@
+$mpds_visavis $mol_book2
+	pages /
+		<= Menu $mol_page
+			title \Vis-a-vis
+			tools /
+				<= Open $mol_button_open
+					accept \
+					files? <=> files_open? null
+			body /
+				<= History $mol_list rows <= history_rows /
+					<= File*0 $mol_link
+						arg * file <= file_title* \
+						title <= file_title*
+		<= Plot $mol_page
+			title <= file_current \
+			body /
