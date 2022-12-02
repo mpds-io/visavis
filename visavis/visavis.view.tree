@@ -1,8 +1,13 @@
 $mpds_visavis $mol_book2
+	plugins /
+		<= Theme $mol_theme_auto
 	pages /
 		<= Menu $mol_page
 			title \Vis-a-vis
 			tools /
+				<= Source $mol_link_source
+					uri \https://github.com/PavelZubkov/visavis
+				<= Lights $mol_lights_toggle
 				<= Open $mol_button_open
 					accept \
 					files? <=> files_open? null

@@ -30,7 +30,7 @@ namespace $.$$ {
 		}
 
 		history_rows() {
-			return this.history().map( (_, index)=> this.File(index) )
+			return this.history().map( (_, index)=> this.File(index) ).reverse()
 		}
 
 		file_current() {
