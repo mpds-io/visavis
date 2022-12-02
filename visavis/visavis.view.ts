@@ -39,7 +39,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		plotly() {
-			console.log(111, $lib_plotlyjs)
+			console.log(111, $lib_plotly.all())
 		}
 
 		auto() {
