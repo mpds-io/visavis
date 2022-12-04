@@ -44,6 +44,9 @@ namespace $.$$ {
 
 		@ $mol_mem
 		render() {
+
+			if (!this.data() || this.data().use_visavis_type !== 'matrix') return
+
 			const d3 = $lib_d3.all()
 			const is_integer = (num: number) => Math.floor(num) === num
 
