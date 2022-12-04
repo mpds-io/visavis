@@ -33,20 +33,23 @@ namespace $.$$ {
 			return this.history().map( (_, index)=> this.File(index) ).reverse()
 		}
 
-		file_current() {
+		file_current_title() {
 			return this.$.$mol_state_arg.value( 'file' ) ?? ''
 		}
 
+		file_current() {
+			const found = this.history().find( obj => obj.title === this.file_current_title() )
+			return found?.data
+		}
+
 		@ $mol_mem
-		plotly() {
-			console.log(111, $lib_plotly.all())
+		d3() {
+			console.log( $lib_d3.all() )
 		}
 
 		auto() {
-			this.plotly()
+			this.d3()
 		}
-
-		
 
 	}
 

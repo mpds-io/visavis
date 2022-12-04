@@ -17,5 +17,7 @@ $mpds_visavis $mol_book2
 						arg * file <= file_title* \
 						title <= file_title*
 		<= Plot $mol_page
-			title <= file_current \
+			title <= file_current_title \
 			body /
+				<= Matrix $mpds_visavis_matrix
+					file <= file_current Object

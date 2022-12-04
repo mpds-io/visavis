@@ -1,0 +1,137 @@
+{
+	"sample": {
+		"material": {
+			"entry": "P11628237-1",
+			"phase": "SrTiO3/140/tI20",
+			"phase_id": 27623,
+			"condition": [
+				{
+					"name": "Space group",
+					"scalar": [
+						{
+							"value": 140
+						}
+					]
+				}
+			],
+			"chemical_formula": "SrTiO3",
+			"chemical_elements": [
+				"O",
+				"Sr",
+				"Ti"
+			],
+			"object_repr": "P-MPDS"
+		},
+		"measurement": [
+			{
+				"property": {
+					"name": "cell parameter change diagram",
+					"units": "GPa, K, Angstrom, degrees",
+					"domain": "thermal and thermodynamic properties",
+					"matrix": [
+						[
+							0.0001,
+							10.0,
+							5.5089,
+							5.5089,
+							7.795800000000001,
+							90.0,
+							90.0,
+							90.0
+						],
+						[
+							0.0001,
+							20.0,
+							5.5089,
+							5.5089,
+							7.795800000000001,
+							90.0,
+							90.0,
+							90.0
+						],
+						[
+							0.0001,
+							30.0,
+							5.5091,
+							5.5091,
+							7.795800000000001,
+							90.0,
+							90.0,
+							90.0
+						],
+						[
+							0.0001,
+							40.0,
+							5.5093000000000005,
+							5.5093000000000005,
+							7.795800000000001,
+							90.0,
+							90.0,
+							90.0
+						],
+						[
+							0.0001,
+							50.0,
+							5.5096,
+							5.5096,
+							7.795800000000001,
+							90.0,
+							90.0,
+							90.0
+						],
+						[
+							0.0001,
+							60.0,
+							5.5099,
+							5.5099,
+							7.795800000000001,
+							90.0,
+							90.0,
+							90.0
+						],
+						[
+							0.0001,
+							70.0,
+							5.5103,
+							5.5103,
+							7.7956,
+							90.0,
+							90.0,
+							90.0
+						],
+						[
+							0.0001,
+							80.0,
+							5.5108,
+							5.5108,
+							7.7951999999999995,
+							90.0,
+							90.0,
+							90.0
+						],
+						[
+							0.0001,
+							90.0,
+							5.5112000000000005,
+							5.5112000000000005,
+							7.795,
+							90.0,
+							90.0,
+							90.0
+						]
+					],
+					"category": "thermal expansion"
+				},
+				"data_type": "peer_reviewed"
+			}
+		]
+	},
+	"use_visavis_type": "scatter",
+	"$schema": "https://developer.mpds.io/mpds.schema.json#/definitions/physical_property",
+	"version": "1.0.7",
+	"object_type": "P",
+	"reference": {
+		"entry": "https://mpds.io/#entry/P11628237",
+		"phase": "https://mpds.io/#phase/SrTiO3/140/tI20"
+	}
+}
