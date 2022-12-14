@@ -1,2 +1,43 @@
-$mpds_visavis_matrix $mol_view
+$mpds_visavis_matrix $mol_page
 	file Object
+	tools /
+		<= Heatmap_legend $mol_view sub /
+			<= heatmap_lowest @ \Lowest
+			<= Heatmap_colors $mol_view sub <= heatmap_color_list /
+				<= Heatmap_color*0 $mol_view
+					style * background <= heatmap_color* \
+			<= heatmap_higest @ \Higest
+		<= Nonformers $mol_check_box
+			hint @ \Continuous solid solutions and complete insolubility systems
+			title @ \Show non-formers
+			checked? <=> nonformers? false
+	size 0
+	- value_min? 0
+	- value_max? 0
+	- heatmap? false
+	- matrix /
+	order* /number
+	heatmap false
+	heatmap_colors /
+		\rgb(150,0,90)
+		\rgb(0,0,200)
+		\rgb(0,25,255)
+		\rgb(0,152,255)
+		\rgb(44,255,150)
+		\rgb(151,255,0)
+		\rgb(255,234,0)
+		\rgb(255,111,0)
+		\rgb(255,0,0)
+	colorset /
+		\#3e3f95
+		\#c00
+		\#FE9A2E
+		\#090
+		\#f0f
+		\#09f
+		\#666
+		\#0f3
+		\#0ff
+		\#90c
+	body /
+		<= Plot $mol_view

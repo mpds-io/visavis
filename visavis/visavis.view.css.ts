@@ -11,7 +11,7 @@ namespace $.$$ {
 			},
 		},
 
-		Plot: {
+		Matrix: {
 			flex: {
 				basis: rem(60),
 				shrink: 0,

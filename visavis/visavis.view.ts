@@ -42,13 +42,11 @@ namespace $.$$ {
 			return found?.data
 		}
 
-		@ $mol_mem
-		d3() {
-			console.log( $lib_d3.all() )
-		}
-
-		auto() {
-			this.d3()
+		pages() {
+			return [
+				this.Menu(),
+				... this.file_current().use_visavis_type === 'matrix' ? [ this.Matrix( this.file_current_title() ) ] : [],
+			]
 		}
 
 	}
