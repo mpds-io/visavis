@@ -78,7 +78,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		order() {
-			return d3.range(95).sort( (a, b) => this.nodes()[a][ this.order_current() ] - this.nodes()[b][ this.order_current() ] )
+			return $lib_d3.all().range(95).sort( (a, b) => this.nodes()[a][ this.order_current() ] - this.nodes()[b][ this.order_current() ] )
 		}
 
 		@ $mol_mem
@@ -123,7 +123,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		color_heatmap() {
-			return $lib_d3.all().scaleLinear().domain(d3.range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors() as any)
+			return $lib_d3.all().scaleLinear().domain($lib_d3.all().range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors() as any)
 		}
 
 		heatmap_color( index: number ) {
@@ -143,15 +143,6 @@ namespace $.$$ {
 			if (this.heatmap()) return cmp ? this.colorset()[1] : this.color_heatmap()( this.color_heatmap_scale()( index ) )
 			return this.colorset()[cmp] || '#ccc'
 		}
-
-		// var setopac = heatmap ? function () { return 1 } : Plotly.d3.scale.linear().domain([minvalue, maxvalue]).range([0.2, 1]).clamp(true);
-		// var heatmap_color = Plotly.d3.scale.linear()
-		// 	.domain(Plotly.d3.range(0, 1, 1.0 / (visavis.heatcolors.length - 1)))
-		// 	.range(visavis.heatcolors);
-		// var scale_color = Plotly.d3.scale.linear().domain([minvalue, maxvalue]).range([0, 1]);
-		// var setcolor = heatmap
-		// 	? function (d, cmp) { return cmp ? visavis.colorset[1] : heatmap_color(scale_color(d)) }
-		// 	: function (d, cmp) { return visavis.colorset[cmp] || '#ccc' };
 
 		@ $mol_mem
 		range() {
@@ -261,7 +252,7 @@ namespace $.$$ {
 				.attr('y', this.range().bandwidth() / 2)
 				.attr('dy', '.32em')
 				.attr('text-anchor', 'start')
-				.text((d, i) => this.nodes()[i].name);
+				.text((d, i: any) => this.nodes()[i].name);
 		}
 
 		auto() {
