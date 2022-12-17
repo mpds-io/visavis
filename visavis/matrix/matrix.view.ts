@@ -76,14 +76,14 @@ namespace $.$$ {
 			}, false )
 		}
 
-		@ $mol_mem_key
-		order(order: 'num' | 'nump' | 'size' | 'rea' | 'rpp' | 'rion' | 'rcov' | 'rmet' | 'tmelt' | 'eneg') {
-			return d3.range(95).sort( (a, b) => this.nodes()[a][order] - this.nodes()[b][order] )
+		@ $mol_mem
+		order() {
+			return d3.range(95).sort( (a, b) => this.nodes()[a][ this.order_current() ] - this.nodes()[b][ this.order_current() ] )
 		}
 
 		@ $mol_mem
 		matrix() {
-			const matrix: Matrix_cell[][] = this.nodes().map( (node, i) => d3.range(95).map( j => ({ x: j, y: i, z: 0, cmt: "", cmp: 0, nonformer: false }) ) )
+			const matrix: Matrix_cell[][] = this.nodes().map( (node, i) => $lib_d3.all().range(95).map( j => ({ x: j, y: i, z: 0, cmt: '', cmp: 0, nonformer: false }) ) )
 
 			for (const link of this.links()) {
 				matrix[link.source][link.target].z += link.value;
@@ -108,14 +108,13 @@ namespace $.$$ {
 
 		@ $mol_mem
 		size() {
-			// const { width, height } = this.dom_node().getBoundingClientRect()
-			// return Math.min(width - width / 12, height - height / 12);
-			return 800
+			const { width = 0, height = 0 } = this.Body().view_rect() ?? {}
+			return Math.min(width, height) - this.plot_padding() - this.axis_width()
 		}
 
 		@ $mol_mem
 		opacity_scale() {
-			return d3.scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true)
+			return $lib_d3.all().scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true)
 		}
 
 		opacity(index: number) {
@@ -124,7 +123,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		color_heatmap() {
-			return d3.scaleLinear().domain(d3.range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors() as any)
+			return $lib_d3.all().scaleLinear().domain(d3.range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors() as any)
 		}
 
 		heatmap_color( index: number ) {
@@ -137,7 +136,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		color_heatmap_scale() {
-			return d3.scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1])
+			return $lib_d3.all().scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1])
 		}
 
 		color(index: number, cmp: number) {
@@ -145,9 +144,18 @@ namespace $.$$ {
 			return this.colorset()[cmp] || '#ccc'
 		}
 
+		// var setopac = heatmap ? function () { return 1 } : Plotly.d3.scale.linear().domain([minvalue, maxvalue]).range([0.2, 1]).clamp(true);
+		// var heatmap_color = Plotly.d3.scale.linear()
+		// 	.domain(Plotly.d3.range(0, 1, 1.0 / (visavis.heatcolors.length - 1)))
+		// 	.range(visavis.heatcolors);
+		// var scale_color = Plotly.d3.scale.linear().domain([minvalue, maxvalue]).range([0, 1]);
+		// var setcolor = heatmap
+		// 	? function (d, cmp) { return cmp ? visavis.colorset[1] : heatmap_color(scale_color(d)) }
+		// 	: function (d, cmp) { return visavis.colorset[cmp] || '#ccc' };
+
 		@ $mol_mem
 		range() {
-			return d3.scaleBand().domain(this.order('nump') as any).range([0, this.size()])
+			return $lib_d3.all().scaleBand<number>().domain(this.order()).range([0, this.size()])
 		}
 
 		svg_title_text(cell: Matrix_cell) {
@@ -161,11 +169,9 @@ namespace $.$$ {
 			return title
 		}
 
-		@ $mol_mem
-		cell_hovered(next?: Matrix_cell | null) {
-			$lib_d3.all().selectAll(".row text").classed("active", (_, index) => next?.y === index)
-			$lib_d3.all().selectAll(".column text").classed("active", (_, index) => next?.x === index)
-			return next ?? null
+		cell_hovered(cell?: Matrix_cell | null) {
+			$lib_d3.all().selectAll('.row text').classed('active', (_, index) => cell?.y === index)
+			$lib_d3.all().selectAll('.column text').classed('active', (_, index) => cell?.x === index)
 		}
 
 		@ $mol_mem_key
@@ -178,92 +184,83 @@ namespace $.$$ {
 		cell_click(cell: Matrix_cell) {
 			const coords = [ $mol_coord_pack( cell.x, cell.y ), $mol_coord_pack( cell.y, cell.x ) ]
 			coords.forEach( coord => this.cell_selected( coord, !this.cell_selected(coord) ) )
-			$lib_d3.all().selectAll(".cell").classed("visited", (item: any) => this.cell_selected( $mol_coord_pack( item.x, item.y ) ))
-
+			$lib_d3.all().selectAll('.cell').classed('visited', (item: any) => this.cell_selected( $mol_coord_pack( item.x, item.y ) ))
 			// if (visavis.mpds_embedded) {
-			// 	window.open(window.location.protocol + "//" + window.location.host + '#search/binary%20' + term.cmt);
+			// 	window.open(window.location.protocol + '//' + window.location.host + '#search/binary%20' + term.cmt);
 			// }
 		}
 
-		svg_margin_left() {
-			return -this.size()/2 + 'px'
-		}
-
-		@ $mol_mem
-		svg() {
-			const svg = $lib_d3.all().select<SVGSVGElement, unknown>("[mpds_visavis_matrix_plot]").append("svg")
-				.attr("width", this.size())
-				.attr("height", this.size())
-				.style('position', 'absolute')
-				.style('left', '50%')
-				.style('font-size', '1.1vmin')
-				.style('letter-spacing', '1px')
-				.style('margin-left', -this.size()/ 2 + 'px')
-				.append("g")
-				.attr("transform", "translate(" + 24 + "," + 26 + ")");
-		
-			svg.html('<defs><pattern id="nonformer" patternUnits="userSpaceOnUse" width="4" height="4"><path d="M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2" style="stroke:#ddd;stroke-width:1" /></pattern></defs>');
-		
-			svg.append("rect")
-				.attr("class", "bgmatrix")
-				.attr("width", this.size())
-				.attr("height", this.size());
-
-			return svg
+		draw_cells(node: SVGElement, row: Matrix_cell[]) {
+			$lib_d3.all().select(node)
+				.selectAll('.cell')
+				.data(row.filter((d: any) => d.z))
+				.join('rect')
+				.attr('class', (d: any) => d.nonformer ? 'nonformer cell' : 'cell')
+				.attr('id', (d: any) => 'c_' + this.nodes()[d.x].num.toString() + '_' + this.nodes()[d.y].num.toString())
+				.attr('x', (d: any) => this.range()(d.x) as any)
+				.attr('width', this.range().bandwidth())
+				.attr('height', this.range().bandwidth())
+				.style('fill-opacity', (d: any) => this.opacity(d.z))
+				.style('fill', (d: any) => this.color(d.z, d.cmp) )
+				.on('mouseover', (event: MouseEvent, cell: unknown) => this.cell_hovered(cell as Matrix_cell))
+				.on('mouseout', (event: MouseEvent) => this.cell_hovered(null))
+				.on('click', (event: PointerEvent, cell: unknown) => this.cell_click(cell as Matrix_cell) )
+				.append('svg:title').text(cell => this.svg_title_text(cell as any))
 		}
 
 		@ $mol_mem
 		draw() {
-			const svg = this.svg()
+			console.log(this.links_value_min(), this.links_value_max())
+			const svg = $lib_d3.all().select<SVGSVGElement, unknown>('[mpds_visavis_matrix_plot]')
+				.attr('width', this.size() + this.axis_width())
+				.attr('height', this.size() + this.axis_width())
+				.style('font-size', '1.1vmin')
+				.style('letter-spacing', '1px')
+			
+			const group = svg
+				[ svg.select('g').empty() ? 'append' : 'select' ]('g')
+				.attr('transform', `translate(${this.axis_width()},${this.axis_width()})`)
 
-			const process = (node: any, row: any) => {
-				$lib_d3.all().select(node).selectAll(".cell")
-					.data(row.filter((d: any) => d.z))
-					.enter().append("rect")
-					.attr("class", (d: any) => d.nonformer ? "nonformer cell" : "cell")
-					.attr("id", (d: any) => "c_" + this.nodes()[d.x].num.toString() + "_" + this.nodes()[d.y].num.toString())
-					.attr("x", (d: any) => this.range()(d.x) as any)
-					.attr("width", this.range().bandwidth())
-					.attr("height", this.range().bandwidth())
-					.style("fill-opacity", (d: any) => this.opacity(d.z))
-					.style("fill", (d: any) => this.color(d.z, d.cmp) )
-					.on('mouseover', (event: MouseEvent, cell: unknown) => this.cell_hovered(cell as Matrix_cell))
-					.on('mouseout', (event: MouseEvent) => this.cell_hovered(null))
-					.on("click", (event: PointerEvent, cell: unknown) => this.cell_click(cell as Matrix_cell) )
-					.append("svg:title").text(cell => this.svg_title_text(cell as any))
-			}
+			group.html("<defs><pattern id='nonformer' patternUnits='userSpaceOnUse' width='4' height='4'><path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' style='stroke:#ddd;stroke-width:1' /></pattern></defs>")
 		
-			const row = svg.selectAll(".row")
+			group.append('rect')
+				.attr('class', 'bgmatrix')
+				.attr('width', this.size())
+				.attr('height', this.size());
+
+			const draw_cells = (node: any, row: Matrix_cell[]) => this.draw_cells(node, row)
+		
+			const row = group.selectAll('.row')
 				.data(this.matrix())
-				.enter().append("g")
-				.attr("class", "row")
-				.attr("transform", (d: any, i: number) => "translate(0," + this.range()(i as any) + ")" )
-				.each(function(this: Element, row: any) { process(this, row) });
+				.join('g')
+				.attr('class', 'row')
+				.attr('transform', (d: any, i: number) => 'translate(0,' + this.range()(i as any) + ')' )
+				.each(function (row) { draw_cells(this, row) })
 		
-			row.append("line")
-				.attr("x2", this.size());
+			row.append('line')
+				.attr('x2', this.size());
 		
-			row.append("text")
-				.attr("x", -6)
-				.attr("y", this.range().bandwidth() / 2)
-				.attr("dy", ".32em")
-				.attr("text-anchor", "end")
+			row.append('text')
+				.attr('x', -6)
+				.attr('y', this.range().bandwidth() / 2)
+				.attr('dy', '.32em')
+				.attr('text-anchor', 'end')
 				.text((d, i)=> this.nodes()[i].name)
 				
-			const column = svg.selectAll(".column")
+			const column = group.selectAll('.column')
 				.data(this.matrix())
-				.enter().append("g")
-				.attr("class", "column")
-				.attr("transform", (d, i)=> "translate(" + this.range()(i as any) + ")rotate(-90)");
+				.join('g')
+				.attr('class', 'column')
+				.attr('transform', (d, i)=> 'translate(' + this.range()(i) + ')rotate(-90)');
 		
-			column.append("line")
-				.attr("x1", -this.size());
+			column.append('line')
+				.attr('x1', -this.size());
 		
-			column.append("text")
-				.attr("x", 6)
-				.attr("y", this.range().bandwidth() / 2)
-				.attr("dy", ".32em")
-				.attr("text-anchor", "start")
+			column.append('text')
+				.attr('x', 6)
+				.attr('y', this.range().bandwidth() / 2)
+				.attr('dy', '.32em')
+				.attr('text-anchor', 'start')
 				.text((d, i) => this.nodes()[i].name);
 		}
 

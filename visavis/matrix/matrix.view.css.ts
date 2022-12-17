@@ -23,6 +23,10 @@ namespace $.$$ {
 			height: rem(1),
 		},
 
+		Plot: {
+			margin: 'auto',
+		},
+
 	} )
 
 }

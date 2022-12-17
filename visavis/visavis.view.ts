@@ -45,7 +45,7 @@ namespace $.$$ {
 		pages() {
 			return [
 				this.Menu(),
-				... this.file_current().use_visavis_type === 'matrix' ? [ this.Matrix( this.file_current_title() ) ] : [],
+				... this.file_current()?.use_visavis_type === 'matrix' ? [ this.Matrix( this.file_current_title() ) ] : [],
 			]
 		}
 

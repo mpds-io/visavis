@@ -1,6 +1,20 @@
 $mpds_visavis_matrix $mol_page
 	file Object
 	tools /
+		<= Order $mol_select
+			Filter null
+			value? <=> order_current?
+			dictionary <= order_dict *
+				num @ \Atomic number
+				nump @ \Periodic number
+				size @ \Atomic size
+				rea @ \Atomic reactivity
+				rpp @ \Pseudopotential radii
+				rion @ \Ionic radii
+				rcov @ \Covalent radii
+				rmet @ \Metallic radii
+				tmelt @ \Melting temperature
+				eneg @ \Electronegativity
 		<= Heatmap_legend $mol_view sub /
 			<= heatmap_lowest @ \Lowest
 			<= Heatmap_colors $mol_view sub <= heatmap_color_list /
@@ -16,7 +30,6 @@ $mpds_visavis_matrix $mol_page
 	- value_max? 0
 	- heatmap? false
 	- matrix /
-	order* /number
 	heatmap false
 	heatmap_colors /
 		\rgb(150,0,90)
@@ -39,5 +52,9 @@ $mpds_visavis_matrix $mol_page
 		\#0f3
 		\#0ff
 		\#90c
+	order /number
+	order_current? \nump
+	plot_padding 32
+	axis_width 20
 	body /
-		<= Plot $mol_view
+		<= Plot $mol_svg

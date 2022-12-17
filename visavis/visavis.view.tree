@@ -12,6 +12,7 @@ $mpds_visavis $mol_book2
 					accept \
 					files? <=> files_open? null
 			body /
+				<= Upload $mpds_visavis_upload
 				<= History $mol_list rows <= history_rows /
 					<= File*0 $mol_link
 						arg * file <= file_title* \
@@ -19,3 +20,9 @@ $mpds_visavis $mol_book2
 		<= Matrix*title $mpds_visavis_matrix
 			title <= file_current_title \
 			file <= file_current Object
+
+$mpds_visavis_upload $mol_button_open
+	sub /
+		<= Icon
+		<= title @ \Drop a plot from MPDS in JSON here or browse
+		<= Native
