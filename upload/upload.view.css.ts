@@ -2,7 +2,7 @@ namespace $.$$ {
 
 	const { px } = $mol_style_unit
 
-	$mol_style_define( $.$mpds_visavis_upload, {
+	$mol_style_define( $.$visavis_upload, {
 		margin: $mol_gap.block,
 		padding: $mol_gap.block,
 		gap: $mol_gap.block,

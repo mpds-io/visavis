@@ -2,7 +2,7 @@ namespace $.$$ {
 
 	const { rem, px } = $mol_style_unit
 
-	$mol_style_define( $.$mpds_visavis, {
+	$mol_style_define( $.$visavis_app, {
 
 		Menu: {
 			flex: {

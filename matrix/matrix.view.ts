@@ -43,7 +43,7 @@ namespace $.$$ {
 		nonformer: boolean 
 	}
 
-	export class $mpds_visavis_matrix extends $.$mpds_visavis_matrix {
+	export class $visavis_matrix extends $.$visavis_matrix {
 
 		@ $mol_mem
 		data() {
@@ -103,7 +103,7 @@ namespace $.$$ {
 			}
 
 			if (this.nonformers()) {
-				for (const item of $mpds_visavis_nonformer_pd_bin) {
+				for (const item of $visavis_nonformer_pd_bin) {
 					matrix[item[0]][item[1]].z = 1;
 					matrix[item[1]][item[0]].z = 1; // NB only AB-all
 					matrix[item[0]][item[1]].nonformer = true;
@@ -212,7 +212,7 @@ namespace $.$$ {
 		draw() {
 			if (Number.isNaN( this.size() )) return
 
-			const svg = $lib_d3.all().select<SVGSVGElement, unknown>('[mpds_visavis_matrix_plot]')
+			const svg = $lib_d3.all().select<SVGSVGElement, unknown>('[visavis_app_matrix_plot]')
 				.attr('width', this.size() + this.axis_width())
 				.attr('height', this.size() + this.axis_width())
 				.style('font-size', '1.1vmin')

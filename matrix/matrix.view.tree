@@ -1,4 +1,4 @@
-$mpds_visavis_matrix $mol_page
+$visavis_matrix $mol_page
 	file Object
 	tools /
 		<= Order $mol_select

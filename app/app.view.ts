@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	export class $mpds_visavis extends $.$mpds_visavis {
+	export class $visavis_app extends $.$visavis_app {
 
 		async load_file( blob: Blob ) {
 			return new Promise< string >( ( done, fail )=> {
@@ -15,10 +15,8 @@ namespace $.$$ {
 		files_open(next: readonly File[]) {
 			if (next.length === 0) return null
 
-			const json = $mol_wire_sync( this as $mpds_visavis ).load_file( next[0] )
+			const json = $mol_wire_sync( this as $visavis_app ).load_file( next[0] )
 			const file = { title: next[0].name, data: JSON.parse( json ) }
-
-			this.$.$mol_state_arg.value( 'file', file.title )
 
 			this.history( [...this.history().filter( obj => obj.title !== file.title ), file] )
 		}

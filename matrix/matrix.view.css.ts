@@ -2,7 +2,7 @@ namespace $.$$ {
 
 	const { per, rem } = $mol_style_unit
 
-	$mol_style_define( $.$mpds_visavis_matrix, {
+	$mol_style_define( $.$visavis_matrix, {
 
 		flex: {
 			basis: rem(60),
