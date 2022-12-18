@@ -76,6 +76,14 @@ namespace $.$$ {
 			}, false )
 		}
 
+		tools() {
+			return [
+				this.Order(),
+				... this.heatmap() ? [ this.Heatmap_legend() ] : [],
+				this.Nonformers(),
+			]
+		}
+
 		@ $mol_mem
 		order() {
 			return $lib_d3.all().range(95).sort( (a, b) => this.nodes()[a][ this.order_current() ] - this.nodes()[b][ this.order_current() ] )
@@ -108,8 +116,9 @@ namespace $.$$ {
 
 		@ $mol_mem
 		size() {
-			const { width = 0, height = 0 } = this.Body().view_rect() ?? {}
-			return Math.min(width, height) - this.plot_padding() - this.axis_width()
+			const rect = this.Body().view_rect()
+			if (!rect) return NaN
+			return Math.min(rect.width, rect.height) - this.plot_padding() - this.axis_width()
 		}
 
 		@ $mol_mem
@@ -201,7 +210,8 @@ namespace $.$$ {
 
 		@ $mol_mem
 		draw() {
-			console.log(this.links_value_min(), this.links_value_max())
+			if (Number.isNaN( this.size() )) return
+
 			const svg = $lib_d3.all().select<SVGSVGElement, unknown>('[mpds_visavis_matrix_plot]')
 				.attr('width', this.size() + this.axis_width())
 				.attr('height', this.size() + this.axis_width())
@@ -252,7 +262,7 @@ namespace $.$$ {
 				.attr('y', this.range().bandwidth() / 2)
 				.attr('dy', '.32em')
 				.attr('text-anchor', 'start')
-				.text((d, i: any) => this.nodes()[i].name);
+				.text((d: any, i: any) => this.nodes()[i].name);
 		}
 
 		auto() {

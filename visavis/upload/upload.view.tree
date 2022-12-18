@@ -1,0 +1,8 @@
+$mpds_visavis_upload $mol_button_open
+	sub /
+		<= Icon
+		<= title @ \Drop a plot from MPDS in JSON here or browse
+		<= Native
+		<= Drop $mol_drop
+			receive? <=> receive? null
+			Sub <= Drop_area $mol_view

@@ -17,7 +17,10 @@ namespace $.$$ {
 
 			const json = $mol_wire_sync( this as $mpds_visavis ).load_file( next[0] )
 			const file = { title: next[0].name, data: JSON.parse( json ) }
-			this.history( [...this.history(), file] )
+
+			this.$.$mol_state_arg.value( 'file', file.title )
+
+			this.history( [...this.history().filter( obj => obj.title !== file.title ), file] )
 		}
 
 		@ $mol_mem
