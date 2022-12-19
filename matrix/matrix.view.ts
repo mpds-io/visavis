@@ -86,12 +86,12 @@ namespace $.$$ {
 
 		@ $mol_mem
 		order() {
-			return $lib_d3.all().range(95).sort( (a, b) => this.nodes()[a][ this.order_current() ] - this.nodes()[b][ this.order_current() ] )
+			return $lib_d3.all().range(95).sort( (a: any, b: any) => this.nodes()[a][ this.order_current() ] - this.nodes()[b][ this.order_current() ] )
 		}
 
 		@ $mol_mem
 		matrix() {
-			const matrix: Matrix_cell[][] = this.nodes().map( (node, i) => $lib_d3.all().range(95).map( j => ({ x: j, y: i, z: 0, cmt: '', cmp: 0, nonformer: false }) ) )
+			const matrix: Matrix_cell[][] = this.nodes().map( (node, i) => $lib_d3.all().range(95).map( (j: any) => ({ x: j, y: i, z: 0, cmt: '', cmp: 0, nonformer: false }) ) )
 
 			for (const link of this.links()) {
 				matrix[link.source][link.target].z += link.value;
@@ -155,7 +155,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		range() {
-			return $lib_d3.all().scaleBand<number>().domain(this.order()).range([0, this.size()])
+			return $lib_d3.all().scaleBand().domain(this.order()).range([0, this.size()])
 		}
 
 		svg_title_text(cell: Matrix_cell) {
@@ -170,8 +170,8 @@ namespace $.$$ {
 		}
 
 		cell_hovered(cell?: Matrix_cell | null) {
-			$lib_d3.all().selectAll('.row text').classed('active', (_, index) => cell?.y === index)
-			$lib_d3.all().selectAll('.column text').classed('active', (_, index) => cell?.x === index)
+			$lib_d3.all().selectAll('.row text').classed('active', (_: any, index: number) => cell?.y === index)
+			$lib_d3.all().selectAll('.column text').classed('active', (_: any, index: number) => cell?.x === index)
 		}
 
 		@ $mol_mem_key
@@ -205,14 +205,14 @@ namespace $.$$ {
 				.on('mouseover', (event: MouseEvent, cell: unknown) => this.cell_hovered(cell as Matrix_cell))
 				.on('mouseout', (event: MouseEvent) => this.cell_hovered(null))
 				.on('click', (event: PointerEvent, cell: unknown) => this.cell_click(cell as Matrix_cell) )
-				.append('svg:title').text(cell => this.svg_title_text(cell as any))
+				.append('svg:title').text((cell: any) => this.svg_title_text(cell))
 		}
 
 		@ $mol_mem
 		draw() {
 			if (Number.isNaN( this.size() )) return
 
-			const svg = $lib_d3.all().select<SVGSVGElement, unknown>('[visavis_app_matrix_plot]')
+			const svg = $lib_d3.all().select('[visavis_app_matrix_plot]')
 				.attr('width', this.size() + this.axis_width())
 				.attr('height', this.size() + this.axis_width())
 				.style('font-size', '1.1vmin')
@@ -236,7 +236,7 @@ namespace $.$$ {
 				.join('g')
 				.attr('class', 'row')
 				.attr('transform', (d: any, i: number) => 'translate(0,' + this.range()(i as any) + ')' )
-				.each(function (row) { draw_cells(this, row) })
+				.each(function (this: any, row: any) { draw_cells(this, row) })
 		
 			row.append('line')
 				.attr('x2', this.size());
@@ -246,13 +246,13 @@ namespace $.$$ {
 				.attr('y', this.range().bandwidth() / 2)
 				.attr('dy', '.32em')
 				.attr('text-anchor', 'end')
-				.text((d, i)=> this.nodes()[i].name)
+				.text((d: any, i: any)=> this.nodes()[i].name)
 				
 			const column = group.selectAll('.column')
 				.data(this.matrix())
 				.join('g')
 				.attr('class', 'column')
-				.attr('transform', (d, i)=> 'translate(' + this.range()(i) + ')rotate(-90)');
+				.attr('transform', (d: any, i: any)=> 'translate(' + this.range()(i) + ')rotate(-90)');
 		
 			column.append('line')
 				.attr('x1', -this.size());
