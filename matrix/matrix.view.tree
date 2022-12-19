@@ -55,6 +55,6 @@ $visavis_matrix $mol_page
 	order /number
 	order_current? \nump
 	plot_padding 32
-	axis_width 20
+	axis_width 24
 	body /
 		<= Plot $mol_svg
