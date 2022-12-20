@@ -1,30 +1,5 @@
-$visavis_matrix $mol_page
+$visavis_matrix $mol_book2
 	file Object
-	tools /
-		<= Order $mol_select
-			Filter null
-			value? <=> order_current?
-			dictionary <= order_dict *
-				num @ \Atomic number
-				nump @ \Periodic number
-				size @ \Atomic size
-				rea @ \Atomic reactivity
-				rpp @ \Pseudopotential radii
-				rion @ \Ionic radii
-				rcov @ \Covalent radii
-				rmet @ \Metallic radii
-				tmelt @ \Melting temperature
-				eneg @ \Electronegativity
-		<= Heatmap_legend $mol_view sub /
-			<= heatmap_lowest @ \Lowest
-			<= Heatmap_colors $mol_view sub <= heatmap_color_list /
-				<= Heatmap_color*0 $mol_view
-					style * background <= heatmap_color* \
-			<= heatmap_higest @ \Higest
-		<= Nonformers $mol_check_box
-			hint @ \Continuous solid solutions and complete insolubility systems
-			title @ \Show non-formers
-			checked? <=> nonformers? false
 	size 0
 	- value_min? 0
 	- value_max? 0
@@ -56,5 +31,39 @@ $visavis_matrix $mol_page
 	order_current? \nump
 	plot_padding 32
 	axis_width 24
-	body /
-		<= Plot $mol_svg
+	pages /
+		<= Plot $mol_page
+			title <= title
+			body <= plot_body /
+				<= Root $mol_svg
+				<= Side_right $mol_scroll
+					sub /
+						<= Heatmap_legend $mol_list
+							rows <= heatmap_color_list /
+								<= Heatmap_color*0 $mol_view
+									style * background <= heatmap_color* \
+			auto <= draw null
+		<= Setup $mol_page
+			title @ \Setup
+			body /
+				<= Nonformers_label $mol_labeler
+					title @ \Non-formers
+					content / <= Nonformers $mol_check_box
+						hint @ \Continuous solid solutions and complete insolubility systems
+						title @ \Show
+						checked? <=> nonformers? false
+				<= Order_label $mol_labeler
+					title @ \Sort by
+					content / <= Order_switch $mol_switch
+						value? <=> order_current?
+						options <= order_dict *
+							num @ \Atomic number
+							nump @ \Periodic number
+							size @ \Atomic size
+							rea @ \Atomic reactivity
+							rpp @ \Pseudopotential radii
+							rion @ \Ionic radii
+							rcov @ \Covalent radii
+							rmet @ \Metallic radii
+							tmelt @ \Melting temperature
+							eneg @ \Electronegativity

@@ -12,10 +12,18 @@ namespace $.$$ {
 		},
 
 		Matrix: {
-			flex: {
-				basis: rem(60),
-				shrink: 0,
+			Plot: {
+				flex: {
+					basis: rem(60),
+					shrink: 0,
+				},
 			},
+			Setup: {
+				flex: {
+					basis: rem(25),
+					shrink: 0,
+				}
+			}
 		},
 
 	} )

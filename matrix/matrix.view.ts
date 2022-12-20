@@ -76,11 +76,10 @@ namespace $.$$ {
 			}, false )
 		}
 
-		tools() {
+		plot_body() {
 			return [
-				this.Order(),
-				... this.heatmap() ? [ this.Heatmap_legend() ] : [],
-				this.Nonformers(),
+				this.Root(),
+				... this.heatmap() ? [ this.Side_right() ] : [],
 			]
 		}
 
@@ -116,7 +115,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		size() {
-			const rect = this.Body().view_rect()
+			const rect = this.Plot().Body().view_rect()
 			if (!rect) return NaN
 			return Math.min(rect.width, rect.height) - this.plot_padding() - this.axis_width()
 		}
@@ -212,10 +211,10 @@ namespace $.$$ {
 		draw() {
 			if (Number.isNaN( this.size() )) return
 
-			const svg = $lib_d3.all().select('[visavis_app_matrix_plot]')
+			const svg = $lib_d3.all().select('[visavis_matrix_root]')
 				.attr('width', this.size() + this.axis_width())
 				.attr('height', this.size() + this.axis_width())
-				.style('font-size', '1.1vmin')
+				.style('font-size', this.range().bandwidth())
 				.style('letter-spacing', '1px')
 			
 			const group = svg
@@ -263,10 +262,6 @@ namespace $.$$ {
 				.attr('dy', '.32em')
 				.attr('text-anchor', 'start')
 				.text((d: any, i: any) => this.nodes()[i].name);
-		}
-
-		auto() {
-			this.draw()
 		}
 
 	}
