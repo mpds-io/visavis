@@ -22,6 +22,13 @@ namespace $.$$ {
 			margin: px(1),
 		},
 
+		Heatmap_legend: {
+			alignItems: 'flex-end',
+			flex: {
+				direction: 'column-reverse',
+			},
+		},
+
 		Root: {
 			margin: 'auto',
 		},

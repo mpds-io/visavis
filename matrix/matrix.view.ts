@@ -139,7 +139,11 @@ namespace $.$$ {
 		}
 
 		heatmap_color_list() {
-			return this.heatmap_colors().map( (_, index) => this.Heatmap_color(index) )
+			return [
+				this.Heatmap_min(),
+				... this.heatmap_colors().map( (_, index) => this.Heatmap_color(index) ),
+				this.Heatmap_max(),
+			]
 		}
 
 		@ $mol_mem

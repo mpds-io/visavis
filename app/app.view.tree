@@ -5,17 +5,29 @@ $visavis_app $mol_book2
 		<= Menu $mol_page
 			title \Vis-a-vis
 			tools /
+				<= Upload $mol_button_open
+					hint @ \Upload a plot from MPDS in JSON
+					accept \application/json
+					files? <=> files_open? null
+			body /
+				<= Deck $mol_deck
+					items /
+						<= History $mol_list
+							title @ \Uploads
+							rows <= history_rows /
+								<= File*0 $mol_link
+									arg * file <= file_title* \
+									title <= file_title*
+						<= Examples $mol_list
+							title @ \Examples
+							rows <= example_rows /
+								<= Example*0 $mol_link
+									arg * file <= example_title* \
+									title <= example_title*
+			foot /
 				<= Source $mol_link_source
 					uri \https://github.com/PavelZubkov/visavis
 				<= Lights $mol_lights_toggle
-			body /
-				<= Upload $visavis_upload
-					accept \
-					files? <=> files_open? null
-				<= History $mol_list rows <= history_rows /
-					<= File*0 $mol_link
-						arg * file <= file_title* \
-						title <= file_title*
 		<= Matrix*title $visavis_matrix
 			title <= file_current_title \
 			file <= file_current Object

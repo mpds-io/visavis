@@ -1,11 +1,10 @@
 $visavis_matrix $mol_book2
 	file Object
 	size 0
-	- value_min? 0
-	- value_max? 0
-	- heatmap? false
-	- matrix /
-	heatmap false
+	links_value_min? 0
+	links_value_max? 0
+	heatmap? false
+	matrix /
 	heatmap_colors /
 		\rgb(150,0,90)
 		\rgb(0,0,200)
@@ -40,8 +39,10 @@ $visavis_matrix $mol_book2
 					sub /
 						<= Heatmap_legend $mol_list
 							rows <= heatmap_color_list /
+								<= Heatmap_min $mol_view sub / <= links_value_min
 								<= Heatmap_color*0 $mol_view
 									style * background <= heatmap_color* \
+								<= Heatmap_max $mol_view sub / <= links_value_max
 			auto <= draw null
 		<= Setup $mol_page
 			title @ \Setup
