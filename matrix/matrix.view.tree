@@ -1,5 +1,5 @@
 $visavis_matrix $mol_book2
-	file Object
+	plot $visavis_plot
 	size 0
 	links_value_min? 0
 	links_value_max? 0
@@ -32,7 +32,7 @@ $visavis_matrix $mol_book2
 	axis_width 24
 	pages /
 		<= Plot $mol_page
-			title <= title
+			title <= plot_title \
 			body <= plot_body /
 				<= Root $mol_svg
 				<= Side_right $mol_scroll
@@ -49,17 +49,17 @@ $visavis_matrix $mol_book2
 			body /
 				<= Nonformers_label $mol_labeler
 					title @ \Non-formers
-					content / <= Nonformers $mol_check_box
+					Content <= Nonformers $mol_check_box
 						hint @ \Continuous solid solutions and complete insolubility systems
 						title @ \Show
 						checked? <=> nonformers? false
 				<= Order_label $mol_labeler
 					title @ \Sort by
-					content / <= Order_switch $mol_switch
+					Content <= Order_switch $mol_switch
 						value? <=> order_current?
 						options <= order_dict *
-							num @ \Atomic number
 							nump @ \Periodic number
+							num @ \Atomic number
 							size @ \Atomic size
 							rea @ \Atomic reactivity
 							rpp @ \Pseudopotential radii

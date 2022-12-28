@@ -1,38 +1,34 @@
 namespace $.$$ {
 
-	type Matrix_node = {
-		name: string
-		num: number
-		nump: number
-		size: number
-		rea: number
-		rpp: number
-		rion: number
-		rcov: number
-		rmet: number
-		tmelt: number
-		eneg: number
-		count?: number
-	}
+	const $visavis_matrix_json_node = $mol_data_record({
+		name: $mol_data_string,
+		num: $mol_data_number,
+		nump: $mol_data_number,
+		size: $mol_data_number,
+		rea: $mol_data_number,
+		rpp: $mol_data_number,
+		rion: $mol_data_number,
+		rcov: $mol_data_number,
+		rmet: $mol_data_number,
+		tmelt: $mol_data_number,
+		eneg: $mol_data_number,
+		count: $mol_data_optional( $mol_data_number ),
+	})
 
-	type Matrix_link = {
-		source: number
-		target: number
-		value: number
-		cmt: string
-		cmp?: number
-	}
+	const $visavis_matrix_json_link = $mol_data_record({
+		source: $mol_data_number,
+		target: $mol_data_number,
+		value: $mol_data_number,
+		cmt: $mol_data_string,
+		cmp: $mol_data_optional( $mol_data_number ),
+	})
 
-	type Matrix = {
-		error: null | Error
-		payload: {
-			nodes: Matrix_node[],
-			links: Matrix_link[],
-			fixel: null,
-		}
-		answerto: string
-		use_visavis_type: 'matrix'
-	}
+	const $visavis_matrix_json = $mol_data_record({
+		payload: $mol_data_record({
+			nodes: $mol_data_array( $visavis_matrix_json_node ),
+			links: $mol_data_array( $visavis_matrix_json_link )
+		}),
+	})
 
 	type Matrix_cell = {
 		x: number
@@ -47,7 +43,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		data() {
-			return this.file() as Matrix
+			return $visavis_matrix_json( this.plot().json() as any )
 		}
 		
 		nodes() {
@@ -56,7 +52,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		links() {
-			return this.data().payload.links.sort( (a, b) => a.value - b.value )
+			return this.data().payload.links.slice().sort( (a, b) => a.value - b.value )
 		}
 
 		links_value_min() {
@@ -74,6 +70,10 @@ namespace $.$$ {
 				else if (link.cmp) return false
 				return heatmap
 			}, false )
+		}
+
+		plot_title() {
+			return this.plot().id()
 		}
 
 		plot_body() {
@@ -193,6 +193,7 @@ namespace $.$$ {
 			// }
 		}
 
+		@ $mol_mem_key
 		draw_cells(node: SVGElement, row: Matrix_cell[]) {
 			$lib_d3.all().select(node)
 				.selectAll('.cell')

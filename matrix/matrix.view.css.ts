@@ -39,6 +39,12 @@ namespace $.$$ {
 			},
 		},
 
+		Setup: {
+			Body: {
+				padding: $mol_gap.block,
+			},
+		},
+
 	} )
 
 }

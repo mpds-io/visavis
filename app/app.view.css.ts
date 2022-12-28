@@ -9,6 +9,15 @@ namespace $.$$ {
 				basis: rem(25),
 				shrink: 0,
 			},
+			Body: {
+				padding: $mol_gap.block,
+			},
+		},
+
+		Plot_link: {
+			flex: {
+				grow: 1,
+			},
 		},
 
 		Matrix: {

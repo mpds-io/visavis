@@ -2,51 +2,82 @@ namespace $.$$ {
 
 	export class $visavis_app extends $.$visavis_app {
 
-		async load_file( blob: Blob ) {
-			return new Promise< string >( ( done, fail )=> {
-				const reader = new FileReader
-				reader.onerror = fail
-				reader.onload = event => done( event.target!.result as string )
-				reader.readAsText( blob )
-			} )
+		@ $mol_action
+		files_read(next: readonly File[]) {
+			const data = $mol_wire_sync( $mol_blob_json )( next[0] )
+
+			const plot = new $visavis_plot({
+				id: next[0].name,
+				type: data.use_visavis_type ?? 'unknown',
+				json: data,
+			})
+
+			this.history_add( plot )
 		}
 
 		@ $mol_action
-		files_open(next: readonly File[]) {
-			if (next.length === 0) return null
+		history_add(plot: $visavis_plot) {
+			const duplicates = this.history_plots().filter( id => id.replace(/\[\d+?\]/, '') === plot.id() )
+			const count = Math.max( ... duplicates.map( id => Number( id.match(/\[(\d+?)\]$/)?.[1] ?? 0 ) ) )
+			const postfix = duplicates.length ? `[${ count + 1 }]` : ''
 
-			const json = $mol_wire_sync( this as $visavis_app ).load_file( next[0] )
-			const file = { title: next[0].name, data: JSON.parse( json ) }
+			plot.id( `${ plot.id() }${ postfix }` )
 
-			this.history( [...this.history().filter( obj => obj.title !== file.title ), file] )
+			this.history_plot(plot.id(), plot )
+			this.history_plots( [ ...this.history_plots(), plot.id() ] )
+		}
+
+		@ $mol_action
+		history_drop(id: string) {
+			this.history_plot(id, null)
+			this.history_plots( this.history_plots().filter( plot_id => plot_id !== id ) )
+		}
+
+		@ $mol_mem_key
+		history_plots(next?: string[]) {
+			return this.$.$mol_state_local.value( `${this}.history_plots()` , next ) ?? []
+		}
+
+		@ $mol_mem_key
+		history_plot(id: string, next?: $visavis_plot | null) {
+			const json = this.$.$mol_state_local.value( `${this}.history_plot('${id}')` , next && next.data() )
+			return json ? new $visavis_plot( json ) : null
 		}
 
 		@ $mol_mem
-		history(next?: { title: string, data: any }[]) {
-			return this.$.$mol_state_local.value( `${this}.history()`, next ) ?? []
-		}
-
-		file_title(id: number) {
-			return this.history()[id].title
-		}
-
 		history_rows() {
-			return this.history().map( (_, index)=> this.File(index) ).reverse()
+			return this.history_plots().map( (id)=> this.Plot(id) ).reverse()
 		}
 
-		file_current_title() {
-			return this.$.$mol_state_arg.value( 'file' ) ?? ''
+		plot_id(id: string) {
+			return id 
 		}
 
-		file_current() {
-			const found = this.history().find( obj => obj.title === this.file_current_title() )
-			return found?.data
+		plot_opened(next?: string | null) {
+			return this.$.$mol_state_arg.value( 'file' , next ) ?? ''
+		}
+
+		Plot_opened() {
+			const id = this.plot_opened()
+			if (!id) return []
+
+			const plot = this.history_plot( id )
+			if (!plot) return []
+
+			switch( plot.type() ) {
+				case 'matrix': return this.Matrix( plot ).pages()
+				default: return []
+			}
+		}
+
+		plot(plot: $visavis_plot) {
+			return plot
 		}
 
 		pages() {
 			return [
 				this.Menu(),
-				... this.file_current()?.use_visavis_type === 'matrix' ? this.Matrix( this.file_current_title() ).pages() : [],
+				... this.Plot_opened(),
 			]
 		}
 
