@@ -1,6 +1,7 @@
 namespace $.$$ {
 
-	const { rem, px } = $mol_style_unit
+	const { rem, per } = $mol_style_unit
+	const { calc } = $mol_style_func
 
 	$mol_style_define( $.$visavis_app, {
 
@@ -10,6 +11,9 @@ namespace $.$$ {
 				shrink: 0,
 			},
 			Body: {
+				padding: $mol_gap.block,
+			},
+			Foot: {
 				padding: $mol_gap.block,
 			},
 		},
@@ -23,7 +27,7 @@ namespace $.$$ {
 		Matrix: {
 			Plot: {
 				flex: {
-					basis: rem(60),
+					basis: calc( `${ per(100) } - ${ rem(50) }` ),
 					shrink: 0,
 				},
 			},
