@@ -1,6 +1,5 @@
 $visavis_app $mol_book2
-	plugins /
-		<= Theme $mol_theme_auto
+	attr * mol_theme \$mol_theme_light
 	pages /
 		<= Menu $mol_page
 			title \Vis-a-vis
@@ -31,6 +30,5 @@ $visavis_app $mol_book2
 			foot /
 				<= Source $mol_link_source
 					uri \https://github.com/mpds-io/visavis
-				<= Lights $mol_lights_toggle
 		<= Matrix*plot $visavis_matrix
 			plot <= plot* $visavis_plot
