@@ -42,17 +42,17 @@ namespace $.$$ {
 	export class $visavis_matrix extends $.$visavis_matrix {
 
 		@ $mol_mem
-		data() {
+		json() {
 			return $visavis_matrix_json( this.plot().json() as any )
 		}
 		
 		nodes() {
-			return this.data().payload.nodes
+			return this.json().payload.nodes
 		}
 
 		@ $mol_mem
 		links() {
-			return this.data().payload.links.slice().sort( (a, b) => a.value - b.value )
+			return this.json().payload.links.slice().sort( (a, b) => a.value - b.value )
 		}
 
 		links_value_min() {

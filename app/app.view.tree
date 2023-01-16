@@ -32,3 +32,5 @@ $visavis_app $mol_book2
 					uri \https://github.com/mpds-io/visavis
 		<= Matrix*plot $visavis_matrix
 			plot <= plot* $visavis_plot
+		<= Cube*plot $visavis_cube
+			plot <= plot*

@@ -2,7 +2,7 @@ namespace $ {
 
 	interface Plot {
 		id: string
-		type: 'matrix' | string
+		type: 'matrix' | 'plot3d' | string
 		json: unknown
 	}
 

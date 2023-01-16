@@ -1,0 +1,28 @@
+$visavis_cube $mol_book2
+	plot $visavis_plot
+	heatmap? false
+	order* /number
+	order_current? \nump
+	x_op false
+	y_op false
+	z_op false
+	x_sort \nump
+	y_sort \nump
+	z_sort \nump
+	colorset /
+		\#3e3f95
+		\#c00
+		\#FE9A2E
+		\#090
+		\#f0f
+		\#09f
+		\#666
+		\#0f3
+		\#0ff
+		\#90c
+	pages /
+		<= Plot $mol_page
+			title <= plot_title \
+			body <= plot_body /
+				<= Root $mol_view
+			auto <= draw null
