@@ -26,3 +26,27 @@ $visavis_cube $mol_book2
 			body <= plot_body /
 				<= Root $mol_view
 			auto <= draw null
+		<= Setup $mol_page
+			title @ \Setup
+			body /
+				<= Nonformers_label $mol_labeler
+					title @ \Non-formers
+					Content <= Nonformers $mol_check_box
+						hint @ \Continuous solid solutions and complete insolubility systems
+						title @ \Show
+						checked? <=> nonformers? false
+				- <= Order_label $mol_labeler
+					title @ \Sort by
+					Content <= Order_switch $mol_switch
+						value? <=> order_current?
+						options <= order_dict *
+							nump @ \Periodic number
+							num @ \Atomic number
+							size @ \Atomic size
+							rea @ \Atomic reactivity
+							rpp @ \Pseudopotential radii
+							rion @ \Ionic radii
+							rcov @ \Covalent radii
+							rmet @ \Metallic radii
+							tmelt @ \Melting temperature
+							eneg @ \Electronegativity

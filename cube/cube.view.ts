@@ -38,18 +38,38 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
+		data_nonformers() {
+			const { x, y, z, labels } = $visavis_nonformer_pd_tri
+			return {
+				type: "scatter3d",
+				text: labels,
+				mode: "markers",
+				hoverinfo: "text",
+				marker: {color: "#ccc", size: 4, opacity: 0.9},
+				projection: {x: {show: true, opacity: 0.25}, y: {show: true, opacity: 0.25}, z: {show: true, opacity: 0.25}},
+				...this.convert_to_axes(x, y, z, 'nump', 'nump', 'nump')
+			}
+		}
+
+		@ $mol_mem
 		data() {
-			return [Object.assign(
-				{
+			return {
 				type: "scatter3d",
 				text: this.json().payload.points.labels,
 				mode: "markers",
 				hoverinfo: "text",
 				marker: this.marker(),
-				projection: {x: {show: true, opacity: 0.05}, y: {show: true, opacity: 0.05}, z: {show: true, opacity: 0.05}}
-				},
-				this.convert_to_axes(this.json().payload.points.x, this.json().payload.points.y, this.json().payload.points.z, 'nump', 'nump', 'nump')
-			)]
+				projection: {x: {show: true, opacity: 0.05}, y: {show: true, opacity: 0.05}, z: {show: true, opacity: 0.05}},
+				...this.convert_to_axes(this.json().payload.points.x, this.json().payload.points.y, this.json().payload.points.z, 'nump', 'nump', 'nump')
+			}
+		}
+
+		@ $mol_mem
+		data_shown() {
+			return [
+				... this.nonformers() ? [this.data_nonformers()] : [],
+				this.data(),
+			]
 		}
 
 		@ $mol_mem
@@ -95,7 +115,7 @@ namespace $.$$ {
 					ticktext: this.order_els(this.z_sort()).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
 					tickvals: $lib_d3.all().range(1, 96, 2)
 				},
-				camera: {projection: {type: 'orthographic'}}
+				camera: {projection: {type: 'perspective'}},
 			}	
 		}
 
@@ -105,7 +125,7 @@ namespace $.$$ {
 
 			return $lib_plotly.all().react(
 				this.Root().dom_node() as HTMLElement,
-				this.data() as any, 
+				this.data_shown() as any, 
 				{
 					font: {family: "Exo2"},
 					showlegend: false,
