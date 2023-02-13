@@ -1,23 +1,35 @@
 namespace $.$$ {
 
-	const $visavis_cube_json = $mol_data_record({
-		payload: $mol_data_record({
-			tcube: $mol_data_optional( $mol_data_boolean ),
-			points: $mol_data_record({
-				x: $mol_data_array( $mol_data_number ),
-				y: $mol_data_array( $mol_data_number ),
-				z: $mol_data_array( $mol_data_number ),
-				v: $mol_data_array( $mol_data_number ),
-				labels: $mol_data_array( $mol_data_string ),
-			}),
-			fixel: $mol_data_nullable( $mol_data_boolean ),
-			xtitle: $mol_data_optional( $mol_data_string ),
-			ytitle: $mol_data_optional( $mol_data_string ),
-			ztitle: $mol_data_optional( $mol_data_string ),
-		}),
+	const $visavis_phase_json = $mol_data_record({
+		temp: $mol_data_array( $mol_data_number ),
+		arity: $mol_data_number,
+		entry: $mol_data_string,
+		naxes: $mol_data_number,
+		labels: $mol_data_array( (item: any) => $mol_data_setup((item: any) => item, item) ), // Array<[string, number[], null | number]>
+		shapes: $mol_data_array($mol_data_record({
+			kind: $mol_data_string,
+			svgpath: $mol_data_string,
+			label: $mol_data_optional($mol_data_string),
+			phase: $mol_data_optional($mol_data_string),
+			nphases: $mol_data_optional($mol_data_number),
+			is_solid: $mol_data_optional($mol_data_boolean),
+			phase_id: $mol_data_optional($mol_data_number),
+			reflabel: $mol_data_optional($mol_data_number),
+			chemical_elements: $mol_data_optional($mol_data_array($mol_data_string)),
+		})),
+		diatype: $mol_data_string,
+		title_a: $mol_data_string,
+		title_b: $mol_data_string,
+		comp_end: $mol_data_dict( $mol_data_number ),
+		comp_range: $mol_data_array($mol_data_number),
+		comp_start: $mol_data_dict( $mol_data_number ),
+		chemical_elements: $mol_data_array($mol_data_string),
+		object_repr: $mol_data_string,
+		object_type: $mol_data_string,
+		use_visavis_type: $mol_data_const('pd'),
 	})
 
-	export class $visavis_cube extends $.$visavis_cube {
+	export class $visavis_phase extends $.$visavis_phase {
 
 		plot_body() {
 			return [
@@ -31,7 +43,7 @@ namespace $.$$ {
 		}
 
 		json() {
-			return $visavis_cube_json( this.plot().json() as any )
+			return $visavis_phase_json( this.plot().json() as any )
 		}
 
 		@ $mol_mem

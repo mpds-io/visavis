@@ -6,9 +6,9 @@ $visavis_cube $mol_book2
 	x_op false
 	y_op false
 	z_op false
-	x_sort \nump
-	y_sort \nump
-	z_sort \nump
+	x_sort? \nump
+	y_sort? \nump
+	z_sort? \nump
 	colorset /
 		\#3e3f95
 		\#c00
@@ -20,11 +20,29 @@ $visavis_cube $mol_book2
 		\#0f3
 		\#0ff
 		\#90c
+	heatmap_colors /
+		\rgb(150,0,90)
+		\rgb(0,0,200)
+		\rgb(0,25,255)
+		\rgb(0,152,255)
+		\rgb(44,255,150)
+		\rgb(151,255,0)
+		\rgb(255,234,0)
+		\rgb(255,111,0)
+		\rgb(255,0,0)
 	pages /
 		<= Plot $mol_page
 			title <= plot_title \
 			body <= plot_body /
 				<= Root $mol_view
+				<= Side_right $mol_scroll
+					sub /
+						<= Heatmap_legend $mol_list
+							rows <= heatmap_color_list /
+								<= Heatmap_min $mol_view sub / <= value_min
+								<= Heatmap_color*0 $mol_view
+									style * background <= heatmap_color* \
+								<= Heatmap_max $mol_view sub / <= value_max
 			auto <= draw null
 		<= Setup $mol_page
 			title @ \Setup
@@ -35,11 +53,11 @@ $visavis_cube $mol_book2
 						hint @ \Continuous solid solutions and complete insolubility systems
 						title @ \Show
 						checked? <=> nonformers? false
-				- <= Order_label $mol_labeler
-					title @ \Sort by
-					Content <= Order_switch $mol_switch
-						value? <=> order_current?
-						options <= order_dict *
+				<= X_order_label $mol_labeler
+					title @ \X sort by
+					Content <= X_order_select $mol_select
+						value? <=> x_sort? 
+						dictionary <= order_dict *
 							nump @ \Periodic number
 							num @ \Atomic number
 							size @ \Atomic size
@@ -50,3 +68,13 @@ $visavis_cube $mol_book2
 							rmet @ \Metallic radii
 							tmelt @ \Melting temperature
 							eneg @ \Electronegativity
+				<= Y_order_label $mol_labeler
+					title @ \Y sort by
+					Content <= Y_order_select $mol_select
+						value? <=> y_sort? 
+						dictionary <= order_dict
+				<= Z_order_label $mol_labeler
+					title @ \Z sort by
+					Content <= Z_order_select $mol_select
+						value? <=> z_sort? 
+						dictionary <= order_dict
