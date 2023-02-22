@@ -34,3 +34,5 @@ $visavis_app $mol_book2
 			plot <= plot* $visavis_plot
 		<= Cube*plot $visavis_cube
 			plot <= plot*
+		<= Phase*plot $visavis_phase
+			plot <= plot*
