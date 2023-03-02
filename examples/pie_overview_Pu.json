@@ -1,0 +1,97 @@
+{
+	"error": null,
+	"payload": [
+		{
+			"facet": "elements",
+			"value": "Ga, Pu",
+			"count": 301
+		},
+		{
+			"facet": "elements",
+			"value": "C, Pu",
+			"count": 249
+		},
+		{
+			"facet": "elements",
+			"value": "O, Pu",
+			"count": 245
+		},
+		{
+			"facet": "elements",
+			"value": "Al, Pu",
+			"count": 223
+		},
+		{
+			"facet": "props",
+			"value": "phase transitions",
+			"count": 3951
+		},
+		{
+			"facet": "props",
+			"value": "phase diagram",
+			"count": 3437
+		},
+		{
+			"facet": "props",
+			"value": "thermal and thermodynamic properties",
+			"count": 2871
+		},
+		{
+			"facet": "props",
+			"value": "structural properties",
+			"count": 1193
+		},
+		{
+			"facet": "classes",
+			"value": "radioactive",
+			"count": 12963
+		},
+		{
+			"facet": "classes",
+			"value": "actinoid",
+			"count": 12963
+		},
+		{
+			"facet": "classes",
+			"value": "non-disordered",
+			"count": 6036
+		},
+		{
+			"facet": "classes",
+			"value": "transitional",
+			"count": 5378
+		},
+		{
+			"facet": "classes",
+			"value": "ternary",
+			"count": 5300
+		},
+		{
+			"facet": "lattices",
+			"value": "cubic",
+			"count": 3198
+		},
+		{
+			"facet": "lattices",
+			"value": "tetragonal",
+			"count": 1630
+		},
+		{
+			"facet": "lattices",
+			"value": "monoclinic",
+			"count": 1339
+		},
+		{
+			"facet": "lattices",
+			"value": "orthorhombic",
+			"count": 990
+		},
+		{
+			"facet": "lattices",
+			"value": "hexagonal",
+			"count": 803
+		}
+	],
+	"total_count": 12963,
+	"use_visavis_type": "pie"
+}

@@ -1,0 +1,38 @@
+$visavis_app $mol_book2
+	attr * mol_theme \$mol_theme_light
+	pages /
+		<= Menu $mol_page
+			title \Vis-a-vis
+			tools /
+				<= Upload $mol_button_open
+					hint @ \Upload a plot from MPDS in JSON
+					accept \application/json
+					files? <=> files_read? null
+			body /
+				<= Deck $mol_deck
+					items /
+						<= History $mol_list
+							title @ \Uploads
+							rows <= history_rows /
+								<= Plot*0 $mol_view sub /
+									<= Plot_link* $mol_link
+										arg * file <= plot_id* \
+										title <= plot_id*
+									<= Plot_drop* $mol_button_minor
+										click? <=> history_drop*? null
+										sub / <= Plot_drop_icon* $mol_icon_delete
+						<= Examples $mol_list
+							title @ \Examples
+							rows <= example_rows /
+								<= Example*0 $mol_link
+									arg * file <= example_title* \
+									title <= example_title*
+			foot /
+				<= Source $mol_link_source
+					uri \https://github.com/mpds-io/visavis
+		<= Matrix*plot $visavis_matrix
+			plot <= plot* $visavis_plot
+		<= Cube*plot $visavis_cube
+			plot <= plot*
+		<= Phase*plot $visavis_phase
+			plot <= plot*
