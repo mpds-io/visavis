@@ -7,7 +7,7 @@ namespace $.$$ {
 
 		Plot: {
 			flex: {
-				basis: calc( `${ per(100) } - ${ rem(50) }` ),
+				basis: calc( `${ per(100) } - ${ rem(25) }` ),
 				shrink: 0,
 			},
 		},

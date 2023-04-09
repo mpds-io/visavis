@@ -25,6 +25,7 @@ $visavis_phase $mol_book2
 				c /
 				type \scatterternary
 		layout *
+			hovermode \closest
 			font *
 				size 20
 				color \#333
@@ -84,6 +85,7 @@ $visavis_phase $mol_book2
 				xaxis \x2
 				yaxis \y2
 		layout *
+			hovermode \closest
 			font *
 				size 16
 				color \#333
@@ -163,8 +165,18 @@ $visavis_phase $mol_book2
 			size 13
 			family \Exo2
 	annotation_textangle* 0
+	plot_options *
+		displaylogo false
+		displayModeBar false
+		staticPlot false
 	pages /
 		<= Plot $mol_page
 			title <= plot_title \
-			body / <= Root $mol_view
+			body /
+				<= Label $mol_view sub /
+					<= label? \
+				<= Root $mol_view
+					dom_name \div
+					event *
+						mousemove <= mousemove null
 			auto <= draw null
