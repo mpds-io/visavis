@@ -49,7 +49,7 @@ namespace $.$$ {
 
 		@ $mol_mem_key
 		order(order: string) {
-			return $lib_d3.all().range(95).sort( (a: any, b: any) => $visavis_element_prop[order][a + 1] - $visavis_element_prop[order][b + 1] ) as number[]
+			return $lib_d3.all().range(95).sort( (a: any, b: any) => ($visavis_element_prop as any)[order][a + 1] - ($visavis_element_prop as any)[order][b + 1] ) as number[]
 		}
 
 		@ $mol_mem
@@ -205,7 +205,7 @@ namespace $.$$ {
 				for (var i = 0; i < x_src.length; i++){
 					//console.log('x', $visavis_elementals[x_sort][x_src[i]], $visavis_elementals[x_sort][y_src[i]], $visavis_elementals[x_sort][z_src[i]], ter_op(x_op, $visavis_elementals[x_sort][x_src[i]], $visavis_elementals[x_sort][y_src[i]], $visavis_elementals[x_sort][z_src[i]]));
 		
-					x_temp.push( this.ter_op(x_op, $visavis_element_prop[x_sort][x_src[i]], $visavis_element_prop[x_sort][y_src[i]], $visavis_element_prop[x_sort][z_src[i]]) );
+					x_temp.push( this.ter_op(x_op, ($visavis_element_prop as any)[x_sort][x_src[i]], ($visavis_element_prop as any)[x_sort][y_src[i]], ($visavis_element_prop as any)[x_sort][z_src[i]]) );
 				}
 				var x_renorm = $lib_d3.all().scaleQuantize().range($visavis_element_prop.num.slice(1)).domain([$lib_d3.all().min(x_temp), $lib_d3.all().max(x_temp)]);
 				//console.log(x_temp);
@@ -213,7 +213,7 @@ namespace $.$$ {
 		
 			} else {
 				for (var i = 0; i < x_src.length; i++){
-					converted['x'].push( (x_sort == 'num') ? x_src[i] : this.order(x_sort).indexOf(x_src[i] - 1) + 1 ); // FIXME first elementals item belongs to X, i.e. 0
+					(converted['x'] as any).push( (x_sort == 'num') ? x_src[i] : this.order(x_sort).indexOf(x_src[i] - 1) + 1 ); // FIXME first elementals item belongs to X, i.e. 0
 				}
 			}
 			if (y_op){
@@ -221,7 +221,7 @@ namespace $.$$ {
 				for (var i = 0; i < y_src.length; i++){
 					//console.log('y', $visavis_elementals[y_sort][x_src[i]], $visavis_elementals[y_sort][y_src[i]], $visavis_elementals[y_sort][z_src[i]], ter_op(y_op, $visavis_elementals[y_sort][x_src[i]], $visavis_elementals[y_sort][y_src[i]], $visavis_elementals[y_sort][z_src[i]]));
 		
-					y_temp.push( this.ter_op(y_op, $visavis_element_prop[y_sort][x_src[i]], $visavis_element_prop[y_sort][y_src[i]], $visavis_element_prop[y_sort][z_src[i]]) );
+					y_temp.push( this.ter_op(y_op, ($visavis_element_prop as any)[y_sort][x_src[i]], ($visavis_element_prop as any)[y_sort][y_src[i]], ($visavis_element_prop as any)[y_sort][z_src[i]]) );
 				}
 				var y_renorm = $lib_d3.all().scaleQuantize().range($visavis_element_prop.num.slice(1)).domain([$lib_d3.all().min(y_temp), $lib_d3.all().max(y_temp)]);
 				//console.log(y_temp);
@@ -229,7 +229,7 @@ namespace $.$$ {
 		
 			} else {
 				for (var i = 0; i < y_src.length; i++){
-					converted['y'].push( (y_sort == 'num') ? y_src[i] : this.order(y_sort).indexOf(y_src[i] - 1) + 1 ); // FIXME first elementals item belongs to X, i.e. 0
+					(converted['y'] as any).push( (y_sort == 'num') ? y_src[i] : this.order(y_sort).indexOf(y_src[i] - 1) + 1 ); // FIXME first elementals item belongs to X, i.e. 0
 				}
 			}
 			if (z_op){
@@ -237,7 +237,7 @@ namespace $.$$ {
 				for (var i = 0; i < z_src.length; i++){
 					//console.log('z', $visavis_elementals[z_sort][x_src[i]], $visavis_elementals[z_sort][y_src[i]], $visavis_elementals[z_sort][z_src[i]], ter_op(z_op, $visavis_elementals[z_sort][x_src[i]], $visavis_elementals[z_sort][y_src[i]], $visavis_elementals[z_sort][z_src[i]]));
 		
-					z_temp.push( this.ter_op(z_op, $visavis_element_prop[z_sort][x_src[i]], $visavis_element_prop[z_sort][y_src[i]], $visavis_element_prop[z_sort][z_src[i]]) );
+					z_temp.push( this.ter_op(z_op, ($visavis_element_prop as any)[z_sort][x_src[i]], ($visavis_element_prop as any)[z_sort][y_src[i]], ($visavis_element_prop as any)[z_sort][z_src[i]]) );
 				}
 				var z_renorm = $lib_d3.all().scaleQuantize().range($visavis_element_prop.num.slice(1)).domain([$lib_d3.all().min(z_temp), $lib_d3.all().max(z_temp)]);
 				//console.log(z_temp);
@@ -245,7 +245,7 @@ namespace $.$$ {
 		
 			} else {
 				for (var i = 0; i < z_src.length; i++){
-					converted['z'].push( (z_sort == 'num') ? z_src[i] : this.order(z_sort).indexOf(z_src[i] - 1) + 1 ); // FIXME first elementals item belongs to X, i.e. 0
+					(converted['z'] as any).push( (z_sort == 'num') ? z_src[i] : this.order(z_sort).indexOf(z_src[i] - 1) + 1 ); // FIXME first elementals item belongs to X, i.e. 0
 				}
 			}
 			//console.log(converted);
@@ -255,7 +255,7 @@ namespace $.$$ {
 		@ $mol_mem_key
 		order_els(prop: string){
 			return $visavis_element_list.slice(1).sort(function(a, b){
-				return $visavis_element_prop[prop][$visavis_element_list.indexOf(a)] - $visavis_element_prop[prop][$visavis_element_list.indexOf(b)]
+				return ($visavis_element_prop as any)[prop][$visavis_element_list.indexOf(a)] - ($visavis_element_prop as any)[prop][$visavis_element_list.indexOf(b)]
 			});
 		}
 
