@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	const Label = ( val: any ) => {
+	const Label_json = ( val: any ) => {
 		if( !Array.isArray( val ) ) return $mol_fail( new $mol_data_error( `${ val } is not a array` ) )
 		if( val.length < 2 || val.length > 3 ) return $mol_fail( new $mol_data_error( `${ val } should have 2 or 3 items` ) )
 
@@ -13,12 +13,15 @@ namespace $.$$ {
 		return Object.values( obj ) as [ string, number[], null | number ]
 	}
 
-	const $visavis_phase_json = $mol_data_record( {
-		temp: $mol_data_array( $mol_data_number ),
-		arity: $mol_data_number,
-		entry: $mol_data_string,
+	// source https://developer.mpds.io/mpds.schema.json#/definitions/phase_diagram
+	const $visavis_phase_rect_json = $mol_data_record( {
+		// both
 		naxes: $mol_data_number,
-		labels: $mol_data_array( Label ), // Array<[string, number[], null | number]>
+		arity: $mol_data_number,
+		diatype: $mol_data_string,
+		chemical_elements: $mol_data_array( $mol_data_string ),
+		temp: $mol_data_array( $mol_data_number ),
+		labels: $mol_data_array( Label_json ), // Array<[string, number[], null | number]>
 		shapes: $mol_data_array( $mol_data_record( {
 			kind: $mol_data_string,
 			svgpath: $mol_data_string,
@@ -30,18 +33,25 @@ namespace $.$$ {
 			reflabel: $mol_data_optional( $mol_data_number ),
 			chemical_elements: $mol_data_optional( $mol_data_array( $mol_data_string ) ),
 		} ) ),
-		diatype: $mol_data_string,
-		title_a: $mol_data_string,
-		title_b: $mol_data_string,
-		title_c: $mol_data_optional( $mol_data_string ),
-		comp_a: $mol_data_optional( $mol_data_array( $mol_data_number ) ),
-		comp_end: $mol_data_dict( $mol_data_number ),
-		comp_range: $mol_data_array( $mol_data_number ),
-		comp_start: $mol_data_dict( $mol_data_number ),
-		chemical_elements: $mol_data_array( $mol_data_string ),
-		object_repr: $mol_data_string,
+		entry: $mol_data_string,
 		object_type: $mol_data_string,
 		use_visavis_type: $mol_data_const( 'pd' ),
+		
+		title_a: $mol_data_optional( $mol_data_string ),
+		title_b: $mol_data_optional( $mol_data_string ),
+		object_repr: $mol_data_optional( $mol_data_string ),
+		// rect
+		comp_end: $mol_data_optional( $mol_data_dict( $mol_data_number ) ),
+		comp_range: $mol_data_optional( $mol_data_array( $mol_data_number ) ),
+		comp_start: $mol_data_optional( $mol_data_dict( $mol_data_number ) ),
+		// triangle
+		title_c: $mol_data_optional( $mol_data_string ),
+		comp_a: $mol_data_optional( $mol_data_dict( $mol_data_number ) ),
+		comp_b: $mol_data_optional( $mol_data_dict( $mol_data_number ) ),
+		comp_c: $mol_data_optional( $mol_data_dict( $mol_data_number ) ),
+		range_a: $mol_data_optional( $mol_data_array( $mol_data_number ) ),
+		range_b: $mol_data_optional( $mol_data_array( $mol_data_number ) ),
+		range_c: $mol_data_optional( $mol_data_array( $mol_data_number ) ),
 	} )
 
 	function get_rect_pd_compound( comp: any, obj_left: any, obj_right: any ) {
@@ -150,23 +160,23 @@ namespace $.$$ {
 		}
 
 		json() {
-			return $visavis_phase_json( this.plot().json() as any )
+			return $visavis_phase_rect_json( this.plot().json() as any )
 		}
 
 		json_title_b() {
-			return this.json().title_b
+			return this.json().title_b ?? ''
 		}
 
 		json_title_a() {
-			return this.json().title_a
+			return this.json().title_a ?? ''
 		}
 
 		json_title_c() {
-			return this.json().title_c!
+			return this.json().title_c ?? ''
 		}
 
 		json_comp_range() {
-			return this.json().comp_range
+			return this.json().comp_range ?? []
 		}
 
 		json_temp() {
@@ -197,10 +207,10 @@ namespace $.$$ {
 				} : {},
 			} ) )
 
-			return this.is_triangle() ? [ this.triangle().layout.shape, ...list ] : list
+			return this.is_triangle() ? [ this.triangle_shape_fix(), ...list ] : list
 		}
 
-		annotation_textangle( label: ReturnType<typeof Label> ) {
+		annotation_textangle( label: ReturnType<typeof Label_json> ) {
 			return label[ 0 ].replace( /<\/?sub>/g, '' ).length > 10 ? -65 : 0
 		}
 
@@ -291,31 +301,32 @@ namespace $.$$ {
 			})
 
 			const canvas = this.Root().dom_node() as any
+
 			// rectangle
+			if (!this.is_triangle()) {
+				const fixed = fix_comp_impossible(json.comp_range, json.comp_start, json.comp_end);
+				const comp_start = fixed?.comp_start ?? json.comp_start
+				const comp_end = fixed?.comp_end ?? json.comp_end
 
-            const fixed = fix_comp_impossible(json.comp_range, json.comp_start, json.comp_end);
-			const comp_start = fixed?.comp_start ?? json.comp_start
-			const comp_end = fixed?.comp_end ?? json.comp_end
+				const xaxis = canvas._fullLayout.xaxis
+				const yaxis = canvas._fullLayout.yaxis
+				const margin_l = canvas._fullLayout.margin.l
+				const margin_t = canvas._fullLayout.margin.t
 
-            const xaxis = canvas._fullLayout.xaxis
-            const yaxis = canvas._fullLayout.yaxis
-            const margin_l = canvas._fullLayout.margin.l
-            const margin_t = canvas._fullLayout.margin.t
+				const self = this
 
-			const self = this
+				canvas.addEventListener('mousemove', $mol_wire_async((evt: any) => {
+					const comp = xaxis.p2c(evt.layerX - margin_l)
+					const temp = parseInt(yaxis.p2c(evt.layerY - margin_t));
 
-            canvas.addEventListener('mousemove', $mol_wire_async((evt: any) => {
-                const comp = xaxis.p2c(evt.layerX - margin_l)
-                const temp = parseInt(yaxis.p2c(evt.layerY - margin_t));
-
-                if (comp > json.comp_range[0] && comp < json.comp_range[1] && temp > json.temp[0] && temp < json.temp[1]){
-                    const label = get_rect_pd_compound((comp - json.comp_range[0]) / (json.comp_range[1] - json.comp_range[0]), comp_start, comp_end) + ' at T = ' + temp + ' °C';
-					self.label(label)
-                } else {
-					self.label('')
-				}
-            }))
-
+					if (comp > json.comp_range![0] && comp < json.comp_range![1] && temp > json.temp[0] && temp < json.temp[1]){
+						const label = get_rect_pd_compound((comp - json.comp_range![0]) / (json.comp_range![1] - json.comp_range![0]), comp_start, comp_end) + ' at T = ' + temp + ' °C';
+						self.label(label)
+					} else {
+						self.label('')
+					}
+				}))
+			}
 		}
 
 		@$mol_mem
