@@ -85,7 +85,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		order() {
-			return $lib_d3.all().range(95).sort( (a: any, b: any) => this.nodes()[a][ this.order_current() ] - this.nodes()[b][ this.order_current() ] )
+			return $lib_d3.all().range(95).sort( (a: any, b: any) => (this.nodes() as any)[a][ this.order_current() ] - (this.nodes() as any)[b][ this.order_current() ] )
 		}
 
 		@ $mol_mem
