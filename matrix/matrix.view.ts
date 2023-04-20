@@ -85,12 +85,12 @@ namespace $.$$ {
 
 		@ $mol_mem
 		order() {
-			return $lib_d3.all().range(95).sort( (a: any, b: any) => (this.nodes() as any)[a][ this.order_current() ] - (this.nodes() as any)[b][ this.order_current() ] )
+			return $visavis_lib.d3().range(95).sort( (a: any, b: any) => (this.nodes() as any)[a][ this.order_current() ] - (this.nodes() as any)[b][ this.order_current() ] )
 		}
 
 		@ $mol_mem
 		matrix() {
-			const matrix: Matrix_cell[][] = this.nodes().map( (node, i) => $lib_d3.all().range(95).map( (j: any) => ({ x: j, y: i, z: 0, cmt: '', cmp: 0, nonformer: false }) ) )
+			const matrix: Matrix_cell[][] = this.nodes().map( (node, i) => $visavis_lib.d3().range(95).map( (j: any) => ({ x: j, y: i, z: 0, cmt: '', cmp: 0, nonformer: false }) ) )
 
 			for (const link of this.links()) {
 				matrix[link.source][link.target].z += link.value;
@@ -122,7 +122,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		opacity_scale() {
-			return $lib_d3.all().scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true)
+			return $visavis_lib.d3().scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true)
 		}
 
 		opacity(index: number) {
@@ -131,7 +131,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		color_heatmap() {
-			return $lib_d3.all().scaleLinear().domain($lib_d3.all().range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors() as any)
+			return $visavis_lib.d3().scaleLinear().domain($visavis_lib.d3().range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors() as any)
 		}
 
 		heatmap_color( index: number ) {
@@ -148,7 +148,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		color_heatmap_scale() {
-			return $lib_d3.all().scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1])
+			return $visavis_lib.d3().scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1])
 		}
 
 		color(index: number, cmp: number) {
@@ -158,7 +158,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		range() {
-			return $lib_d3.all().scaleBand().domain(this.order()).range([0, this.size()])
+			return $visavis_lib.d3().scaleBand().domain(this.order()).range([0, this.size()])
 		}
 
 		svg_title_text(cell: Matrix_cell) {
@@ -173,8 +173,8 @@ namespace $.$$ {
 		}
 
 		cell_hovered(cell?: Matrix_cell | null) {
-			$lib_d3.all().selectAll('.row text').classed('active', (_: any, index: number) => cell?.y === index)
-			$lib_d3.all().selectAll('.column text').classed('active', (_: any, index: number) => cell?.x === index)
+			$visavis_lib.d3().selectAll('.row text').classed('active', (_: any, index: number) => cell?.y === index)
+			$visavis_lib.d3().selectAll('.column text').classed('active', (_: any, index: number) => cell?.x === index)
 		}
 
 		@ $mol_mem_key
@@ -187,7 +187,7 @@ namespace $.$$ {
 		cell_click(cell: Matrix_cell) {
 			const coords = [ $mol_coord_pack( cell.x, cell.y ), $mol_coord_pack( cell.y, cell.x ) ]
 			coords.forEach( coord => this.cell_selected( coord, !this.cell_selected(coord) ) )
-			$lib_d3.all().selectAll('.cell').classed('visited', (item: any) => this.cell_selected( $mol_coord_pack( item.x, item.y ) ))
+			$visavis_lib.d3().selectAll('.cell').classed('visited', (item: any) => this.cell_selected( $mol_coord_pack( item.x, item.y ) ))
 			// if (visavis.mpds_embedded) {
 			// 	window.open(window.location.protocol + '//' + window.location.host + '#search/binary%20' + term.cmt);
 			// }
@@ -195,7 +195,7 @@ namespace $.$$ {
 
 		@ $mol_mem_key
 		draw_cells(node: SVGElement, row: Matrix_cell[]) {
-			$lib_d3.all().select(node)
+			$visavis_lib.d3().select(node)
 				.selectAll('.cell')
 				.data(row.filter((d: any) => d.z))
 				.join('rect')
@@ -216,7 +216,7 @@ namespace $.$$ {
 		draw() {
 			if (Number.isNaN( this.size() )) return
 
-			const svg = $lib_d3.all().select('[visavis_matrix_root]')
+			const svg = $visavis_lib.d3().select('[visavis_matrix_root]')
 				.attr('width', this.size() + this.axis_width())
 				.attr('height', this.size() + this.axis_width())
 				.style('font-size', this.range().bandwidth())
