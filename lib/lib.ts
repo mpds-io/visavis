@@ -4,7 +4,7 @@ namespace $ {
 
 		@ $mol_mem
 		static plotly() {
-			return $mol_import.script('/visavis/lib/plotly.custom.min.js').Plotly as any
+			return $mol_import.script('/visavis/lib/bundle/plotly.custom.min.js').Plotly as any
 		}
 
 		static d3() {

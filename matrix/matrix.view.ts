@@ -122,7 +122,8 @@ namespace $.$$ {
 
 		@ $mol_mem
 		opacity_scale() {
-			return $visavis_lib.d3().scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true)
+			// return $visavis_lib.d3().scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true) // for new d3 version
+			return $visavis_lib.d3().scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true)
 		}
 
 		opacity(index: number) {
@@ -131,7 +132,8 @@ namespace $.$$ {
 
 		@ $mol_mem
 		color_heatmap() {
-			return $visavis_lib.d3().scaleLinear().domain($visavis_lib.d3().range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors() as any)
+			// return $visavis_lib.d3().scaleLinear().domain($visavis_lib.d3().range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors() as any) // for new d3 version
+			return $visavis_lib.d3().scale.linear().domain($visavis_lib.d3().range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors() as any)
 		}
 
 		heatmap_color( index: number ) {
@@ -148,7 +150,8 @@ namespace $.$$ {
 
 		@ $mol_mem
 		color_heatmap_scale() {
-			return $visavis_lib.d3().scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1])
+			// return $visavis_lib.d3().scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1]) // for new d3 version
+			return $visavis_lib.d3().scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1])
 		}
 
 		color(index: number, cmp: number) {
@@ -158,7 +161,8 @@ namespace $.$$ {
 
 		@ $mol_mem
 		range() {
-			return $visavis_lib.d3().scaleBand().domain(this.order()).range([0, this.size()])
+			// return $visavis_lib.d3().scaleBand().domain(this.order()).range([0, this.size()]) // for new d3 version
+			return $visavis_lib.d3().scale.ordinal().rangeBands([0, this.size()]).domain(this.order())
 		}
 
 		svg_title_text(cell: Matrix_cell) {
@@ -198,12 +202,15 @@ namespace $.$$ {
 			$visavis_lib.d3().select(node)
 				.selectAll('.cell')
 				.data(row.filter((d: any) => d.z))
-				.join('rect')
+				// .join('rect') // for new d3 version
+				.enter().append('rect')
 				.attr('class', (d: any) => d.nonformer ? 'nonformer cell' : 'cell')
 				.attr('id', (d: any) => 'c_' + this.nodes()[d.x].num.toString() + '_' + this.nodes()[d.y].num.toString())
 				.attr('x', (d: any) => this.range()(d.x) as any)
-				.attr('width', this.range().bandwidth())
-				.attr('height', this.range().bandwidth())
+				// .attr('width', this.range().bandwidth()) // for new d3 version
+				// .attr('height', this.range().bandwidth()) // for new d3 version
+				.attr('width', this.range().rangeBand())
+				.attr('height', this.range().rangeBand())
 				.style('fill-opacity', (d: any) => this.opacity(d.z))
 				.style('fill', (d: any) => this.color(d.z, d.cmp) )
 				.on('mouseover', (event: MouseEvent, cell: unknown) => this.cell_hovered(cell as Matrix_cell))
@@ -219,7 +226,8 @@ namespace $.$$ {
 			const svg = $visavis_lib.d3().select('[visavis_matrix_root]')
 				.attr('width', this.size() + this.axis_width())
 				.attr('height', this.size() + this.axis_width())
-				.style('font-size', this.range().bandwidth())
+				// .style('font-size', this.range().bandwidth()) // for new d3 version
+				.style('font-size', this.range().rangeBand())
 				.style('letter-spacing', '1px')
 			
 			const group = svg
@@ -237,7 +245,8 @@ namespace $.$$ {
 		
 			const row = group.selectAll('.row')
 				.data(this.matrix())
-				.join('g')
+				// .join('g') // for new d3 version
+				.enter().append('g')
 				.attr('class', 'row')
 				.attr('transform', (d: any, i: number) => 'translate(0,' + this.range()(i as any) + ')' )
 				.each(function (this: any, row: any) { draw_cells(this, row) })
@@ -247,14 +256,16 @@ namespace $.$$ {
 		
 			row.append('text')
 				.attr('x', -6)
-				.attr('y', this.range().bandwidth() / 2)
+				// .attr('y', this.range().bandwidth() / 2) // for new d3 version
+				.attr('y', this.range().rangeBand() / 2)
 				.attr('dy', '.32em')
 				.attr('text-anchor', 'end')
 				.text((d: any, i: any)=> this.nodes()[i].name)
 				
 			const column = group.selectAll('.column')
 				.data(this.matrix())
-				.join('g')
+				// .join('g') // for new d3 version
+				.enter().append('g')
 				.attr('class', 'column')
 				.attr('transform', (d: any, i: any)=> 'translate(' + this.range()(i) + ')rotate(-90)');
 		
@@ -263,7 +274,8 @@ namespace $.$$ {
 		
 			column.append('text')
 				.attr('x', 6)
-				.attr('y', this.range().bandwidth() / 2)
+				// .attr('y', this.range().bandwidth() / 2) // for new d3 version
+				.attr('y', this.range().rangeBand() / 2)
 				.attr('dy', '.32em')
 				.attr('text-anchor', 'start')
 				.text((d: any, i: any) => this.nodes()[i].name);
