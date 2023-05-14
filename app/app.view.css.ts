@@ -24,21 +24,6 @@ namespace $.$$ {
 			},
 		},
 
-		Matrix: {
-			Plot: {
-				flex: {
-					basis: calc( `${ per(100) } - ${ rem(50) }` ),
-					shrink: 0,
-				},
-			},
-			Setup: {
-				flex: {
-					basis: rem(25),
-					shrink: 0,
-				}
-			}
-		},
-
 	} )
 
 }

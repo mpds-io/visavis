@@ -83,6 +83,10 @@ namespace $.$$ {
 			]
 		}
 
+		Placeholder() {
+			return this.Plot_opened().length > 0 ? null as any : super.Placeholder()
+		}
+
 	}
 
 }

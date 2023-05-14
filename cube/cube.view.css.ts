@@ -1,13 +1,12 @@
 namespace $.$$ {
 
 	const { per, rem, px } = $mol_style_unit
-	const { calc } = $mol_style_func
 
 	$mol_style_define( $visavis_cube, {
 
 		Plot: {
 			flex: {
-				basis: calc( `${ per(100) } - ${ rem(50) }` ),
+				grow: 1,
 				shrink: 0,
 			},
 		},
