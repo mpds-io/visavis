@@ -36,3 +36,5 @@ $visavis_app $mol_book2
 			plot <= plot*
 		<= Phase*plot $visavis_phase
 			plot <= plot*
+		<= Bar*plot $visavis_bar
+			plot <= plot*

@@ -68,6 +68,7 @@ namespace $.$$ {
 				case 'matrix': return this.Matrix( plot ).pages()
 				case 'plot3d': return this.Cube( plot ).pages()
 				case 'pd': return this.Phase( plot ).pages()
+				case 'bar': return this.Bar( plot ).pages()
 				default: return []
 			}
 		}
