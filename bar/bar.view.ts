@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	const $visavis_bar_json_payload = $mol_data_record({
+	const Payload = $mol_data_record({
 		x: $mol_data_array( $mol_data_number ),
 		dx: $mol_data_number,
 		y: $mol_data_array( $mol_data_number ),
@@ -8,9 +8,9 @@ namespace $.$$ {
 		ytitle: $mol_data_optional( $mol_data_string ),
 	})
 
-	const $visavis_bar_json = $mol_data_record({
-		payload: $visavis_bar_json_payload,
-		payload2: $mol_data_optional( $visavis_bar_json_payload ),
+	export const $visavis_bar_json = $mol_data_record({
+		payload: Payload,
+		payload2: $mol_data_optional( Payload ),
 	})
 
 	export class $visavis_bar extends $.$visavis_bar {

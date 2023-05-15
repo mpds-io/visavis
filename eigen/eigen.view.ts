@@ -1,16 +1,16 @@
 namespace $.$$ {
 
-	const $visavis_eigen_json_bands_matrix = $mol_data_record({
+	const Bands_matrix = $mol_data_record({
 		bands: $mol_data_array( $mol_data_array( $mol_data_number ) ),
 		kpoints: $mol_data_array( $mol_data_array( $mol_data_number ) ),
 	})
 
-	const $visavis_eigen_json_dos_matrix = $mol_data_record({
+	const Dos_matrix = $mol_data_record({
 		dos: $mol_data_array( $mol_data_number ),
 		levels: $mol_data_array( $mol_data_number ),
 	})
 
-	const $visavis_eigen_json = $mol_data_record( {
+	export const $visavis_eigen_json = $mol_data_record( {
 		sample: $mol_data_record( {
 			material: $mol_data_record( {
 				chemical_formula: $mol_data_string,
@@ -31,8 +31,8 @@ namespace $.$$ {
 					units: $mol_data_string,
 					scalar: $mol_data_optional( $mol_data_variant( $mol_data_string, $mol_data_number ) ),
 					matrix: $mol_data_variant(
-						$visavis_eigen_json_bands_matrix,
-						$visavis_eigen_json_dos_matrix,
+						Bands_matrix,
+						Dos_matrix,
 					),
 					name: $mol_data_string,
 					category: $mol_data_string,
@@ -67,8 +67,8 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		bands_matrix(): ReturnType<typeof $visavis_eigen_json_bands_matrix> | null {
-			const matrix = this.json().sample.measurement[0].property.matrix as (ReturnType<typeof $visavis_eigen_json_bands_matrix>);
+		bands_matrix(): ReturnType<typeof Bands_matrix> | null {
+			const matrix = this.json().sample.measurement[0].property.matrix as (ReturnType<typeof Bands_matrix>);
 			if (matrix.bands){
 				return matrix
 			} else {
@@ -77,8 +77,8 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		dos_matrix(): ReturnType<typeof $visavis_eigen_json_dos_matrix> | null {
-			const matrix = this.json().sample.measurement[0].property.matrix as (ReturnType<typeof $visavis_eigen_json_dos_matrix>);
+		dos_matrix(): ReturnType<typeof Dos_matrix> | null {
+			const matrix = this.json().sample.measurement[0].property.matrix as (ReturnType<typeof Dos_matrix>);
 			if (matrix.dos){
 				return matrix
 			} else {

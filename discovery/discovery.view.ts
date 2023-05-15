@@ -1,19 +1,22 @@
 namespace $.$$ {
 
-	const $visavis_discovery_json_point = $mol_data_array( $mol_data_number )
-	const $visavis_discovery_json_payload = $mol_data_record({
-		points: $mol_data_array( $visavis_discovery_json_point ),
+	const Point = $mol_data_array( $mol_data_number )
+
+	const Payload = $mol_data_record({
+		points: $mol_data_array( Point ),
 	})
-	const $visavis_discovery_json = $mol_data_record({
-		payload: $visavis_discovery_json_payload,
-		answerto: $mol_data_string,
-	})
-	const $visavis_discovery_discover_item = $mol_data_record({
-		points: $mol_data_array( $visavis_discovery_json_point ),
+
+	const Discover_item = $mol_data_record({
+		points: $mol_data_array( Point ),
 		name: $mol_data_string
 	})
 
-	function discover(elementals_on: string[], first: ReturnType<typeof $visavis_discovery_discover_item>, second?: ReturnType<typeof $visavis_discovery_discover_item>){
+	export const $visavis_discovery_json = $mol_data_record({
+		payload: Payload,
+		answerto: $mol_data_string,
+	})
+
+	function discover(elementals_on: string[], first: ReturnType<typeof Discover_item>, second?: ReturnType<typeof Discover_item>){
 		// if (!window.mlPca) return urge('Sorry, your web-browser is too old for this task');
 	
 		const to_predict = [],
@@ -189,7 +192,7 @@ namespace $.$$ {
 			// 	visavis.cache = {ref: ref, type: 'discovery'};
 			// }
 
-			var result = discover(elementals_on, $visavis_discovery_discover_item({points: json.payload.points, name: json.answerto}));
+			var result = discover(elementals_on, Discover_item({points: json.payload.points, name: json.answerto}));
 			if (!result || !result[0].discovery) return;
 		
 			var traces = [];

@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	const $visavis_scatter_json = $mol_data_record( {
+	export const $visavis_scatter_json = $mol_data_record( {
 		sample: $mol_data_record( {
 			material: $mol_data_record( {
 				chemical_formula: $mol_data_string,

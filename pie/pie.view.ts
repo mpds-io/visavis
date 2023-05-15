@@ -1,8 +1,8 @@
 namespace $.$$ {
 
-	const $visavis_pie_facet_names = {props: 'properties', elements: 'elements', classes: 'classes', lattices: 'crystal systems'} as const
+	const Facet_names = {props: 'properties', elements: 'elements', classes: 'classes', lattices: 'crystal systems'} as const
 
-	const $visavis_pie_json = $mol_data_record( {
+	export const $visavis_pie_json = $mol_data_record( {
 		payload: $mol_data_array( $mol_data_record( {
 			facet: $mol_data_enum( 'facet', {props: 'props', elements: 'elements', classes: 'classes', lattices: 'lattices'} as const ),
 			value: $mol_data_string,
@@ -123,7 +123,7 @@ namespace $.$$ {
 
 			const json = this.json()
 			const enter_metrics = this.enter_metrics()
-			let recent_facet: null | keyof typeof $visavis_pie_facet_names = null;
+			let recent_facet: null | keyof typeof Facet_names = null;
 
 			for (let i = 0; i < json.payload.length; i++){
 				if (json.payload[i].count < enter_metrics || json.payload[i].count > (json.total_count - enter_metrics)) continue;
@@ -154,7 +154,7 @@ namespace $.$$ {
 			const xy_domains = this.xy_domains()
 			const enter_metrics = this.enter_metrics()
 		
-			let recent_facet: null | keyof typeof $visavis_pie_facet_names = null;
+			let recent_facet: null | keyof typeof Facet_names = null;
 		
 			let loc_count = 0
 			for (var i = 0; i < json.payload.length; i++){
@@ -164,7 +164,7 @@ namespace $.$$ {
 				if (json.payload[i].facet == "classes"){
 					classes.push({
 						type: "pie",
-						name: $visavis_pie_facet_names[json.payload[i].facet],
+						name: Facet_names[json.payload[i].facet],
 						values: [json.payload[i].count, json.total_count - json.payload[i].count],
 						text: [json.payload[i].value, "other classes"],
 						domain: {x: xy_domains[tot_count]![loc_count][0], y: xy_domains[tot_count]![loc_count][1]},
@@ -185,13 +185,13 @@ namespace $.$$ {
 						var sum = data[data.length - 1].values.reduce(function(a: number, b: number){ return a + b }, 0);
 						if (sum < json.total_count){
 							data[data.length - 1].values.push(json.total_count - sum);
-							data[data.length - 1].text.push("other " + $visavis_pie_facet_names[recent_facet]);
+							data[data.length - 1].text.push("other " + Facet_names[recent_facet]);
 						}
 					}
 					if (loc_count > 8) break;
 					data.push({
 						type: "pie",
-						name: $visavis_pie_facet_names[json.payload[i].facet],
+						name: Facet_names[json.payload[i].facet],
 						values: [],
 						text: [],
 						domain: {x: xy_domains[tot_count]![loc_count][0], y: xy_domains[tot_count]![loc_count][1]},
@@ -213,7 +213,7 @@ namespace $.$$ {
 				var sum = data[data.length - 1].values.reduce(function(a: number, b: number){ return a + b }, 0);
 				if (sum < json.total_count){
 					data[data.length - 1].values.push(json.total_count - sum);
-					data[data.length - 1].text.push("other " + $visavis_pie_facet_names[recent_facet!]);
+					data[data.length - 1].text.push("other " + Facet_names[recent_facet!]);
 				}
 			}
 			if (classes) data.push(...classes);
