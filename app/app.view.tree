@@ -48,3 +48,5 @@ $visavis_app $mol_book2
 			plot <= plot*
 		<= Customscatter*plot $visavis_customscatter
 			plot <= plot*
+		<= Heatmap*plot $visavis_heatmap
+			plot <= plot*
