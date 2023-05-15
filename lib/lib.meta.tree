@@ -1,1 +1,2 @@
 deploy \/visavis/lib/bundle/plotly.custom.min.js
+deploy \/visavis/lib/bundle/pca.js
