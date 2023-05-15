@@ -44,3 +44,5 @@ $visavis_app $mol_book2
 			plot <= plot*
 		<= Pie*plot $visavis_pie
 			plot <= plot*
+		<= Scatter*plot $visavis_scatter
+			plot <= plot*
