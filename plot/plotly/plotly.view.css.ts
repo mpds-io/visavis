@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	$mol_style_define( $visavis_scatter, {
+	$mol_style_define( $visavis_plot_plotly, {
 
 		Plot: {
 			flex: {

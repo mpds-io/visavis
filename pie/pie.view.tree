@@ -1,15 +1,4 @@
-$visavis_pie $mol_book2
-	plot $visavis_plot
-	pages /
-		<= Plot $mol_page
-			title <= plot_title \
-			body <= plot_body /
-				<= Root $mol_view
-			auto <= draw null
-	plot_options *
-		displaylogo false
-		displayModeBar false
-		staticPlot false
+$visavis_pie $visavis_plot_plotly
 	colorset /
 		\#3e3f95
 		\#c00

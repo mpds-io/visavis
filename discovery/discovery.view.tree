@@ -1,12 +1,6 @@
-$visavis_discovery $mol_book2
-	plot $visavis_plot
-	discover_second? $visavis_discovery_discover_item
+$visavis_discovery $visavis_plot_plotly
 	pages /
-		<= Plot $mol_page
-			title <= plot_title \
-			body <= plot_body /
-				<= Root $mol_view
-			auto <= draw null
+		<= Plot
 		<= Setup $mol_page
 			title @ \Setup
 			body /
@@ -16,7 +10,3 @@ $visavis_discovery $mol_book2
 						option_checked*? <=> elemental_checked*? false
 						items? => check_items?
 						options <= elementals_dict *
-	plot_options *
-		displaylogo false
-		displayModeBar false
-		staticPlot false

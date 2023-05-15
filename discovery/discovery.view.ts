@@ -101,10 +101,6 @@ namespace $.$$ {
 
 	export class $visavis_discovery extends $.$visavis_discovery {
 
-		plot_title() {
-			return this.plot().id()
-		}
-
 		json() {
 			return $visavis_discovery_json( this.plot().json() as any )
 		}
@@ -238,19 +234,6 @@ namespace $.$$ {
 			}
 
 			return traces
-		}
-
-		@ $mol_mem
-		draw() {
-
-			const promise = $lib_plotly.all().react(
-				this.Root().dom_node() as HTMLElement,
-				this.data(), 
-				this.layout(),
-				this.plot_options(),
-			)
-			
-			promise.then( () => this.subscribe_events() )
 		}
 
 	}

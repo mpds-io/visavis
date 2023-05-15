@@ -15,10 +15,6 @@ namespace $.$$ {
 
 	export class $visavis_bar extends $.$visavis_bar {
 
-		plot_title() {
-			return this.plot().id()
-		}
-
 		json() {
 			return $visavis_bar_json( this.plot().json() as any )
 		}
@@ -98,19 +94,7 @@ namespace $.$$ {
 
 			return payload	
 		}
-
-		@ $mol_mem
-		draw() {
-			const promise = $lib_plotly.all().react(
-				this.Root().dom_node() as HTMLElement,
-				this.data(), 
-				this.layout(),
-				this.plot_options(),
-			)
-
-			promise.then( () => this.subscribe_events() )
-		}
-
+		
 	}
 	
 }

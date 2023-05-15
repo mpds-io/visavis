@@ -44,10 +44,6 @@ namespace $.$$ {
 	})
 	export class $visavis_scatter extends $.$visavis_scatter {
 
-		plot_title() {
-			return this.plot().id()
-		}
-
 		json() {
 			// notify('Cannot get plot data, please, try again');
 			return $visavis_scatter_json( this.plot().json() as any )
@@ -223,19 +219,6 @@ namespace $.$$ {
 				},
 				font: {family: "Exo2", size: 13}
 			}
-		}
-
-		@ $mol_mem
-		draw() {
-			
-			const promise = $lib_plotly.all().react(
-				this.Root().dom_node() as HTMLElement,
-				this.data(), 
-				this.layout(),
-				this.plot_options(),
-			)
-
-			promise.then( () => this.subscribe_events() )
 		}
 
 	}

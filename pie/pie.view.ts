@@ -35,10 +35,6 @@ namespace $.$$ {
 
 	export class $visavis_pie extends $.$visavis_pie {
 
-		plot_title() {
-			return this.plot().id()
-		}
-
 		json() {
 			return $visavis_pie_json( this.plot().json() as any )
 		}
@@ -220,19 +216,7 @@ namespace $.$$ {
 
 			return data
 		}
-
-		@ $mol_mem
-		draw() {
-			const promise = $lib_plotly.all().react(
-				this.Root().dom_node() as HTMLElement,
-				this.data(), 
-				this.layout(),
-				this.plot_options(),
-			)
-
-			promise.then( () => this.subscribe_events() )
-		}
-
+		
 	}
 	
 }
