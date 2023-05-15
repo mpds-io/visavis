@@ -1,7 +1,5 @@
 namespace $.$$ {
 
-	const { per, rem, px } = $mol_style_unit
-
 	$mol_style_define( $visavis_discovery, {
 
 		Plot: {
@@ -17,7 +15,7 @@ namespace $.$$ {
 
 		Setup: {
 			flex: {
-				basis: rem(25),
+				basis: '25rem',
 				shrink: 0,
 			},
 			Body: {
