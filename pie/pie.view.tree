@@ -1,0 +1,23 @@
+$visavis_pie $mol_book2
+	plot $visavis_plot
+	pages /
+		<= Plot $mol_page
+			title <= plot_title \
+			body <= plot_body /
+				<= Root $mol_view
+			auto <= draw null
+	plot_options *
+		displaylogo false
+		displayModeBar false
+		staticPlot false
+	colorset /
+		\#3e3f95
+		\#c00
+		\#FE9A2E
+		\#090
+		\#f0f
+		\#09f
+		\#666
+		\#0f3
+		\#0ff
+		\#90c

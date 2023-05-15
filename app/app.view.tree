@@ -42,3 +42,5 @@ $visavis_app $mol_book2
 			plot <= plot*
 		<= Eigen*plot $visavis_eigen
 			plot <= plot*
+		<= Pie*plot $visavis_pie
+			plot <= plot*
