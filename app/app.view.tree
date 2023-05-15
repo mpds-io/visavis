@@ -38,3 +38,5 @@ $visavis_app $mol_book2
 			plot <= plot*
 		<= Bar*plot $visavis_bar
 			plot <= plot*
+		<= Discovery*plot $visavis_discovery
+			plot <= plot*
