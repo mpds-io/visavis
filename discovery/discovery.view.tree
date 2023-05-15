@@ -8,5 +8,4 @@ $visavis_discovery $visavis_plot_plotly
 					title \Elementals on
 					Content <= Elementals_check $mol_check_list
 						option_checked*? <=> elemental_checked*? false
-						items? => check_items?
 						options <= elementals_dict *

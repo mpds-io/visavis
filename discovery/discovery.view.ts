@@ -11,6 +11,10 @@ namespace $.$$ {
 		name: $mol_data_string
 	})
 
+	type Discover_item = ReturnType<typeof Discover_item>
+
+	type Elementals_dict = typeof $visavis_elemental_names
+
 	export const $visavis_discovery_json = $mol_data_record({
 		payload: Payload,
 		answerto: $mol_data_string,
@@ -18,8 +22,8 @@ namespace $.$$ {
 
 	function discover(
 		elementals_on: string[], 
-		first: ReturnType<typeof Discover_item>, 
-		second?: ReturnType<typeof Discover_item>
+		first: Discover_item, 
+		second?: Discover_item
 	) {
 		// if (!window.mlPca) return urge('Sorry, your web-browser is too old for this task');
 	
@@ -192,16 +196,33 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
+		elementals_on() {
+			const elementals_on: Array<keyof Elementals_dict> = []
+
+			Object.keys( this.elementals_dict() ).forEach( key => {
+				if (this.elemental_checked(key)) {
+					elementals_on.push( key as keyof Elementals_dict )
+				}
+			} )
+
+			return elementals_on
+		}
+		
+		@ $mol_mem_key
+		elemental_checked(id: any, next?: any) {
+			const elementals_on = $mol_wire_probe( () => this.elementals_on() )
+			if ( elementals_on?.length === 1 && elementals_on[0] === id ) return true //at least one must be enabled
+
+			if ( next !== undefined ) return next as never
+			return id === 'nump' ? true : false //nump on by default
+		}
+
+		@ $mol_mem
 		data() {
 		
 			const json = this.json()
 
-			const elementals_on: Array<keyof ReturnType<$visavis_discovery["elementals_dict"]>> = []
-			Object.keys( this.elementals_dict() ).forEach( key => {
-				if (this.elemental_checked(key)) {
-					elementals_on.push( key as keyof ReturnType<$visavis_discovery["elementals_dict"]> )
-				}
-			} )
+			const elementals_on = this.elementals_on()
 
 			// if (visavis.cache && visavis.cache.type == 'discovery'){
 			// 	var ref = {points: visavis.cache.ref.points, name: visavis.cache.ref.name},
