@@ -214,14 +214,14 @@ namespace $.$$ {
 			// 	visavis.cache = {ref: ref, type: 'discovery'};
 			// }
 
-			var result = discover(elementals_on, Discover_item({points: json.payload.points, name: json.answerto}));
+			const result = discover(elementals_on, Discover_item({points: json.payload.points, name: json.answerto}));
 			if (!result || !result[0].discovery) return;
 		
-			var traces = [];
+			const traces = [];
 		
-			for (var i = 0; i < result.length; i++){
-				var dscolor = (i == 0) ? '#3e3f95' : '#900',
-					oflag = (i == 0) ? 1 : 0.9;
+			for (let i = 0; i < result.length; i++){
+				const dscolor = (i == 0) ? '#3e3f95' : '#900'
+				const oflag = (i == 0) ? 1 : 0.9
 				traces.push({
 					x: result[i].discovery.map((item: any) => item[0] ),
 					y: result[i].discovery.map((item: any) => item[1] ),

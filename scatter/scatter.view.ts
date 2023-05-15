@@ -132,7 +132,7 @@ namespace $.$$ {
 				];
 			} else if (array[0][2] == array[0][3] && array[0][3] != array[0][4]){
 				// tetragonal, hexagonal, trigonal
-				var delta_a = array[0][4] - array[0][2];
+				const delta_a = array[0][4] - array[0][2];
 				return [
 					{
 						type: "scatter",
@@ -152,8 +152,8 @@ namespace $.$$ {
 				];
 			} else {
 				// orthorhombic, monoclinic, triclinic
-				var delta_a = array[0][4] - array[0][2],
-					delta_b = array[0][3] - array[0][2];
+				const delta_a = array[0][4] - array[0][2]
+				const delta_b = array[0][3] - array[0][2]
 				return [
 					{
 						type: "scatter",

@@ -41,38 +41,33 @@ namespace $.$$ {
 
 		@ $mol_action
 		subscribe_events() {
+			// warn_demo();
+			// if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
 
-			// const d3 = $lib_d3.all()
-
-			// const json = this.json()
-
-            // warn_demo();
-            // if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
-
-            // Plotly.d3.selectAll('g.slice').on({'click': function(evt){
-            //     var value = evt.text.split('<br')[0];
-            //     if (evt.trace){ // NB trace may or may not be available in Plotly event
-            //         var name = evt.trace.name,
-            //             found_fct = null;
-            //         if (visavis.evtfuse) value = visavis.evtbuff;
-            //         else if (value.indexOf('other ') > -1) return;
-            //         visavis.evtfuse = 0;
-            //         for (var p in visavis.facet_names){
-            //             if (visavis.facet_names[p] == name) found_fct = p;
-            //         }
-            //         if (!found_fct) return;
-            //         if (found_fct == 'elements') value = value.replace(/,\s/g, '-'); // FIXME?
-            //         if (visavis.mpds_embedded) window.parent.location.hash = window.parent.wmgui.aug_search_cmd(found_fct, value);
-            //     } else {
-            //         if (value.indexOf('other ') > -1) return;
-            //         if (visavis.evtfuse > 1) return;
-            //         visavis.evtfuse = visavis.evtfuse ? visavis.evtfuse + 1 : 1;
-            //         visavis.evtbuff = value;
-            //         var reevt = document.createEvent('Event');
-            //         reevt.initEvent('click', false, true);
-            //         Plotly.d3.select(this.parentNode.firstChild).node().dispatchEvent(reevt);
-            //     }
-            // }});
+			// Plotly.d3.selectAll('g.slice').on({'click': function(evt){
+			//     var value = evt.text.split('<br')[0];
+			//     if (evt.trace){ // NB trace may or may not be available in Plotly event
+			//         var name = evt.trace.name,
+			//             found_fct = null;
+			//         if (visavis.evtfuse) value = visavis.evtbuff;
+			//         else if (value.indexOf('other ') > -1) return;
+			//         visavis.evtfuse = 0;
+			//         for (var p in visavis.facet_names){
+			//             if (visavis.facet_names[p] == name) found_fct = p;
+			//         }
+			//         if (!found_fct) return;
+			//         if (found_fct == 'elements') value = value.replace(/,\s/g, '-'); // FIXME?
+			//         if (visavis.mpds_embedded) window.parent.location.hash = window.parent.wmgui.aug_search_cmd(found_fct, value);
+			//     } else {
+			//         if (value.indexOf('other ') > -1) return;
+			//         if (visavis.evtfuse > 1) return;
+			//         visavis.evtfuse = visavis.evtfuse ? visavis.evtfuse + 1 : 1;
+			//         visavis.evtbuff = value;
+			//         var reevt = document.createEvent('Event');
+			//         reevt.initEvent('click', false, true);
+			//         Plotly.d3.select(this.parentNode.firstChild).node().dispatchEvent(reevt);
+			//     }
+			// }});
 		}
 
 
@@ -153,7 +148,7 @@ namespace $.$$ {
 			let recent_facet: null | keyof typeof Facet_names = null;
 		
 			let loc_count = 0
-			for (var i = 0; i < json.payload.length; i++){
+			for (let i = 0; i < json.payload.length; i++){
 				if (json.payload[i].count < enter_metrics || json.payload[i].count > (json.total_count - enter_metrics)) continue;
 		
 				// special case of interlacing classes
@@ -178,7 +173,7 @@ namespace $.$$ {
 				if (json.payload[i].facet != recent_facet){
 					if (recent_facet){
 						// rest of data, not loaded
-						var sum = data[data.length - 1].values.reduce(function(a: number, b: number){ return a + b }, 0);
+						const sum = data[data.length - 1].values.reduce(function(a: number, b: number){ return a + b }, 0);
 						if (sum < json.total_count){
 							data[data.length - 1].values.push(json.total_count - sum);
 							data[data.length - 1].text.push("other " + Facet_names[recent_facet]);
@@ -206,7 +201,7 @@ namespace $.$$ {
 			}
 			if (data.length){
 				// NB FIXME once again: rest of data, not loaded
-				var sum = data[data.length - 1].values.reduce(function(a: number, b: number){ return a + b }, 0);
+				const sum = data[data.length - 1].values.reduce(function(a: number, b: number){ return a + b }, 0);
 				if (sum < json.total_count){
 					data[data.length - 1].values.push(json.total_count - sum);
 					data[data.length - 1].text.push("other " + Facet_names[recent_facet!]);

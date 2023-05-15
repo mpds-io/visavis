@@ -95,7 +95,7 @@ namespace $.$$ {
 			const dos_matrix = this.dos_matrix()
 
 			if (bands_matrix){
-				for (var i = 0; i < bands_matrix.bands.length; i++){
+				for (let i = 0; i < bands_matrix.bands.length; i++){
 					dataset.push({
 						x: $lib_d3.all().range(bands_matrix.bands[i].length),
 						y: bands_matrix.bands[i],
@@ -130,8 +130,8 @@ namespace $.$$ {
 			let y_title = ''
 
 			if (bands_matrix){
-				var x_labels = [];
-				for (var i = 0; i < bands_matrix.kpoints.length; i++){
+				const x_labels = [];
+				for (let i = 0; i < bands_matrix.kpoints.length; i++){
 					x_labels.push( (bands_matrix.kpoints[i][0] == 0 && bands_matrix.kpoints[i][1] == 0 && bands_matrix.kpoints[i][2] == 0) ? 'Г' : '' );
 				}
 				x_title = 'k'
