@@ -46,3 +46,5 @@ $visavis_app $mol_book2
 			plot <= plot*
 		<= Scatter*plot $visavis_scatter
 			plot <= plot*
+		<= Customscatter*plot $visavis_customscatter
+			plot <= plot*

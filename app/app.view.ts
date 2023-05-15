@@ -73,6 +73,7 @@ namespace $.$$ {
 				case 'eigenplot': return this.Eigen( plot ).pages()
 				case 'pie': return this.Pie( plot ).pages()
 				case 'scatter': return this.Scatter( plot ).pages()
+				case 'customscatter': return this.Customscatter( plot ).pages()
 				default: return []
 			}
 		}
