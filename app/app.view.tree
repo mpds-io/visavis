@@ -40,3 +40,5 @@ $visavis_app $mol_book2
 			plot <= plot*
 		<= Discovery*plot $visavis_discovery
 			plot <= plot*
+		<= Eigen*plot $visavis_eigen
+			plot <= plot*

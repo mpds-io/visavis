@@ -70,6 +70,7 @@ namespace $.$$ {
 				case 'pd': return this.Phase( plot ).pages()
 				case 'bar': return this.Bar( plot ).pages()
 				case 'discovery': return this.Discovery( plot ).pages()
+				case 'eigenplot': return this.Eigen( plot ).pages()
 				default: return []
 			}
 		}
