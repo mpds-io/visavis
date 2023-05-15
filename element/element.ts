@@ -17,7 +17,7 @@ namespace $.$$ {
 
 	export const $visavis_element_list = [null, 'H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne', 'Na', 'Mg', 'Al', 'Si', 'P', 'S', 'Cl', 'Ar', 'K', 'Ca', 'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni', 'Cu', 'Zn', 'Ga', 'Ge', 'As', 'Se', 'Br', 'Kr', 'Rb', 'Sr', 'Y', 'Zr', 'Nb', 'Mo', 'Tc', 'Ru', 'Rh', 'Pd', 'Ag', 'Cd', 'In', 'Sn', 'Sb', 'Te', 'I', 'Xe', 'Cs', 'Ba', 'La', 'Ce', 'Pr', 'Nd', 'Pm', 'Sm', 'Eu', 'Gd', 'Tb', 'Dy', 'Ho', 'Er', 'Tm', 'Yb', 'Lu', 'Hf', 'Ta', 'W', 'Re', 'Os', 'Ir', 'Pt', 'Au', 'Hg', 'Tl', 'Pb', 'Bi', 'Po', 'At', 'Rn', 'Fr', 'Ra', 'Ac', 'Th', 'Pa', 'U', 'Np', 'Pu', 'Am']
 
-	export const $visavis_elemental_names: {
+	export const $visavis_elemental_names = {
 		"num": "atomic number",
 		"nump": "periodic number",
 		"size": "atomic size",
@@ -28,16 +28,5 @@ namespace $.$$ {
 		"rmet": "metallic radii",
 		"tmelt": "melting temperature",
 		"eneg": "electronegativity"
-	} = {
-		"num": "atomic number",
-		"nump": "periodic number",
-		"size": "atomic size",
-		"rea": "atomic reactivity",
-		"rpp": "pseudopotential radii",
-		"rion": "ionic radii",
-		"rcov": "covalent radii",
-		"rmet": "metallic radii",
-		"tmelt": "melting temperature",
-		"eneg": "electronegativity"
-	};
+	} as const
 }
