@@ -16,21 +16,25 @@ namespace $.$$ {
 		answerto: $mol_data_string,
 	})
 
-	function discover(elementals_on: string[], first: ReturnType<typeof Discover_item>, second?: ReturnType<typeof Discover_item>){
+	function discover(
+		elementals_on: string[], 
+		first: ReturnType<typeof Discover_item>, 
+		second?: ReturnType<typeof Discover_item>
+	) {
 		// if (!window.mlPca) return urge('Sorry, your web-browser is too old for this task');
 	
-		const to_predict = [],
-			labels = [],
-			nlen = elementals_on.length
+		const to_predict = []
+		const labels = []
+		const nlen = elementals_on.length
 		let	given_separation = 0;
-			// given_separation = false;
+		// given_separation = false;
 	
 		// if (!first.points.length || (second && !second.points.length)) return urge('Error: not enough data for analysis');
 	
 		for (let i = 0; i < first.points.length; i++){
 	
-			const prop_array = [],
-				label = [];
+			const prop_array = []
+			const label = []
 	
 			for (let j = 0; j < first.points[0].length; j++){
 	
@@ -112,7 +116,6 @@ namespace $.$$ {
 		@ $mol_action
 		subscribe_events() {
 
-
 			const d3 = $lib_d3.all()
 
 			const json = this.json() as any
@@ -153,8 +156,8 @@ namespace $.$$ {
 			return {
 				showlegend: false,
 				hovermode: "closest",
-				xaxis: {showgrid: false},
-				yaxis: {showgrid: false},
+				xaxis: { showgrid: false },
+				yaxis: { showgrid: false },
 				margin: {
 					l: 0,
 					r: 0,
@@ -163,8 +166,31 @@ namespace $.$$ {
 					pad: 0
 				},
 				annotations: [
-					{x: 0.63, y: 0.97, xref: 'paper', yref: 'paper', xanchor: 'right', yanchor: 'bottom', text: '<i>Second Principal Component (a<sub>1</sub>x + b<sub>1</sub>y + c<sub>1</sub>z + ...)</i>', showarrow: false, bgcolor: '#fff', font: {family: "Exo2", size: 14}},
-					{x: 0.97, y: 0.67, xref: 'paper', yref: 'paper', xanchor: 'left', yanchor: 'top', text: '<i>First Principal Component (a<sub>2</sub>x + b<sub>2</sub>y + c<sub>2</sub>z + ...)</i>', showarrow: false, bgcolor: '#fff', textangle: 270, font: {family: "Exo2", size: 14}}
+					{ 
+						x: 0.63, 
+						y: 0.97, 
+						xref: 'paper', 
+						yref: 'paper', 
+						xanchor: 'right', 
+						yanchor: 'bottom', 
+						text: '<i>Second Principal Component (a<sub>1</sub>x + b<sub>1</sub>y + c<sub>1</sub>z + ...)</i>', 
+						showarrow: false, 
+						bgcolor: '#fff', 
+						font: { family: "Exo2", size: 14 } 
+					},
+					{ 
+						x: 0.97, 
+						y: 0.67, 
+						xref: 'paper', 
+						yref: 'paper', 
+						xanchor: 'left', 
+						yanchor: 'top', 
+						text: '<i>First Principal Component (a<sub>2</sub>x + b<sub>2</sub>y + c<sub>2</sub>z + ...)</i>', 
+						showarrow: false, 
+						bgcolor: '#fff', 
+						textangle: 270, 
+						font: { family: "Exo2", size: 14 } 
+					}
 				]
 			}
 		}

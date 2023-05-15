@@ -30,27 +30,27 @@ namespace $.$$ {
 
 			const json = this.json() as any
 
-			if (!(json.payload2 && json.payload2.x && json.payload2.y)){
-				// warn_demo();
-				// if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
-				const paths = d3.selectAll('g.point path')
-				paths.on('mouseover', function(this: any){
-					const selection = d3.select(this)
-					selection.style('fill', '#E36868');
-					selection.style('cursor', 'pointer');
-				})
-				paths.on('mouseout', function(this: any){
-					const selection = d3.select(this)
-					selection.style('fill', '#3e3f95');
-					selection.style('cursor', 'default');
-				})
-				// paths.on('click', function(evt){
-				// 	if (visavis.mpds_embedded){
-				// 		window.parent.wmgui.visavis_terminating = true;
-				// 		window.parent.location.hash = window.parent.wmgui.aug_search_cmd("years", evt.x);
-				// 	}
-				// });
-			}
+			if (json.payload2 && json.p1ayload2.x && json.payload2.y) return
+			
+			// warn_demo();1
+			// if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
+			const paths = d3.selectAll('g.point path')
+			paths.on('mouseover', function(this: any){
+				const selection = d3.select(this)
+				selection.style('fill', '#E36868');
+				selection.style('cursor', 'pointer');
+			})
+			paths.on('mouseout', function(this: any){
+				const selection = d3.select(this)
+				selection.style('fill', '#3e3f95');
+				selection.style('cursor', 'default');
+			})
+			// paths.on('click', function(evt){
+			// 	if (visavis.mpds_embedded){
+			// 		window.parent.wmgui.visavis_terminating = true;
+			// 		window.parent.location.hash = window.parent.wmgui.aug_search_cmd("years", evt.x);
+			// 	}
+			// });
 		}
 
 		@ $mol_mem
