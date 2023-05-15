@@ -1,0 +1,67 @@
+[visavis_graph_plot] .edge {
+	fill: none;
+	stroke: #ddd;
+	stroke-width: 1px;
+}
+
+[visavis_graph_plot] .edge.prel {
+	stroke: #FE9A2E;
+}
+
+[visavis_graph_plot] .edge.hrel {
+	stroke: #3e3f95;
+}
+
+[visavis_graph_plot] .edge.trel {
+	stroke: #3e3f95;
+}
+
+[visavis_graph_plot] .edge.arel {
+	stroke: #E36868;
+}
+
+[visavis_graph_plot] .edge.grel {
+	stroke: #acc2b3;
+}
+
+[visavis_graph_plot] circle {
+	cursor: move;
+	fill: #ccc;
+}
+
+[visavis_graph_plot] circle.f {
+	fill: #acc2b3;
+}
+
+[visavis_graph_plot] circle.p {
+	fill: #FE9A2E;
+}
+
+[visavis_graph_plot] circle.h, circle.t {
+	fill: #3e3f95;
+}
+
+[visavis_graph_plot] circle.a {
+	fill: #E36868;
+}
+
+[visavis_graph_plot] text.micro {
+	font-size: 11px;
+	letter-spacing: -0.5px;
+}
+
+[visavis_graph_plot] text.macro {
+	font-size: 14px;
+	letter-spacing: 0.5px;
+}
+
+[visavis_graph_plot] text.captions {
+	cursor: pointer;
+	fill: #333;
+}
+
+[visavis_graph_plot] text.shadow {
+	stroke: #fff;
+	stroke-width: 3px;
+	stroke-opacity: 0.8;
+}

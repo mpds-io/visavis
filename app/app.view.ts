@@ -75,6 +75,7 @@ namespace $.$$ {
 				case 'scatter': return this.Scatter( plot ).pages()
 				case 'customscatter': return this.Customscatter( plot ).pages()
 				case 'heatmap': return this.Heatmap( plot ).pages()
+				case 'graph': return this.Graph( plot ).pages()
 				default: return []
 			}
 		}

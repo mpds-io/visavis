@@ -59,7 +59,7 @@ namespace $.$$ {
 			let data_z = json.payload.z
 
 			if (!json.odet) {
-				var dice = Math.floor(Math.random() * 100) % 3;
+				const dice = Math.floor(Math.random() * 100) % 3;
 				if (dice === 0){
 					data_x = json.payload.x
 					data_y = json.payload.y

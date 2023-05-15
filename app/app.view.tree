@@ -50,3 +50,5 @@ $visavis_app $mol_book2
 			plot <= plot*
 		<= Heatmap*plot $visavis_heatmap
 			plot <= plot*
+		<= Graph*plot $visavis_graph
+			plot <= plot*

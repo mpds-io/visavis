@@ -4,11 +4,13 @@ namespace $.$$ {
 		bands: $mol_data_array( $mol_data_array( $mol_data_number ) ),
 		kpoints: $mol_data_array( $mol_data_array( $mol_data_number ) ),
 	})
+	type Bands_matrix = ReturnType<typeof Bands_matrix>
 
 	const Dos_matrix = $mol_data_record({
 		dos: $mol_data_array( $mol_data_number ),
 		levels: $mol_data_array( $mol_data_number ),
 	})
+	type Dos_matrix = ReturnType<typeof Dos_matrix>
 
 	export const $visavis_eigen_json = $mol_data_record( {
 		sample: $mol_data_record( {
@@ -63,8 +65,8 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		bands_matrix(): ReturnType<typeof Bands_matrix> | null {
-			const matrix = this.json().sample.measurement[0].property.matrix as (ReturnType<typeof Bands_matrix>);
+		bands_matrix(): Bands_matrix | null {
+			const matrix = this.json().sample.measurement[0].property.matrix as Bands_matrix;
 			if (matrix.bands){
 				return matrix
 			} else {
@@ -73,8 +75,8 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		dos_matrix(): ReturnType<typeof Dos_matrix> | null {
-			const matrix = this.json().sample.measurement[0].property.matrix as (ReturnType<typeof Dos_matrix>);
+		dos_matrix(): Dos_matrix | null {
+			const matrix = this.json().sample.measurement[0].property.matrix as Dos_matrix;
 			if (matrix.dos){
 				return matrix
 			} else {
