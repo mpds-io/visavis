@@ -39,7 +39,18 @@ namespace $.$$ {
 			},
 		},
 
+		Plot: {
+			flex: {
+				grow: 1,
+				shrink: 0,
+			},
+		},
+
 		Setup: {
+			flex: {
+				basis: rem(25),
+				shrink: 0,
+			},
 			Body: {
 				padding: $mol_gap.block,
 			},

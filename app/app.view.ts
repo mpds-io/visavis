@@ -68,6 +68,14 @@ namespace $.$$ {
 				case 'matrix': return this.Matrix( plot ).pages()
 				case 'plot3d': return this.Cube( plot ).pages()
 				case 'pd': return this.Phase( plot ).pages()
+				case 'bar': return this.Bar( plot ).pages()
+				case 'discovery': return this.Discovery( plot ).pages()
+				case 'eigenplot': return this.Eigen( plot ).pages()
+				case 'pie': return this.Pie( plot ).pages()
+				case 'scatter': return this.Scatter( plot ).pages()
+				case 'customscatter': return this.Customscatter( plot ).pages()
+				case 'heatmap': return this.Heatmap( plot ).pages()
+				case 'graph': return this.Graph( plot ).pages()
 				default: return []
 			}
 		}
@@ -81,6 +89,10 @@ namespace $.$$ {
 				this.Menu(),
 				... this.Plot_opened(),
 			]
+		}
+
+		Placeholder() {
+			return this.Plot_opened().length > 0 ? null as any : super.Placeholder()
 		}
 
 	}
