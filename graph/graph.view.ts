@@ -92,7 +92,6 @@ namespace $.$$ {
 
 		@ $mol_mem
 		draw() {
-			
 			// const predefined_h;
 			// if (window.location.hash.indexOf('visavis_height=') !== -1){
 			// 	// internal client-only URL param (to be ignored by the server)
@@ -108,7 +107,7 @@ namespace $.$$ {
 			const { nodes, edges, labels, radii, foci, table, circle_cls, text_cls } = this.data()
 			
 			const d3 = $visavis_lib.d3()
-			const svg = d3.select('[visavis_graph_root]')
+			const svg = d3.select('[visavis_graph_root]').append('svg')
 				// .attr("width", width)
 				// .attr("height", height);
 		

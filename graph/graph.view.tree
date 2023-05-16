@@ -4,5 +4,5 @@ $visavis_graph $mol_book2
 		<= Plot $mol_page
 			title <= plot_title \
 			body <= plot_body /
-				<= Root $mol_svg
-			auto <= draw null
+				<= Root $mol_view
+					render <= draw null
