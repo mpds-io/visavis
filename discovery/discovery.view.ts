@@ -25,7 +25,8 @@ namespace $.$$ {
 		first: Discover_item, 
 		second?: Discover_item
 	) {
-		// if (!window.mlPca) return urge('Sorry, your web-browser is too old for this task');
+		const mlPca: any = $visavis_lib.pca()
+		if (!mlPca) return $mol_fail('Sorry, your web-browser is too old for this task');
 	
 		const to_predict = []
 		const labels = []
@@ -33,7 +34,7 @@ namespace $.$$ {
 		let	given_separation = 0;
 		// given_separation = false;
 	
-		// if (!first.points.length || (second && !second.points.length)) return urge('Error: not enough data for analysis');
+		if (!first.points.length || (second && !second.points.length)) return $mol_fail('Error: not enough data for analysis');
 	
 		for (let i = 0; i < first.points.length; i++){
 	
@@ -76,12 +77,11 @@ namespace $.$$ {
 					labels.push(labelStr);
 				}
 			}
-			// if (to_predict.length == given_separation) return urge('Error: a selected dataset is fully included into a reference dataset');
+			if (to_predict.length == given_separation) return $mol_fail('Error: a selected dataset is fully included into a reference dataset');
 		}
 	
-		// if (to_predict.length > 21000) return urge('Error: too much data for analysis');
+		if (to_predict.length > 21000) return $mol_fail('Error: too much data for analysis');
 	
-		const mlPca: any = $visavis_lib.pca()
 		const pca = new mlPca(to_predict)
 		const predicted = pca.predict(to_predict, {nComponents: 2});
 	

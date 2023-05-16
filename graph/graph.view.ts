@@ -43,13 +43,6 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		plot_view_rect() {
-			const rect = this.Plot().Body().view_rect()
-			if (!rect) return NaN
-			return rect
-		}
-
-		@ $mol_mem
 		data() {
 			const json = this.json()
 
@@ -84,7 +77,6 @@ namespace $.$$ {
 				}
 			});
 			if (!counter) return $mol_fail('Warning: nothing to show');
-			// if (!counter) return urge('Warning: nothing to show');
 		
 			const circle_cls = visavis_graph_default_rel.substr(0, 1)
 			const text_cls = (counter > 25) ? "micro" : "macro"
@@ -100,6 +92,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		draw() {
+			
 			// const predefined_h;
 			// if (window.location.hash.indexOf('visavis_height=') !== -1){
 			// 	// internal client-only URL param (to be ignored by the server)

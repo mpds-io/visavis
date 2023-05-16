@@ -127,7 +127,6 @@ namespace $.$$ {
 			}
 		
 			if (!tot_count) return $mol_fail('Warning: not enough data for analysis');
-			// if (!tot_count) return urge('Warning: not enough data for analysis');
 			return tot_count
 		}
 
@@ -137,7 +136,6 @@ namespace $.$$ {
 			const json = this.json()
 
 			if (!json.total_count || json.total_count == 1) return $mol_fail('Warning: not enough data for analysis');
-			// if (!json.total_count || json.total_count == 1) return urge('Warning: not enough data for analysis');
 
 			const data: any[] = []
 			const classes = []
