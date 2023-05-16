@@ -15,75 +15,71 @@ namespace $.$$ {
 
 	type Elementals_dict = typeof $visavis_elemental_names
 
+	type Elementals = Array<keyof Elementals_dict>
+
 	export const $visavis_discovery_json = $mol_data_record({
 		payload: Payload,
 		answerto: $mol_data_string,
 	})
 
 	function discover(
-		elementals_on: string[], 
+		elementals_on: Elementals, 
 		first: Discover_item, 
 		second?: Discover_item
 	) {
 		const mlPca: any = $visavis_lib.pca()
 		if (!mlPca) return $mol_fail('Sorry, your web-browser is too old for this task');
 	
-		const to_predict = []
-		const labels = []
-		const nlen = elementals_on.length
+		if (!first.points.length || (second && !second.points.length)) return $mol_fail('Error: not enough data for analysis');
+
 		let	given_separation = 0;
 		// given_separation = false;
-	
-		if (!first.points.length || (second && !second.points.length)) return $mol_fail('Error: not enough data for analysis');
-	
-		for (let i = 0; i < first.points.length; i++){
-	
-			const prop_array = []
-			const label = []
-	
-			for (let j = 0; j < first.points[0].length; j++){
-	
-				for (let k = 0; k < nlen; k++){
-					prop_array.push( ($visavis_element_prop as any)[elementals_on[k]] [ first.points[i][j] ] );
-				}
-	
-				label.push($visavis_element_list[ first.points[i][j] ]);
-			}
-			to_predict.push(prop_array);
-			labels.push(label.filter(function(x){ return x }).join('-'));
+
+		function elements_data( element_ids: readonly number[] ){
+			const prop_array: number[] = []
+			const label_parts: string[] = []
+
+			element_ids.forEach( element_id => {
+				const props = elementals_on.map( prop_name => $visavis_element_prop[ prop_name ][ element_id ])
+				const name = $visavis_element_list[ element_id ]!
+				prop_array.push( ...props )
+				label_parts.push( name );
+			})
+
+			const label = label_parts.filter( x => x ).join('-')
+			return { prop_array, label }
 		}
+
+		const to_predict: number[][] = []
+		const labels: string[] = []
+
+		first.points.forEach( element_ids => {
+			const { prop_array, label } = elements_data( element_ids )
+
+			to_predict.push( prop_array );
+			labels.push( label );
+		})
 	
 		if (second){
 			given_separation = to_predict.length;
+
+			second.points.forEach( element_ids => {
+				const { prop_array, label } = elements_data( element_ids )
 	
-			for (let i = 0; i < second.points.length; i++){
-	
-				const prop_array = []
-				const label = []
-	
-				for (let j = 0; j < second.points[0].length; j++){
-	
-					for (let k = 0; k < nlen; k++){
-						prop_array.push( ($visavis_element_prop as any)[elementals_on[k]][ second.points[i][j] ] );
-					}
-	
-					label.push($visavis_element_list[ second.points[i][j] ]);
-				}
-	
-				const labelStr = label.filter( (x)=> x ).join('-');
 				// discard points in the *second* that are already in the *first*
-				if (labels.indexOf(labelStr) == -1){
-					to_predict.push(prop_array);
-					labels.push(labelStr);
+				if (labels.indexOf( label ) === -1) {
+					to_predict.push( prop_array );
+					labels.push( label );
 				}
-			}
+			})
+			
 			if (to_predict.length == given_separation) return $mol_fail('Error: a selected dataset is fully included into a reference dataset');
 		}
 	
 		if (to_predict.length > 21000) return $mol_fail('Error: too much data for analysis');
 	
-		const pca = new mlPca(to_predict)
-		const predicted = pca.predict(to_predict, {nComponents: 2});
+		const pca = new mlPca( to_predict )
+		const predicted = pca.predict( to_predict, {nComponents: 2} );
 	
 		if (second){
 			return [{
@@ -197,7 +193,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		elementals_on() {
-			const elementals_on: Array<keyof Elementals_dict> = []
+			const elementals_on: Elementals = []
 
 			Object.keys( this.elementals_dict() ).forEach( key => {
 				if (this.elemental_checked(key)) {
