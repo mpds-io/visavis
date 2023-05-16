@@ -31,14 +31,24 @@ namespace $.$$ {
 
 		@ $mol_mem
 		draw() {
-			const promise = $lib_plotly.all().react(
-				this.Root().dom_node() as HTMLElement,
-				this.data(), 
-				this.layout(),
-				this.plot_options(),
-			)
+			try {
 
-			promise.then( () => this.subscribe_events() )
+				$mol_wire_sync( $lib_plotly.all() ).react(
+					this.Root().dom_node() as HTMLElement,
+					this.data(), 
+					this.layout(),
+					this.plot_options(),
+				)	
+
+				this.subscribe_events() 
+				this.error_showed( null )
+
+			} catch( error: any ) {
+
+				$mol_fail_log( error )
+				this.error_showed( error )
+
+			}
 		}
 
 	}

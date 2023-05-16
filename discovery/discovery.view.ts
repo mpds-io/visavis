@@ -200,14 +200,13 @@ namespace $.$$ {
 				}
 			} )
 
+			if (elementals_on.length === 0) return $mol_fail( new $mol_data_error('At least one property must be enabled') )
+
 			return elementals_on
 		}
 		
 		@ $mol_mem_key
 		elemental_checked(id: any, next?: any) {
-			const elementals_on = $mol_mem_cached( () => this.elementals_on() )
-			if ( elementals_on?.length === 1 && elementals_on[0] === id ) return true //at least one must be enabled
-
 			if ( next !== undefined ) return next as never
 			return id === 'nump' ? true : false //nump on by default
 		}
