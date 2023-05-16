@@ -11,11 +11,7 @@ namespace $.$$ {
 		name: $mol_data_string
 	})
 
-	type Discover_item = ReturnType<typeof Discover_item>
-
 	type Elementals_dict = typeof $visavis_elemental_names
-
-	type Elementals = Array<keyof Elementals_dict>
 
 	export const $visavis_discovery_json = $mol_data_record({
 		payload: Payload,
@@ -23,14 +19,15 @@ namespace $.$$ {
 	})
 
 	function discover(
-		elementals_on: Elementals, 
-		first: Discover_item, 
-		second?: Discover_item
+		elementals_on: (keyof Elementals_dict)[], 
+		first: typeof Discover_item.Value, 
+		second?: typeof Discover_item.Value
 	) {
 		const mlPca: any = $visavis_lib.pca()
-		if (!mlPca) return $mol_fail('Sorry, your web-browser is too old for this task');
+		if (!mlPca) return $mol_fail( new $mol_data_error('Sorry, your web-browser is too old for this task') );
 	
-		if (!first.points.length || (second && !second.points.length)) return $mol_fail('Error: not enough data for analysis');
+		// if (!first.points.length || (second && !second.points.length)) return urge('Error: not enough data for analysis');
+		// ^ this will be validated in Discover_item()
 
 		let	given_separation = 0;
 		// given_separation = false;
@@ -67,16 +64,18 @@ namespace $.$$ {
 				const { prop_array, label } = elements_data( element_ids )
 	
 				// discard points in the *second* that are already in the *first*
-				if (labels.indexOf( label ) === -1) {
+				if (labels.includes( label )) {
 					to_predict.push( prop_array );
 					labels.push( label );
 				}
 			})
-			
-			if (to_predict.length == given_separation) return $mol_fail('Error: a selected dataset is fully included into a reference dataset');
+
+			if (to_predict.length == given_separation) {
+				return $mol_fail( new $mol_data_error('Error: a selected dataset is fully included into a reference dataset') )
+			}
 		}
 	
-		if (to_predict.length > 21000) return $mol_fail('Error: too much data for analysis');
+		if (to_predict.length > 21000) return $mol_fail( new $mol_data_error('Error: too much data for analysis') )
 	
 		const pca = new mlPca( to_predict )
 		const predicted = pca.predict( to_predict, {nComponents: 2} );
@@ -193,7 +192,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		elementals_on() {
-			const elementals_on: Elementals = []
+			const elementals_on: (keyof Elementals_dict)[] = []
 
 			Object.keys( this.elementals_dict() ).forEach( key => {
 				if (this.elemental_checked(key)) {
@@ -206,7 +205,7 @@ namespace $.$$ {
 		
 		@ $mol_mem_key
 		elemental_checked(id: any, next?: any) {
-			const elementals_on = $mol_wire_probe( () => this.elementals_on() )
+			const elementals_on = $mol_mem_cached( () => this.elementals_on() )
 			if ( elementals_on?.length === 1 && elementals_on[0] === id ) return true //at least one must be enabled
 
 			if ( next !== undefined ) return next as never

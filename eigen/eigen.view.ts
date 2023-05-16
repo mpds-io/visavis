@@ -116,7 +116,7 @@ namespace $.$$ {
 				});
 			} else {
 				// return notify('Cannot get plot data, please, try again');
-				return $mol_fail('Cannot get plot data, please, try again');
+				// ^ it will be validated id $visavis_eigen_json()
 			}
 
 			return dataset	

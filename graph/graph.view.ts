@@ -76,7 +76,7 @@ namespace $.$$ {
 					radii[link.source] = radius + 2;
 				}
 			});
-			if (!counter) return $mol_fail('Warning: nothing to show');
+			if (!counter) return $mol_fail( new $mol_data_error('Warning: nothing to show') )
 		
 			const circle_cls = visavis_graph_default_rel.substr(0, 1)
 			const text_cls = (counter > 25) ? "micro" : "macro"
