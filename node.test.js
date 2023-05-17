@@ -3356,6 +3356,204 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $mol_page extends $mol_view {
+        dom_name() {
+            return "article";
+        }
+        field() {
+            return {
+                ...super.field(),
+                tabIndex: this.tabindex()
+            };
+        }
+        sub() {
+            return [
+                this.Head(),
+                this.Body(),
+                this.Foot()
+            ];
+        }
+        tabindex() {
+            return -1;
+        }
+        Logo() {
+            return null;
+        }
+        title_content() {
+            return [
+                this.Logo(),
+                this.title()
+            ];
+        }
+        Title() {
+            const obj = new this.$.$mol_view();
+            obj.dom_name = () => "h1";
+            obj.sub = () => this.title_content();
+            return obj;
+        }
+        tools() {
+            return [];
+        }
+        Tools() {
+            const obj = new this.$.$mol_view();
+            obj.sub = () => this.tools();
+            return obj;
+        }
+        head() {
+            return [
+                this.Title(),
+                this.Tools()
+            ];
+        }
+        Head() {
+            const obj = new this.$.$mol_view();
+            obj.minimal_height = () => 64;
+            obj.dom_name = () => "header";
+            obj.sub = () => this.head();
+            return obj;
+        }
+        body() {
+            return [];
+        }
+        body_scroll_top(val) {
+            return this.Body().scroll_top(val);
+        }
+        Body() {
+            const obj = new this.$.$mol_scroll();
+            obj.sub = () => this.body();
+            return obj;
+        }
+        foot() {
+            return [];
+        }
+        Foot() {
+            const obj = new this.$.$mol_view();
+            obj.dom_name = () => "footer";
+            obj.sub = () => this.foot();
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_page.prototype, "Title", null);
+    __decorate([
+        $mol_mem
+    ], $mol_page.prototype, "Tools", null);
+    __decorate([
+        $mol_mem
+    ], $mol_page.prototype, "Head", null);
+    __decorate([
+        $mol_mem
+    ], $mol_page.prototype, "Body", null);
+    __decorate([
+        $mol_mem
+    ], $mol_page.prototype, "Foot", null);
+    $.$mol_page = $mol_page;
+})($ || ($ = {}));
+//mol/page/-view.tree/page.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        const { per, rem } = $mol_style_unit;
+        const { calc } = $mol_style_func;
+        $mol_style_define($mol_page, {
+            display: 'flex',
+            flex: {
+                basis: 'auto',
+                direction: 'column',
+            },
+            position: 'relative',
+            alignSelf: 'stretch',
+            maxWidth: per(100),
+            maxHeight: per(100),
+            boxSizing: 'border-box',
+            color: $mol_theme.text,
+            ':focus': {
+                outline: 'none',
+            },
+            Head: {
+                display: 'flex',
+                flexWrap: 'wrap',
+                justifyContent: 'flex-end',
+                flex: 'none',
+                position: 'relative',
+                margin: 0,
+                minHeight: rem(4),
+                padding: $mol_gap.block,
+                background: {
+                    color: $mol_theme.card,
+                },
+                border: {
+                    radius: $mol_gap.round,
+                },
+                boxShadow: `0 0.5rem 0.5rem -0.5rem hsla(0,0%,0%,.25)`,
+                zIndex: 2,
+            },
+            Title: {
+                minHeight: rem(2),
+                margin: 0,
+                padding: $mol_gap.text,
+                gap: $mol_gap.text,
+                wordBreak: 'normal',
+                textShadow: '0 0',
+                font: {
+                    size: 'inherit',
+                    weight: 'normal',
+                },
+                flex: {
+                    grow: 1,
+                    shrink: 1,
+                    basis: 'auto',
+                },
+            },
+            Tools: {
+                flex: {
+                    basis: 'auto',
+                    grow: 1000,
+                    shrink: 1,
+                },
+                display: 'flex',
+                justifyContent: 'flex-end',
+                alignItems: 'flex-start',
+                flexWrap: 'wrap',
+            },
+            Body: {
+                flex: {
+                    grow: 1000,
+                    shrink: 1,
+                    basis: per(100),
+                },
+                padding: $mol_gap.block,
+            },
+            Foot: {
+                display: 'flex',
+                justifyContent: 'space-between',
+                flex: 'none',
+                margin: 0,
+                background: {
+                    color: $mol_theme.card,
+                },
+                border: {
+                    radius: $mol_gap.round,
+                },
+                boxShadow: `0 -0.5rem 0.5rem -0.5rem hsla(0,0%,0%,.25)`,
+                zIndex: 1,
+                padding: $mol_gap.block,
+                ':empty': {
+                    display: 'none',
+                },
+            },
+        });
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//mol/page/page.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $mol_speck extends $mol_view {
         attr() {
             return {
@@ -5735,200 +5933,74 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $mol_page extends $mol_view {
-        dom_name() {
-            return "article";
-        }
-        field() {
-            return {
-                ...super.field(),
-                tabIndex: this.tabindex()
-            };
-        }
-        sub() {
-            return [
-                this.Head(),
-                this.Body(),
-                this.Foot()
-            ];
-        }
-        tabindex() {
-            return -1;
-        }
-        Logo() {
-            return null;
-        }
-        title_content() {
-            return [
-                this.Logo(),
-                this.title()
-            ];
-        }
-        Title() {
+    class $mol_ghost extends $mol_view {
+        Sub() {
             const obj = new this.$.$mol_view();
-            obj.dom_name = () => "h1";
-            obj.sub = () => this.title_content();
-            return obj;
-        }
-        tools() {
-            return [];
-        }
-        Tools() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => this.tools();
-            return obj;
-        }
-        head() {
-            return [
-                this.Title(),
-                this.Tools()
-            ];
-        }
-        Head() {
-            const obj = new this.$.$mol_view();
-            obj.minimal_height = () => 64;
-            obj.dom_name = () => "header";
-            obj.sub = () => this.head();
-            return obj;
-        }
-        body() {
-            return [];
-        }
-        body_scroll_top(val) {
-            return this.Body().scroll_top(val);
-        }
-        Body() {
-            const obj = new this.$.$mol_scroll();
-            obj.sub = () => this.body();
-            return obj;
-        }
-        foot() {
-            return [];
-        }
-        Foot() {
-            const obj = new this.$.$mol_view();
-            obj.dom_name = () => "footer";
-            obj.sub = () => this.foot();
             return obj;
         }
     }
     __decorate([
         $mol_mem
-    ], $mol_page.prototype, "Title", null);
-    __decorate([
-        $mol_mem
-    ], $mol_page.prototype, "Tools", null);
-    __decorate([
-        $mol_mem
-    ], $mol_page.prototype, "Head", null);
-    __decorate([
-        $mol_mem
-    ], $mol_page.prototype, "Body", null);
-    __decorate([
-        $mol_mem
-    ], $mol_page.prototype, "Foot", null);
-    $.$mol_page = $mol_page;
+    ], $mol_ghost.prototype, "Sub", null);
+    $.$mol_ghost = $mol_ghost;
 })($ || ($ = {}));
-//mol/page/-view.tree/page.view.tree.ts
+//mol/ghost/-view.tree/ghost.view.tree.ts
 ;
 "use strict";
 var $;
 (function ($) {
     var $$;
     (function ($$) {
-        const { per, rem } = $mol_style_unit;
-        const { calc } = $mol_style_func;
-        $mol_style_define($mol_page, {
-            display: 'flex',
-            flex: {
-                basis: 'auto',
-                direction: 'column',
-            },
-            position: 'relative',
-            alignSelf: 'stretch',
-            maxWidth: per(100),
-            maxHeight: per(100),
-            boxSizing: 'border-box',
-            color: $mol_theme.text,
-            ':focus': {
-                outline: 'none',
-            },
-            Head: {
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'flex-end',
-                flex: 'none',
-                position: 'relative',
-                margin: 0,
-                minHeight: rem(4),
-                padding: $mol_gap.block,
-                background: {
-                    color: $mol_theme.card,
-                },
-                border: {
-                    radius: $mol_gap.round,
-                },
-                boxShadow: `0 0.5rem 0.5rem -0.5rem hsla(0,0%,0%,.25)`,
-                zIndex: 2,
-            },
-            Title: {
-                minHeight: rem(2),
-                margin: 0,
-                padding: $mol_gap.text,
-                gap: $mol_gap.text,
-                wordBreak: 'normal',
-                textShadow: '0 0',
-                font: {
-                    size: 'inherit',
-                    weight: 'normal',
-                },
-                flex: {
-                    grow: 1,
-                    shrink: 1,
-                    basis: 'auto',
-                },
-            },
-            Tools: {
-                flex: {
-                    basis: 'auto',
-                    grow: 1000,
-                    shrink: 1,
-                },
-                display: 'flex',
-                justifyContent: 'flex-end',
-                alignItems: 'flex-start',
-                flexWrap: 'wrap',
-            },
-            Body: {
-                flex: {
-                    grow: 1000,
-                    shrink: 1,
-                    basis: per(100),
-                },
-                padding: $mol_gap.block,
-            },
-            Foot: {
-                display: 'flex',
-                justifyContent: 'space-between',
-                flex: 'none',
-                margin: 0,
-                background: {
-                    color: $mol_theme.card,
-                },
-                border: {
-                    radius: $mol_gap.round,
-                },
-                boxShadow: `0 -0.5rem 0.5rem -0.5rem hsla(0,0%,0%,.25)`,
-                zIndex: 1,
-                padding: $mol_gap.block,
-                ':empty': {
-                    display: 'none',
-                },
-            },
-        });
+        class $mol_ghost extends $.$mol_ghost {
+            dom_node(next) {
+                const node = this.Sub().dom_node(next);
+                $mol_dom_render_attributes(node, this.attr_static());
+                $mol_dom_render_events(node, this.event());
+                return node;
+            }
+            dom_node_actual() {
+                this.dom_node();
+                const node = this.Sub().dom_node_actual();
+                const attr = this.attr();
+                const style = this.style();
+                const fields = this.field();
+                $mol_dom_render_attributes(node, attr);
+                $mol_dom_render_styles(node, style);
+                $mol_dom_render_fields(node, fields);
+                return node;
+            }
+            dom_tree() {
+                const Sub = this.Sub();
+                const node = Sub.dom_tree();
+                try {
+                    this.dom_node_actual();
+                    this.auto();
+                }
+                catch (error) {
+                    $mol_fail_log(error);
+                }
+                return node;
+            }
+            title() {
+                return this.Sub().title();
+            }
+            minimal_width() {
+                return this.Sub().minimal_width();
+            }
+            minimal_height() {
+                return this.Sub().minimal_height();
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $mol_ghost.prototype, "dom_node", null);
+        __decorate([
+            $mol_mem
+        ], $mol_ghost.prototype, "dom_node_actual", null);
+        $$.$mol_ghost = $mol_ghost;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/page/page.view.css.ts
+//mol/ghost/ghost.view.ts
 ;
 "use strict";
 var $;
@@ -5988,15 +6060,15 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    function $visavis_plot_from_json(json, id) {
-        return new $visavis_plot({
+    function $visavis_plot_raw_from_json(json, id) {
+        return new $visavis_plot_raw({
             id: id || $mol_guid(),
             type: json.use_visavis_type ?? 'unknown',
             json,
         });
     }
-    $.$visavis_plot_from_json = $visavis_plot_from_json;
-    class $visavis_plot extends $mol_store {
+    $.$visavis_plot_raw_from_json = $visavis_plot_raw_from_json;
+    class $visavis_plot_raw extends $mol_store {
         id(next) {
             return this.value('id', next);
         }
@@ -6007,9 +6079,9 @@ var $;
             return this.value('json');
         }
     }
-    $.$visavis_plot = $visavis_plot;
+    $.$visavis_plot_raw = $visavis_plot_raw;
 })($ || ($ = {}));
-//visavis/plot/plot.ts
+//visavis/plot/raw/raw.ts
 ;
 "use strict";
 var $;
@@ -6097,9 +6169,9 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_matrix extends $mol_book2 {
-        plot() {
-            const obj = new this.$.$visavis_plot();
+    class $visavis_matrix extends $mol_view {
+        plot_raw() {
+            const obj = new this.$.$visavis_plot_raw();
             return obj;
         }
         size() {
@@ -6164,14 +6236,11 @@ var $;
         axis_width() {
             return 24;
         }
-        pages() {
+        sub() {
             return [
                 this.Plot(),
                 this.Setup()
             ];
-        }
-        plot_title() {
-            return "";
         }
         Root() {
             const obj = new this.$.$mol_svg();
@@ -6230,9 +6299,8 @@ var $;
             return null;
         }
         Plot() {
-            const obj = new this.$.$mol_page();
-            obj.title = () => this.plot_title();
-            obj.body = () => this.plot_body();
+            const obj = new this.$.$mol_view();
+            obj.sub = () => this.plot_body();
             obj.auto = () => this.draw();
             return obj;
         }
@@ -6281,9 +6349,8 @@ var $;
             return obj;
         }
         Setup() {
-            const obj = new this.$.$mol_page();
-            obj.title = () => this.$.$mol_locale.text('$visavis_matrix_Setup_title');
-            obj.body = () => [
+            const obj = new this.$.$mol_view();
+            obj.sub = () => [
                 this.Nonformers_label(),
                 this.Order_label()
             ];
@@ -6292,7 +6359,7 @@ var $;
     }
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "plot", null);
+    ], $visavis_matrix.prototype, "plot_raw", null);
     __decorate([
         $mol_mem
     ], $visavis_matrix.prototype, "links_value_min", null);
@@ -6660,7 +6727,7 @@ var $;
         });
         class $visavis_matrix extends $.$visavis_matrix {
             json() {
-                return $visavis_matrix_json(this.plot().json());
+                return $visavis_matrix_json(this.plot_raw().json());
             }
             nodes() {
                 return this.json().payload.nodes;
@@ -6682,9 +6749,6 @@ var $;
                         return false;
                     return heatmap;
                 }, false);
-            }
-            plot_title() {
-                return this.plot().id();
             }
             plot_body() {
                 return [
@@ -6716,7 +6780,7 @@ var $;
                 return matrix;
             }
             size() {
-                const rect = this.Plot().Body().view_rect();
+                const rect = this.Plot().view_rect();
                 if (!rect)
                     return NaN;
                 return Math.min(rect.width, rect.height) - this.plot_padding() - this.axis_width();
@@ -6894,22 +6958,20 @@ var $;
 (function ($) {
     var $$;
     (function ($$) {
-        const { per, rem, px } = $mol_style_unit;
         $mol_style_define($.$visavis_matrix, {
             flex: {
-                basis: rem(60),
-                shrink: 0,
+                grow: 1,
             },
             Side_right: {
                 position: 'absolute',
-                top: per(50),
+                top: '50%',
                 right: $mol_gap.space,
                 transform: 'translateY(-50%)'
             },
             Heatmap_color: {
-                width: rem(1),
-                height: rem(1),
-                margin: px(1),
+                width: '1rem',
+                height: '1rem',
+                margin: '1px',
             },
             Heatmap_legend: {
                 alignItems: 'flex-end',
@@ -6919,6 +6981,9 @@ var $;
             },
             Root: {
                 margin: 'auto',
+                position: 'absolute',
+                left: '50%',
+                transform: 'translateX(-50%)'
             },
             Order_switch: {
                 flex: {
@@ -6928,22 +6993,108 @@ var $;
             Plot: {
                 flex: {
                     grow: 1,
-                    shrink: 0,
                 },
+                position: 'relative',
             },
             Setup: {
                 flex: {
-                    basis: rem(25),
+                    direction: 'column',
+                    basis: '25rem',
                     shrink: 0,
                 },
-                Body: {
-                    padding: $mol_gap.block,
-                },
+                padding: $mol_gap.block,
             },
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
 //visavis/matrix/matrix.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $visavis_plotly extends $mol_view {
+        data() {
+            return {};
+        }
+        layout() {
+            return {};
+        }
+        subscribe_events() {
+            return null;
+        }
+        plot_options() {
+            return {
+                displaylogo: false,
+                displayModeBar: false,
+                staticPlot: false
+            };
+        }
+    }
+    $.$visavis_plotly = $visavis_plotly;
+})($ || ($ = {}));
+//visavis/plotly/-view.tree/plotly.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $lib_plotly extends $mol_object2 {
+        static all() {
+            return $mol_import.script('https://cdn.plot.ly/plotly-2.16.1.min.js').Plotly;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $lib_plotly, "all", null);
+    $.$lib_plotly = $lib_plotly;
+})($ || ($ = {}));
+//lib/plotly/plotly.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $visavis_plotly extends $.$visavis_plotly {
+            subscribe_events() {
+            }
+            render() {
+                if (!this.view_rect())
+                    return;
+                const { width, height } = this.view_rect();
+                const plotly_root = document.createElement('div');
+                plotly_root.style.position = 'absolute';
+                const promise = $lib_plotly.all().react(plotly_root, this.data(), { ...this.layout(), width, height }, this.plot_options());
+                const dom_node = this.dom_node_actual();
+                promise.then((plotly_root) => {
+                    dom_node.replaceChildren(plotly_root);
+                    this.subscribe_events();
+                });
+            }
+        }
+        __decorate([
+            $mol_action
+        ], $visavis_plotly.prototype, "subscribe_events", null);
+        __decorate([
+            $mol_mem
+        ], $visavis_plotly.prototype, "render", null);
+        $$.$visavis_plotly = $visavis_plotly;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//visavis/plotly/plotly.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        $mol_style_define($visavis_plotly, {
+            flex: {
+                grow: 1
+            }
+        });
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//visavis/plotly/plotly.view.css.ts
 ;
 "use strict";
 var $;
@@ -8463,9 +8614,9 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_cube extends $mol_book2 {
-        plot() {
-            const obj = new this.$.$visavis_plot();
+    class $visavis_cube extends $mol_view {
+        plot_raw() {
+            const obj = new this.$.$visavis_plot_raw();
             return obj;
         }
         heatmap(next) {
@@ -8532,17 +8683,26 @@ var $;
                 "rgb(255,0,0)"
             ];
         }
-        pages() {
+        sub() {
             return [
                 this.Plot(),
                 this.Setup()
             ];
         }
-        plot_title() {
-            return "";
+        data_shown() {
+            return {};
+        }
+        layout() {
+            return {};
+        }
+        subscribe_events() {
+            return null;
         }
         Root() {
-            const obj = new this.$.$mol_view();
+            const obj = new this.$.$visavis_plotly();
+            obj.data = () => this.data_shown();
+            obj.layout = () => this.layout();
+            obj.subscribe_events = () => this.subscribe_events();
             return obj;
         }
         value_min() {
@@ -8594,20 +8754,12 @@ var $;
             ];
             return obj;
         }
-        plot_body() {
-            return [
+        Plot() {
+            const obj = new this.$.$mol_view();
+            obj.sub = () => [
                 this.Root(),
                 this.Side_right()
             ];
-        }
-        draw() {
-            return null;
-        }
-        Plot() {
-            const obj = new this.$.$mol_page();
-            obj.title = () => this.plot_title();
-            obj.body = () => this.plot_body();
-            obj.auto = () => this.draw();
             return obj;
         }
         nonformers(next) {
@@ -8679,9 +8831,8 @@ var $;
             return obj;
         }
         Setup() {
-            const obj = new this.$.$mol_page();
-            obj.title = () => this.$.$mol_locale.text('$visavis_cube_Setup_title');
-            obj.body = () => [
+            const obj = new this.$.$mol_view();
+            obj.sub = () => [
                 this.Nonformers_label(),
                 this.X_order_label(),
                 this.Y_order_label(),
@@ -8692,7 +8843,7 @@ var $;
     }
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "plot", null);
+    ], $visavis_cube.prototype, "plot_raw", null);
     __decorate([
         $mol_mem
     ], $visavis_cube.prototype, "heatmap", null);
@@ -8840,21 +8991,6 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $lib_plotly extends $mol_object2 {
-        static all() {
-            return $mol_import.script('https://cdn.plot.ly/plotly-2.16.1.min.js').Plotly;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $lib_plotly, "all", null);
-    $.$lib_plotly = $lib_plotly;
-})($ || ($ = {}));
-//lib/plotly/plotly.ts
-;
-"use strict";
-var $;
-(function ($) {
     var $$;
     (function ($$) {
         const $visavis_cube_json = $mol_data_record({
@@ -8880,11 +9016,8 @@ var $;
                     ...this.heatmap() ? [this.Side_right()] : [],
                 ];
             }
-            plot_title() {
-                return this.plot().id();
-            }
             json() {
-                return $visavis_cube_json(this.plot().json());
+                return $visavis_cube_json(this.plot_raw().json());
             }
             value_list() {
                 return this.json().payload.points.v.slice().sort((a, b) => a - b);
@@ -8993,9 +9126,8 @@ var $;
                     camera: { projection: { type: 'perspective' } },
                 };
             }
-            draw() {
-                this.Root().view_rect();
-                return $lib_plotly.all().react(this.Root().dom_node(), this.data_shown(), {
+            layout() {
+                return {
                     font: { family: "Exo2" },
                     showlegend: false,
                     scene: this.scene(),
@@ -9006,7 +9138,7 @@ var $;
                         t: 0,
                         pad: 0
                     }
-                }, { displaylogo: false, displayModeBar: false, staticPlot: false });
+                };
             }
             ter_op(op, a, b, c) {
                 switch (op) {
@@ -9093,7 +9225,7 @@ var $;
         ], $visavis_cube.prototype, "scene", null);
         __decorate([
             $mol_mem
-        ], $visavis_cube.prototype, "draw", null);
+        ], $visavis_cube.prototype, "layout", null);
         __decorate([
             $mol_mem_key
         ], $visavis_cube.prototype, "order_els", null);
@@ -9107,26 +9239,23 @@ var $;
 (function ($) {
     var $$;
     (function ($$) {
-        const { per, rem, px } = $mol_style_unit;
         $mol_style_define($visavis_cube, {
             Plot: {
                 flex: {
                     grow: 1,
-                    shrink: 0,
                 },
+                position: 'relative',
             },
             Setup: {
                 flex: {
-                    basis: rem(25),
+                    basis: '25rem',
+                    direction: 'column',
                     shrink: 0,
                 },
-                Body: {
-                    padding: $mol_gap.block,
-                },
+                padding: $mol_gap.block,
             },
-            Root: {
-                width: $mol_style_unit.per(100),
-                height: $mol_style_unit.per(100),
+            flex: {
+                grow: 1
             },
             X_order_label: {
                 zIndex: 3,
@@ -9139,14 +9268,14 @@ var $;
             },
             Side_right: {
                 position: 'absolute',
-                top: per(50),
+                top: '50%',
                 right: $mol_gap.space,
                 transform: 'translateY(-50%)'
             },
             Heatmap_color: {
-                width: rem(1),
-                height: rem(1),
-                margin: px(1),
+                width: '1rem',
+                height: '1rem',
+                margin: '1px'
             },
             Heatmap_legend: {
                 alignItems: 'flex-end',
@@ -9163,8 +9292,8 @@ var $;
 var $;
 (function ($) {
     class $visavis_phase extends $mol_book2 {
-        plot() {
-            const obj = new this.$.$visavis_plot();
+        plot_raw() {
+            const obj = new this.$.$visavis_plot_raw();
             return obj;
         }
         colors_by_nphases() {
@@ -9403,9 +9532,10 @@ var $;
                 staticPlot: false
             };
         }
-        pages() {
+        sub() {
             return [
-                this.Plot()
+                this.Label(),
+                this.Root()
             ];
         }
         json_title_a() {
@@ -9438,9 +9568,6 @@ var $;
         data_demo() {
             return false;
         }
-        plot_title() {
-            return "";
-        }
         label(next) {
             if (next !== undefined)
                 return next;
@@ -9453,34 +9580,32 @@ var $;
             ];
             return obj;
         }
+        data() {
+            return {};
+        }
+        layout() {
+            return {};
+        }
+        subscribe_events() {
+            return null;
+        }
         mousemove() {
             return null;
         }
         Root() {
-            const obj = new this.$.$mol_view();
-            obj.dom_name = () => "div";
+            const obj = new this.$.$visavis_plotly();
+            obj.data = () => this.data();
+            obj.layout = () => this.layout();
+            obj.subscribe_events = () => this.subscribe_events();
             obj.event = () => ({
                 mousemove: this.mousemove()
             });
             return obj;
         }
-        draw() {
-            return null;
-        }
-        Plot() {
-            const obj = new this.$.$mol_page();
-            obj.title = () => this.plot_title();
-            obj.body = () => [
-                this.Label(),
-                this.Root()
-            ];
-            obj.auto = () => this.draw();
-            return obj;
-        }
     }
     __decorate([
         $mol_mem
-    ], $visavis_phase.prototype, "plot", null);
+    ], $visavis_phase.prototype, "plot_raw", null);
     __decorate([
         $mol_mem
     ], $visavis_phase.prototype, "label", null);
@@ -9490,9 +9615,6 @@ var $;
     __decorate([
         $mol_mem
     ], $visavis_phase.prototype, "Root", null);
-    __decorate([
-        $mol_mem
-    ], $visavis_phase.prototype, "Plot", null);
     $.$visavis_phase = $visavis_phase;
 })($ || ($ = {}));
 //visavis/phase/-view.tree/phase.view.tree.ts
@@ -9680,11 +9802,8 @@ var $;
         }
         $$.fix_comp_impossible = fix_comp_impossible;
         class $visavis_phase extends $.$visavis_phase {
-            plot_title() {
-                return this.plot().id();
-            }
             json() {
-                return $visavis_phase_rect_json(this.plot().json());
+                return $visavis_phase_rect_json(this.plot_raw().json());
             }
             json_title_b() {
                 return this.json().title_b ?? '';
@@ -9785,7 +9904,7 @@ var $;
                         d3.selectAll('[visavis_phase_root] g.annotation').select('text').style('fill', '#000');
                     }
                 });
-                const canvas = this.Root().dom_node();
+                const canvas = this.Root().dom_node().firstChild;
                 if (!this.is_triangle()) {
                     const fixed = fix_comp_impossible(json.comp_range, json.comp_start, json.comp_end);
                     const comp_start = fixed?.comp_start ?? json.comp_start;
@@ -9808,10 +9927,13 @@ var $;
                     }));
                 }
             }
-            draw() {
-                const { datamock, layout } = this.is_triangle() ? this.triangle() : this.rectangle();
-                const promise = $lib_plotly.all().react(this.Root().dom_node(), datamock, layout, this.plot_options());
-                promise.then(() => this.subscribe_events());
+            data() {
+                const { datamock } = this.is_triangle() ? this.triangle() : this.rectangle();
+                return datamock;
+            }
+            layout() {
+                const { layout } = this.is_triangle() ? this.triangle() : this.rectangle();
+                return layout;
             }
             pd_fix_triangle() {
                 const d3 = $lib_d3.all();
@@ -9862,7 +9984,10 @@ var $;
         ], $visavis_phase.prototype, "subscribe_events", null);
         __decorate([
             $mol_mem
-        ], $visavis_phase.prototype, "draw", null);
+        ], $visavis_phase.prototype, "data", null);
+        __decorate([
+            $mol_mem
+        ], $visavis_phase.prototype, "layout", null);
         $$.$visavis_phase = $visavis_phase;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
@@ -9880,18 +10005,11 @@ var $;
 (function ($) {
     var $$;
     (function ($$) {
-        const { per, rem, px } = $mol_style_unit;
         $mol_style_define($visavis_phase, {
-            Plot: {
-                flex: {
-                    grow: 1,
-                    shrink: 0,
-                },
-            },
-            Root: {
-                width: $mol_style_unit.per(100),
-                height: $mol_style_unit.per(100),
-            },
+            Label: {
+                position: 'absolute',
+                zIndex: 2,
+            }
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
@@ -9900,141 +10018,15 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_plot_plotly extends $mol_page {
-        plot() {
-            const obj = new this.$.$visavis_plot();
-            return obj;
-        }
-        json() {
-            return {};
-        }
-        pages() {
-            return [
-                this.Plot()
-            ];
-        }
-        plot_options() {
-            return {
-                displaylogo: false,
-                displayModeBar: false,
-                staticPlot: false
-            };
-        }
-        plot_title() {
-            return "";
-        }
-        draw() {
-            return null;
-        }
-        Root() {
-            const obj = new this.$.$mol_view();
-            obj.render = () => this.draw();
-            return obj;
-        }
-        plot_body() {
-            return [
-                this.Root()
-            ];
-        }
-        Plot() {
-            const obj = new this.$.$mol_page();
-            obj.title = () => this.plot_title();
-            obj.body = () => this.plot_body();
+    class $visavis_bar extends $visavis_plotly {
+        plot_raw() {
+            const obj = new this.$.$visavis_plot_raw();
             return obj;
         }
     }
     __decorate([
         $mol_mem
-    ], $visavis_plot_plotly.prototype, "plot", null);
-    __decorate([
-        $mol_mem
-    ], $visavis_plot_plotly.prototype, "Root", null);
-    __decorate([
-        $mol_mem
-    ], $visavis_plot_plotly.prototype, "Plot", null);
-    $.$visavis_plot_plotly = $visavis_plot_plotly;
-})($ || ($ = {}));
-//visavis/plot/plotly/-view.tree/plotly.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        class $visavis_plot_plotly extends $.$visavis_plot_plotly {
-            plot_title() {
-                return this.plot().id();
-            }
-            json() {
-                return this.plot().json();
-            }
-            subscribe_events() {
-            }
-            layout() {
-                return {
-                    font: { family: "Exo2", size: 13 }
-                };
-            }
-            data() {
-                const json = this.json();
-                return json;
-            }
-            draw() {
-                if (!this.Root().view_rect())
-                    return;
-                const { width, height } = this.Root().view_rect();
-                const plotly_root = document.createElement('div');
-                plotly_root.style.position = 'absolute';
-                const promise = $lib_plotly.all().react(plotly_root, this.data(), { ...this.layout(), width, height }, this.plot_options());
-                const dom_node = this.Root().dom_node_actual();
-                promise.then((plotly_root) => {
-                    dom_node.replaceChildren(plotly_root);
-                    this.subscribe_events();
-                });
-            }
-        }
-        __decorate([
-            $mol_action
-        ], $visavis_plot_plotly.prototype, "subscribe_events", null);
-        __decorate([
-            $mol_mem
-        ], $visavis_plot_plotly.prototype, "layout", null);
-        __decorate([
-            $mol_mem
-        ], $visavis_plot_plotly.prototype, "data", null);
-        __decorate([
-            $mol_mem
-        ], $visavis_plot_plotly.prototype, "draw", null);
-        $$.$visavis_plot_plotly = $visavis_plot_plotly;
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-//visavis/plot/plotly/plotly.view.ts
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        $mol_style_define($visavis_plot_plotly, {
-            Plot: {
-                flex: {
-                    grow: 1,
-                },
-            },
-            Root: {
-                width: '100%',
-                height: '100%',
-            },
-        });
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-//visavis/plot/plotly/plotly.view.css.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $visavis_bar extends $visavis_plot_plotly {
-    }
+    ], $visavis_bar.prototype, "plot_raw", null);
     $.$visavis_bar = $visavis_bar;
 })($ || ($ = {}));
 //visavis/bar/-view.tree/bar.view.tree.ts
@@ -10057,7 +10049,7 @@ var $;
         });
         class $visavis_bar extends $.$visavis_bar {
             json() {
-                return $$.$visavis_bar_json(this.plot().json());
+                return $$.$visavis_bar_json(this.plot_raw().json());
             }
             subscribe_events() {
                 const d3 = $lib_d3.all();
@@ -10131,32 +10123,35 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    var $$;
-    (function ($$) {
-        $mol_style_define($visavis_bar, {
-            Plot: {
-                flex: {
-                    grow: 1,
-                },
-            },
-            Root: {
-                width: '100%',
-                height: '100%',
-            },
-        });
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-//visavis/bar/bar.view.css.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $visavis_discovery extends $visavis_plot_plotly {
-        pages() {
+    class $visavis_discovery extends $mol_view {
+        plot_raw() {
+            const obj = new this.$.$visavis_plot_raw();
+            return obj;
+        }
+        show_setup() {
+            return true;
+        }
+        sub() {
             return [
                 this.Plot(),
                 this.Setup()
             ];
+        }
+        data() {
+            return {};
+        }
+        layout() {
+            return {};
+        }
+        subscribe_events() {
+            return null;
+        }
+        Plot() {
+            const obj = new this.$.$visavis_plotly();
+            obj.data = () => this.data();
+            obj.layout = () => this.layout();
+            obj.subscribe_events = () => this.subscribe_events();
+            return obj;
         }
         elemental_checked(id, next) {
             if (next !== undefined)
@@ -10179,14 +10174,19 @@ var $;
             return obj;
         }
         Setup() {
-            const obj = new this.$.$mol_page();
-            obj.title = () => this.$.$mol_locale.text('$visavis_discovery_Setup_title');
-            obj.body = () => [
+            const obj = new this.$.$mol_view();
+            obj.sub = () => [
                 this.Elementals()
             ];
             return obj;
         }
     }
+    __decorate([
+        $mol_mem
+    ], $visavis_discovery.prototype, "plot_raw", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_discovery.prototype, "Plot", null);
     __decorate([
         $mol_mem_key
     ], $visavis_discovery.prototype, "elemental_checked", null);
@@ -10279,8 +10279,11 @@ var $;
                 }];
         }
         class $visavis_discovery extends $.$visavis_discovery {
+            sub() {
+                return [this.Plot(), ...(this.show_setup() ? [this.Setup()] : [])];
+            }
             json() {
-                return $$.$visavis_discovery_json(this.plot().json());
+                return $$.$visavis_discovery_json(this.plot_raw().json());
             }
             elementals_dict() {
                 return $visavis_elemental_names;
@@ -10351,8 +10354,6 @@ var $;
                 const json = this.json();
                 const elementals_on = this.elementals_on();
                 const result = discover(elementals_on, Discover_item({ points: json.payload.points, name: json.answerto }));
-                if (!result || !result[0].discovery)
-                    return;
                 const traces = [];
                 for (let i = 0; i < result.length; i++) {
                     const dscolor = (i == 0) ? '#3e3f95' : '#900';
@@ -10398,13 +10399,15 @@ var $;
         $mol_style_define($visavis_discovery, {
             Setup: {
                 flex: {
-                    basis: '25rem',
+                    basis: '20rem',
                     shrink: 0,
                 },
-                Body: {
-                    padding: $mol_gap.block,
-                },
+                alignItems: 'flex-start',
+                padding: $mol_gap.block,
             },
+            flex: {
+                grow: 1
+            }
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
@@ -10413,8 +10416,15 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_eigen extends $visavis_plot_plotly {
+    class $visavis_eigen extends $visavis_plotly {
+        plot_raw() {
+            const obj = new this.$.$visavis_plot_raw();
+            return obj;
+        }
     }
+    __decorate([
+        $mol_mem
+    ], $visavis_eigen.prototype, "plot_raw", null);
     $.$visavis_eigen = $visavis_eigen;
 })($ || ($ = {}));
 //visavis/eigen/-view.tree/eigen.view.tree.ts
@@ -10504,7 +10514,7 @@ var $;
         });
         class $visavis_eigen extends $.$visavis_eigen {
             json() {
-                return $$.$visavis_eigen_json(this.plot().json());
+                return $$.$visavis_eigen_json(this.plot_raw().json());
             }
             bands_matrix() {
                 const matrix = this.json().sample.measurement[0].property.matrix;
@@ -10631,7 +10641,11 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_pie extends $visavis_plot_plotly {
+    class $visavis_pie extends $visavis_plotly {
+        plot_raw() {
+            const obj = new this.$.$visavis_plot_raw();
+            return obj;
+        }
         colorset() {
             return [
                 "#3e3f95",
@@ -10647,6 +10661,9 @@ var $;
             ];
         }
     }
+    __decorate([
+        $mol_mem
+    ], $visavis_pie.prototype, "plot_raw", null);
     $.$visavis_pie = $visavis_pie;
 })($ || ($ = {}));
 //visavis/pie/-view.tree/pie.view.tree.ts
@@ -10712,7 +10729,7 @@ var $;
         }
         class $visavis_pie extends $.$visavis_pie {
             json() {
-                return $$.$visavis_pie_json(this.plot().json());
+                return $$.$visavis_pie_json(this.plot_raw().json());
             }
             subscribe_events() {
             }
@@ -10861,8 +10878,15 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_scatter extends $visavis_plot_plotly {
+    class $visavis_scatter extends $visavis_plotly {
+        plot_raw() {
+            const obj = new this.$.$visavis_plot_raw();
+            return obj;
+        }
     }
+    __decorate([
+        $mol_mem
+    ], $visavis_scatter.prototype, "plot_raw", null);
     $.$visavis_scatter = $visavis_scatter;
 })($ || ($ = {}));
 //visavis/scatter/-view.tree/scatter.view.tree.ts
@@ -10915,7 +10939,7 @@ var $;
         });
         class $visavis_scatter extends $.$visavis_scatter {
             json() {
-                return $$.$visavis_scatter_json(this.plot().json());
+                return $$.$visavis_scatter_json(this.plot_raw().json());
             }
             subscribe_events() {
             }
@@ -11100,8 +11124,15 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_customscatter extends $visavis_plot_plotly {
+    class $visavis_customscatter extends $visavis_plotly {
+        plot_raw() {
+            const obj = new this.$.$visavis_plot_raw();
+            return obj;
+        }
     }
+    __decorate([
+        $mol_mem
+    ], $visavis_customscatter.prototype, "plot_raw", null);
     $.$visavis_customscatter = $visavis_customscatter;
 })($ || ($ = {}));
 //visavis/customscatter/-view.tree/customscatter.view.tree.ts
@@ -11127,7 +11158,7 @@ var $;
         });
         class $visavis_customscatter extends $.$visavis_customscatter {
             json() {
-                return $$.$visavis_customscatter_json(this.plot().json());
+                return $$.$visavis_customscatter_json(this.plot_raw().json());
             }
             subscribe_events() {
             }
@@ -11189,8 +11220,15 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_heatmap extends $visavis_plot_plotly {
+    class $visavis_heatmap extends $visavis_plotly {
+        plot_raw() {
+            const obj = new this.$.$visavis_plot_raw();
+            return obj;
+        }
     }
+    __decorate([
+        $mol_mem
+    ], $visavis_heatmap.prototype, "plot_raw", null);
     $.$visavis_heatmap = $visavis_heatmap;
 })($ || ($ = {}));
 //visavis/heatmap/-view.tree/heatmap.view.tree.ts
@@ -11202,7 +11240,7 @@ var $;
     (function ($$) {
         class $visavis_heatmap extends $.$visavis_heatmap {
             json() {
-                return this.plot().json();
+                return this.plot_raw().json();
             }
             layout() {
                 return {
@@ -11294,18 +11332,15 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_graph extends $mol_book2 {
-        plot() {
-            const obj = new this.$.$visavis_plot();
+    class $visavis_graph extends $mol_view {
+        plot_raw() {
+            const obj = new this.$.$visavis_plot_raw();
             return obj;
         }
-        pages() {
+        sub() {
             return [
-                this.Plot()
+                this.Root()
             ];
-        }
-        plot_title() {
-            return "";
         }
         draw() {
             return null;
@@ -11315,27 +11350,13 @@ var $;
             obj.render = () => this.draw();
             return obj;
         }
-        plot_body() {
-            return [
-                this.Root()
-            ];
-        }
-        Plot() {
-            const obj = new this.$.$mol_page();
-            obj.title = () => this.plot_title();
-            obj.body = () => this.plot_body();
-            return obj;
-        }
     }
     __decorate([
         $mol_mem
-    ], $visavis_graph.prototype, "plot", null);
+    ], $visavis_graph.prototype, "plot_raw", null);
     __decorate([
         $mol_mem
     ], $visavis_graph.prototype, "Root", null);
-    __decorate([
-        $mol_mem
-    ], $visavis_graph.prototype, "Plot", null);
     $.$visavis_graph = $visavis_graph;
 })($ || ($ = {}));
 //visavis/graph/-view.tree/graph.view.tree.ts
@@ -11358,10 +11379,10 @@ var $;
         });
         class $visavis_graph extends $.$visavis_graph {
             json() {
-                return $$.$visavis_graph_json(this.plot().json());
+                return $$.$visavis_graph_json(this.plot_raw().json());
             }
             plot_title() {
-                return this.plot().id();
+                return this.plot_raw().id();
             }
             data() {
                 const json = this.json();
@@ -11473,7 +11494,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("visavis/graph/graph.view.css", "[visavis_graph_plot] svg {\n\twidth: 100%;\n\theight: 100%;\n}\n\n[visavis_graph_plot] .edge {\n\tfill: none;\n\tstroke: #ddd;\n\tstroke-width: 1px;\n}\n\n[visavis_graph_plot] .edge.prel {\n\tstroke: #FE9A2E;\n}\n\n[visavis_graph_plot] .edge.hrel {\n\tstroke: #3e3f95;\n}\n\n[visavis_graph_plot] .edge.trel {\n\tstroke: #3e3f95;\n}\n\n[visavis_graph_plot] .edge.arel {\n\tstroke: #E36868;\n}\n\n[visavis_graph_plot] .edge.grel {\n\tstroke: #acc2b3;\n}\n\n[visavis_graph_plot] circle {\n\tcursor: move;\n\tfill: #ccc;\n}\n\n[visavis_graph_plot] circle.f {\n\tfill: #acc2b3;\n}\n\n[visavis_graph_plot] circle.p {\n\tfill: #FE9A2E;\n}\n\n[visavis_graph_plot] circle.h, circle.t {\n\tfill: #3e3f95;\n}\n\n[visavis_graph_plot] circle.a {\n\tfill: #E36868;\n}\n\n[visavis_graph_plot] text.micro {\n\tfont-size: 11px;\n\tletter-spacing: -0.5px;\n}\n\n[visavis_graph_plot] text.macro {\n\tfont-size: 14px;\n\tletter-spacing: 0.5px;\n}\n\n[visavis_graph_plot] text.captions {\n\tcursor: pointer;\n\tfill: #333;\n}\n\n[visavis_graph_plot] text.shadow {\n\tstroke: #fff;\n\tstroke-width: 3px;\n\tstroke-opacity: 0.8;\n}\n");
+    $mol_style_attach("visavis/graph/graph.view.css", "[visavis_graph_root] svg {\n\twidth: 100%;\n\theight: 100%;\n}\n\n[visavis_graph_root] .edge {\n\tfill: none;\n\tstroke: #ddd;\n\tstroke-width: 1px;\n}\n\n[visavis_graph_root] .edge.prel {\n\tstroke: #FE9A2E;\n}\n\n[visavis_graph_root] .edge.hrel {\n\tstroke: #3e3f95;\n}\n\n[visavis_graph_root] .edge.trel {\n\tstroke: #3e3f95;\n}\n\n[visavis_graph_root] .edge.arel {\n\tstroke: #E36868;\n}\n\n[visavis_graph_root] .edge.grel {\n\tstroke: #acc2b3;\n}\n\n[visavis_graph_root] circle {\n\tcursor: move;\n\tfill: #ccc;\n}\n\n[visavis_graph_root] circle.f {\n\tfill: #acc2b3;\n}\n\n[visavis_graph_root] circle.p {\n\tfill: #FE9A2E;\n}\n\n[visavis_graph_root] circle.h, circle.t {\n\tfill: #3e3f95;\n}\n\n[visavis_graph_root] circle.a {\n\tfill: #E36868;\n}\n\n[visavis_graph_root] text.micro {\n\tfont-size: 11px;\n\tletter-spacing: -0.5px;\n}\n\n[visavis_graph_root] text.macro {\n\tfont-size: 14px;\n\tletter-spacing: 0.5px;\n}\n\n[visavis_graph_root] text.captions {\n\tcursor: pointer;\n\tfill: #333;\n}\n\n[visavis_graph_root] text.shadow {\n\tstroke: #fff;\n\tstroke-width: 3px;\n\tstroke-opacity: 0.8;\n}\n");
 })($ || ($ = {}));
 //visavis/graph/-css/graph.view.css.ts
 ;
@@ -11487,16 +11508,151 @@ var $;
                 width: '100%',
                 height: '100%',
             },
-            Plot: {
-                flex: {
-                    grow: 1,
-                    shrink: 0,
-                },
+            flex: {
+                grow: 1,
             },
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
 //visavis/graph/graph.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $visavis_plot extends $mol_ghost {
+        plot_raw() {
+            const obj = new this.$.$visavis_plot_raw();
+            return obj;
+        }
+        show_setup() {
+            return true;
+        }
+        plots() {
+            return {
+                matrix: this.Matrix(),
+                plot3d: this.Cube(),
+                pd: this.Phase(),
+                bar: this.Bar(),
+                discovery: this.Discovery(),
+                eigenplot: this.Eigen(),
+                pie: this.Pie(),
+                scatter: this.Scatter(),
+                customscatter: this.Customscatter(),
+                heatmap: this.Heatmap(),
+                graph: this.Graph()
+            };
+        }
+        Matrix() {
+            const obj = new this.$.$visavis_matrix();
+            obj.plot_raw = () => this.plot_raw();
+            return obj;
+        }
+        Cube() {
+            const obj = new this.$.$visavis_cube();
+            obj.plot_raw = () => this.plot_raw();
+            return obj;
+        }
+        Phase() {
+            const obj = new this.$.$visavis_phase();
+            obj.plot_raw = () => this.plot_raw();
+            return obj;
+        }
+        Bar() {
+            const obj = new this.$.$visavis_bar();
+            obj.plot_raw = () => this.plot_raw();
+            return obj;
+        }
+        Discovery() {
+            const obj = new this.$.$visavis_discovery();
+            obj.plot_raw = () => this.plot_raw();
+            obj.show_setup = () => this.show_setup();
+            return obj;
+        }
+        Eigen() {
+            const obj = new this.$.$visavis_eigen();
+            obj.plot_raw = () => this.plot_raw();
+            return obj;
+        }
+        Pie() {
+            const obj = new this.$.$visavis_pie();
+            obj.plot_raw = () => this.plot_raw();
+            return obj;
+        }
+        Scatter() {
+            const obj = new this.$.$visavis_scatter();
+            obj.plot_raw = () => this.plot_raw();
+            return obj;
+        }
+        Customscatter() {
+            const obj = new this.$.$visavis_customscatter();
+            obj.plot_raw = () => this.plot_raw();
+            return obj;
+        }
+        Heatmap() {
+            const obj = new this.$.$visavis_heatmap();
+            obj.plot_raw = () => this.plot_raw();
+            return obj;
+        }
+        Graph() {
+            const obj = new this.$.$visavis_graph();
+            obj.plot_raw = () => this.plot_raw();
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $visavis_plot.prototype, "plot_raw", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot.prototype, "Matrix", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot.prototype, "Cube", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot.prototype, "Phase", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot.prototype, "Bar", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot.prototype, "Discovery", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot.prototype, "Eigen", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot.prototype, "Pie", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot.prototype, "Scatter", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot.prototype, "Customscatter", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot.prototype, "Heatmap", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot.prototype, "Graph", null);
+    $.$visavis_plot = $visavis_plot;
+})($ || ($ = {}));
+//visavis/plot/-view.tree/plot.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $visavis_plot extends $.$visavis_plot {
+            Sub() {
+                return this.plots()[this.plot_raw().type()];
+            }
+        }
+        $$.$visavis_plot = $visavis_plot;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//visavis/plot/plot.view.ts
 ;
 "use strict";
 var $;
@@ -11509,19 +11665,16 @@ var $;
         }
         pages() {
             return [
-                this.Menu(),
-                this.Matrix("plot"),
-                this.Cube("plot"),
-                this.Phase("plot"),
-                this.Bar("plot"),
-                this.Discovery("plot"),
-                this.Eigen("plot"),
-                this.Pie("plot"),
-                this.Scatter("plot"),
-                this.Customscatter("plot"),
-                this.Heatmap("plot"),
-                this.Graph("plot")
+                this.Menu()
             ];
+        }
+        Plot_page(id) {
+            const obj = new this.$.$mol_page();
+            obj.title = () => this.plot_id(id);
+            obj.body = () => [
+                this.Plot_view(id)
+            ];
+            return obj;
         }
         files_read(next) {
             if (next !== undefined)
@@ -11563,7 +11716,7 @@ var $;
             ];
             return obj;
         }
-        Plot(id) {
+        History_plot(id) {
             const obj = new this.$.$mol_view();
             obj.sub = () => [
                 this.Plot_link(id),
@@ -11573,7 +11726,7 @@ var $;
         }
         history_rows() {
             return [
-                this.Plot("0")
+                this.History_plot("0")
             ];
         }
         History() {
@@ -11631,66 +11784,18 @@ var $;
             ];
             return obj;
         }
-        plot(id) {
+        history_plot_raw(id) {
+            return null;
+        }
+        Plot_view(id) {
             const obj = new this.$.$visavis_plot();
-            return obj;
-        }
-        Matrix(id) {
-            const obj = new this.$.$visavis_matrix();
-            obj.plot = () => this.plot(id);
-            return obj;
-        }
-        Cube(id) {
-            const obj = new this.$.$visavis_cube();
-            obj.plot = () => this.plot(id);
-            return obj;
-        }
-        Phase(id) {
-            const obj = new this.$.$visavis_phase();
-            obj.plot = () => this.plot(id);
-            return obj;
-        }
-        Bar(id) {
-            const obj = new this.$.$visavis_bar();
-            obj.plot = () => this.plot(id);
-            return obj;
-        }
-        Discovery(id) {
-            const obj = new this.$.$visavis_discovery();
-            obj.plot = () => this.plot(id);
-            return obj;
-        }
-        Eigen(id) {
-            const obj = new this.$.$visavis_eigen();
-            obj.plot = () => this.plot(id);
-            return obj;
-        }
-        Pie(id) {
-            const obj = new this.$.$visavis_pie();
-            obj.plot = () => this.plot(id);
-            return obj;
-        }
-        Scatter(id) {
-            const obj = new this.$.$visavis_scatter();
-            obj.plot = () => this.plot(id);
-            return obj;
-        }
-        Customscatter(id) {
-            const obj = new this.$.$visavis_customscatter();
-            obj.plot = () => this.plot(id);
-            return obj;
-        }
-        Heatmap(id) {
-            const obj = new this.$.$visavis_heatmap();
-            obj.plot = () => this.plot(id);
-            return obj;
-        }
-        Graph(id) {
-            const obj = new this.$.$visavis_graph();
-            obj.plot = () => this.plot(id);
+            obj.plot_raw = () => this.history_plot_raw(id);
             return obj;
         }
     }
+    __decorate([
+        $mol_mem_key
+    ], $visavis_app.prototype, "Plot_page", null);
     __decorate([
         $mol_mem
     ], $visavis_app.prototype, "files_read", null);
@@ -11711,7 +11816,7 @@ var $;
     ], $visavis_app.prototype, "Plot_drop", null);
     __decorate([
         $mol_mem_key
-    ], $visavis_app.prototype, "Plot", null);
+    ], $visavis_app.prototype, "History_plot", null);
     __decorate([
         $mol_mem
     ], $visavis_app.prototype, "History", null);
@@ -11732,40 +11837,7 @@ var $;
     ], $visavis_app.prototype, "Menu", null);
     __decorate([
         $mol_mem_key
-    ], $visavis_app.prototype, "plot", null);
-    __decorate([
-        $mol_mem_key
-    ], $visavis_app.prototype, "Matrix", null);
-    __decorate([
-        $mol_mem_key
-    ], $visavis_app.prototype, "Cube", null);
-    __decorate([
-        $mol_mem_key
-    ], $visavis_app.prototype, "Phase", null);
-    __decorate([
-        $mol_mem_key
-    ], $visavis_app.prototype, "Bar", null);
-    __decorate([
-        $mol_mem_key
-    ], $visavis_app.prototype, "Discovery", null);
-    __decorate([
-        $mol_mem_key
-    ], $visavis_app.prototype, "Eigen", null);
-    __decorate([
-        $mol_mem_key
-    ], $visavis_app.prototype, "Pie", null);
-    __decorate([
-        $mol_mem_key
-    ], $visavis_app.prototype, "Scatter", null);
-    __decorate([
-        $mol_mem_key
-    ], $visavis_app.prototype, "Customscatter", null);
-    __decorate([
-        $mol_mem_key
-    ], $visavis_app.prototype, "Heatmap", null);
-    __decorate([
-        $mol_mem_key
-    ], $visavis_app.prototype, "Graph", null);
+    ], $visavis_app.prototype, "Plot_view", null);
     $.$visavis_app = $visavis_app;
 })($ || ($ = {}));
 //visavis/app/-view.tree/app.view.tree.ts
@@ -11811,61 +11883,42 @@ var $;
         class $visavis_app extends $.$visavis_app {
             files_read(next) {
                 const data = $mol_wire_sync($mol_blob_json)(next[0]);
-                const plot = $visavis_plot_from_json(data, next[0].name);
-                this.history_add(plot);
+                const plot_raw = $visavis_plot_raw_from_json(data, next[0].name);
+                this.history_add(plot_raw);
             }
-            history_add(plot) {
-                const duplicates = this.history_plots().filter(id => id.replace(/\[\d+?\]/, '') === plot.id());
+            history_add(plot_raw) {
+                const duplicates = this.history_plot_ids().filter(id => id.replace(/\[\d+?\]/, '') === plot_raw.id());
                 const count = Math.max(...duplicates.map(id => Number(id.match(/\[(\d+?)\]$/)?.[1] ?? 0)));
                 const postfix = duplicates.length ? `[${count + 1}]` : '';
-                plot.id(`${plot.id()}${postfix}`);
-                this.history_plot(plot.id(), plot);
-                this.history_plots([...this.history_plots(), plot.id()]);
+                plot_raw.id(`${plot_raw.id()}${postfix}`);
+                this.history_plot_raw(plot_raw.id(), plot_raw);
+                this.history_plot_ids([plot_raw.id(), ...this.history_plot_ids()]);
             }
             history_drop(id) {
-                this.history_plot(id, null);
-                this.history_plots(this.history_plots().filter(plot_id => plot_id !== id));
+                this.history_plot_raw(id, null);
+                this.history_plot_ids(this.history_plot_ids().filter(plot_id => plot_id !== id));
             }
-            history_plots(next) {
+            history_plot_ids(next) {
                 return this.$.$mol_state_local.value(`${this}.history_plots()`, next) ?? [];
             }
-            history_plot(id, next) {
+            history_plot_raw(id, next) {
                 const json = this.$.$mol_state_local.value(`${this}.history_plot('${id}')`, next && next.data());
-                return json ? new $visavis_plot(json) : null;
+                return json ? new $visavis_plot_raw(json) : null;
             }
             history_rows() {
-                return this.history_plots().map((id) => this.Plot(id)).reverse();
+                return this.history_plot_ids().map((id) => this.History_plot(id));
             }
             plot_id(id) {
                 return id;
             }
-            plot_opened(next) {
+            plot_opened_id(next) {
                 return this.$.$mol_state_arg.value('file', next) ?? '';
             }
             Plot_opened() {
-                const id = this.plot_opened();
+                const id = this.plot_opened_id();
                 if (!id)
                     return [];
-                const plot = this.history_plot(id);
-                if (!plot)
-                    return [];
-                switch (plot.type()) {
-                    case 'matrix': return this.Matrix(plot).pages();
-                    case 'plot3d': return this.Cube(plot).pages();
-                    case 'pd': return this.Phase(plot).pages();
-                    case 'bar': return this.Bar(plot).pages();
-                    case 'discovery': return this.Discovery(plot).pages();
-                    case 'eigenplot': return this.Eigen(plot).pages();
-                    case 'pie': return this.Pie(plot).pages();
-                    case 'scatter': return this.Scatter(plot).pages();
-                    case 'customscatter': return this.Customscatter(plot).pages();
-                    case 'heatmap': return this.Heatmap(plot).pages();
-                    case 'graph': return this.Graph(plot).pages();
-                    default: return [];
-                }
-            }
-            plot(plot) {
-                return plot;
+                return [this.Plot_page(id)];
             }
             pages() {
                 return [
@@ -11888,10 +11941,10 @@ var $;
         ], $visavis_app.prototype, "history_drop", null);
         __decorate([
             $mol_mem_key
-        ], $visavis_app.prototype, "history_plots", null);
+        ], $visavis_app.prototype, "history_plot_ids", null);
         __decorate([
             $mol_mem_key
-        ], $visavis_app.prototype, "history_plot", null);
+        ], $visavis_app.prototype, "history_plot_raw", null);
         __decorate([
             $mol_mem
         ], $visavis_app.prototype, "history_rows", null);
@@ -11905,12 +11958,10 @@ var $;
 (function ($) {
     var $$;
     (function ($$) {
-        const { rem, per } = $mol_style_unit;
-        const { calc } = $mol_style_func;
         $mol_style_define($.$visavis_app, {
             Menu: {
                 flex: {
-                    basis: rem(25),
+                    basis: '25rem',
                     shrink: 0,
                 },
                 Body: {
@@ -11918,6 +11969,11 @@ var $;
                 },
                 Foot: {
                     padding: $mol_gap.block,
+                },
+            },
+            Plot_page: {
+                flex: {
+                    grow: 1,
                 },
             },
             Plot_link: {

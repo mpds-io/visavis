@@ -850,6 +850,30 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    class $mol_page extends $mol_view {
+        dom_name(): string;
+        field(): Record<string, any>;
+        sub(): readonly any[];
+        tabindex(): number;
+        Logo(): any;
+        title_content(): readonly any[];
+        Title(): $mol_view;
+        tools(): readonly $mol_view_content[];
+        Tools(): $mol_view;
+        head(): readonly any[];
+        Head(): $mol_view;
+        body(): readonly $mol_view_content[];
+        body_scroll_top(val?: any): number;
+        Body(): $$.$mol_scroll;
+        foot(): readonly $mol_view[];
+        Foot(): $mol_view;
+    }
+}
+
+declare namespace $.$$ {
+}
+
+declare namespace $ {
     class $mol_speck extends $mol_view {
         attr(): Record<string, any>;
         style(): Record<string, any>;
@@ -1523,27 +1547,20 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $mol_page extends $mol_view {
-        dom_name(): string;
-        field(): Record<string, any>;
-        sub(): readonly any[];
-        tabindex(): number;
-        Logo(): any;
-        title_content(): readonly any[];
-        Title(): $mol_view;
-        tools(): readonly $mol_view_content[];
-        Tools(): $mol_view;
-        head(): readonly any[];
-        Head(): $mol_view;
-        body(): readonly $mol_view_content[];
-        body_scroll_top(val?: any): number;
-        Body(): $$.$mol_scroll;
-        foot(): readonly $mol_view[];
-        Foot(): $mol_view;
+    class $mol_ghost extends $mol_view {
+        Sub(): $mol_view;
     }
 }
 
 declare namespace $.$$ {
+    class $mol_ghost extends $.$mol_ghost {
+        dom_node(next?: Element): Element;
+        dom_node_actual(): Element;
+        dom_tree(): Element;
+        title(): string;
+        minimal_width(): number;
+        minimal_height(): number;
+    }
 }
 
 declare namespace $ {
@@ -1561,15 +1578,15 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    interface Plot {
+    interface Plot_raw {
         id: string;
-        type: 'matrix' | 'plot3d' | 'pd' | string;
+        type: 'matrix' | 'plot3d' | 'pd' | 'bar' | 'discovery' | 'eigenplot' | 'pie' | 'scatter' | 'customscatter' | 'heatmap' | 'graph';
         json: unknown;
     }
-    export function $visavis_plot_from_json(json: any, id?: string): $visavis_plot;
-    export class $visavis_plot extends $mol_store<Plot> {
+    export function $visavis_plot_raw_from_json(json: any, id?: string): $visavis_plot_raw;
+    export class $visavis_plot_raw extends $mol_store<Plot_raw> {
         id(next?: string): string;
-        type(): string;
+        type(): "pd" | "scatter" | "bar" | "matrix" | "plot3d" | "discovery" | "eigenplot" | "pie" | "customscatter" | "heatmap" | "graph";
         json(): {};
     }
     export {};
@@ -1604,8 +1621,8 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $visavis_matrix extends $mol_book2 {
-        plot(): $visavis_plot;
+    class $visavis_matrix extends $mol_view {
+        plot_raw(): $visavis_plot_raw;
         size(): number;
         links_value_min(next?: any): number;
         links_value_max(next?: any): number;
@@ -1617,8 +1634,7 @@ declare namespace $ {
         order_current(next?: any): string;
         plot_padding(): number;
         axis_width(): number;
-        pages(): readonly any[];
-        plot_title(): string;
+        sub(): readonly any[];
         Root(): $$.$mol_svg;
         Heatmap_min(): $mol_view;
         heatmap_color(id: any): string;
@@ -1629,14 +1645,14 @@ declare namespace $ {
         Side_right(): $$.$mol_scroll;
         plot_body(): readonly any[];
         draw(): any;
-        Plot(): $mol_page;
+        Plot(): $mol_view;
         nonformers(next?: any): boolean;
         Nonformers(): $mol_check_box;
         Nonformers_label(): $mol_labeler;
         order_dict(): Record<string, any>;
         Order_switch(): $$.$mol_switch;
         Order_label(): $mol_labeler;
-        Setup(): $mol_page;
+        Setup(): $mol_view;
     }
 }
 
@@ -1816,7 +1832,6 @@ declare namespace $.$$ {
         links_value_min(): number;
         links_value_max(): number;
         heatmap(): boolean;
-        plot_title(): string;
         plot_body(): ($mol_scroll | $mol_svg)[];
         order(): any;
         matrix(): Matrix_cell[][];
@@ -1840,6 +1855,31 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
+}
+
+declare namespace $.$$ {
+}
+
+declare namespace $ {
+    class $visavis_plotly extends $mol_view {
+        data(): Record<string, any>;
+        layout(): Record<string, any>;
+        subscribe_events(): any;
+        plot_options(): Record<string, any>;
+    }
+}
+
+declare namespace $ {
+    class $lib_plotly extends $mol_object2 {
+        static all(): any;
+    }
+}
+
+declare namespace $.$$ {
+    class $visavis_plotly extends $.$visavis_plotly {
+        subscribe_events(): void;
+        render(): void;
+    }
 }
 
 declare namespace $.$$ {
@@ -2312,8 +2352,8 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $visavis_cube extends $mol_book2 {
-        plot(): $visavis_plot;
+    class $visavis_cube extends $mol_view {
+        plot_raw(): $visavis_plot_raw;
         heatmap(next?: any): boolean;
         order(id: any): readonly number[];
         order_current(next?: any): string;
@@ -2325,9 +2365,11 @@ declare namespace $ {
         z_sort(next?: any): string;
         colorset(): readonly any[];
         heatmap_colors(): readonly any[];
-        pages(): readonly any[];
-        plot_title(): string;
-        Root(): $mol_view;
+        sub(): readonly any[];
+        data_shown(): Record<string, any>;
+        layout(): Record<string, any>;
+        subscribe_events(): any;
+        Root(): $$.$visavis_plotly;
         value_min(): number;
         Heatmap_min(): $mol_view;
         heatmap_color(id: any): string;
@@ -2337,9 +2379,7 @@ declare namespace $ {
         heatmap_color_list(): readonly any[];
         Heatmap_legend(): $$.$mol_list;
         Side_right(): $$.$mol_scroll;
-        plot_body(): readonly any[];
-        draw(): any;
-        Plot(): $mol_page;
+        Plot(): $mol_view;
         nonformers(next?: any): boolean;
         Nonformers(): $mol_check_box;
         Nonformers_label(): $mol_labeler;
@@ -2350,7 +2390,7 @@ declare namespace $ {
         Y_order_label(): $mol_labeler;
         Z_order_select(): $$.$mol_select;
         Z_order_label(): $mol_labeler;
-        Setup(): $mol_page;
+        Setup(): $mol_view;
     }
 }
 
@@ -2399,16 +2439,9 @@ declare namespace $.$$ {
     };
 }
 
-declare namespace $ {
-    class $lib_plotly extends $mol_object2 {
-        static all(): any;
-    }
-}
-
 declare namespace $.$$ {
     class $visavis_cube extends $.$visavis_cube {
-        plot_body(): ($mol_view | $mol_scroll)[];
-        plot_title(): string;
+        plot_body(): ($mol_scroll | $visavis_plotly)[];
         json(): Readonly<{
             payload: Readonly<{
                 tcube?: boolean | undefined;
@@ -2613,7 +2646,20 @@ declare namespace $.$$ {
                 };
             };
         };
-        draw(): any;
+        layout(): {
+            font: {
+                family: string;
+            };
+            showlegend: boolean;
+            scene: any;
+            margin: {
+                l: number;
+                r: number;
+                b: number;
+                t: number;
+                pad: number;
+            };
+        };
         ter_op(op: 'sum' | 'diff' | 'product' | 'ratio' | 'max' | 'min', a: number, b: number, c: number): number;
         convert_to_axes(x_src: readonly number[], y_src: readonly number[], z_src: readonly number[], x_sort: any, y_sort: any, z_sort: any, x_op?: any, y_op?: any, z_op?: any): {
             x: never[];
@@ -2629,7 +2675,7 @@ declare namespace $.$$ {
 
 declare namespace $ {
     class $visavis_phase extends $mol_book2 {
-        plot(): $visavis_plot;
+        plot_raw(): $visavis_plot_raw;
         colors_by_nphases(): Record<string, any>;
         line(): Record<string, any>;
         is_triangle(): boolean;
@@ -2641,7 +2687,7 @@ declare namespace $ {
         annotation(): Record<string, any>;
         annotation_textangle(id: any): number;
         plot_options(): Record<string, any>;
-        pages(): readonly any[];
+        sub(): readonly any[];
         json_title_a(): string;
         json_title_b(): string;
         json_title_c(): string;
@@ -2652,13 +2698,13 @@ declare namespace $ {
         show_ticks(): boolean;
         json_temp(): readonly any[];
         data_demo(): boolean;
-        plot_title(): string;
         label(next?: any): string;
         Label(): $mol_view;
+        data(): Record<string, any>;
+        layout(): Record<string, any>;
+        subscribe_events(): any;
         mousemove(): any;
-        Root(): $mol_view;
-        draw(): any;
-        Plot(): $mol_page;
+        Root(): $$.$visavis_plotly;
     }
 }
 
@@ -2682,7 +2728,6 @@ declare namespace $.$$ {
     export function cartesian_to_ternary(x: number, y: number): number[];
     export function fix_comp_impossible(comp_range: any, obj_left: any, obj_right: any): any;
     export class $visavis_phase extends $.$visavis_phase {
-        plot_title(): string;
         json(): Readonly<{
             naxes: number;
             arity: number;
@@ -2750,7 +2795,8 @@ declare namespace $.$$ {
         click(): void;
         mousemove(): void;
         subscribe_events(): void;
-        draw(): void;
+        data(): any;
+        layout(): any;
         pd_fix_triangle(): void;
     }
     export {};
@@ -2763,40 +2809,8 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $visavis_plot_plotly extends $mol_page {
-        plot(): $visavis_plot;
-        json(): Record<string, any>;
-        pages(): readonly any[];
-        plot_options(): Record<string, any>;
-        plot_title(): string;
-        draw(): any;
-        Root(): $mol_view;
-        plot_body(): readonly any[];
-        Plot(): $mol_page;
-    }
-}
-
-declare namespace $.$$ {
-    class $visavis_plot_plotly extends $.$visavis_plot_plotly {
-        plot_title(): string;
-        json(): any;
-        subscribe_events(): void;
-        layout(): {
-            font: {
-                family: string;
-                size: number;
-            };
-        };
-        data(): any;
-        draw(): void;
-    }
-}
-
-declare namespace $.$$ {
-}
-
-declare namespace $ {
-    class $visavis_bar extends $visavis_plot_plotly {
+    class $visavis_bar extends $visavis_plotly {
+        plot_raw(): $visavis_plot_raw;
     }
 }
 
@@ -3043,17 +3057,20 @@ declare namespace $.$$ {
     }
 }
 
-declare namespace $.$$ {
-}
-
 declare namespace $ {
-    class $visavis_discovery extends $visavis_plot_plotly {
-        pages(): readonly any[];
+    class $visavis_discovery extends $mol_view {
+        plot_raw(): $visavis_plot_raw;
+        show_setup(): boolean;
+        sub(): readonly any[];
+        data(): Record<string, any>;
+        layout(): Record<string, any>;
+        subscribe_events(): any;
+        Plot(): $$.$visavis_plotly;
         elemental_checked(id: any, next?: any): boolean;
         elementals_dict(): Record<string, any>;
         Elementals_check(): $$.$mol_check_list;
         Elementals(): $mol_labeler;
-        Setup(): $mol_page;
+        Setup(): $mol_view;
     }
 }
 
@@ -3098,6 +3115,7 @@ declare namespace $.$$ {
         }>;
     };
     class $visavis_discovery extends $.$visavis_discovery {
+        sub(): $mol_view[];
         json(): Readonly<{
             payload: Readonly<{
                 points: readonly (readonly number[])[];
@@ -3180,7 +3198,7 @@ declare namespace $.$$ {
                 opacity: number;
                 symbol: string;
             };
-        }[] | undefined;
+        }[];
     }
 }
 
@@ -3188,7 +3206,8 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $visavis_eigen extends $visavis_plot_plotly {
+    class $visavis_eigen extends $visavis_plotly {
+        plot_raw(): $visavis_plot_raw;
     }
 }
 
@@ -4287,7 +4306,8 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $visavis_pie extends $visavis_plot_plotly {
+    class $visavis_pie extends $visavis_plotly {
+        plot_raw(): $visavis_plot_raw;
         colorset(): readonly any[];
     }
 }
@@ -4414,7 +4434,8 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $visavis_scatter extends $visavis_plot_plotly {
+    class $visavis_scatter extends $visavis_plotly {
+        plot_raw(): $visavis_plot_raw;
     }
 }
 
@@ -5156,7 +5177,8 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $visavis_customscatter extends $visavis_plot_plotly {
+    class $visavis_customscatter extends $visavis_plotly {
+        plot_raw(): $visavis_plot_raw;
     }
 }
 
@@ -5360,7 +5382,8 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $visavis_heatmap extends $visavis_plot_plotly {
+    class $visavis_heatmap extends $visavis_plotly {
+        plot_raw(): $visavis_plot_raw;
     }
 }
 
@@ -5433,14 +5456,11 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $visavis_graph extends $mol_book2 {
-        plot(): $visavis_plot;
-        pages(): readonly any[];
-        plot_title(): string;
+    class $visavis_graph extends $mol_view {
+        plot_raw(): $visavis_plot_raw;
+        sub(): readonly any[];
         draw(): any;
         Root(): $mol_view;
-        plot_body(): readonly any[];
-        Plot(): $mol_page;
     }
 }
 
@@ -5572,9 +5592,35 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
+    class $visavis_plot extends $mol_ghost {
+        plot_raw(): $visavis_plot_raw;
+        show_setup(): boolean;
+        plots(): Record<string, any>;
+        Matrix(): $$.$visavis_matrix;
+        Cube(): $$.$visavis_cube;
+        Phase(): $$.$visavis_phase;
+        Bar(): $$.$visavis_bar;
+        Discovery(): $$.$visavis_discovery;
+        Eigen(): $$.$visavis_eigen;
+        Pie(): $$.$visavis_pie;
+        Scatter(): $$.$visavis_scatter;
+        Customscatter(): $$.$visavis_customscatter;
+        Heatmap(): $$.$visavis_heatmap;
+        Graph(): $$.$visavis_graph;
+    }
+}
+
+declare namespace $.$$ {
+    class $visavis_plot extends $.$visavis_plot {
+        Sub(): any;
+    }
+}
+
+declare namespace $ {
     class $visavis_app extends $mol_book2 {
         attr(): Record<string, any>;
         pages(): readonly any[];
+        Plot_page(id: any): $mol_page;
         files_read(next?: any): any;
         Upload(): $mol_button_open;
         plot_id(id: any): string;
@@ -5582,7 +5628,7 @@ declare namespace $ {
         history_drop(id: any, next?: any): any;
         Plot_drop_icon(id: any): $mol_icon_delete;
         Plot_drop(id: any): $mol_button_minor;
-        Plot(id: any): $mol_view;
+        History_plot(id: any): $mol_view;
         history_rows(): readonly any[];
         History(): $$.$mol_list;
         example_title(id: any): string;
@@ -5592,18 +5638,8 @@ declare namespace $ {
         Deck(): $$.$mol_deck;
         Source(): $mol_link_source;
         Menu(): $mol_page;
-        plot(id: any): $visavis_plot;
-        Matrix(id: any): $$.$visavis_matrix;
-        Cube(id: any): $$.$visavis_cube;
-        Phase(id: any): $$.$visavis_phase;
-        Bar(id: any): $$.$visavis_bar;
-        Discovery(id: any): $$.$visavis_discovery;
-        Eigen(id: any): $$.$visavis_eigen;
-        Pie(id: any): $$.$visavis_pie;
-        Scatter(id: any): $$.$visavis_scatter;
-        Customscatter(id: any): $$.$visavis_customscatter;
-        Heatmap(id: any): $$.$visavis_heatmap;
-        Graph(id: any): $$.$visavis_graph;
+        history_plot_raw(id: any): any;
+        Plot_view(id: any): $$.$visavis_plot;
     }
 }
 
@@ -5626,16 +5662,15 @@ declare namespace $ {
 declare namespace $.$$ {
     class $visavis_app extends $.$visavis_app {
         files_read(next: readonly File[]): void;
-        history_add(plot: $visavis_plot): void;
+        history_add(plot_raw: $visavis_plot_raw): void;
         history_drop(id: string): void;
-        history_plots(next?: string[]): string[];
-        history_plot(id: string, next?: $visavis_plot | null): $visavis_plot | null;
+        history_plot_ids(next?: string[]): string[];
+        history_plot_raw(id: string, next?: $visavis_plot_raw | null): $visavis_plot_raw | null;
         history_rows(): $mol_view[];
         plot_id(id: string): string;
-        plot_opened(next?: string | null): string;
-        Plot_opened(): readonly any[];
-        plot(plot: $visavis_plot): $visavis_plot;
-        pages(): any[];
+        plot_opened_id(next?: string | null): string;
+        Plot_opened(): $mol_page[];
+        pages(): $mol_page[];
         Placeholder(): any;
     }
 }
