@@ -5554,7 +5554,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_matrix extends $mol_view {
+    class $visavis_plot_matrix extends $mol_view {
         plot_raw() {
             const obj = new this.$.$visavis_plot_raw();
             return obj;
@@ -5696,29 +5696,29 @@ var $;
         }
         Nonformers() {
             const obj = new this.$.$mol_check_box();
-            obj.hint = () => this.$.$mol_locale.text('$visavis_matrix_Nonformers_hint');
-            obj.title = () => this.$.$mol_locale.text('$visavis_matrix_Nonformers_title');
+            obj.hint = () => this.$.$mol_locale.text('$visavis_plot_matrix_Nonformers_hint');
+            obj.title = () => this.$.$mol_locale.text('$visavis_plot_matrix_Nonformers_title');
             obj.checked = (next) => this.nonformers(next);
             return obj;
         }
         Nonformers_label() {
             const obj = new this.$.$mol_labeler();
-            obj.title = () => this.$.$mol_locale.text('$visavis_matrix_Nonformers_label_title');
+            obj.title = () => this.$.$mol_locale.text('$visavis_plot_matrix_Nonformers_label_title');
             obj.Content = () => this.Nonformers();
             return obj;
         }
         order_dict() {
             return {
-                nump: this.$.$mol_locale.text('$visavis_matrix_order_dict_nump'),
-                num: this.$.$mol_locale.text('$visavis_matrix_order_dict_num'),
-                size: this.$.$mol_locale.text('$visavis_matrix_order_dict_size'),
-                rea: this.$.$mol_locale.text('$visavis_matrix_order_dict_rea'),
-                rpp: this.$.$mol_locale.text('$visavis_matrix_order_dict_rpp'),
-                rion: this.$.$mol_locale.text('$visavis_matrix_order_dict_rion'),
-                rcov: this.$.$mol_locale.text('$visavis_matrix_order_dict_rcov'),
-                rmet: this.$.$mol_locale.text('$visavis_matrix_order_dict_rmet'),
-                tmelt: this.$.$mol_locale.text('$visavis_matrix_order_dict_tmelt'),
-                eneg: this.$.$mol_locale.text('$visavis_matrix_order_dict_eneg')
+                nump: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_nump'),
+                num: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_num'),
+                size: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_size'),
+                rea: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_rea'),
+                rpp: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_rpp'),
+                rion: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_rion'),
+                rcov: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_rcov'),
+                rmet: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_rmet'),
+                tmelt: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_tmelt'),
+                eneg: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_eneg')
             };
         }
         Order_switch() {
@@ -5729,7 +5729,7 @@ var $;
         }
         Order_label() {
             const obj = new this.$.$mol_labeler();
-            obj.title = () => this.$.$mol_locale.text('$visavis_matrix_Order_label_title');
+            obj.title = () => this.$.$mol_locale.text('$visavis_plot_matrix_Order_label_title');
             obj.Content = () => this.Order_switch();
             return obj;
         }
@@ -5744,61 +5744,61 @@ var $;
     }
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "plot_raw", null);
+    ], $visavis_plot_matrix.prototype, "plot_raw", null);
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "links_value_min", null);
+    ], $visavis_plot_matrix.prototype, "links_value_min", null);
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "links_value_max", null);
+    ], $visavis_plot_matrix.prototype, "links_value_max", null);
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "heatmap", null);
+    ], $visavis_plot_matrix.prototype, "heatmap", null);
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "order_current", null);
+    ], $visavis_plot_matrix.prototype, "order_current", null);
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "Root", null);
+    ], $visavis_plot_matrix.prototype, "Root", null);
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "Heatmap_min", null);
+    ], $visavis_plot_matrix.prototype, "Heatmap_min", null);
     __decorate([
         $mol_mem_key
-    ], $visavis_matrix.prototype, "Heatmap_color", null);
+    ], $visavis_plot_matrix.prototype, "Heatmap_color", null);
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "Heatmap_max", null);
+    ], $visavis_plot_matrix.prototype, "Heatmap_max", null);
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "Heatmap_legend", null);
+    ], $visavis_plot_matrix.prototype, "Heatmap_legend", null);
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "Side_right", null);
+    ], $visavis_plot_matrix.prototype, "Side_right", null);
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "Plot", null);
+    ], $visavis_plot_matrix.prototype, "Plot", null);
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "nonformers", null);
+    ], $visavis_plot_matrix.prototype, "nonformers", null);
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "Nonformers", null);
+    ], $visavis_plot_matrix.prototype, "Nonformers", null);
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "Nonformers_label", null);
+    ], $visavis_plot_matrix.prototype, "Nonformers_label", null);
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "Order_switch", null);
+    ], $visavis_plot_matrix.prototype, "Order_switch", null);
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "Order_label", null);
+    ], $visavis_plot_matrix.prototype, "Order_label", null);
     __decorate([
         $mol_mem
-    ], $visavis_matrix.prototype, "Setup", null);
-    $.$visavis_matrix = $visavis_matrix;
+    ], $visavis_plot_matrix.prototype, "Setup", null);
+    $.$visavis_plot_matrix = $visavis_plot_matrix;
 })($ || ($ = {}));
-//visavis/matrix/-view.tree/matrix.view.tree.ts
+//visavis/plot/matrix/-view.tree/matrix.view.tree.ts
 ;
 "use strict";
 //mol/data/value/value.ts
@@ -6083,7 +6083,7 @@ var $;
 (function ($) {
     var $$;
     (function ($$) {
-        const $visavis_matrix_json_node = $mol_data_record({
+        const $visavis_plot_matrix_json_node = $mol_data_record({
             name: $mol_data_string,
             num: $mol_data_number,
             nump: $mol_data_number,
@@ -6097,22 +6097,22 @@ var $;
             eneg: $mol_data_number,
             count: $mol_data_optional($mol_data_number),
         });
-        const $visavis_matrix_json_link = $mol_data_record({
+        const $visavis_plot_matrix_json_link = $mol_data_record({
             source: $mol_data_number,
             target: $mol_data_number,
             value: $mol_data_number,
             cmt: $mol_data_string,
             cmp: $mol_data_optional($mol_data_number),
         });
-        const $visavis_matrix_json = $mol_data_record({
+        const $visavis_plot_matrix_json = $mol_data_record({
             payload: $mol_data_record({
-                nodes: $mol_data_array($visavis_matrix_json_node),
-                links: $mol_data_array($visavis_matrix_json_link)
+                nodes: $mol_data_array($visavis_plot_matrix_json_node),
+                links: $mol_data_array($visavis_plot_matrix_json_link)
             }),
         });
-        class $visavis_matrix extends $.$visavis_matrix {
+        class $visavis_plot_matrix extends $.$visavis_plot_matrix {
             json() {
-                return $visavis_matrix_json(this.plot_raw().json());
+                return $visavis_plot_matrix_json(this.plot_raw().json());
             }
             nodes() {
                 return this.json().payload.nodes;
@@ -6242,7 +6242,7 @@ var $;
             draw() {
                 if (Number.isNaN(this.size()))
                     return;
-                const svg = $visavis_lib.d3().select('[visavis_matrix_root]')
+                const svg = $visavis_lib.d3().select('[visavis_plot_matrix_root]')
                     .attr('width', this.size() + this.axis_width())
                     .attr('height', this.size() + this.axis_width())
                     .style('font-size', this.range().rangeBand())
@@ -6286,64 +6286,64 @@ var $;
         }
         __decorate([
             $mol_mem
-        ], $visavis_matrix.prototype, "json", null);
+        ], $visavis_plot_matrix.prototype, "json", null);
         __decorate([
             $mol_mem
-        ], $visavis_matrix.prototype, "links", null);
+        ], $visavis_plot_matrix.prototype, "links", null);
         __decorate([
             $mol_mem
-        ], $visavis_matrix.prototype, "heatmap", null);
+        ], $visavis_plot_matrix.prototype, "heatmap", null);
         __decorate([
             $mol_mem
-        ], $visavis_matrix.prototype, "order", null);
+        ], $visavis_plot_matrix.prototype, "order", null);
         __decorate([
             $mol_mem
-        ], $visavis_matrix.prototype, "matrix", null);
+        ], $visavis_plot_matrix.prototype, "matrix", null);
         __decorate([
             $mol_mem
-        ], $visavis_matrix.prototype, "size", null);
+        ], $visavis_plot_matrix.prototype, "size", null);
         __decorate([
             $mol_mem
-        ], $visavis_matrix.prototype, "opacity_scale", null);
+        ], $visavis_plot_matrix.prototype, "opacity_scale", null);
         __decorate([
             $mol_mem
-        ], $visavis_matrix.prototype, "color_heatmap", null);
+        ], $visavis_plot_matrix.prototype, "color_heatmap", null);
         __decorate([
             $mol_mem
-        ], $visavis_matrix.prototype, "color_heatmap_scale", null);
+        ], $visavis_plot_matrix.prototype, "color_heatmap_scale", null);
         __decorate([
             $mol_mem
-        ], $visavis_matrix.prototype, "range", null);
+        ], $visavis_plot_matrix.prototype, "range", null);
         __decorate([
             $mol_mem_key
-        ], $visavis_matrix.prototype, "cell_selected", null);
+        ], $visavis_plot_matrix.prototype, "cell_selected", null);
         __decorate([
             $mol_action
-        ], $visavis_matrix.prototype, "cell_click", null);
+        ], $visavis_plot_matrix.prototype, "cell_click", null);
         __decorate([
             $mol_mem_key
-        ], $visavis_matrix.prototype, "draw_cells", null);
+        ], $visavis_plot_matrix.prototype, "draw_cells", null);
         __decorate([
             $mol_mem
-        ], $visavis_matrix.prototype, "draw", null);
-        $$.$visavis_matrix = $visavis_matrix;
+        ], $visavis_plot_matrix.prototype, "draw", null);
+        $$.$visavis_plot_matrix = $visavis_plot_matrix;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//visavis/matrix/matrix.view.ts
+//visavis/plot/matrix/matrix.view.ts
 ;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("visavis/matrix/matrix.view.css", "[visavis_matrix_plot] rect.nonformer {\n\tfill:url(#nonformer) !important;\n\tfill-opacity:1.0 !important;\n}\n\n[visavis_matrix_plot] rect.visited{\n\tfill:#0f0 !important;\n\tfill-opacity:1.0 !important;\n}\n\n[visavis_matrix_plot] rect.bgmatrix {\n\tfill:#f6f6f6;\n}\n\n[visavis_matrix_plot] rect.bgmatrix.hidden {\n\tfill:#fff;\n}\n\n[visavis_matrix_plot] line {\n\tstroke:#fff;\n}\n\n[visavis_matrix_plot] text.active {\n\tfill:#f00;\n\tfont-weight:bold;\n}\n");
+    $mol_style_attach("visavis/plot/matrix/matrix.view.css", "[visavis_plot_matrix_plot] rect.nonformer {\n\tfill:url(#nonformer) !important;\n\tfill-opacity:1.0 !important;\n}\n\n[visavis_plot_matrix_plot] rect.visited{\n\tfill:#0f0 !important;\n\tfill-opacity:1.0 !important;\n}\n\n[visavis_plot_matrix_plot] rect.bgmatrix {\n\tfill:#f6f6f6;\n}\n\n[visavis_plot_matrix_plot] rect.bgmatrix.hidden {\n\tfill:#fff;\n}\n\n[visavis_plot_matrix_plot] line {\n\tstroke:#fff;\n}\n\n[visavis_plot_matrix_plot] text.active {\n\tfill:#f00;\n\tfont-weight:bold;\n}\n");
 })($ || ($ = {}));
-//visavis/matrix/-css/matrix.view.css.ts
+//visavis/plot/matrix/-css/matrix.view.css.ts
 ;
 "use strict";
 var $;
 (function ($) {
     var $$;
     (function ($$) {
-        $mol_style_define($.$visavis_matrix, {
+        $mol_style_define($.$visavis_plot_matrix, {
             flex: {
                 grow: 1,
             },
@@ -6392,7 +6392,7 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//visavis/matrix/matrix.view.css.ts
+//visavis/plot/matrix/matrix.view.css.ts
 ;
 "use strict";
 var $;
@@ -7999,7 +7999,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_cube extends $mol_view {
+    class $visavis_plot_cube extends $mol_view {
         plot_raw() {
             const obj = new this.$.$visavis_plot_raw();
             return obj;
@@ -8154,29 +8154,29 @@ var $;
         }
         Nonformers() {
             const obj = new this.$.$mol_check_box();
-            obj.hint = () => this.$.$mol_locale.text('$visavis_cube_Nonformers_hint');
-            obj.title = () => this.$.$mol_locale.text('$visavis_cube_Nonformers_title');
+            obj.hint = () => this.$.$mol_locale.text('$visavis_plot_cube_Nonformers_hint');
+            obj.title = () => this.$.$mol_locale.text('$visavis_plot_cube_Nonformers_title');
             obj.checked = (next) => this.nonformers(next);
             return obj;
         }
         Nonformers_label() {
             const obj = new this.$.$mol_labeler();
-            obj.title = () => this.$.$mol_locale.text('$visavis_cube_Nonformers_label_title');
+            obj.title = () => this.$.$mol_locale.text('$visavis_plot_cube_Nonformers_label_title');
             obj.Content = () => this.Nonformers();
             return obj;
         }
         order_dict() {
             return {
-                nump: this.$.$mol_locale.text('$visavis_cube_order_dict_nump'),
-                num: this.$.$mol_locale.text('$visavis_cube_order_dict_num'),
-                size: this.$.$mol_locale.text('$visavis_cube_order_dict_size'),
-                rea: this.$.$mol_locale.text('$visavis_cube_order_dict_rea'),
-                rpp: this.$.$mol_locale.text('$visavis_cube_order_dict_rpp'),
-                rion: this.$.$mol_locale.text('$visavis_cube_order_dict_rion'),
-                rcov: this.$.$mol_locale.text('$visavis_cube_order_dict_rcov'),
-                rmet: this.$.$mol_locale.text('$visavis_cube_order_dict_rmet'),
-                tmelt: this.$.$mol_locale.text('$visavis_cube_order_dict_tmelt'),
-                eneg: this.$.$mol_locale.text('$visavis_cube_order_dict_eneg')
+                nump: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_nump'),
+                num: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_num'),
+                size: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_size'),
+                rea: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_rea'),
+                rpp: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_rpp'),
+                rion: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_rion'),
+                rcov: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_rcov'),
+                rmet: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_rmet'),
+                tmelt: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_tmelt'),
+                eneg: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_eneg')
             };
         }
         X_order_select() {
@@ -8187,7 +8187,7 @@ var $;
         }
         X_order_label() {
             const obj = new this.$.$mol_labeler();
-            obj.title = () => this.$.$mol_locale.text('$visavis_cube_X_order_label_title');
+            obj.title = () => this.$.$mol_locale.text('$visavis_plot_cube_X_order_label_title');
             obj.Content = () => this.X_order_select();
             return obj;
         }
@@ -8199,7 +8199,7 @@ var $;
         }
         Y_order_label() {
             const obj = new this.$.$mol_labeler();
-            obj.title = () => this.$.$mol_locale.text('$visavis_cube_Y_order_label_title');
+            obj.title = () => this.$.$mol_locale.text('$visavis_plot_cube_Y_order_label_title');
             obj.Content = () => this.Y_order_select();
             return obj;
         }
@@ -8211,7 +8211,7 @@ var $;
         }
         Z_order_label() {
             const obj = new this.$.$mol_labeler();
-            obj.title = () => this.$.$mol_locale.text('$visavis_cube_Z_order_label_title');
+            obj.title = () => this.$.$mol_locale.text('$visavis_plot_cube_Z_order_label_title');
             obj.Content = () => this.Z_order_select();
             return obj;
         }
@@ -8228,76 +8228,76 @@ var $;
     }
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "plot_raw", null);
+    ], $visavis_plot_cube.prototype, "plot_raw", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "heatmap", null);
+    ], $visavis_plot_cube.prototype, "heatmap", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "order_current", null);
+    ], $visavis_plot_cube.prototype, "order_current", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "x_sort", null);
+    ], $visavis_plot_cube.prototype, "x_sort", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "y_sort", null);
+    ], $visavis_plot_cube.prototype, "y_sort", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "z_sort", null);
+    ], $visavis_plot_cube.prototype, "z_sort", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "Root", null);
+    ], $visavis_plot_cube.prototype, "Root", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "Heatmap_min", null);
+    ], $visavis_plot_cube.prototype, "Heatmap_min", null);
     __decorate([
         $mol_mem_key
-    ], $visavis_cube.prototype, "Heatmap_color", null);
+    ], $visavis_plot_cube.prototype, "Heatmap_color", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "Heatmap_max", null);
+    ], $visavis_plot_cube.prototype, "Heatmap_max", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "Heatmap_legend", null);
+    ], $visavis_plot_cube.prototype, "Heatmap_legend", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "Side_right", null);
+    ], $visavis_plot_cube.prototype, "Side_right", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "Plot", null);
+    ], $visavis_plot_cube.prototype, "Plot", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "nonformers", null);
+    ], $visavis_plot_cube.prototype, "nonformers", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "Nonformers", null);
+    ], $visavis_plot_cube.prototype, "Nonformers", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "Nonformers_label", null);
+    ], $visavis_plot_cube.prototype, "Nonformers_label", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "X_order_select", null);
+    ], $visavis_plot_cube.prototype, "X_order_select", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "X_order_label", null);
+    ], $visavis_plot_cube.prototype, "X_order_label", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "Y_order_select", null);
+    ], $visavis_plot_cube.prototype, "Y_order_select", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "Y_order_label", null);
+    ], $visavis_plot_cube.prototype, "Y_order_label", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "Z_order_select", null);
+    ], $visavis_plot_cube.prototype, "Z_order_select", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "Z_order_label", null);
+    ], $visavis_plot_cube.prototype, "Z_order_label", null);
     __decorate([
         $mol_mem
-    ], $visavis_cube.prototype, "Setup", null);
-    $.$visavis_cube = $visavis_cube;
+    ], $visavis_plot_cube.prototype, "Setup", null);
+    $.$visavis_plot_cube = $visavis_plot_cube;
 })($ || ($ = {}));
-//visavis/cube/-view.tree/cube.view.tree.ts
+//visavis/plot/cube/-view.tree/cube.view.tree.ts
 ;
 "use strict";
 var $;
@@ -8378,7 +8378,7 @@ var $;
 (function ($) {
     var $$;
     (function ($$) {
-        const $visavis_cube_json = $mol_data_record({
+        const $visavis_plot_cube_json = $mol_data_record({
             payload: $mol_data_record({
                 tcube: $mol_data_optional($mol_data_boolean),
                 points: $mol_data_record({
@@ -8394,7 +8394,7 @@ var $;
                 ztitle: $mol_data_optional($mol_data_string),
             }),
         });
-        class $visavis_cube extends $.$visavis_cube {
+        class $visavis_plot_cube extends $.$visavis_plot_cube {
             plot_body() {
                 return [
                     this.Root(),
@@ -8402,7 +8402,7 @@ var $;
                 ];
             }
             json() {
-                return $visavis_cube_json(this.plot_raw().json());
+                return $visavis_plot_cube_json(this.plot_raw().json());
             }
             value_list() {
                 return this.json().payload.points.v.slice().sort((a, b) => a - b);
@@ -8555,7 +8555,9 @@ var $;
                     for (var i = 0; i < y_src.length; i++) {
                         y_temp.push(this.ter_op(y_op, $visavis_element_prop[y_sort][x_src[i]], $visavis_element_prop[y_sort][y_src[i]], $visavis_element_prop[y_sort][z_src[i]]));
                     }
-                    var y_renorm = $lib_d3.all().scaleQuantize().range($visavis_element_prop.num.slice(1)).domain([$lib_d3.all().min(y_temp), $lib_d3.all().max(y_temp)]);
+                    var y_renorm = $lib_d3.all().scaleQuantize()
+                        .range($visavis_element_prop.num.slice(1))
+                        .domain([$lib_d3.all().min(y_temp), $lib_d3.all().max(y_temp)]);
                     converted['y'] = y_temp.map(y_renorm);
                 }
                 else {
@@ -8568,7 +8570,9 @@ var $;
                     for (var i = 0; i < z_src.length; i++) {
                         z_temp.push(this.ter_op(z_op, $visavis_element_prop[z_sort][x_src[i]], $visavis_element_prop[z_sort][y_src[i]], $visavis_element_prop[z_sort][z_src[i]]));
                     }
-                    var z_renorm = $lib_d3.all().scaleQuantize().range($visavis_element_prop.num.slice(1)).domain([$lib_d3.all().min(z_temp), $lib_d3.all().max(z_temp)]);
+                    var z_renorm = $lib_d3.all().scaleQuantize()
+                        .range($visavis_element_prop.num.slice(1))
+                        .domain([$lib_d3.all().min(z_temp), $lib_d3.all().max(z_temp)]);
                     converted['z'] = z_temp.map(z_renorm);
                 }
                 else {
@@ -8586,45 +8590,45 @@ var $;
         }
         __decorate([
             $mol_mem
-        ], $visavis_cube.prototype, "value_list", null);
+        ], $visavis_plot_cube.prototype, "value_list", null);
         __decorate([
             $mol_mem_key
-        ], $visavis_cube.prototype, "order", null);
+        ], $visavis_plot_cube.prototype, "order", null);
         __decorate([
             $mol_mem
-        ], $visavis_cube.prototype, "heatmap", null);
+        ], $visavis_plot_cube.prototype, "heatmap", null);
         __decorate([
             $mol_mem
-        ], $visavis_cube.prototype, "marker", null);
+        ], $visavis_plot_cube.prototype, "marker", null);
         __decorate([
             $mol_mem
-        ], $visavis_cube.prototype, "data_nonformers", null);
+        ], $visavis_plot_cube.prototype, "data_nonformers", null);
         __decorate([
             $mol_mem
-        ], $visavis_cube.prototype, "data", null);
+        ], $visavis_plot_cube.prototype, "data", null);
         __decorate([
             $mol_mem
-        ], $visavis_cube.prototype, "data_shown", null);
+        ], $visavis_plot_cube.prototype, "data_shown", null);
         __decorate([
             $mol_mem
-        ], $visavis_cube.prototype, "scene", null);
+        ], $visavis_plot_cube.prototype, "scene", null);
         __decorate([
             $mol_mem
-        ], $visavis_cube.prototype, "layout", null);
+        ], $visavis_plot_cube.prototype, "layout", null);
         __decorate([
             $mol_mem_key
-        ], $visavis_cube.prototype, "order_els", null);
-        $$.$visavis_cube = $visavis_cube;
+        ], $visavis_plot_cube.prototype, "order_els", null);
+        $$.$visavis_plot_cube = $visavis_plot_cube;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//visavis/cube/cube.view.ts
+//visavis/plot/cube/cube.view.ts
 ;
 "use strict";
 var $;
 (function ($) {
     var $$;
     (function ($$) {
-        $mol_style_define($visavis_cube, {
+        $mol_style_define($visavis_plot_cube, {
             Plot: {
                 flex: {
                     grow: 1,
@@ -8671,12 +8675,12 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//visavis/cube/cube.view.css.ts
+//visavis/plot/cube/cube.view.css.ts
 ;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_phase extends $mol_book2 {
+    class $visavis_plot_phase extends $mol_book2 {
         plot_raw() {
             const obj = new this.$.$visavis_plot_raw();
             return obj;
@@ -8990,19 +8994,19 @@ var $;
     }
     __decorate([
         $mol_mem
-    ], $visavis_phase.prototype, "plot_raw", null);
+    ], $visavis_plot_phase.prototype, "plot_raw", null);
     __decorate([
         $mol_mem
-    ], $visavis_phase.prototype, "label", null);
+    ], $visavis_plot_phase.prototype, "label", null);
     __decorate([
         $mol_mem
-    ], $visavis_phase.prototype, "Label", null);
+    ], $visavis_plot_phase.prototype, "Label", null);
     __decorate([
         $mol_mem
-    ], $visavis_phase.prototype, "Root", null);
-    $.$visavis_phase = $visavis_phase;
+    ], $visavis_plot_phase.prototype, "Root", null);
+    $.$visavis_plot_phase = $visavis_plot_phase;
 })($ || ($ = {}));
-//visavis/phase/-view.tree/phase.view.tree.ts
+//visavis/plot/phase/-view.tree/phase.view.tree.ts
 ;
 "use strict";
 var $;
@@ -9063,7 +9067,7 @@ var $;
             })(check);
             return Object.values(obj);
         };
-        const $visavis_phase_rect_json = $mol_data_record({
+        const $visavis_plot_phase_rect_json = $mol_data_record({
             naxes: $mol_data_number,
             arity: $mol_data_number,
             diatype: $mol_data_string,
@@ -9186,9 +9190,9 @@ var $;
             return false;
         }
         $$.fix_comp_impossible = fix_comp_impossible;
-        class $visavis_phase extends $.$visavis_phase {
+        class $visavis_plot_phase extends $.$visavis_plot_phase {
             json() {
-                return $visavis_phase_rect_json(this.plot_raw().json());
+                return $visavis_plot_phase_rect_json(this.plot_raw().json());
             }
             json_title_b() {
                 return this.json().title_b ?? '';
@@ -9360,37 +9364,37 @@ var $;
         }
         __decorate([
             $mol_mem
-        ], $visavis_phase.prototype, "layout_shapes", null);
+        ], $visavis_plot_phase.prototype, "layout_shapes", null);
         __decorate([
             $mol_mem
-        ], $visavis_phase.prototype, "annotations", null);
+        ], $visavis_plot_phase.prototype, "annotations", null);
         __decorate([
             $mol_action
-        ], $visavis_phase.prototype, "subscribe_events", null);
+        ], $visavis_plot_phase.prototype, "subscribe_events", null);
         __decorate([
             $mol_mem
-        ], $visavis_phase.prototype, "data", null);
+        ], $visavis_plot_phase.prototype, "data", null);
         __decorate([
             $mol_mem
-        ], $visavis_phase.prototype, "layout", null);
-        $$.$visavis_phase = $visavis_phase;
+        ], $visavis_plot_phase.prototype, "layout", null);
+        $$.$visavis_plot_phase = $visavis_plot_phase;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//visavis/phase/phase.view.ts
+//visavis/plot/phase/phase.view.ts
 ;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("visavis/phase/phase.view.css", "path{pointer-events:painted;}\ng{pointer-events:painted;}\n");
+    $mol_style_attach("visavis/plot/phase/phase.view.css", "path{pointer-events:painted;}\ng{pointer-events:painted;}\n");
 })($ || ($ = {}));
-//visavis/phase/-css/phase.view.css.ts
+//visavis/plot/phase/-css/phase.view.css.ts
 ;
 "use strict";
 var $;
 (function ($) {
     var $$;
     (function ($$) {
-        $mol_style_define($visavis_phase, {
+        $mol_style_define($visavis_plot_phase, {
             Label: {
                 position: 'absolute',
                 zIndex: 2,
@@ -9398,12 +9402,12 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//visavis/phase/phase.view.css.ts
+//visavis/plot/phase/phase.view.css.ts
 ;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_bar extends $visavis_plotly {
+    class $visavis_plot_bar extends $visavis_plotly {
         plot_raw() {
             const obj = new this.$.$visavis_plot_raw();
             return obj;
@@ -9411,10 +9415,10 @@ var $;
     }
     __decorate([
         $mol_mem
-    ], $visavis_bar.prototype, "plot_raw", null);
-    $.$visavis_bar = $visavis_bar;
+    ], $visavis_plot_bar.prototype, "plot_raw", null);
+    $.$visavis_plot_bar = $visavis_plot_bar;
 })($ || ($ = {}));
-//visavis/bar/-view.tree/bar.view.tree.ts
+//visavis/plot/bar/-view.tree/bar.view.tree.ts
 ;
 "use strict";
 var $;
@@ -9428,13 +9432,13 @@ var $;
             xtitle: $mol_data_optional($mol_data_string),
             ytitle: $mol_data_optional($mol_data_string),
         });
-        $$.$visavis_bar_json = $mol_data_record({
+        $$.$visavis_plot_bar_json = $mol_data_record({
             payload: Payload,
             payload2: $mol_data_optional(Payload),
         });
-        class $visavis_bar extends $.$visavis_bar {
+        class $visavis_plot_bar extends $.$visavis_plot_bar {
             json() {
-                return $$.$visavis_bar_json(this.plot_raw().json());
+                return $$.$visavis_plot_bar_json(this.plot_raw().json());
             }
             subscribe_events() {
                 const d3 = $lib_d3.all();
@@ -9493,22 +9497,22 @@ var $;
         }
         __decorate([
             $mol_action
-        ], $visavis_bar.prototype, "subscribe_events", null);
+        ], $visavis_plot_bar.prototype, "subscribe_events", null);
         __decorate([
             $mol_mem
-        ], $visavis_bar.prototype, "layout", null);
+        ], $visavis_plot_bar.prototype, "layout", null);
         __decorate([
             $mol_mem
-        ], $visavis_bar.prototype, "data", null);
-        $$.$visavis_bar = $visavis_bar;
+        ], $visavis_plot_bar.prototype, "data", null);
+        $$.$visavis_plot_bar = $visavis_plot_bar;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//visavis/bar/bar.view.ts
+//visavis/plot/bar/bar.view.ts
 ;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_discovery extends $mol_view {
+    class $visavis_plot_discovery extends $mol_view {
         plot_raw() {
             const obj = new this.$.$visavis_plot_raw();
             return obj;
@@ -9568,25 +9572,25 @@ var $;
     }
     __decorate([
         $mol_mem
-    ], $visavis_discovery.prototype, "plot_raw", null);
+    ], $visavis_plot_discovery.prototype, "plot_raw", null);
     __decorate([
         $mol_mem
-    ], $visavis_discovery.prototype, "Plot", null);
+    ], $visavis_plot_discovery.prototype, "Plot", null);
     __decorate([
         $mol_mem_key
-    ], $visavis_discovery.prototype, "elemental_checked", null);
+    ], $visavis_plot_discovery.prototype, "elemental_checked", null);
     __decorate([
         $mol_mem
-    ], $visavis_discovery.prototype, "Elementals_check", null);
+    ], $visavis_plot_discovery.prototype, "Elementals_check", null);
     __decorate([
         $mol_mem
-    ], $visavis_discovery.prototype, "Elementals", null);
+    ], $visavis_plot_discovery.prototype, "Elementals", null);
     __decorate([
         $mol_mem
-    ], $visavis_discovery.prototype, "Setup", null);
-    $.$visavis_discovery = $visavis_discovery;
+    ], $visavis_plot_discovery.prototype, "Setup", null);
+    $.$visavis_plot_discovery = $visavis_plot_discovery;
 })($ || ($ = {}));
-//visavis/discovery/-view.tree/discovery.view.tree.ts
+//visavis/plot/discovery/-view.tree/discovery.view.tree.ts
 ;
 "use strict";
 var $;
@@ -9601,7 +9605,7 @@ var $;
             points: $mol_data_array(Point),
             name: $mol_data_string
         });
-        $$.$visavis_discovery_json = $mol_data_record({
+        $$.$visavis_plot_discovery_json = $mol_data_record({
             payload: Payload,
             answerto: $mol_data_string,
         });
@@ -9663,12 +9667,12 @@ var $;
                     name: first.name
                 }];
         }
-        class $visavis_discovery extends $.$visavis_discovery {
+        class $visavis_plot_discovery extends $.$visavis_plot_discovery {
             sub() {
                 return [this.Plot(), ...(this.show_setup() ? [this.Setup()] : [])];
             }
             json() {
-                return $$.$visavis_discovery_json(this.plot_raw().json());
+                return $$.$visavis_plot_discovery_json(this.plot_raw().json());
             }
             elementals_dict() {
                 return $visavis_elemental_names;
@@ -9758,30 +9762,30 @@ var $;
         }
         __decorate([
             $mol_action
-        ], $visavis_discovery.prototype, "subscribe_events", null);
+        ], $visavis_plot_discovery.prototype, "subscribe_events", null);
         __decorate([
             $mol_mem
-        ], $visavis_discovery.prototype, "layout", null);
+        ], $visavis_plot_discovery.prototype, "layout", null);
         __decorate([
             $mol_mem
-        ], $visavis_discovery.prototype, "elementals_on", null);
+        ], $visavis_plot_discovery.prototype, "elementals_on", null);
         __decorate([
             $mol_mem_key
-        ], $visavis_discovery.prototype, "elemental_checked", null);
+        ], $visavis_plot_discovery.prototype, "elemental_checked", null);
         __decorate([
             $mol_mem
-        ], $visavis_discovery.prototype, "data", null);
-        $$.$visavis_discovery = $visavis_discovery;
+        ], $visavis_plot_discovery.prototype, "data", null);
+        $$.$visavis_plot_discovery = $visavis_plot_discovery;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//visavis/discovery/discovery.view.ts
+//visavis/plot/discovery/discovery.view.ts
 ;
 "use strict";
 var $;
 (function ($) {
     var $$;
     (function ($$) {
-        $mol_style_define($visavis_discovery, {
+        $mol_style_define($visavis_plot_discovery, {
             Setup: {
                 flex: {
                     basis: '20rem',
@@ -9796,12 +9800,12 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//visavis/discovery/discovery.view.css.ts
+//visavis/plot/discovery/discovery.view.css.ts
 ;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_eigen extends $visavis_plotly {
+    class $visavis_plot_eigen extends $visavis_plotly {
         plot_raw() {
             const obj = new this.$.$visavis_plot_raw();
             return obj;
@@ -9809,10 +9813,10 @@ var $;
     }
     __decorate([
         $mol_mem
-    ], $visavis_eigen.prototype, "plot_raw", null);
-    $.$visavis_eigen = $visavis_eigen;
+    ], $visavis_plot_eigen.prototype, "plot_raw", null);
+    $.$visavis_plot_eigen = $visavis_plot_eigen;
 })($ || ($ = {}));
-//visavis/eigen/-view.tree/eigen.view.tree.ts
+//visavis/plot/eigen/-view.tree/eigen.view.tree.ts
 ;
 "use strict";
 var $;
@@ -9856,7 +9860,7 @@ var $;
             dos: $mol_data_array($mol_data_number),
             levels: $mol_data_array($mol_data_number),
         });
-        $$.$visavis_eigen_json = $mol_data_record({
+        $$.$visavis_plot_eigen_json = $mol_data_record({
             sample: $mol_data_record({
                 material: $mol_data_record({
                     chemical_formula: $mol_data_string,
@@ -9897,9 +9901,9 @@ var $;
                 phase: $mol_data_optional($mol_data_string),
             }),
         });
-        class $visavis_eigen extends $.$visavis_eigen {
+        class $visavis_plot_eigen extends $.$visavis_plot_eigen {
             json() {
-                return $$.$visavis_eigen_json(this.plot_raw().json());
+                return $$.$visavis_plot_eigen_json(this.plot_raw().json());
             }
             bands_matrix() {
                 const matrix = this.json().sample.measurement[0].property.matrix;
@@ -10005,28 +10009,28 @@ var $;
         }
         __decorate([
             $mol_mem
-        ], $visavis_eigen.prototype, "bands_matrix", null);
+        ], $visavis_plot_eigen.prototype, "bands_matrix", null);
         __decorate([
             $mol_mem
-        ], $visavis_eigen.prototype, "dos_matrix", null);
+        ], $visavis_plot_eigen.prototype, "dos_matrix", null);
         __decorate([
             $mol_action
-        ], $visavis_eigen.prototype, "subscribe_events", null);
+        ], $visavis_plot_eigen.prototype, "subscribe_events", null);
         __decorate([
             $mol_mem
-        ], $visavis_eigen.prototype, "data", null);
+        ], $visavis_plot_eigen.prototype, "data", null);
         __decorate([
             $mol_mem
-        ], $visavis_eigen.prototype, "layout", null);
-        $$.$visavis_eigen = $visavis_eigen;
+        ], $visavis_plot_eigen.prototype, "layout", null);
+        $$.$visavis_plot_eigen = $visavis_plot_eigen;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//visavis/eigen/eigen.view.ts
+//visavis/plot/eigen/eigen.view.ts
 ;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_pie extends $visavis_plotly {
+    class $visavis_plot_pie extends $visavis_plotly {
         plot_raw() {
             const obj = new this.$.$visavis_plot_raw();
             return obj;
@@ -10048,10 +10052,10 @@ var $;
     }
     __decorate([
         $mol_mem
-    ], $visavis_pie.prototype, "plot_raw", null);
-    $.$visavis_pie = $visavis_pie;
+    ], $visavis_plot_pie.prototype, "plot_raw", null);
+    $.$visavis_plot_pie = $visavis_plot_pie;
 })($ || ($ = {}));
-//visavis/pie/-view.tree/pie.view.tree.ts
+//visavis/plot/pie/-view.tree/pie.view.tree.ts
 ;
 "use strict";
 var $;
@@ -10080,7 +10084,7 @@ var $;
     var $$;
     (function ($$) {
         const Facet_names = { props: 'properties', elements: 'elements', classes: 'classes', lattices: 'crystal systems' };
-        $$.$visavis_pie_json = $mol_data_record({
+        $$.$visavis_plot_pie_json = $mol_data_record({
             payload: $mol_data_array($mol_data_record({
                 facet: $mol_data_enum('facet', { props: 'props', elements: 'elements', classes: 'classes', lattices: 'lattices' }),
                 value: $mol_data_string,
@@ -10112,9 +10116,9 @@ var $;
                 y = 0.51;
             return { x: x, y: y };
         }
-        class $visavis_pie extends $.$visavis_pie {
+        class $visavis_plot_pie extends $.$visavis_plot_pie {
             json() {
-                return $$.$visavis_pie_json(this.plot_raw().json());
+                return $$.$visavis_plot_pie_json(this.plot_raw().json());
             }
             subscribe_events() {
             }
@@ -10239,31 +10243,31 @@ var $;
         }
         __decorate([
             $mol_action
-        ], $visavis_pie.prototype, "subscribe_events", null);
+        ], $visavis_plot_pie.prototype, "subscribe_events", null);
         __decorate([
             $mol_mem
-        ], $visavis_pie.prototype, "layout", null);
+        ], $visavis_plot_pie.prototype, "layout", null);
         __decorate([
             $mol_mem
-        ], $visavis_pie.prototype, "xy_domains", null);
+        ], $visavis_plot_pie.prototype, "xy_domains", null);
         __decorate([
             $mol_mem
-        ], $visavis_pie.prototype, "enter_metrics", null);
+        ], $visavis_plot_pie.prototype, "enter_metrics", null);
         __decorate([
             $mol_mem
-        ], $visavis_pie.prototype, "tot_count", null);
+        ], $visavis_plot_pie.prototype, "tot_count", null);
         __decorate([
             $mol_mem
-        ], $visavis_pie.prototype, "data", null);
-        $$.$visavis_pie = $visavis_pie;
+        ], $visavis_plot_pie.prototype, "data", null);
+        $$.$visavis_plot_pie = $visavis_plot_pie;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//visavis/pie/pie.view.ts
+//visavis/plot/pie/pie.view.ts
 ;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_scatter extends $visavis_plotly {
+    class $visavis_plot_scatter extends $visavis_plotly {
         plot_raw() {
             const obj = new this.$.$visavis_plot_raw();
             return obj;
@@ -10271,17 +10275,17 @@ var $;
     }
     __decorate([
         $mol_mem
-    ], $visavis_scatter.prototype, "plot_raw", null);
-    $.$visavis_scatter = $visavis_scatter;
+    ], $visavis_plot_scatter.prototype, "plot_raw", null);
+    $.$visavis_plot_scatter = $visavis_plot_scatter;
 })($ || ($ = {}));
-//visavis/scatter/-view.tree/scatter.view.tree.ts
+//visavis/plot/scatter/-view.tree/scatter.view.tree.ts
 ;
 "use strict";
 var $;
 (function ($) {
     var $$;
     (function ($$) {
-        $$.$visavis_scatter_json = $mol_data_record({
+        $$.$visavis_plot_scatter_json = $mol_data_record({
             sample: $mol_data_record({
                 material: $mol_data_record({
                     chemical_formula: $mol_data_string,
@@ -10322,9 +10326,9 @@ var $;
                 phase: $mol_data_optional($mol_data_string),
             }),
         });
-        class $visavis_scatter extends $.$visavis_scatter {
+        class $visavis_plot_scatter extends $.$visavis_plot_scatter {
             json() {
-                return $$.$visavis_scatter_json(this.plot_raw().json());
+                return $$.$visavis_plot_scatter_json(this.plot_raw().json());
             }
             subscribe_events() {
             }
@@ -10473,43 +10477,43 @@ var $;
         }
         __decorate([
             $mol_action
-        ], $visavis_scatter.prototype, "subscribe_events", null);
+        ], $visavis_plot_scatter.prototype, "subscribe_events", null);
         __decorate([
             $mol_mem
-        ], $visavis_scatter.prototype, "p_data", null);
+        ], $visavis_plot_scatter.prototype, "p_data", null);
         __decorate([
             $mol_mem
-        ], $visavis_scatter.prototype, "t_data", null);
+        ], $visavis_plot_scatter.prototype, "t_data", null);
         __decorate([
             $mol_mem
-        ], $visavis_scatter.prototype, "p_data_sum", null);
+        ], $visavis_plot_scatter.prototype, "p_data_sum", null);
         __decorate([
             $mol_mem
-        ], $visavis_scatter.prototype, "t_data_sum", null);
+        ], $visavis_plot_scatter.prototype, "t_data_sum", null);
         __decorate([
             $mol_mem
-        ], $visavis_scatter.prototype, "x_data_type", null);
+        ], $visavis_plot_scatter.prototype, "x_data_type", null);
         __decorate([
             $mol_mem
-        ], $visavis_scatter.prototype, "x_data", null);
+        ], $visavis_plot_scatter.prototype, "x_data", null);
         __decorate([
             $mol_mem
-        ], $visavis_scatter.prototype, "x_title", null);
+        ], $visavis_plot_scatter.prototype, "x_title", null);
         __decorate([
             $mol_mem
-        ], $visavis_scatter.prototype, "data", null);
+        ], $visavis_plot_scatter.prototype, "data", null);
         __decorate([
             $mol_mem
-        ], $visavis_scatter.prototype, "layout", null);
-        $$.$visavis_scatter = $visavis_scatter;
+        ], $visavis_plot_scatter.prototype, "layout", null);
+        $$.$visavis_plot_scatter = $visavis_plot_scatter;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//visavis/scatter/scatter.view.ts
+//visavis/plot/scatter/scatter.view.ts
 ;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_customscatter extends $visavis_plotly {
+    class $visavis_plot_customscatter extends $visavis_plotly {
         plot_raw() {
             const obj = new this.$.$visavis_plot_raw();
             return obj;
@@ -10517,17 +10521,17 @@ var $;
     }
     __decorate([
         $mol_mem
-    ], $visavis_customscatter.prototype, "plot_raw", null);
-    $.$visavis_customscatter = $visavis_customscatter;
+    ], $visavis_plot_customscatter.prototype, "plot_raw", null);
+    $.$visavis_plot_customscatter = $visavis_plot_customscatter;
 })($ || ($ = {}));
-//visavis/customscatter/-view.tree/customscatter.view.tree.ts
+//visavis/plot/customscatter/-view.tree/customscatter.view.tree.ts
 ;
 "use strict";
 var $;
 (function ($) {
     var $$;
     (function ($$) {
-        $$.$visavis_customscatter_json = $mol_data_record({
+        $$.$visavis_plot_customscatter_json = $mol_data_record({
             plots: $mol_data_array($mol_data_record({
                 name: $mol_data_string,
                 type: $mol_data_string,
@@ -10541,9 +10545,9 @@ var $;
             xlog: $mol_data_nullable($mol_data_boolean),
             ylog: $mol_data_nullable($mol_data_boolean),
         });
-        class $visavis_customscatter extends $.$visavis_customscatter {
+        class $visavis_plot_customscatter extends $.$visavis_plot_customscatter {
             json() {
-                return $$.$visavis_customscatter_json(this.plot_raw().json());
+                return $$.$visavis_plot_customscatter_json(this.plot_raw().json());
             }
             subscribe_events() {
             }
@@ -10590,22 +10594,22 @@ var $;
         }
         __decorate([
             $mol_action
-        ], $visavis_customscatter.prototype, "subscribe_events", null);
+        ], $visavis_plot_customscatter.prototype, "subscribe_events", null);
         __decorate([
             $mol_mem
-        ], $visavis_customscatter.prototype, "layout", null);
+        ], $visavis_plot_customscatter.prototype, "layout", null);
         __decorate([
             $mol_mem
-        ], $visavis_customscatter.prototype, "data", null);
-        $$.$visavis_customscatter = $visavis_customscatter;
+        ], $visavis_plot_customscatter.prototype, "data", null);
+        $$.$visavis_plot_customscatter = $visavis_plot_customscatter;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//visavis/customscatter/customscatter.view.ts
+//visavis/plot/customscatter/customscatter.view.ts
 ;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_heatmap extends $visavis_plotly {
+    class $visavis_plot_heatmap extends $visavis_plotly {
         plot_raw() {
             const obj = new this.$.$visavis_plot_raw();
             return obj;
@@ -10613,17 +10617,17 @@ var $;
     }
     __decorate([
         $mol_mem
-    ], $visavis_heatmap.prototype, "plot_raw", null);
-    $.$visavis_heatmap = $visavis_heatmap;
+    ], $visavis_plot_heatmap.prototype, "plot_raw", null);
+    $.$visavis_plot_heatmap = $visavis_plot_heatmap;
 })($ || ($ = {}));
-//visavis/heatmap/-view.tree/heatmap.view.tree.ts
+//visavis/plot/heatmap/-view.tree/heatmap.view.tree.ts
 ;
 "use strict";
 var $;
 (function ($) {
     var $$;
     (function ($$) {
-        class $visavis_heatmap extends $.$visavis_heatmap {
+        class $visavis_plot_heatmap extends $.$visavis_plot_heatmap {
             json() {
                 return this.plot_raw().json();
             }
@@ -10705,19 +10709,19 @@ var $;
         }
         __decorate([
             $mol_mem
-        ], $visavis_heatmap.prototype, "layout", null);
+        ], $visavis_plot_heatmap.prototype, "layout", null);
         __decorate([
             $mol_mem
-        ], $visavis_heatmap.prototype, "data", null);
-        $$.$visavis_heatmap = $visavis_heatmap;
+        ], $visavis_plot_heatmap.prototype, "data", null);
+        $$.$visavis_plot_heatmap = $visavis_plot_heatmap;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//visavis/heatmap/heatmap.view.ts
+//visavis/plot/heatmap/heatmap.view.ts
 ;
 "use strict";
 var $;
 (function ($) {
-    class $visavis_graph extends $mol_view {
+    class $visavis_plot_graph extends $mol_view {
         plot_raw() {
             const obj = new this.$.$visavis_plot_raw();
             return obj;
@@ -10738,13 +10742,13 @@ var $;
     }
     __decorate([
         $mol_mem
-    ], $visavis_graph.prototype, "plot_raw", null);
+    ], $visavis_plot_graph.prototype, "plot_raw", null);
     __decorate([
         $mol_mem
-    ], $visavis_graph.prototype, "Root", null);
-    $.$visavis_graph = $visavis_graph;
+    ], $visavis_plot_graph.prototype, "Root", null);
+    $.$visavis_plot_graph = $visavis_plot_graph;
 })($ || ($ = {}));
-//visavis/graph/-view.tree/graph.view.tree.ts
+//visavis/plot/graph/-view.tree/graph.view.tree.ts
 ;
 "use strict";
 var $;
@@ -10756,15 +10760,15 @@ var $;
             type: $mol_data_string,
             target: $mol_data_variant($mol_data_string, $mol_data_number),
         });
-        $$.$visavis_graph_json = $mol_data_record({
+        $$.$visavis_plot_graph_json = $mol_data_record({
             error: $mol_data_nullable($mol_data_string),
             warning: $mol_data_nullable($mol_data_string),
             graph_rel: $mol_data_string,
             payload: $mol_data_array(Link),
         });
-        class $visavis_graph extends $.$visavis_graph {
+        class $visavis_plot_graph extends $.$visavis_plot_graph {
             json() {
-                return $$.$visavis_graph_json(this.plot_raw().json());
+                return $$.$visavis_plot_graph_json(this.plot_raw().json());
             }
             plot_title() {
                 return this.plot_raw().id();
@@ -10809,7 +10813,7 @@ var $;
             draw() {
                 const { nodes, edges, labels, radii, foci, table, circle_cls, text_cls } = this.data();
                 const d3 = $visavis_lib.d3();
-                const svg = d3.select('[visavis_graph_root]').append('svg');
+                const svg = d3.select('[visavis_plot_graph_root]').append('svg');
                 const visavis_force = d3.layout.force()
                     .nodes(d3.values(nodes))
                     .links(edges)
@@ -10864,31 +10868,31 @@ var $;
         }
         __decorate([
             $mol_mem
-        ], $visavis_graph.prototype, "json", null);
+        ], $visavis_plot_graph.prototype, "json", null);
         __decorate([
             $mol_mem
-        ], $visavis_graph.prototype, "data", null);
+        ], $visavis_plot_graph.prototype, "data", null);
         __decorate([
             $mol_mem
-        ], $visavis_graph.prototype, "draw", null);
-        $$.$visavis_graph = $visavis_graph;
+        ], $visavis_plot_graph.prototype, "draw", null);
+        $$.$visavis_plot_graph = $visavis_plot_graph;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//visavis/graph/graph.view.ts
+//visavis/plot/graph/graph.view.ts
 ;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("visavis/graph/graph.view.css", "[visavis_graph_root] svg {\n\twidth: 100%;\n\theight: 100%;\n}\n\n[visavis_graph_root] .edge {\n\tfill: none;\n\tstroke: #ddd;\n\tstroke-width: 1px;\n}\n\n[visavis_graph_root] .edge.prel {\n\tstroke: #FE9A2E;\n}\n\n[visavis_graph_root] .edge.hrel {\n\tstroke: #3e3f95;\n}\n\n[visavis_graph_root] .edge.trel {\n\tstroke: #3e3f95;\n}\n\n[visavis_graph_root] .edge.arel {\n\tstroke: #E36868;\n}\n\n[visavis_graph_root] .edge.grel {\n\tstroke: #acc2b3;\n}\n\n[visavis_graph_root] circle {\n\tcursor: move;\n\tfill: #ccc;\n}\n\n[visavis_graph_root] circle.f {\n\tfill: #acc2b3;\n}\n\n[visavis_graph_root] circle.p {\n\tfill: #FE9A2E;\n}\n\n[visavis_graph_root] circle.h, circle.t {\n\tfill: #3e3f95;\n}\n\n[visavis_graph_root] circle.a {\n\tfill: #E36868;\n}\n\n[visavis_graph_root] text.micro {\n\tfont-size: 11px;\n\tletter-spacing: -0.5px;\n}\n\n[visavis_graph_root] text.macro {\n\tfont-size: 14px;\n\tletter-spacing: 0.5px;\n}\n\n[visavis_graph_root] text.captions {\n\tcursor: pointer;\n\tfill: #333;\n}\n\n[visavis_graph_root] text.shadow {\n\tstroke: #fff;\n\tstroke-width: 3px;\n\tstroke-opacity: 0.8;\n}\n");
+    $mol_style_attach("visavis/plot/graph/graph.view.css", "[visavis_plot_graph_root] svg {\n\twidth: 100%;\n\theight: 100%;\n}\n\n[visavis_plot_graph_root] .edge {\n\tfill: none;\n\tstroke: #ddd;\n\tstroke-width: 1px;\n}\n\n[visavis_plot_graph_root] .edge.prel {\n\tstroke: #FE9A2E;\n}\n\n[visavis_plot_graph_root] .edge.hrel {\n\tstroke: #3e3f95;\n}\n\n[visavis_plot_graph_root] .edge.trel {\n\tstroke: #3e3f95;\n}\n\n[visavis_plot_graph_root] .edge.arel {\n\tstroke: #E36868;\n}\n\n[visavis_plot_graph_root] .edge.grel {\n\tstroke: #acc2b3;\n}\n\n[visavis_plot_graph_root] circle {\n\tcursor: move;\n\tfill: #ccc;\n}\n\n[visavis_plot_graph_root] circle.f {\n\tfill: #acc2b3;\n}\n\n[visavis_plot_graph_root] circle.p {\n\tfill: #FE9A2E;\n}\n\n[visavis_plot_graph_root] circle.h, circle.t {\n\tfill: #3e3f95;\n}\n\n[visavis_plot_graph_root] circle.a {\n\tfill: #E36868;\n}\n\n[visavis_plot_graph_root] text.micro {\n\tfont-size: 11px;\n\tletter-spacing: -0.5px;\n}\n\n[visavis_plot_graph_root] text.macro {\n\tfont-size: 14px;\n\tletter-spacing: 0.5px;\n}\n\n[visavis_plot_graph_root] text.captions {\n\tcursor: pointer;\n\tfill: #333;\n}\n\n[visavis_plot_graph_root] text.shadow {\n\tstroke: #fff;\n\tstroke-width: 3px;\n\tstroke-opacity: 0.8;\n}\n");
 })($ || ($ = {}));
-//visavis/graph/-css/graph.view.css.ts
+//visavis/plot/graph/-css/graph.view.css.ts
 ;
 "use strict";
 var $;
 (function ($) {
     var $$;
     (function ($$) {
-        $mol_style_define($.$visavis_graph, {
+        $mol_style_define($.$visavis_plot_graph, {
             Root: {
                 width: '100%',
                 height: '100%',
@@ -10899,7 +10903,7 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//visavis/graph/graph.view.css.ts
+//visavis/plot/graph/graph.view.css.ts
 ;
 "use strict";
 var $;
@@ -10928,58 +10932,58 @@ var $;
             };
         }
         Matrix() {
-            const obj = new this.$.$visavis_matrix();
+            const obj = new this.$.$visavis_plot_matrix();
             obj.plot_raw = () => this.plot_raw();
             return obj;
         }
         Cube() {
-            const obj = new this.$.$visavis_cube();
+            const obj = new this.$.$visavis_plot_cube();
             obj.plot_raw = () => this.plot_raw();
             return obj;
         }
         Phase() {
-            const obj = new this.$.$visavis_phase();
+            const obj = new this.$.$visavis_plot_phase();
             obj.plot_raw = () => this.plot_raw();
             return obj;
         }
         Bar() {
-            const obj = new this.$.$visavis_bar();
+            const obj = new this.$.$visavis_plot_bar();
             obj.plot_raw = () => this.plot_raw();
             return obj;
         }
         Discovery() {
-            const obj = new this.$.$visavis_discovery();
+            const obj = new this.$.$visavis_plot_discovery();
             obj.plot_raw = () => this.plot_raw();
             obj.show_setup = () => this.show_setup();
             return obj;
         }
         Eigen() {
-            const obj = new this.$.$visavis_eigen();
+            const obj = new this.$.$visavis_plot_eigen();
             obj.plot_raw = () => this.plot_raw();
             return obj;
         }
         Pie() {
-            const obj = new this.$.$visavis_pie();
+            const obj = new this.$.$visavis_plot_pie();
             obj.plot_raw = () => this.plot_raw();
             return obj;
         }
         Scatter() {
-            const obj = new this.$.$visavis_scatter();
+            const obj = new this.$.$visavis_plot_scatter();
             obj.plot_raw = () => this.plot_raw();
             return obj;
         }
         Customscatter() {
-            const obj = new this.$.$visavis_customscatter();
+            const obj = new this.$.$visavis_plot_customscatter();
             obj.plot_raw = () => this.plot_raw();
             return obj;
         }
         Heatmap() {
-            const obj = new this.$.$visavis_heatmap();
+            const obj = new this.$.$visavis_plot_heatmap();
             obj.plot_raw = () => this.plot_raw();
             return obj;
         }
         Graph() {
-            const obj = new this.$.$visavis_graph();
+            const obj = new this.$.$visavis_plot_graph();
             obj.plot_raw = () => this.plot_raw();
             return obj;
         }

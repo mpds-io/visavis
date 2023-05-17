@@ -1621,7 +1621,7 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $visavis_matrix extends $mol_view {
+    class $visavis_plot_matrix extends $mol_view {
         plot_raw(): $visavis_plot_raw;
         size(): number;
         links_value_min(next?: any): number;
@@ -1782,7 +1782,7 @@ declare namespace $.$$ {
         cmp: number;
         nonformer: boolean;
     };
-    export class $visavis_matrix extends $.$visavis_matrix {
+    export class $visavis_plot_matrix extends $.$visavis_plot_matrix {
         json(): Readonly<{
             payload: Readonly<{
                 nodes: readonly Readonly<{
@@ -2352,7 +2352,7 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $visavis_cube extends $mol_view {
+    class $visavis_plot_cube extends $mol_view {
         plot_raw(): $visavis_plot_raw;
         heatmap(next?: any): boolean;
         order(id: any): readonly number[];
@@ -2440,7 +2440,7 @@ declare namespace $.$$ {
 }
 
 declare namespace $.$$ {
-    class $visavis_cube extends $.$visavis_cube {
+    class $visavis_plot_cube extends $.$visavis_plot_cube {
         plot_body(): ($mol_scroll | $visavis_plotly)[];
         json(): Readonly<{
             payload: Readonly<{
@@ -2674,7 +2674,7 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $visavis_phase extends $mol_book2 {
+    class $visavis_plot_phase extends $mol_book2 {
         plot_raw(): $visavis_plot_raw;
         colors_by_nphases(): Record<string, any>;
         line(): Record<string, any>;
@@ -2727,7 +2727,7 @@ declare namespace $.$$ {
     export function inside_triangle(x: number, y: number, x1: number, y1: number, x2: number, y2: number, x3: number, y3: number): boolean;
     export function cartesian_to_ternary(x: number, y: number): number[];
     export function fix_comp_impossible(comp_range: any, obj_left: any, obj_right: any): any;
-    export class $visavis_phase extends $.$visavis_phase {
+    export class $visavis_plot_phase extends $.$visavis_plot_phase {
         json(): Readonly<{
             naxes: number;
             arity: number;
@@ -2809,13 +2809,13 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $visavis_bar extends $visavis_plotly {
+    class $visavis_plot_bar extends $visavis_plotly {
         plot_raw(): $visavis_plot_raw;
     }
 }
 
 declare namespace $.$$ {
-    const $visavis_bar_json: ((val: {
+    const $visavis_plot_bar_json: ((val: {
         payload: {
             x: readonly number[];
             dx: number;
@@ -2987,7 +2987,7 @@ declare namespace $.$$ {
             }> | undefined;
         }>;
     };
-    class $visavis_bar extends $.$visavis_bar {
+    class $visavis_plot_bar extends $.$visavis_plot_bar {
         json(): Readonly<{
             payload: Readonly<{
                 x: readonly number[];
@@ -3058,7 +3058,7 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $visavis_discovery extends $mol_view {
+    class $visavis_plot_discovery extends $mol_view {
         plot_raw(): $visavis_plot_raw;
         show_setup(): boolean;
         sub(): readonly any[];
@@ -3075,7 +3075,7 @@ declare namespace $ {
 }
 
 declare namespace $.$$ {
-    const $visavis_discovery_json: ((val: {
+    const $visavis_plot_discovery_json: ((val: {
         payload: {
             points: readonly (readonly number[])[];
         };
@@ -3114,7 +3114,7 @@ declare namespace $.$$ {
             answerto: string;
         }>;
     };
-    class $visavis_discovery extends $.$visavis_discovery {
+    class $visavis_plot_discovery extends $.$visavis_plot_discovery {
         sub(): $mol_view[];
         json(): Readonly<{
             payload: Readonly<{
@@ -3206,7 +3206,7 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $visavis_eigen extends $visavis_plotly {
+    class $visavis_plot_eigen extends $visavis_plotly {
         plot_raw(): $visavis_plot_raw;
     }
 }
@@ -3271,7 +3271,7 @@ declare namespace $.$$ {
         }>;
     };
     type Dos_matrix = ReturnType<typeof Dos_matrix>;
-    export const $visavis_eigen_json: ((val: {
+    export const $visavis_plot_eigen_json: ((val: {
         sample: {
             material: {
                 chemical_formula: string;
@@ -4210,7 +4210,7 @@ declare namespace $.$$ {
             }>;
         }>;
     };
-    export class $visavis_eigen extends $.$visavis_eigen {
+    export class $visavis_plot_eigen extends $.$visavis_plot_eigen {
         json(): Readonly<{
             sample: Readonly<{
                 material: Readonly<{
@@ -4306,7 +4306,7 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $visavis_pie extends $visavis_plotly {
+    class $visavis_plot_pie extends $visavis_plotly {
         plot_raw(): $visavis_plot_raw;
         colorset(): readonly any[];
     }
@@ -4323,7 +4323,7 @@ declare namespace $ {
 }
 
 declare namespace $.$$ {
-    const $visavis_pie_json: ((val: {
+    const $visavis_plot_pie_json: ((val: {
         payload: readonly {
             facet: "props" | "elements" | "classes" | "lattices";
             value: string;
@@ -4396,7 +4396,7 @@ declare namespace $.$$ {
             total_count: number;
         }>;
     };
-    class $visavis_pie extends $.$visavis_pie {
+    class $visavis_plot_pie extends $.$visavis_plot_pie {
         json(): Readonly<{
             payload: readonly Readonly<{
                 facet: "props" | "elements" | "classes" | "lattices";
@@ -4434,13 +4434,13 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $visavis_scatter extends $visavis_plotly {
+    class $visavis_plot_scatter extends $visavis_plotly {
         plot_raw(): $visavis_plot_raw;
     }
 }
 
 declare namespace $.$$ {
-    const $visavis_scatter_json: ((val: {
+    const $visavis_plot_scatter_json: ((val: {
         sample: {
             material: {
                 chemical_formula: string;
@@ -5076,7 +5076,7 @@ declare namespace $.$$ {
             }>;
         }>;
     };
-    class $visavis_scatter extends $.$visavis_scatter {
+    class $visavis_plot_scatter extends $.$visavis_plot_scatter {
         json(): Readonly<{
             sample: Readonly<{
                 material: Readonly<{
@@ -5177,13 +5177,13 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $visavis_customscatter extends $visavis_plotly {
+    class $visavis_plot_customscatter extends $visavis_plotly {
         plot_raw(): $visavis_plot_raw;
     }
 }
 
 declare namespace $.$$ {
-    const $visavis_customscatter_json: ((val: {
+    const $visavis_plot_customscatter_json: ((val: {
         plots: readonly {
             name: string;
             type: string;
@@ -5311,7 +5311,7 @@ declare namespace $.$$ {
             ylog: boolean | null;
         }>;
     };
-    class $visavis_customscatter extends $.$visavis_customscatter {
+    class $visavis_plot_customscatter extends $.$visavis_plot_customscatter {
         json(): Readonly<{
             plots: readonly Readonly<{
                 name: string;
@@ -5382,13 +5382,13 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $visavis_heatmap extends $visavis_plotly {
+    class $visavis_plot_heatmap extends $visavis_plotly {
         plot_raw(): $visavis_plot_raw;
     }
 }
 
 declare namespace $.$$ {
-    class $visavis_heatmap extends $.$visavis_heatmap {
+    class $visavis_plot_heatmap extends $.$visavis_plot_heatmap {
         json(): any;
         layout(): {
             showlegend: boolean;
@@ -5456,7 +5456,7 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $visavis_graph extends $mol_view {
+    class $visavis_plot_graph extends $mol_view {
         plot_raw(): $visavis_plot_raw;
         sub(): readonly any[];
         draw(): any;
@@ -5479,7 +5479,7 @@ declare namespace $.$$ {
         type: string;
         target: Node;
     };
-    export const $visavis_graph_json: ((val: {
+    export const $visavis_plot_graph_json: ((val: {
         error: string | null;
         warning: string | null;
         graph_rel: string;
@@ -5558,7 +5558,7 @@ declare namespace $.$$ {
             }>[];
         }>;
     };
-    export class $visavis_graph extends $.$visavis_graph {
+    export class $visavis_plot_graph extends $.$visavis_plot_graph {
         json(): Readonly<{
             error: string | null;
             warning: string | null;
@@ -5596,17 +5596,17 @@ declare namespace $ {
         plot_raw(): $visavis_plot_raw;
         show_setup(): boolean;
         plots(): Record<string, any>;
-        Matrix(): $$.$visavis_matrix;
-        Cube(): $$.$visavis_cube;
-        Phase(): $$.$visavis_phase;
-        Bar(): $$.$visavis_bar;
-        Discovery(): $$.$visavis_discovery;
-        Eigen(): $$.$visavis_eigen;
-        Pie(): $$.$visavis_pie;
-        Scatter(): $$.$visavis_scatter;
-        Customscatter(): $$.$visavis_customscatter;
-        Heatmap(): $$.$visavis_heatmap;
-        Graph(): $$.$visavis_graph;
+        Matrix(): $$.$visavis_plot_matrix;
+        Cube(): $$.$visavis_plot_cube;
+        Phase(): $$.$visavis_plot_phase;
+        Bar(): $$.$visavis_plot_bar;
+        Discovery(): $$.$visavis_plot_discovery;
+        Eigen(): $$.$visavis_plot_eigen;
+        Pie(): $$.$visavis_plot_pie;
+        Scatter(): $$.$visavis_plot_scatter;
+        Customscatter(): $$.$visavis_plot_customscatter;
+        Heatmap(): $$.$visavis_plot_heatmap;
+        Graph(): $$.$visavis_plot_graph;
     }
 }
 

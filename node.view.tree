@@ -215,7 +215,7 @@ $mol_labeler $mol_list
 			minimal_height 24
 			sub <= content /
 
-$visavis_matrix $mol_view
+$visavis_plot_matrix $mol_view
 	plot_raw $visavis_plot_raw
 	size 0
 	links_value_min? 0
@@ -446,7 +446,7 @@ $mol_select $mol_pick
 		enabled <= enabled true
 	Trigger_icon $mol_icon_dots_vertical
 
-$visavis_cube $mol_view
+$visavis_plot_cube $mol_view
 	plot_raw $visavis_plot_raw
 	heatmap? false
 	order* /number
@@ -527,7 +527,7 @@ $visavis_cube $mol_view
 						value? <=> z_sort? 
 						dictionary <= order_dict
 
-$visavis_phase $mol_book2
+$visavis_plot_phase $mol_book2
 	plot_raw $visavis_plot_raw
 	colors_by_nphases *
 		1 \#d1cde6
@@ -708,10 +708,10 @@ $visavis_phase $mol_book2
 			event *
 				mousemove <= mousemove null
 
-$visavis_bar $visavis_plotly
+$visavis_plot_bar $visavis_plotly
 	plot_raw $visavis_plot_raw
 
-$visavis_discovery $mol_view
+$visavis_plot_discovery $mol_view
 	plot_raw $visavis_plot_raw
 	show_setup true
 	sub /
@@ -727,10 +727,10 @@ $visavis_discovery $mol_view
 						option_checked*? <=> elemental_checked*? false
 						options <= elementals_dict *
 
-$visavis_eigen $visavis_plotly
+$visavis_plot_eigen $visavis_plotly
 	plot_raw $visavis_plot_raw
 
-$visavis_pie $visavis_plotly
+$visavis_plot_pie $visavis_plotly
 	plot_raw $visavis_plot_raw
 	colorset /
 		\#3e3f95
@@ -744,16 +744,16 @@ $visavis_pie $visavis_plotly
 		\#0ff
 		\#90c
 
-$visavis_scatter $visavis_plotly
+$visavis_plot_scatter $visavis_plotly
 	plot_raw $visavis_plot_raw
 
-$visavis_customscatter $visavis_plotly
+$visavis_plot_customscatter $visavis_plotly
 	plot_raw $visavis_plot_raw
 
-$visavis_heatmap $visavis_plotly
+$visavis_plot_heatmap $visavis_plotly
 	plot_raw $visavis_plot_raw
 
-$visavis_graph $mol_view
+$visavis_plot_graph $mol_view
 	plot_raw $visavis_plot_raw
 	sub /
 		<= Root $mol_view
@@ -763,28 +763,28 @@ $visavis_plot $mol_ghost
 	plot_raw $visavis_plot_raw
 	show_setup true
 	plots *
-		matrix <= Matrix $visavis_matrix
+		matrix <= Matrix $visavis_plot_matrix
 			plot_raw <= plot_raw
-		plot3d <= Cube $visavis_cube
+		plot3d <= Cube $visavis_plot_cube
 			plot_raw <= plot_raw
-		pd <= Phase $visavis_phase
+		pd <= Phase $visavis_plot_phase
 			plot_raw <= plot_raw
-		bar <= Bar $visavis_bar
+		bar <= Bar $visavis_plot_bar
 			plot_raw <= plot_raw
-		discovery <= Discovery $visavis_discovery
+		discovery <= Discovery $visavis_plot_discovery
 			plot_raw <= plot_raw
 			show_setup <= show_setup
-		eigenplot <= Eigen $visavis_eigen
+		eigenplot <= Eigen $visavis_plot_eigen
 			plot_raw <= plot_raw
-		pie <= Pie $visavis_pie
+		pie <= Pie $visavis_plot_pie
 			plot_raw <= plot_raw
-		scatter <= Scatter $visavis_scatter
+		scatter <= Scatter $visavis_plot_scatter
 			plot_raw <= plot_raw
-		customscatter <= Customscatter $visavis_customscatter
+		customscatter <= Customscatter $visavis_plot_customscatter
 			plot_raw <= plot_raw
-		heatmap <= Heatmap $visavis_heatmap
+		heatmap <= Heatmap $visavis_plot_heatmap
 			plot_raw <= plot_raw
-		graph <= Graph $visavis_graph
+		graph <= Graph $visavis_plot_graph
 			plot_raw <= plot_raw
 
 $visavis_app $mol_book2
