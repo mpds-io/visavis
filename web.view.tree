@@ -1,0 +1,816 @@
+$mol_scroll $mol_view
+	scroll_top?val 0
+	scroll_left?val 0
+	field *
+		^
+		tabIndex <= tabindex -1
+	event *
+		^
+		scroll?event <=> event_scroll?event null
+
+$mol_book2 $mol_scroll
+	menu_title \
+	sub <= pages /$mol_view
+	minimal_width 0
+	Placeholder $mol_view
+	Gap* $mol_view title \
+
+$mol_speck $mol_view
+	attr *
+		^
+		mol_theme <= theme \$mol_theme_accent
+	style *
+		^
+		minHeight \1em
+	sub /
+		<= value null
+
+$mol_button $mol_view
+	enabled true
+	click?event null
+	event_click?event null
+	event *
+		^
+		click?event <=> event_activate?event null
+		dblclick?event <=> clicks?event null
+		keydown?event <=> event_key_press?event null 
+	attr *
+		^
+		disabled <= disabled false
+		role \button
+		tabindex <= tab_index 0
+		title <= hint_safe <= hint \
+	sub /$mol_view_content
+		<= title
+	Speck $mol_speck
+		value <= error \
+
+$mol_button_typed $mol_button
+	minimal_height 40
+	minimal_width 40
+
+$mol_button_minor $mol_button_typed
+
+$mol_svg $mol_view
+	dom_name \svg
+	dom_name_space \http://www.w3.org/2000/svg
+	font_size 16
+	font_family \
+	style_size *
+
+$mol_svg_root $mol_svg
+	dom_name \svg
+	attr *
+		^
+		viewBox <= view_box \0 0 100 100
+		preserveAspectRatio <= aspect \xMidYMid
+
+$mol_svg_path $mol_svg
+	dom_name \path
+	attr *
+		^
+		d <= geometry \
+
+
+$mol_icon $mol_svg_root
+	view_box \0 0 24 24
+	minimal_width 16
+	minimal_height 16
+	sub /
+		<= Path $mol_svg_path
+			geometry <= path \
+
+$mol_icon_upload $mol_icon path \M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z
+
+$mol_button_open $mol_button_minor
+	sub /
+		<= Icon $mol_icon_upload
+		<= Native $mol_button_open_native
+			files?next <=> files?next /
+			accept <= accept \
+			multiple <= multiple true
+
+$mol_button_open_native $mol_view
+	dom_name \input
+	files?next /
+	attr *
+		type \file
+		accept <= accept \
+		multiple <= multiple true
+	event *
+		change?next <=> picked?next null
+
+$mol_link $mol_view
+	uri \
+	dom_name \a
+	attr *
+		^
+		href <= uri_toggle \
+		title <= hint_safe <= hint \
+		target <= target \_self
+		download <= file_name \
+		mol_link_current <= current false
+	sub /$mol_view_content
+		<= title
+	arg *
+	event *
+		^
+		click?event <=> click?event <=> event_click?event null
+
+$mol_icon_delete $mol_icon path \M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19C6,20.1 6.9,21 8,21H16C17.1,21 18,20.1 18,19V7H6V19Z
+
+$mol_list $mol_view
+	render_visible_only true
+	render_over 0
+	sub <= rows /$mol_view
+	Empty $mol_view
+	Gap_before $mol_view style * paddingTop <= gap_before 0
+	Gap_after $mol_view style * paddingTop <= gap_after 0
+	view_window /
+		0
+		0
+
+$mol_check $mol_button_minor
+	attr *
+		^
+		mol_check_checked <= checked? false
+		aria-checked <= aria_checked \false
+		role <= aria_role \checkbox
+	sub /$mol_view_content
+		<= Icon null
+		<= label /
+			<= Title $mol_view
+				sub /
+					<= title \
+
+$mol_check_list $mol_view
+	Option* $mol_check
+		checked?val <=> option_checked*?val false
+		label <= option_label* /
+			<= option_title* \
+		enabled <= option_enabled* <= enabled true
+		hint <= option_hint* \
+		minimal_height 24
+	options *
+	keys /string
+	sub <= items /$mol_check
+
+$mol_switch $mol_check_list
+	value?val \
+
+$mol_deck $mol_list
+	items /$mol_view
+	rows /$mol_view
+		<= Switch $mol_switch
+			value?val <=> current?val \0
+			options <= switch_options *
+		<= Content $mol_view
+
+$mol_icon_github_circle $mol_icon path \M12,2C6.48,2 2,6.48 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12C22,6.48 17.52,2 12,2Z
+
+$mol_link_source $mol_link
+	hint @ \Source code
+	sub /
+		<= Icon $mol_icon_github_circle
+
+$mol_page $mol_view
+	dom_name \article
+	field *
+		^
+		tabIndex <= tabindex -1
+	sub /
+		<= Head $mol_view
+			minimal_height 64
+			dom_name \header
+			sub <= head /
+				<= Title $mol_view
+					dom_name \h1
+					sub <= title_content /
+						<= Logo null
+						<= title
+				<= Tools $mol_view
+					sub <= tools /$mol_view_content
+		<= Body $mol_scroll
+			scroll_top?val => body_scroll_top?val
+			sub <= body /$mol_view_content
+		<= Foot $mol_view
+			dom_name \footer
+			sub <= foot /$mol_view
+
+$mol_icon_tick $mol_icon path \M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z
+
+$mol_check_box $mol_check
+	Icon $mol_icon_tick
+
+$mol_labeler $mol_list
+	rows /
+		<= Label $mol_view
+			minimal_height 32
+			sub <= label /$mol_view_content
+				<= title
+		<= Content $mol_view
+			minimal_height 24
+			sub <= content /
+
+$visavis_matrix $mol_book2
+	plot $visavis_plot
+	size 0
+	links_value_min? 0
+	links_value_max? 0
+	heatmap? false
+	matrix /
+	heatmap_colors /
+		\rgb(150,0,90)
+		\rgb(0,0,200)
+		\rgb(0,25,255)
+		\rgb(0,152,255)
+		\rgb(44,255,150)
+		\rgb(151,255,0)
+		\rgb(255,234,0)
+		\rgb(255,111,0)
+		\rgb(255,0,0)
+	colorset /
+		\#3e3f95
+		\#c00
+		\#FE9A2E
+		\#090
+		\#f0f
+		\#09f
+		\#666
+		\#0f3
+		\#0ff
+		\#90c
+	order /number
+	order_current? \nump
+	plot_padding 32
+	axis_width 24
+	pages /
+		<= Plot $mol_page
+			title <= plot_title \
+			body <= plot_body /
+				<= Root $mol_svg
+				<= Side_right $mol_scroll
+					sub /
+						<= Heatmap_legend $mol_list
+							rows <= heatmap_color_list /
+								<= Heatmap_min $mol_view sub / <= links_value_min
+								<= Heatmap_color*0 $mol_view
+									style * background <= heatmap_color* \
+								<= Heatmap_max $mol_view sub / <= links_value_max
+			auto <= draw null
+		<= Setup $mol_page
+			title @ \Setup
+			body /
+				<= Nonformers_label $mol_labeler
+					title @ \Non-formers
+					Content <= Nonformers $mol_check_box
+						hint @ \Continuous solid solutions and complete insolubility systems
+						title @ \Show
+						checked? <=> nonformers? false
+				<= Order_label $mol_labeler
+					title @ \Sort by
+					Content <= Order_switch $mol_switch
+						value? <=> order_current?
+						options <= order_dict *
+							nump @ \Periodic number
+							num @ \Atomic number
+							size @ \Atomic size
+							rea @ \Atomic reactivity
+							rpp @ \Pseudopotential radii
+							rion @ \Ionic radii
+							rcov @ \Covalent radii
+							rmet @ \Metallic radii
+							tmelt @ \Melting temperature
+							eneg @ \Electronegativity
+
+$mol_pop $mol_view
+	showed?val false
+	align_vert \
+	align_hor \
+	prefer \vert
+	sub /
+		<= Anchor null
+	sub_visible /
+		<= Anchor
+		<= Bubble $mol_pop_bubble
+			align <= align \bottom_center
+			content <= bubble_content /$mol_view_content
+			height_max <= height_max 9999
+
+$mol_pop_bubble $mol_view
+	sub <= content /$mol_view_content
+	style *
+		^
+		maxHeight <= height_max 9999
+	attr *
+		^
+		mol_pop_align <= align \
+		tabindex 0
+
+$mol_pick $mol_pop
+	event *
+		^
+		keydown?event <=> keydown?event null
+	Anchor <= Trigger $mol_check
+		minimal_width 40
+		minimal_height 40
+		enabled <= trigger_enabled true
+		checked?val <=> showed?val
+		sub <= trigger_content /$mol_view_content
+			<= title
+		hint <= hint \
+
+$mol_hotkey $mol_plugin
+	event *
+		^
+		keydown?event <=> keydown?event null
+	key *
+	mod_ctrl false
+	mod_alt false
+	mod_shift false
+
+$mol_string $mol_view
+	dom_name \input
+	enabled true
+	minimal_height 40
+	autocomplete false
+	selection?val /number
+		0
+		0
+	auto /
+		<= selection_watcher null
+	field *
+		^
+		disabled <= disabled false
+		value <= value_changed?val <=> value?val \
+		placeholder <= hint_visible <= hint \
+		spellcheck <= spellcheck true
+		autocomplete <= autocomplete_native \
+		selectionEnd <= selection_end 0
+		selectionStart <= selection_start 0
+		inputMode <= keyboard \text
+		enterkeyhint <= enter \go
+	attr *
+		^
+		maxlength <= length_max +Infinity
+		type <= type?val \text
+	event *
+		^
+		input?event <=> event_change?event null
+	plugins /
+		<= Submit $mol_hotkey
+			mod_ctrl <= submit_with_ctrl false
+			key * enter?event <=> submit?event null
+
+$mol_icon_dots_vertical $mol_icon path \M12,16C13.1,16 14,16.9 14,18C14,19.1 13.1,20 12,20C10.9,20 10,19.1 10,18C10,16.9 10.9,16 12,16M12,10C13.1,10 14,10.9 14,12C14,13.1 13.1,14 12,14C10.9,14 10,13.1 10,12C10,10.9 10.9,10 12,10M12,4C13.1,4 14,4.9 14,6C14,7.1 13.1,8 12,8C10.9,8 10,7.1 10,6C10,4.9 10.9,4 12,4Z
+
+$mol_paragraph $mol_view
+	line_height 24
+	letter_width 7
+	width_limit +Infinity
+	row_width 0
+	sub / <= title
+
+$mol_dimmer $mol_paragraph
+	haystack \
+	needle \
+	sub <= parts /$mol_view_content
+	Low* $mol_paragraph
+		sub /
+			<= string* \
+	High* $mol_paragraph
+		sub /
+			<= string* \
+
+$mol_nav $mol_plugin
+	cycle?val false
+	-
+	mod_ctrl false
+	mod_shift false
+	mod_alt false
+	-
+	keys_x?val /
+	keys_y?val /
+	-
+	current_x?val null
+	current_y?val null
+	-
+	event_up?event null
+	event_down?event null
+	event_left?event null
+	event_right?event null
+	event *
+		^
+		keydown?event <=> event_key?event null
+
+$mol_select $mol_pick
+	dictionary?val *
+	options /string
+	value?val \
+	option_label_default \
+	Option_row* $mol_button_minor
+		event_click?event <=> event_select*?event null
+		sub <= option_content* /
+			<= Option_label* $mol_dimmer
+				haystack <= option_label* \
+				needle <= filter_pattern?val \
+	No_options $mol_view
+		sub /
+			<= no_options_message @ \No options
+	plugins /
+		^
+		<= Nav $mol_nav
+			keys_y <= nav_components /$mol_view
+			current_y?component <=> option_focused?component null
+			cycle?val <=> nav_cycle?val true
+	hint @ \Pick..
+	bubble_content /
+		<= Filter
+		<= Bubble_pane $mol_scroll sub /
+			<= Menu $mol_list
+				rows <= menu_content /$mol_view
+	Filter $mol_string
+		value?val <=> filter_pattern?val \
+		hint @ \Filter..
+		submit?event <=> submit?event null
+		enabled <= enabled true
+	Trigger_icon $mol_icon_dots_vertical
+
+$visavis_cube $mol_book2
+	plot $visavis_plot
+	heatmap? false
+	order* /number
+	order_current? \nump
+	x_op false
+	y_op false
+	z_op false
+	x_sort? \nump
+	y_sort? \nump
+	z_sort? \nump
+	colorset /
+		\#3e3f95
+		\#c00
+		\#FE9A2E
+		\#090
+		\#f0f
+		\#09f
+		\#666
+		\#0f3
+		\#0ff
+		\#90c
+	heatmap_colors /
+		\rgb(150,0,90)
+		\rgb(0,0,200)
+		\rgb(0,25,255)
+		\rgb(0,152,255)
+		\rgb(44,255,150)
+		\rgb(151,255,0)
+		\rgb(255,234,0)
+		\rgb(255,111,0)
+		\rgb(255,0,0)
+	pages /
+		<= Plot $mol_page
+			title <= plot_title \
+			body <= plot_body /
+				<= Root $mol_view
+				<= Side_right $mol_scroll
+					sub /
+						<= Heatmap_legend $mol_list
+							rows <= heatmap_color_list /
+								<= Heatmap_min $mol_view sub / <= value_min 0
+								<= Heatmap_color*0 $mol_view
+									style * background <= heatmap_color* \
+								<= Heatmap_max $mol_view sub / <= value_max 0
+			auto <= draw null
+		<= Setup $mol_page
+			title @ \Setup
+			body /
+				<= Nonformers_label $mol_labeler
+					title @ \Non-formers
+					Content <= Nonformers $mol_check_box
+						hint @ \Continuous solid solutions and complete insolubility systems
+						title @ \Show
+						checked? <=> nonformers? false
+				<= X_order_label $mol_labeler
+					title @ \X sort by
+					Content <= X_order_select $mol_select
+						value? <=> x_sort? 
+						dictionary <= order_dict *
+							nump @ \Periodic number
+							num @ \Atomic number
+							size @ \Atomic size
+							rea @ \Atomic reactivity
+							rpp @ \Pseudopotential radii
+							rion @ \Ionic radii
+							rcov @ \Covalent radii
+							rmet @ \Metallic radii
+							tmelt @ \Melting temperature
+							eneg @ \Electronegativity
+				<= Y_order_label $mol_labeler
+					title @ \Y sort by
+					Content <= Y_order_select $mol_select
+						value? <=> y_sort? 
+						dictionary <= order_dict
+				<= Z_order_label $mol_labeler
+					title @ \Z sort by
+					Content <= Z_order_select $mol_select
+						value? <=> z_sort? 
+						dictionary <= order_dict
+
+$visavis_phase $mol_book2
+	plot $visavis_plot
+	colors_by_nphases *
+		1 \#d1cde6
+		alt_1 \#9cf
+		3 \#fc6
+		4 \#FCD3C2
+		5 \#CCE7D4
+		default \#eee
+	line *
+		phase *
+			width 0.2
+		compound *
+			width 5
+			color \#d1cde6
+		default *
+			width 0.5
+			color \#666
+	is_triangle false
+	triangle *
+		datamock /
+			* 
+				a /
+				b /
+				c /
+				type \scatterternary
+		layout *
+			hovermode \closest
+			font *
+				size 20
+				color \#333
+				family \Exo2
+			ternary *
+				aaxis *
+					title <= json_title_a \
+					ticks \
+					showline true
+					showgrid false
+					fixedrange true
+					linewidth 1
+				baxis *
+					title <= json_title_b \
+					ticks \
+					showline true
+					showgrid false
+					fixedrange true
+					linewidth 1
+				caxis *
+					title <= json_title_c \
+					ticks \
+					showline true
+					showgrid false
+					fixedrange true
+					linewidth 1
+			shapes <= layout_shapes /
+			annotations <= annotations /
+	- chassis: a path for preventing triangle transformation errors
+	triangle_shape_fix *
+		type \path
+		path \M 0,0 L 0.5,0.866 L 1,0
+		line * width 0
+	triangle_annotations /
+		*
+			text <= triangle_annotation_text \
+			x: -0.25
+			y: 0.96
+			showarrow false
+			xref \papper
+			yref \papper
+			font *
+				size 15
+				family \Exo2
+	rectangle *
+		datamock /
+			*
+				x /
+				y /
+				type \scatter
+				xaxis \x
+				yaxis \y
+			*
+				x /
+				y /
+				type \scatter
+				xaxis \x2
+				yaxis \y2
+		layout *
+			hovermode \closest
+			font *
+				size 16
+				color \#333
+				family \Exo2
+			xaxis *
+				title \at. %
+				range <= json_comp_range /
+				fixedrange true
+				showticks <= show_ticks false
+				showline true
+				zeroline false
+				showgrid false
+				ticklen 4
+				tickfont * size 12
+				hoverformat \.2r
+			xaxis2 *
+				range <= json_comp_range
+				fixedrange true
+				showticks <= show_ticks
+				showline true
+				zeroline false
+				showgrid false
+				ticklen 4
+				tickfont * size 12
+				side \top
+				overlaying \x
+			yaxis *
+				title \T, &deg;C
+				range <= json_temp /
+				fixedrange true
+				showticks <= show_ticks
+				showticklabels <= data_demo false
+				showline true
+				zeroline false
+				showgrid false
+				ticklen 4
+				tickfont * size 12
+				hoverformat \.2r
+			yaxis2 *
+				range <= json_temp
+				fixedrange true
+				showticks <= show_ticks
+				showticklabels <= data_demo 
+				showline true
+				zeroline false
+				showgrid false
+				ticklen 4
+				tickfont * size 12
+				side \right
+				overlaying \y
+			shapes <= layout_shapes
+			annotations <= annotations
+	rectangle_annotations /
+		*
+			text <= json_title_a
+			x -0.03
+			y -0.11
+			showarrow false
+			xref \papper
+			yref \papper
+			font *
+				size 20
+				family \Exo2
+		*
+			text <= json_title_b
+			x 1.03
+			y -0.11
+			showarrow false
+			xref \papper
+			yref \papper
+			font *
+				size 20
+				family \Exo2
+	annotation *
+		show_arrow false
+		font *
+			size 13
+			family \Exo2
+	annotation_textangle* 0
+	plot_options *
+		displaylogo false
+		displayModeBar false
+		staticPlot false
+	pages /
+		<= Plot $mol_page
+			title <= plot_title \
+			body /
+				<= Label $mol_view sub /
+					<= label? \
+				<= Root $mol_view
+					dom_name \div
+					event *
+						mousemove <= mousemove null
+			auto <= draw null
+
+$visavis_plot_plotly $mol_page
+	plot $visavis_plot
+	json *
+	pages /
+		<= Plot $mol_page
+			title <= plot_title \
+			body <= plot_body /
+				<= Root $mol_view
+					auto <= draw null
+				<= Error $mol_view
+					sub / <= error_showed? \
+	plot_options *
+		displaylogo false
+		displayModeBar false
+		staticPlot false
+
+$visavis_bar $visavis_plot_plotly
+
+$visavis_discovery $visavis_plot_plotly
+	pages /
+		<= Plot
+		<= Setup $mol_page
+			title @ \Setup
+			body /
+				<= Elementals $mol_labeler
+					title \Elementals on
+					Content <= Elementals_check $mol_check_list
+						option_checked*? <=> elemental_checked*? false
+						options <= elementals_dict *
+
+$visavis_eigen $visavis_plot_plotly
+
+$visavis_pie $visavis_plot_plotly
+	colorset /
+		\#3e3f95
+		\#c00
+		\#FE9A2E
+		\#090
+		\#f0f
+		\#09f
+		\#666
+		\#0f3
+		\#0ff
+		\#90c
+
+$visavis_scatter $visavis_plot_plotly
+
+$visavis_customscatter $visavis_plot_plotly
+
+$visavis_heatmap $visavis_plot_plotly
+
+$visavis_graph $mol_book2
+	plot $visavis_plot
+	pages /
+		<= Plot $mol_page
+			title <= plot_title \
+			body <= plot_body /
+				<= Root $mol_view
+					auto <= draw null
+
+$visavis_app $mol_book2
+	attr * mol_theme \$mol_theme_light
+	pages /
+		<= Menu $mol_page
+			title \Vis-a-vis
+			tools /
+				<= Upload $mol_button_open
+					hint @ \Upload a plot from MPDS in JSON
+					accept \application/json
+					files? <=> files_read? null
+			body /
+				<= Deck $mol_deck
+					items /
+						<= History $mol_list
+							title @ \Uploads
+							rows <= history_rows /
+								<= Plot*0 $mol_view sub /
+									<= Plot_link* $mol_link
+										arg * file <= plot_id* \
+										title <= plot_id*
+									<= Plot_drop* $mol_button_minor
+										click? <=> history_drop*? null
+										sub / <= Plot_drop_icon* $mol_icon_delete
+						<= Examples $mol_list
+							title @ \Examples
+							rows <= example_rows /
+								<= Example*0 $mol_link
+									arg * file <= example_title* \
+									title <= example_title*
+			foot /
+				<= Source $mol_link_source
+					uri \https://github.com/mpds-io/visavis
+		<= Matrix*plot $visavis_matrix
+			plot <= plot* $visavis_plot
+		<= Cube*plot $visavis_cube
+			plot <= plot*
+		<= Phase*plot $visavis_phase
+			plot <= plot*
+		<= Bar*plot $visavis_bar
+			plot <= plot*
+		<= Discovery*plot $visavis_discovery
+			plot <= plot*
+		<= Eigen*plot $visavis_eigen
+			plot <= plot*
+		<= Pie*plot $visavis_pie
+			plot <= plot*
+		<= Scatter*plot $visavis_scatter
+			plot <= plot*
+		<= Customscatter*plot $visavis_customscatter
+			plot <= plot*
+		<= Heatmap*plot $visavis_heatmap
+			plot <= plot*
+		<= Graph*plot $visavis_graph
+			plot <= plot*
