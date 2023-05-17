@@ -1,0 +1,2 @@
+$visavis_plot_heatmap $visavis_plotly
+	plot_raw $visavis_plot_raw

@@ -1,0 +1,13 @@
+$visavis_plot_pie $visavis_plotly
+	plot_raw $visavis_plot_raw
+	colorset /
+		\#3e3f95
+		\#c00
+		\#FE9A2E
+		\#090
+		\#f0f
+		\#09f
+		\#666
+		\#0f3
+		\#0ff
+		\#90c
