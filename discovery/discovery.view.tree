@@ -5,7 +5,7 @@ $visavis_discovery $mol_view
 		<= Plot $visavis_plotly
 			data <= data *
 			layout <= layout *
-			subscribe_events <= subscribe_events
+			subscribe_events <= subscribe_events null
 		<= Setup $mol_view
 			sub /
 				<= Elementals $mol_labeler
