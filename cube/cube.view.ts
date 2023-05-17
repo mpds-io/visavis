@@ -26,12 +26,9 @@ namespace $.$$ {
 			]
 		}
 
-		plot_title() {
-			return this.plot().id()
-		}
 
 		json() {
-			return $visavis_cube_json( this.plot().json() as any )
+			return $visavis_cube_json( this.plot_raw().json() as any )
 		}
 
 		@ $mol_mem
@@ -162,28 +159,20 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		draw() {
-			this.Root().view_rect()
-
-			return $lib_plotly.all().react(
-				this.Root().dom_node() as HTMLElement,
-				this.data_shown() as any, 
-				{
-					font: {family: "Exo2"},
-					showlegend: false,
-					scene: this.scene() as any,
-					margin: {
-						l: 0,
-						r: 0,
-						b: 0,
-						t: 0,
-						pad: 0
-					}
-				},
-				{displaylogo: false, displayModeBar: false, staticPlot: false},
-			)
+		layout() {
+			return {
+				font: {family: "Exo2"},
+				showlegend: false,
+				scene: this.scene() as any,
+				margin: {
+					l: 0,
+					r: 0,
+					b: 0,
+					t: 0,
+					pad: 0
+				}
+			}
 		}
-
 
 		ter_op(op: 'sum' | 'diff' | 'product' | 'ratio' | 'max' | 'min', a: number, b: number, c: number){
 			switch (op){

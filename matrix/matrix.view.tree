@@ -1,5 +1,5 @@
-$visavis_matrix $mol_book2
-	plot $visavis_plot
+$visavis_matrix $mol_view
+	plot_raw $visavis_plot_raw
 	size 0
 	links_value_min? 0
 	links_value_max? 0
@@ -30,10 +30,9 @@ $visavis_matrix $mol_book2
 	order_current? \nump
 	plot_padding 32
 	axis_width 24
-	pages /
-		<= Plot $mol_page
-			title <= plot_title \
-			body <= plot_body /
+	sub /
+		<= Plot $mol_view
+			sub <= plot_body /
 				<= Root $mol_svg
 				<= Side_right $mol_scroll
 					sub /
@@ -44,9 +43,8 @@ $visavis_matrix $mol_book2
 									style * background <= heatmap_color* \
 								<= Heatmap_max $mol_view sub / <= links_value_max
 			auto <= draw null
-		<= Setup $mol_page
-			title @ \Setup
-			body /
+		<= Setup $mol_view
+			sub /
 				<= Nonformers_label $mol_labeler
 					title @ \Non-formers
 					Content <= Nonformers $mol_check_box

@@ -20,7 +20,7 @@ namespace $.$$ {
 	export class $visavis_customscatter extends $.$visavis_customscatter {
 
 		json() {
-			return $visavis_customscatter_json( this.plot().json() as any )
+			return $visavis_customscatter_json( this.plot_raw().json() as any )
 		}
 
 		@ $mol_action

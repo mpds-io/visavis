@@ -1,1 +1,2 @@
-$visavis_eigen $visavis_plot_plotly
+$visavis_eigen $visavis_plotly
+	plot_raw $visavis_plot_raw

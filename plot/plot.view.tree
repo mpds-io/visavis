@@ -1,0 +1,27 @@
+$visavis_plot $mol_ghost
+	plot_raw $visavis_plot_raw
+	show_setup true
+	plots *
+		matrix <= Matrix $visavis_matrix
+			plot_raw <= plot_raw
+		plot3d <= Cube $visavis_cube
+			plot_raw <= plot_raw
+		pd <= Phase $visavis_phase
+			plot_raw <= plot_raw
+		bar <= Bar $visavis_bar
+			plot_raw <= plot_raw
+		discovery <= Discovery $visavis_discovery
+			plot_raw <= plot_raw
+			show_setup <= show_setup
+		eigenplot <= Eigen $visavis_eigen
+			plot_raw <= plot_raw
+		pie <= Pie $visavis_pie
+			plot_raw <= plot_raw
+		scatter <= Scatter $visavis_scatter
+			plot_raw <= plot_raw
+		customscatter <= Customscatter $visavis_customscatter
+			plot_raw <= plot_raw
+		heatmap <= Heatmap $visavis_heatmap
+			plot_raw <= plot_raw
+		graph <= Graph $visavis_graph
+			plot_raw <= plot_raw

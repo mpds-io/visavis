@@ -1,8 +1,5 @@
-$visavis_graph $mol_book2
-	plot $visavis_plot
-	pages /
-		<= Plot $mol_page
-			title <= plot_title \
-			body <= plot_body /
-				<= Root $mol_view
-					render <= draw null
+$visavis_graph $mol_view
+	plot_raw $visavis_plot_raw
+	sub /
+		<= Root $mol_view
+			render <= draw null

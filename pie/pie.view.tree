@@ -1,4 +1,5 @@
-$visavis_pie $visavis_plot_plotly
+$visavis_pie $visavis_plotly
+	plot_raw $visavis_plot_raw
 	colorset /
 		\#3e3f95
 		\#c00

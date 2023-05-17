@@ -16,7 +16,7 @@ namespace $.$$ {
 	export class $visavis_bar extends $.$visavis_bar {
 
 		json() {
-			return $visavis_bar_json( this.plot().json() as any )
+			return $visavis_bar_json( this.plot_raw().json() as any )
 		}
 
 		@ $mol_action

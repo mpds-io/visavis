@@ -36,7 +36,7 @@ namespace $.$$ {
 	export class $visavis_pie extends $.$visavis_pie {
 
 		json() {
-			return $visavis_pie_json( this.plot().json() as any )
+			return $visavis_pie_json( this.plot_raw().json() as any )
 		}
 
 		@ $mol_action

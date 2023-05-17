@@ -1,71 +1,71 @@
-[visavis_graph_plot] svg {
+[visavis_graph_root] svg {
 	width: 100%;
 	height: 100%;
 }
 
-[visavis_graph_plot] .edge {
+[visavis_graph_root] .edge {
 	fill: none;
 	stroke: #ddd;
 	stroke-width: 1px;
 }
 
-[visavis_graph_plot] .edge.prel {
+[visavis_graph_root] .edge.prel {
 	stroke: #FE9A2E;
 }
 
-[visavis_graph_plot] .edge.hrel {
+[visavis_graph_root] .edge.hrel {
 	stroke: #3e3f95;
 }
 
-[visavis_graph_plot] .edge.trel {
+[visavis_graph_root] .edge.trel {
 	stroke: #3e3f95;
 }
 
-[visavis_graph_plot] .edge.arel {
+[visavis_graph_root] .edge.arel {
 	stroke: #E36868;
 }
 
-[visavis_graph_plot] .edge.grel {
+[visavis_graph_root] .edge.grel {
 	stroke: #acc2b3;
 }
 
-[visavis_graph_plot] circle {
+[visavis_graph_root] circle {
 	cursor: move;
 	fill: #ccc;
 }
 
-[visavis_graph_plot] circle.f {
+[visavis_graph_root] circle.f {
 	fill: #acc2b3;
 }
 
-[visavis_graph_plot] circle.p {
+[visavis_graph_root] circle.p {
 	fill: #FE9A2E;
 }
 
-[visavis_graph_plot] circle.h, circle.t {
+[visavis_graph_root] circle.h, circle.t {
 	fill: #3e3f95;
 }
 
-[visavis_graph_plot] circle.a {
+[visavis_graph_root] circle.a {
 	fill: #E36868;
 }
 
-[visavis_graph_plot] text.micro {
+[visavis_graph_root] text.micro {
 	font-size: 11px;
 	letter-spacing: -0.5px;
 }
 
-[visavis_graph_plot] text.macro {
+[visavis_graph_root] text.macro {
 	font-size: 14px;
 	letter-spacing: 0.5px;
 }
 
-[visavis_graph_plot] text.captions {
+[visavis_graph_root] text.captions {
 	cursor: pointer;
 	fill: #333;
 }
 
-[visavis_graph_plot] text.shadow {
+[visavis_graph_root] text.shadow {
 	stroke: #fff;
 	stroke-width: 3px;
 	stroke-opacity: 0.8;

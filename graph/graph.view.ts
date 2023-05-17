@@ -35,11 +35,11 @@ namespace $.$$ {
 
 		@ $mol_mem
 		json() {
-			return $visavis_graph_json( this.plot().json() as any )
+			return $visavis_graph_json( this.plot_raw().json() as any )
 		}
 		
 		plot_title() {
-			return this.plot().id()
+			return this.plot_raw().id()
 		}
 
 		@ $mol_mem

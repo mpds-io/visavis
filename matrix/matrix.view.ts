@@ -43,7 +43,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		json() {
-			return $visavis_matrix_json( this.plot().json() as any )
+			return $visavis_matrix_json( this.plot_raw().json() as any )
 		}
 		
 		nodes() {
@@ -70,10 +70,6 @@ namespace $.$$ {
 				else if (link.cmp) return false
 				return heatmap
 			}, false )
-		}
-
-		plot_title() {
-			return this.plot().id()
 		}
 
 		plot_body() {
@@ -115,7 +111,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		size() {
-			const rect = this.Plot().Body().view_rect()
+			const rect = this.Plot().view_rect()
 			if (!rect) return NaN
 			return Math.min(rect.width, rect.height) - this.plot_padding() - this.axis_width()
 		}

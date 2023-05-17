@@ -1,14 +1,6 @@
 namespace $.$$ {
 
-	export class $visavis_plot_plotly extends $.$visavis_plot_plotly {
-
-		plot_title() {
-			return this.plot().id()
-		}
-
-		json() {
-			return this.plot().json() as any
-		}
+	export class $visavis_plotly extends $.$visavis_plotly {
 
 		@ $mol_action
 		subscribe_events() {
@@ -16,23 +8,9 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		layout() {
-			return {
-				font: {family: "Exo2", size: 13}
-			}
-		}
-
-		@ $mol_mem
-		data() {
-			const json = this.json()
-
-			return json
-		}
-
-		@ $mol_mem
-		draw() {
-			if (!this.Root().view_rect()) return
-			const { width, height } = this.Root().view_rect()!
+		render() {
+			if (!this.view_rect()) return
+			const { width, height } = this.view_rect()!
 			
 			const plotly_root = document.createElement('div')
 			plotly_root.style.position = 'absolute' //otherwise plotly_root prevents dom_node from resizing
@@ -44,7 +22,7 @@ namespace $.$$ {
 				this.plot_options(),
 			)
 				
-			const dom_node = this.Root().dom_node_actual() as HTMLElement
+			const dom_node = this.dom_node_actual() as HTMLElement
 			promise.then( ( plotly_root: HTMLElement )=> {
 				dom_node.replaceChildren( plotly_root )
 				this.subscribe_events() 

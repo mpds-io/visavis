@@ -1,25 +1,22 @@
 namespace $.$$ {
 
-	const { per, rem, px } = $mol_style_unit
-
 	$mol_style_define( $.$visavis_matrix, {
 
 		flex: {
-			basis: rem(60),
-			shrink: 0,
+			grow: 1,
 		},
 
 		Side_right: {
 			position: 'absolute',
-			top: per(50),
+			top: '50%',
 			right: $mol_gap.space,
 			transform: 'translateY(-50%)'
 		},
 
 		Heatmap_color: {
-			width: rem(1),
-			height: rem(1),
-			margin: px(1),
+			width: '1rem',
+			height: '1rem',
+			margin: '1px',
 		},
 
 		Heatmap_legend: {
@@ -29,8 +26,12 @@ namespace $.$$ {
 			},
 		},
 
+
 		Root: {
 			margin: 'auto',
+			position: 'absolute',
+			left: '50%',
+			transform: 'translateX(-50%)'
 		},
 
 		Order_switch: {
@@ -42,18 +43,16 @@ namespace $.$$ {
 		Plot: {
 			flex: {
 				grow: 1,
-				shrink: 0,
 			},
+			position: 'relative',
 		},
-
 		Setup: {
 			flex: {
-				basis: rem(25),
+				direction: 'column',
+				basis: '25rem',
 				shrink: 0,
 			},
-			Body: {
-				padding: $mol_gap.block,
-			},
+			padding: $mol_gap.block,
 		},
 
 	} )

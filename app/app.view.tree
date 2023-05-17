@@ -14,7 +14,7 @@ $visavis_app $mol_book2
 						<= History $mol_list
 							title @ \Uploads
 							rows <= history_rows /
-								<= Plot*0 $mol_view sub /
+								<= History_plot*0 $mol_view sub /
 									<= Plot_link* $mol_link
 										arg * file <= plot_id* \
 										title <= plot_id*
@@ -30,25 +30,8 @@ $visavis_app $mol_book2
 			foot /
 				<= Source $mol_link_source
 					uri \https://github.com/mpds-io/visavis
-		<= Matrix*plot $visavis_matrix
-			plot <= plot* $visavis_plot
-		<= Cube*plot $visavis_cube
-			plot <= plot*
-		<= Phase*plot $visavis_phase
-			plot <= plot*
-		<= Bar*plot $visavis_bar
-			plot <= plot*
-		<= Discovery*plot $visavis_discovery
-			plot <= plot*
-		<= Eigen*plot $visavis_eigen
-			plot <= plot*
-		<= Pie*plot $visavis_pie
-			plot <= plot*
-		<= Scatter*plot $visavis_scatter
-			plot <= plot*
-		<= Customscatter*plot $visavis_customscatter
-			plot <= plot*
-		<= Heatmap*plot $visavis_heatmap
-			plot <= plot*
-		<= Graph*plot $visavis_graph
-			plot <= plot*
+	Plot_page* $mol_page
+		title <= plot_id* \
+		body /
+			<= Plot_view* $visavis_plot
+				plot_raw <= history_plot_raw* null

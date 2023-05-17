@@ -1,5 +1,5 @@
 $visavis_phase $mol_book2
-	plot $visavis_plot
+	plot_raw $visavis_plot_raw
 	colors_by_nphases *
 		1 \#d1cde6
 		alt_1 \#9cf
@@ -169,14 +169,12 @@ $visavis_phase $mol_book2
 		displaylogo false
 		displayModeBar false
 		staticPlot false
-	pages /
-		<= Plot $mol_page
-			title <= plot_title \
-			body /
-				<= Label $mol_view sub /
-					<= label? \
-				<= Root $mol_view
-					dom_name \div
-					event *
-						mousemove <= mousemove null
-			auto <= draw null
+	sub /
+		<= Label $mol_view sub /
+			<= label? \
+		<= Root $visavis_plotly
+			data <= data
+			layout <= layout
+			subscribe_events <= subscribe_events null
+			event *
+				mousemove <= mousemove null

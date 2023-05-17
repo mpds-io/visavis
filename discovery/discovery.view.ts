@@ -100,8 +100,12 @@ namespace $.$$ {
 
 	export class $visavis_discovery extends $.$visavis_discovery {
 
+		sub() {
+			return [ this.Plot(), ...(this.show_setup()? [ this.Setup() ] : []) ]
+		}
+
 		json() {
-			return $visavis_discovery_json( this.plot().json() as any )
+			return $visavis_discovery_json( this.plot_raw().json() as any )
 		}
 
 		elementals_dict() {

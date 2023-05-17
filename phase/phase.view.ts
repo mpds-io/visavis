@@ -155,12 +155,8 @@ namespace $.$$ {
 
 	export class $visavis_phase extends $.$visavis_phase {
 
-		plot_title() {
-			return this.plot().id()
-		}
-
 		json() {
-			return $visavis_phase_rect_json( this.plot().json() as any )
+			return $visavis_phase_rect_json( this.plot_raw().json() as any )
 		}
 
 		json_title_b() {
@@ -300,7 +296,7 @@ namespace $.$$ {
 				}
 			})
 
-			const canvas = this.Root().dom_node() as any
+			const canvas = this.Root().dom_node().firstChild as any
 
 			// rectangle
 			if (!this.is_triangle()) {
@@ -330,18 +326,15 @@ namespace $.$$ {
 		}
 
 		@$mol_mem
-		draw() {
-			const { datamock, layout } = this.is_triangle() ? this.triangle() : this.rectangle()
-
-			// with $mol_wire_sync not working 
-			const promise = $lib_plotly.all().react(
-				this.Root().dom_node() as HTMLElement,
-				datamock,
-				layout,
-				this.plot_options(),
-			)
-
-			promise.then( () => this.subscribe_events() )
+		data() {
+			const { datamock } = this.is_triangle() ? this.triangle() : this.rectangle()
+			return datamock
+		}
+		
+		@$mol_mem
+		layout() {
+			const { layout } = this.is_triangle() ? this.triangle() : this.rectangle()			
+			return layout
 		}
 
 		pd_fix_triangle() {

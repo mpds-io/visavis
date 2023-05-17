@@ -4,14 +4,17 @@ namespace $.$$ {
 
 		Setup: {
 			flex: {
-				basis: '25rem',
+				basis: '20rem',
 				shrink: 0,
 			},
-			Body: {
-				padding: $mol_gap.block,
-			},
+			alignItems: 'flex-start',
+			padding: $mol_gap.block,
 		},
 		
+		flex: {
+			grow: 1
+		}
+
 	} )
 
 }

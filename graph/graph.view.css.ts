@@ -7,11 +7,8 @@ namespace $.$$ {
 			height: '100%',
 		},
 
-		Plot: {
-			flex: {
-				grow: 1,
-				shrink: 0,
-			},
+		flex: {
+			grow: 1,
 		},
 
 	} )

@@ -1,9 +1,13 @@
-$visavis_discovery $visavis_plot_plotly
-	pages /
-		<= Plot
-		<= Setup $mol_page
-			title @ \Setup
-			body /
+$visavis_discovery $mol_view
+	plot_raw $visavis_plot_raw
+	show_setup true
+	sub /
+		<= Plot $visavis_plotly
+			data <= data
+			layout <= layout
+			subscribe_events <= subscribe_events
+		<= Setup $mol_view
+			sub /
 				<= Elementals $mol_labeler
 					title \Elementals on
 					Content <= Elementals_check $mol_check_list

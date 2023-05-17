@@ -5,8 +5,8 @@ namespace $.$$ {
 	export class $visavis_heatmap extends $.$visavis_heatmap {
 
 		json() {
-			return this.plot().json() as any
-			// return $visavis_heatmap_json( this.plot().json() as any )
+			return this.plot_raw().json() as any
+			// return $visavis_heatmap_json( this.plot_raw().json() as any )
 		}
 
 		@ $mol_mem
