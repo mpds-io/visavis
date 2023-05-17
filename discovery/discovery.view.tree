@@ -3,8 +3,8 @@ $visavis_discovery $mol_view
 	show_setup true
 	sub /
 		<= Plot $visavis_plotly
-			data <= data
-			layout <= layout
+			data <= data *
+			layout <= layout *
 			subscribe_events <= subscribe_events
 		<= Setup $mol_view
 			sub /

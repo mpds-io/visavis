@@ -173,8 +173,8 @@ $visavis_phase $mol_book2
 		<= Label $mol_view sub /
 			<= label? \
 		<= Root $visavis_plotly
-			data <= data
-			layout <= layout
+			data <= data *
+			layout <= layout *
 			subscribe_events <= subscribe_events null
 			event *
 				mousemove <= mousemove null
