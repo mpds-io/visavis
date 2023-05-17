@@ -45,7 +45,7 @@ namespace $.$$ {
 			)
 				
 			const dom_node = this.Root().dom_node_actual() as HTMLElement
-			promise.then( (plotly_root)=> {
+			promise.then( ( plotly_root: HTMLElement )=> {
 				dom_node.replaceChildren( plotly_root )
 				this.subscribe_events() 
 			})
