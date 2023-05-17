@@ -1,0 +1,5 @@
+$visavis_plot_graph $mol_view
+	plot_raw $visavis_plot_raw
+	sub /
+		<= Root $mol_view
+			render <= draw null

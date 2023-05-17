@@ -1,0 +1,8 @@
+$visavis_plotly $mol_view
+	data *
+	layout *
+	subscribe_events null
+	plot_options *
+		displaylogo false
+		displayModeBar false
+		staticPlot false

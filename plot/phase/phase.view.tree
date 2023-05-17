@@ -1,0 +1,180 @@
+$visavis_plot_phase $mol_book2
+	plot_raw $visavis_plot_raw
+	colors_by_nphases *
+		1 \#d1cde6
+		alt_1 \#9cf
+		3 \#fc6
+		4 \#FCD3C2
+		5 \#CCE7D4
+		default \#eee
+	line *
+		phase *
+			width 0.2
+		compound *
+			width 5
+			color \#d1cde6
+		default *
+			width 0.5
+			color \#666
+	is_triangle false
+	triangle *
+		datamock /
+			* 
+				a /
+				b /
+				c /
+				type \scatterternary
+		layout *
+			hovermode \closest
+			font *
+				size 20
+				color \#333
+				family \Exo2
+			ternary *
+				aaxis *
+					title <= json_title_a \
+					ticks \
+					showline true
+					showgrid false
+					fixedrange true
+					linewidth 1
+				baxis *
+					title <= json_title_b \
+					ticks \
+					showline true
+					showgrid false
+					fixedrange true
+					linewidth 1
+				caxis *
+					title <= json_title_c \
+					ticks \
+					showline true
+					showgrid false
+					fixedrange true
+					linewidth 1
+			shapes <= layout_shapes /
+			annotations <= annotations /
+	- chassis: a path for preventing triangle transformation errors
+	triangle_shape_fix *
+		type \path
+		path \M 0,0 L 0.5,0.866 L 1,0
+		line * width 0
+	triangle_annotations /
+		*
+			text <= triangle_annotation_text \
+			x: -0.25
+			y: 0.96
+			showarrow false
+			xref \papper
+			yref \papper
+			font *
+				size 15
+				family \Exo2
+	rectangle *
+		datamock /
+			*
+				x /
+				y /
+				type \scatter
+				xaxis \x
+				yaxis \y
+			*
+				x /
+				y /
+				type \scatter
+				xaxis \x2
+				yaxis \y2
+		layout *
+			hovermode \closest
+			font *
+				size 16
+				color \#333
+				family \Exo2
+			xaxis *
+				title \at. %
+				range <= json_comp_range /
+				fixedrange true
+				showticks <= show_ticks false
+				showline true
+				zeroline false
+				showgrid false
+				ticklen 4
+				tickfont * size 12
+				hoverformat \.2r
+			xaxis2 *
+				range <= json_comp_range
+				fixedrange true
+				showticks <= show_ticks
+				showline true
+				zeroline false
+				showgrid false
+				ticklen 4
+				tickfont * size 12
+				side \top
+				overlaying \x
+			yaxis *
+				title \T, &deg;C
+				range <= json_temp /
+				fixedrange true
+				showticks <= show_ticks
+				showticklabels <= data_demo false
+				showline true
+				zeroline false
+				showgrid false
+				ticklen 4
+				tickfont * size 12
+				hoverformat \.2r
+			yaxis2 *
+				range <= json_temp
+				fixedrange true
+				showticks <= show_ticks
+				showticklabels <= data_demo 
+				showline true
+				zeroline false
+				showgrid false
+				ticklen 4
+				tickfont * size 12
+				side \right
+				overlaying \y
+			shapes <= layout_shapes
+			annotations <= annotations
+	rectangle_annotations /
+		*
+			text <= json_title_a
+			x -0.03
+			y -0.11
+			showarrow false
+			xref \papper
+			yref \papper
+			font *
+				size 20
+				family \Exo2
+		*
+			text <= json_title_b
+			x 1.03
+			y -0.11
+			showarrow false
+			xref \papper
+			yref \papper
+			font *
+				size 20
+				family \Exo2
+	annotation *
+		show_arrow false
+		font *
+			size 13
+			family \Exo2
+	annotation_textangle* 0
+	plot_options *
+		displaylogo false
+		displayModeBar false
+		staticPlot false
+	sub /
+		<= Label $mol_view sub /
+			<= label? \
+		<= Root $visavis_plotly
+			data <= data *
+			layout <= layout *
+			subscribe_events <= subscribe_events null
+			event *
+				mousemove <= mousemove null

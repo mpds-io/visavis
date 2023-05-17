@@ -1,13 +1,10 @@
 namespace $.$$ {
 
-	const { rem, per } = $mol_style_unit
-	const { calc } = $mol_style_func
-
 	$mol_style_define( $.$visavis_app, {
 
 		Menu: {
 			flex: {
-				basis: rem(25),
+				basis: '25rem',
 				shrink: 0,
 			},
 			Body: {
@@ -15,6 +12,12 @@ namespace $.$$ {
 			},
 			Foot: {
 				padding: $mol_gap.block,
+			},
+		},
+
+		Plot_page: {
+			flex: {
+				grow: 1,
 			},
 		},
 
