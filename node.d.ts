@@ -2008,7 +2008,7 @@ declare namespace $ {
 declare namespace $.$$ {
     class $visavis_plotly extends $.$visavis_plotly {
         subscribe_events(): void;
-        sub(): HTMLElement[];
+        render(): void;
     }
 }
 

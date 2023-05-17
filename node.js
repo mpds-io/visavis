@@ -7065,14 +7065,18 @@ var $;
         class $visavis_plotly extends $.$visavis_plotly {
             subscribe_events() {
             }
-            sub() {
+            render() {
                 if (!this.view_rect())
-                    return [];
+                    return;
                 const { width, height } = this.view_rect();
                 const plotly_root = document.createElement('div');
                 plotly_root.style.position = 'absolute';
-                $mol_wire_async($lib_plotly.all()).react(plotly_root, this.data(), { ...this.layout(), width, height }, this.plot_options());
-                return [plotly_root];
+                const promise = $lib_plotly.all().react(plotly_root, this.data(), { ...this.layout(), width, height }, this.plot_options());
+                const dom_node = this.dom_node_actual();
+                promise.then((plotly_root) => {
+                    dom_node.replaceChildren(plotly_root);
+                    this.subscribe_events();
+                });
             }
         }
         __decorate([
@@ -7080,7 +7084,7 @@ var $;
         ], $visavis_plotly.prototype, "subscribe_events", null);
         __decorate([
             $mol_mem
-        ], $visavis_plotly.prototype, "sub", null);
+        ], $visavis_plotly.prototype, "render", null);
         $$.$visavis_plotly = $visavis_plotly;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
