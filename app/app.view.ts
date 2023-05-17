@@ -6,11 +6,7 @@ namespace $.$$ {
 		files_read(next: readonly File[]) {
 			const data = $mol_wire_sync( $mol_blob_json )( next[0] )
 
-			const plot = new $visavis_plot({
-				id: next[0].name,
-				type: data.use_visavis_type ?? 'unknown',
-				json: data,
-			})
+			const plot = $visavis_plot_from_json( data, next[0].name )
 
 			this.history_add( plot )
 		}
