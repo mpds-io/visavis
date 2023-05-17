@@ -9305,25 +9305,12 @@ var $;
         }
         Root() {
             const obj = new this.$.$mol_view();
-            obj.auto = () => this.draw();
-            return obj;
-        }
-        error_showed(next) {
-            if (next !== undefined)
-                return next;
-            return "";
-        }
-        Error() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.error_showed()
-            ];
+            obj.render = () => this.draw();
             return obj;
         }
         plot_body() {
             return [
-                this.Root(),
-                this.Error()
+                this.Root()
             ];
         }
         Plot() {
@@ -9339,12 +9326,6 @@ var $;
     __decorate([
         $mol_mem
     ], $visavis_plot_plotly.prototype, "Root", null);
-    __decorate([
-        $mol_mem
-    ], $visavis_plot_plotly.prototype, "error_showed", null);
-    __decorate([
-        $mol_mem
-    ], $visavis_plot_plotly.prototype, "Error", null);
     __decorate([
         $mol_mem
     ], $visavis_plot_plotly.prototype, "Plot", null);
@@ -9376,15 +9357,17 @@ var $;
                 return json;
             }
             draw() {
-                try {
-                    $mol_wire_sync($lib_plotly.all()).react(this.Root().dom_node(), this.data(), this.layout(), this.plot_options());
+                if (!this.Root().view_rect())
+                    return;
+                const { width, height } = this.Root().view_rect();
+                const plotly_root = document.createElement('div');
+                plotly_root.style.position = 'absolute';
+                const promise = $lib_plotly.all().react(plotly_root, this.data(), { ...this.layout(), width, height }, this.plot_options());
+                const dom_node = this.Root().dom_node_actual();
+                promise.then((plotly_root) => {
+                    dom_node.replaceChildren(plotly_root);
                     this.subscribe_events();
-                    this.error_showed(null);
-                }
-                catch (error) {
-                    $mol_fail_log(error);
-                    this.error_showed(error);
-                }
+                });
             }
         }
         __decorate([
@@ -9418,11 +9401,6 @@ var $;
             Root: {
                 width: '100%',
                 height: '100%',
-            },
-            Error: {
-                position: "absolute",
-                left: 0,
-                right: 0,
             },
         });
     })($$ = $.$$ || ($.$$ = {}));
@@ -10711,7 +10689,7 @@ var $;
         }
         Root() {
             const obj = new this.$.$mol_view();
-            obj.auto = () => this.draw();
+            obj.render = () => this.draw();
             return obj;
         }
         plot_body() {

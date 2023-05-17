@@ -708,9 +708,7 @@ $visavis_plot_plotly $mol_page
 			title <= plot_title \
 			body <= plot_body /
 				<= Root $mol_view
-					auto <= draw null
-				<= Error $mol_view
-					sub / <= error_showed? \
+					render <= draw null
 	plot_options *
 		displaylogo false
 		displayModeBar false
@@ -758,7 +756,7 @@ $visavis_graph $mol_book2
 			title <= plot_title \
 			body <= plot_body /
 				<= Root $mol_view
-					auto <= draw null
+					render <= draw null
 
 $visavis_app $mol_book2
 	attr * mol_theme \$mol_theme_light

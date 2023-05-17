@@ -2900,8 +2900,6 @@ declare namespace $ {
         plot_title(): string;
         draw(): any;
         Root(): $mol_view;
-        error_showed(next?: any): string;
-        Error(): $mol_view;
         plot_body(): readonly any[];
         Plot(): $mol_page;
     }
