@@ -234,7 +234,6 @@ namespace $.$$ {
 			// }
 
 			const result = discover(elementals_on, Discover_item({points: json.payload.points, name: json.answerto}));
-			if (!result || !result[0].discovery) return;
 		
 			const traces = [];
 		

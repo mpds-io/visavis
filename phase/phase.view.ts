@@ -196,10 +196,10 @@ namespace $.$$ {
 			const list = this.json().shapes.map( obj => ( {
 				type: 'path',
 				path: obj.svgpath,
-				line: this.line()[ obj.kind ] ?? this.line().default,
+				line: (this.line() as any)[ obj.kind ] ?? this.line().default,
 				...obj.kind !== 'phase' && obj.kind !== 'compound' ? { fillOpacity: 0 } : {},
 				...obj.kind === 'phase' ? {
-					fillcolor: !obj.is_solid && obj.nphases === 1 ? this.colors_by_nphases().alt_1 : this.colors_by_nphases()[ obj.nphases! ] ?? this.colors_by_nphases().default
+					fillcolor: !obj.is_solid && obj.nphases === 1 ? this.colors_by_nphases().alt_1 : (this.colors_by_nphases() as any)[ obj.nphases! ] ?? this.colors_by_nphases().default
 				} : {},
 			} ) )
 
