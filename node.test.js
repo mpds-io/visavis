@@ -5988,6 +5988,14 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    function $visavis_plot_from_json(json, id) {
+        return new $visavis_plot({
+            id: id || $mol_guid(),
+            type: json.use_visavis_type ?? 'unknown',
+            json,
+        });
+    }
+    $.$visavis_plot_from_json = $visavis_plot_from_json;
     class $visavis_plot extends $mol_store {
         id(next) {
             return this.value('id', next);
@@ -11803,11 +11811,7 @@ var $;
         class $visavis_app extends $.$visavis_app {
             files_read(next) {
                 const data = $mol_wire_sync($mol_blob_json)(next[0]);
-                const plot = new $visavis_plot({
-                    id: next[0].name,
-                    type: data.use_visavis_type ?? 'unknown',
-                    json: data,
-                });
+                const plot = $visavis_plot_from_json(data, next[0].name);
                 this.history_add(plot);
             }
             history_add(plot) {

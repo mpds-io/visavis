@@ -1696,6 +1696,7 @@ declare namespace $ {
         type: 'matrix' | 'plot3d' | 'pd' | string;
         json: unknown;
     }
+    export function $visavis_plot_from_json(json: any, id?: string): $visavis_plot;
     export class $visavis_plot extends $mol_store<Plot> {
         id(next?: string): string;
         type(): string;
