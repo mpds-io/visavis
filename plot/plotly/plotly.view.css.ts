@@ -13,12 +13,6 @@ namespace $.$$ {
 			height: '100%',
 		},
 
-		Error: {
-			position: "absolute",
-			left: 0,
-			right: 0,
-		},
-
 	} )
 
 }

@@ -31,24 +31,24 @@ namespace $.$$ {
 
 		@ $mol_mem
 		draw() {
-			try {
-
-				$mol_wire_sync( $lib_plotly.all() ).react(
-					this.Root().dom_node() as HTMLElement,
-					this.data(), 
-					this.layout(),
-					this.plot_options(),
-				)	
-
+			if (!this.Root().view_rect()) return
+			const { width, height } = this.Root().view_rect()!
+			
+			const plotly_root = document.createElement('div')
+			plotly_root.style.position = 'absolute' //otherwise plotly_root prevents dom_node from resizing
+			
+			const promise = $lib_plotly.all().react(
+				plotly_root,
+				this.data(), 
+				{ ...this.layout(), width, height },
+				this.plot_options(),
+			)
+				
+			const dom_node = this.Root().dom_node_actual() as HTMLElement
+			promise.then( (plotly_root)=> {
+				dom_node.replaceChildren( plotly_root )
 				this.subscribe_events() 
-				this.error_showed( null )
-
-			} catch( error: any ) {
-
-				$mol_fail_log( error )
-				this.error_showed( error )
-
-			}
+			})
 		}
 
 	}
