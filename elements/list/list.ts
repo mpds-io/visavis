@@ -46,7 +46,7 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem_key
-		static index_by_prop( prop: keyof typeof Prop_names.Value ) {
+		static index_by_prop( prop: keyof typeof Elements_list.Value[number] ) {
 			return Object.fromEntries( this.list().map( el => [ el[prop], el ] ) )
 		}
 
