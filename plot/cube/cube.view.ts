@@ -28,6 +28,9 @@ namespace $.$$ {
 			]
 		}
 
+		sub() {
+			return [ this.Plot(), ...(this.show_setup()? [ this.Setup() ] : []) ]
+		}
 
 		json() {
 			return $visavis_plot_cube_json( this.plot_raw().json() as any )

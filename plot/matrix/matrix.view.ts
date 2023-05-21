@@ -41,6 +41,10 @@ namespace $.$$ {
 
 	export class $visavis_plot_matrix extends $.$visavis_plot_matrix {
 
+		sub() {
+			return [ this.Plot(), ...(this.show_setup()? [ this.Setup() ] : []) ]
+		}
+
 		@ $mol_mem
 		json() {
 			return $visavis_plot_matrix_json( this.plot_raw().json() as any )

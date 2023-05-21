@@ -1,0 +1,7 @@
+$visavis_frame $mol_book2
+	attr * mol_theme \$mol_theme_light
+	json? *
+	sub /
+		<= Plot $visavis_plot
+			plot_raw <= plot_raw null
+			show_setup false
