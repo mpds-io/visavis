@@ -1,4 +1,2 @@
-deploy \/visavis/elements/data/elements.json.tree
 deploy \/visavis/elements/data/nonfromer_pd_bin.json.tree
 deploy \/visavis/elements/data/nonfromer_pd_tri.json.tree
-deploy \/visavis/elements/data/prop_names.json.tree

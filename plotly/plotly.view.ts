@@ -12,7 +12,7 @@ namespace $.$$ {
 			if (!this.view_rect()) return
 			const { width, height } = this.view_rect()!
 			
-			const plotly_root = document.createElement('div')
+			const plotly_root = $mol_wire_sync( document ).createElement( 'div' ) as HTMLElement
 			plotly_root.style.position = 'absolute' //otherwise plotly_root prevents dom_node from resizing
 			
 			const promise = $lib_plotly.all().react(

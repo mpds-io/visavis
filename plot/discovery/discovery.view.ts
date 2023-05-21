@@ -11,7 +11,7 @@ namespace $.$$ {
 		name: $mol_data_string
 	})
 
-	type Elementals_dict = typeof $visavis_elemental_names
+	type Element_prop = keyof ReturnType<typeof $visavis_elements_list.prop_names>
 
 	export const $visavis_plot_discovery_json = $mol_data_record({
 		payload: Payload,
@@ -19,7 +19,7 @@ namespace $.$$ {
 	})
 
 	function discover(
-		elementals_on: (keyof Elementals_dict)[], 
+		elementals_on: Element_prop[], 
 		first: typeof Discover_item.Value, 
 		second?: typeof Discover_item.Value
 	) {
@@ -32,13 +32,15 @@ namespace $.$$ {
 		let	given_separation = 0;
 		// given_separation = false;
 
-		function elements_data( element_ids: readonly number[] ){
+		const elements_data = ( element_ids: readonly number[] ) => {
 			const prop_array: number[] = []
 			const label_parts: string[] = []
 
-			element_ids.forEach( element_id => {
-				const props = elementals_on.map( prop_name => $visavis_element_prop[ prop_name ][ element_id ])
-				const name = $visavis_element_list[ element_id ]!
+			element_ids.forEach( element_num => {
+				const props = elementals_on.map( 
+					prop_name => $visavis_elements_list.element_by_num( element_num )[ prop_name ]
+				)
+				const name = $visavis_elements_list.element_by_num( element_num ).name
 				prop_array.push( ...props )
 				label_parts.push( name );
 			})
@@ -109,7 +111,7 @@ namespace $.$$ {
 		}
 
 		elementals_dict() {
-			return $visavis_elemental_names
+			return $visavis_elements_list.prop_names()
 		}
 
 		@ $mol_action
@@ -196,11 +198,11 @@ namespace $.$$ {
 
 		@ $mol_mem
 		elementals_on() {
-			const elementals_on: (keyof Elementals_dict)[] = []
+			const elementals_on: Element_prop[] = []
 
 			Object.keys( this.elementals_dict() ).forEach( key => {
 				if (this.elemental_checked(key)) {
-					elementals_on.push( key as keyof Elementals_dict )
+					elementals_on.push( key as Element_prop)
 				}
 			} )
 

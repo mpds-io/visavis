@@ -98,7 +98,7 @@ namespace $.$$ {
 			}
 
 			if (this.nonformers()) {
-				for (const item of $visavis_nonformer_pd_bin) {
+				for (const item of $visavis_elements_nonformer.pd_bin()) {
 					matrix[item[0]][item[1]].z = 1;
 					matrix[item[1]][item[0]].z = 1; // NB only AB-all
 					matrix[item[0]][item[1]].nonformer = true;
