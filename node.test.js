@@ -6185,6 +6185,9 @@ var $;
             const obj = new this.$.$visavis_plot_raw();
             return obj;
         }
+        show_setup() {
+            return true;
+        }
         size() {
             return 0;
         }
@@ -6888,6 +6891,9 @@ var $;
             }),
         });
         class $visavis_plot_matrix extends $.$visavis_plot_matrix {
+            sub() {
+                return [this.Plot(), ...(this.show_setup() ? [this.Setup()] : [])];
+            }
             json() {
                 return $visavis_plot_matrix_json(this.plot_raw().json());
             }
@@ -8781,6 +8787,9 @@ var $;
             const obj = new this.$.$visavis_plot_raw();
             return obj;
         }
+        show_setup() {
+            return true;
+        }
         heatmap(next) {
             if (next !== undefined)
                 return next;
@@ -9143,6 +9152,9 @@ var $;
                     this.Root(),
                     ...this.heatmap() ? [this.Side_right()] : [],
                 ];
+            }
+            sub() {
+                return [this.Plot(), ...(this.show_setup() ? [this.Setup()] : [])];
             }
             json() {
                 return $visavis_plot_cube_json(this.plot_raw().json());
@@ -11679,11 +11691,13 @@ var $;
         Matrix() {
             const obj = new this.$.$visavis_plot_matrix();
             obj.plot_raw = () => this.plot_raw();
+            obj.show_setup = () => this.show_setup();
             return obj;
         }
         Cube() {
             const obj = new this.$.$visavis_plot_cube();
             obj.plot_raw = () => this.plot_raw();
+            obj.show_setup = () => this.show_setup();
             return obj;
         }
         Phase() {

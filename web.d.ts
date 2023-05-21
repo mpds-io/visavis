@@ -1625,6 +1625,7 @@ declare namespace $ {
 declare namespace $ {
     class $visavis_plot_matrix extends $mol_view {
         plot_raw(): $visavis_plot_raw;
+        show_setup(): boolean;
         size(): number;
         links_value_min(next?: any): number;
         links_value_max(next?: any): number;
@@ -2031,6 +2032,7 @@ declare namespace $.$$ {
         nonformer: boolean;
     };
     export class $visavis_plot_matrix extends $.$visavis_plot_matrix {
+        sub(): $mol_view[];
         json(): Readonly<{
             payload: Readonly<{
                 nodes: readonly Readonly<{
@@ -2602,6 +2604,7 @@ declare namespace $ {
 declare namespace $ {
     class $visavis_plot_cube extends $mol_view {
         plot_raw(): $visavis_plot_raw;
+        show_setup(): boolean;
         heatmap(next?: any): boolean;
         order(id: any): readonly number[];
         order_current(next?: any): string;
@@ -2663,6 +2666,7 @@ declare namespace $.$$ {
     type Element_prop = keyof ReturnType<typeof $visavis_elements_list.prop_names>;
     export class $visavis_plot_cube extends $.$visavis_plot_cube {
         plot_body(): ($mol_scroll | $visavis_plotly)[];
+        sub(): $mol_view[];
         json(): Readonly<{
             payload: Readonly<{
                 tcube?: boolean | undefined;

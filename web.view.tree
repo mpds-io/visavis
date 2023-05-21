@@ -217,6 +217,7 @@ $mol_labeler $mol_list
 
 $visavis_plot_matrix $mol_view
 	plot_raw $visavis_plot_raw
+	show_setup true
 	size 0
 	links_value_min? 0
 	links_value_max? 0
@@ -448,6 +449,7 @@ $mol_select $mol_pick
 
 $visavis_plot_cube $mol_view
 	plot_raw $visavis_plot_raw
+	show_setup true
 	heatmap? false
 	order* /number
 	order_current? \nump
@@ -765,8 +767,10 @@ $visavis_plot $mol_ghost
 	plots *
 		matrix <= Matrix $visavis_plot_matrix
 			plot_raw <= plot_raw
+			show_setup <= show_setup
 		plot3d <= Cube $visavis_plot_cube
 			plot_raw <= plot_raw
+			show_setup <= show_setup
 		pd <= Phase $visavis_plot_phase
 			plot_raw <= plot_raw
 		bar <= Bar $visavis_plot_bar
