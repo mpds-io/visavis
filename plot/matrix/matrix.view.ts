@@ -41,6 +41,10 @@ namespace $.$$ {
 
 	export class $visavis_plot_matrix extends $.$visavis_plot_matrix {
 
+		sub() {
+			return [ this.Plot(), ...(this.show_setup()? [ this.Setup() ] : []) ]
+		}
+
 		@ $mol_mem
 		json() {
 			return $visavis_plot_matrix_json( this.plot_raw().json() as any )
@@ -98,7 +102,7 @@ namespace $.$$ {
 			}
 
 			if (this.nonformers()) {
-				for (const item of $visavis_nonformer_pd_bin) {
+				for (const item of $visavis_elements_nonformer.pd_bin()) {
 					matrix[item[0]][item[1]].z = 1;
 					matrix[item[1]][item[0]].z = 1; // NB only AB-all
 					matrix[item[0]][item[1]].nonformer = true;

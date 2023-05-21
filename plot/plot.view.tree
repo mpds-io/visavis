@@ -4,8 +4,10 @@ $visavis_plot $mol_ghost
 	plots *
 		matrix <= Matrix $visavis_plot_matrix
 			plot_raw <= plot_raw
+			show_setup <= show_setup
 		plot3d <= Cube $visavis_plot_cube
 			plot_raw <= plot_raw
+			show_setup <= show_setup
 		pd <= Phase $visavis_plot_phase
 			plot_raw <= plot_raw
 		bar <= Bar $visavis_plot_bar
