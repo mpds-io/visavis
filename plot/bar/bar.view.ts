@@ -41,12 +41,17 @@ namespace $.$$ {
 				selection.style('fill', '#3e3f95');
 				selection.style('cursor', 'default');
 			})
-			// paths.on('click', function(evt){
-			// 	if (visavis.mpds_embedded){
-			// 		window.parent.wmgui.visavis_terminating = true;
-			// 		window.parent.location.hash = window.parent.wmgui.aug_search_cmd("years", evt.x);
-			// 	}
-			// });
+
+			paths.on('click', function(this: any){
+				const selection = d3.select(this)
+				window.parent.postMessage({
+					'name': 'aug_search_cmd',
+					'args': {
+						new_fct: "years", 
+						new_val: selection.data()[0].x,
+					}
+				}, '*')
+			});
 		}
 
 		@ $mol_mem

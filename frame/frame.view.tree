@@ -1,4 +1,4 @@
-$visavis_frame $mol_book2
+$visavis_frame $mol_view
 	attr * mol_theme \$mol_theme_light
 	json? *
 	sub /
