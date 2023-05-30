@@ -10215,6 +10215,16 @@ var $;
                     selection.style('fill', '#3e3f95');
                     selection.style('cursor', 'default');
                 });
+                paths.on('click', function () {
+                    const selection = d3.select(this);
+                    window.parent.postMessage({
+                        'name': 'aug_search_cmd',
+                        'args': {
+                            new_fct: "years",
+                            new_val: selection.data()[0].x,
+                        }
+                    }, '*');
+                });
             }
             layout() {
                 const json = this.json();
