@@ -68,8 +68,8 @@ namespace $.$$ {
 				if (found_fct == 'elements') value = value.replace(/,\s/g, '-'); // FIXME?
 
 				window.parent.postMessage({
-					'name': 'aug_search_cmd',
-					'args': { new_fct: found_fct, new_val: value }
+					'name': 'pie_click',
+					'args': { facet: found_fct, value }
 				}, '*')
 			})
 		}

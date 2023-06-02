@@ -45,10 +45,10 @@ namespace $.$$ {
 			paths.on('click', function(this: any){
 				const selection = d3.select(this)
 				window.parent.postMessage({
-					'name': 'aug_search_cmd',
+					'name': 'bar_click',
 					'args': {
-						new_fct: "years", 
-						new_val: selection.data()[0].x,
+						facet: "years", 
+						value: selection.data()[0].x,
 					}
 				}, '*')
 			});
