@@ -117,39 +117,43 @@ namespace $.$$ {
 		@ $mol_action
 		subscribe_events() {
 
-			const d3 = $lib_d3.all()
-
-			const json = this.json() as any
-
 			// if (visavis.mpds_embedded) {
 			// 	document.getElementById('expander').style.display = 'block';
 			// } else {
 			// 	return
 			// }
+			
+			const d3 = $lib_d3.all()
 
-			// Plotly.d3.select('#visavis').on('click', function(evt){
-			// 	if (visavis.cache.type != 'discovery') return false;
+			d3.select('div.js-plotly-plot').on('click', function(this: any, evt: MouseEvent){
 
-			// 	evt = evt || window.event;
-			// 	var node = evt.target,
-			// 		index = 0;
-			// 	if (node.tagName != 'path' || node.getAttribute('class') != 'point') return false;
+				const node = evt.target as HTMLElement
+				if (node.getAttribute('class') != 'point') return false;
+				
+				node.style.fill = '#0f0';
 
-			// 	var oflag = node.style.opacity;
-			// 	node.style.fill = '#0f0';
-			// 	while ((node = node.previousElementSibling)){
-			// 		index++;
-			// 	}
-			// 	var label = [],
-			// 		point = (oflag == 1) ? visavis.cache.ref.points[index] : visavis.cache.cmp.points[index];
-			// 	if (!point) return false;
+				const point = d3.select(node)
+				const label = point.data()[0].tx
 
-			// 	point.forEach(function(i){
-			// 		label.push(visavis.chem_els[i]);
-			// 	});
-			// 	label = label.filter(function(x){ return x }).join('-');
-			// 	window.open(window.location.protocol + "//" + window.location.host + window.parent.wmgui.aug_search_cmd("elements", label));
-			// });
+				window.parent.postMessage({
+					'name': 'discovery_click',
+					'args': { label }
+				}, '*')
+				
+				// 	var oflag = node.style.opacity;
+				// 	node.style.fill = '#0f0';
+				// 	while ((node = node.previousElementSibling)){
+				// 		index++;
+				// 	}
+				// 	var label = [],
+				// 		point = (oflag == 1) ? visavis.cache.ref.points[index] : visavis.cache.cmp.points[index];
+				// 	if (!point) return false;
+
+				// 	point.forEach(function(i){
+				// 		label.push(visavis.chem_els[i]);
+				// 	});
+				// 	label = label.filter(function(x){ return x }).join('-');
+			});
 		}
 
 		@ $mol_mem
