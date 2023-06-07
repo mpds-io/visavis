@@ -8,7 +8,12 @@ namespace $.$$ {
 
 			const plot_raw = $visavis_plot_raw_from_json( data, next[0].name )
 
-			this.history_add( plot_raw )
+			this.plot_opened_id( this.history_add( plot_raw ) )
+		}
+
+		@ $mol_action
+		drop_file(transfer: any) {
+			this.files_read( transfer.files )
 		}
 
 		@ $mol_action
@@ -21,11 +26,14 @@ namespace $.$$ {
 
 			this.history_plot_raw( plot_raw.id(), plot_raw )
 			this.history_plot_ids( [ plot_raw.id(), ...this.history_plot_ids() ] )
+
+			return plot_raw.id()
 		}
 
 		@ $mol_action
 		history_drop(id: string) {
-			this.history_plot_raw(id, null)
+			this.plot_opened_id( null )
+			this.history_plot_raw( id, null )
 			this.history_plot_ids( this.history_plot_ids().filter( plot_id => plot_id !== id ) )
 		}
 
@@ -60,14 +68,23 @@ namespace $.$$ {
 		}
 
 		pages() {
+			if( !this.$.$mol_state_arg.value('section') && this.history_plot_ids().length == 0 ) {
+				return [ this.Drop_area() ]
+			}
 			return [
 				this.Menu(),
 				... this.Plot_opened(),
 			]
 		}
 
-		Placeholder() {
-			return this.Plot_opened().length > 0 ? null as any : super.Placeholder()
+		@ $mol_mem
+		menu_body() {
+			const section = this.$.$mol_state_arg.value('section')
+			if (section == 'examples') {
+				return [ this.Examples() ]
+			} else {
+				return [ this.History() ]
+			}
 		}
 
 	}
