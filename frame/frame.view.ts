@@ -7,7 +7,10 @@ namespace $.$$ {
 			const href = this.$.$mol_state_arg.href()
 			const hash = href.split('#')[1]
 
-			const json: any = hash? $mol_fetch.json( hash ) : default_example
+			const json: any = hash ?
+				$mol_fetch.json( hash ) :
+				$mol_fetch.json( '/visavis/examples/bar_sci_literature.json' )
+			
 			if( json.error ) return $mol_fail( new $mol_data_error( json.error ) )
 			
 			return $visavis_plot_raw_from_json( json )
@@ -176,36 +179,6 @@ namespace $.$$ {
 
 		}
 		
-	}
-
-	const default_example = {
-		"error": null,
-		"payload": {
-			"x": [
-				1983,
-				1988,
-				2001,
-				2002,
-				2003,
-				2004,
-				2007,
-				2020
-			],
-			"dx": 4,
-			"y": [
-				1,
-				1,
-				8,
-				2,
-				2,
-				1,
-				2,
-				21
-			],
-			"xtitle": "Publication year",
-			"ytitle": "Number of entries"
-		},
-		"use_visavis_type": "bar"
 	}
 
 }

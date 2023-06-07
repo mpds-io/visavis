@@ -43,19 +43,19 @@ $visavis_app $mol_book2
 										files? <=> files_read? null
 						<= History_rows $mol_list
 							rows <= history_rows /
-								<= History_plot*0 $mol_view sub /
-									<= Plot_link* $mol_link
-										arg * file <= plot_id* \
-										title <= plot_id*
+								<= History_plot_link*0 $mol_view sub /
+									<= Plot_link*
 									<= Plot_drop* $mol_button_minor
 										click? <=> history_drop*? null
 										sub / <= Plot_drop_icon* $mol_icon_delete
 				<= Examples $mol_list
 					title @ \Examples
 					rows <= example_rows /
-						<= Example*0 $mol_link
-							arg * file <= example_title* \
-							title <= example_title*
+						<= Plot_link*0 $mol_link
+							arg * 
+								file <= plot_id* \
+								section <= menu_section null
+							title <= plot_id*
 			foot /
 				<= Source $mol_link_source
 					uri \https://github.com/mpds-io/visavis
@@ -63,4 +63,4 @@ $visavis_app $mol_book2
 		title <= plot_id* \
 		body /
 			<= Plot_view* $visavis_plot
-				plot_raw <= history_plot_raw* null
+				plot_raw <= plot_raw* null
