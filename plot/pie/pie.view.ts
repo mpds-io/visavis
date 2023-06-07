@@ -133,83 +133,75 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		data() {
+		pies_payload() {
+			const json = this.json()
+
+			const enter_metrics = this.enter_metrics()
 		
+			const pies: { facet: keyof typeof Facet_names, payload: {facet: string, value: string, count: number}[] }[] = []
+
+			json.payload.forEach( item => {
+				if (item.count < enter_metrics || item.count > (json.total_count - enter_metrics)) return
+		
+				// special case of interlacing classes
+				if (item.facet == "classes"){
+					pies.push({ facet: item.facet, payload: [ item ] })
+					return
+				}
+
+				let pie = pies.find( p => p.facet == item.facet )
+				if (!pie) {
+					pie = { facet: item.facet, payload: [] }
+					pies.push( pie )
+				}
+				
+				pie.payload.push( item )
+			} )
+
+			return pies
+		}
+
+		@ $mol_mem
+		data() {
 			const json = this.json()
 
 			if (!json.total_count || json.total_count == 1) {
 				return $mol_fail( new $mol_data_error('Warning: not enough data for analysis') )
 			}
 
-			const data: any[] = []
-			const classes = []
 			const tot_count = this.tot_count()
 			const xy_domains = this.xy_domains()
-			const enter_metrics = this.enter_metrics()
-		
-			let recent_facet: null | keyof typeof Facet_names = null;
-		
-			let loc_count = 0
-			for (let i = 0; i < json.payload.length; i++){
-				if (json.payload[i].count < enter_metrics || json.payload[i].count > (json.total_count - enter_metrics)) continue;
-		
-				// special case of interlacing classes
-				if (json.payload[i].facet == "classes"){
-					classes.push({
-						type: "pie",
-						name: Facet_names[json.payload[i].facet],
-						values: [json.payload[i].count, json.total_count - json.payload[i].count],
-						text: [json.payload[i].value, "other classes"],
-						domain: {x: xy_domains[tot_count]![loc_count][0], y: xy_domains[tot_count]![loc_count][1]},
-						hoverinfo: "text+percent+name",
-						textinfo: "text+percent",
-						textposition: "inside",
-						hole: 0.3/tot_count,
-						marker: {colors: this.colorset()}
-					});
-					loc_count++;
-					continue;
+
+			const data = this.pies_payload().map( (pie, loc_count)  => {
+				const values = []
+				const text = []
+				
+				// rest of data, not loaded
+				let sum = 0
+				pie.payload.forEach( item => {
+					sum += item.count
+					values.push( item.count );
+					text.push( item.value );
+				} )
+
+				if( sum < json.total_count ) {
+					values.push( json.total_count - sum );
+					text.push("other " + Facet_names[pie.facet]);
 				}
-		
-				// other facets
-				if (json.payload[i].facet != recent_facet){
-					if (recent_facet){
-						// rest of data, not loaded
-						const sum = data[data.length - 1].values.reduce(function(a: number, b: number){ return a + b }, 0);
-						if (sum < json.total_count){
-							data[data.length - 1].values.push(json.total_count - sum);
-							data[data.length - 1].text.push("other " + Facet_names[recent_facet]);
-						}
-					}
-					if (loc_count > 8) break;
-					data.push({
-						type: "pie",
-						name: Facet_names[json.payload[i].facet],
-						values: [],
-						text: [],
-						domain: {x: xy_domains[tot_count]![loc_count][0], y: xy_domains[tot_count]![loc_count][1]},
-						hoverinfo: "text+percent+name",
-						textinfo: "text+percent",
-						textposition: "inside",
-						hole: 0.3/tot_count,
-						marker: {colors: this.colorset()}
-					});
-					loc_count++;
+
+				return {
+					type: "pie",
+					name: Facet_names[pie.facet],
+					values,
+					text,
+					domain: {x: xy_domains[tot_count]![loc_count][0], y: xy_domains[tot_count]![loc_count][1]},
+					hoverinfo: "text+percent+name",
+					textinfo: "text+percent",
+					textposition: "inside",
+					hole: 0.3/tot_count,
+					marker: {colors: this.colorset()}
 				}
-		
-				recent_facet = json.payload[i].facet;
-				data[data.length - 1].values.push(json.payload[i].count);
-				data[data.length - 1].text.push(json.payload[i].value);
-			}
-			if (data.length){
-				// NB FIXME once again: rest of data, not loaded
-				const sum = data[data.length - 1].values.reduce(function(a: number, b: number){ return a + b }, 0);
-				if (sum < json.total_count){
-					data[data.length - 1].values.push(json.total_count - sum);
-					data[data.length - 1].text.push("other " + Facet_names[recent_facet!]);
-				}
-			}
-			if (classes) data.push(...classes);
+			})
 
 			return data
 		}
