@@ -7,9 +7,7 @@ namespace $.$$ {
 			const href = this.$.$mol_state_arg.href()
 			const hash = href.split('#')[1]
 
-			const json: any = hash ?
-				$mol_fetch.json( hash ) :
-				$mol_fetch.json( '/visavis/examples/bar_sci_literature.json' )
+			const json: any = $mol_fetch.json( hash )
 			
 			if( json.error ) return $mol_fail( new $mol_data_error( json.error ) )
 			
