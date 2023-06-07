@@ -39,13 +39,6 @@ $mol_page $mol_view
 			dom_name \footer
 			sub <= foot /$mol_view
 
-$mol_paragraph $mol_view
-	line_height 24
-	letter_width 7
-	width_limit +Infinity
-	row_width 0
-	sub / <= title
-
 $mol_speck $mol_view
 	attr *
 		^
@@ -131,17 +124,6 @@ $mol_button_open_native $mol_view
 	event *
 		change?next <=> picked?next null
 
-$mol_list $mol_view
-	render_visible_only true
-	render_over 0
-	sub <= rows /$mol_view
-	Empty $mol_view
-	Gap_before $mol_view style * paddingTop <= gap_before 0
-	Gap_after $mol_view style * paddingTop <= gap_after 0
-	view_window /
-		0
-		0
-
 $mol_link $mol_view
 	uri \
 	dom_name \a
@@ -159,32 +141,18 @@ $mol_link $mol_view
 		^
 		click?event <=> click?event <=> event_click?event null
 
-$mol_ghost $mol_view
-	Sub $mol_view
-
-$mol_drop $mol_ghost
-	enabled? true
-	event *
-		dragenter?event <=> enter?event null
-		dragover?event <=> move?event null
-		dragleave?event <=> leave?event null
-		drop?event <=> drop?event null
-	attr * mol_drop_status <= status?val \ready
-	adopt?transfer *
-	receive?transfer null
-	allow /
-		\link
-		\copy
-		\move
-
 $mol_icon_delete $mol_icon path \M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19C6,20.1 6.9,21 8,21H16C17.1,21 18,20.1 18,19V7H6V19Z
 
-$mol_icon_github_circle $mol_icon path \M12,2C6.48,2 2,6.48 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12C22,6.48 17.52,2 12,2Z
-
-$mol_link_source $mol_link
-	hint @ \Source code
-	sub /
-		<= Icon $mol_icon_github_circle
+$mol_list $mol_view
+	render_visible_only true
+	render_over 0
+	sub <= rows /$mol_view
+	Empty $mol_view
+	Gap_before $mol_view style * paddingTop <= gap_before 0
+	Gap_after $mol_view style * paddingTop <= gap_after 0
+	view_window /
+		0
+		0
 
 $mol_check $mol_button_minor
 	attr *
@@ -198,21 +166,6 @@ $mol_check $mol_button_minor
 			<= Title $mol_view
 				sub /
 					<= title \
-
-$mol_icon_tick $mol_icon path \M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z
-
-$mol_check_box $mol_check
-	Icon $mol_icon_tick
-
-$mol_labeler $mol_list
-	rows /
-		<= Label $mol_view
-			minimal_height 32
-			sub <= label /$mol_view_content
-				<= title
-		<= Content $mol_view
-			minimal_height 24
-			sub <= content /
 
 $mol_check_list $mol_view
 	Option* $mol_check
@@ -228,6 +181,39 @@ $mol_check_list $mol_view
 
 $mol_switch $mol_check_list
 	value?val \
+
+$mol_deck $mol_list
+	items /$mol_view
+	rows /$mol_view
+		<= Switch $mol_switch
+			value?val <=> current?val \0
+			options <= switch_options *
+		<= Content $mol_view
+
+$mol_icon_github_circle $mol_icon path \M12,2C6.48,2 2,6.48 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12C22,6.48 17.52,2 12,2Z
+
+$mol_link_source $mol_link
+	hint @ \Source code
+	sub /
+		<= Icon $mol_icon_github_circle
+
+$mol_ghost $mol_view
+	Sub $mol_view
+
+$mol_icon_tick $mol_icon path \M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z
+
+$mol_check_box $mol_check
+	Icon $mol_icon_tick
+
+$mol_labeler $mol_list
+	rows /
+		<= Label $mol_view
+			minimal_height 32
+			sub <= label /$mol_view_content
+				<= title
+		<= Content $mol_view
+			minimal_height 24
+			sub <= content /
 
 $visavis_plot_matrix $mol_view
 	plot_raw $visavis_plot_raw
@@ -389,6 +375,13 @@ $mol_string $mol_view
 
 $mol_icon_dots_vertical $mol_icon path \M12,16C13.1,16 14,16.9 14,18C14,19.1 13.1,20 12,20C10.9,20 10,19.1 10,18C10,16.9 10.9,16 12,16M12,10C13.1,10 14,10.9 14,12C14,13.1 13.1,14 12,14C10.9,14 10,13.1 10,12C10,10.9 10.9,10 12,10M12,4C13.1,4 14,4.9 14,6C14,7.1 13.1,8 12,8C10.9,8 10,7.1 10,6C10,4.9 10.9,4 12,4Z
 
+$mol_paragraph $mol_view
+	line_height 24
+	letter_width 7
+	width_limit +Infinity
+	row_width 0
+	sub / <= title
+
 $mol_dimmer $mol_paragraph
 	haystack \
 	needle \
@@ -460,9 +453,9 @@ $visavis_plot_cube $mol_view
 	heatmap? false
 	order* /number
 	order_current? \nump
-	x_op? false
-	y_op? false
-	z_op? false
+	x_op false
+	y_op false
+	z_op false
 	x_sort? \nump
 	y_sort? \nump
 	z_sort? \nump
@@ -719,13 +712,10 @@ $visavis_plot_phase $mol_book2
 
 $visavis_plot_bar $visavis_plotly
 	plot_raw $visavis_plot_raw
-	bar_click? null
 
 $visavis_plot_discovery $mol_view
 	plot_raw $visavis_plot_raw
-	elementals_on? /
 	show_setup true
-	discovery_click? null
 	sub /
 		<= Plot $visavis_plotly
 			data <= data *
@@ -744,7 +734,6 @@ $visavis_plot_eigen $visavis_plotly
 
 $visavis_plot_pie $visavis_plotly
 	plot_raw $visavis_plot_raw
-	pie_click? null
 	colorset /
 		\#3e3f95
 		\#c00
@@ -771,8 +760,6 @@ $visavis_plot_graph $mol_view
 	sub /
 		<= Root $mol_view
 			render <= draw null
-	graph_rel? \
-	graph_click? null
 
 $visavis_plot $mol_ghost
 	plot_raw $visavis_plot_raw
@@ -806,48 +793,19 @@ $visavis_plot $mol_ghost
 
 $visavis_app $mol_book2
 	attr * mol_theme \$mol_theme_light
-	title \Vis-a-vis
-	Placeholder null
 	pages /
-		<= Drop_area $mol_drop
-			receive? <=> drop_file? null
-			Sub <= Drop_area_content $mol_list
-				rows /
-					<= Upload_content $mol_list
-						sub /
-							<= Upload_label_choose $mol_paragraph
-								title \Choose a plot file in JSON format
-							<= Upload_label_drop $mol_paragraph
-								title \(drag and drop is supported)
-							<= Drop_area_upload $mol_button_open
-								accept \application/json
-								files? <=> files_read? null
-					<= Examples_open $mol_link
-						title \Or go to examples
-						arg * section \examples
 		<= Menu $mol_page
+			title \Vis-a-vis
 			tools /
-				<= History_link $mol_link
-					title @ \Uploads
-					arg * section null
-				<= Examples_link $mol_link
-					title @ \Examples
-					arg * section \examples
-			body <= menu_body /
-				<= History $mol_list
-					title @ \Uploads
-					sub /
-						<= History_drop_area $mol_drop
-							receive? <=> drop_file?
-							Sub <= History_upload $mol_button_minor
-								sub /
-									<= History_upload_label $mol_paragraph
-										title \Add new (choose a plot file in JSON format)
-									<= History_upload_icon $mol_icon_upload
-									<= History_upload_native $mol_button_open_native
-										accept \application/json
-										files? <=> files_read? null
-						<= History_rows $mol_list
+				<= Upload $mol_button_open
+					hint @ \Upload a plot from MPDS in JSON
+					accept \application/json
+					files? <=> files_read? null
+			body /
+				<= Deck $mol_deck
+					items /
+						<= History $mol_list
+							title @ \Uploads
 							rows <= history_rows /
 								<= History_plot*0 $mol_view sub /
 									<= Plot_link* $mol_link
@@ -856,12 +814,12 @@ $visavis_app $mol_book2
 									<= Plot_drop* $mol_button_minor
 										click? <=> history_drop*? null
 										sub / <= Plot_drop_icon* $mol_icon_delete
-				<= Examples $mol_list
-					title @ \Examples
-					rows <= example_rows /
-						<= Example*0 $mol_link
-							arg * file <= example_title* \
-							title <= example_title*
+						<= Examples $mol_list
+							title @ \Examples
+							rows <= example_rows /
+								<= Example*0 $mol_link
+									arg * file <= example_title* \
+									title <= example_title*
 			foot /
 				<= Source $mol_link_source
 					uri \https://github.com/mpds-io/visavis

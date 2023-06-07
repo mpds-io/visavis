@@ -1018,29 +1018,6 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $mol_paragraph extends $mol_view {
-        line_height(): number;
-        letter_width(): number;
-        width_limit(): number;
-        row_width(): number;
-        sub(): readonly any[];
-    }
-}
-
-declare namespace $.$$ {
-    class $mol_paragraph extends $.$mol_paragraph {
-        maximal_width(): number;
-        width_limit(): number;
-        minimal_width(): number;
-        row_width(): number;
-        minimal_height(): number;
-    }
-}
-
-declare namespace $ {
-}
-
-declare namespace $ {
     class $mol_speck extends $mol_view {
         attr(): Record<string, any>;
         style(): Record<string, any>;
@@ -1321,153 +1298,6 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $mol_list extends $mol_view {
-        render_visible_only(): boolean;
-        render_over(): number;
-        sub(): readonly $mol_view[];
-        Empty(): $mol_view;
-        Gap_before(): $mol_view;
-        Gap_after(): $mol_view;
-        view_window(): readonly any[];
-        rows(): readonly $mol_view[];
-        gap_before(): number;
-        gap_after(): number;
-    }
-}
-
-declare namespace $ {
-    function $mol_support_css_overflow_anchor(this: $): boolean;
-}
-
-declare namespace $.$$ {
-    class $mol_list extends $.$mol_list {
-        sub(): readonly $mol_view[];
-        render_visible_only(): boolean;
-        view_window(next?: [number, number]): [number, number];
-        gap_before(): number;
-        gap_after(): number;
-        sub_visible(): $mol_view[];
-        minimal_height(): number;
-        force_render(path: Set<$mol_view>): void;
-    }
-}
-
-declare namespace $ {
-}
-
-declare namespace $ {
-    class $mol_link extends $mol_view {
-        uri(): string;
-        dom_name(): string;
-        attr(): Record<string, any>;
-        sub(): readonly $mol_view_content[];
-        arg(): Record<string, any>;
-        event(): Record<string, any>;
-        uri_toggle(): string;
-        hint(): string;
-        hint_safe(): string;
-        target(): string;
-        file_name(): string;
-        current(): boolean;
-        event_click(event?: any): any;
-        click(event?: any): any;
-    }
-}
-
-declare namespace $ {
-    let $mol_action: typeof $mol_wire_method;
-}
-
-declare namespace $ {
-    class $mol_state_arg extends $mol_object {
-        prefix: string;
-        static prolog: string;
-        static separator: string;
-        static href(next?: string): string;
-        static href_normal(): string;
-        static dict(next?: {
-            [key: string]: string | null;
-        }): Readonly<{
-            [key: string]: string;
-        }>;
-        static value(key: string, next?: string | null): string | null;
-        static link(next: Record<string, string | null>): string;
-        static make_link(next: Record<string, string | null>): string;
-        static go(next: {
-            [key: string]: string | null;
-        }): void;
-        constructor(prefix?: string);
-        value(key: string, next?: string): string | null;
-        sub(postfix: string): $mol_state_arg;
-        link(next: Record<string, string | null>): string;
-    }
-}
-
-declare namespace $.$$ {
-    class $mol_link extends $.$mol_link {
-        uri_toggle(): string;
-        uri(): string;
-        uri_off(): string;
-        uri_native(): URL;
-        current(): boolean;
-        file_name(): string;
-        minimal_height(): number;
-        external(): boolean;
-        target(): '_self' | '_blank' | '_top' | '_parent' | string;
-        hint_safe(): string;
-    }
-}
-
-declare namespace $ {
-}
-
-declare namespace $ {
-    class $mol_ghost extends $mol_view {
-        Sub(): $mol_view;
-    }
-}
-
-declare namespace $.$$ {
-    class $mol_ghost extends $.$mol_ghost {
-        dom_node(next?: Element): Element;
-        dom_node_actual(): Element;
-        dom_tree(): Element;
-        title(): string;
-        minimal_width(): number;
-        minimal_height(): number;
-    }
-}
-
-declare namespace $ {
-    class $mol_drop extends $mol_ghost {
-        enabled(next?: any): boolean;
-        event(): Record<string, any>;
-        attr(): Record<string, any>;
-        adopt(transfer?: any): Record<string, any>;
-        receive(transfer?: any): any;
-        allow(): readonly any[];
-        enter(event?: any): any;
-        move(event?: any): any;
-        leave(event?: any): any;
-        drop(event?: any): any;
-        status(val?: any): string;
-    }
-}
-
-declare namespace $.$$ {
-    class $mol_drop extends $.$mol_drop {
-        status(next?: "ready" | "drag"): "ready" | "drag";
-        protected _target: EventTarget | null;
-        enter(event: DragEvent): void;
-        move(event: DragEvent): void;
-        decide_action(event: DragEvent): any;
-        leave(event: DragEvent): void;
-        receive(transfer: unknown): unknown;
-        drop(event: DragEvent): void;
-    }
-}
-
-declare namespace $ {
     class $mol_state_local<Value> extends $mol_object {
         static 'native()': Pick<Storage, 'getItem' | 'setItem' | 'removeItem'>;
         static native(): Storage | {
@@ -1559,6 +1389,10 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    let $mol_action: typeof $mol_wire_method;
+}
+
+declare namespace $ {
     function $mol_dom_parse(text: string, type?: DOMParserSupportedType): Document;
 }
 
@@ -1622,52 +1456,106 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    class $mol_link extends $mol_view {
+        uri(): string;
+        dom_name(): string;
+        attr(): Record<string, any>;
+        sub(): readonly $mol_view_content[];
+        arg(): Record<string, any>;
+        event(): Record<string, any>;
+        uri_toggle(): string;
+        hint(): string;
+        hint_safe(): string;
+        target(): string;
+        file_name(): string;
+        current(): boolean;
+        event_click(event?: any): any;
+        click(event?: any): any;
+    }
+}
+
+declare namespace $ {
+    class $mol_state_arg extends $mol_object {
+        prefix: string;
+        static prolog: string;
+        static separator: string;
+        static href(next?: string): string;
+        static href_normal(): string;
+        static dict(next?: {
+            [key: string]: string | null;
+        }): Readonly<{
+            [key: string]: string;
+        }>;
+        static value(key: string, next?: string | null): string | null;
+        static link(next: Record<string, string | null>): string;
+        static make_link(next: Record<string, string | null>): string;
+        static go(next: {
+            [key: string]: string | null;
+        }): void;
+        constructor(prefix?: string);
+        value(key: string, next?: string): string | null;
+        sub(postfix: string): $mol_state_arg;
+        link(next: Record<string, string | null>): string;
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_link extends $.$mol_link {
+        uri_toggle(): string;
+        uri(): string;
+        uri_off(): string;
+        uri_native(): URL;
+        current(): boolean;
+        file_name(): string;
+        minimal_height(): number;
+        external(): boolean;
+        target(): '_self' | '_blank' | '_top' | '_parent' | string;
+        hint_safe(): string;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
     class $mol_icon_delete extends $mol_icon {
         path(): string;
     }
 }
 
 declare namespace $ {
-    class $mol_icon_github_circle extends $mol_icon {
-        path(): string;
+    class $mol_list extends $mol_view {
+        render_visible_only(): boolean;
+        render_over(): number;
+        sub(): readonly $mol_view[];
+        Empty(): $mol_view;
+        Gap_before(): $mol_view;
+        Gap_after(): $mol_view;
+        view_window(): readonly any[];
+        rows(): readonly $mol_view[];
+        gap_before(): number;
+        gap_after(): number;
     }
 }
 
 declare namespace $ {
-    class $mol_link_source extends $mol_link {
-        hint(): string;
-        sub(): readonly any[];
-        Icon(): $mol_icon_github_circle;
+    function $mol_support_css_overflow_anchor(this: $): boolean;
+}
+
+declare namespace $.$$ {
+    class $mol_list extends $.$mol_list {
+        sub(): readonly $mol_view[];
+        render_visible_only(): boolean;
+        view_window(next?: [number, number]): [number, number];
+        gap_before(): number;
+        gap_after(): number;
+        sub_visible(): $mol_view[];
+        minimal_height(): number;
+        force_render(path: Set<$mol_view>): void;
     }
 }
 
 declare namespace $ {
-    class $mol_store<Data> extends $mol_object2 {
-        data_default?: Data | undefined;
-        constructor(data_default?: Data | undefined);
-        data(next?: Data): NonNullable<Data> | (Data & null);
-        snapshot(next?: string): string;
-        value<Key extends keyof Data>(key: Key, next?: Data[Key]): Data[Key] & {};
-        selection<Key extends keyof Data>(key: Key, next?: number[]): number[];
-        sub<Key extends keyof Data, Lens extends $mol_store<Data[Key]> = $mol_store<NonNullable<Data[Key]>>>(key: Key, lens?: Lens): Lens;
-        reset(): void;
-        active(): boolean;
-    }
-}
-
-declare namespace $ {
-    interface Plot_raw {
-        id: string;
-        type: 'matrix' | 'plot3d' | 'pd' | 'bar' | 'discovery' | 'eigenplot' | 'pie' | 'scatter' | 'customscatter' | 'heatmap' | 'graph';
-        json: unknown;
-    }
-    export function $visavis_plot_raw_from_json(json: any, id?: string): $visavis_plot_raw;
-    export class $visavis_plot_raw extends $mol_store<Plot_raw> {
-        id(next?: string): string;
-        type(): "pd" | "scatter" | "bar" | "matrix" | "plot3d" | "discovery" | "eigenplot" | "pie" | "customscatter" | "heatmap" | "graph";
-        json(): {};
-    }
-    export {};
 }
 
 declare namespace $ {
@@ -1698,34 +1586,6 @@ declare namespace $.$$ {
         label(): readonly any[];
         aria_checked(): string;
     }
-}
-
-declare namespace $ {
-    class $mol_icon_tick extends $mol_icon {
-        path(): string;
-    }
-}
-
-declare namespace $ {
-    class $mol_check_box extends $mol_check {
-        Icon(): $mol_icon_tick;
-    }
-}
-
-declare namespace $ {
-}
-
-declare namespace $ {
-    class $mol_labeler extends $mol_list {
-        rows(): readonly any[];
-        label(): readonly $mol_view_content[];
-        Label(): $mol_view;
-        content(): readonly any[];
-        Content(): $mol_view;
-    }
-}
-
-declare namespace $ {
 }
 
 declare namespace $ {
@@ -1783,6 +1643,113 @@ declare namespace $.$$ {
         value(next?: any): any;
         option_checked(key: string, next?: boolean): boolean;
     }
+}
+
+declare namespace $ {
+    class $mol_deck extends $mol_list {
+        items(): readonly $mol_view[];
+        rows(): readonly $mol_view[];
+        current(val?: any): string;
+        switch_options(): Record<string, any>;
+        Switch(): $$.$mol_switch;
+        Content(): $mol_view;
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_deck extends $.$mol_deck {
+        current(next?: string): string;
+        switch_options(): Record<string, string>;
+        Content(): $mol_view;
+    }
+}
+
+declare namespace $ {
+    class $mol_icon_github_circle extends $mol_icon {
+        path(): string;
+    }
+}
+
+declare namespace $ {
+    class $mol_link_source extends $mol_link {
+        hint(): string;
+        sub(): readonly any[];
+        Icon(): $mol_icon_github_circle;
+    }
+}
+
+declare namespace $ {
+    class $mol_ghost extends $mol_view {
+        Sub(): $mol_view;
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_ghost extends $.$mol_ghost {
+        dom_node(next?: Element): Element;
+        dom_node_actual(): Element;
+        dom_tree(): Element;
+        title(): string;
+        minimal_width(): number;
+        minimal_height(): number;
+    }
+}
+
+declare namespace $ {
+    class $mol_store<Data> extends $mol_object2 {
+        data_default?: Data | undefined;
+        constructor(data_default?: Data | undefined);
+        data(next?: Data): NonNullable<Data> | (Data & null);
+        snapshot(next?: string): string;
+        value<Key extends keyof Data>(key: Key, next?: Data[Key]): Data[Key] & {};
+        selection<Key extends keyof Data>(key: Key, next?: number[]): number[];
+        sub<Key extends keyof Data, Lens extends $mol_store<Data[Key]> = $mol_store<NonNullable<Data[Key]>>>(key: Key, lens?: Lens): Lens;
+        reset(): void;
+        active(): boolean;
+    }
+}
+
+declare namespace $ {
+    interface Plot_raw {
+        id: string;
+        type: 'matrix' | 'plot3d' | 'pd' | 'bar' | 'discovery' | 'eigenplot' | 'pie' | 'scatter' | 'customscatter' | 'heatmap' | 'graph';
+        json: unknown;
+    }
+    export function $visavis_plot_raw_from_json(json: any, id?: string): $visavis_plot_raw;
+    export class $visavis_plot_raw extends $mol_store<Plot_raw> {
+        id(next?: string): string;
+        type(): "pd" | "scatter" | "bar" | "matrix" | "plot3d" | "discovery" | "eigenplot" | "pie" | "customscatter" | "heatmap" | "graph";
+        json(): {};
+    }
+    export {};
+}
+
+declare namespace $ {
+    class $mol_icon_tick extends $mol_icon {
+        path(): string;
+    }
+}
+
+declare namespace $ {
+    class $mol_check_box extends $mol_check {
+        Icon(): $mol_icon_tick;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $mol_labeler extends $mol_list {
+        rows(): readonly any[];
+        label(): readonly $mol_view_content[];
+        Label(): $mol_view;
+        content(): readonly any[];
+        Content(): $mol_view;
+    }
+}
+
+declare namespace $ {
 }
 
 declare namespace $ {
@@ -2470,6 +2437,29 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    class $mol_paragraph extends $mol_view {
+        line_height(): number;
+        letter_width(): number;
+        width_limit(): number;
+        row_width(): number;
+        sub(): readonly any[];
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_paragraph extends $.$mol_paragraph {
+        maximal_width(): number;
+        width_limit(): number;
+        minimal_width(): number;
+        row_width(): number;
+        minimal_height(): number;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
     class $mol_dimmer extends $mol_paragraph {
         haystack(): string;
         needle(): string;
@@ -2671,9 +2661,9 @@ declare namespace $ {
         heatmap(next?: any): boolean;
         order(id: any): readonly number[];
         order_current(next?: any): string;
-        x_op(next?: any): boolean;
-        y_op(next?: any): boolean;
-        z_op(next?: any): boolean;
+        x_op(): boolean;
+        y_op(): boolean;
+        z_op(): boolean;
         x_sort(next?: any): string;
         y_sort(next?: any): string;
         z_sort(next?: any): string;
@@ -3100,7 +3090,6 @@ declare namespace $.$$ {
 declare namespace $ {
     class $visavis_plot_bar extends $visavis_plotly {
         plot_raw(): $visavis_plot_raw;
-        bar_click(next?: any): any;
     }
 }
 
@@ -3350,9 +3339,7 @@ declare namespace $.$$ {
 declare namespace $ {
     class $visavis_plot_discovery extends $mol_view {
         plot_raw(): $visavis_plot_raw;
-        elementals_on(next?: any): readonly any[];
         show_setup(): boolean;
-        discovery_click(next?: any): any;
         sub(): readonly any[];
         data(): Record<string, any>;
         layout(): Record<string, any>;
@@ -3364,9 +3351,6 @@ declare namespace $ {
         Elementals(): $mol_labeler;
         Setup(): $mol_view;
     }
-}
-
-declare namespace $ {
 }
 
 declare namespace $.$$ {
@@ -3478,7 +3462,7 @@ declare namespace $.$$ {
                 };
             })[];
         };
-        elementals_on(next?: any): ("num" | "nump" | "size" | "rea" | "rpp" | "rion" | "rcov" | "rmet" | "tmelt" | "eneg")[];
+        elementals_on(): ("num" | "nump" | "size" | "rea" | "rpp" | "rion" | "rcov" | "rmet" | "tmelt" | "eneg")[];
         elemental_checked(id: any, next?: any): boolean;
         data(): {
             x: any;
@@ -4603,7 +4587,6 @@ declare namespace $.$$ {
 declare namespace $ {
     class $visavis_plot_pie extends $visavis_plotly {
         plot_raw(): $visavis_plot_raw;
-        pie_click(next?: any): any;
         colorset(): readonly any[];
     }
 }
@@ -4727,9 +4710,6 @@ declare namespace $.$$ {
         tot_count(): number;
         data(): any[];
     }
-}
-
-declare namespace $ {
 }
 
 declare namespace $ {
@@ -5758,8 +5738,6 @@ declare namespace $ {
     class $visavis_plot_graph extends $mol_view {
         plot_raw(): $visavis_plot_raw;
         sub(): readonly any[];
-        graph_rel(next?: any): string;
-        graph_click(next?: any): any;
         draw(): any;
         Root(): $mol_view;
     }
@@ -5920,26 +5898,10 @@ declare namespace $.$$ {
 declare namespace $ {
     class $visavis_app extends $mol_book2 {
         attr(): Record<string, any>;
-        title(): string;
-        Placeholder(): any;
         pages(): readonly any[];
         Plot_page(id: any): $mol_page;
-        drop_file(next?: any): any;
-        Upload_label_choose(): $$.$mol_paragraph;
-        Upload_label_drop(): $$.$mol_paragraph;
         files_read(next?: any): any;
-        Drop_area_upload(): $mol_button_open;
-        Upload_content(): $$.$mol_list;
-        Examples_open(): $$.$mol_link;
-        Drop_area_content(): $$.$mol_list;
-        Drop_area(): $$.$mol_drop;
-        History_link(): $$.$mol_link;
-        Examples_link(): $$.$mol_link;
-        History_upload_label(): $$.$mol_paragraph;
-        History_upload_icon(): $mol_icon_upload;
-        History_upload_native(): $$.$mol_button_open_native;
-        History_upload(): $mol_button_minor;
-        History_drop_area(): $$.$mol_drop;
+        Upload(): $mol_button_open;
         plot_id(id: any): string;
         Plot_link(id: any): $$.$mol_link;
         history_drop(id: any, next?: any): any;
@@ -5947,13 +5909,12 @@ declare namespace $ {
         Plot_drop(id: any): $mol_button_minor;
         History_plot(id: any): $mol_view;
         history_rows(): readonly any[];
-        History_rows(): $$.$mol_list;
         History(): $$.$mol_list;
         example_title(id: any): string;
         Example(id: any): $$.$mol_link;
         example_rows(): readonly any[];
         Examples(): $$.$mol_list;
-        menu_body(): readonly any[];
+        Deck(): $$.$mol_deck;
         Source(): $mol_link_source;
         Menu(): $mol_page;
         history_plot_raw(id: any): any;
@@ -5980,8 +5941,7 @@ declare namespace $ {
 declare namespace $.$$ {
     class $visavis_app extends $.$visavis_app {
         files_read(next: readonly File[]): void;
-        drop_file(transfer: any): void;
-        history_add(plot_raw: $visavis_plot_raw): string;
+        history_add(plot_raw: $visavis_plot_raw): void;
         history_drop(id: string): void;
         history_plot_ids(next?: string[]): string[];
         history_plot_raw(id: string, next?: $visavis_plot_raw | null): $visavis_plot_raw | null;
@@ -5989,8 +5949,8 @@ declare namespace $.$$ {
         plot_id(id: string): string;
         plot_opened_id(next?: string | null): string;
         Plot_opened(): $mol_page[];
-        pages(): $mol_drop[] | $mol_page[];
-        menu_body(): $mol_list[];
+        pages(): $mol_page[];
+        Placeholder(): any;
     }
 }
 
