@@ -226,15 +226,18 @@ namespace $.$$ {
 		draw() {
 			if (Number.isNaN( this.size() )) return
 
-			const svg = $visavis_lib.d3().select('[visavis_plot_matrix_root]')
-				.attr('width', this.size() + this.axis_width())
+			const d3 = $visavis_lib.d3()
+
+			const svg_element = $mol_wire_sync( document ).createElementNS( 'http://www.w3.org/2000/svg', 'svg' )
+			const svg = d3.select(svg_element)
+
+			svg.attr('width', this.size() + this.axis_width())
 				.attr('height', this.size() + this.axis_width())
 				// .style('font-size', this.range().bandwidth()) // for new d3 version
 				.style('font-size', this.range().rangeBand())
 				.style('letter-spacing', '1px')
 			
-			const group = svg
-				[ svg.select('g').empty() ? 'append' : 'select' ]('g')
+			const group = svg[ svg.select('g').empty() ? 'append' : 'select' ]('g')
 				.attr('transform', `translate(${this.axis_width()},${this.axis_width()})`)
 
 			group.html("<defs><pattern id='nonformer' patternUnits='userSpaceOnUse' width='4' height='4'><path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' style='stroke:#ddd;stroke-width:1' /></pattern></defs>")
@@ -282,6 +285,8 @@ namespace $.$$ {
 				.attr('dy', '.32em')
 				.attr('text-anchor', 'start')
 				.text((d: any, i: any) => this.nodes()[i].name);
+
+			this.Root().dom_node_actual().replaceChildren( svg_element )
 		}
 
 	}
