@@ -49,33 +49,33 @@ $visavis_plot_cube $mol_view
 		<= Setup $mol_view
 			sub /
 				<= Nonformers_label $mol_labeler
-					title @ \Non-formers
+					title \Non-formers
 					Content <= Nonformers $mol_check_box
-						hint @ \Continuous solid solutions and complete insolubility systems
-						title @ \Show
+						hint \Continuous solid solutions and complete insolubility systems
+						title \Show
 						checked? <=> nonformers? false
 				<= X_order_label $mol_labeler
-					title @ \X sort by
+					title \X sort by
 					Content <= X_order_select $mol_select
 						value? <=> x_sort? 
 						dictionary <= order_dict *
-							nump @ \Periodic number
-							num @ \Atomic number
-							size @ \Atomic size
-							rea @ \Atomic reactivity
-							rpp @ \Pseudopotential radii
-							rion @ \Ionic radii
-							rcov @ \Covalent radii
-							rmet @ \Metallic radii
-							tmelt @ \Melting temperature
-							eneg @ \Electronegativity
+							nump \Periodic number
+							num \Atomic number
+							size \Atomic size
+							rea \Atomic reactivity
+							rpp \Pseudopotential radii
+							rion \Ionic radii
+							rcov \Covalent radii
+							rmet \Metallic radii
+							tmelt \Melting temperature
+							eneg \Electronegativity
 				<= Y_order_label $mol_labeler
-					title @ \Y sort by
+					title \Y sort by
 					Content <= Y_order_select $mol_select
 						value? <=> y_sort? 
 						dictionary <= order_dict
 				<= Z_order_label $mol_labeler
-					title @ \Z sort by
+					title \Z sort by
 					Content <= Z_order_select $mol_select
 						value? <=> z_sort? 
 						dictionary <= order_dict

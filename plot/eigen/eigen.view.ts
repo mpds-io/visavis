@@ -175,7 +175,7 @@ namespace $.$$ {
 					ticklen: 4,
 					title: y_title
 				},
-				font: {family: "Exo2", size: 13}
+				font: {size: 13}
 			}
 		}
 

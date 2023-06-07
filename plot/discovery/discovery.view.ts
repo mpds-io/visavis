@@ -130,7 +130,7 @@ namespace $.$$ {
 				const node = event.target as HTMLElement
 				if (node.getAttribute('class') != 'point') return false;
 				
-				node.classList.add('clicked')
+				node.classList.add('visited')
 
 				const point = d3.select(node)
 				const label = point.data()[0].tx
@@ -178,7 +178,7 @@ namespace $.$$ {
 						text: '<i>Second Principal Component (a<sub>1</sub>x + b<sub>1</sub>y + c<sub>1</sub>z + ...)</i>', 
 						showarrow: false, 
 						bgcolor: '#fff', 
-						font: { family: "Exo2", size: 14 } 
+						font: { size: 14 } 
 					},
 					{ 
 						x: 0.97, 
@@ -191,7 +191,7 @@ namespace $.$$ {
 						showarrow: false, 
 						bgcolor: '#fff', 
 						textangle: 270, 
-						font: { family: "Exo2", size: 14 } 
+						font: { size: 14 } 
 					}
 				]
 			}

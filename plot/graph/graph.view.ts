@@ -60,7 +60,7 @@ namespace $.$$ {
 			// filter edges and compute the distinct nodes from the links
 			visavis_cache.ref.forEach( (link) => {
 				if (link.type == graph_rel){
-					foci[link.source] = link.source.substr(0, 1); // setting default color
+					foci[link.source] = link.source.slice(0, 1); // setting default color
 					const sourceNode = nodes[link.source] || (nodes[link.source] = {name: link.source});
 					const targetNode = nodes[link.target] || (nodes[link.target] = {name: String(link.target)});
 					const lrep = { source: sourceNode, type: link.type, target: targetNode };
@@ -72,7 +72,6 @@ namespace $.$$ {
 		
 				} else if (link.type == 'radius'){
 					const radius = Math.min($mol_data_number(link.target as number), 36)
-					// link.target = radius;
 					radii[link.source] = radius + 2;
 				}
 			});
@@ -92,17 +91,8 @@ namespace $.$$ {
 
 		@ $mol_mem
 		draw() {
-			// const predefined_h;
-			// if (window.location.hash.indexOf('visavis_height=') !== -1){
-			// 	// internal client-only URL param (to be ignored by the server)
-			// 	predefined_h = window.location.hash.split('visavis_height=');
-			// 	predefined_h = predefined_h[predefined_h.length - 1];
-			// 	predefined_h = parseInt(predefined_h.split('&')[0]);
-			// }
 			// var width = predefined_h ? document.body.clientWidth : document.body.clientWidth - 15,
 			// 	height = predefined_h || parseInt(0.8 * width);
-		
-			// reset_canvas();
 		
 			const { nodes, edges, labels, radii, foci, table, circle_cls, text_cls } = this.data()
 			
@@ -110,11 +100,8 @@ namespace $.$$ {
 
 			const svg_element = $mol_wire_sync( document ).createElementNS( 'http://www.w3.org/2000/svg', 'svg' )
 			const svg = d3.select(svg_element)
-				// .attr("width", width)
-				// .attr("height", height);
 		
 			const visavis_force = d3.layout.force()
-				// .size([width, height])
 				.nodes(d3.values(nodes))
 				.links(edges)
 				.linkDistance(90)

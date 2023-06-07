@@ -179,7 +179,6 @@ namespace $.$$ {
 		@ $mol_mem
 		layout() {
 			return {
-				font: {family: "Exo2"},
 				showlegend: false,
 				scene: this.scene() as any,
 				margin: {

@@ -18,10 +18,10 @@ namespace $.$$ {
 			const promise = $lib_plotly.all().react(
 				plotly_root,
 				this.data(), 
-				{ ...this.layout(), width, height },
+				{ ...this.layout(), width, height, font: { family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" } },
 				this.plot_options(),
 			)
-				
+			
 			const dom_node = this.dom_node_actual() as HTMLElement
 			promise.then( ( plotly_root: HTMLElement )=> {
 				dom_node.replaceChildren( plotly_root )

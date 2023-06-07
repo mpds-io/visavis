@@ -29,7 +29,6 @@ $visavis_plot_phase $mol_book2
 			font *
 				size 20
 				color \#333
-				family \Exo2
 			ternary *
 				aaxis *
 					title <= json_title_a \
@@ -69,7 +68,6 @@ $visavis_plot_phase $mol_book2
 			yref \papper
 			font *
 				size 15
-				family \Exo2
 	rectangle *
 		datamock /
 			*
@@ -89,7 +87,6 @@ $visavis_plot_phase $mol_book2
 			font *
 				size 16
 				color \#333
-				family \Exo2
 			xaxis *
 				title \at. %
 				range <= json_comp_range /
@@ -148,7 +145,6 @@ $visavis_plot_phase $mol_book2
 			yref \papper
 			font *
 				size 20
-				family \Exo2
 		*
 			text <= json_title_b
 			x 1.03
@@ -158,12 +154,10 @@ $visavis_plot_phase $mol_book2
 			yref \papper
 			font *
 				size 20
-				family \Exo2
 	annotation *
 		show_arrow false
 		font *
 			size 13
-			family \Exo2
 	annotation_textangle* 0
 	plot_options *
 		displaylogo false

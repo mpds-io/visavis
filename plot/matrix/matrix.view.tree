@@ -46,24 +46,26 @@ $visavis_plot_matrix $mol_view
 								<= Heatmap_max $mol_view sub / <= links_value_max
 		<= Setup $mol_view
 			sub /
-				<= Nonformers_label $mol_labeler
-					title @ \Non-formers
-					Content <= Nonformers $mol_check_box
-						hint @ \Continuous solid solutions and complete insolubility systems
-						title @ \Show
-						checked? <=> nonformers? false
+				<= Project2d $mol_check_box
+					hint \Continuous solid solutions and complete insolubility systems
+					title \Project on 2d
+					checked? <=> project2d? false
+				<= Nonformers $mol_check_box
+					hint \Continuous solid solutions and complete insolubility systems
+					title \Show non-formers
+					checked? <=> nonformers? false
 				<= Order_label $mol_labeler
-					title @ \Sort by
+					title \Sort by
 					Content <= Order_switch $mol_switch
 						value? <=> order_current?
 						options <= order_dict *
-							nump @ \Periodic number
-							num @ \Atomic number
-							size @ \Atomic size
-							rea @ \Atomic reactivity
-							rpp @ \Pseudopotential radii
-							rion @ \Ionic radii
-							rcov @ \Covalent radii
-							rmet @ \Metallic radii
-							tmelt @ \Melting temperature
-							eneg @ \Electronegativity
+							nump \Periodic number
+							num \Atomic number
+							size \Atomic size
+							rea \Atomic reactivity
+							rpp \Pseudopotential radii
+							rion \Ionic radii
+							rcov \Covalent radii
+							rmet \Metallic radii
+							tmelt \Melting temperature
+							eneg \Electronegativity

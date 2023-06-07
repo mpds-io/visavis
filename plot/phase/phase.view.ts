@@ -77,7 +77,7 @@ namespace $.$$ {
 			}
 		} )
 
-		return formula.substr( 0, formula.length - 2 )
+		return formula.slice( 0, formula.length - 2 )
 	}
 
 	function get_tri_pd_compound( a: any, b: any, c: any, obj_a: any, obj_b: any, obj_c: any ) {
@@ -91,7 +91,7 @@ namespace $.$$ {
 			formula += el + ' &times; ' + coeff.toFixed( 2 ) + ', '
 		} )
 
-		return formula.substr( 0, formula.length - 2 )
+		return formula.slice( 0, formula.length - 2 )
 	}
 
 	export function inside_triangle( x: number, y: number, x1: number, y1: number, x2: number, y2: number, x3: number, y3: number ) {
