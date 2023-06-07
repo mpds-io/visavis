@@ -5931,11 +5931,11 @@ declare namespace $ {
         Upload_label_choose(): $$.$mol_paragraph;
         Upload_label_drop(): $$.$mol_paragraph;
         files_read(next?: any): any;
-        Drop_area_upload(): $mol_button_open;
+        Start_page_upload(): $mol_button_open;
         Upload_content(): $$.$mol_list;
         Examples_open(): $$.$mol_link;
-        Drop_area_content(): $$.$mol_list;
-        Drop_area(): $$.$mol_drop;
+        Start_page_content(): $$.$mol_list;
+        Start_page(): $$.$mol_drop;
         History_link(): $$.$mol_link;
         Examples_link(): $$.$mol_link;
         History_upload_label(): $$.$mol_paragraph;
@@ -5958,6 +5958,7 @@ declare namespace $ {
         menu_body(): readonly any[];
         Source(): $mol_link_source;
         Menu(): $mol_page;
+        Plot_opened(): any;
         plot_raw(id: any): any;
         Plot_view(id: any): $$.$visavis_plot;
     }
@@ -5991,8 +5992,9 @@ declare namespace $.$$ {
         example_rows(): $mol_link[];
         plot_id(id: string): string;
         plot_opened_id(next?: string | null): string;
-        Plot_opened(): $mol_page[];
-        pages(): $mol_drop[] | $mol_page[];
+        Plot_opened(): $mol_page | null;
+        Start_page_showed(): boolean;
+        pages(): ($mol_drop | $mol_page | null)[];
         menu_body(): $mol_list[];
         menu_section(): string | null;
     }

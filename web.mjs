@@ -11797,8 +11797,9 @@ var $;
         }
         pages() {
             return [
-                this.Drop_area(),
-                this.Menu()
+                this.Start_page(),
+                this.Menu(),
+                this.Plot_opened()
             ];
         }
         Plot_page(id) {
@@ -11829,7 +11830,7 @@ var $;
                 return next;
             return null;
         }
-        Drop_area_upload() {
+        Start_page_upload() {
             const obj = new this.$.$mol_button_open();
             obj.accept = () => "application/json";
             obj.files = (next) => this.files_read(next);
@@ -11840,7 +11841,7 @@ var $;
             obj.sub = () => [
                 this.Upload_label_choose(),
                 this.Upload_label_drop(),
-                this.Drop_area_upload()
+                this.Start_page_upload()
             ];
             return obj;
         }
@@ -11852,7 +11853,7 @@ var $;
             });
             return obj;
         }
-        Drop_area_content() {
+        Start_page_content() {
             const obj = new this.$.$mol_list();
             obj.rows = () => [
                 this.Upload_content(),
@@ -11860,10 +11861,10 @@ var $;
             ];
             return obj;
         }
-        Drop_area() {
+        Start_page() {
             const obj = new this.$.$mol_drop();
             obj.receive = (next) => this.drop_file(next);
-            obj.Sub = () => this.Drop_area_content();
+            obj.Sub = () => this.Start_page_content();
             return obj;
         }
         History_link() {
@@ -12005,6 +12006,9 @@ var $;
             ];
             return obj;
         }
+        Plot_opened() {
+            return null;
+        }
         plot_raw(id) {
             return null;
         }
@@ -12031,7 +12035,7 @@ var $;
     ], $visavis_app.prototype, "files_read", null);
     __decorate([
         $mol_mem
-    ], $visavis_app.prototype, "Drop_area_upload", null);
+    ], $visavis_app.prototype, "Start_page_upload", null);
     __decorate([
         $mol_mem
     ], $visavis_app.prototype, "Upload_content", null);
@@ -12040,10 +12044,10 @@ var $;
     ], $visavis_app.prototype, "Examples_open", null);
     __decorate([
         $mol_mem
-    ], $visavis_app.prototype, "Drop_area_content", null);
+    ], $visavis_app.prototype, "Start_page_content", null);
     __decorate([
         $mol_mem
-    ], $visavis_app.prototype, "Drop_area", null);
+    ], $visavis_app.prototype, "Start_page", null);
     __decorate([
         $mol_mem
     ], $visavis_app.prototype, "History_link", null);
@@ -12190,17 +12194,20 @@ var $;
             }
             Plot_opened() {
                 const id = this.plot_opened_id();
-                if (!id)
-                    return [];
-                return [this.Plot_page(id)];
+                if (!id || this.Start_page_showed())
+                    return null;
+                return this.Plot_page(id);
+            }
+            Start_page_showed() {
+                return !this.$.$mol_state_arg.value('section') && this.history_plot_ids().length == 0;
             }
             pages() {
-                if (!this.$.$mol_state_arg.value('section') && this.history_plot_ids().length == 0) {
-                    return [this.Drop_area()];
-                }
                 return [
-                    this.Menu(),
-                    ...this.Plot_opened(),
+                    ...[this.Start_page_showed() ?
+                            this.Start_page() :
+                            this.Menu()
+                    ],
+                    this.Plot_opened(),
                 ];
             }
             menu_body() {
@@ -12241,6 +12248,18 @@ var $;
         ], $visavis_app.prototype, "example_rows", null);
         __decorate([
             $mol_mem
+        ], $visavis_app.prototype, "plot_opened_id", null);
+        __decorate([
+            $mol_mem
+        ], $visavis_app.prototype, "Plot_opened", null);
+        __decorate([
+            $mol_mem
+        ], $visavis_app.prototype, "Start_page_showed", null);
+        __decorate([
+            $mol_mem
+        ], $visavis_app.prototype, "pages", null);
+        __decorate([
+            $mol_mem
         ], $visavis_app.prototype, "menu_body", null);
         __decorate([
             $mol_mem
@@ -12256,7 +12275,7 @@ var $;
     var $$;
     (function ($$) {
         $mol_style_define($.$visavis_app, {
-            Drop_area: {
+            Start_page: {
                 '@': {
                     mol_drop_status: {
                         drag: {
@@ -12280,7 +12299,7 @@ var $;
             Upload_label_drop: {
                 color: $mol_theme.shade,
             },
-            Drop_area_upload: {
+            Start_page_upload: {
                 background: {
                     color: $mol_theme.card,
                 },
