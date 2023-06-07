@@ -78,7 +78,7 @@ namespace $.$$ {
 			});
 			if (!counter) return $mol_fail( new $mol_data_error('Warning: nothing to show') )
 		
-			const circle_cls = graph_rel.substr(0, 1)
+			const circle_cls = graph_rel.slice(0, 1)
 			const text_cls = (counter > 25) ? "micro" : "macro"
 			
 			const table: Record<string, number> = {}

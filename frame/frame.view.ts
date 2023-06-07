@@ -13,17 +13,13 @@ namespace $.$$ {
 			return $visavis_plot_raw_from_json( json )
 		}
 
-		auto() {
-			return this.message_listener()
-		}
-
-
 		@ $mol_action
 		post_message( name: string, args: any ) {
-			window.parent.postMessage({
-				name,
-				args,
-			}, '*')
+			window.parent.postMessage({ name, args }, '*')
+		}
+
+		auto() {
+			return this.message_listener()
 		}
 
 		@ $mol_mem

@@ -56,7 +56,7 @@ namespace $.$$ {
 				const trace = d3.select(this.parentNode.parentNode).data()[0][0].trace
 
 				let value = slice.text.split('<br')[0];
-				if (value.indexOf('other ') > -1) return;
+				if (value.includes('other ')) return
 				
 				const name = trace.name
 				
