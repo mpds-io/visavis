@@ -8,7 +8,12 @@ namespace $.$$ {
 
 			const plot_raw = $visavis_plot_raw_from_json( data, next[0].name )
 
-			this.history_add( plot_raw )
+			this.plot_opened_id( this.history_add( plot_raw ) )
+		}
+
+		@ $mol_action
+		drop_file(transfer: any) {
+			this.files_read( transfer.files )
 		}
 
 		@ $mol_action
@@ -19,30 +24,47 @@ namespace $.$$ {
 
 			plot_raw.id( `${ plot_raw.id() }${ postfix }` )
 
-			this.history_plot_raw( plot_raw.id(), plot_raw )
+			this.plot_raw( plot_raw.id(), plot_raw )
 			this.history_plot_ids( [ plot_raw.id(), ...this.history_plot_ids() ] )
+
+			return plot_raw.id()
 		}
 
 		@ $mol_action
 		history_drop(id: string) {
-			this.history_plot_raw(id, null)
+			this.plot_opened_id( null )
+			this.plot_raw( id, null )
 			this.history_plot_ids( this.history_plot_ids().filter( plot_id => plot_id !== id ) )
 		}
 
 		@ $mol_mem_key
 		history_plot_ids(next?: string[]) {
-			return this.$.$mol_state_local.value( `${this}.history_plots()` , next ) ?? []
+			return this.$.$mol_state_local.value( `${this}.history_plot_ids()` , next ) ?? []
 		}
 
 		@ $mol_mem_key
-		history_plot_raw(id: string, next?: $visavis_plot_raw | null) {
-			const json = this.$.$mol_state_local.value( `${this}.history_plot('${id}')` , next && next.data() )
+		plot_raw(id: string, next?: $visavis_plot_raw | null) {
+			const json = this.$.$mol_state_local.value( `${this}.plot_raw('${id}')` , next && next.data() )
 			return json ? new $visavis_plot_raw( json ) : null
 		}
 
 		@ $mol_mem
 		history_rows() {
-			return this.history_plot_ids().map( (id)=> this.History_plot(id) )
+			return this.history_plot_ids().map( (id)=> this.History_plot_link(id) )
+		}
+
+		@ $mol_mem
+		example_rows() {
+			const names = [ 'bar_sci_literature.json' ]
+
+			return names.map( name => {
+				const json = $mol_fetch.json( '/visavis/examples/' + name )
+				const plot_raw = $visavis_plot_raw_from_json( json, name )
+
+				this.plot_raw( plot_raw.id(), plot_raw )
+				
+				return this.Plot_link( plot_raw.id() )
+			} )
 		}
 
 		plot_id(id: string) {
@@ -60,14 +82,27 @@ namespace $.$$ {
 		}
 
 		pages() {
+			if( !this.$.$mol_state_arg.value('section') && this.history_plot_ids().length == 0 ) {
+				return [ this.Drop_area() ]
+			}
 			return [
 				this.Menu(),
 				... this.Plot_opened(),
 			]
 		}
 
-		Placeholder() {
-			return this.Plot_opened().length > 0 ? null as any : super.Placeholder()
+		@ $mol_mem
+		menu_body() {
+			if (this.menu_section() == 'examples') {
+				return [ this.Examples() ]
+			} else {
+				return [ this.History() ]
+			}
+		}
+
+		@ $mol_mem
+		menu_section() {
+			return this.$.$mol_state_arg.value('section')
 		}
 
 	}

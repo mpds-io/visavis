@@ -43,31 +43,33 @@ namespace $.$$ {
 		subscribe_events() {
 			// warn_demo();
 			// if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
+			
+			const d3 = $lib_d3.all()
 
-			// Plotly.d3.selectAll('g.slice').on({'click': function(evt){
-			//     var value = evt.text.split('<br')[0];
-			//     if (evt.trace){ // NB trace may or may not be available in Plotly event
-			//         var name = evt.trace.name,
-			//             found_fct = null;
-			//         if (visavis.evtfuse) value = visavis.evtbuff;
-			//         else if (value.indexOf('other ') > -1) return;
-			//         visavis.evtfuse = 0;
-			//         for (var p in visavis.facet_names){
-			//             if (visavis.facet_names[p] == name) found_fct = p;
-			//         }
-			//         if (!found_fct) return;
-			//         if (found_fct == 'elements') value = value.replace(/,\s/g, '-'); // FIXME?
-			//         if (visavis.mpds_embedded) window.parent.location.hash = window.parent.wmgui.aug_search_cmd(found_fct, value);
-			//     } else {
-			//         if (value.indexOf('other ') > -1) return;
-			//         if (visavis.evtfuse > 1) return;
-			//         visavis.evtfuse = visavis.evtfuse ? visavis.evtfuse + 1 : 1;
-			//         visavis.evtbuff = value;
-			//         var reevt = document.createEvent('Event');
-			//         reevt.initEvent('click', false, true);
-			//         Plotly.d3.select(this.parentNode.firstChild).node().dispatchEvent(reevt);
-			//     }
-			// }});
+			const slices = d3.selectAll('g.slice path')
+
+			const facet_names: Record<string, string> = {props: 'properties', elements: 'elements', classes: 'classes', lattices: 'crystal systems'}; //global const?
+
+			const that = this
+			slices.on('click', function(this: any, event: MouseEvent){
+				const slice = d3.select(this).data()[0]
+				const trace = d3.select(this.parentNode.parentNode).data()[0][0].trace
+
+				let value = slice.text.split('<br')[0];
+				if (value.includes('other ')) return
+				
+				const name = trace.name
+				
+				let found_fct = null;
+				for (var p in facet_names){
+					if (facet_names[p] == name) found_fct = p;
+				}
+				if (!found_fct) return;
+				
+				if (found_fct == 'elements') value = value.replace(/,\s/g, '-'); // FIXME?
+
+				that.pie_click( { facet: found_fct, value } )
+			})
 		}
 
 

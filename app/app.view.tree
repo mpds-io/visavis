@@ -1,32 +1,61 @@
 $visavis_app $mol_book2
 	attr * mol_theme \$mol_theme_light
+	title \Vis-a-vis
+	Placeholder null
 	pages /
+		<= Drop_area $mol_drop
+			receive? <=> drop_file? null
+			Sub <= Drop_area_content $mol_list
+				rows /
+					<= Upload_content $mol_list
+						sub /
+							<= Upload_label_choose $mol_paragraph
+								title \Choose a plot file in JSON format
+							<= Upload_label_drop $mol_paragraph
+								title \(drag and drop is supported)
+							<= Drop_area_upload $mol_button_open
+								accept \application/json
+								files? <=> files_read? null
+					<= Examples_open $mol_link
+						title \Or go to examples
+						arg * section \examples
 		<= Menu $mol_page
-			title \Vis-a-vis
 			tools /
-				<= Upload $mol_button_open
-					hint @ \Upload a plot from MPDS in JSON
-					accept \application/json
-					files? <=> files_read? null
-			body /
-				<= Deck $mol_deck
-					items /
-						<= History $mol_list
-							title @ \Uploads
+				<= History_link $mol_link
+					title @ \Uploads
+					arg * section null
+				<= Examples_link $mol_link
+					title @ \Examples
+					arg * section \examples
+			body <= menu_body /
+				<= History $mol_list
+					title @ \Uploads
+					sub /
+						<= History_drop_area $mol_drop
+							receive? <=> drop_file?
+							Sub <= History_upload $mol_button_minor
+								sub /
+									<= History_upload_label $mol_paragraph
+										title \Add new (choose a plot file in JSON format)
+									<= History_upload_icon $mol_icon_upload
+									<= History_upload_native $mol_button_open_native
+										accept \application/json
+										files? <=> files_read? null
+						<= History_rows $mol_list
 							rows <= history_rows /
-								<= History_plot*0 $mol_view sub /
-									<= Plot_link* $mol_link
-										arg * file <= plot_id* \
-										title <= plot_id*
+								<= History_plot_link*0 $mol_view sub /
+									<= Plot_link*
 									<= Plot_drop* $mol_button_minor
 										click? <=> history_drop*? null
 										sub / <= Plot_drop_icon* $mol_icon_delete
-						<= Examples $mol_list
-							title @ \Examples
-							rows <= example_rows /
-								<= Example*0 $mol_link
-									arg * file <= example_title* \
-									title <= example_title*
+				<= Examples $mol_list
+					title @ \Examples
+					rows <= example_rows /
+						<= Plot_link*0 $mol_link
+							arg * 
+								file <= plot_id* \
+								section <= menu_section null
+							title <= plot_id*
 			foot /
 				<= Source $mol_link_source
 					uri \https://github.com/mpds-io/visavis
@@ -34,4 +63,4 @@ $visavis_app $mol_book2
 		title <= plot_id* \
 		body /
 			<= Plot_view* $visavis_plot
-				plot_raw <= history_plot_raw* null
+				plot_raw <= plot_raw* null

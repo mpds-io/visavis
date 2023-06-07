@@ -12,7 +12,9 @@ namespace $ {
 			return $mol_import.script('/visavis/lib/bundle/pca.js').mlPca as any
 		}
 
+		@ $mol_mem
 		static d3() {
+			$mol_wire_solid() //otherwise it becomes undefined
 			return this.plotly().d3
 		}
 
