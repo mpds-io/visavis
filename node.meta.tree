@@ -78,3 +78,5 @@
 \/visavis/elements/nonformer
 	deploy \/visavis/elements/data/nonfromer_pd_bin.json.tree
 	deploy \/visavis/elements/data/nonfromer_pd_tri.json.tree
+\/visavis/app
+	deploy \/visavis/examples/bar_sci_literature.json
