@@ -3,9 +3,9 @@ $visavis_app $mol_book2
 	title \Vis-a-vis
 	Placeholder null
 	pages /
-		<= Drop_area $mol_drop
+		<= Start_page $mol_drop
 			receive? <=> drop_file? null
-			Sub <= Drop_area_content $mol_list
+			Sub <= Start_page_content $mol_list
 				rows /
 					<= Upload_content $mol_list
 						sub /
@@ -13,7 +13,7 @@ $visavis_app $mol_book2
 								title \Choose a plot file in JSON format
 							<= Upload_label_drop $mol_paragraph
 								title \(drag and drop is supported)
-							<= Drop_area_upload $mol_button_open
+							<= Start_page_upload $mol_button_open
 								accept \application/json
 								files? <=> files_read? null
 					<= Examples_open $mol_link
@@ -59,6 +59,7 @@ $visavis_app $mol_book2
 			foot /
 				<= Source $mol_link_source
 					uri \https://github.com/mpds-io/visavis
+		<= Plot_opened null 
 	Plot_page* $mol_page
 		title <= plot_id* \
 		body /

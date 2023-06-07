@@ -71,23 +71,31 @@ namespace $.$$ {
 			return id
 		}
 
+		@ $mol_mem
 		plot_opened_id(next?: string | null) {
 			return this.$.$mol_state_arg.value( 'file' , next ) ?? ''
 		}
 
+		@ $mol_mem
 		Plot_opened() {
 			const id = this.plot_opened_id()
-			if (!id) return []
-			return [ this.Plot_page( id ) ]
+			if ( !id || this.Start_page_showed() ) return null
+			return this.Plot_page( id )
 		}
 
+		@ $mol_mem
+		Start_page_showed() {
+			return !this.$.$mol_state_arg.value('section') && this.history_plot_ids().length == 0
+		}
+
+		@ $mol_mem
 		pages() {
-			if( !this.$.$mol_state_arg.value('section') && this.history_plot_ids().length == 0 ) {
-				return [ this.Drop_area() ]
-			}
 			return [
-				this.Menu(),
-				... this.Plot_opened(),
+				...[ this.Start_page_showed() ?
+					this.Start_page() :
+					this.Menu()
+				],
+				this.Plot_opened(),
 			]
 		}
 

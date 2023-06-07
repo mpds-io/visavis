@@ -2,7 +2,7 @@ namespace $.$$ {
 
 	$mol_style_define( $.$visavis_app, {
 
-		Drop_area: {
+		Start_page: {
 			'@': {
 				mol_drop_status: {
 					drag: {
@@ -29,7 +29,7 @@ namespace $.$$ {
 			color: $mol_theme.shade,
 		},
 
-		Drop_area_upload: {
+		Start_page_upload: {
 			background: {
 				color: $mol_theme.card,
 			},
