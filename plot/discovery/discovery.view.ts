@@ -125,12 +125,12 @@ namespace $.$$ {
 			
 			const d3 = $lib_d3.all()
 
-			d3.select('div.js-plotly-plot').on('click', function(this: any, evt: MouseEvent){
+			d3.select('div.js-plotly-plot').on('click', (event: MouseEvent)=> {
 
-				const node = evt.target as HTMLElement
+				const node = event.target as HTMLElement
 				if (node.getAttribute('class') != 'point') return false;
 				
-				node.style.fill = '#0f0';
+				node.classList.add('clicked')
 
 				const point = d3.select(node)
 				const label = point.data()[0].tx

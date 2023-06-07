@@ -1,0 +1,12 @@
+[visavis_plot_bar] g.bars g.point path {
+	cursor: pointer;
+	fill: #3E3F95 !important;
+}
+
+[visavis_plot_bar] g.bars:nth-child(even) g.point path {
+	fill: #E36868 !important;
+}
+
+[visavis_plot_bar] g.bars g.point path:hover {
+	fill: #E36868 !important;
+}

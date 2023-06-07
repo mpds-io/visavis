@@ -31,16 +31,6 @@ namespace $.$$ {
 			// warn_demo();1
 			// if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
 			const paths = d3.selectAll('g.point path')
-			paths.on('mouseover', function(this: any){
-				const selection = d3.select(this)
-				selection.style('fill', '#E36868');
-				selection.style('cursor', 'pointer');
-			})
-			paths.on('mouseout', function(this: any){
-				const selection = d3.select(this)
-				selection.style('fill', '#3e3f95');
-				selection.style('cursor', 'default');
-			})
 
 			const that = this
 			paths.on('click', function(this: any, event: MouseEvent){
@@ -87,10 +77,10 @@ namespace $.$$ {
 		
 			const json = this.json()
 
-			const payload = [{type: "bar", x: json.payload.x, y: json.payload.y, marker: {color: "#3e3f95"}, name: 'bar'}]
+			const payload = [ { type: "bar", x: json.payload.x, y: json.payload.y, name: 'bar' } ]
 			
 			if (json.payload2 && json.payload2.x && json.payload2.y){
-				payload.push({type: "bar", x: json.payload2.x, y: json.payload2.y, marker: {color: "#e36868"}, name: 'bar'});
+				payload.push( { type: "bar", x: json.payload2.x, y: json.payload2.y, name: 'bar' } );
 			}
 
 			return payload	
