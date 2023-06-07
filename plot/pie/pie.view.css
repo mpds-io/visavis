@@ -1,3 +1,7 @@
 [visavis_plot_pie] g.slice {
 	cursor: pointer;
 }
+
+[visavis_plot_pie] g.slicetext {
+	pointer-events: none;
+}

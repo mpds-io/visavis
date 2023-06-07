@@ -1,5 +1,6 @@
 $visavis_plot_pie $visavis_plotly
 	plot_raw $visavis_plot_raw
+	pie_click? null
 	colorset /
 		\#3e3f95
 		\#c00

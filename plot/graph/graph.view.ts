@@ -55,11 +55,11 @@ namespace $.$$ {
 			let counter = 0
 		
 			const visavis_cache = {ref: json.payload, type: 'graph'};
-			const visavis_graph_default_rel = json.graph_rel || 'prel';
+			const graph_rel = this.graph_rel() || json.graph_rel || 'prel';
 		
 			// filter edges and compute the distinct nodes from the links
 			visavis_cache.ref.forEach( (link) => {
-				if (link.type == visavis_graph_default_rel){
+				if (link.type == graph_rel){
 					foci[link.source] = link.source.substr(0, 1); // setting default color
 					const sourceNode = nodes[link.source] || (nodes[link.source] = {name: link.source});
 					const targetNode = nodes[link.target] || (nodes[link.target] = {name: String(link.target)});
@@ -78,7 +78,7 @@ namespace $.$$ {
 			});
 			if (!counter) return $mol_fail( new $mol_data_error('Warning: nothing to show') )
 		
-			const circle_cls = visavis_graph_default_rel.substr(0, 1)
+			const circle_cls = graph_rel.substr(0, 1)
 			const text_cls = (counter > 25) ? "micro" : "macro"
 			
 			const table: Record<string, number> = {}
@@ -107,7 +107,9 @@ namespace $.$$ {
 			const { nodes, edges, labels, radii, foci, table, circle_cls, text_cls } = this.data()
 			
 			const d3 = $visavis_lib.d3()
-			const svg = d3.select('[visavis_plot_graph_root]').append('svg')
+
+			const svg_element = $mol_wire_sync( document ).createElementNS( 'http://www.w3.org/2000/svg', 'svg' )
+			const svg = d3.select(svg_element)
 				// .attr("width", width)
 				// .attr("height", height);
 		
@@ -158,15 +160,13 @@ namespace $.$$ {
 				.html(function(d: any){ return labels[d.name] })
 				.call(drag);
 		
-			// text.on("click", function(d: any){
-			// 	if (visavis.mpds_embedded){
-			// 		var found_fct = visavis.graph_mapping[d.name.charAt(0)],
-			// 			value = labels[d.name];
-			// 		if (found_fct == 'codens') value = value.split("'")[0]; // FIXME years lost
-			// 		else if (found_fct == 'formulae') value = window.parent.WMCORE.termify_formulae(value.split(",")[0]);
-			// 		window.parent.location.hash = window.parent.wmgui.aug_search_cmd(found_fct, value);
-			// 	}
-			// });
+			text.on("click", (d: any)=> {
+				const graph_mapping = {f: 'formulae', p: 'props', h: 'aetypes', t: 'lattices', a: 'codens', g: 'geos'}; //global const?
+				const found_fct = (graph_mapping as Record<string, string>)[ d.name.charAt(0) ]
+				const label = labels[d.name];
+
+				this.graph_click( { facet: found_fct, label } )
+			});
 		
 			function tick(){
 				path.attr("d", direct);
@@ -183,6 +183,9 @@ namespace $.$$ {
 			}
 		
 			visavis_force.start();
+
+			this.Root().dom_node_actual().replaceChildren( svg_element )
+
 			// for (var i = 400; i > 0; i--) visavis_force.tick();
 			// visavis_force.stop();
 			// hide_preloader();

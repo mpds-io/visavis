@@ -135,10 +135,7 @@ namespace $.$$ {
 				const point = d3.select(node)
 				const label = point.data()[0].tx
 
-				window.parent.postMessage({
-					'name': 'discovery_click',
-					'args': { label }
-				}, '*')
+				this.discovery_click( { label } )
 				
 				// 	var oflag = node.style.opacity;
 				// 	node.style.fill = '#0f0';
@@ -201,7 +198,9 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		elementals_on() {
+		elementals_on(next?: any) {
+			if ( next !== undefined ) return next as never
+
 			const elementals_on: Element_prop[] = []
 
 			Object.keys( this.elementals_dict() ).forEach( key => {

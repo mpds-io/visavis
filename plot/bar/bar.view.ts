@@ -42,15 +42,11 @@ namespace $.$$ {
 				selection.style('cursor', 'default');
 			})
 
-			paths.on('click', function(this: any){
+			const that = this
+			paths.on('click', function(this: any, event: MouseEvent){
 				const selection = d3.select(this)
-				window.parent.postMessage({
-					'name': 'bar_click',
-					'args': {
-						facet: "years", 
-						value: selection.data()[0].x,
-					}
-				}, '*')
+				const value = selection.data()[0].x
+				that.bar_click( { facet: "years", value } )
 			});
 		}
 

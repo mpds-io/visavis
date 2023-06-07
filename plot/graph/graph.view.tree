@@ -3,3 +3,5 @@ $visavis_plot_graph $mol_view
 	sub /
 		<= Root $mol_view
 			render <= draw null
+	graph_rel? \
+	graph_click? null

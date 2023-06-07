@@ -50,6 +50,7 @@ namespace $.$$ {
 
 			const facet_names: Record<string, string> = {props: 'properties', elements: 'elements', classes: 'classes', lattices: 'crystal systems'}; //global const?
 
+			const that = this
 			slices.on('click', function(this: any, event: MouseEvent){
 				const slice = d3.select(this).data()[0]
 				const trace = d3.select(this.parentNode.parentNode).data()[0][0].trace
@@ -67,10 +68,7 @@ namespace $.$$ {
 				
 				if (found_fct == 'elements') value = value.replace(/,\s/g, '-'); // FIXME?
 
-				window.parent.postMessage({
-					'name': 'pie_click',
-					'args': { facet: found_fct, value }
-				}, '*')
+				that.pie_click( { facet: found_fct, value } )
 			})
 		}
 

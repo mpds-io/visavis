@@ -85,7 +85,10 @@ namespace $.$$ {
 
 		@ $mol_mem
 		order() {
-			return $visavis_lib.d3().range(95).sort( (a: any, b: any) => (this.nodes() as any)[a][ this.order_current() ] - (this.nodes() as any)[b][ this.order_current() ] )
+			const order_current = this.order_current() as Exclude<keyof typeof $visavis_plot_matrix_json_node.Value, "name" | "count">
+			return $visavis_lib.d3().range(95).sort( (a: number, b: any) => {
+				return this.nodes()[ a ][ order_current ] - this.nodes()[ b ][ order_current ] 
+			})
 		}
 
 		@ $mol_mem

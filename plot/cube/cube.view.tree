@@ -4,9 +4,9 @@ $visavis_plot_cube $mol_view
 	heatmap? false
 	order* /number
 	order_current? \nump
-	x_op false
-	y_op false
-	z_op false
+	x_op? false
+	y_op? false
+	z_op? false
 	x_sort? \nump
 	y_sort? \nump
 	z_sort? \nump

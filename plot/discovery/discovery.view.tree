@@ -1,6 +1,8 @@
 $visavis_plot_discovery $mol_view
 	plot_raw $visavis_plot_raw
+	elementals_on? /
 	show_setup true
+	discovery_click? null
 	sub /
 		<= Plot $visavis_plotly
 			data <= data *
