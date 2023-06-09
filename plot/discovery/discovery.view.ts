@@ -42,10 +42,9 @@ namespace $.$$ {
 				)
 				const name = $visavis_elements_list.element_by_num( element_num ).name
 				prop_array.push( ...props )
-				label_parts.push( name );
+				if ( element_num != 0 ) label_parts.push( name );
 			})
-
-			const label = label_parts.filter( x => x ).join('-')
+			const label = label_parts.join('-')
 			return { prop_array, label }
 		}
 
@@ -66,7 +65,7 @@ namespace $.$$ {
 				const { prop_array, label } = elements_data( element_ids )
 	
 				// discard points in the *second* that are already in the *first*
-				if (labels.includes( label )) {
+				if (!labels.includes( label )) {
 					to_predict.push( prop_array );
 					labels.push( label );
 				}
