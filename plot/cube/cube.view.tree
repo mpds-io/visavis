@@ -1,5 +1,6 @@
 $visavis_plot_cube $mol_view
 	plot_raw $visavis_plot_raw
+	json_cmp? *
 	show_setup true
 	heatmap? false
 	order* /number

@@ -127,41 +127,43 @@ namespace $.$$ {
 					// if (!visavis.cache || visavis.cache.type != type)
 					// 	return urge('Error: cannot compare datasets');
 				
+					
 					// call_ajax(url, function(cmp_data){
-				
-					// 	show_preloader();
-					// 	reset_canvas();
-				
-					// 	if (cmp_data && cmp_data.error) return urge(cmp_data.error);
-					// 	if (!cmp_data || !cmp_data.use_visavis_type) return urge('Error: unknown data format');
-					// 	if (cmp_data.warning) notify(cmp_data.warning);
-				
-					// 	visavis.cmp_shown = true;
-				
-					// 	if (type == 'matrix'){
-					// 		visavis.nonformers_shown = false;
-				
-					// 		// Prepare a master merged matrix from ref and cmp
-					// 		var master_matrix = JSON.parse(JSON.stringify(visavis.cache.ref));
-					// 		cmp_data.payload.links.forEach(function(item){
-					// 			item.cmp = 1;
-					// 			master_matrix.payload.links.push(item);
-					// 		});
-					// 		visavis__matrix(master_matrix);
-					// 		visavis.cache.cmp = {payload: {links: cmp_data.payload.links}, answerto: cmp_data.answerto};
-					// 		set_cmp_legend([visavis.cache.cmp.answerto, visavis.cache.ref.answerto], true);
-				
-					// 	} else if (type == 'cube'){
-					// 		visavis.nonformers_shown = false;
-					// 		visavis.cache.cmp = {payload: {points: cmp_data.payload.points}, answerto: cmp_data.answerto};
-					// 		visavis__plot3d();
-					// 		set_cmp_legend([visavis.cache.cmp.answerto, visavis.cache.ref.answerto], true);
-				
-					// 	} else if (type == 'discovery'){
-					// 		visavis__discovery(cmp_data);
-					// 		set_cmp_legend([cmp_data.answerto, visavis.cache.ref.name]);
-					// 	}
-					// });
+						
+						// 	show_preloader();
+						// 	reset_canvas();
+						
+					const json_cmp = $mol_fetch.json( url ) as any
+					if (json_cmp && json_cmp.error) return $mol_fail( new $mol_data_error( json_cmp.error ) )
+					if (!json_cmp || !json_cmp.use_visavis_type) return $mol_fail( new $mol_data_error( 'Error: unknown data format' ) )
+					// if (json_cmp.warning) notify(json_cmp.warning);
+
+					this.json_cmp( json_cmp )
+
+					if (type == 'matrix'){
+						this.nonformers_shown( false )
+			
+						// Prepare a master merged matrix from ref and cmp
+						var master_matrix = JSON.parse(JSON.stringify( this.json() ));
+						json_cmp.payload.links.forEach( (item: any)=> {
+							item.cmp = 1;
+							master_matrix.payload.links.push(item);
+						});
+
+						// visavis__matrix(master_matrix);
+						// visavis.cache.cmp = {payload: {links: json_cmp.payload.links}, answerto: json_cmp.answerto};
+						// set_cmp_legend([visavis.cache.cmp.answerto, visavis.cache.ref.answerto], true);
+
+					} else if (type == 'cube'){
+						// this.nonformers_shown( false )
+						// visavis.cache.cmp = {payload: {points: json_cmp.payload.points}, answerto: json_cmp.answerto};
+						// visavis__plot3d();
+						// set_cmp_legend([visavis.cache.cmp.answerto, visavis.cache.ref.answerto], true);
+
+					} else if (type == 'discovery'){
+						// visavis__discovery(json_cmp);
+						// set_cmp_legend([json_cmp.answerto, visavis.cache.ref.name]);
+					}
 				},
 
 				fixel_manage: (args: any)=> {

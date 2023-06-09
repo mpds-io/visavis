@@ -1,5 +1,6 @@
 $visavis_plot_discovery $mol_view
 	plot_raw $visavis_plot_raw
+	json_cmp? null
 	elementals_on? /
 	show_setup true
 	discovery_click? null
@@ -8,6 +9,9 @@ $visavis_plot_discovery $mol_view
 			data <= data *
 			layout <= layout *
 			subscribe_events <= subscribe_events null
+		<= Cmp_legend $visavis_plot_legend_cmp
+			first_cmp_label? <= first_cmp_label? \
+			second_cmp_label? <= second_cmp_label? \
 		<= Setup $mol_view
 			sub /
 				<= Elementals $mol_labeler

@@ -102,7 +102,11 @@ namespace $.$$ {
 	export class $visavis_plot_discovery extends $.$visavis_plot_discovery {
 
 		sub() {
-			return [ this.Plot(), ...(this.show_setup()? [ this.Setup() ] : []) ]
+			return [ 
+				this.Plot(), 
+				...( this.json_cmp()? [ this.Cmp_legend() ] : [] ),
+				...( this.show_setup()? [ this.Setup() ] : [] ),
+			]
 		}
 
 		json() {
@@ -223,21 +227,28 @@ namespace $.$$ {
 		data() {
 		
 			const json = this.json()
+			const json_cmp = this.json_cmp()
 
 			const elementals_on = this.elementals_on()
 
 			// if (visavis.cache && visavis.cache.type == 'discovery'){
-			// 	var ref = {points: visavis.cache.ref.points, name: visavis.cache.ref.name},
-			// 		cmp = {points: json.payload.points, name: json.answerto};
-			// 	visavis.cache.cmp = cmp;
-		
+			// 	ref = {points: visavis.cache.ref.points, name: visavis.cache.ref.name},
+			// 	cmp = {points: json.payload.points, name: json.answerto};
 			// } else {
-			// 	var ref = {points: json.payload.points, name: json.answerto},
-			// 		cmp = false;
-			// 	visavis.cache = {ref: ref, type: 'discovery'};
+			// 	ref = {points: json.payload.points, name: json.answerto},
+			//  cmp = false;
+			// 	visavis.cache = {ref: ref, type: 'discovery'}; 
 			// }
 
-			const result = discover(elementals_on, Discover_item({points: json.payload.points, name: json.answerto}));
+			// visavis__discovery(json_cmp);
+			// set_cmp_legend([json_cmp.answerto, visavis.cache.ref.name]);
+
+			const first = Discover_item({points: json.payload.points, name: json.answerto})
+			const second = json_cmp ? Discover_item({points: json_cmp.payload.points, name: json_cmp.answerto}) : undefined
+			this.first_cmp_label( first.name )
+			if (second) this.second_cmp_label( second.name )
+
+			const result = discover(elementals_on, first, second)
 		
 			const traces = [];
 		

@@ -1,16 +1,21 @@
 $visavis_frame $mol_view
 	attr * mol_theme \$mol_theme_light
 	json? *
+	json_cmp? null
 	show_setup false
 	sub /
 		<= Plot $visavis_plot
 			plot_raw <= plot_raw $visavis_plot_raw
 			Matrix <= Matrix $visavis_plot_matrix
 				plot_raw <= plot_raw
+				json_cmp <= json_cmp
 				show_setup <= show_setup
+				nonformers? <=> nonformers_shown? false
 			Cube <= Cube $visavis_plot_cube
 				plot_raw <= plot_raw
+				json_cmp <= json_cmp
 				show_setup <= show_setup
+				nonformers? <=> nonformers_shown?
 				x_op? => x_op?
 				y_op? => y_op?
 				z_op? => z_op?
@@ -24,6 +29,7 @@ $visavis_frame $mol_view
 				bar_click? <=> post_message*bar_click? null
 			Discovery <= Discovery $visavis_plot_discovery
 				plot_raw <= plot_raw
+				json_cmp <= json_cmp
 				show_setup <= show_setup
 				elementals_on? => discovery_elementals_on?
 				discovery_click? <=> post_message*discovery_click? null
