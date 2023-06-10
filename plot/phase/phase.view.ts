@@ -261,7 +261,7 @@ namespace $.$$ {
 			const json = this.json()
 			const is_triangle = this.is_triangle()
 
-			const figures = d3.selectAll('[visavis_phase_root] .shapelayer path')
+			const figures = d3.selectAll('[visavis_plot_phase_root] .shapelayer path')
 			figures.on('mouseover', function(this: any) {
 				const that = d3.select(this)
 				let idx = that.attr('data-index')
@@ -292,7 +292,7 @@ namespace $.$$ {
 				if (state){
 					that.style('fill', state)
 					that.style('cursor', 'default')
-					d3.selectAll('[visavis_phase_root] g.annotation').select('text').style('fill', '#000');
+					d3.selectAll('[visavis_plot_phase_root] g.annotation').select('text').style('fill', '#000');
 				}
 			})
 
@@ -357,10 +357,10 @@ namespace $.$$ {
 				return fn( b.x, b.y )
 			}
 
-			const svgroot = d3.select( "[visavis_phase_root] svg.main-svg" )[ 0 ][ 0 ] // window
-			let graph_node = d3.select( "[visavis_phase_root] g.toplevel.plotbg" )[ 0 ][ 0 ] // graph frame
+			const svgroot = d3.select( "[visavis_plot_phase_root] svg.main-svg" )[ 0 ][ 0 ] // window
+			let graph_node = d3.select( "[visavis_plot_phase_root] g.toplevel.plotbg" )[ 0 ][ 0 ] // graph frame
 			const graph_coords = get_absolute_coords( graph_node, svgroot )
-			const svg_el = d3.select( "[visavis_phase_root] g.layer-above" ) // actual drawing
+			const svg_el = d3.select( "[visavis_plot_phase_root] g.layer-above" ) // actual drawing
 			let svg_node = svg_el[ 0 ][ 0 ]
 
 			graph_node = graph_node.getBoundingClientRect()
@@ -373,13 +373,13 @@ namespace $.$$ {
 
 			const origdims = [] as number[]
 
-			d3.selectAll( "[visavis_phase_root] text.annotation-text" ).each( function( this: any ) {
+			d3.selectAll( "[visavis_plot_phase_root] text.annotation-text" ).each( function( this: any ) {
 				origdims.push( parseInt( this.getBoundingClientRect().left ) )
 			} )
 
 			svg_el.attr( "transform", "translate(" + ( -centerX * ( scaleX - 1 ) ) + ", " + ( -centerY * ( scaleY - 1 ) ) + ") scale(" + scaleX + ", " + scaleY + ")" )
 
-			d3.selectAll( "[visavis_phase_root] g.annotation" ).each( function( this: any, d: any, i: any ) {
+			d3.selectAll( "[visavis_plot_phase_root] g.annotation" ).each( function( this: any, d: any, i: any ) {
 				d3.select( this ).attr( "transform", "translate(" + ( -centerX * ( scaleX - 1 ) ) + ", " + ( -centerY * ( scaleY - 1 ) ) + ") scale(" + scaleX + ", " + scaleY + ") translate(" + ( -origdims[ i ] / 1.25 ) + ", 0) scale(1.75, 1)" )
 			} )
 		}
