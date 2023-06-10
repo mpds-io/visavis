@@ -119,13 +119,6 @@ namespace $.$$ {
 
 		@ $mol_action
 		subscribe_events() {
-
-			// if (visavis.mpds_embedded) {
-			// 	document.getElementById('expander').style.display = 'block';
-			// } else {
-			// 	return
-			// }
-			
 			const d3 = $lib_d3.all()
 
 			d3.select('div.js-plotly-plot').on('click', (event: MouseEvent)=> {

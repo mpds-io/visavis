@@ -207,6 +207,20 @@ namespace $.$$ {
 			}	
 		}
 
+		@ $mol_action
+		subscribe_events() {
+			const d3 = $lib_d3.all()
+
+			const that = this
+			d3.select('div.js-plotly-plot').on('click', (event: MouseEvent)=> {
+				const node = event.target as HTMLElement
+				if (node.getAttribute('class') != 'nums') return false;
+				
+				const label_data = d3.select(node).data()[0]
+				that.cube_click( { label: label_data.text } )
+			} )
+		}
+
 		@ $mol_mem
 		layout() {
 			return {
