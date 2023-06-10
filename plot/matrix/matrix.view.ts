@@ -216,30 +216,11 @@ namespace $.$$ {
 			return title
 		}
 
-		cell_hovered(cell?: Matrix_cell | null) {
-			$visavis_lib.d3().selectAll('.row text').classed('active', (_: any, index: number) => cell?.y === index)
-			$visavis_lib.d3().selectAll('.column text').classed('active', (_: any, index: number) => cell?.x === index)
-		}
-
-		@ $mol_mem_key
-		cell_selected(id: number, next?: boolean) {
-			$mol_wire_solid()
-			return next ?? false
-		}
-
-		@ $mol_action
-		cell_click(cell: Matrix_cell) {
-			const coords = [ $mol_coord_pack( cell.x, cell.y ), $mol_coord_pack( cell.y, cell.x ) ]
-			coords.forEach( coord => this.cell_selected( coord, !this.cell_selected(coord) ) )
-			$visavis_lib.d3().selectAll('.cell').classed('visited', (item: any) => this.cell_selected( $mol_coord_pack( item.x, item.y ) ))
-			// if (visavis.mpds_embedded) {
-			// 	window.open(window.location.protocol + '//' + window.location.host + '#search/binary%20' + term.cmt);
-			// }
-		}
-
 		@ $mol_mem_key
 		draw_cells(node: SVGElement, row: Matrix_cell[]) {
-			$visavis_lib.d3().select(node)
+			const d3 = $visavis_lib.d3()
+			const that = this
+			d3.select(node)
 				.selectAll('.cell')
 				.data(row.filter((d: any) => d.z))
 				// .join('rect') // for new d3 version
@@ -253,9 +234,23 @@ namespace $.$$ {
 				.attr('height', this.range().rangeBand())
 				.style('fill-opacity', (d: any) => this.opacity(d.z))
 				.style('fill', (d: any) => this.color(d.z, d.cmp) )
-				.on('mouseover', (event: MouseEvent, cell: unknown) => this.cell_hovered(cell as Matrix_cell))
-				.on('mouseout', (event: MouseEvent) => this.cell_hovered(null))
-				.on('click', (event: PointerEvent, cell: unknown) => this.cell_click(cell as Matrix_cell) )
+
+				.on('mouseover', function (this: any, event: PointerEvent) {
+					const cell_data = d3.select(this).data()[0] as Matrix_cell
+					d3.selectAll( ".row text" ).classed( "active", (d: any, i: number)=> { return i == cell_data.y });
+					d3.selectAll( ".column text" ).classed( "active", (d: any, i: number)=> { return i == cell_data.x });
+				} )
+
+				.on('mouseout', function (this: any, event: PointerEvent) { } )
+
+				.on('click', function (this: any, event: PointerEvent) {
+					var ids = d3.select(this).attr("id").substr(2).split("_");
+					document.getElementById("c_" + ids[1] + "_" + ids[0])!.classList.add('visited');
+					document.getElementById("c_" + ids[0] + "_" + ids[1])!.classList.add('visited');
+					const cell_data = d3.select(this).data()[0] as Matrix_cell
+					that.matrix_click( { cmt: cell_data.cmt } )
+				} )
+
 				.append('svg:title').text((cell: any) => this.svg_title_text(cell))
 		}
 

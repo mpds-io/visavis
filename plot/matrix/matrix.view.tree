@@ -13,6 +13,7 @@ $visavis_plot_matrix $mol_view
 	y_sort? \nump
 	x_op? null
 	y_op? null
+	matrix_click? null
 	heatmap_colors /
 		\rgb(150,0,90)
 		\rgb(0,0,200)
