@@ -4204,6 +4204,25 @@ var $;
 var $;
 (function ($) {
     $mol_test({
+        'Is first'() {
+            $mol_data_variant($mol_data_number, $mol_data_string)(0);
+        },
+        'Is second'() {
+            $mol_data_variant($mol_data_number, $mol_data_string)('');
+        },
+        'Is false'() {
+            $mol_assert_fail(() => {
+                $mol_data_variant($mol_data_number, $mol_data_string)(false);
+            }, 'false is not any of variants\nfalse is not a number\nfalse is not a string');
+        },
+    });
+})($ || ($ = {}));
+//mol/data/variant/variant.test.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_test({
         'is same number'() {
             const Nan = $mol_data_const(Number.NaN);
             Nan(Number.NaN);
@@ -4252,25 +4271,6 @@ var $;
     });
 })($ || ($ = {}));
 //mol/data/dict/dict.test.ts
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_test({
-        'Is first'() {
-            $mol_data_variant($mol_data_number, $mol_data_string)(0);
-        },
-        'Is second'() {
-            $mol_data_variant($mol_data_number, $mol_data_string)('');
-        },
-        'Is false'() {
-            $mol_assert_fail(() => {
-                $mol_data_variant($mol_data_number, $mol_data_string)(false);
-            }, 'false is not any of variants\nfalse is not a number\nfalse is not a string');
-        },
-    });
-})($ || ($ = {}));
-//mol/data/variant/variant.test.ts
 ;
 "use strict";
 var $;

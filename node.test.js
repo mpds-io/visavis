@@ -2432,8 +2432,8 @@ var $;
         static calc(value) {
             return new $mol_style_func('calc', value);
         }
-        static vary(name) {
-            return new $mol_style_func('var', name);
+        static vary(name, defaultValue) {
+            return new $mol_style_func('var', defaultValue ? [name, defaultValue] : name);
         }
         static url(href) {
             return new $mol_style_func('url', JSON.stringify(href));
@@ -2450,13 +2450,61 @@ var $;
         static scale(zoom) {
             return new $mol_style_func('scale', [zoom]);
         }
+        static linear(...breakpoints) {
+            return new $mol_style_func("linear", breakpoints.map((e) => Array.isArray(e)
+                ? String(e[0]) +
+                    " " +
+                    (typeof e[1] === "number" ? e[1] + "%" : e[1].toString())
+                : String(e)));
+        }
         static cubic_bezier(x1, y1, x2, y2) {
             return new $mol_style_func('cubic-bezier', [x1, y1, x2, y2]);
+        }
+        static steps(value, step_position) {
+            return new $mol_style_func('steps', [value, step_position]);
+        }
+        static blur(value) {
+            return new $mol_style_func('blur', value ?? "");
+        }
+        static brightness(value) {
+            return new $mol_style_func('brightness', value ?? "");
+        }
+        static contrast(value) {
+            return new $mol_style_func('contrast', value ?? "");
+        }
+        static drop_shadow(color, x_offset, y_offset, blur_radius) {
+            return new $mol_style_func("drop-shadow", blur_radius
+                ? [color, x_offset, y_offset, blur_radius]
+                : [color, x_offset, y_offset]);
+        }
+        static grayscale(value) {
+            return new $mol_style_func('grayscale', value ?? "");
+        }
+        static hue_rotate(value) {
+            return new $mol_style_func('hue-rotate', value ?? "");
+        }
+        static invert(value) {
+            return new $mol_style_func('invert', value ?? "");
+        }
+        static opacity(value) {
+            return new $mol_style_func('opacity', value ?? "");
+        }
+        static sepia(value) {
+            return new $mol_style_func('sepia', value ?? "");
+        }
+        static saturate(value) {
+            return new $mol_style_func('saturate', value ?? "");
         }
     }
     $.$mol_style_func = $mol_style_func;
 })($ || ($ = {}));
 //mol/style/func/func.ts
+;
+"use strict";
+//mol/type/override/override.ts
+;
+"use strict";
+//mol/style/properties/properties.ts
 ;
 "use strict";
 var $;
@@ -2947,6 +2995,78 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $mol_ghost extends $mol_view {
+        Sub() {
+            const obj = new this.$.$mol_view();
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_ghost.prototype, "Sub", null);
+    $.$mol_ghost = $mol_ghost;
+})($ || ($ = {}));
+//mol/ghost/-view.tree/ghost.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $mol_ghost extends $.$mol_ghost {
+            dom_node(next) {
+                const node = this.Sub().dom_node(next);
+                $mol_dom_render_attributes(node, this.attr_static());
+                $mol_dom_render_events(node, this.event());
+                return node;
+            }
+            dom_node_actual() {
+                this.dom_node();
+                const node = this.Sub().dom_node_actual();
+                const attr = this.attr();
+                const style = this.style();
+                const fields = this.field();
+                $mol_dom_render_attributes(node, attr);
+                $mol_dom_render_styles(node, style);
+                $mol_dom_render_fields(node, fields);
+                return node;
+            }
+            dom_tree() {
+                const Sub = this.Sub();
+                const node = Sub.dom_tree();
+                try {
+                    this.dom_node_actual();
+                    this.auto();
+                }
+                catch (error) {
+                    $mol_fail_log(error);
+                }
+                return node;
+            }
+            title() {
+                return this.Sub().title();
+            }
+            minimal_width() {
+                return this.Sub().minimal_width();
+            }
+            minimal_height() {
+                return this.Sub().minimal_height();
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $mol_ghost.prototype, "dom_node", null);
+        __decorate([
+            $mol_mem
+        ], $mol_ghost.prototype, "dom_node_actual", null);
+        $$.$mol_ghost = $mol_ghost;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//mol/ghost/ghost.view.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $mol_scroll extends $mol_view {
         scroll_top(val) {
             if (val !== undefined)
@@ -3049,12 +3169,6 @@ var $;
     $.$mol_print = $mol_print;
 })($ || ($ = {}));
 //mol/print/print.ts
-;
-"use strict";
-//mol/type/override/override.ts
-;
-"use strict";
-//mol/style/properties/properties.ts
 ;
 "use strict";
 //mol/style/pseudo/class.ts
@@ -4846,78 +4960,6 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $mol_ghost extends $mol_view {
-        Sub() {
-            const obj = new this.$.$mol_view();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_ghost.prototype, "Sub", null);
-    $.$mol_ghost = $mol_ghost;
-})($ || ($ = {}));
-//mol/ghost/-view.tree/ghost.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        class $mol_ghost extends $.$mol_ghost {
-            dom_node(next) {
-                const node = this.Sub().dom_node(next);
-                $mol_dom_render_attributes(node, this.attr_static());
-                $mol_dom_render_events(node, this.event());
-                return node;
-            }
-            dom_node_actual() {
-                this.dom_node();
-                const node = this.Sub().dom_node_actual();
-                const attr = this.attr();
-                const style = this.style();
-                const fields = this.field();
-                $mol_dom_render_attributes(node, attr);
-                $mol_dom_render_styles(node, style);
-                $mol_dom_render_fields(node, fields);
-                return node;
-            }
-            dom_tree() {
-                const Sub = this.Sub();
-                const node = Sub.dom_tree();
-                try {
-                    this.dom_node_actual();
-                    this.auto();
-                }
-                catch (error) {
-                    $mol_fail_log(error);
-                }
-                return node;
-            }
-            title() {
-                return this.Sub().title();
-            }
-            minimal_width() {
-                return this.Sub().minimal_width();
-            }
-            minimal_height() {
-                return this.Sub().minimal_height();
-            }
-        }
-        __decorate([
-            $mol_mem
-        ], $mol_ghost.prototype, "dom_node", null);
-        __decorate([
-            $mol_mem
-        ], $mol_ghost.prototype, "dom_node_actual", null);
-        $$.$mol_ghost = $mol_ghost;
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-//mol/ghost/ghost.view.ts
-;
-"use strict";
-var $;
-(function ($) {
     class $mol_drop extends $mol_ghost {
         enabled(next) {
             if (next !== undefined)
@@ -5980,6 +6022,99 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $visavis_plot_legend_cmp extends $mol_view {
+        sub() {
+            return [
+                this.First_cmp_label(),
+                "vs.",
+                this.Second_cmp_label()
+            ];
+        }
+        first_cmp_label(next) {
+            if (next !== undefined)
+                return next;
+            return "";
+        }
+        First_cmp_label() {
+            const obj = new this.$.$mol_view();
+            obj.sub = () => [
+                this.first_cmp_label()
+            ];
+            return obj;
+        }
+        second_cmp_label(next) {
+            if (next !== undefined)
+                return next;
+            return "";
+        }
+        Second_cmp_label() {
+            const obj = new this.$.$mol_view();
+            obj.sub = () => [
+                this.second_cmp_label()
+            ];
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_legend_cmp.prototype, "first_cmp_label", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_legend_cmp.prototype, "First_cmp_label", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_legend_cmp.prototype, "second_cmp_label", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_legend_cmp.prototype, "Second_cmp_label", null);
+    $.$visavis_plot_legend_cmp = $visavis_plot_legend_cmp;
+})($ || ($ = {}));
+//visavis/plot/legend/cmp/-view.tree/cmp.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        const Cmp_label = {
+            color: 'white',
+            padding: {
+                left: $mol_gap.space,
+                right: $mol_gap.space,
+            }
+        };
+        $mol_style_define($visavis_plot_legend_cmp, {
+            position: 'absolute',
+            left: 0,
+            bottom: 0,
+            width: '100%',
+            gap: $mol_gap.block,
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: {
+                bottom: $mol_gap.space,
+            },
+            lineHeight: '1',
+            First_cmp_label: {
+                ...Cmp_label,
+                background: {
+                    color: '#3e3f95',
+                },
+            },
+            Second_cmp_label: {
+                ...Cmp_label,
+                background: {
+                    color: '#c00',
+                },
+            },
+        });
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//visavis/plot/legend/cmp/cmp.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $mol_check extends $mol_button_minor {
         attr() {
             return {
@@ -6117,54 +6252,6 @@ var $;
     $mol_style_attach("mol/check/box/box.view.css", "[mol_check_box_icon] {\n\tborder-radius: var(--mol_gap_round);\n\tbox-shadow: inset 0 0 0 1px var(--mol_theme_line);\n\tcolor: var(--mol_theme_shade);\n\theight: 1rem;\n\talign-self: center;\n}\n\n[mol_check]:not([mol_check_checked]) > [mol_check_box_icon] {\n\tfill: transparent;\n}\n\n[mol_check]:not([disabled]) > [mol_check_box_icon] {\n\tbackground: var(--mol_theme_field);\n\tcolor: var(--mol_theme_text);\n}\n");
 })($ || ($ = {}));
 //mol/check/box/-css/box.view.css.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_labeler extends $mol_list {
-        rows() {
-            return [
-                this.Label(),
-                this.Content()
-            ];
-        }
-        label() {
-            return [
-                this.title()
-            ];
-        }
-        Label() {
-            const obj = new this.$.$mol_view();
-            obj.minimal_height = () => 32;
-            obj.sub = () => this.label();
-            return obj;
-        }
-        content() {
-            return [];
-        }
-        Content() {
-            const obj = new this.$.$mol_view();
-            obj.minimal_height = () => 24;
-            obj.sub = () => this.content();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_labeler.prototype, "Label", null);
-    __decorate([
-        $mol_mem
-    ], $mol_labeler.prototype, "Content", null);
-    $.$mol_labeler = $mol_labeler;
-})($ || ($ = {}));
-//mol/labeler/-view.tree/labeler.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_style_attach("mol/labeler/labeler.view.css", "[mol_labeler] {\n\tdisplay: flex;\n\tflex-direction: column;\n\talign-items: stretch;\n\tcursor: inherit;\n}\n\n[mol_labeler_label] {\n\tmin-height: 2rem;\n\tcolor: var(--mol_theme_shade);\n\tpadding: .5rem .75rem 0;\n\tgap: 0 var(--mol_gap_block);\n\tflex-wrap: wrap;\n}\n\n[mol_labeler_content] {\n\tdisplay: flex;\n\tpadding: var(--mol_gap_text);\n}\n");
-})($ || ($ = {}));
-//mol/labeler/-css/labeler.view.css.ts
 ;
 "use strict";
 var $;
@@ -6354,10 +6441,66 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $mol_labeler extends $mol_list {
+        rows() {
+            return [
+                this.Label(),
+                this.Content()
+            ];
+        }
+        label() {
+            return [
+                this.title()
+            ];
+        }
+        Label() {
+            const obj = new this.$.$mol_view();
+            obj.minimal_height = () => 32;
+            obj.sub = () => this.label();
+            return obj;
+        }
+        content() {
+            return [];
+        }
+        Content() {
+            const obj = new this.$.$mol_view();
+            obj.minimal_height = () => 24;
+            obj.sub = () => this.content();
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_labeler.prototype, "Label", null);
+    __decorate([
+        $mol_mem
+    ], $mol_labeler.prototype, "Content", null);
+    $.$mol_labeler = $mol_labeler;
+})($ || ($ = {}));
+//mol/labeler/-view.tree/labeler.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/labeler/labeler.view.css", "[mol_labeler] {\n\tdisplay: flex;\n\tflex-direction: column;\n\talign-items: stretch;\n\tcursor: inherit;\n}\n\n[mol_labeler_label] {\n\tmin-height: 2rem;\n\tcolor: var(--mol_theme_shade);\n\tpadding: .5rem .75rem 0;\n\tgap: 0 var(--mol_gap_block);\n\tflex-wrap: wrap;\n}\n\n[mol_labeler_content] {\n\tdisplay: flex;\n\tpadding: var(--mol_gap_text);\n}\n");
+})($ || ($ = {}));
+//mol/labeler/-css/labeler.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $visavis_plot_matrix extends $mol_view {
         plot_raw() {
             const obj = new this.$.$visavis_plot_raw();
             return obj;
+        }
+        json_cmp(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        json_master() {
+            return null;
         }
         show_setup() {
             return true;
@@ -6382,6 +6525,34 @@ var $;
         }
         matrix() {
             return [];
+        }
+        order() {
+            return [];
+        }
+        x_sort(next) {
+            if (next !== undefined)
+                return next;
+            return "nump";
+        }
+        y_sort(next) {
+            if (next !== undefined)
+                return next;
+            return "nump";
+        }
+        x_op(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        y_op(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        matrix_click(next) {
+            if (next !== undefined)
+                return next;
+            return null;
         }
         heatmap_colors() {
             return [
@@ -6410,14 +6581,6 @@ var $;
                 "#90c"
             ];
         }
-        order() {
-            return [];
-        }
-        order_current(next) {
-            if (next !== undefined)
-                return next;
-            return "nump";
-        }
         plot_padding() {
             return 32;
         }
@@ -6430,8 +6593,28 @@ var $;
                 this.Setup()
             ];
         }
+        draw() {
+            return null;
+        }
         Root() {
-            const obj = new this.$.$mol_svg();
+            const obj = new this.$.$mol_view();
+            obj.render = () => this.draw();
+            return obj;
+        }
+        first_cmp_label(next) {
+            if (next !== undefined)
+                return next;
+            return "";
+        }
+        second_cmp_label(next) {
+            if (next !== undefined)
+                return next;
+            return "";
+        }
+        Cmp_legend() {
+            const obj = new this.$.$visavis_plot_legend_cmp();
+            obj.first_cmp_label = (next) => this.first_cmp_label();
+            obj.second_cmp_label = (next) => this.second_cmp_label();
             return obj;
         }
         Heatmap_min() {
@@ -6480,16 +6663,24 @@ var $;
         plot_body() {
             return [
                 this.Root(),
+                this.Cmp_legend(),
                 this.Side_right()
             ];
-        }
-        draw() {
-            return null;
         }
         Plot() {
             const obj = new this.$.$mol_view();
             obj.sub = () => this.plot_body();
-            obj.auto = () => this.draw();
+            return obj;
+        }
+        show_diff(next) {
+            if (next !== undefined)
+                return next;
+            return false;
+        }
+        Show_diff() {
+            const obj = new this.$.$mol_check_box();
+            obj.title = () => "Show diffrence";
+            obj.checked = (next) => this.show_diff(next);
             return obj;
         }
         nonformers(next) {
@@ -6499,55 +6690,61 @@ var $;
         }
         Nonformers() {
             const obj = new this.$.$mol_check_box();
-            obj.hint = () => this.$.$mol_locale.text('$visavis_plot_matrix_Nonformers_hint');
-            obj.title = () => this.$.$mol_locale.text('$visavis_plot_matrix_Nonformers_title');
+            obj.hint = () => "Continuous solid solutions and complete insolubility systems";
+            obj.title = () => "Show non-formers";
             obj.checked = (next) => this.nonformers(next);
             return obj;
         }
-        Nonformers_label() {
-            const obj = new this.$.$mol_labeler();
-            obj.title = () => this.$.$mol_locale.text('$visavis_plot_matrix_Nonformers_label_title');
-            obj.Content = () => this.Nonformers();
-            return obj;
+        sort_control(next) {
+            if (next !== undefined)
+                return next;
+            return "nump";
         }
         order_dict() {
             return {
-                nump: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_nump'),
-                num: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_num'),
-                size: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_size'),
-                rea: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_rea'),
-                rpp: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_rpp'),
-                rion: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_rion'),
-                rcov: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_rcov'),
-                rmet: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_rmet'),
-                tmelt: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_tmelt'),
-                eneg: this.$.$mol_locale.text('$visavis_plot_matrix_order_dict_eneg')
+                nump: "Periodic number",
+                num: "Atomic number",
+                size: "Atomic size",
+                rea: "Atomic reactivity",
+                rpp: "Pseudopotential radii",
+                rion: "Ionic radii",
+                rcov: "Covalent radii",
+                rmet: "Metallic radii",
+                tmelt: "Melting temperature",
+                eneg: "Electronegativity"
             };
         }
         Order_switch() {
             const obj = new this.$.$mol_switch();
-            obj.value = (next) => this.order_current(next);
+            obj.value = (next) => this.sort_control(next);
             obj.options = () => this.order_dict();
             return obj;
         }
         Order_label() {
             const obj = new this.$.$mol_labeler();
-            obj.title = () => this.$.$mol_locale.text('$visavis_plot_matrix_Order_label_title');
+            obj.title = () => "Sort by";
             obj.Content = () => this.Order_switch();
             return obj;
         }
-        Setup() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.Nonformers_label(),
+        setup() {
+            return [
+                this.Show_diff(),
+                this.Nonformers(),
                 this.Order_label()
             ];
+        }
+        Setup() {
+            const obj = new this.$.$mol_view();
+            obj.sub = () => this.setup();
             return obj;
         }
     }
     __decorate([
         $mol_mem
     ], $visavis_plot_matrix.prototype, "plot_raw", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_matrix.prototype, "json_cmp", null);
     __decorate([
         $mol_mem
     ], $visavis_plot_matrix.prototype, "links_value_min", null);
@@ -6559,10 +6756,31 @@ var $;
     ], $visavis_plot_matrix.prototype, "heatmap", null);
     __decorate([
         $mol_mem
-    ], $visavis_plot_matrix.prototype, "order_current", null);
+    ], $visavis_plot_matrix.prototype, "x_sort", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_matrix.prototype, "y_sort", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_matrix.prototype, "x_op", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_matrix.prototype, "y_op", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_matrix.prototype, "matrix_click", null);
     __decorate([
         $mol_mem
     ], $visavis_plot_matrix.prototype, "Root", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_matrix.prototype, "first_cmp_label", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_matrix.prototype, "second_cmp_label", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_matrix.prototype, "Cmp_legend", null);
     __decorate([
         $mol_mem
     ], $visavis_plot_matrix.prototype, "Heatmap_min", null);
@@ -6583,13 +6801,19 @@ var $;
     ], $visavis_plot_matrix.prototype, "Plot", null);
     __decorate([
         $mol_mem
+    ], $visavis_plot_matrix.prototype, "show_diff", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_matrix.prototype, "Show_diff", null);
+    __decorate([
+        $mol_mem
     ], $visavis_plot_matrix.prototype, "nonformers", null);
     __decorate([
         $mol_mem
     ], $visavis_plot_matrix.prototype, "Nonformers", null);
     __decorate([
         $mol_mem
-    ], $visavis_plot_matrix.prototype, "Nonformers_label", null);
+    ], $visavis_plot_matrix.prototype, "sort_control", null);
     __decorate([
         $mol_mem
     ], $visavis_plot_matrix.prototype, "Order_switch", null);
@@ -6775,87 +6999,6 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $mol_import extends $mol_object2 {
-        static module(uri) {
-            $mol_wire_solid();
-            return $mol_wire_sync(this).module_async(uri);
-        }
-        static module_async(uri) {
-            return import(uri);
-        }
-        static script(uri) {
-            $mol_wire_solid();
-            return $mol_wire_sync(this).script_async(uri);
-        }
-        static script_async(uri) {
-            const doc = $mol_dom_context.document;
-            const script = doc.createElement('script');
-            script.src = uri;
-            doc.head.appendChild(script);
-            return new Promise((done, fail) => {
-                script.onload = () => done($mol_dom_context);
-                script.onerror = () => fail(new Error(`Can not import ${uri}`));
-            });
-        }
-        static style(uri) {
-            return $mol_wire_sync(this).style_async(uri);
-        }
-        static style_async(uri) {
-            const doc = $mol_dom_context.document;
-            const style = doc.createElement('link');
-            style.rel = 'stylesheet';
-            style.href = uri;
-            doc.head.appendChild(style);
-            return new Promise((done, fail) => {
-                style.onload = () => done(style.sheet);
-                style.onerror = () => fail(new Error(`Can not import ${uri}`));
-            });
-        }
-    }
-    __decorate([
-        $mol_mem_key
-    ], $mol_import, "module", null);
-    __decorate([
-        $mol_mem_key
-    ], $mol_import, "script", null);
-    __decorate([
-        $mol_mem_key
-    ], $mol_import, "style", null);
-    $.$mol_import = $mol_import;
-})($ || ($ = {}));
-//mol/import/import.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $visavis_lib extends $mol_object2 {
-        static plotly() {
-            return $mol_import.script('/visavis/lib/bundle/plotly.custom.min.js').Plotly;
-        }
-        static pca() {
-            return $mol_import.script('/visavis/lib/bundle/pca.js').mlPca;
-        }
-        static d3() {
-            $mol_wire_solid();
-            return this.plotly().d3;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $visavis_lib, "plotly", null);
-    __decorate([
-        $mol_mem
-    ], $visavis_lib, "pca", null);
-    __decorate([
-        $mol_mem
-    ], $visavis_lib, "d3", null);
-    $.$visavis_lib = $visavis_lib;
-})($ || ($ = {}));
-//visavis/lib/lib.ts
-;
-"use strict";
-var $;
-(function ($) {
     function $mol_tree2_to_json(tree) {
         if (!tree.type)
             if (tree.kids.length === 1 && tree.kids[0].type)
@@ -6952,6 +7095,9 @@ var $;
             static element_by_name(name) {
                 return this.index_by_prop('name')[name];
             }
+            static prop_values(prop) {
+                return this.list().map(el => el[prop]);
+            }
         }
         __decorate([
             $mol_mem
@@ -6968,10 +7114,94 @@ var $;
         __decorate([
             $mol_mem_key
         ], $visavis_elements_list, "element_by_name", null);
+        __decorate([
+            $mol_mem_key
+        ], $visavis_elements_list, "prop_values", null);
         $$.$visavis_elements_list = $visavis_elements_list;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
 //visavis/elements/list/list.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_import extends $mol_object2 {
+        static module(uri) {
+            $mol_wire_solid();
+            return $mol_wire_sync(this).module_async(uri);
+        }
+        static module_async(uri) {
+            return import(uri);
+        }
+        static script(uri) {
+            $mol_wire_solid();
+            return $mol_wire_sync(this).script_async(uri);
+        }
+        static script_async(uri) {
+            const doc = $mol_dom_context.document;
+            const script = doc.createElement('script');
+            script.src = uri;
+            doc.head.appendChild(script);
+            return new Promise((done, fail) => {
+                script.onload = () => done($mol_dom_context);
+                script.onerror = () => fail(new Error(`Can not import ${uri}`));
+            });
+        }
+        static style(uri) {
+            return $mol_wire_sync(this).style_async(uri);
+        }
+        static style_async(uri) {
+            const doc = $mol_dom_context.document;
+            const style = doc.createElement('link');
+            style.rel = 'stylesheet';
+            style.href = uri;
+            doc.head.appendChild(style);
+            return new Promise((done, fail) => {
+                style.onload = () => done(style.sheet);
+                style.onerror = () => fail(new Error(`Can not import ${uri}`));
+            });
+        }
+    }
+    __decorate([
+        $mol_mem_key
+    ], $mol_import, "module", null);
+    __decorate([
+        $mol_mem_key
+    ], $mol_import, "script", null);
+    __decorate([
+        $mol_mem_key
+    ], $mol_import, "style", null);
+    $.$mol_import = $mol_import;
+})($ || ($ = {}));
+//mol/import/import.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $visavis_lib extends $mol_object2 {
+        static plotly() {
+            return $mol_import.script('/visavis/lib/bundle/plotly.custom.min.js').Plotly;
+        }
+        static pca() {
+            return $mol_import.script('/visavis/lib/bundle/pca.js').mlPca;
+        }
+        static d3() {
+            $mol_wire_solid();
+            return this.plotly().d3;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $visavis_lib, "plotly", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_lib, "pca", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_lib, "d3", null);
+    $.$visavis_lib = $visavis_lib;
+})($ || ($ = {}));
+//visavis/lib/lib.ts
 ;
 "use strict";
 var $;
@@ -7020,25 +7250,6 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    const mask = 0b11111_11111_11111;
-    function $mol_coord_pack(high, low) {
-        return (high << 17 >>> 2) | (low & mask);
-    }
-    $.$mol_coord_pack = $mol_coord_pack;
-    function $mol_coord_high(pack) {
-        return pack << 2 >> 17;
-    }
-    $.$mol_coord_high = $mol_coord_high;
-    function $mol_coord_low(pack) {
-        return (pack << 17) >> 17;
-    }
-    $.$mol_coord_low = $mol_coord_low;
-})($ || ($ = {}));
-//mol/coord/coord.ts
-;
-"use strict";
-var $;
-(function ($) {
     var $$;
     (function ($$) {
         const $visavis_plot_matrix_json_node = $mol_data_record({
@@ -7063,6 +7274,7 @@ var $;
             cmp: $mol_data_optional($mol_data_number),
         });
         const $visavis_plot_matrix_json = $mol_data_record({
+            answerto: $mol_data_optional($mol_data_string),
             payload: $mol_data_record({
                 nodes: $mol_data_array($visavis_plot_matrix_json_node),
                 links: $mol_data_array($visavis_plot_matrix_json_link)
@@ -7070,16 +7282,45 @@ var $;
         });
         class $visavis_plot_matrix extends $.$visavis_plot_matrix {
             sub() {
-                return [this.Plot(), ...(this.show_setup() ? [this.Setup()] : [])];
+                return [
+                    this.Plot(),
+                    ...(this.json_cmp() ? [this.Cmp_legend()] : []),
+                    ...(this.show_setup() ? [this.Setup()] : []),
+                ];
             }
             json() {
                 return $visavis_plot_matrix_json(this.plot_raw().json());
             }
+            json_master() {
+                if (!this.json_cmp())
+                    return this.json();
+                const json_master = JSON.parse(JSON.stringify(this.json()));
+                this.json_cmp().payload.links.forEach((item) => {
+                    item.cmp = 1;
+                    json_master.payload.links.push(item);
+                });
+                this.nonformers(false);
+                this.first_cmp_label(this.json().answerto);
+                this.second_cmp_label(this.json_cmp().answerto);
+                return $visavis_plot_matrix_json(json_master);
+            }
+            setup() {
+                return [
+                    ...(this.json_cmp() ? [this.Show_diff()] : [this.Nonformers()]),
+                    this.Order_label()
+                ];
+            }
+            plot_body() {
+                return [
+                    this.Root(),
+                    ...this.heatmap() ? [this.Side_right()] : [],
+                ];
+            }
             nodes() {
-                return this.json().payload.nodes;
+                return this.json_master().payload.nodes;
             }
             links() {
-                return this.json().payload.links.slice().sort((a, b) => a.value - b.value);
+                return this.json_master().payload.links.slice().sort((a, b) => a.value - b.value);
             }
             links_value_min() {
                 return this.links()[0].value;
@@ -7096,17 +7337,13 @@ var $;
                     return heatmap;
                 }, false);
             }
-            plot_body() {
-                return [
-                    this.Root(),
-                    ...this.heatmap() ? [this.Side_right()] : [],
-                ];
+            order_by_prop(prop) {
+                return $visavis_lib.d3().range(95).sort((a, b) => {
+                    return this.nodes()[a][prop] - this.nodes()[b][prop];
+                });
             }
             order() {
-                const order_current = this.order_current();
-                return $visavis_lib.d3().range(95).sort((a, b) => {
-                    return this.nodes()[a][order_current] - this.nodes()[b][order_current];
-                });
+                return this.order_by_prop('nump');
             }
             matrix() {
                 const matrix = this.nodes().map((node, i) => $visavis_lib.d3().range(95).map((j) => ({ x: j, y: i, z: 0, cmt: '', cmp: 0, nonformer: false })));
@@ -7173,21 +7410,10 @@ var $;
                     : text;
                 return title;
             }
-            cell_hovered(cell) {
-                $visavis_lib.d3().selectAll('.row text').classed('active', (_, index) => cell?.y === index);
-                $visavis_lib.d3().selectAll('.column text').classed('active', (_, index) => cell?.x === index);
-            }
-            cell_selected(id, next) {
-                $mol_wire_solid();
-                return next ?? false;
-            }
-            cell_click(cell) {
-                const coords = [$mol_coord_pack(cell.x, cell.y), $mol_coord_pack(cell.y, cell.x)];
-                coords.forEach(coord => this.cell_selected(coord, !this.cell_selected(coord)));
-                $visavis_lib.d3().selectAll('.cell').classed('visited', (item) => this.cell_selected($mol_coord_pack(item.x, item.y)));
-            }
             draw_cells(node, row) {
-                $visavis_lib.d3().select(node)
+                const d3 = $visavis_lib.d3();
+                const that = this;
+                d3.select(node)
                     .selectAll('.cell')
                     .data(row.filter((d) => d.z))
                     .enter().append('rect')
@@ -7198,16 +7424,33 @@ var $;
                     .attr('height', this.range().rangeBand())
                     .style('fill-opacity', (d) => this.opacity(d.z))
                     .style('fill', (d) => this.color(d.z, d.cmp))
-                    .on('mouseover', (event, cell) => this.cell_hovered(cell))
-                    .on('mouseout', (event) => this.cell_hovered(null))
-                    .on('click', (event, cell) => this.cell_click(cell))
+                    .on('mouseover', function (event) {
+                    const cell_data = d3.select(this).data()[0];
+                    d3.selectAll(".row text").classed("active", (d, i) => { return i == cell_data.y; });
+                    d3.selectAll(".column text").classed("active", (d, i) => { return i == cell_data.x; });
+                })
+                    .on('mouseout', function (event) { })
+                    .on('click', function (event) {
+                    var ids = d3.select(this).attr("id").substr(2).split("_");
+                    document.getElementById("c_" + ids[1] + "_" + ids[0]).classList.add('visited');
+                    document.getElementById("c_" + ids[0] + "_" + ids[1]).classList.add('visited');
+                    const cell_data = d3.select(this).data()[0];
+                    that.matrix_click({ cmt: cell_data.cmt });
+                })
                     .append('svg:title').text((cell) => this.svg_title_text(cell));
+            }
+            d3svg(next) {
+                $mol_wire_solid();
+                return next;
             }
             draw() {
                 if (Number.isNaN(this.size()))
                     return;
-                const svg = $visavis_lib.d3().select('[visavis_plot_matrix_root]')
-                    .attr('width', this.size() + this.axis_width())
+                const d3 = $visavis_lib.d3();
+                const svg_element = $mol_wire_sync(document).createElementNS('http://www.w3.org/2000/svg', 'svg');
+                const svg = d3.select(svg_element);
+                this.d3svg(svg);
+                svg.attr('width', this.size() + this.axis_width())
                     .attr('height', this.size() + this.axis_width())
                     .style('font-size', this.range().rangeBand())
                     .style('letter-spacing', '1px');
@@ -7246,6 +7489,120 @@ var $;
                     .attr('dy', '.32em')
                     .attr('text-anchor', 'start')
                     .text((d, i) => this.nodes()[i].name);
+                this.Root().dom_node_actual().replaceChildren(svg_element);
+            }
+            auto() {
+                this.reorder();
+            }
+            get_bin_domain(args) {
+                const { sort, op } = args;
+                const d3 = $visavis_lib.d3();
+                var cond_slice = $visavis_elements_list.prop_values(sort).slice(1);
+                switch (op) {
+                    case 'sum': return [
+                        d3.min(cond_slice) * 2,
+                        d3.max($visavis_elements_list.prop_values(sort)) * 2
+                    ];
+                    case 'diff': return [
+                        d3.min(cond_slice),
+                        d3.max($visavis_elements_list.prop_values(sort)) - d3.min(cond_slice)
+                    ];
+                    case 'product': return [
+                        Math.pow(d3.min(cond_slice), 2),
+                        Math.pow(d3.max($visavis_elements_list.prop_values(sort)), 2)
+                    ];
+                    case 'ratio': return [
+                        d3.min(cond_slice) / d3.max($visavis_elements_list.prop_values(sort)),
+                        d3.max($visavis_elements_list.prop_values(sort)) / d3.min(cond_slice)
+                    ];
+                    case 'max': return [
+                        d3.min(cond_slice),
+                        d3.max($visavis_elements_list.prop_values(sort))
+                    ];
+                    case 'min': return [
+                        d3.min(cond_slice),
+                        d3.max($visavis_elements_list.prop_values(sort))
+                    ];
+                }
+            }
+            renorm(args) {
+                const { sort, op } = args;
+                const d3 = $visavis_lib.d3();
+                const svgdim = this.size();
+                return op ?
+                    d3.scale.quantize().range(d3.range(0, svgdim, svgdim / 95)).domain(this.get_bin_domain({ sort, op })) :
+                    d3.scale.ordinal().rangeBands([0, svgdim]).domain(this.order_by_prop(sort));
+            }
+            sort_control(next) {
+                if (next !== undefined) {
+                    this.x_sort(next);
+                    this.y_sort(next);
+                    return next;
+                }
+                return "nump";
+            }
+            reorder() {
+                const x_sort = this.x_sort();
+                const y_sort = this.y_sort() || x_sort;
+                const x_op = this.x_op();
+                const y_op = this.y_op();
+                const d3 = $visavis_lib.d3();
+                const svg = d3.select(this.Root().dom_node_actual().firstChild);
+                function bin_op(op, a, b) {
+                    switch (op) {
+                        case 'sum': return a + b;
+                        case 'diff': return Math.abs(a - b);
+                        case 'product': return a * b;
+                        case 'ratio': return a / b;
+                        case 'max': return (a > b) ? a : b;
+                        case 'min': return (a < b) ? a : b;
+                    }
+                }
+                const arrange = (sort, op, input, index) => {
+                    const x = input.x !== undefined ? $visavis_elements_list.prop_values(sort)[input.x + 1] :
+                        $visavis_elements_list.prop_values(sort)[index];
+                    const y = input.y !== undefined ? $visavis_elements_list.prop_values(sort)[input.y + 1] :
+                        $visavis_elements_list.prop_values(sort)[index];
+                    var bin = bin_op(op, x, y);
+                    return this.renorm({ sort, op })(bin);
+                };
+                const x_arrange = (input, index) => {
+                    if (!x_op) {
+                        const x_renorm = this.renorm({ sort: x_sort, op: x_op });
+                        return index !== undefined ? x_renorm(index) : x_renorm(input.x);
+                    }
+                    return arrange(x_sort, x_op, input, index);
+                };
+                const y_arrange = (input, index) => {
+                    if (!y_op) {
+                        const y_renorm = this.renorm({ sort: y_sort, op: y_op });
+                        return y_renorm(index);
+                    }
+                    return arrange(y_sort, y_op, input, index);
+                };
+                d3.selectAll("rect.visited").classed("visited", false);
+                d3.selectAll("g.column text").classed("hidden", x_op);
+                d3.selectAll("g.row text").classed("hidden", y_op);
+                d3.select("rect.bgmatrix").classed("hidden", (x_op || y_op));
+                var t = svg.transition().duration(600);
+                if (y_op) {
+                    t.selectAll(".row")
+                        .attr("transform", null)
+                        .selectAll(".cell")
+                        .attr("x", null)
+                        .attr("transform", (d) => { return "translate(" + x_arrange(d) + "," + y_arrange(d) + ")"; });
+                }
+                else {
+                    t.selectAll(".row")
+                        .attr("transform", (d, i) => { return "translate(0," + y_arrange(d, i) + ")"; })
+                        .selectAll(".cell")
+                        .attr("transform", null)
+                        .attr("x", (d) => { return x_arrange(d); });
+                }
+                if (!x_op) {
+                    t.selectAll(".column")
+                        .attr("transform", (d, i) => { return "translate(" + x_arrange(d, i) + ")rotate(-90)"; });
+                }
             }
         }
         __decorate([
@@ -7253,10 +7610,22 @@ var $;
         ], $visavis_plot_matrix.prototype, "json", null);
         __decorate([
             $mol_mem
+        ], $visavis_plot_matrix.prototype, "json_master", null);
+        __decorate([
+            $mol_mem
+        ], $visavis_plot_matrix.prototype, "setup", null);
+        __decorate([
+            $mol_mem
+        ], $visavis_plot_matrix.prototype, "plot_body", null);
+        __decorate([
+            $mol_mem
         ], $visavis_plot_matrix.prototype, "links", null);
         __decorate([
             $mol_mem
         ], $visavis_plot_matrix.prototype, "heatmap", null);
+        __decorate([
+            $mol_mem_key
+        ], $visavis_plot_matrix.prototype, "order_by_prop", null);
         __decorate([
             $mol_mem
         ], $visavis_plot_matrix.prototype, "order", null);
@@ -7280,16 +7649,25 @@ var $;
         ], $visavis_plot_matrix.prototype, "range", null);
         __decorate([
             $mol_mem_key
-        ], $visavis_plot_matrix.prototype, "cell_selected", null);
-        __decorate([
-            $mol_action
-        ], $visavis_plot_matrix.prototype, "cell_click", null);
-        __decorate([
-            $mol_mem_key
         ], $visavis_plot_matrix.prototype, "draw_cells", null);
         __decorate([
             $mol_mem
+        ], $visavis_plot_matrix.prototype, "d3svg", null);
+        __decorate([
+            $mol_mem
         ], $visavis_plot_matrix.prototype, "draw", null);
+        __decorate([
+            $mol_mem_key
+        ], $visavis_plot_matrix.prototype, "get_bin_domain", null);
+        __decorate([
+            $mol_mem_key
+        ], $visavis_plot_matrix.prototype, "renorm", null);
+        __decorate([
+            $mol_mem
+        ], $visavis_plot_matrix.prototype, "sort_control", null);
+        __decorate([
+            $mol_mem
+        ], $visavis_plot_matrix.prototype, "reorder", null);
         $$.$visavis_plot_matrix = $visavis_plot_matrix;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
@@ -7412,7 +7790,7 @@ var $;
                 const { width, height } = this.view_rect();
                 const plotly_root = $mol_wire_sync(document).createElement('div');
                 plotly_root.style.position = 'absolute';
-                const promise = $lib_plotly.all().react(plotly_root, this.data(), { ...this.layout(), width, height }, this.plot_options());
+                const promise = $lib_plotly.all().react(plotly_root, this.data(), { ...this.layout(), width, height, font: { family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" } }, this.plot_options());
                 const dom_node = this.dom_node_actual();
                 promise.then((plotly_root) => {
                     dom_node.replaceChildren(plotly_root);
@@ -8887,6 +9265,11 @@ var $;
             const obj = new this.$.$visavis_plot_raw();
             return obj;
         }
+        json_cmp(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
         show_setup() {
             return true;
         }
@@ -8932,6 +9315,11 @@ var $;
             if (next !== undefined)
                 return next;
             return "nump";
+        }
+        cube_click(next) {
+            if (next !== undefined)
+                return next;
+            return null;
         }
         colorset() {
             return [
@@ -8980,6 +9368,22 @@ var $;
             obj.data = () => this.data_shown();
             obj.layout = () => this.layout();
             obj.subscribe_events = () => this.subscribe_events();
+            return obj;
+        }
+        first_cmp_label(next) {
+            if (next !== undefined)
+                return next;
+            return "";
+        }
+        second_cmp_label(next) {
+            if (next !== undefined)
+                return next;
+            return "";
+        }
+        Cmp_legend() {
+            const obj = new this.$.$visavis_plot_legend_cmp();
+            obj.first_cmp_label = (next) => this.first_cmp_label();
+            obj.second_cmp_label = (next) => this.second_cmp_label();
             return obj;
         }
         value_min() {
@@ -9035,8 +9439,20 @@ var $;
             const obj = new this.$.$mol_view();
             obj.sub = () => [
                 this.Root(),
+                this.Cmp_legend(),
                 this.Side_right()
             ];
+            return obj;
+        }
+        project2d(next) {
+            if (next !== undefined)
+                return next;
+            return false;
+        }
+        Project2d() {
+            const obj = new this.$.$mol_check_box();
+            obj.title = () => "Project on 2d";
+            obj.checked = (next) => this.project2d(next);
             return obj;
         }
         nonformers(next) {
@@ -9046,29 +9462,23 @@ var $;
         }
         Nonformers() {
             const obj = new this.$.$mol_check_box();
-            obj.hint = () => this.$.$mol_locale.text('$visavis_plot_cube_Nonformers_hint');
-            obj.title = () => this.$.$mol_locale.text('$visavis_plot_cube_Nonformers_title');
+            obj.hint = () => "Continuous solid solutions and complete insolubility systems";
+            obj.title = () => "Show non-formers";
             obj.checked = (next) => this.nonformers(next);
-            return obj;
-        }
-        Nonformers_label() {
-            const obj = new this.$.$mol_labeler();
-            obj.title = () => this.$.$mol_locale.text('$visavis_plot_cube_Nonformers_label_title');
-            obj.Content = () => this.Nonformers();
             return obj;
         }
         order_dict() {
             return {
-                nump: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_nump'),
-                num: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_num'),
-                size: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_size'),
-                rea: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_rea'),
-                rpp: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_rpp'),
-                rion: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_rion'),
-                rcov: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_rcov'),
-                rmet: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_rmet'),
-                tmelt: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_tmelt'),
-                eneg: this.$.$mol_locale.text('$visavis_plot_cube_order_dict_eneg')
+                nump: "Periodic number",
+                num: "Atomic number",
+                size: "Atomic size",
+                rea: "Atomic reactivity",
+                rpp: "Pseudopotential radii",
+                rion: "Ionic radii",
+                rcov: "Covalent radii",
+                rmet: "Metallic radii",
+                tmelt: "Melting temperature",
+                eneg: "Electronegativity"
             };
         }
         X_order_select() {
@@ -9079,7 +9489,7 @@ var $;
         }
         X_order_label() {
             const obj = new this.$.$mol_labeler();
-            obj.title = () => this.$.$mol_locale.text('$visavis_plot_cube_X_order_label_title');
+            obj.title = () => "X sort by";
             obj.Content = () => this.X_order_select();
             return obj;
         }
@@ -9091,7 +9501,7 @@ var $;
         }
         Y_order_label() {
             const obj = new this.$.$mol_labeler();
-            obj.title = () => this.$.$mol_locale.text('$visavis_plot_cube_Y_order_label_title');
+            obj.title = () => "Y sort by";
             obj.Content = () => this.Y_order_select();
             return obj;
         }
@@ -9103,14 +9513,15 @@ var $;
         }
         Z_order_label() {
             const obj = new this.$.$mol_labeler();
-            obj.title = () => this.$.$mol_locale.text('$visavis_plot_cube_Z_order_label_title');
+            obj.title = () => "Z sort by";
             obj.Content = () => this.Z_order_select();
             return obj;
         }
         Setup() {
             const obj = new this.$.$mol_view();
             obj.sub = () => [
-                this.Nonformers_label(),
+                this.Project2d(),
+                this.Nonformers(),
                 this.X_order_label(),
                 this.Y_order_label(),
                 this.Z_order_label()
@@ -9121,6 +9532,9 @@ var $;
     __decorate([
         $mol_mem
     ], $visavis_plot_cube.prototype, "plot_raw", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_cube.prototype, "json_cmp", null);
     __decorate([
         $mol_mem
     ], $visavis_plot_cube.prototype, "heatmap", null);
@@ -9147,7 +9561,19 @@ var $;
     ], $visavis_plot_cube.prototype, "z_sort", null);
     __decorate([
         $mol_mem
+    ], $visavis_plot_cube.prototype, "cube_click", null);
+    __decorate([
+        $mol_mem
     ], $visavis_plot_cube.prototype, "Root", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_cube.prototype, "first_cmp_label", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_cube.prototype, "second_cmp_label", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_cube.prototype, "Cmp_legend", null);
     __decorate([
         $mol_mem
     ], $visavis_plot_cube.prototype, "Heatmap_min", null);
@@ -9168,13 +9594,16 @@ var $;
     ], $visavis_plot_cube.prototype, "Plot", null);
     __decorate([
         $mol_mem
+    ], $visavis_plot_cube.prototype, "project2d", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_cube.prototype, "Project2d", null);
+    __decorate([
+        $mol_mem
     ], $visavis_plot_cube.prototype, "nonformers", null);
     __decorate([
         $mol_mem
     ], $visavis_plot_cube.prototype, "Nonformers", null);
-    __decorate([
-        $mol_mem
-    ], $visavis_plot_cube.prototype, "Nonformers_label", null);
     __decorate([
         $mol_mem
     ], $visavis_plot_cube.prototype, "X_order_select", null);
@@ -9228,6 +9657,35 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    function $mol_data_variant(...sub) {
+        return $mol_data_setup((val) => {
+            const errors = [];
+            for (const type of sub) {
+                let hidden = $.$mol_fail_hidden;
+                try {
+                    $.$mol_fail = $.$mol_fail_hidden;
+                    return type(val);
+                }
+                catch (error) {
+                    $.$mol_fail = hidden;
+                    if (error instanceof $mol_data_error) {
+                        errors.push(error);
+                    }
+                    else {
+                        return $mol_fail_hidden(error);
+                    }
+                }
+            }
+            return $mol_fail(new $mol_data_error(`${val} is not any of variants`, ...errors));
+        }, sub);
+    }
+    $.$mol_data_variant = $mol_data_variant;
+})($ || ($ = {}));
+//mol/data/variant/variant.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $lib_d3 extends $mol_object2 {
         static all() {
             return $mol_import.script('https://cdn.jsdelivr.net/npm/d3@7').d3;
@@ -9255,11 +9713,12 @@ var $;
                     v: $mol_data_array($mol_data_number),
                     labels: $mol_data_array($mol_data_string),
                 }),
-                fixel: $mol_data_nullable($mol_data_boolean),
+                fixel: $mol_data_nullable($mol_data_variant($mol_data_boolean, $mol_data_number)),
                 xtitle: $mol_data_optional($mol_data_string),
                 ytitle: $mol_data_optional($mol_data_string),
                 ztitle: $mol_data_optional($mol_data_string),
             }),
+            answerto: $mol_data_optional($mol_data_string),
         });
         class $visavis_plot_cube extends $.$visavis_plot_cube {
             plot_body() {
@@ -9269,7 +9728,11 @@ var $;
                 ];
             }
             sub() {
-                return [this.Plot(), ...(this.show_setup() ? [this.Setup()] : [])];
+                return [
+                    this.Plot(),
+                    ...(this.json_cmp() ? [this.Cmp_legend()] : []),
+                    ...(this.show_setup() ? [this.Setup()] : []),
+                ];
             }
             json() {
                 return $visavis_plot_cube_json(this.plot_raw().json());
@@ -9299,41 +9762,57 @@ var $;
                     this.Heatmap_max(),
                 ];
             }
-            marker() {
+            marker(color_id) {
                 return {
-                    color: this.heatmap() ? this.json().payload.points.v : this.colorset()[0],
+                    color: this.heatmap() ? this.json().payload.points.v : this.colorset()[color_id],
                     ...this.heatmap() ? { colorscale: 'Rainbow' } : {},
                     size: 4,
                     opacity: 0.9
                 };
             }
+            scatter3d_common() {
+                return {
+                    type: "scatter3d",
+                    mode: "markers",
+                    hoverinfo: "text",
+                    projection: { x: { show: true, opacity: 0.25 }, y: { show: true, opacity: 0.25 }, z: { show: true, opacity: 0.25 } },
+                };
+            }
             data_nonformers() {
                 const { x, y, z } = $visavis_elements_nonformer.pd_tri_nums();
                 return {
-                    type: "scatter3d",
+                    ...this.scatter3d_common(),
                     text: $visavis_elements_nonformer.pd_tri_labels(),
-                    mode: "markers",
-                    hoverinfo: "text",
                     marker: { color: "#ccc", size: 4, opacity: 0.9 },
-                    projection: { x: { show: true, opacity: 0.25 }, y: { show: true, opacity: 0.25 }, z: { show: true, opacity: 0.25 } },
                     ...this.convert_to_axes(x, y, z, this.x_sort(), this.y_sort(), this.z_sort())
                 };
             }
             data() {
                 return {
-                    type: "scatter3d",
+                    ...this.scatter3d_common(),
                     text: this.json().payload.points.labels,
-                    mode: "markers",
-                    hoverinfo: "text",
-                    marker: this.marker(),
-                    projection: { x: { show: true, opacity: 0.05 }, y: { show: true, opacity: 0.05 }, z: { show: true, opacity: 0.05 } },
+                    marker: this.marker(0),
                     ...this.convert_to_axes(this.json().payload.points.x, this.json().payload.points.y, this.json().payload.points.z, this.x_sort(), this.y_sort(), this.z_sort())
+                };
+            }
+            data_cmp() {
+                if (!this.json_cmp())
+                    return null;
+                this.nonformers(false);
+                this.first_cmp_label(this.json().answerto);
+                this.second_cmp_label(this.json_cmp().answerto);
+                return {
+                    ...this.scatter3d_common(),
+                    text: this.json_cmp().payload.points.labels,
+                    marker: this.marker(1),
+                    ...this.convert_to_axes(this.json_cmp().payload.points.x, this.json_cmp().payload.points.y, this.json_cmp().payload.points.z, this.x_sort(), this.y_sort(), this.z_sort())
                 };
             }
             data_shown() {
                 return [
                     ...this.nonformers() ? [this.data_nonformers()] : [],
                     this.data(),
+                    ...this.json_cmp() ? [this.data_cmp()] : [],
                 ];
             }
             scene() {
@@ -9381,9 +9860,19 @@ var $;
                     camera: { projection: { type: 'perspective' } },
                 };
             }
+            subscribe_events() {
+                const d3 = $lib_d3.all();
+                const that = this;
+                d3.select('div.js-plotly-plot').on('click', (event) => {
+                    const node = event.target;
+                    if (node.getAttribute('class') != 'nums')
+                        return false;
+                    const label_data = d3.select(node).data()[0];
+                    that.cube_click({ label: label_data.text });
+                });
+            }
             layout() {
                 return {
-                    font: { family: "Exo2" },
                     showlegend: false,
                     scene: this.scene(),
                     margin: {
@@ -9470,8 +9959,11 @@ var $;
             $mol_mem
         ], $visavis_plot_cube.prototype, "heatmap", null);
         __decorate([
-            $mol_mem
+            $mol_mem_key
         ], $visavis_plot_cube.prototype, "marker", null);
+        __decorate([
+            $mol_mem
+        ], $visavis_plot_cube.prototype, "scatter3d_common", null);
         __decorate([
             $mol_mem
         ], $visavis_plot_cube.prototype, "data_nonformers", null);
@@ -9480,10 +9972,16 @@ var $;
         ], $visavis_plot_cube.prototype, "data", null);
         __decorate([
             $mol_mem
+        ], $visavis_plot_cube.prototype, "data_cmp", null);
+        __decorate([
+            $mol_mem
         ], $visavis_plot_cube.prototype, "data_shown", null);
         __decorate([
             $mol_mem
         ], $visavis_plot_cube.prototype, "scene", null);
+        __decorate([
+            $mol_action
+        ], $visavis_plot_cube.prototype, "subscribe_events", null);
         __decorate([
             $mol_mem
         ], $visavis_plot_cube.prototype, "layout", null);
@@ -9494,6 +9992,13 @@ var $;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
 //visavis/plot/cube/cube.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("visavis/plot/cube/cube.view.css", "[visavis_plot_cube_plot] g.hovertext text {\n\tcursor: pointer;\n}\n");
+})($ || ($ = {}));
+//visavis/plot/cube/-css/cube.view.css.ts
 ;
 "use strict";
 var $;
@@ -9599,8 +10104,7 @@ var $;
                     hovermode: "closest",
                     font: {
                         size: 20,
-                        color: "#333",
-                        family: "Exo2"
+                        color: "#333"
                     },
                     ternary: {
                         aaxis: {
@@ -9652,8 +10156,7 @@ var $;
                     xref: "papper",
                     yref: "papper",
                     font: {
-                        size: 15,
-                        family: "Exo2"
+                        size: 15
                     }
                 }
             ];
@@ -9680,8 +10183,7 @@ var $;
                     hovermode: "closest",
                     font: {
                         size: 16,
-                        color: "#333",
-                        family: "Exo2"
+                        color: "#333"
                     },
                     xaxis: {
                         title: "at. %",
@@ -9756,8 +10258,7 @@ var $;
                     xref: "papper",
                     yref: "papper",
                     font: {
-                        size: 20,
-                        family: "Exo2"
+                        size: 20
                     }
                 },
                 {
@@ -9768,8 +10269,7 @@ var $;
                     xref: "papper",
                     yref: "papper",
                     font: {
-                        size: 20,
-                        family: "Exo2"
+                        size: 20
                     }
                 }
             ];
@@ -9778,8 +10278,7 @@ var $;
             return {
                 show_arrow: false,
                 font: {
-                    size: 13,
-                    family: "Exo2"
+                    size: 13
                 }
             };
         }
@@ -9996,7 +10495,7 @@ var $;
                     formula += el + ' × ' + coeff.toFixed(2) + ', ';
                 }
             });
-            return formula.substr(0, formula.length - 2);
+            return formula.slice(0, formula.length - 2);
         }
         function get_tri_pd_compound(a, b, c, obj_a, obj_b, obj_c) {
             const els = Object.keys(obj_a).sort();
@@ -10008,7 +10507,7 @@ var $;
                     return;
                 formula += el + ' &times; ' + coeff.toFixed(2) + ', ';
             });
-            return formula.substr(0, formula.length - 2);
+            return formula.slice(0, formula.length - 2);
         }
         function inside_triangle(x, y, x1, y1, x2, y2, x3, y3) {
             function fAB(x, y, x1, y1, x2, y2, x3, y3) {
@@ -10139,7 +10638,7 @@ var $;
                     return;
                 const json = this.json();
                 const is_triangle = this.is_triangle();
-                const figures = d3.selectAll('[visavis_phase_root] .shapelayer path');
+                const figures = d3.selectAll('[visavis_plot_phase_root] .shapelayer path');
                 figures.on('mouseover', function () {
                     const that = d3.select(this);
                     let idx = that.attr('data-index');
@@ -10162,7 +10661,7 @@ var $;
                     if (state) {
                         that.style('fill', state);
                         that.style('cursor', 'default');
-                        d3.selectAll('[visavis_phase_root] g.annotation').select('text').style('fill', '#000');
+                        d3.selectAll('[visavis_plot_phase_root] g.annotation').select('text').style('fill', '#000');
                     }
                 });
                 const canvas = this.Root().dom_node().firstChild;
@@ -10213,10 +10712,10 @@ var $;
                     const b = el.getBBox();
                     return fn(b.x, b.y);
                 }
-                const svgroot = d3.select("[visavis_phase_root] svg.main-svg")[0][0];
-                let graph_node = d3.select("[visavis_phase_root] g.toplevel.plotbg")[0][0];
+                const svgroot = d3.select("[visavis_plot_phase_root] svg.main-svg")[0][0];
+                let graph_node = d3.select("[visavis_plot_phase_root] g.toplevel.plotbg")[0][0];
                 const graph_coords = get_absolute_coords(graph_node, svgroot);
-                const svg_el = d3.select("[visavis_phase_root] g.layer-above");
+                const svg_el = d3.select("[visavis_plot_phase_root] g.layer-above");
                 let svg_node = svg_el[0][0];
                 graph_node = graph_node.getBoundingClientRect();
                 svg_node = svg_node.getBoundingClientRect();
@@ -10225,11 +10724,11 @@ var $;
                 const centerX = graph_coords.x + graph_node.width / 2;
                 const centerY = graph_coords.y + graph_node.height;
                 const origdims = [];
-                d3.selectAll("[visavis_phase_root] text.annotation-text").each(function () {
+                d3.selectAll("[visavis_plot_phase_root] text.annotation-text").each(function () {
                     origdims.push(parseInt(this.getBoundingClientRect().left));
                 });
                 svg_el.attr("transform", "translate(" + (-centerX * (scaleX - 1)) + ", " + (-centerY * (scaleY - 1)) + ") scale(" + scaleX + ", " + scaleY + ")");
-                d3.selectAll("[visavis_phase_root] g.annotation").each(function (d, i) {
+                d3.selectAll("[visavis_plot_phase_root] g.annotation").each(function (d, i) {
                     d3.select(this).attr("transform", "translate(" + (-centerX * (scaleX - 1)) + ", " + (-centerY * (scaleY - 1)) + ") scale(" + scaleX + ", " + scaleY + ") translate(" + (-origdims[i] / 1.25) + ", 0) scale(1.75, 1)");
                 });
             }
@@ -10337,7 +10836,7 @@ var $;
                 const json = this.json();
                 return {
                     showlegend: json.payload2 ? true : false,
-                    legend: { x: 0, y: 1, font: { family: "Exo2", size: 17 } },
+                    legend: { x: 0, y: 1, font: { size: 17 } },
                     xaxis: {
                         autorange: true,
                         showgrid: false,
@@ -10357,9 +10856,9 @@ var $;
                         ticklen: 0,
                         title: json.payload.ytitle,
                         rangemode: "nonnegative",
-                        type: "log", tickfont: { family: "Exo2", size: 17 }
+                        type: "log", tickfont: { size: 17 }
                     },
-                    font: { family: "Exo2", size: 13 }
+                    font: { size: 13 }
                 };
             }
             data() {
@@ -10400,6 +10899,11 @@ var $;
             const obj = new this.$.$visavis_plot_raw();
             return obj;
         }
+        json_cmp(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
         elementals_on(next) {
             if (next !== undefined)
                 return next;
@@ -10416,6 +10920,7 @@ var $;
         sub() {
             return [
                 this.Plot(),
+                this.Cmp_legend(),
                 this.Setup()
             ];
         }
@@ -10433,6 +10938,22 @@ var $;
             obj.data = () => this.data();
             obj.layout = () => this.layout();
             obj.subscribe_events = () => this.subscribe_events();
+            return obj;
+        }
+        first_cmp_label(next) {
+            if (next !== undefined)
+                return next;
+            return "";
+        }
+        second_cmp_label(next) {
+            if (next !== undefined)
+                return next;
+            return "";
+        }
+        Cmp_legend() {
+            const obj = new this.$.$visavis_plot_legend_cmp();
+            obj.first_cmp_label = (next) => this.first_cmp_label();
+            obj.second_cmp_label = (next) => this.second_cmp_label();
             return obj;
         }
         elemental_checked(id, next) {
@@ -10468,6 +10989,9 @@ var $;
     ], $visavis_plot_discovery.prototype, "plot_raw", null);
     __decorate([
         $mol_mem
+    ], $visavis_plot_discovery.prototype, "json_cmp", null);
+    __decorate([
+        $mol_mem
     ], $visavis_plot_discovery.prototype, "elementals_on", null);
     __decorate([
         $mol_mem
@@ -10475,6 +10999,15 @@ var $;
     __decorate([
         $mol_mem
     ], $visavis_plot_discovery.prototype, "Plot", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_discovery.prototype, "first_cmp_label", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_discovery.prototype, "second_cmp_label", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_plot_discovery.prototype, "Cmp_legend", null);
     __decorate([
         $mol_mem_key
     ], $visavis_plot_discovery.prototype, "elemental_checked", null);
@@ -10527,9 +11060,10 @@ var $;
                     const props = elementals_on.map(prop_name => $visavis_elements_list.element_by_num(element_num)[prop_name]);
                     const name = $visavis_elements_list.element_by_num(element_num).name;
                     prop_array.push(...props);
-                    label_parts.push(name);
+                    if (element_num != 0)
+                        label_parts.push(name);
                 });
-                const label = label_parts.filter(x => x).join('-');
+                const label = label_parts.join('-');
                 return { prop_array, label };
             };
             const to_predict = [];
@@ -10543,7 +11077,7 @@ var $;
                 given_separation = to_predict.length;
                 second.points.forEach(element_ids => {
                     const { prop_array, label } = elements_data(element_ids);
-                    if (labels.includes(label)) {
+                    if (!labels.includes(label)) {
                         to_predict.push(prop_array);
                         labels.push(label);
                     }
@@ -10575,7 +11109,11 @@ var $;
         }
         class $visavis_plot_discovery extends $.$visavis_plot_discovery {
             sub() {
-                return [this.Plot(), ...(this.show_setup() ? [this.Setup()] : [])];
+                return [
+                    this.Plot(),
+                    ...(this.json_cmp() ? [this.Cmp_legend()] : []),
+                    ...(this.show_setup() ? [this.Setup()] : []),
+                ];
             }
             json() {
                 return $$.$visavis_plot_discovery_json(this.plot_raw().json());
@@ -10589,7 +11127,7 @@ var $;
                     const node = event.target;
                     if (node.getAttribute('class') != 'point')
                         return false;
-                    node.classList.add('clicked');
+                    node.classList.add('visited');
                     const point = d3.select(node);
                     const label = point.data()[0].tx;
                     this.discovery_click({ label });
@@ -10619,7 +11157,7 @@ var $;
                             text: '<i>Second Principal Component (a<sub>1</sub>x + b<sub>1</sub>y + c<sub>1</sub>z + ...)</i>',
                             showarrow: false,
                             bgcolor: '#fff',
-                            font: { family: "Exo2", size: 14 }
+                            font: { size: 14 }
                         },
                         {
                             x: 0.97,
@@ -10632,7 +11170,7 @@ var $;
                             showarrow: false,
                             bgcolor: '#fff',
                             textangle: 270,
-                            font: { family: "Exo2", size: 14 }
+                            font: { size: 14 }
                         }
                     ]
                 };
@@ -10657,8 +11195,13 @@ var $;
             }
             data() {
                 const json = this.json();
+                const json_cmp = this.json_cmp();
                 const elementals_on = this.elementals_on();
-                const result = discover(elementals_on, Discover_item({ points: json.payload.points, name: json.answerto }));
+                const first = Discover_item({ points: json.payload.points, name: json.answerto });
+                this.first_cmp_label(first.name);
+                const second = json_cmp ? Discover_item({ points: json_cmp.payload.points, name: json_cmp.answerto }) : undefined;
+                this.second_cmp_label(second?.name);
+                const result = discover(elementals_on, first, second);
                 const traces = [];
                 for (let i = 0; i < result.length; i++) {
                     const dscolor = (i == 0) ? '#3e3f95' : '#900';
@@ -10699,7 +11242,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("visavis/plot/discovery/discovery.view.css", "[visavis_plot_discovery] .point.clicked {\n\tfill: lime !important;\n}\n");
+    $mol_style_attach("visavis/plot/discovery/discovery.view.css", "[visavis_plot_discovery] .point.visited {\n\tfill: lime !important;\n}\n");
 })($ || ($ = {}));
 //visavis/plot/discovery/-css/discovery.view.css.ts
 ;
@@ -10740,35 +11283,6 @@ var $;
     $.$visavis_plot_eigen = $visavis_plot_eigen;
 })($ || ($ = {}));
 //visavis/plot/eigen/-view.tree/eigen.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    function $mol_data_variant(...sub) {
-        return $mol_data_setup((val) => {
-            const errors = [];
-            for (const type of sub) {
-                let hidden = $.$mol_fail_hidden;
-                try {
-                    $.$mol_fail = $.$mol_fail_hidden;
-                    return type(val);
-                }
-                catch (error) {
-                    $.$mol_fail = hidden;
-                    if (error instanceof $mol_data_error) {
-                        errors.push(error);
-                    }
-                    else {
-                        return $mol_fail_hidden(error);
-                    }
-                }
-            }
-            return $mol_fail(new $mol_data_error(`${val} is not any of variants`, ...errors));
-        }, sub);
-    }
-    $.$mol_data_variant = $mol_data_variant;
-})($ || ($ = {}));
-//mol/data/variant/variant.ts
 ;
 "use strict";
 var $;
@@ -10926,7 +11440,7 @@ var $;
                         ticklen: 4,
                         title: y_title
                     },
-                    font: { family: "Exo2", size: 13 }
+                    font: { size: 13 }
                 };
             }
         }
@@ -11079,13 +11593,13 @@ var $;
                 const data = this.data();
                 const tot_count = this.tot_count();
                 const xy_domains = this.xy_domains();
-                const annotations_layout = { showarrow: false, font: { size: 13, family: "Exo2" }, borderpad: 0, bgcolor: '#fff' };
+                const annotations_layout = { showarrow: false, font: { size: 13 }, borderpad: 0, bgcolor: '#fff' };
                 const annotations = data.map((pie, loc_count) => {
                     let label = pie.name + ' distribution';
                     label = 'Fig. ' + (loc_count + 1) + '. ' + label.charAt(0).toUpperCase() + label.slice(1);
                     return Object.assign({ text: label }, locate_label(xy_domains[tot_count][loc_count]), annotations_layout);
                 });
-                return { showlegend: false, font: { family: "Exo2" }, annotations };
+                return { showlegend: false, annotations };
             }
             xy_domains() {
                 return [
@@ -11123,74 +11637,59 @@ var $;
                     return $mol_fail(new $mol_data_error('Warning: not enough data for analysis'));
                 return tot_count;
             }
+            pies_payload() {
+                const json = this.json();
+                const enter_metrics = this.enter_metrics();
+                const pies = [];
+                json.payload.forEach(item => {
+                    if (item.count < enter_metrics || item.count > (json.total_count - enter_metrics))
+                        return;
+                    if (item.facet == "classes") {
+                        pies.push({ facet: item.facet, payload: [item] });
+                        return;
+                    }
+                    let pie = pies.find(p => p.facet == item.facet);
+                    if (!pie) {
+                        pie = { facet: item.facet, payload: [] };
+                        pies.push(pie);
+                    }
+                    pie.payload.push(item);
+                });
+                return pies;
+            }
             data() {
                 const json = this.json();
                 if (!json.total_count || json.total_count == 1) {
                     return $mol_fail(new $mol_data_error('Warning: not enough data for analysis'));
                 }
-                const data = [];
-                const classes = [];
                 const tot_count = this.tot_count();
                 const xy_domains = this.xy_domains();
-                const enter_metrics = this.enter_metrics();
-                let recent_facet = null;
-                let loc_count = 0;
-                for (let i = 0; i < json.payload.length; i++) {
-                    if (json.payload[i].count < enter_metrics || json.payload[i].count > (json.total_count - enter_metrics))
-                        continue;
-                    if (json.payload[i].facet == "classes") {
-                        classes.push({
-                            type: "pie",
-                            name: Facet_names[json.payload[i].facet],
-                            values: [json.payload[i].count, json.total_count - json.payload[i].count],
-                            text: [json.payload[i].value, "other classes"],
-                            domain: { x: xy_domains[tot_count][loc_count][0], y: xy_domains[tot_count][loc_count][1] },
-                            hoverinfo: "text+percent+name",
-                            textinfo: "text+percent",
-                            textposition: "inside",
-                            hole: 0.3 / tot_count,
-                            marker: { colors: this.colorset() }
-                        });
-                        loc_count++;
-                        continue;
-                    }
-                    if (json.payload[i].facet != recent_facet) {
-                        if (recent_facet) {
-                            const sum = data[data.length - 1].values.reduce(function (a, b) { return a + b; }, 0);
-                            if (sum < json.total_count) {
-                                data[data.length - 1].values.push(json.total_count - sum);
-                                data[data.length - 1].text.push("other " + Facet_names[recent_facet]);
-                            }
-                        }
-                        if (loc_count > 8)
-                            break;
-                        data.push({
-                            type: "pie",
-                            name: Facet_names[json.payload[i].facet],
-                            values: [],
-                            text: [],
-                            domain: { x: xy_domains[tot_count][loc_count][0], y: xy_domains[tot_count][loc_count][1] },
-                            hoverinfo: "text+percent+name",
-                            textinfo: "text+percent",
-                            textposition: "inside",
-                            hole: 0.3 / tot_count,
-                            marker: { colors: this.colorset() }
-                        });
-                        loc_count++;
-                    }
-                    recent_facet = json.payload[i].facet;
-                    data[data.length - 1].values.push(json.payload[i].count);
-                    data[data.length - 1].text.push(json.payload[i].value);
-                }
-                if (data.length) {
-                    const sum = data[data.length - 1].values.reduce(function (a, b) { return a + b; }, 0);
+                const data = this.pies_payload().map((pie, loc_count) => {
+                    const values = [];
+                    const text = [];
+                    let sum = 0;
+                    pie.payload.forEach(item => {
+                        sum += item.count;
+                        values.push(item.count);
+                        text.push(item.value);
+                    });
                     if (sum < json.total_count) {
-                        data[data.length - 1].values.push(json.total_count - sum);
-                        data[data.length - 1].text.push("other " + Facet_names[recent_facet]);
+                        values.push(json.total_count - sum);
+                        text.push("other " + Facet_names[pie.facet]);
                     }
-                }
-                if (classes)
-                    data.push(...classes);
+                    return {
+                        type: "pie",
+                        name: Facet_names[pie.facet],
+                        values,
+                        text,
+                        domain: { x: xy_domains[tot_count][loc_count][0], y: xy_domains[tot_count][loc_count][1] },
+                        hoverinfo: "text+percent+name",
+                        textinfo: "text+percent",
+                        textposition: "inside",
+                        hole: 0.3 / tot_count,
+                        marker: { colors: this.colorset() }
+                    };
+                });
                 return data;
             }
         }
@@ -11209,6 +11708,9 @@ var $;
         __decorate([
             $mol_mem
         ], $visavis_plot_pie.prototype, "tot_count", null);
+        __decorate([
+            $mol_mem
+        ], $visavis_plot_pie.prototype, "pies_payload", null);
         __decorate([
             $mol_mem
         ], $visavis_plot_pie.prototype, "data", null);
@@ -11412,7 +11914,7 @@ var $;
                 }
                 return {
                     showlegend: true,
-                    legend: { x: 100, y: 1, font: { family: "Exo2", size: 14 } },
+                    legend: { x: 100, y: 1, font: { size: 14 } },
                     xaxis: {
                         autorange: true,
                         showgrid: true,
@@ -11431,7 +11933,7 @@ var $;
                         ticklen: 4,
                         title: 'Cell parameters' + y_comment + ', A'
                     },
-                    font: { family: "Exo2", size: 13 }
+                    font: { size: 13 }
                 };
             }
         }
@@ -11515,7 +12017,7 @@ var $;
                 const json = this.json();
                 return {
                     showlegend: true,
-                    legend: { x: 100, y: 1, font: { family: "Exo2", size: 14 } },
+                    legend: { x: 100, y: 1, font: { size: 14 } },
                     xaxis: {
                         type: json.xlog ? 'log' : '-',
                         autorange: true,
@@ -11540,7 +12042,7 @@ var $;
                         ticklen: 4,
                         title: json.ytitle
                     },
-                    font: { family: "Exo2", size: 13 },
+                    font: { size: 13 },
                     margin: {
                         t: 0,
                         r: 0
@@ -11761,7 +12263,7 @@ var $;
                 const graph_rel = this.graph_rel() || json.graph_rel || 'prel';
                 visavis_cache.ref.forEach((link) => {
                     if (link.type == graph_rel) {
-                        foci[link.source] = link.source.substr(0, 1);
+                        foci[link.source] = link.source.slice(0, 1);
                         const sourceNode = nodes[link.source] || (nodes[link.source] = { name: link.source });
                         const targetNode = nodes[link.target] || (nodes[link.target] = { name: String(link.target) });
                         const lrep = { source: sourceNode, type: link.type, target: targetNode };
@@ -12616,6 +13118,387 @@ var $;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
 //visavis/app/app.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $visavis_frame extends $mol_view {
+        attr() {
+            return {
+                mol_theme: "$mol_theme_light"
+            };
+        }
+        json(next) {
+            if (next !== undefined)
+                return next;
+            return {};
+        }
+        json_cmp(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        show_setup() {
+            return false;
+        }
+        sub() {
+            return [
+                this.Plot()
+            ];
+        }
+        plot_raw() {
+            const obj = new this.$.$visavis_plot_raw();
+            return obj;
+        }
+        nonformers_shown(next) {
+            if (next !== undefined)
+                return next;
+            return false;
+        }
+        post_message(id, next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        matrix_x_op(next) {
+            return this.Matrix().x_op(next);
+        }
+        matrix_y_op(next) {
+            return this.Matrix().y_op(next);
+        }
+        matrix_x_sort(next) {
+            return this.Matrix().x_sort(next);
+        }
+        matrix_y_sort(next) {
+            return this.Matrix().y_sort(next);
+        }
+        Matrix() {
+            const obj = new this.$.$visavis_plot_matrix();
+            obj.plot_raw = () => this.plot_raw();
+            obj.json_cmp = () => this.json_cmp();
+            obj.show_setup = () => this.show_setup();
+            obj.nonformers = (next) => this.nonformers_shown(next);
+            obj.matrix_click = (next) => this.post_message("matrix_click", next);
+            return obj;
+        }
+        x_op(next) {
+            return this.Cube().x_op(next);
+        }
+        y_op(next) {
+            return this.Cube().y_op(next);
+        }
+        z_op(next) {
+            return this.Cube().z_op(next);
+        }
+        x_sort(next) {
+            return this.Cube().x_sort(next);
+        }
+        y_sort(next) {
+            return this.Cube().y_sort(next);
+        }
+        z_sort(next) {
+            return this.Cube().z_sort(next);
+        }
+        Cube() {
+            const obj = new this.$.$visavis_plot_cube();
+            obj.plot_raw = () => this.plot_raw();
+            obj.json_cmp = () => this.json_cmp();
+            obj.show_setup = () => this.show_setup();
+            obj.nonformers = (next) => this.nonformers_shown(next);
+            obj.cube_click = (next) => this.post_message("cube_click", next);
+            return obj;
+        }
+        Phase() {
+            const obj = new this.$.$visavis_plot_phase();
+            obj.plot_raw = () => this.plot_raw();
+            return obj;
+        }
+        Bar() {
+            const obj = new this.$.$visavis_plot_bar();
+            obj.plot_raw = () => this.plot_raw();
+            obj.bar_click = (next) => this.post_message("bar_click", next);
+            return obj;
+        }
+        discovery_elementals_on(next) {
+            return this.Discovery().elementals_on(next);
+        }
+        Discovery() {
+            const obj = new this.$.$visavis_plot_discovery();
+            obj.plot_raw = () => this.plot_raw();
+            obj.json_cmp = () => this.json_cmp();
+            obj.show_setup = () => this.show_setup();
+            obj.discovery_click = (next) => this.post_message("discovery_click", next);
+            return obj;
+        }
+        Eigen() {
+            const obj = new this.$.$visavis_plot_eigen();
+            obj.plot_raw = () => this.plot_raw();
+            return obj;
+        }
+        Pie() {
+            const obj = new this.$.$visavis_plot_pie();
+            obj.plot_raw = () => this.plot_raw();
+            obj.pie_click = (next) => this.post_message("pie_click", next);
+            return obj;
+        }
+        Scatter() {
+            const obj = new this.$.$visavis_plot_scatter();
+            obj.plot_raw = () => this.plot_raw();
+            return obj;
+        }
+        Customscatter() {
+            const obj = new this.$.$visavis_plot_customscatter();
+            obj.plot_raw = () => this.plot_raw();
+            return obj;
+        }
+        Heatmap() {
+            const obj = new this.$.$visavis_plot_heatmap();
+            obj.plot_raw = () => this.plot_raw();
+            return obj;
+        }
+        graph_rel(next) {
+            return this.Graph().graph_rel(next);
+        }
+        Graph() {
+            const obj = new this.$.$visavis_plot_graph();
+            obj.plot_raw = () => this.plot_raw();
+            obj.graph_click = (next) => this.post_message("graph_click", next);
+            return obj;
+        }
+        Plot() {
+            const obj = new this.$.$visavis_plot();
+            obj.plot_raw = () => this.plot_raw();
+            obj.Matrix = () => this.Matrix();
+            obj.Cube = () => this.Cube();
+            obj.Phase = () => this.Phase();
+            obj.Bar = () => this.Bar();
+            obj.Discovery = () => this.Discovery();
+            obj.Eigen = () => this.Eigen();
+            obj.Pie = () => this.Pie();
+            obj.Scatter = () => this.Scatter();
+            obj.Customscatter = () => this.Customscatter();
+            obj.Heatmap = () => this.Heatmap();
+            obj.Graph = () => this.Graph();
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $visavis_frame.prototype, "json", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_frame.prototype, "json_cmp", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_frame.prototype, "plot_raw", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_frame.prototype, "nonformers_shown", null);
+    __decorate([
+        $mol_mem_key
+    ], $visavis_frame.prototype, "post_message", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_frame.prototype, "Matrix", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_frame.prototype, "Cube", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_frame.prototype, "Phase", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_frame.prototype, "Bar", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_frame.prototype, "Discovery", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_frame.prototype, "Eigen", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_frame.prototype, "Pie", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_frame.prototype, "Scatter", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_frame.prototype, "Customscatter", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_frame.prototype, "Heatmap", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_frame.prototype, "Graph", null);
+    __decorate([
+        $mol_mem
+    ], $visavis_frame.prototype, "Plot", null);
+    $.$visavis_frame = $visavis_frame;
+})($ || ($ = {}));
+//visavis/frame/-view.tree/frame.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $visavis_frame extends $.$visavis_frame {
+            plot_raw() {
+                const href = this.$.$mol_state_arg.href();
+                const hash = href.split('#')[1];
+                const json = $mol_fetch.json(hash);
+                if (json.error)
+                    return $mol_fail(new $mol_data_error(json.error));
+                return $visavis_plot_raw_from_json(json);
+            }
+            post_message(name, args) {
+                window.parent.postMessage({ name, args }, '*');
+            }
+            auto() {
+                return this.message_listener();
+            }
+            message_listener() {
+                return new $mol_dom_listener($mol_dom_context, 'message', $mol_wire_async(this).message_receive);
+            }
+            message_receive(event) {
+                if (!event)
+                    return;
+                const handler = this.message_handler()[event.data.name];
+                if (!handler) {
+                    $mol_fail_log(new $mol_data_error(`no handler for message "${event.data.name}"`));
+                }
+                handler(event.data.args);
+            }
+            message_handler() {
+                return {
+                    discovery_elementals_on: (args) => {
+                        const { elementals_on } = $mol_data_record({
+                            elementals_on: $mol_data_array($mol_data_string)
+                        })(args);
+                        this.discovery_elementals_on(elementals_on);
+                    },
+                    matrix_order: (args) => {
+                        const { x_sort, y_sort, x_op, y_op } = $mol_data_record({
+                            x_sort: $mol_data_string,
+                            y_sort: $mol_data_optional($mol_data_string),
+                            x_op: $mol_data_optional($mol_data_variant($mol_data_string, $mol_data_boolean)),
+                            y_op: $mol_data_optional($mol_data_variant($mol_data_string, $mol_data_boolean)),
+                        })(args);
+                        this.matrix_x_sort(x_sort);
+                        this.matrix_y_sort(y_sort || null);
+                        this.matrix_x_op(x_op || null);
+                        this.matrix_y_op(y_op || null);
+                    },
+                    cube_order: (args) => {
+                        const { x_sort, y_sort, z_sort, x_op, y_op, z_op } = $mol_data_record({
+                            x_sort: $mol_data_string,
+                            y_sort: $mol_data_string,
+                            z_sort: $mol_data_string,
+                            x_op: $mol_data_optional($mol_data_string),
+                            y_op: $mol_data_optional($mol_data_string),
+                            z_op: $mol_data_optional($mol_data_string),
+                        })(args);
+                        this.x_sort(x_sort);
+                        this.y_sort(y_sort);
+                        this.z_sort(z_sort);
+                        this.x_op(x_op);
+                        this.y_op(y_op);
+                        this.z_op(z_op);
+                    },
+                    graph_rel_change: (args) => {
+                        const { rel } = $mol_data_record({
+                            rel: $mol_data_optional($mol_data_string),
+                        })(args);
+                        this.graph_rel(rel);
+                    },
+                    cmp_discard: (args) => {
+                        this.json_cmp(null);
+                    },
+                    cmp_download: (args) => {
+                        const { url, type } = $mol_data_record({
+                            url: $mol_data_string,
+                            type: $mol_data_string,
+                        })(args);
+                        const json_cmp = $mol_fetch.json(url);
+                        if (json_cmp && json_cmp.error)
+                            return $mol_fail(new $mol_data_error(json_cmp.error));
+                        if (!json_cmp || !json_cmp.use_visavis_type)
+                            return $mol_fail(new $mol_data_error('Error: unknown data format'));
+                        this.json_cmp(json_cmp);
+                    },
+                    fixel_manage: (args) => {
+                        const { status } = $mol_data_record({
+                            status: $mol_data_boolean,
+                        })(args);
+                    },
+                };
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $visavis_frame.prototype, "plot_raw", null);
+        __decorate([
+            $mol_action
+        ], $visavis_frame.prototype, "post_message", null);
+        __decorate([
+            $mol_mem
+        ], $visavis_frame.prototype, "message_listener", null);
+        __decorate([
+            $mol_mem
+        ], $visavis_frame.prototype, "message_handler", null);
+        $$.$visavis_frame = $visavis_frame;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//visavis/frame/frame.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $visavis extends $mol_ghost {
+        App() {
+            const obj = new this.$.$visavis_app();
+            return obj;
+        }
+        Frame() {
+            const obj = new this.$.$visavis_frame();
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $visavis.prototype, "App", null);
+    __decorate([
+        $mol_mem
+    ], $visavis.prototype, "Frame", null);
+    $.$visavis = $visavis;
+})($ || ($ = {}));
+//visavis/-view.tree/visavis.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $visavis extends $.$visavis {
+            in_iframe() {
+                try {
+                    return window.self !== window.top;
+                }
+                catch (e) {
+                    return true;
+                }
+            }
+            Sub() {
+                return this.in_iframe() ? this.Frame() : this.App();
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $visavis.prototype, "Sub", null);
+        $$.$visavis = $visavis;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//visavis/visavis.view.ts
 ;
 "use strict";
 var $;
@@ -16754,6 +17637,25 @@ var $;
 var $;
 (function ($) {
     $mol_test({
+        'Is first'() {
+            $mol_data_variant($mol_data_number, $mol_data_string)(0);
+        },
+        'Is second'() {
+            $mol_data_variant($mol_data_number, $mol_data_string)('');
+        },
+        'Is false'() {
+            $mol_assert_fail(() => {
+                $mol_data_variant($mol_data_number, $mol_data_string)(false);
+            }, 'false is not any of variants\nfalse is not a number\nfalse is not a string');
+        },
+    });
+})($ || ($ = {}));
+//mol/data/variant/variant.test.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_test({
         'is same number'() {
             const Nan = $mol_data_const(Number.NaN);
             Nan(Number.NaN);
@@ -16802,25 +17704,6 @@ var $;
     });
 })($ || ($ = {}));
 //mol/data/dict/dict.test.ts
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_test({
-        'Is first'() {
-            $mol_data_variant($mol_data_number, $mol_data_string)(0);
-        },
-        'Is second'() {
-            $mol_data_variant($mol_data_number, $mol_data_string)('');
-        },
-        'Is false'() {
-            $mol_assert_fail(() => {
-                $mol_data_variant($mol_data_number, $mol_data_string)(false);
-            }, 'false is not any of variants\nfalse is not a number\nfalse is not a string');
-        },
-    });
-})($ || ($ = {}));
-//mol/data/variant/variant.test.ts
 ;
 "use strict";
 var $;

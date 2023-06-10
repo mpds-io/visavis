@@ -641,37 +641,201 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    type $mol_style_func_name = 'calc' | 'hsla' | 'rgba' | 'var' | 'clamp' | 'url' | 'scale' | 'cubic-bezier';
+    type $mol_style_func_name = 'calc' | 'hsla' | 'rgba' | 'var' | 'clamp' | 'url' | 'scale' | 'cubic-bezier' | 'linear' | 'steps' | $mol_style_func_filter;
+    type $mol_style_func_filter = 'blur' | 'brightness' | 'contrast' | 'drop-shadow' | 'grayscale' | 'hue-rotate' | 'invert' | 'opacity' | 'sepia' | 'saturate';
     class $mol_style_func<Name extends $mol_style_func_name, Value = unknown> extends $mol_decor<Value> {
         readonly name: Name;
         constructor(name: Name, value: Value);
         prefix(): string;
         postfix(): string;
         static calc<Value>(value: Value): $mol_style_func<"calc", Value>;
-        static vary<Name extends string>(name: Name): $mol_style_func<"var", Name>;
+        static vary<Name extends string, Value extends string>(name: Name, defaultValue?: Value): $mol_style_func<"var", Name | (Name | Value)[]>;
         static url<Href extends string>(href: Href): $mol_style_func<"url", string>;
         static hsla(hue: number, saturation: number, lightness: number, alpha: number): $mol_style_func<"hsla", (number | `${number}%`)[]>;
         static clamp(min: $mol_style_unit<any>, mid: $mol_style_unit<any>, max: $mol_style_unit<any>): $mol_style_func<"clamp", $mol_style_unit<any>[]>;
         static rgba(red: number, green: number, blue: number, alpha: number): $mol_style_func<"rgba", number[]>;
         static scale(zoom: number): $mol_style_func<"scale", number[]>;
+        static linear(...breakpoints: Array<number | [number, number | $mol_style_unit<'%'>]>): $mol_style_func<"linear", string[]>;
         static cubic_bezier(x1: number, y1: number, x2: number, y2: number): $mol_style_func<"cubic-bezier", number[]>;
+        static steps(value: number, step_position: 'jump-start' | 'jump-end' | 'jump-none' | 'jump-both' | 'start' | 'end'): $mol_style_func<"steps", (number | "end" | "start" | "jump-start" | "jump-end" | "jump-none" | "jump-both")[]>;
+        static blur(value?: $mol_style_unit<$mol_style_unit_length>): $mol_style_func<"blur", string | $mol_style_unit<$mol_style_unit_length>>;
+        static brightness(value?: number | $mol_style_unit<'%'>): $mol_style_func<"brightness", string | number | $mol_style_unit<"%">>;
+        static contrast(value?: number | $mol_style_unit<'%'>): $mol_style_func<"contrast", string | number | $mol_style_unit<"%">>;
+        static drop_shadow(color: $mol_style_properties_color, x_offset: $mol_style_unit<$mol_style_unit_length>, y_offset: $mol_style_unit<$mol_style_unit_length>, blur_radius?: $mol_style_unit<$mol_style_unit_length>): $mol_style_func<"drop-shadow", ($mol_style_unit<$mol_style_unit_length> | $mol_style_properties_color)[]>;
+        static grayscale(value?: number | $mol_style_unit<'%'>): $mol_style_func<"grayscale", string | number | $mol_style_unit<"%">>;
+        static hue_rotate(value?: 0 | $mol_style_unit<$mol_style_unit_angle>): $mol_style_func<"hue-rotate", string | 0 | $mol_style_unit<$mol_style_unit_angle>>;
+        static invert(value?: number | $mol_style_unit<'%'>): $mol_style_func<"invert", string | number | $mol_style_unit<"%">>;
+        static opacity(value?: number | $mol_style_unit<'%'>): $mol_style_func<"opacity", string | number | $mol_style_unit<"%">>;
+        static sepia(value?: number | $mol_style_unit<'%'>): $mol_style_func<"sepia", string | number | $mol_style_unit<"%">>;
+        static saturate(value?: number | $mol_style_unit<'%'>): $mol_style_func<"saturate", string | number | $mol_style_unit<"%">>;
     }
 }
 
 declare namespace $ {
+    type $mol_type_override<Base, Over> = Omit<Base, keyof Over> & Over;
+}
+
+declare namespace $ {
+    export type $mol_style_properties = Partial<$mol_type_override<CSSStyleDeclaration, Overrides>>;
+    type Common = 'inherit' | 'initial' | 'unset' | 'revert' | 'revert-layer' | $mol_style_func<'var'>;
+    export type $mol_style_properties_color = 'aliceblue' | 'antiquewhite' | 'aqua' | 'aquamarine' | 'azure' | 'beige' | 'bisque' | 'black' | 'blanchedalmond' | 'blue' | 'blueviolet' | 'brown' | 'burlywood' | 'cadetblue' | 'chartreuse' | 'chocolate' | 'coral' | 'cornflowerblue' | 'cornsilk' | 'crimson' | 'cyan' | 'darkblue' | 'darkcyan' | 'darkgoldenrod' | 'darkgray' | 'darkgreen' | 'darkgrey' | 'darkkhaki' | 'darkmagenta' | 'darkolivegreen' | 'darkorange' | 'darkorchid' | 'darkred' | 'darksalmon' | 'darkseagreen' | 'darkslateblue' | 'darkslategrey' | 'darkturquoise' | 'darkviolet' | 'deeppink' | 'deepskyblue' | 'dimgray' | 'dimgrey' | 'dodgerblue' | 'firebrick' | 'floralwhite' | 'forestgreen' | 'fuchsia' | 'gainsboro' | 'ghostwhite' | 'gold' | 'goldenrod' | 'gray' | 'green' | 'greenyellow' | 'grey' | 'honeydew' | 'hotpink' | 'indianred' | 'indigo' | 'ivory' | 'khaki' | 'lavender' | 'lavenderblush' | 'lawngreen' | 'lemonchiffon' | 'lightblue' | 'lightcoral' | 'lightcyan' | 'lightgoldenrodyellow' | 'lightgray' | 'lightgreen' | 'lightgrey' | 'lightpink' | 'lightsalmon' | 'lightseagreen' | 'lightskyblue' | 'lightslategray' | 'lightslategrey' | 'lightsteelblue' | 'lightyellow' | 'lime' | 'limegreen' | 'linen' | 'magenta' | 'maroon' | 'mediumaquamarine' | 'mediumblue' | 'mediumorchid' | 'mediumpurple' | 'mediumseagreen' | 'mediumslateblue' | 'mediumspringgreen' | 'mediumturquoise' | 'mediumvioletred' | 'midnightblue' | 'mintcream' | 'mistyrose' | 'moccasin' | 'navajowhite' | 'navy' | 'oldlace' | 'olive' | 'olivedrab' | 'orange' | 'orangered' | 'orchid' | 'palegoldenrod' | 'palegreen' | 'paleturquoise' | 'palevioletred' | 'papayawhip' | 'peachpuff' | 'peru' | 'pink' | 'plum' | 'powderblue' | 'purple' | 'rebeccapurple' | 'red' | 'rosybrown' | 'royalblue' | 'saddlebrown' | 'salmon' | 'sandybrown' | 'seagreen' | 'seashell' | 'sienna' | 'silver' | 'skyblue' | 'slateblue' | 'slategray' | 'slategrey' | 'snow' | 'springgreen' | 'steelblue' | 'tan' | 'teal' | 'thistle' | 'tomato' | 'turquoise' | 'violet' | 'wheat' | 'white' | 'whitesmoke' | 'yellow' | 'yellowgreen' | 'transparent' | 'currentcolor' | $mol_style_func<'hsla' | 'rgba' | 'var'> | `#${string}`;
+    type Length = 0 | `${number}${$mol_style_unit_length}` | $mol_style_func<'calc' | 'var' | 'clamp'>;
+    type Size = 'auto' | 'max-content' | 'min-content' | 'fit-content' | Length | Common;
+    type Directions<Value> = Value | readonly [Value, Value] | {
+        top?: Value;
+        right?: Value;
+        bottom?: Value;
+        left?: Value;
+    };
+    type Single_animation_composition = 'replace' | 'add' | 'accumulate';
+    type Single_animation_direction = 'normal' | 'reverse' | 'alternate' | 'alternate-reverse';
+    type Single_animation_fill_mode = 'none' | 'forwards' | 'backwards' | 'both';
+    type Single_animation_iteration_count = 'infinite' | number;
+    type Single_animation_play_state = 'running' | 'paused';
+    type Easing_function = Linear_easing_function | Cubic_bezier_easing_function | Step_easing_function;
+    type Linear_easing_function = 'linear' | $mol_style_func<'linear'>;
+    type Cubic_bezier_easing_function = 'ease' | 'ease-in' | 'ease-out' | 'ease-in-out' | $mol_style_func<'cubic-bezier'>;
+    type Step_easing_function = 'step-start' | 'step-end' | $mol_style_func<'steps'>;
+    type Compat_auto = 'searchfield' | 'textarea' | 'push-button' | 'slider-horizontal' | 'checkbox' | 'radio' | 'menulist' | 'listbox' | 'meter' | 'progress-bar' | 'button';
+    type Compat_special = 'textfield' | 'menulist-button';
+    type Mix_blend_mode = Blend_mode | 'plus-darker' | 'plus-lighter';
+    type Blend_mode = 'normal' | 'multiply' | 'screen' | 'overlay' | 'darken' | 'lighten' | 'color-dodge' | 'color-burn' | 'hard-light' | 'soft-light' | 'difference' | 'exclusion' | 'hue' | 'saturation' | 'color' | 'luminosity';
+    type Box = 'border-box' | 'padding-box' | 'content-box';
+    type Baseline_position = 'baseline' | `${'first' | 'last'} baseline`;
+    type Content_distribution = 'space-between' | 'space-around' | 'space-evenly' | 'stretch';
+    type Self_position = 'center' | 'start' | 'end' | 'self-start' | 'self-end' | 'flex-start' | 'flex-end';
+    type Content_position = 'center' | 'start' | 'end' | 'flex-start' | 'flex-end';
+    type Span_align = 'none' | 'start' | 'end' | 'center' | $mol_style_func<'var'>;
+    type Snap_axis = 'x' | 'y' | 'block' | 'inline' | 'both' | $mol_style_func<'var'>;
+    type Overflow = 'visible' | 'hidden' | 'clip' | 'scroll' | 'auto' | 'overlay' | Common;
+    type Overflow_position = 'unsafe' | 'safe';
+    type ContainRule = 'size' | 'layout' | 'style' | 'paint' | $mol_style_func<'var'>;
+    type Repeat = 'repeat-x' | 'repeat-y' | 'repeat' | 'space' | 'round' | 'no-repeat' | $mol_style_func<'var'>;
+    type BG_size = Length | 'auto' | 'contain' | 'cover';
+    interface Overrides {
+        accentColor?: $mol_style_properties_color | Common;
+        align?: {
+            content?: 'normal' | Baseline_position | Content_distribution | Content_position | `${Overflow_position} ${Content_position}` | Common;
+            items?: 'normal' | 'stretch' | Baseline_position | Self_position | `${Overflow_position} ${Self_position}` | Common;
+            self?: 'auto' | 'normal' | 'stretch' | Baseline_position | Self_position | `${Overflow_position} ${Self_position}` | Common;
+        };
+        justify?: {
+            content?: 'normal' | Baseline_position | Content_distribution | Content_position | `${Overflow_position} ${Content_position}` | Common;
+            items?: 'normal' | 'stretch' | Baseline_position | Self_position | `${Overflow_position} ${Self_position}` | Common;
+            self?: 'auto' | 'normal' | 'stretch' | Baseline_position | Self_position | `${Overflow_position} ${Self_position}` | Common;
+        };
+        all?: Common;
+        animation?: {
+            composition?: Single_animation_composition | Single_animation_composition[][] | Common;
+            delay?: $mol_style_unit<$mol_style_unit_time> | $mol_style_unit<$mol_style_unit_time>[][] | Common;
+            direction?: Single_animation_direction | Single_animation_direction[][] | Common;
+            duration?: $mol_style_unit<$mol_style_unit_time> | $mol_style_unit<$mol_style_unit_time>[][] | Common;
+            fillMode?: Single_animation_fill_mode | Single_animation_fill_mode[][] | Common;
+            iterationCount?: Single_animation_iteration_count | Single_animation_iteration_count[][] | Common;
+            name?: 'none' | string & {} | ('none' | string & {})[][] | Common;
+            playState?: Single_animation_play_state | Single_animation_play_state[][] | Common;
+            timingFunction?: Easing_function | Easing_function[][] | Common;
+        };
+        appearance?: 'none' | 'auto' | Compat_auto | Compat_special | Common;
+        aspectRatio?: 'auto' | number | `${number} / ${number}`;
+        backdropFilter: $mol_style_func<$mol_style_func_filter> | $mol_style_func<'url'> | ($mol_style_func<$mol_style_func_filter> | $mol_style_func<'url'>)[][] | 'none' | Common;
+        backfaceVisibility: 'visible' | 'hidden' | Common;
+        justifyContent?: 'start' | 'end' | 'flex-start' | 'flex-end' | 'left' | 'right' | 'space-between' | 'space-around' | 'space-evenly' | 'normal' | 'stretch' | 'center' | Common;
+        gap?: Length;
+        background?: 'none' | {
+            attachment?: 'scroll' | 'fixed' | 'local' | ('scroll' | 'fixed' | 'local')[][] | Common;
+            blendMode?: Mix_blend_mode | Mix_blend_mode[][] | Common;
+            clip?: Box | Box[][] | Common;
+            color?: $mol_style_properties_color | Common;
+            image?: readonly (readonly [$mol_style_func<'url'> | string & {}])[] | 'none' | Common;
+            repeat?: Repeat | [Repeat, Repeat] | Common;
+            position?: 'left' | 'right' | 'top' | 'bottom' | 'center' | Common;
+            size?: (BG_size | [BG_size, BG_size])[];
+        };
+        box?: {
+            shadow?: readonly {
+                inset?: boolean;
+                x: Length;
+                y: Length;
+                blur: Length;
+                spread: Length;
+                color: $mol_style_properties_color;
+            }[] | 'none' | Common;
+        };
+        font?: {
+            style?: 'normal' | 'italic' | Common;
+            weight?: 'normal' | 'bold' | 'lighter' | 'bolder' | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | Common;
+            size?: 'xx-small' | 'x-small' | 'small' | 'medium' | 'large' | 'x-large' | 'xx-large' | 'xxx-large' | 'smaller' | 'larger' | Length | Common;
+            family?: 'serif' | 'sans-serif' | 'monospace' | 'cursive' | 'fantasy' | 'system-ui' | 'ui-serif' | 'ui-sans-serif' | 'ui-monospace' | 'ui-rounded' | 'emoji' | 'math' | 'fangsong' | Common;
+        };
+        color?: $mol_style_properties_color | Common;
+        display?: 'block' | 'inline' | 'run-in' | 'list-item' | 'none' | 'flow' | 'flow-root' | 'table' | 'flex' | 'grid' | 'contents' | 'table-row-group' | 'table-header-group' | 'table-footer-group' | 'table-column-group' | 'table-row' | 'table-cell' | 'table-column' | 'table-caption' | 'inline-block' | 'inline-table' | 'inline-flex' | 'inline-grid' | 'ruby' | 'ruby-base' | 'ruby-text' | 'ruby-base-container' | 'ruby-text-container' | Common;
+        overflow?: Overflow | {
+            x?: Overflow | Common;
+            y?: Overflow | Common;
+            anchor?: 'auto' | 'none' | Common;
+        };
+        contain?: 'none' | 'strict' | 'content' | ContainRule | readonly ContainRule[] | Common;
+        whiteSpace?: 'normal' | 'nowrap' | 'break-spaces' | 'pre' | 'pre-wrap' | 'pre-line' | Common;
+        webkitOverflowScrolling?: 'auto' | 'touch' | Common;
+        scrollbar?: {
+            color?: readonly [$mol_style_properties_color, $mol_style_properties_color] | 'auto' | Common;
+            width?: 'auto' | 'thin' | 'none' | Common;
+        };
+        scroll?: {
+            snap?: {
+                type: 'none' | Snap_axis | readonly [Snap_axis, 'mandatory' | 'proximity'] | Common;
+                stop: 'normal' | 'always' | Common;
+                align: Span_align | readonly [Span_align, Span_align] | Common;
+            };
+            padding?: Directions<Length | 'auto'>;
+        };
+        width?: Size;
+        minWidth?: Size;
+        maxWidth?: Size;
+        height?: Size;
+        minHeight?: Size;
+        maxHeight?: Size;
+        margin?: Directions<Length | 'auto'>;
+        padding?: Directions<Length | 'auto'>;
+        position?: 'static' | 'relative' | 'absolute' | 'sticky' | 'fixed' | Common;
+        top?: Length | 'auto' | Common;
+        right?: Length | 'auto' | Common;
+        bottom?: Length | 'auto' | Common;
+        left?: Length | 'auto' | Common;
+        border?: Directions<{
+            radius?: Length | [Length, Length];
+            style?: 'none' | 'hidden' | 'dotted' | 'dashed' | 'solid' | 'double' | 'groove' | 'ridge' | 'inset' | 'outset' | Common;
+            color?: $mol_style_properties_color | Common;
+            width?: Length | Common;
+        }>;
+        flex?: 'none' | 'auto' | {
+            grow?: number | Common;
+            shrink?: number | Common;
+            basis?: Size | Common;
+            direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse' | Common;
+            wrap?: 'wrap' | 'nowrap' | 'wrap-reverse' | Common;
+        };
+        zIndex: number | Common;
+        opacity: number | Common;
+    }
+    export {};
+}
+
+declare namespace $ {
     const $mol_theme: {
-        back: $mol_style_func<"var", "--mol_theme_back">;
-        hover: $mol_style_func<"var", "--mol_theme_hover">;
-        card: $mol_style_func<"var", "--mol_theme_card">;
-        current: $mol_style_func<"var", "--mol_theme_current">;
-        special: $mol_style_func<"var", "--mol_theme_special">;
-        text: $mol_style_func<"var", "--mol_theme_text">;
-        control: $mol_style_func<"var", "--mol_theme_control">;
-        shade: $mol_style_func<"var", "--mol_theme_shade">;
-        line: $mol_style_func<"var", "--mol_theme_line">;
-        focus: $mol_style_func<"var", "--mol_theme_focus">;
-        field: $mol_style_func<"var", "--mol_theme_field">;
-        image: $mol_style_func<"var", "--mol_theme_image">;
+        back: $mol_style_func<"var", string[] | "--mol_theme_back">;
+        hover: $mol_style_func<"var", string[] | "--mol_theme_hover">;
+        card: $mol_style_func<"var", string[] | "--mol_theme_card">;
+        current: $mol_style_func<"var", string[] | "--mol_theme_current">;
+        special: $mol_style_func<"var", string[] | "--mol_theme_special">;
+        text: $mol_style_func<"var", string[] | "--mol_theme_text">;
+        control: $mol_style_func<"var", string[] | "--mol_theme_control">;
+        shade: $mol_style_func<"var", string[] | "--mol_theme_shade">;
+        line: $mol_style_func<"var", string[] | "--mol_theme_line">;
+        focus: $mol_style_func<"var", string[] | "--mol_theme_focus">;
+        field: $mol_style_func<"var", string[] | "--mol_theme_field">;
+        image: $mol_style_func<"var", string[] | "--mol_theme_image">;
     };
 }
 
@@ -680,11 +844,11 @@ declare namespace $ {
 
 declare namespace $ {
     let $mol_gap: {
-        readonly block: $mol_style_func<"var", "--mol_gap_block">;
-        readonly text: $mol_style_func<"var", "--mol_gap_text">;
-        readonly round: $mol_style_func<"var", "--mol_gap_round">;
-        readonly space: $mol_style_func<"var", "--mol_gap_space">;
-        readonly blur: $mol_style_func<"var", "--mol_gap_blur">;
+        readonly block: $mol_style_func<"var", string[] | "--mol_gap_block">;
+        readonly text: $mol_style_func<"var", string[] | "--mol_gap_text">;
+        readonly round: $mol_style_func<"var", string[] | "--mol_gap_round">;
+        readonly space: $mol_style_func<"var", string[] | "--mol_gap_space">;
+        readonly blur: $mol_style_func<"var", string[] | "--mol_gap_blur">;
     };
 }
 
@@ -773,6 +937,23 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    class $mol_ghost extends $mol_view {
+        Sub(): $mol_view;
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_ghost extends $.$mol_ghost {
+        dom_node(next?: Element): Element;
+        dom_node_actual(): Element;
+        dom_tree(): Element;
+        title(): string;
+        minimal_width(): number;
+        minimal_height(): number;
+    }
+}
+
+declare namespace $ {
     class $mol_scroll extends $mol_view {
         scroll_top(val?: any): number;
         scroll_left(val?: any): number;
@@ -804,111 +985,6 @@ declare namespace $ {
         static after(): $mol_dom_listener;
         static active(next?: boolean): boolean;
     }
-}
-
-declare namespace $ {
-    type $mol_type_override<Base, Over> = Omit<Base, keyof Over> & Over;
-}
-
-declare namespace $ {
-    export type $mol_style_properties = Partial<$mol_type_override<CSSStyleDeclaration, Overrides>>;
-    type Common = 'inherit' | 'initial' | 'unset' | 'revert' | 'revert-layer' | $mol_style_func<'var'>;
-    type Color = 'aliceblue' | 'antiquewhite' | 'aqua' | 'aquamarine' | 'azure' | 'beige' | 'bisque' | 'black' | 'blanchedalmond' | 'blue' | 'blueviolet' | 'brown' | 'burlywood' | 'cadetblue' | 'chartreuse' | 'chocolate' | 'coral' | 'cornflowerblue' | 'cornsilk' | 'crimson' | 'cyan' | 'darkblue' | 'darkcyan' | 'darkgoldenrod' | 'darkgray' | 'darkgreen' | 'darkgrey' | 'darkkhaki' | 'darkmagenta' | 'darkolivegreen' | 'darkorange' | 'darkorchid' | 'darkred' | 'darksalmon' | 'darkseagreen' | 'darkslateblue' | 'darkslategrey' | 'darkturquoise' | 'darkviolet' | 'deeppink' | 'deepskyblue' | 'dimgray' | 'dimgrey' | 'dodgerblue' | 'firebrick' | 'floralwhite' | 'forestgreen' | 'fuchsia' | 'gainsboro' | 'ghostwhite' | 'gold' | 'goldenrod' | 'gray' | 'green' | 'greenyellow' | 'grey' | 'honeydew' | 'hotpink' | 'indianred' | 'indigo' | 'ivory' | 'khaki' | 'lavender' | 'lavenderblush' | 'lawngreen' | 'lemonchiffon' | 'lightblue' | 'lightcoral' | 'lightcyan' | 'lightgoldenrodyellow' | 'lightgray' | 'lightgreen' | 'lightgrey' | 'lightpink' | 'lightsalmon' | 'lightseagreen' | 'lightskyblue' | 'lightslategray' | 'lightslategrey' | 'lightsteelblue' | 'lightyellow' | 'lime' | 'limegreen' | 'linen' | 'magenta' | 'maroon' | 'mediumaquamarine' | 'mediumblue' | 'mediumorchid' | 'mediumpurple' | 'mediumseagreen' | 'mediumslateblue' | 'mediumspringgreen' | 'mediumturquoise' | 'mediumvioletred' | 'midnightblue' | 'mintcream' | 'mistyrose' | 'moccasin' | 'navajowhite' | 'navy' | 'oldlace' | 'olive' | 'olivedrab' | 'orange' | 'orangered' | 'orchid' | 'palegoldenrod' | 'palegreen' | 'paleturquoise' | 'palevioletred' | 'papayawhip' | 'peachpuff' | 'peru' | 'pink' | 'plum' | 'powderblue' | 'purple' | 'rebeccapurple' | 'red' | 'rosybrown' | 'royalblue' | 'saddlebrown' | 'salmon' | 'sandybrown' | 'seagreen' | 'seashell' | 'sienna' | 'silver' | 'skyblue' | 'slateblue' | 'slategray' | 'slategrey' | 'snow' | 'springgreen' | 'steelblue' | 'tan' | 'teal' | 'thistle' | 'tomato' | 'turquoise' | 'violet' | 'wheat' | 'white' | 'whitesmoke' | 'yellow' | 'yellowgreen' | 'transparent' | 'currentcolor' | $mol_style_func<'hsla' | 'rgba' | 'var'> | `#${string}`;
-    type Length = 0 | `${number}${$mol_style_unit_length}` | $mol_style_func<'calc' | 'var' | 'clamp'>;
-    type Size = 'auto' | 'max-content' | 'min-content' | 'fit-content' | Length | Common;
-    type Directions<Value> = Value | readonly [Value, Value] | {
-        top?: Value;
-        right?: Value;
-        bottom?: Value;
-        left?: Value;
-    };
-    type Span_align = 'none' | 'start' | 'end' | 'center' | $mol_style_func<'var'>;
-    type Snap_axis = 'x' | 'y' | 'block' | 'inline' | 'both' | $mol_style_func<'var'>;
-    type Overflow = 'visible' | 'hidden' | 'clip' | 'scroll' | 'auto' | 'overlay' | Common;
-    type ContainRule = 'size' | 'layout' | 'style' | 'paint' | $mol_style_func<'var'>;
-    type Repeat = 'repeat-x' | 'repeat-y' | 'repeat' | 'space' | 'round' | 'no-repeat' | $mol_style_func<'var'>;
-    type BG_size = Length | 'auto' | 'contain' | 'cover';
-    interface Overrides {
-        alignContent?: 'baseline' | 'start' | 'end' | 'flex-start' | 'flex-end' | 'center' | 'normal' | 'space-between' | 'space-around' | 'space-evenly' | 'stretch' | readonly ['first' | 'last', 'baseline'] | readonly ['safe' | 'unsafe', 'start' | 'end' | 'flex-start' | 'flex-end'] | Common;
-        justifyContent?: 'start' | 'end' | 'flex-start' | 'flex-end' | 'left' | 'right' | 'space-between' | 'space-around' | 'space-evenly' | 'normal' | 'stretch' | 'center' | Common;
-        gap?: Length;
-        background?: 'none' | {
-            color?: Color | Common;
-            image?: readonly (readonly [$mol_style_func<'url'> | string & {}])[] | 'none' | Common;
-            repeat?: Repeat | [Repeat, Repeat] | Common;
-            position?: 'left' | 'right' | 'top' | 'bottom' | 'center' | Common;
-            size?: (BG_size | [BG_size, BG_size])[];
-        };
-        backdropFilter: string | Common;
-        box?: {
-            shadow?: readonly {
-                inset?: boolean;
-                x: Length;
-                y: Length;
-                blur: Length;
-                spread: Length;
-                color: Color;
-            }[] | 'none' | Common;
-        };
-        font?: {
-            style?: 'normal' | 'italic' | Common;
-            weight?: 'normal' | 'bold' | 'lighter' | 'bolder' | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | Common;
-            size?: 'xx-small' | 'x-small' | 'small' | 'medium' | 'large' | 'x-large' | 'xx-large' | 'xxx-large' | 'smaller' | 'larger' | Length | Common;
-            family?: 'serif' | 'sans-serif' | 'monospace' | 'cursive' | 'fantasy' | 'system-ui' | 'ui-serif' | 'ui-sans-serif' | 'ui-monospace' | 'ui-rounded' | 'emoji' | 'math' | 'fangsong' | Common;
-        };
-        color?: Color | Common;
-        display?: 'block' | 'inline' | 'run-in' | 'list-item' | 'none' | 'flow' | 'flow-root' | 'table' | 'flex' | 'grid' | 'contents' | 'table-row-group' | 'table-header-group' | 'table-footer-group' | 'table-column-group' | 'table-row' | 'table-cell' | 'table-column' | 'table-caption' | 'inline-block' | 'inline-table' | 'inline-flex' | 'inline-grid' | 'ruby' | 'ruby-base' | 'ruby-text' | 'ruby-base-container' | 'ruby-text-container' | Common;
-        overflow?: Overflow | {
-            x?: Overflow | Common;
-            y?: Overflow | Common;
-            anchor?: 'auto' | 'none' | Common;
-        };
-        contain?: 'none' | 'strict' | 'content' | ContainRule | readonly ContainRule[] | Common;
-        whiteSpace?: 'normal' | 'nowrap' | 'break-spaces' | 'pre' | 'pre-wrap' | 'pre-line' | Common;
-        webkitOverflowScrolling?: 'auto' | 'touch' | Common;
-        scrollbar?: {
-            color?: readonly [Color, Color] | 'auto' | Common;
-            width?: 'auto' | 'thin' | 'none' | Common;
-        };
-        scroll?: {
-            snap?: {
-                type: 'none' | Snap_axis | readonly [Snap_axis, 'mandatory' | 'proximity'] | Common;
-                stop: 'normal' | 'always' | Common;
-                align: Span_align | readonly [Span_align, Span_align] | Common;
-            };
-            padding?: Directions<Length | 'auto'>;
-        };
-        width?: Size;
-        minWidth?: Size;
-        maxWidth?: Size;
-        height?: Size;
-        minHeight?: Size;
-        maxHeight?: Size;
-        margin?: Directions<Length | 'auto'>;
-        padding?: Directions<Length | 'auto'>;
-        position?: 'static' | 'relative' | 'absolute' | 'sticky' | 'fixed' | Common;
-        top?: Length | 'auto' | Common;
-        right?: Length | 'auto' | Common;
-        bottom?: Length | 'auto' | Common;
-        left?: Length | 'auto' | Common;
-        border?: Directions<{
-            radius?: Length | [Length, Length];
-            style?: 'none' | 'hidden' | 'dotted' | 'dashed' | 'solid' | 'double' | 'groove' | 'ridge' | 'inset' | 'outset' | Common;
-            color?: Color | Common;
-            width?: Length | Common;
-        }>;
-        flex?: 'none' | 'auto' | {
-            grow?: number | Common;
-            shrink?: number | Common;
-            basis?: Size | Common;
-            direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse' | Common;
-            wrap?: 'wrap' | 'nowrap' | 'wrap-reverse' | Common;
-        };
-        zIndex: number | Common;
-        opacity: number | Common;
-        aspectRatio: number | Common;
-    }
-    export {};
 }
 
 declare namespace $ {
@@ -1052,11 +1128,11 @@ declare namespace $ {
 
 declare namespace $ {
     let $mol_layer: {
-        readonly hover: $mol_style_func<"var", "--mol_layer_hover">;
-        readonly focus: $mol_style_func<"var", "--mol_layer_focus">;
-        readonly speck: $mol_style_func<"var", "--mol_layer_speck">;
-        readonly float: $mol_style_func<"var", "--mol_layer_float">;
-        readonly popup: $mol_style_func<"var", "--mol_layer_popup">;
+        readonly hover: $mol_style_func<"var", string[] | "--mol_layer_hover">;
+        readonly focus: $mol_style_func<"var", string[] | "--mol_layer_focus">;
+        readonly speck: $mol_style_func<"var", string[] | "--mol_layer_speck">;
+        readonly float: $mol_style_func<"var", string[] | "--mol_layer_float">;
+        readonly popup: $mol_style_func<"var", string[] | "--mol_layer_popup">;
     };
 }
 
@@ -1422,23 +1498,6 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $mol_ghost extends $mol_view {
-        Sub(): $mol_view;
-    }
-}
-
-declare namespace $.$$ {
-    class $mol_ghost extends $.$mol_ghost {
-        dom_node(next?: Element): Element;
-        dom_node_actual(): Element;
-        dom_tree(): Element;
-        title(): string;
-        minimal_width(): number;
-        minimal_height(): number;
-    }
-}
-
-declare namespace $ {
     class $mol_drop extends $mol_ghost {
         enabled(next?: any): boolean;
         event(): Record<string, any>;
@@ -1664,10 +1723,23 @@ declare namespace $ {
     export function $visavis_plot_raw_from_json(json: any, id?: string): $visavis_plot_raw;
     export class $visavis_plot_raw extends $mol_store<Plot_raw> {
         id(next?: string): string;
-        type(): "pd" | "scatter" | "bar" | "matrix" | "plot3d" | "discovery" | "eigenplot" | "pie" | "customscatter" | "heatmap" | "graph";
+        type(): "pd" | "scatter" | "bar" | "pie" | "matrix" | "plot3d" | "discovery" | "eigenplot" | "customscatter" | "heatmap" | "graph";
         json(): {};
     }
     export {};
+}
+
+declare namespace $ {
+    class $visavis_plot_legend_cmp extends $mol_view {
+        sub(): readonly any[];
+        first_cmp_label(next?: any): string;
+        First_cmp_label(): $mol_view;
+        second_cmp_label(next?: any): string;
+        Second_cmp_label(): $mol_view;
+    }
+}
+
+declare namespace $.$$ {
 }
 
 declare namespace $ {
@@ -1709,19 +1781,6 @@ declare namespace $ {
 declare namespace $ {
     class $mol_check_box extends $mol_check {
         Icon(): $mol_icon_tick;
-    }
-}
-
-declare namespace $ {
-}
-
-declare namespace $ {
-    class $mol_labeler extends $mol_list {
-        rows(): readonly any[];
-        label(): readonly $mol_view_content[];
-        Label(): $mol_view;
-        content(): readonly any[];
-        Content(): $mol_view;
     }
 }
 
@@ -1786,22 +1845,45 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
+    class $mol_labeler extends $mol_list {
+        rows(): readonly any[];
+        label(): readonly $mol_view_content[];
+        Label(): $mol_view;
+        content(): readonly any[];
+        Content(): $mol_view;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
     class $visavis_plot_matrix extends $mol_view {
         plot_raw(): $visavis_plot_raw;
+        json_cmp(next?: any): any;
+        json_master(): any;
         show_setup(): boolean;
         size(): number;
         links_value_min(next?: any): number;
         links_value_max(next?: any): number;
         heatmap(next?: any): boolean;
         matrix(): readonly any[];
+        order(): readonly number[];
+        x_sort(next?: any): string;
+        y_sort(next?: any): string;
+        x_op(next?: any): any;
+        y_op(next?: any): any;
+        matrix_click(next?: any): any;
         heatmap_colors(): readonly any[];
         colorset(): readonly any[];
-        order(): readonly number[];
-        order_current(next?: any): string;
         plot_padding(): number;
         axis_width(): number;
         sub(): readonly any[];
-        Root(): $$.$mol_svg;
+        draw(): any;
+        Root(): $mol_view;
+        first_cmp_label(next?: any): string;
+        second_cmp_label(next?: any): string;
+        Cmp_legend(): $visavis_plot_legend_cmp;
         Heatmap_min(): $mol_view;
         heatmap_color(id: any): string;
         Heatmap_color(id: any): $mol_view;
@@ -1810,14 +1892,16 @@ declare namespace $ {
         Heatmap_legend(): $$.$mol_list;
         Side_right(): $$.$mol_scroll;
         plot_body(): readonly any[];
-        draw(): any;
         Plot(): $mol_view;
+        show_diff(next?: any): boolean;
+        Show_diff(): $mol_check_box;
         nonformers(next?: any): boolean;
         Nonformers(): $mol_check_box;
-        Nonformers_label(): $mol_labeler;
+        sort_control(next?: any): string;
         order_dict(): Record<string, any>;
         Order_switch(): $$.$mol_switch;
         Order_label(): $mol_labeler;
+        setup(): readonly any[];
         Setup(): $mol_view;
     }
 }
@@ -1902,25 +1986,6 @@ declare namespace $ {
         config: Sub;
         Value: readonly ReturnType<Sub>[];
     };
-}
-
-declare namespace $ {
-    class $mol_import extends $mol_object2 {
-        static module(uri: string): any;
-        static module_async(uri: string): Promise<any>;
-        static script(uri: string): any;
-        static script_async(uri: string): Promise<any>;
-        static style(uri: string): any;
-        static style_async(uri: string): any;
-    }
-}
-
-declare namespace $ {
-    class $visavis_lib extends $mol_object2 {
-        static plotly(): any;
-        static pca(): any;
-        static d3(): any;
-    }
 }
 
 declare namespace $ {
@@ -2019,6 +2084,54 @@ declare namespace $.$$ {
             eneg: number;
         }>[];
     };
+    const Prop_names: ((val: {
+        num: string;
+        nump: string;
+        size: string;
+        rea: string;
+        rpp: string;
+        rion: string;
+        rcov: string;
+        rmet: string;
+        tmelt: string;
+        eneg: string;
+    }) => Readonly<{
+        num: string;
+        nump: string;
+        size: string;
+        rea: string;
+        rpp: string;
+        rion: string;
+        rcov: string;
+        rmet: string;
+        tmelt: string;
+        eneg: string;
+    }>) & {
+        config: {
+            num: (val: string) => string;
+            nump: (val: string) => string;
+            size: (val: string) => string;
+            rea: (val: string) => string;
+            rpp: (val: string) => string;
+            rion: (val: string) => string;
+            rcov: (val: string) => string;
+            rmet: (val: string) => string;
+            tmelt: (val: string) => string;
+            eneg: (val: string) => string;
+        };
+        Value: Readonly<{
+            num: string;
+            nump: string;
+            size: string;
+            rea: string;
+            rpp: string;
+            rion: string;
+            rcov: string;
+            rmet: string;
+            tmelt: string;
+            eneg: string;
+        }>;
+    };
     export class $visavis_elements_list {
         static prop_names(): Readonly<{
             num: string;
@@ -2086,8 +2199,28 @@ declare namespace $.$$ {
             tmelt: number;
             eneg: number;
         }>;
+        static prop_values(prop: keyof typeof Prop_names.Value): number[];
     }
     export {};
+}
+
+declare namespace $ {
+    class $mol_import extends $mol_object2 {
+        static module(uri: string): any;
+        static module_async(uri: string): Promise<any>;
+        static script(uri: string): any;
+        static script_async(uri: string): Promise<any>;
+        static style(uri: string): any;
+        static style_async(uri: string): any;
+    }
+}
+
+declare namespace $ {
+    class $visavis_lib extends $mol_object2 {
+        static plotly(): any;
+        static pca(): any;
+        static d3(): any;
+    }
 }
 
 declare namespace $.$$ {
@@ -2102,12 +2235,6 @@ declare namespace $.$$ {
     }
 }
 
-declare namespace $ {
-    function $mol_coord_pack(high: number, low: number): number;
-    function $mol_coord_high(pack: number): number;
-    function $mol_coord_low(pack: number): number;
-}
-
 declare namespace $.$$ {
     type Matrix_cell = {
         x: number;
@@ -2117,9 +2244,11 @@ declare namespace $.$$ {
         cmp: number;
         nonformer: boolean;
     };
+    type Prop_name = keyof ReturnType<typeof $visavis_elements_list.prop_names>;
     export class $visavis_plot_matrix extends $.$visavis_plot_matrix {
-        sub(): $mol_view[];
+        sub(): ($mol_view | $visavis_plot_legend_cmp)[];
         json(): Readonly<{
+            answerto?: string | undefined;
             payload: Readonly<{
                 nodes: readonly Readonly<{
                     name: string;
@@ -2144,6 +2273,34 @@ declare namespace $.$$ {
                 }>[];
             }>;
         }>;
+        json_master(): Readonly<{
+            answerto?: string | undefined;
+            payload: Readonly<{
+                nodes: readonly Readonly<{
+                    name: string;
+                    num: number;
+                    nump: number;
+                    size: number;
+                    rea: number;
+                    rpp: number;
+                    rion: number;
+                    rcov: number;
+                    rmet: number;
+                    tmelt: number;
+                    eneg: number;
+                    count?: number | undefined;
+                }>[];
+                links: readonly Readonly<{
+                    source: number;
+                    target: number;
+                    value: number;
+                    cmt: string;
+                    cmp?: number | undefined;
+                }>[];
+            }>;
+        }>;
+        setup(): ($mol_check_box | $mol_labeler)[];
+        plot_body(): ($mol_view | $mol_scroll)[];
         nodes(): readonly Readonly<{
             name: string;
             num: number;
@@ -2168,8 +2325,8 @@ declare namespace $.$$ {
         links_value_min(): number;
         links_value_max(): number;
         heatmap(): boolean;
-        plot_body(): ($mol_scroll | $mol_svg)[];
-        order(): any;
+        order_by_prop(prop: Prop_name): any[];
+        order(): any[];
         matrix(): Matrix_cell[][];
         size(): number;
         opacity_scale(): any;
@@ -2181,11 +2338,20 @@ declare namespace $.$$ {
         color(index: number, cmp: number): any;
         range(): any;
         svg_title_text(cell: Matrix_cell): string;
-        cell_hovered(cell?: Matrix_cell | null): void;
-        cell_selected(id: number, next?: boolean): boolean;
-        cell_click(cell: Matrix_cell): void;
         draw_cells(node: SVGElement, row: Matrix_cell[]): void;
+        d3svg(next?: any): any;
         draw(): void;
+        auto(): void;
+        get_bin_domain(args: {
+            sort: Prop_name;
+            op: string;
+        }): any[] | undefined;
+        renorm(args: {
+            sort: Prop_name;
+            op?: string;
+        }): any;
+        sort_control(next?: any): string;
+        reorder(): void;
     }
     export {};
 }
@@ -2667,6 +2833,7 @@ declare namespace $ {
 declare namespace $ {
     class $visavis_plot_cube extends $mol_view {
         plot_raw(): $visavis_plot_raw;
+        json_cmp(next?: any): any;
         show_setup(): boolean;
         heatmap(next?: any): boolean;
         order(id: any): readonly number[];
@@ -2677,6 +2844,7 @@ declare namespace $ {
         x_sort(next?: any): string;
         y_sort(next?: any): string;
         z_sort(next?: any): string;
+        cube_click(next?: any): any;
         colorset(): readonly any[];
         heatmap_colors(): readonly any[];
         sub(): readonly any[];
@@ -2684,6 +2852,9 @@ declare namespace $ {
         layout(): Record<string, any>;
         subscribe_events(): any;
         Root(): $$.$visavis_plotly;
+        first_cmp_label(next?: any): string;
+        second_cmp_label(next?: any): string;
+        Cmp_legend(): $visavis_plot_legend_cmp;
         value_min(): number;
         Heatmap_min(): $mol_view;
         heatmap_color(id: any): string;
@@ -2694,9 +2865,10 @@ declare namespace $ {
         Heatmap_legend(): $$.$mol_list;
         Side_right(): $$.$mol_scroll;
         Plot(): $mol_view;
+        project2d(next?: any): boolean;
+        Project2d(): $mol_check_box;
         nonformers(next?: any): boolean;
         Nonformers(): $mol_check_box;
-        Nonformers_label(): $mol_labeler;
         order_dict(): Record<string, any>;
         X_order_select(): $$.$mol_select;
         X_order_label(): $mol_labeler;
@@ -2720,16 +2892,23 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    function $mol_data_variant<Sub extends $mol_data_value[]>(...sub: Sub): ((val: Parameters<Sub[number]>[0]) => ReturnType<Sub[number]>) & {
+        config: Sub;
+        Value: ReturnType<Sub[number]>;
+    };
+}
+
+declare namespace $ {
     class $lib_d3 extends $mol_object2 {
         static all(): any;
     }
 }
 
 declare namespace $.$$ {
-    type Element_prop = keyof ReturnType<typeof $visavis_elements_list.prop_names>;
+    type Prop_name = keyof ReturnType<typeof $visavis_elements_list.prop_names>;
     export class $visavis_plot_cube extends $.$visavis_plot_cube {
         plot_body(): ($mol_scroll | $visavis_plotly)[];
-        sub(): $mol_view[];
+        sub(): ($mol_view | $visavis_plot_legend_cmp)[];
         json(): Readonly<{
             payload: Readonly<{
                 tcube?: boolean | undefined;
@@ -2740,38 +2919,58 @@ declare namespace $.$$ {
                     v: readonly number[];
                     labels: readonly string[];
                 }>;
-                fixel: boolean | null;
+                fixel: number | boolean | null;
                 xtitle?: string | undefined;
                 ytitle?: string | undefined;
                 ztitle?: string | undefined;
             }>;
+            answerto?: string | undefined;
         }>;
         value_list(): number[];
         value_min(): number;
         value_max(): number;
-        order(order: Element_prop): number[];
+        order(order: Prop_name): number[];
         heatmap(): boolean;
         heatmap_color(index: number): any;
         heatmap_color_list(): $mol_view[];
-        marker(): {
+        marker(color_id: number): {
             size: number;
             opacity: number;
             colorscale?: string | undefined;
             color: any;
         };
+        scatter3d_common(): {
+            type: string;
+            mode: string;
+            hoverinfo: string;
+            projection: {
+                x: {
+                    show: boolean;
+                    opacity: number;
+                };
+                y: {
+                    show: boolean;
+                    opacity: number;
+                };
+                z: {
+                    show: boolean;
+                    opacity: number;
+                };
+            };
+        };
         data_nonformers(): {
             x: never[];
             y: never[];
             z: never[];
-            type: string;
             text: string[];
-            mode: string;
-            hoverinfo: string;
             marker: {
                 color: string;
                 size: number;
                 opacity: number;
             };
+            type: string;
+            mode: string;
+            hoverinfo: string;
             projection: {
                 x: {
                     show: boolean;
@@ -2791,16 +2990,16 @@ declare namespace $.$$ {
             x: never[];
             y: never[];
             z: never[];
-            type: string;
             text: readonly string[];
-            mode: string;
-            hoverinfo: string;
             marker: {
                 size: number;
                 opacity: number;
                 colorscale?: string | undefined;
                 color: any;
             };
+            type: string;
+            mode: string;
+            hoverinfo: string;
             projection: {
                 x: {
                     show: boolean;
@@ -2816,19 +3015,48 @@ declare namespace $.$$ {
                 };
             };
         };
+        data_cmp(): {
+            x: never[];
+            y: never[];
+            z: never[];
+            text: any;
+            marker: {
+                size: number;
+                opacity: number;
+                colorscale?: string | undefined;
+                color: any;
+            };
+            type: string;
+            mode: string;
+            hoverinfo: string;
+            projection: {
+                x: {
+                    show: boolean;
+                    opacity: number;
+                };
+                y: {
+                    show: boolean;
+                    opacity: number;
+                };
+                z: {
+                    show: boolean;
+                    opacity: number;
+                };
+            };
+        } | null;
         data_shown(): ({
             x: never[];
             y: never[];
             z: never[];
-            type: string;
             text: string[];
-            mode: string;
-            hoverinfo: string;
             marker: {
                 color: string;
                 size: number;
                 opacity: number;
             };
+            type: string;
+            mode: string;
+            hoverinfo: string;
             projection: {
                 x: {
                     show: boolean;
@@ -2847,16 +3075,16 @@ declare namespace $.$$ {
             x: never[];
             y: never[];
             z: never[];
-            type: string;
-            text: readonly string[];
-            mode: string;
-            hoverinfo: string;
+            text: any;
             marker: {
                 size: number;
                 opacity: number;
                 colorscale?: string | undefined;
                 color: any;
             };
+            type: string;
+            mode: string;
+            hoverinfo: string;
             projection: {
                 x: {
                     show: boolean;
@@ -2871,7 +3099,7 @@ declare namespace $.$$ {
                     opacity: number;
                 };
             };
-        })[];
+        } | null)[];
         scene(): {
             aspectmode: string;
             xaxis: {
@@ -2934,10 +3162,8 @@ declare namespace $.$$ {
                 };
             };
         };
+        subscribe_events(): void;
         layout(): {
-            font: {
-                family: string;
-            };
             showlegend: boolean;
             scene: any;
             margin: {
@@ -2949,14 +3175,17 @@ declare namespace $.$$ {
             };
         };
         ter_op(op: 'sum' | 'diff' | 'product' | 'ratio' | 'max' | 'min', a: number, b: number, c: number): number;
-        convert_to_axes(x_src: readonly number[], y_src: readonly number[], z_src: readonly number[], x_sort: Element_prop, y_sort: Element_prop, z_sort: Element_prop, x_op?: any, y_op?: any, z_op?: any): {
+        convert_to_axes(x_src: readonly number[], y_src: readonly number[], z_src: readonly number[], x_sort: Prop_name, y_sort: Prop_name, z_sort: Prop_name, x_op?: any, y_op?: any, z_op?: any): {
             x: never[];
             y: never[];
             z: never[];
         };
-        order_els(prop: Element_prop): string[];
+        order_els(prop: Prop_name): string[];
     }
     export {};
+}
+
+declare namespace $ {
 }
 
 declare namespace $.$$ {
@@ -3301,7 +3530,6 @@ declare namespace $.$$ {
                 x: number;
                 y: number;
                 font: {
-                    family: string;
                     size: number;
                 };
             };
@@ -3326,12 +3554,10 @@ declare namespace $.$$ {
                 rangemode: string;
                 type: string;
                 tickfont: {
-                    family: string;
                     size: number;
                 };
             };
             font: {
-                family: string;
                 size: number;
             };
         };
@@ -3350,6 +3576,7 @@ declare namespace $ {
 declare namespace $ {
     class $visavis_plot_discovery extends $mol_view {
         plot_raw(): $visavis_plot_raw;
+        json_cmp(next?: any): any;
         elementals_on(next?: any): readonly any[];
         show_setup(): boolean;
         discovery_click(next?: any): any;
@@ -3358,6 +3585,9 @@ declare namespace $ {
         layout(): Record<string, any>;
         subscribe_events(): any;
         Plot(): $$.$visavis_plotly;
+        first_cmp_label(next?: any): string;
+        second_cmp_label(next?: any): string;
+        Cmp_legend(): $visavis_plot_legend_cmp;
         elemental_checked(id: any, next?: any): boolean;
         elementals_dict(): Record<string, any>;
         Elementals_check(): $$.$mol_check_list;
@@ -3410,7 +3640,7 @@ declare namespace $.$$ {
         }>;
     };
     class $visavis_plot_discovery extends $.$visavis_plot_discovery {
-        sub(): $mol_view[];
+        sub(): ($mol_view | $visavis_plot_legend_cmp)[];
         json(): Readonly<{
             payload: Readonly<{
                 points: readonly (readonly number[])[];
@@ -3457,7 +3687,6 @@ declare namespace $.$$ {
                 showarrow: boolean;
                 bgcolor: string;
                 font: {
-                    family: string;
                     size: number;
                 };
                 textangle?: undefined;
@@ -3473,7 +3702,6 @@ declare namespace $.$$ {
                 bgcolor: string;
                 textangle: number;
                 font: {
-                    family: string;
                     size: number;
                 };
             })[];
@@ -3507,13 +3735,6 @@ declare namespace $ {
     class $visavis_plot_eigen extends $visavis_plotly {
         plot_raw(): $visavis_plot_raw;
     }
-}
-
-declare namespace $ {
-    function $mol_data_variant<Sub extends $mol_data_value[]>(...sub: Sub): ((val: Parameters<Sub[number]>[0]) => ReturnType<Sub[number]>) & {
-        config: Sub;
-        Value: ReturnType<Sub[number]>;
-    };
 }
 
 declare namespace $.$$ {
@@ -4595,7 +4816,6 @@ declare namespace $.$$ {
                 title: string;
             };
             font: {
-                family: string;
                 size: number;
             };
         };
@@ -4622,16 +4842,22 @@ declare namespace $ {
 }
 
 declare namespace $.$$ {
-    const $visavis_plot_pie_json: ((val: {
+    const Facet_names: {
+        readonly props: "properties";
+        readonly elements: "elements";
+        readonly classes: "classes";
+        readonly lattices: "crystal systems";
+    };
+    export const $visavis_plot_pie_json: ((val: {
         payload: readonly {
-            facet: "props" | "elements" | "classes" | "lattices";
+            facet: "elements" | "classes" | "props" | "lattices";
             value: string;
             count: number;
         }[];
         total_count: number;
     }) => Readonly<{
         payload: readonly Readonly<{
-            facet: "props" | "elements" | "classes" | "lattices";
+            facet: "elements" | "classes" | "props" | "lattices";
             value: string;
             count: number;
         }>[];
@@ -4639,25 +4865,25 @@ declare namespace $.$$ {
     }>) & {
         config: {
             payload: ((val: readonly {
-                facet: "props" | "elements" | "classes" | "lattices";
+                facet: "elements" | "classes" | "props" | "lattices";
                 value: string;
                 count: number;
             }[]) => readonly Readonly<{
-                facet: "props" | "elements" | "classes" | "lattices";
+                facet: "elements" | "classes" | "props" | "lattices";
                 value: string;
                 count: number;
             }>[]) & {
                 config: ((val: {
-                    facet: "props" | "elements" | "classes" | "lattices";
+                    facet: "elements" | "classes" | "props" | "lattices";
                     value: string;
                     count: number;
                 }) => Readonly<{
-                    facet: "props" | "elements" | "classes" | "lattices";
+                    facet: "elements" | "classes" | "props" | "lattices";
                     value: string;
                     count: number;
                 }>) & {
                     config: {
-                        facet: ((value: "props" | "elements" | "classes" | "lattices") => "props" | "elements" | "classes" | "lattices") & {
+                        facet: ((value: "elements" | "classes" | "props" | "lattices") => "elements" | "classes" | "props" | "lattices") & {
                             config: {
                                 name: string;
                                 dict: {
@@ -4667,19 +4893,19 @@ declare namespace $.$$ {
                                     readonly lattices: "lattices";
                                 };
                             };
-                            Value: "props" | "elements" | "classes" | "lattices";
+                            Value: "elements" | "classes" | "props" | "lattices";
                         };
                         value: (val: string) => string;
                         count: (val: number) => number;
                     };
                     Value: Readonly<{
-                        facet: "props" | "elements" | "classes" | "lattices";
+                        facet: "elements" | "classes" | "props" | "lattices";
                         value: string;
                         count: number;
                     }>;
                 };
                 Value: readonly Readonly<{
-                    facet: "props" | "elements" | "classes" | "lattices";
+                    facet: "elements" | "classes" | "props" | "lattices";
                     value: string;
                     count: number;
                 }>[];
@@ -4688,17 +4914,17 @@ declare namespace $.$$ {
         };
         Value: Readonly<{
             payload: readonly Readonly<{
-                facet: "props" | "elements" | "classes" | "lattices";
+                facet: "elements" | "classes" | "props" | "lattices";
                 value: string;
                 count: number;
             }>[];
             total_count: number;
         }>;
     };
-    class $visavis_plot_pie extends $.$visavis_plot_pie {
+    export class $visavis_plot_pie extends $.$visavis_plot_pie {
         json(): Readonly<{
             payload: readonly Readonly<{
-                facet: "props" | "elements" | "classes" | "lattices";
+                facet: "elements" | "classes" | "props" | "lattices";
                 value: string;
                 count: number;
             }>[];
@@ -4707,9 +4933,6 @@ declare namespace $.$$ {
         subscribe_events(): void;
         layout(): {
             showlegend: boolean;
-            font: {
-                family: string;
-            };
             annotations: ({
                 text: string;
             } & {
@@ -4719,7 +4942,6 @@ declare namespace $.$$ {
                 showarrow: boolean;
                 font: {
                     size: number;
-                    family: string;
                 };
                 borderpad: number;
                 bgcolor: string;
@@ -4728,8 +4950,33 @@ declare namespace $.$$ {
         xy_domains(): (number[][][] | null)[];
         enter_metrics(): number;
         tot_count(): number;
-        data(): any[];
+        pies_payload(): {
+            facet: keyof typeof Facet_names;
+            payload: {
+                facet: string;
+                value: string;
+                count: number;
+            }[];
+        }[];
+        data(): {
+            type: string;
+            name: "properties" | "elements" | "classes" | "crystal systems";
+            values: number[];
+            text: string[];
+            domain: {
+                x: number[];
+                y: number[];
+            };
+            hoverinfo: string;
+            textinfo: string;
+            textposition: string;
+            hole: number;
+            marker: {
+                colors: readonly any[];
+            };
+        }[];
     }
+    export {};
 }
 
 declare namespace $ {
@@ -5448,7 +5695,6 @@ declare namespace $.$$ {
                 x: number;
                 y: number;
                 font: {
-                    family: string;
                     size: number;
                 };
             };
@@ -5471,7 +5717,6 @@ declare namespace $.$$ {
                 title: string;
             };
             font: {
-                family: string;
                 size: number;
             };
         };
@@ -5635,7 +5880,6 @@ declare namespace $.$$ {
                 x: number;
                 y: number;
                 font: {
-                    family: string;
                     size: number;
                 };
             };
@@ -5664,7 +5908,6 @@ declare namespace $.$$ {
                 title: string | undefined;
             };
             font: {
-                family: string;
                 size: number;
             };
             margin: {
@@ -6001,6 +6244,79 @@ declare namespace $.$$ {
 }
 
 declare namespace $.$$ {
+}
+
+declare namespace $ {
+    class $visavis_frame extends $mol_view {
+        attr(): Record<string, any>;
+        json(next?: any): Record<string, any>;
+        json_cmp(next?: any): any;
+        show_setup(): boolean;
+        sub(): readonly any[];
+        plot_raw(): $visavis_plot_raw;
+        nonformers_shown(next?: any): boolean;
+        post_message(id: any, next?: any): any;
+        matrix_x_op(next?: any): any;
+        matrix_y_op(next?: any): any;
+        matrix_x_sort(next?: any): string;
+        matrix_y_sort(next?: any): string;
+        Matrix(): $$.$visavis_plot_matrix;
+        x_op(next?: any): boolean;
+        y_op(next?: any): boolean;
+        z_op(next?: any): boolean;
+        x_sort(next?: any): string;
+        y_sort(next?: any): string;
+        z_sort(next?: any): string;
+        Cube(): $$.$visavis_plot_cube;
+        Phase(): $$.$visavis_plot_phase;
+        Bar(): $$.$visavis_plot_bar;
+        discovery_elementals_on(next?: any): ("num" | "nump" | "size" | "rea" | "rpp" | "rion" | "rcov" | "rmet" | "tmelt" | "eneg")[];
+        Discovery(): $$.$visavis_plot_discovery;
+        Eigen(): $$.$visavis_plot_eigen;
+        Pie(): $$.$visavis_plot_pie;
+        Scatter(): $$.$visavis_plot_scatter;
+        Customscatter(): $$.$visavis_plot_customscatter;
+        Heatmap(): $$.$visavis_plot_heatmap;
+        graph_rel(next?: any): string;
+        Graph(): $$.$visavis_plot_graph;
+        Plot(): $$.$visavis_plot;
+    }
+}
+
+declare namespace $.$$ {
+    class $visavis_frame extends $.$visavis_frame {
+        plot_raw(): $visavis_plot_raw;
+        post_message(name: string, args: any): void;
+        auto(): $mol_dom_listener;
+        message_listener(): $mol_dom_listener;
+        message_receive(event?: MessageEvent<{
+            name: keyof ReturnType<$visavis_frame["message_handler"]>;
+            args: any;
+        }>): void;
+        message_handler(): {
+            discovery_elementals_on: (args: any) => void;
+            matrix_order: (args: any) => void;
+            cube_order: (args: any) => void;
+            graph_rel_change: (args: any) => void;
+            cmp_discard: (args: any) => void;
+            cmp_download: (args: any) => undefined;
+            fixel_manage: (args: any) => void;
+        };
+    }
+}
+
+declare namespace $ {
+    class $visavis extends $mol_ghost {
+        App(): $$.$visavis_app;
+        Frame(): $$.$visavis_frame;
+    }
+}
+
+declare namespace $.$$ {
+    class $visavis extends $.$visavis {
+        in_iframe(): boolean;
+        Sub(): $visavis_app | $visavis_frame;
+    }
 }
 
 export = $;

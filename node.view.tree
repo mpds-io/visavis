@@ -1,3 +1,6 @@
+$mol_ghost $mol_view
+	Sub $mol_view
+
 $mol_scroll $mol_view
 	scroll_top?val 0
 	scroll_left?val 0
@@ -159,9 +162,6 @@ $mol_link $mol_view
 		^
 		click?event <=> click?event <=> event_click?event null
 
-$mol_ghost $mol_view
-	Sub $mol_view
-
 $mol_drop $mol_ghost
 	enabled? true
 	event *
@@ -186,6 +186,14 @@ $mol_link_source $mol_link
 	sub /
 		<= Icon $mol_icon_github_circle
 
+$visavis_plot_legend_cmp $mol_view
+	sub /
+		<= First_cmp_label $mol_view
+			sub / <= first_cmp_label? \
+		\vs.
+		<= Second_cmp_label $mol_view
+			sub / <= second_cmp_label? \
+
 $mol_check $mol_button_minor
 	attr *
 		^
@@ -204,16 +212,6 @@ $mol_icon_tick $mol_icon path \M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z
 $mol_check_box $mol_check
 	Icon $mol_icon_tick
 
-$mol_labeler $mol_list
-	rows /
-		<= Label $mol_view
-			minimal_height 32
-			sub <= label /$mol_view_content
-				<= title
-		<= Content $mol_view
-			minimal_height 24
-			sub <= content /
-
 $mol_check_list $mol_view
 	Option* $mol_check
 		checked?val <=> option_checked*?val false
@@ -229,14 +227,32 @@ $mol_check_list $mol_view
 $mol_switch $mol_check_list
 	value?val \
 
+$mol_labeler $mol_list
+	rows /
+		<= Label $mol_view
+			minimal_height 32
+			sub <= label /$mol_view_content
+				<= title
+		<= Content $mol_view
+			minimal_height 24
+			sub <= content /
+
 $visavis_plot_matrix $mol_view
 	plot_raw $visavis_plot_raw
+	json_cmp? null
+	json_master null
 	show_setup true
 	size 0
 	links_value_min? 0
 	links_value_max? 0
 	heatmap? false
 	matrix /
+	order /number
+	x_sort? \nump
+	y_sort? \nump
+	x_op? null
+	y_op? null
+	matrix_click? null
 	heatmap_colors /
 		\rgb(150,0,90)
 		\rgb(0,0,200)
@@ -258,14 +274,16 @@ $visavis_plot_matrix $mol_view
 		\#0f3
 		\#0ff
 		\#90c
-	order /number
-	order_current? \nump
 	plot_padding 32
 	axis_width 24
 	sub /
 		<= Plot $mol_view
 			sub <= plot_body /
-				<= Root $mol_svg
+				<= Root $mol_view
+					render <= draw null
+				<= Cmp_legend $visavis_plot_legend_cmp
+					first_cmp_label? <= first_cmp_label? \
+					second_cmp_label? <= second_cmp_label? \
 				<= Side_right $mol_scroll
 					sub /
 						<= Heatmap_legend $mol_list
@@ -274,30 +292,30 @@ $visavis_plot_matrix $mol_view
 								<= Heatmap_color*0 $mol_view
 									style * background <= heatmap_color* \
 								<= Heatmap_max $mol_view sub / <= links_value_max
-			auto <= draw null
 		<= Setup $mol_view
-			sub /
-				<= Nonformers_label $mol_labeler
-					title @ \Non-formers
-					Content <= Nonformers $mol_check_box
-						hint @ \Continuous solid solutions and complete insolubility systems
-						title @ \Show
-						checked? <=> nonformers? false
+			sub <= setup /
+				<= Show_diff $mol_check_box
+					title \Show diffrence
+					checked? <=> show_diff? false
+				<= Nonformers $mol_check_box
+					hint \Continuous solid solutions and complete insolubility systems
+					title \Show non-formers
+					checked? <=> nonformers? false
 				<= Order_label $mol_labeler
-					title @ \Sort by
+					title \Sort by
 					Content <= Order_switch $mol_switch
-						value? <=> order_current?
+						value? <=> sort_control? \nump
 						options <= order_dict *
-							nump @ \Periodic number
-							num @ \Atomic number
-							size @ \Atomic size
-							rea @ \Atomic reactivity
-							rpp @ \Pseudopotential radii
-							rion @ \Ionic radii
-							rcov @ \Covalent radii
-							rmet @ \Metallic radii
-							tmelt @ \Melting temperature
-							eneg @ \Electronegativity
+							nump \Periodic number
+							num \Atomic number
+							size \Atomic size
+							rea \Atomic reactivity
+							rpp \Pseudopotential radii
+							rion \Ionic radii
+							rcov \Covalent radii
+							rmet \Metallic radii
+							tmelt \Melting temperature
+							eneg \Electronegativity
 
 $visavis_plotly $mol_view
 	data *
@@ -456,6 +474,7 @@ $mol_select $mol_pick
 
 $visavis_plot_cube $mol_view
 	plot_raw $visavis_plot_raw
+	json_cmp? null
 	show_setup true
 	heatmap? false
 	order* /number
@@ -466,6 +485,7 @@ $visavis_plot_cube $mol_view
 	x_sort? \nump
 	y_sort? \nump
 	z_sort? \nump
+	cube_click? null
 	colorset /
 		\#3e3f95
 		\#c00
@@ -494,6 +514,9 @@ $visavis_plot_cube $mol_view
 					data <= data_shown *
 					layout <= layout *
 					subscribe_events <= subscribe_events null
+				<= Cmp_legend $visavis_plot_legend_cmp
+					first_cmp_label? <= first_cmp_label? \
+					second_cmp_label? <= second_cmp_label? \
 				<= Side_right $mol_scroll
 					sub /
 						<= Heatmap_legend $mol_list
@@ -504,34 +527,35 @@ $visavis_plot_cube $mol_view
 								<= Heatmap_max $mol_view sub / <= value_max 0
 		<= Setup $mol_view
 			sub /
-				<= Nonformers_label $mol_labeler
-					title @ \Non-formers
-					Content <= Nonformers $mol_check_box
-						hint @ \Continuous solid solutions and complete insolubility systems
-						title @ \Show
-						checked? <=> nonformers? false
+				<= Project2d $mol_check_box
+					title \Project on 2d
+					checked? <=> project2d? false
+				<= Nonformers $mol_check_box
+					hint \Continuous solid solutions and complete insolubility systems
+					title \Show non-formers
+					checked? <=> nonformers? false
 				<= X_order_label $mol_labeler
-					title @ \X sort by
+					title \X sort by
 					Content <= X_order_select $mol_select
 						value? <=> x_sort? 
 						dictionary <= order_dict *
-							nump @ \Periodic number
-							num @ \Atomic number
-							size @ \Atomic size
-							rea @ \Atomic reactivity
-							rpp @ \Pseudopotential radii
-							rion @ \Ionic radii
-							rcov @ \Covalent radii
-							rmet @ \Metallic radii
-							tmelt @ \Melting temperature
-							eneg @ \Electronegativity
+							nump \Periodic number
+							num \Atomic number
+							size \Atomic size
+							rea \Atomic reactivity
+							rpp \Pseudopotential radii
+							rion \Ionic radii
+							rcov \Covalent radii
+							rmet \Metallic radii
+							tmelt \Melting temperature
+							eneg \Electronegativity
 				<= Y_order_label $mol_labeler
-					title @ \Y sort by
+					title \Y sort by
 					Content <= Y_order_select $mol_select
 						value? <=> y_sort? 
 						dictionary <= order_dict
 				<= Z_order_label $mol_labeler
-					title @ \Z sort by
+					title \Z sort by
 					Content <= Z_order_select $mol_select
 						value? <=> z_sort? 
 						dictionary <= order_dict
@@ -567,7 +591,6 @@ $visavis_plot_phase $mol_book2
 			font *
 				size 20
 				color \#333
-				family \Exo2
 			ternary *
 				aaxis *
 					title <= json_title_a \
@@ -607,7 +630,6 @@ $visavis_plot_phase $mol_book2
 			yref \papper
 			font *
 				size 15
-				family \Exo2
 	rectangle *
 		datamock /
 			*
@@ -627,7 +649,6 @@ $visavis_plot_phase $mol_book2
 			font *
 				size 16
 				color \#333
-				family \Exo2
 			xaxis *
 				title \at. %
 				range <= json_comp_range /
@@ -686,7 +707,6 @@ $visavis_plot_phase $mol_book2
 			yref \papper
 			font *
 				size 20
-				family \Exo2
 		*
 			text <= json_title_b
 			x 1.03
@@ -696,12 +716,10 @@ $visavis_plot_phase $mol_book2
 			yref \papper
 			font *
 				size 20
-				family \Exo2
 	annotation *
 		show_arrow false
 		font *
 			size 13
-			family \Exo2
 	annotation_textangle* 0
 	plot_options *
 		displaylogo false
@@ -723,6 +741,7 @@ $visavis_plot_bar $visavis_plotly
 
 $visavis_plot_discovery $mol_view
 	plot_raw $visavis_plot_raw
+	json_cmp? null
 	elementals_on? /
 	show_setup true
 	discovery_click? null
@@ -731,6 +750,9 @@ $visavis_plot_discovery $mol_view
 			data <= data *
 			layout <= layout *
 			subscribe_events <= subscribe_events null
+		<= Cmp_legend $visavis_plot_legend_cmp
+			first_cmp_label? <= first_cmp_label? \
+			second_cmp_label? <= second_cmp_label? \
 		<= Setup $mol_view
 			sub /
 				<= Elementals $mol_labeler
@@ -871,3 +893,64 @@ $visavis_app $mol_book2
 		body /
 			<= Plot_view* $visavis_plot
 				plot_raw <= plot_raw* null
+
+$visavis_frame $mol_view
+	attr * mol_theme \$mol_theme_light
+	json? *
+	json_cmp? null
+	show_setup false
+	sub /
+		<= Plot $visavis_plot
+			plot_raw <= plot_raw $visavis_plot_raw
+			Matrix <= Matrix $visavis_plot_matrix
+				plot_raw <= plot_raw
+				json_cmp <= json_cmp
+				show_setup <= show_setup
+				nonformers? <=> nonformers_shown? false
+				x_op? => matrix_x_op?
+				y_op? => matrix_y_op?
+				x_sort? => matrix_x_sort?
+				y_sort? => matrix_y_sort?
+				matrix_click? <=> post_message*matrix_click? null
+			Cube <= Cube $visavis_plot_cube
+				plot_raw <= plot_raw
+				json_cmp <= json_cmp
+				show_setup <= show_setup
+				nonformers? <=> nonformers_shown?
+				x_op? => x_op?
+				y_op? => y_op?
+				z_op? => z_op?
+				x_sort? => x_sort?
+				y_sort? => y_sort?
+				z_sort? => z_sort?
+				cube_click? <=> post_message*cube_click? null
+			Phase <= Phase $visavis_plot_phase
+				plot_raw <= plot_raw
+			Bar <= Bar $visavis_plot_bar
+				plot_raw <= plot_raw
+				bar_click? <=> post_message*bar_click? null
+			Discovery <= Discovery $visavis_plot_discovery
+				plot_raw <= plot_raw
+				json_cmp <= json_cmp
+				show_setup <= show_setup
+				elementals_on? => discovery_elementals_on?
+				discovery_click? <=> post_message*discovery_click? null
+			Eigen <= Eigen $visavis_plot_eigen
+				plot_raw <= plot_raw
+			Pie <= Pie $visavis_plot_pie
+				plot_raw <= plot_raw
+				pie_click? <=> post_message*pie_click? null
+			Scatter <= Scatter $visavis_plot_scatter
+				plot_raw <= plot_raw
+			Customscatter <= Customscatter $visavis_plot_customscatter
+				plot_raw <= plot_raw
+			Heatmap <= Heatmap $visavis_plot_heatmap
+				plot_raw <= plot_raw
+			Graph <= Graph $visavis_plot_graph
+				plot_raw <= plot_raw
+				graph_rel? => graph_rel?
+				graph_click? <=> post_message*graph_click?
+
+$visavis $mol_ghost
+	App $visavis_app
+	Frame $visavis_frame

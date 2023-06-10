@@ -69,12 +69,12 @@
 	pack home git \https://github.com/hyoo-ru/hyoo.ru.git
 	pack idea git \https://github.com/hyoo-ru/idea.hyoo.ru.git
 	pack intern git \https://github.com/hyoo-ru/intern.hyoo.ru.git
-\/visavis/lib
-	deploy \/visavis/lib/bundle/plotly.custom.min.js
-	deploy \/visavis/lib/bundle/pca.js
 \/visavis/elements/list
 	deploy \/visavis/elements/data/elements.json.tree
 	deploy \/visavis/elements/data/prop_names.json.tree
+\/visavis/lib
+	deploy \/visavis/lib/bundle/plotly.custom.min.js
+	deploy \/visavis/lib/bundle/pca.js
 \/visavis/elements/nonformer
 	deploy \/visavis/elements/data/nonfromer_pd_bin.json.tree
 	deploy \/visavis/elements/data/nonfromer_pd_tri.json.tree
