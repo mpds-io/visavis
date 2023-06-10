@@ -60,6 +60,11 @@ namespace $.$$ {
 			return this.index_by_prop( 'name' )[ name ]
 		}
 
+		@ $mol_mem_key
+		static prop_values( prop: keyof typeof Prop_names.Value ) {
+			return this.list().map( el => el[prop] )
+		}
+
 	}
 
 }

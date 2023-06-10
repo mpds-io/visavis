@@ -11,6 +11,10 @@ $visavis_frame $mol_view
 				json_cmp <= json_cmp
 				show_setup <= show_setup
 				nonformers? <=> nonformers_shown? false
+				x_op? => matrix_x_op?
+				y_op? => matrix_y_op?
+				x_sort? => matrix_x_sort?
+				y_sort? => matrix_y_sort?
 			Cube <= Cube $visavis_plot_cube
 				plot_raw <= plot_raw
 				json_cmp <= json_cmp

@@ -59,11 +59,14 @@ namespace $.$$ {
 					const { x_sort, y_sort, x_op, y_op } = $mol_data_record({
 						x_sort: $mol_data_string, 
 						y_sort: $mol_data_optional( $mol_data_string ),
-						x_op: $mol_data_optional( $mol_data_string ),
-						y_op: $mol_data_optional( $mol_data_string ),
+						x_op: $mol_data_optional( $mol_data_variant ( $mol_data_string, $mol_data_boolean ) ),
+						y_op: $mol_data_optional( $mol_data_variant ( $mol_data_string, $mol_data_boolean ) ),
 					})( args )
 
-					// this.matrix_order( x_sort, y_sort, x_op, y_op )
+					this.matrix_x_sort( x_sort )
+					this.matrix_y_sort( y_sort || null )
+					this.matrix_x_op( x_op || null )
+					this.matrix_y_op( y_op || null )
 				},
 
 				cube_order: (args: any)=> {

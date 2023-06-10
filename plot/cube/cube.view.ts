@@ -17,7 +17,7 @@ namespace $.$$ {
 		}),
 	})
 
-	type Element_prop = keyof ReturnType<typeof $visavis_elements_list.prop_names>
+	type Prop_name = keyof ReturnType<typeof $visavis_elements_list.prop_names>
 
 	export class $visavis_plot_cube extends $.$visavis_plot_cube {
 
@@ -50,7 +50,7 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem_key
-		order(order: Element_prop) {
+		order(order: Prop_name) {
 			return $lib_d3.all().range(95).sort( (a: any, b: any) =>
 				$visavis_elements_list.element_by_num(a + 1)[order] - $visavis_elements_list.element_by_num(b + 1)[order]
 			) as number[]
@@ -94,9 +94,9 @@ namespace $.$$ {
 				marker: {color: "#ccc", size: 4, opacity: 0.9},
 				projection: {x: {show: true, opacity: 0.25}, y: {show: true, opacity: 0.25}, z: {show: true, opacity: 0.25}},
 				...this.convert_to_axes(x, y, z, 
-					this.x_sort() as Element_prop, 
-					this.y_sort() as Element_prop, 
-					this.z_sort() as Element_prop
+					this.x_sort() as Prop_name, 
+					this.y_sort() as Prop_name, 
+					this.z_sort() as Prop_name
 				)
 			}
 		}
@@ -114,9 +114,9 @@ namespace $.$$ {
 					this.json().payload.points.x, 
 					this.json().payload.points.y, 
 					this.json().payload.points.z, 
-					this.x_sort() as Element_prop, 
-					this.y_sort() as Element_prop, 
-					this.z_sort() as Element_prop,
+					this.x_sort() as Prop_name, 
+					this.y_sort() as Prop_name, 
+					this.z_sort() as Prop_name,
 				)
 			}
 		}
@@ -143,7 +143,7 @@ namespace $.$$ {
 					showticklabels: !this.x_op(),
 					showline: false,
 					tickfont: {size: 11},
-					ticktext: this.order_els(this.x_sort() as Element_prop).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
+					ticktext: this.order_els(this.x_sort() as Prop_name).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
 					tickvals: $lib_d3.all().range(1, 96, 2)
 				},
 				yaxis: {
@@ -156,7 +156,7 @@ namespace $.$$ {
 					showticklabels: !this.y_op(),
 					showline: false,
 					tickfont: {size: 11},
-					ticktext: this.order_els(this.y_sort() as Element_prop).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
+					ticktext: this.order_els(this.y_sort() as Prop_name).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
 					tickvals: $lib_d3.all().range(1, 96, 2)
 				},
 				zaxis: {
@@ -169,7 +169,7 @@ namespace $.$$ {
 					showticklabels: !this.z_op(),
 					showline: false,
 					tickfont: {size: 11},
-					ticktext: this.order_els(this.z_sort() as Element_prop).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
+					ticktext: this.order_els(this.z_sort() as Prop_name).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
 					tickvals: $lib_d3.all().range(1, 96, 2)
 				},
 				camera: {projection: {type: 'perspective'}},
@@ -206,9 +206,9 @@ namespace $.$$ {
 			x_src: readonly number[], 
 			y_src: readonly number[], 
 			z_src: readonly number[], 
-			x_sort: Element_prop, 
-			y_sort: Element_prop, 
-			z_sort: Element_prop, 
+			x_sort: Prop_name, 
+			y_sort: Prop_name, 
+			z_sort: Prop_name, 
 			x_op?: any, 
 			y_op?: any, 
 			z_op?: any
@@ -290,7 +290,7 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem_key
-		order_els(prop: Element_prop) {
+		order_els(prop: Prop_name) {
 			return $visavis_elements_list.list().slice(1).sort(function(a, b){
 				return a[prop] - b[prop]
 			}).map( el => el.name )

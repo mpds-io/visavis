@@ -8,6 +8,11 @@ $visavis_plot_matrix $mol_view
 	links_value_max? 0
 	heatmap? false
 	matrix /
+	order /number
+	x_sort? \nump
+	y_sort? \nump
+	x_op? null
+	y_op? null
 	heatmap_colors /
 		\rgb(150,0,90)
 		\rgb(0,0,200)
@@ -29,8 +34,6 @@ $visavis_plot_matrix $mol_view
 		\#0f3
 		\#0ff
 		\#90c
-	order /number
-	order_current? \nump
 	plot_padding 32
 	axis_width 24
 	sub /
@@ -61,7 +64,7 @@ $visavis_plot_matrix $mol_view
 				<= Order_label $mol_labeler
 					title \Sort by
 					Content <= Order_switch $mol_switch
-						value? <=> order_current?
+						value? <=> sort_control? \nump
 						options <= order_dict *
 							nump \Periodic number
 							num \Atomic number
