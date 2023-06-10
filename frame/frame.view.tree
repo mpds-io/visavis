@@ -15,6 +15,7 @@ $visavis_frame $mol_view
 				y_op? => matrix_y_op?
 				x_sort? => matrix_x_sort?
 				y_sort? => matrix_y_sort?
+				matrix_click? <=> post_message*matrix_click? null
 			Cube <= Cube $visavis_plot_cube
 				plot_raw <= plot_raw
 				json_cmp <= json_cmp
@@ -26,6 +27,7 @@ $visavis_frame $mol_view
 				x_sort? => x_sort?
 				y_sort? => y_sort?
 				z_sort? => z_sort?
+				cube_click? <=> post_message*cube_click? null
 			Phase <= Phase $visavis_plot_phase
 				plot_raw <= plot_raw
 			Bar <= Bar $visavis_plot_bar

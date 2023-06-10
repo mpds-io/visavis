@@ -10,11 +10,12 @@ namespace $.$$ {
 				v: $mol_data_array( $mol_data_number ),
 				labels: $mol_data_array( $mol_data_string ),
 			}),
-			fixel: $mol_data_nullable( $mol_data_boolean ),
+			fixel: $mol_data_nullable( $mol_data_variant( $mol_data_boolean, $mol_data_number ) ),
 			xtitle: $mol_data_optional( $mol_data_string ),
 			ytitle: $mol_data_optional( $mol_data_string ),
 			ztitle: $mol_data_optional( $mol_data_string ),
 		}),
+		answerto: $mol_data_optional( $mol_data_string ),
 	})
 
 	type Prop_name = keyof ReturnType<typeof $visavis_elements_list.prop_names>
@@ -29,7 +30,11 @@ namespace $.$$ {
 		}
 
 		sub() {
-			return [ this.Plot(), ...(this.show_setup()? [ this.Setup() ] : []) ]
+			return [ 
+				this.Plot(), 
+				...( this.json_cmp() ? [ this.Cmp_legend() ] : [] ),
+				...( this.show_setup() ? [ this.Setup() ] : [] ),
+			]
 		}
 
 		json() {
@@ -73,10 +78,10 @@ namespace $.$$ {
 			]
 		}
 
-		@ $mol_mem
-		marker() {
+		@ $mol_mem_key
+		marker( color_id: number ) {
 			return {
-				color: this.heatmap() ? this.json().payload.points.v : this.colorset()[0],
+				color: this.heatmap() ? this.json().payload.points.v : this.colorset()[ color_id ],
 				... this.heatmap() ? { colorscale: 'Rainbow' } : {},
 				size: 4,
 				opacity: 0.9
@@ -84,15 +89,22 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
+		scatter3d_common() {
+			return {
+				type: "scatter3d",
+				mode: "markers",
+				hoverinfo: "text",
+				projection: {x: {show: true, opacity: 0.25}, y: {show: true, opacity: 0.25}, z: {show: true, opacity: 0.25}},
+			}
+		}
+
+		@ $mol_mem
 		data_nonformers() {
 			const { x, y, z } = $visavis_elements_nonformer.pd_tri_nums()
 			return {
-				type: "scatter3d",
+				...this.scatter3d_common(),
 				text: $visavis_elements_nonformer.pd_tri_labels(),
-				mode: "markers",
-				hoverinfo: "text",
 				marker: {color: "#ccc", size: 4, opacity: 0.9},
-				projection: {x: {show: true, opacity: 0.25}, y: {show: true, opacity: 0.25}, z: {show: true, opacity: 0.25}},
 				...this.convert_to_axes(x, y, z, 
 					this.x_sort() as Prop_name, 
 					this.y_sort() as Prop_name, 
@@ -104,12 +116,9 @@ namespace $.$$ {
 		@ $mol_mem
 		data() {
 			return {
-				type: "scatter3d",
+				...this.scatter3d_common(),
 				text: this.json().payload.points.labels,
-				mode: "markers",
-				hoverinfo: "text",
-				marker: this.marker(),
-				projection: {x: {show: true, opacity: 0.05}, y: {show: true, opacity: 0.05}, z: {show: true, opacity: 0.05}},
+				marker: this.marker( 0 ),
 				...this.convert_to_axes(
 					this.json().payload.points.x, 
 					this.json().payload.points.y, 
@@ -122,10 +131,32 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
+		data_cmp() {
+			if (!this.json_cmp() ) return null
+			this.nonformers( false )
+			this.first_cmp_label( this.json().answerto )
+			this.second_cmp_label( this.json_cmp().answerto )
+			return {
+				...this.scatter3d_common(),
+				text: this.json_cmp().payload.points.labels,
+				marker: this.marker( 1 ),
+				...this.convert_to_axes(
+					this.json_cmp().payload.points.x, 
+					this.json_cmp().payload.points.y, 
+					this.json_cmp().payload.points.z, 
+					this.x_sort() as Prop_name, 
+					this.y_sort() as Prop_name, 
+					this.z_sort() as Prop_name,
+				)
+			}
+		}
+
+		@ $mol_mem
 		data_shown() {
 			return [
 				... this.nonformers() ? [this.data_nonformers()] : [],
 				this.data(),
+				... this.json_cmp() ? [this.data_cmp()] : [],
 			]
 		}
 
