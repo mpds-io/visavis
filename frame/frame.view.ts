@@ -94,28 +94,7 @@ namespace $.$$ {
 				},
 
 				cmp_discard: (args: any)=> {
-					const { type } = $mol_data_record({
-						type: $mol_data_string,
-					})( args )
-
-					// if (!visavis.cache || visavis.cache.type != type || !visavis.cache.cmp)
-					// 	return notify('Comparison was reset');
-			
-					// reset_canvas();
-				
-					// if (type == 'matrix'){
-					// 	delete visavis.cache.cmp;
-					// 	visavis__matrix(visavis.cache.ref);
-				
-					// } else if (type == 'cube'){
-					// 	delete visavis.cache.cmp;
-					// 	visavis__plot3d();
-				
-					// } else if (type == 'discovery'){
-					// 	var rerun = {payload: {points: visavis.cache.ref.points}, answerto: visavis.cache.ref.name};
-					// 	visavis.cache = null;
-					// 	visavis__discovery(rerun);
-					// }
+					this.json_cmp( null )
 				},
 
 				cmp_download: (args: any)=> {
@@ -123,47 +102,15 @@ namespace $.$$ {
 						url: $mol_data_string,
 						type: $mol_data_string,
 					})( args )
-
 					// if (!visavis.cache || visavis.cache.type != type)
 					// 	return urge('Error: cannot compare datasets');
-				
-					
-					// call_ajax(url, function(cmp_data){
-						
-						// 	show_preloader();
-						// 	reset_canvas();
-						
+
 					const json_cmp = $mol_fetch.json( url ) as any
 					if (json_cmp && json_cmp.error) return $mol_fail( new $mol_data_error( json_cmp.error ) )
 					if (!json_cmp || !json_cmp.use_visavis_type) return $mol_fail( new $mol_data_error( 'Error: unknown data format' ) )
 					// if (json_cmp.warning) notify(json_cmp.warning);
-
+					
 					this.json_cmp( json_cmp )
-
-					if (type == 'matrix'){
-						this.nonformers_shown( false )
-			
-						// Prepare a master merged matrix from ref and cmp
-						var master_matrix = JSON.parse(JSON.stringify( this.json() ));
-						json_cmp.payload.links.forEach( (item: any)=> {
-							item.cmp = 1;
-							master_matrix.payload.links.push(item);
-						});
-
-						// visavis__matrix(master_matrix);
-						// visavis.cache.cmp = {payload: {links: json_cmp.payload.links}, answerto: json_cmp.answerto};
-						// set_cmp_legend([visavis.cache.cmp.answerto, visavis.cache.ref.answerto], true);
-
-					} else if (type == 'cube'){
-						// this.nonformers_shown( false )
-						// visavis.cache.cmp = {payload: {points: json_cmp.payload.points}, answerto: json_cmp.answerto};
-						// visavis__plot3d();
-						// set_cmp_legend([visavis.cache.cmp.answerto, visavis.cache.ref.answerto], true);
-
-					} else if (type == 'discovery'){
-						// visavis__discovery(json_cmp);
-						// set_cmp_legend([json_cmp.answerto, visavis.cache.ref.name]);
-					}
 				},
 
 				fixel_manage: (args: any)=> {

@@ -49,12 +49,13 @@ $visavis_plot_cube $mol_view
 								<= Heatmap_max $mol_view sub / <= value_max 0
 		<= Setup $mol_view
 			sub /
-				<= Nonformers_label $mol_labeler
-					title \Non-formers
-					Content <= Nonformers $mol_check_box
-						hint \Continuous solid solutions and complete insolubility systems
-						title \Show
-						checked? <=> nonformers? false
+				<= Project2d $mol_check_box
+					title \Project on 2d
+					checked? <=> project2d? false
+				<= Nonformers $mol_check_box
+					hint \Continuous solid solutions and complete insolubility systems
+					title \Show non-formers
+					checked? <=> nonformers? false
 				<= X_order_label $mol_labeler
 					title \X sort by
 					Content <= X_order_select $mol_select

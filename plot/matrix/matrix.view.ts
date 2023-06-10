@@ -24,6 +24,7 @@ namespace $.$$ {
 	})
 
 	const $visavis_plot_matrix_json = $mol_data_record({
+		answerto: $mol_data_optional( $mol_data_string ),
 		payload: $mol_data_record({
 			nodes: $mol_data_array( $visavis_plot_matrix_json_node ),
 			links: $mol_data_array( $visavis_plot_matrix_json_link )
@@ -42,21 +43,50 @@ namespace $.$$ {
 	export class $visavis_plot_matrix extends $.$visavis_plot_matrix {
 
 		sub() {
-			return [ this.Plot(), ...(this.show_setup()? [ this.Setup() ] : []) ]
+			return [ 
+				this.Plot(), 
+				...( this.json_cmp() ? [ this.Cmp_legend() ] : [] ),
+				...( this.show_setup() ? [ this.Setup() ] : [] ),
+			]
 		}
 
 		@ $mol_mem
 		json() {
 			return $visavis_plot_matrix_json( this.plot_raw().json() as any )
 		}
+
+		@ $mol_mem
+		setup() {
+			return [
+				...( this.json_cmp() ? [ this.Show_diff() ] : [ this.Nonformers() ] ),
+				this.Order_label()
+			]
+		}
 		
+		@ $mol_mem
+		json_master() {
+			if ( !this.json_cmp() ) return this.json()
+			
+			const json_master = JSON.parse(JSON.stringify( this.json() ));
+			this.json_cmp().payload.links.forEach( (item: any)=> {
+				item.cmp = 1;
+				json_master.payload.links.push(item);
+			});
+
+			this.nonformers( false )
+			this.first_cmp_label( this.json().answerto )
+			this.second_cmp_label( this.json_cmp().answerto )
+
+			return $visavis_plot_matrix_json( json_master )
+		}
+
 		nodes() {
-			return this.json().payload.nodes
+			return this.json_master().payload.nodes
 		}
 
 		@ $mol_mem
 		links() {
-			return this.json().payload.links.slice().sort( (a, b) => a.value - b.value )
+			return this.json_master().payload.links.slice().sort( (a, b) => a.value - b.value )
 		}
 
 		links_value_min() {
