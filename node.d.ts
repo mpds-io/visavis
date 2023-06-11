@@ -937,23 +937,6 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $mol_ghost extends $mol_view {
-        Sub(): $mol_view;
-    }
-}
-
-declare namespace $.$$ {
-    class $mol_ghost extends $.$mol_ghost {
-        dom_node(next?: Element): Element;
-        dom_node_actual(): Element;
-        dom_tree(): Element;
-        title(): string;
-        minimal_width(): number;
-        minimal_height(): number;
-    }
-}
-
-declare namespace $ {
     class $mol_scroll extends $mol_view {
         scroll_top(val?: any): number;
         scroll_left(val?: any): number;
@@ -1498,6 +1481,23 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    class $mol_ghost extends $mol_view {
+        Sub(): $mol_view;
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_ghost extends $.$mol_ghost {
+        dom_node(next?: Element): Element;
+        dom_node_actual(): Element;
+        dom_tree(): Element;
+        title(): string;
+        minimal_width(): number;
+        minimal_height(): number;
+    }
+}
+
+declare namespace $ {
     class $mol_drop extends $mol_ghost {
         enabled(next?: any): boolean;
         event(): Record<string, any>;
@@ -1723,23 +1723,10 @@ declare namespace $ {
     export function $visavis_plot_raw_from_json(json: any, id?: string): $visavis_plot_raw;
     export class $visavis_plot_raw extends $mol_store<Plot_raw> {
         id(next?: string): string;
-        type(): "pd" | "scatter" | "bar" | "pie" | "matrix" | "plot3d" | "discovery" | "eigenplot" | "customscatter" | "heatmap" | "graph";
+        type(): "pd" | "scatter" | "bar" | "matrix" | "plot3d" | "discovery" | "eigenplot" | "pie" | "customscatter" | "heatmap" | "graph";
         json(): {};
     }
     export {};
-}
-
-declare namespace $ {
-    class $visavis_plot_legend_cmp extends $mol_view {
-        sub(): readonly any[];
-        first_cmp_label(next?: any): string;
-        First_cmp_label(): $mol_view;
-        second_cmp_label(next?: any): string;
-        Second_cmp_label(): $mol_view;
-    }
-}
-
-declare namespace $.$$ {
 }
 
 declare namespace $ {
@@ -1781,6 +1768,19 @@ declare namespace $ {
 declare namespace $ {
     class $mol_check_box extends $mol_check {
         Icon(): $mol_icon_tick;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    class $mol_labeler extends $mol_list {
+        rows(): readonly any[];
+        label(): readonly $mol_view_content[];
+        Label(): $mol_view;
+        content(): readonly any[];
+        Content(): $mol_view;
     }
 }
 
@@ -1845,45 +1845,22 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $mol_labeler extends $mol_list {
-        rows(): readonly any[];
-        label(): readonly $mol_view_content[];
-        Label(): $mol_view;
-        content(): readonly any[];
-        Content(): $mol_view;
-    }
-}
-
-declare namespace $ {
-}
-
-declare namespace $ {
     class $visavis_plot_matrix extends $mol_view {
         plot_raw(): $visavis_plot_raw;
-        json_cmp(next?: any): any;
-        json_master(): any;
         show_setup(): boolean;
         size(): number;
         links_value_min(next?: any): number;
         links_value_max(next?: any): number;
         heatmap(next?: any): boolean;
         matrix(): readonly any[];
-        order(): readonly number[];
-        x_sort(next?: any): string;
-        y_sort(next?: any): string;
-        x_op(next?: any): any;
-        y_op(next?: any): any;
-        matrix_click(next?: any): any;
         heatmap_colors(): readonly any[];
         colorset(): readonly any[];
+        order(): readonly number[];
+        order_current(next?: any): string;
         plot_padding(): number;
         axis_width(): number;
         sub(): readonly any[];
-        draw(): any;
-        Root(): $mol_view;
-        first_cmp_label(next?: any): string;
-        second_cmp_label(next?: any): string;
-        Cmp_legend(): $visavis_plot_legend_cmp;
+        Root(): $$.$mol_svg;
         Heatmap_min(): $mol_view;
         heatmap_color(id: any): string;
         Heatmap_color(id: any): $mol_view;
@@ -1892,16 +1869,14 @@ declare namespace $ {
         Heatmap_legend(): $$.$mol_list;
         Side_right(): $$.$mol_scroll;
         plot_body(): readonly any[];
+        draw(): any;
         Plot(): $mol_view;
-        show_diff(next?: any): boolean;
-        Show_diff(): $mol_check_box;
         nonformers(next?: any): boolean;
         Nonformers(): $mol_check_box;
-        sort_control(next?: any): string;
+        Nonformers_label(): $mol_labeler;
         order_dict(): Record<string, any>;
         Order_switch(): $$.$mol_switch;
         Order_label(): $mol_labeler;
-        setup(): readonly any[];
         Setup(): $mol_view;
     }
 }
@@ -1986,6 +1961,25 @@ declare namespace $ {
         config: Sub;
         Value: readonly ReturnType<Sub>[];
     };
+}
+
+declare namespace $ {
+    class $mol_import extends $mol_object2 {
+        static module(uri: string): any;
+        static module_async(uri: string): Promise<any>;
+        static script(uri: string): any;
+        static script_async(uri: string): Promise<any>;
+        static style(uri: string): any;
+        static style_async(uri: string): any;
+    }
+}
+
+declare namespace $ {
+    class $visavis_lib extends $mol_object2 {
+        static plotly(): any;
+        static pca(): any;
+        static d3(): any;
+    }
 }
 
 declare namespace $ {
@@ -2084,54 +2078,6 @@ declare namespace $.$$ {
             eneg: number;
         }>[];
     };
-    const Prop_names: ((val: {
-        num: string;
-        nump: string;
-        size: string;
-        rea: string;
-        rpp: string;
-        rion: string;
-        rcov: string;
-        rmet: string;
-        tmelt: string;
-        eneg: string;
-    }) => Readonly<{
-        num: string;
-        nump: string;
-        size: string;
-        rea: string;
-        rpp: string;
-        rion: string;
-        rcov: string;
-        rmet: string;
-        tmelt: string;
-        eneg: string;
-    }>) & {
-        config: {
-            num: (val: string) => string;
-            nump: (val: string) => string;
-            size: (val: string) => string;
-            rea: (val: string) => string;
-            rpp: (val: string) => string;
-            rion: (val: string) => string;
-            rcov: (val: string) => string;
-            rmet: (val: string) => string;
-            tmelt: (val: string) => string;
-            eneg: (val: string) => string;
-        };
-        Value: Readonly<{
-            num: string;
-            nump: string;
-            size: string;
-            rea: string;
-            rpp: string;
-            rion: string;
-            rcov: string;
-            rmet: string;
-            tmelt: string;
-            eneg: string;
-        }>;
-    };
     export class $visavis_elements_list {
         static prop_names(): Readonly<{
             num: string;
@@ -2199,28 +2145,8 @@ declare namespace $.$$ {
             tmelt: number;
             eneg: number;
         }>;
-        static prop_values(prop: keyof typeof Prop_names.Value): number[];
     }
     export {};
-}
-
-declare namespace $ {
-    class $mol_import extends $mol_object2 {
-        static module(uri: string): any;
-        static module_async(uri: string): Promise<any>;
-        static script(uri: string): any;
-        static script_async(uri: string): Promise<any>;
-        static style(uri: string): any;
-        static style_async(uri: string): any;
-    }
-}
-
-declare namespace $ {
-    class $visavis_lib extends $mol_object2 {
-        static plotly(): any;
-        static pca(): any;
-        static d3(): any;
-    }
 }
 
 declare namespace $.$$ {
@@ -2235,6 +2161,12 @@ declare namespace $.$$ {
     }
 }
 
+declare namespace $ {
+    function $mol_coord_pack(high: number, low: number): number;
+    function $mol_coord_high(pack: number): number;
+    function $mol_coord_low(pack: number): number;
+}
+
 declare namespace $.$$ {
     type Matrix_cell = {
         x: number;
@@ -2244,11 +2176,9 @@ declare namespace $.$$ {
         cmp: number;
         nonformer: boolean;
     };
-    type Prop_name = keyof ReturnType<typeof $visavis_elements_list.prop_names>;
     export class $visavis_plot_matrix extends $.$visavis_plot_matrix {
-        sub(): ($mol_view | $visavis_plot_legend_cmp)[];
+        sub(): $mol_view[];
         json(): Readonly<{
-            answerto?: string | undefined;
             payload: Readonly<{
                 nodes: readonly Readonly<{
                     name: string;
@@ -2273,34 +2203,6 @@ declare namespace $.$$ {
                 }>[];
             }>;
         }>;
-        json_master(): Readonly<{
-            answerto?: string | undefined;
-            payload: Readonly<{
-                nodes: readonly Readonly<{
-                    name: string;
-                    num: number;
-                    nump: number;
-                    size: number;
-                    rea: number;
-                    rpp: number;
-                    rion: number;
-                    rcov: number;
-                    rmet: number;
-                    tmelt: number;
-                    eneg: number;
-                    count?: number | undefined;
-                }>[];
-                links: readonly Readonly<{
-                    source: number;
-                    target: number;
-                    value: number;
-                    cmt: string;
-                    cmp?: number | undefined;
-                }>[];
-            }>;
-        }>;
-        setup(): ($mol_check_box | $mol_labeler)[];
-        plot_body(): ($mol_view | $mol_scroll)[];
         nodes(): readonly Readonly<{
             name: string;
             num: number;
@@ -2325,8 +2227,8 @@ declare namespace $.$$ {
         links_value_min(): number;
         links_value_max(): number;
         heatmap(): boolean;
-        order_by_prop(prop: Prop_name): any[];
-        order(): any[];
+        plot_body(): ($mol_scroll | $mol_svg)[];
+        order(): any;
         matrix(): Matrix_cell[][];
         size(): number;
         opacity_scale(): any;
@@ -2338,20 +2240,11 @@ declare namespace $.$$ {
         color(index: number, cmp: number): any;
         range(): any;
         svg_title_text(cell: Matrix_cell): string;
+        cell_hovered(cell?: Matrix_cell | null): void;
+        cell_selected(id: number, next?: boolean): boolean;
+        cell_click(cell: Matrix_cell): void;
         draw_cells(node: SVGElement, row: Matrix_cell[]): void;
-        d3svg(next?: any): any;
         draw(): void;
-        auto(): void;
-        get_bin_domain(args: {
-            sort: Prop_name;
-            op: string;
-        }): any[] | undefined;
-        renorm(args: {
-            sort: Prop_name;
-            op?: string;
-        }): any;
-        sort_control(next?: any): string;
-        reorder(): void;
     }
     export {};
 }
@@ -2833,7 +2726,6 @@ declare namespace $ {
 declare namespace $ {
     class $visavis_plot_cube extends $mol_view {
         plot_raw(): $visavis_plot_raw;
-        json_cmp(next?: any): any;
         show_setup(): boolean;
         heatmap(next?: any): boolean;
         order(id: any): readonly number[];
@@ -2844,7 +2736,6 @@ declare namespace $ {
         x_sort(next?: any): string;
         y_sort(next?: any): string;
         z_sort(next?: any): string;
-        cube_click(next?: any): any;
         colorset(): readonly any[];
         heatmap_colors(): readonly any[];
         sub(): readonly any[];
@@ -2852,9 +2743,6 @@ declare namespace $ {
         layout(): Record<string, any>;
         subscribe_events(): any;
         Root(): $$.$visavis_plotly;
-        first_cmp_label(next?: any): string;
-        second_cmp_label(next?: any): string;
-        Cmp_legend(): $visavis_plot_legend_cmp;
         value_min(): number;
         Heatmap_min(): $mol_view;
         heatmap_color(id: any): string;
@@ -2865,10 +2753,9 @@ declare namespace $ {
         Heatmap_legend(): $$.$mol_list;
         Side_right(): $$.$mol_scroll;
         Plot(): $mol_view;
-        project2d(next?: any): boolean;
-        Project2d(): $mol_check_box;
         nonformers(next?: any): boolean;
         Nonformers(): $mol_check_box;
+        Nonformers_label(): $mol_labeler;
         order_dict(): Record<string, any>;
         X_order_select(): $$.$mol_select;
         X_order_label(): $mol_labeler;
@@ -2892,23 +2779,16 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    function $mol_data_variant<Sub extends $mol_data_value[]>(...sub: Sub): ((val: Parameters<Sub[number]>[0]) => ReturnType<Sub[number]>) & {
-        config: Sub;
-        Value: ReturnType<Sub[number]>;
-    };
-}
-
-declare namespace $ {
     class $lib_d3 extends $mol_object2 {
         static all(): any;
     }
 }
 
 declare namespace $.$$ {
-    type Prop_name = keyof ReturnType<typeof $visavis_elements_list.prop_names>;
+    type Element_prop = keyof ReturnType<typeof $visavis_elements_list.prop_names>;
     export class $visavis_plot_cube extends $.$visavis_plot_cube {
         plot_body(): ($mol_scroll | $visavis_plotly)[];
-        sub(): ($mol_view | $visavis_plot_legend_cmp)[];
+        sub(): $mol_view[];
         json(): Readonly<{
             payload: Readonly<{
                 tcube?: boolean | undefined;
@@ -2919,58 +2799,38 @@ declare namespace $.$$ {
                     v: readonly number[];
                     labels: readonly string[];
                 }>;
-                fixel: number | boolean | null;
+                fixel: boolean | null;
                 xtitle?: string | undefined;
                 ytitle?: string | undefined;
                 ztitle?: string | undefined;
             }>;
-            answerto?: string | undefined;
         }>;
         value_list(): number[];
         value_min(): number;
         value_max(): number;
-        order(order: Prop_name): number[];
+        order(order: Element_prop): number[];
         heatmap(): boolean;
         heatmap_color(index: number): any;
         heatmap_color_list(): $mol_view[];
-        marker(color_id: number): {
+        marker(): {
             size: number;
             opacity: number;
             colorscale?: string | undefined;
             color: any;
         };
-        scatter3d_common(): {
-            type: string;
-            mode: string;
-            hoverinfo: string;
-            projection: {
-                x: {
-                    show: boolean;
-                    opacity: number;
-                };
-                y: {
-                    show: boolean;
-                    opacity: number;
-                };
-                z: {
-                    show: boolean;
-                    opacity: number;
-                };
-            };
-        };
         data_nonformers(): {
             x: never[];
             y: never[];
             z: never[];
+            type: string;
             text: string[];
+            mode: string;
+            hoverinfo: string;
             marker: {
                 color: string;
                 size: number;
                 opacity: number;
             };
-            type: string;
-            mode: string;
-            hoverinfo: string;
             projection: {
                 x: {
                     show: boolean;
@@ -2990,16 +2850,16 @@ declare namespace $.$$ {
             x: never[];
             y: never[];
             z: never[];
+            type: string;
             text: readonly string[];
+            mode: string;
+            hoverinfo: string;
             marker: {
                 size: number;
                 opacity: number;
                 colorscale?: string | undefined;
                 color: any;
             };
-            type: string;
-            mode: string;
-            hoverinfo: string;
             projection: {
                 x: {
                     show: boolean;
@@ -3015,48 +2875,19 @@ declare namespace $.$$ {
                 };
             };
         };
-        data_cmp(): {
-            x: never[];
-            y: never[];
-            z: never[];
-            text: any;
-            marker: {
-                size: number;
-                opacity: number;
-                colorscale?: string | undefined;
-                color: any;
-            };
-            type: string;
-            mode: string;
-            hoverinfo: string;
-            projection: {
-                x: {
-                    show: boolean;
-                    opacity: number;
-                };
-                y: {
-                    show: boolean;
-                    opacity: number;
-                };
-                z: {
-                    show: boolean;
-                    opacity: number;
-                };
-            };
-        } | null;
         data_shown(): ({
             x: never[];
             y: never[];
             z: never[];
+            type: string;
             text: string[];
+            mode: string;
+            hoverinfo: string;
             marker: {
                 color: string;
                 size: number;
                 opacity: number;
             };
-            type: string;
-            mode: string;
-            hoverinfo: string;
             projection: {
                 x: {
                     show: boolean;
@@ -3075,16 +2906,16 @@ declare namespace $.$$ {
             x: never[];
             y: never[];
             z: never[];
-            text: any;
+            type: string;
+            text: readonly string[];
+            mode: string;
+            hoverinfo: string;
             marker: {
                 size: number;
                 opacity: number;
                 colorscale?: string | undefined;
                 color: any;
             };
-            type: string;
-            mode: string;
-            hoverinfo: string;
             projection: {
                 x: {
                     show: boolean;
@@ -3099,7 +2930,7 @@ declare namespace $.$$ {
                     opacity: number;
                 };
             };
-        } | null)[];
+        })[];
         scene(): {
             aspectmode: string;
             xaxis: {
@@ -3162,8 +2993,10 @@ declare namespace $.$$ {
                 };
             };
         };
-        subscribe_events(): void;
         layout(): {
+            font: {
+                family: string;
+            };
             showlegend: boolean;
             scene: any;
             margin: {
@@ -3175,17 +3008,14 @@ declare namespace $.$$ {
             };
         };
         ter_op(op: 'sum' | 'diff' | 'product' | 'ratio' | 'max' | 'min', a: number, b: number, c: number): number;
-        convert_to_axes(x_src: readonly number[], y_src: readonly number[], z_src: readonly number[], x_sort: Prop_name, y_sort: Prop_name, z_sort: Prop_name, x_op?: any, y_op?: any, z_op?: any): {
+        convert_to_axes(x_src: readonly number[], y_src: readonly number[], z_src: readonly number[], x_sort: Element_prop, y_sort: Element_prop, z_sort: Element_prop, x_op?: any, y_op?: any, z_op?: any): {
             x: never[];
             y: never[];
             z: never[];
         };
-        order_els(prop: Prop_name): string[];
+        order_els(prop: Element_prop): string[];
     }
     export {};
-}
-
-declare namespace $ {
 }
 
 declare namespace $.$$ {
@@ -3530,6 +3360,7 @@ declare namespace $.$$ {
                 x: number;
                 y: number;
                 font: {
+                    family: string;
                     size: number;
                 };
             };
@@ -3554,10 +3385,12 @@ declare namespace $.$$ {
                 rangemode: string;
                 type: string;
                 tickfont: {
+                    family: string;
                     size: number;
                 };
             };
             font: {
+                family: string;
                 size: number;
             };
         };
@@ -3576,7 +3409,6 @@ declare namespace $ {
 declare namespace $ {
     class $visavis_plot_discovery extends $mol_view {
         plot_raw(): $visavis_plot_raw;
-        json_cmp(next?: any): any;
         elementals_on(next?: any): readonly any[];
         show_setup(): boolean;
         discovery_click(next?: any): any;
@@ -3585,9 +3417,6 @@ declare namespace $ {
         layout(): Record<string, any>;
         subscribe_events(): any;
         Plot(): $$.$visavis_plotly;
-        first_cmp_label(next?: any): string;
-        second_cmp_label(next?: any): string;
-        Cmp_legend(): $visavis_plot_legend_cmp;
         elemental_checked(id: any, next?: any): boolean;
         elementals_dict(): Record<string, any>;
         Elementals_check(): $$.$mol_check_list;
@@ -3640,7 +3469,7 @@ declare namespace $.$$ {
         }>;
     };
     class $visavis_plot_discovery extends $.$visavis_plot_discovery {
-        sub(): ($mol_view | $visavis_plot_legend_cmp)[];
+        sub(): $mol_view[];
         json(): Readonly<{
             payload: Readonly<{
                 points: readonly (readonly number[])[];
@@ -3687,6 +3516,7 @@ declare namespace $.$$ {
                 showarrow: boolean;
                 bgcolor: string;
                 font: {
+                    family: string;
                     size: number;
                 };
                 textangle?: undefined;
@@ -3702,6 +3532,7 @@ declare namespace $.$$ {
                 bgcolor: string;
                 textangle: number;
                 font: {
+                    family: string;
                     size: number;
                 };
             })[];
@@ -3735,6 +3566,13 @@ declare namespace $ {
     class $visavis_plot_eigen extends $visavis_plotly {
         plot_raw(): $visavis_plot_raw;
     }
+}
+
+declare namespace $ {
+    function $mol_data_variant<Sub extends $mol_data_value[]>(...sub: Sub): ((val: Parameters<Sub[number]>[0]) => ReturnType<Sub[number]>) & {
+        config: Sub;
+        Value: ReturnType<Sub[number]>;
+    };
 }
 
 declare namespace $.$$ {
@@ -4816,6 +4654,7 @@ declare namespace $.$$ {
                 title: string;
             };
             font: {
+                family: string;
                 size: number;
             };
         };
@@ -4842,22 +4681,16 @@ declare namespace $ {
 }
 
 declare namespace $.$$ {
-    const Facet_names: {
-        readonly props: "properties";
-        readonly elements: "elements";
-        readonly classes: "classes";
-        readonly lattices: "crystal systems";
-    };
-    export const $visavis_plot_pie_json: ((val: {
+    const $visavis_plot_pie_json: ((val: {
         payload: readonly {
-            facet: "elements" | "classes" | "props" | "lattices";
+            facet: "props" | "elements" | "classes" | "lattices";
             value: string;
             count: number;
         }[];
         total_count: number;
     }) => Readonly<{
         payload: readonly Readonly<{
-            facet: "elements" | "classes" | "props" | "lattices";
+            facet: "props" | "elements" | "classes" | "lattices";
             value: string;
             count: number;
         }>[];
@@ -4865,25 +4698,25 @@ declare namespace $.$$ {
     }>) & {
         config: {
             payload: ((val: readonly {
-                facet: "elements" | "classes" | "props" | "lattices";
+                facet: "props" | "elements" | "classes" | "lattices";
                 value: string;
                 count: number;
             }[]) => readonly Readonly<{
-                facet: "elements" | "classes" | "props" | "lattices";
+                facet: "props" | "elements" | "classes" | "lattices";
                 value: string;
                 count: number;
             }>[]) & {
                 config: ((val: {
-                    facet: "elements" | "classes" | "props" | "lattices";
+                    facet: "props" | "elements" | "classes" | "lattices";
                     value: string;
                     count: number;
                 }) => Readonly<{
-                    facet: "elements" | "classes" | "props" | "lattices";
+                    facet: "props" | "elements" | "classes" | "lattices";
                     value: string;
                     count: number;
                 }>) & {
                     config: {
-                        facet: ((value: "elements" | "classes" | "props" | "lattices") => "elements" | "classes" | "props" | "lattices") & {
+                        facet: ((value: "props" | "elements" | "classes" | "lattices") => "props" | "elements" | "classes" | "lattices") & {
                             config: {
                                 name: string;
                                 dict: {
@@ -4893,19 +4726,19 @@ declare namespace $.$$ {
                                     readonly lattices: "lattices";
                                 };
                             };
-                            Value: "elements" | "classes" | "props" | "lattices";
+                            Value: "props" | "elements" | "classes" | "lattices";
                         };
                         value: (val: string) => string;
                         count: (val: number) => number;
                     };
                     Value: Readonly<{
-                        facet: "elements" | "classes" | "props" | "lattices";
+                        facet: "props" | "elements" | "classes" | "lattices";
                         value: string;
                         count: number;
                     }>;
                 };
                 Value: readonly Readonly<{
-                    facet: "elements" | "classes" | "props" | "lattices";
+                    facet: "props" | "elements" | "classes" | "lattices";
                     value: string;
                     count: number;
                 }>[];
@@ -4914,17 +4747,17 @@ declare namespace $.$$ {
         };
         Value: Readonly<{
             payload: readonly Readonly<{
-                facet: "elements" | "classes" | "props" | "lattices";
+                facet: "props" | "elements" | "classes" | "lattices";
                 value: string;
                 count: number;
             }>[];
             total_count: number;
         }>;
     };
-    export class $visavis_plot_pie extends $.$visavis_plot_pie {
+    class $visavis_plot_pie extends $.$visavis_plot_pie {
         json(): Readonly<{
             payload: readonly Readonly<{
-                facet: "elements" | "classes" | "props" | "lattices";
+                facet: "props" | "elements" | "classes" | "lattices";
                 value: string;
                 count: number;
             }>[];
@@ -4933,6 +4766,9 @@ declare namespace $.$$ {
         subscribe_events(): void;
         layout(): {
             showlegend: boolean;
+            font: {
+                family: string;
+            };
             annotations: ({
                 text: string;
             } & {
@@ -4942,6 +4778,7 @@ declare namespace $.$$ {
                 showarrow: boolean;
                 font: {
                     size: number;
+                    family: string;
                 };
                 borderpad: number;
                 bgcolor: string;
@@ -4950,33 +4787,8 @@ declare namespace $.$$ {
         xy_domains(): (number[][][] | null)[];
         enter_metrics(): number;
         tot_count(): number;
-        pies_payload(): {
-            facet: keyof typeof Facet_names;
-            payload: {
-                facet: string;
-                value: string;
-                count: number;
-            }[];
-        }[];
-        data(): {
-            type: string;
-            name: "properties" | "elements" | "classes" | "crystal systems";
-            values: number[];
-            text: string[];
-            domain: {
-                x: number[];
-                y: number[];
-            };
-            hoverinfo: string;
-            textinfo: string;
-            textposition: string;
-            hole: number;
-            marker: {
-                colors: readonly any[];
-            };
-        }[];
+        data(): any[];
     }
-    export {};
 }
 
 declare namespace $ {
@@ -5695,6 +5507,7 @@ declare namespace $.$$ {
                 x: number;
                 y: number;
                 font: {
+                    family: string;
                     size: number;
                 };
             };
@@ -5717,6 +5530,7 @@ declare namespace $.$$ {
                 title: string;
             };
             font: {
+                family: string;
                 size: number;
             };
         };
@@ -5880,6 +5694,7 @@ declare namespace $.$$ {
                 x: number;
                 y: number;
                 font: {
+                    family: string;
                     size: number;
                 };
             };
@@ -5908,6 +5723,7 @@ declare namespace $.$$ {
                 title: string | undefined;
             };
             font: {
+                family: string;
                 size: number;
             };
             margin: {
@@ -6244,79 +6060,6 @@ declare namespace $.$$ {
 }
 
 declare namespace $.$$ {
-}
-
-declare namespace $ {
-    class $visavis_frame extends $mol_view {
-        attr(): Record<string, any>;
-        json(next?: any): Record<string, any>;
-        json_cmp(next?: any): any;
-        show_setup(): boolean;
-        sub(): readonly any[];
-        plot_raw(): $visavis_plot_raw;
-        nonformers_shown(next?: any): boolean;
-        post_message(id: any, next?: any): any;
-        matrix_x_op(next?: any): any;
-        matrix_y_op(next?: any): any;
-        matrix_x_sort(next?: any): string;
-        matrix_y_sort(next?: any): string;
-        Matrix(): $$.$visavis_plot_matrix;
-        x_op(next?: any): boolean;
-        y_op(next?: any): boolean;
-        z_op(next?: any): boolean;
-        x_sort(next?: any): string;
-        y_sort(next?: any): string;
-        z_sort(next?: any): string;
-        Cube(): $$.$visavis_plot_cube;
-        Phase(): $$.$visavis_plot_phase;
-        Bar(): $$.$visavis_plot_bar;
-        discovery_elementals_on(next?: any): ("num" | "nump" | "size" | "rea" | "rpp" | "rion" | "rcov" | "rmet" | "tmelt" | "eneg")[];
-        Discovery(): $$.$visavis_plot_discovery;
-        Eigen(): $$.$visavis_plot_eigen;
-        Pie(): $$.$visavis_plot_pie;
-        Scatter(): $$.$visavis_plot_scatter;
-        Customscatter(): $$.$visavis_plot_customscatter;
-        Heatmap(): $$.$visavis_plot_heatmap;
-        graph_rel(next?: any): string;
-        Graph(): $$.$visavis_plot_graph;
-        Plot(): $$.$visavis_plot;
-    }
-}
-
-declare namespace $.$$ {
-    class $visavis_frame extends $.$visavis_frame {
-        plot_raw(): $visavis_plot_raw;
-        post_message(name: string, args: any): void;
-        auto(): $mol_dom_listener;
-        message_listener(): $mol_dom_listener;
-        message_receive(event?: MessageEvent<{
-            name: keyof ReturnType<$visavis_frame["message_handler"]>;
-            args: any;
-        }>): void;
-        message_handler(): {
-            discovery_elementals_on: (args: any) => void;
-            matrix_order: (args: any) => void;
-            cube_order: (args: any) => void;
-            graph_rel_change: (args: any) => void;
-            cmp_discard: (args: any) => void;
-            cmp_download: (args: any) => undefined;
-            fixel_manage: (args: any) => void;
-        };
-    }
-}
-
-declare namespace $ {
-    class $visavis extends $mol_ghost {
-        App(): $$.$visavis_app;
-        Frame(): $$.$visavis_frame;
-    }
-}
-
-declare namespace $.$$ {
-    class $visavis extends $.$visavis {
-        in_iframe(): boolean;
-        Sub(): $visavis_app | $visavis_frame;
-    }
 }
 
 export = $;
