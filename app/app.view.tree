@@ -65,3 +65,4 @@ $visavis_app $mol_book2
 		body /
 			<= Plot_view* $visavis_plot
 				plot_raw <= plot_raw* null
+				show_setup true

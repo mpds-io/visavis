@@ -8,17 +8,19 @@ namespace $.$$ {
 		// 759 non-formers and ordered phases, 02/2023 by PV
 		@ $mol_mem
 		static pd_bin() { 
-			const tree = $$.$mol_tree2_from_string( $mol_fetch.text( '/visavis/elements/data/nonformer_pd_bin.json.tree' ) )
-			const json: any = tree.kids.map( tree => $$.$mol_tree2_to_json( tree ) )
-			return json
+			// const tree = $$.$mol_tree2_from_string( $mol_fetch.text( '/visavis/elements/data/nonformer_pd_bin.json.tree' ) )
+			// const json: any = tree.kids.map( tree => $$.$mol_tree2_to_json( tree ) )
+			// return json
+			return $visavis_elements_const.nonformer_pd_bin()
 		}
 
 		// 3511 non-formers derived from above
 		@ $mol_mem
-		static pd_tri_labels(): string[] {
-			const tree = $$.$mol_tree2_from_string( $mol_fetch.text( '/visavis/elements/data/nonformer_pd_tri.json.tree' ) )
-			const json: any = tree.kids.map( tree => $$.$mol_tree2_to_json( tree ) )
-			return json
+		static pd_tri_labels() {
+			// const tree = $$.$mol_tree2_from_string( $mol_fetch.text( '/visavis/elements/data/nonformer_pd_tri.json.tree' ) )
+			// const json: any = tree.kids.map( tree => $$.$mol_tree2_to_json( tree ) )
+			// return json
+			return $visavis_elements_const.nonformer_pd_tri()
 		}
 
 		@ $mol_mem

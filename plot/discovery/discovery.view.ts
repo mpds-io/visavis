@@ -121,7 +121,7 @@ namespace $.$$ {
 		subscribe_events() {
 			const d3 = $lib_d3.all()
 
-			d3.select('div.js-plotly-plot').on('click', (event: MouseEvent)=> {
+			d3.select( this.dom_node_actual() ).select('div.js-plotly-plot').on('click', (event: MouseEvent)=> {
 
 				const node = event.target as HTMLElement
 				if (node.getAttribute('class') != 'point') return false;

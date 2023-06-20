@@ -237,27 +237,25 @@ namespace $.$$ {
 
 				.on('mouseover', function (this: any, event: PointerEvent) {
 					const cell_data = d3.select(this).data()[0] as Matrix_cell
-					d3.selectAll( ".row text" ).classed( "active", (d: any, i: number)=> { return i == cell_data.y });
-					d3.selectAll( ".column text" ).classed( "active", (d: any, i: number)=> { return i == cell_data.x });
+					d3.select( that.dom_node_actual() ).selectAll( ".row text" ).classed( "active", (d: any, i: number)=> { return i == cell_data.y });
+					d3.select( that.dom_node_actual() ).selectAll( ".column text" ).classed( "active", (d: any, i: number)=> { return i == cell_data.x });
 				} )
 
-				.on('mouseout', function (this: any, event: PointerEvent) { } )
+				.on('mouseout', function (this: any, event: PointerEvent) {
+					d3.select( that.dom_node_actual() ).selectAll( ".row text" ).classed( "active", null);
+					d3.select( that.dom_node_actual() ).selectAll( ".column text" ).classed( "active", null);
+				} )
 
 				.on('click', function (this: any, event: PointerEvent) {
-					var ids = d3.select(this).attr("id").substr(2).split("_");
-					document.getElementById("c_" + ids[1] + "_" + ids[0])!.classList.add('visited');
-					document.getElementById("c_" + ids[0] + "_" + ids[1])!.classList.add('visited');
-					const cell_data = d3.select(this).data()[0] as Matrix_cell
+					const sel = d3.select(this)
+					var ids = sel.attr("id").substr(2).split("_");
+					that.dom_node_actual().querySelector("#c_" + ids[1] + "_" + ids[0])!.classList.add('visited');
+					that.dom_node_actual().querySelector("#c_" + ids[0] + "_" + ids[1])!.classList.add('visited');
+					const cell_data = sel.data()[0] as Matrix_cell
 					that.matrix_click( { cmt: cell_data.cmt } )
 				} )
 
 				.append('svg:title').text((cell: any) => this.svg_title_text(cell))
-		}
-
-		@ $mol_mem
-		d3svg(next?: any) {
-			$mol_wire_solid()
-			return next
 		}
 
 		@ $mol_mem
@@ -268,7 +266,6 @@ namespace $.$$ {
 
 			const svg_element = $mol_wire_sync( document ).createElementNS( 'http://www.w3.org/2000/svg', 'svg' )
 			const svg = d3.select(svg_element)
-			this.d3svg( svg )
 
 			svg.attr('width', this.size() + this.axis_width())
 				.attr('height', this.size() + this.axis_width())

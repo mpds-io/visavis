@@ -46,7 +46,7 @@ namespace $.$$ {
 			
 			const d3 = $lib_d3.all()
 
-			const slices = d3.selectAll('g.slice path')
+			const slices = d3.select( this.dom_node_actual() ).selectAll('g.slice path')
 
 			const facet_names: Record<string, string> = {props: 'properties', elements: 'elements', classes: 'classes', lattices: 'crystal systems'}; //global const?
 

@@ -115,4 +115,6 @@ namespace $.$$ {
 
 	}
 
+	$mol_view_component( $visavis_app )
+
 }

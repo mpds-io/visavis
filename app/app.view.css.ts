@@ -2,6 +2,18 @@ namespace $.$$ {
 
 	$mol_style_define( $.$visavis_app, {
 
+		'::-webkit-scrollbar': { //otherwise height of book changes on hover (and thus height of plot)
+			width: '.5rem',
+			height: '.5rem',
+		},
+
+		Plot_view: {
+			flex: {
+				direction: 'column',
+			},
+			height: '100%',
+		},
+
 		Start_page: {
 			'@': {
 				mol_drop_status: {

@@ -30,7 +30,7 @@ namespace $.$$ {
 			
 			// warn_demo();1
 			// if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
-			const paths = d3.selectAll('g.point path')
+			const paths = d3.select( this.dom_node_actual() ).selectAll( 'g.point path' )
 
 			const that = this
 			paths.on('click', function(this: any, event: MouseEvent){

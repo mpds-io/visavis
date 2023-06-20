@@ -1,3 +1,7 @@
 [visavis_plot_discovery] .point.visited {
 	fill: lime !important;
 }
+
+[visavis_plot_discovery] path.point {
+	cursor: pointer;
+}

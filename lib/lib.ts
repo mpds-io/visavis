@@ -4,12 +4,12 @@ namespace $ {
 
 		@ $mol_mem
 		static plotly() {
-			return $mol_import.script('/visavis/lib/bundle/plotly.custom.min.js').Plotly as any
+			return require('../visavis/lib/plotly.custom.min.js')
 		}
 		
 		@ $mol_mem
 		static pca() {
-			return $mol_import.script('/visavis/lib/bundle/pca.js').mlPca as any
+			return require('../visavis/lib/pca.js')
 		}
 
 		@ $mol_mem
