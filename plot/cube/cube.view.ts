@@ -25,6 +25,7 @@ namespace $.$$ {
 		plot_body() {
 			return [
 				this.Root(),
+				... this.json_cmp() ? [ this.Cmp_legend() ] : [],
 				... this.heatmap() ? [ this.Side_right() ] : [],
 			]
 		}
@@ -32,8 +33,7 @@ namespace $.$$ {
 		sub() {
 			return [ 
 				this.Plot(), 
-				...( this.json_cmp() ? [ this.Cmp_legend() ] : [] ),
-				...( this.show_setup() ? [ this.Setup() ] : [] ),
+				... this.show_setup() ? [ this.Setup() ] : [],
 			]
 		}
 

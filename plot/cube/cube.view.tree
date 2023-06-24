@@ -35,7 +35,7 @@ $visavis_plot_cube $mol_view
 		\rgb(255,0,0)
 	sub /
 		<= Plot $mol_view
-			sub /
+			sub <= plot_body /
 				<= Root $visavis_plotly
 					data <= data_shown *
 					layout <= layout *
