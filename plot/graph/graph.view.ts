@@ -101,26 +101,26 @@ namespace $.$$ {
 			const svg_element = $mol_wire_sync( document ).createElementNS( 'http://www.w3.org/2000/svg', 'svg' )
 			const svg = d3.select(svg_element)
 		
-			const visavis_force = d3.layout.force()
+			const force = d3.layout.force()
 				.nodes(d3.values(nodes))
 				.links(edges)
 				.linkDistance(90)
 				.gravity(0.3)
 				.charge(-2500)
-				.on("tick", tick);
+				.on("tick", tick)
 		
-			const drag = visavis_force.drag()
+			const drag = force.drag()
 				.on("dragstart", function(this: any, d: any){
 					d3.select(this).classed("fixed", d.fixed = true);
 				});
 		
 			const path = svg.append("g").selectAll("path")
-				.data(visavis_force.links())
+				.data(force.links())
 				.enter().append("path")
 				.attr("class", function(d: any){ return "edge " + d.type; });
 		
 			const circle = svg.append("g").selectAll("circle")
-				.data(visavis_force.nodes())
+				.data(force.nodes())
 				.enter().append("circle")
 				.attr("r", function(d: any, i: any){ return radii[d.name] || 10 })
 				.attr("id", function(d: any, i: any){ return "c_" + table[d.name] })
@@ -128,7 +128,7 @@ namespace $.$$ {
 				.call(drag);
 		
 			const text = svg.append("g").selectAll("g")
-				.data(visavis_force.nodes())
+				.data(force.nodes())
 				.enter().append("g");
 		
 			// a copy of the text with a thick white stroke for legibility
@@ -169,12 +169,12 @@ namespace $.$$ {
 				return "translate(" + d.x + "," + d.y + ")";
 			}
 		
-			visavis_force.start();
+			force.start()
+			for (var i = 400; i > 0; i--) force.tick()
+			force.stop()
 
 			this.Root().dom_node_actual().replaceChildren( svg_element )
 
-			// for (var i = 400; i > 0; i--) visavis_force.tick();
-			// visavis_force.stop();
 			// hide_preloader();
 			// hide_messages();
 			// warn_demo();

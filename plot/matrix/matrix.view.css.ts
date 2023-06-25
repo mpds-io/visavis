@@ -26,7 +26,6 @@ namespace $.$$ {
 			},
 		},
 
-
 		Root: {
 			margin: 'auto',
 			position: 'absolute',
@@ -49,10 +48,12 @@ namespace $.$$ {
 		Setup: {
 			flex: {
 				direction: 'column',
-				basis: '25rem',
-				shrink: 0,
+				basis: '10rem',
 			},
-			padding: $mol_gap.block,
+			font: {
+				size: '.75rem',
+			},
+			justifyContent: 'center',
 		},
 
 	} )

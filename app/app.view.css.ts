@@ -112,6 +112,9 @@ namespace $.$$ {
 			flex: {
 				grow: 1,
 			},
+			Body: {
+				contain: 'none', //otherwise plot position 'fixed' doesn't work (for fullscreen)
+			},
 		},
 
 	} )

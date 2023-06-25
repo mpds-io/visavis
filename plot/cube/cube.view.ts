@@ -22,6 +22,16 @@ namespace $.$$ {
 
 	export class $visavis_plot_cube extends $.$visavis_plot_cube {
 
+		@ $mol_mem
+		setup() {
+			return [
+				this.Fixel(),
+				this.json_cmp() ? this.Diffrence_on() : this.Nonformers(),
+				... this.show_setup() ? [ this.X_order(), this.Y_order(), this.Z_order() ] : [],
+			]
+		}
+		
+		@ $mol_mem
 		plot_body() {
 			return [
 				this.Root(),
@@ -30,16 +40,10 @@ namespace $.$$ {
 			]
 		}
 
-		sub() {
-			return [ 
-				this.Plot(), 
-				... this.show_setup() ? [ this.Setup() ] : [],
-			]
-		}
-
 		json() {
 			return $visavis_plot_cube_json( this.plot_raw().json() as any )
 		}
+
 
 		@ $mol_mem
 		value_list() {
@@ -133,7 +137,7 @@ namespace $.$$ {
 		@ $mol_mem
 		data_cmp() {
 			if (!this.json_cmp() ) return null
-			this.nonformers( false )
+			this.nonformers_checked( false )
 			this.first_cmp_label( this.json().answerto )
 			this.second_cmp_label( this.json_cmp().answerto )
 			return {
@@ -154,7 +158,7 @@ namespace $.$$ {
 		@ $mol_mem
 		data_shown() {
 			return [
-				... this.nonformers() ? [this.data_nonformers()] : [],
+				... this.nonformers_checked() ? [this.data_nonformers()] : [],
 				this.data(),
 				... this.json_cmp() ? [this.data_cmp()] : [],
 			]

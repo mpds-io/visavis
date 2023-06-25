@@ -1,17 +1,24 @@
 $visavis_plot $mol_view
-	attr * mol_theme \$mol_theme_light
+	attr *
+		^
+		mol_theme \$mol_theme_light
+		fullscreen <= fullscreen?
 	json_request? null
 	json null
 	json_cmp_request? null
 	json_cmp null
 	plot_raw null
 	show_setup false
+	Fullscreen $mol_check
+		Icon <= Expand_icon $mol_icon_arrow_expand_all
+		checked? <=> fullscreen? false
 	plots *
 		matrix <= Matrix $visavis_plot_matrix
 			plot_raw <= plot_raw
 			json_cmp <= json_cmp
 			show_setup <= show_setup
-			nonformers? <=> nonformers_shown? false
+			nonformers_checked? <=> nonformers_checked? false
+			fixel_checked? <=> matrix_fixel_checked? true
 			x_op? => matrix_x_op?
 			y_op? => matrix_y_op?
 			x_sort? => matrix_x_sort?
@@ -21,7 +28,8 @@ $visavis_plot $mol_view
 			plot_raw <= plot_raw
 			json_cmp <= json_cmp
 			show_setup <= show_setup
-			nonformers? <=> nonformers_shown?
+			nonformers_checked? <=> nonformers_checked?
+			fixel_checked? <=> cube_fixel_checked? false
 			x_op? => x_op?
 			y_op? => y_op?
 			z_op? => z_op?

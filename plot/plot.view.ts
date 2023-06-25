@@ -27,16 +27,35 @@ namespace $.$$ {
 		@ $mol_mem
 		plot_raw() {
 			return this.json() ? 
-				$visavis_plot_raw_from_json( this.json() ) : 
-				null
+				$visavis_plot_raw_from_json( this.json() ) : null
 		}
 
 		@ $mol_mem
 		sub() {
 			return this.plot_raw() ?
-				[ this.plots()[ this.plot_raw()!.type() ] ] : 
-				[]
+				[ this.Fullscreen(), this.plots()[ this.plot_raw()!.type() ] ] : []
 		}
+
+		@ $mol_mem
+		matrix_fixel_checked( next?: any ): boolean {
+			if ( next !== undefined ) {
+				this.on_fixel_checked( next )
+				return next
+			}
+			return true
+		}
+
+		@ $mol_mem
+		cube_fixel_checked( next?: any ): boolean {
+			if ( next !== undefined ) {
+				this.on_fixel_checked( next )
+				return next
+			}
+			return false
+		}
+
+		@ $mol_action
+		on_fixel_checked( checked: boolean ) { }
 
 	}
 

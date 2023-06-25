@@ -27,7 +27,8 @@ namespace $.$$ {
 		answerto: $mol_data_optional( $mol_data_string ),
 		payload: $mol_data_record({
 			nodes: $mol_data_array( $visavis_plot_matrix_json_node ),
-			links: $mol_data_array( $visavis_plot_matrix_json_link )
+			links: $mol_data_array( $visavis_plot_matrix_json_link ),
+			fixel: $mol_data_nullable( $mol_data_number ),
 		}),
 	})
 
@@ -44,11 +45,21 @@ namespace $.$$ {
 
 	export class $visavis_plot_matrix extends $.$visavis_plot_matrix {
 
-		sub() {
-			return [ 
-				this.Plot(), 
-				...( this.json_cmp() ? [ this.Cmp_legend() ] : [] ),
-				...( this.show_setup() ? [ this.Setup() ] : [] ),
+		@ $mol_mem
+		setup() {
+			return [
+				... this.json().payload.fixel ? [ this.Fixel() ] : [],
+				this.json_cmp() ? this.Diffrence_on() : this.Nonformers(),
+				... this.show_setup() ? [ this.Order() ] : [],
+			]
+		}
+		
+		@ $mol_mem
+		plot_body() {
+			return [
+				this.Root(),
+				... this.json_cmp() ? [ this.Cmp_legend() ] : [],
+				... this.heatmap() ? [ this.Side_right() ] : [],
 			]
 		}
 
@@ -67,27 +78,11 @@ namespace $.$$ {
 				json_master.payload.links.push(item);
 			});
 			
-			this.nonformers( false )
+			this.nonformers_checked( false )
 			this.first_cmp_label( this.json().answerto )
 			this.second_cmp_label( this.json_cmp().answerto )
 
 			return $visavis_plot_matrix_json( json_master )
-		}
-
-		@ $mol_mem
-		setup() {
-			return [
-				...( this.json_cmp() ? [ this.Show_diff() ] : [ this.Nonformers() ] ),
-				this.Order_label()
-			]
-		}
-
-		@ $mol_mem
-		plot_body() {
-			return [
-				this.Root(),
-				... this.heatmap() ? [ this.Side_right() ] : [],
-			]
 		}
 
 		nodes() {
@@ -141,7 +136,7 @@ namespace $.$$ {
 				matrix[link.target][link.source].cmp = link.cmp || 0;
 			}
 
-			if (this.nonformers()) {
+			if (this.nonformers_checked()) {
 				for (const item of $visavis_elements_nonformer.pd_bin()) {
 					matrix[item[0]][item[1]].z = 1;
 					matrix[item[1]][item[0]].z = 1; // NB only AB-all

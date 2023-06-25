@@ -10,27 +10,26 @@ namespace $.$$ {
 		},
 		Setup: {
 			flex: {
-				basis: '25rem',
 				direction: 'column',
-				shrink: 0,
+				basis: '10rem',
 			},
-			padding: $mol_gap.block,
+			font: {
+				size: '.75rem',
+			},
+			justifyContent: 'center',
 		},
-		
 
 		flex: {
 			grow: 1
 		},
 
-		X_order_label: {
+		X_order: {
 			zIndex: 3,
 		},
-
-		Y_order_label: {
+		Y_order: {
 			zIndex: 2,
 		},
-
-		Z_order_label: {
+		Z_order: {
 			zIndex: 1,
 		},
 
