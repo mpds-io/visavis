@@ -60,7 +60,7 @@ namespace $.$$ {
 
 		@ $mol_mem_key
 		order(order: Prop_name) {
-			return $lib_d3.all().range(95).sort( (a: any, b: any) =>
+			return $mpds_visavis_lib.d3().range(95).sort( (a: any, b: any) =>
 				$mpds_visavis_elements_list.element_by_num(a + 1)[order] - $mpds_visavis_elements_list.element_by_num(b + 1)[order]
 			) as number[]
 		}
@@ -179,7 +179,7 @@ namespace $.$$ {
 					showline: false,
 					tickfont: {size: 11},
 					ticktext: this.order_els(this.x_sort() as Prop_name).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
-					tickvals: $lib_d3.all().range(1, 96, 2)
+					tickvals: $mpds_visavis_lib.d3().range(1, 96, 2)
 				},
 				yaxis: {
 					title: 'y_sort',
@@ -192,7 +192,7 @@ namespace $.$$ {
 					showline: false,
 					tickfont: {size: 11},
 					ticktext: this.order_els(this.y_sort() as Prop_name).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
-					tickvals: $lib_d3.all().range(1, 96, 2)
+					tickvals: $mpds_visavis_lib.d3().range(1, 96, 2)
 				},
 				zaxis: {
 					title: 'z_sort',
@@ -205,7 +205,7 @@ namespace $.$$ {
 					showline: false,
 					tickfont: {size: 11},
 					ticktext: this.order_els(this.z_sort() as Prop_name).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
-					tickvals: $lib_d3.all().range(1, 96, 2)
+					tickvals: $mpds_visavis_lib.d3().range(1, 96, 2)
 				},
 				camera: {projection: {type: 'perspective'}},
 			}	
@@ -213,7 +213,7 @@ namespace $.$$ {
 
 		@ $mol_action
 		subscribe_events() {
-			const d3 = $lib_d3.all()
+			const d3 = $mpds_visavis_lib.d3()
 
 			const that = this
 			d3.select( this.dom_node_actual() ).select( 'div.js-plotly-plot' ).on( 'click', (event: MouseEvent)=> {
@@ -277,9 +277,9 @@ namespace $.$$ {
 						$mpds_visavis_elements_list.element_by_num( z_src[i] )[ x_sort ], 
 					) )
 				}
-				var x_renorm = $lib_d3.all().scaleQuantize()
+				var x_renorm = $mpds_visavis_lib.d3().scaleQuantize()
 					.range( $mpds_visavis_elements_list.list().slice(1).map( el => el.num ) )
-					.domain( [$lib_d3.all().min(x_temp), $lib_d3.all().max(x_temp)] )
+					.domain( [$mpds_visavis_lib.d3().min(x_temp), $mpds_visavis_lib.d3().max(x_temp)] )
 				//console.log(x_temp);
 				converted['x'] = x_temp.map(x_renorm);
 		
@@ -300,9 +300,9 @@ namespace $.$$ {
 						$mpds_visavis_elements_list.element_by_num( z_src[i] )[ y_sort ], 
 					) )
 				}
-				var y_renorm = $lib_d3.all().scaleQuantize()
+				var y_renorm = $mpds_visavis_lib.d3().scaleQuantize()
 					.range( $mpds_visavis_elements_list.list().slice(1).map( el => el.num ) )
-					.domain( [$lib_d3.all().min(y_temp), $lib_d3.all().max(y_temp)] );
+					.domain( [$mpds_visavis_lib.d3().min(y_temp), $mpds_visavis_lib.d3().max(y_temp)] );
 				//console.log(y_temp);
 				converted['y'] = y_temp.map(y_renorm);
 		
@@ -323,9 +323,9 @@ namespace $.$$ {
 						$mpds_visavis_elements_list.element_by_num( z_src[i] )[ z_sort ], 
 					) )
 				}
-				var z_renorm = $lib_d3.all().scaleQuantize()
+				var z_renorm = $mpds_visavis_lib.d3().scaleQuantize()
 					.range( $mpds_visavis_elements_list.list().slice(1).map( el => el.num ) )
-					.domain([$lib_d3.all().min(z_temp), $lib_d3.all().max(z_temp)]);
+					.domain([$mpds_visavis_lib.d3().min(z_temp), $mpds_visavis_lib.d3().max(z_temp)]);
 				//console.log(z_temp);
 				converted['z'] = z_temp.map(z_renorm);
 		

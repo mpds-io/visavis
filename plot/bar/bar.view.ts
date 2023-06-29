@@ -22,7 +22,7 @@ namespace $.$$ {
 		@ $mol_action
 		subscribe_events() {
 
-			const d3 = $lib_d3.all()
+			const d3 = $mpds_visavis_lib.d3()
 
 			const json = this.json() as any
 

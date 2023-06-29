@@ -44,7 +44,7 @@ namespace $.$$ {
 			// warn_demo();
 			// if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
 			
-			const d3 = $lib_d3.all()
+			const d3 = $mpds_visavis_lib.d3()
 
 			const slices = d3.select( this.dom_node_actual() ).selectAll('g.slice path')
 

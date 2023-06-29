@@ -99,7 +99,7 @@ namespace $.$$ {
 			if (bands_matrix){
 				for (let i = 0; i < bands_matrix.bands.length; i++){
 					dataset.push({
-						x: $lib_d3.all().range(bands_matrix.bands[i].length),
+						x: $mpds_visavis_lib.d3().range(bands_matrix.bands[i].length),
 						y: bands_matrix.bands[i],
 						mode: "lines",
 						type: "scatter",
@@ -143,7 +143,7 @@ namespace $.$$ {
 					zeroline: false,
 					showgrid: false,
 					tickmode: 'array',
-					tickvals: $lib_d3.all().range(bands_matrix.kpoints.length),
+					tickvals: $mpds_visavis_lib.d3().range(bands_matrix.kpoints.length),
 					ticktext: x_labels,
 					tickfont: {size: 20}
 				};

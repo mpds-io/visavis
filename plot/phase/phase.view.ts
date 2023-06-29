@@ -229,7 +229,7 @@ namespace $.$$ {
 		}
 
 		mouseover() {
-			const that = $lib_d3.all().select( this )
+			const that = $mpds_visavis_lib.d3().select( this )
 			console.log( that )
 			const idx = that.attr( 'data-index' )
 
@@ -250,7 +250,7 @@ namespace $.$$ {
 
 		@$mol_action
 		subscribe_events() {
-			const d3 = $lib_d3.all()
+			const d3 = $mpds_visavis_lib.d3()
 			console.log('is trinagle', this.is_triangle())
 
 			if ( this.is_triangle() ) this.pd_fix_triangle()
@@ -350,7 +350,7 @@ namespace $.$$ {
 		}
 
 		pd_fix_triangle() {
-			const d3 = $lib_d3.all()
+			const d3 = $mpds_visavis_lib.d3()
 
 			function make_absolute_context( element: SVGGraphicsElement, root: HTMLElement ) {
 				return function( x: number, y: number ) {

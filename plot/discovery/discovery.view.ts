@@ -119,7 +119,7 @@ namespace $.$$ {
 
 		@ $mol_action
 		subscribe_events() {
-			const d3 = $lib_d3.all()
+			const d3 = $mpds_visavis_lib.d3()
 
 			d3.select( this.dom_node_actual() ).select('div.js-plotly-plot').on('click', (event: MouseEvent)=> {
 
