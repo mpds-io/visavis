@@ -8,6 +8,8 @@
 	pack psb git \https://github.com/MolDevHack/psb.git
 	pack mpds git \https://github.com/mpds-io/mam_mpds
 	pack bun git \https://github.com/spleekz/mam_bun
+\/mpds
+	pack visavis git \https://github.com/mpds-io/visavis
 \/mol
 	pack icon git \https://github.com/nin-jin/mol_icon.git
 \/mol/view
@@ -70,14 +72,11 @@
 	pack home git \https://github.com/hyoo-ru/hyoo.ru.git
 	pack idea git \https://github.com/hyoo-ru/idea.hyoo.ru.git
 	pack intern git \https://github.com/hyoo-ru/intern.hyoo.ru.git
-\/visavis/lib
-	deploy \/visavis/lib/bundle/plotly.custom.min.js
-	deploy \/visavis/lib/bundle/pca.js
-\/visavis/elements/list
-	deploy \/visavis/elements/data/elements.json.tree
-	deploy \/visavis/elements/data/prop_names.json.tree
-\/visavis/elements/nonformer
-	deploy \/visavis/elements/data/nonfromer_pd_bin.json.tree
-	deploy \/visavis/elements/data/nonfromer_pd_tri.json.tree
-\/visavis/app
-	deploy \/visavis/examples/bar_sci_literature.json
+\/mpds/visavis/elements/list
+	deploy \/mpds/visavis/elements/data/elements.json.tree
+	deploy \/mpds/visavis/elements/data/prop_names.json.tree
+\/mpds/visavis/elements/nonformer
+	deploy \/mpds/visavis/elements/data/nonfromer_pd_bin.json.tree
+	deploy \/mpds/visavis/elements/data/nonfromer_pd_tri.json.tree
+\/mpds/visavis/app
+	deploy \/mpds/visavis/examples/bar_sci_literature.json
