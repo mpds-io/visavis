@@ -8,7 +8,7 @@ namespace $.$$ {
 		}
 	}
 
-	$mol_style_define( $visavis_plot_legend_cmp, {
+	$mol_style_define( $mpds_visavis_plot_legend_cmp, {
 
 		position: 'absolute',
 		left: 0,

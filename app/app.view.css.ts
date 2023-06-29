@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	$mol_style_define( $.$visavis_app, {
+	$mol_style_define( $.$mpds_visavis_app, {
 
 		'::-webkit-scrollbar': { //otherwise height of book changes on hover (and thus height of plot)
 			width: '.5rem',

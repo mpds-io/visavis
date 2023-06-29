@@ -1,5 +1,5 @@
-$visavis_plot_matrix $mol_view
-	plot_raw $visavis_plot_raw
+$mpds_visavis_plot_matrix $mol_view
+	plot_raw $mpds_visavis_plot_raw
 	json_cmp? null
 	json_master null
 	show_setup true
@@ -42,7 +42,7 @@ $visavis_plot_matrix $mol_view
 			sub <= plot_body /
 				<= Root $mol_view
 					render <= draw null
-				<= Cmp_legend $visavis_plot_legend_cmp
+				<= Cmp_legend $mpds_visavis_plot_legend_cmp
 					first_cmp_label? <= first_cmp_label? \
 					second_cmp_label? <= second_cmp_label? \
 				<= Side_right $mol_scroll

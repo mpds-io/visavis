@@ -1,3 +1,3 @@
-$visavis_plot_bar $visavis_plotly
-	plot_raw $visavis_plot_raw
+$mpds_visavis_plot_bar $mpds_visavis_plotly
+	plot_raw $mpds_visavis_plot_raw
 	bar_click? null

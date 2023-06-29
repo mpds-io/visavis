@@ -1,5 +1,6 @@
-$visavis_plot_phase $mol_book2
-	plot_raw $visavis_plot_raw
+$mpds_visavis_plot_phase $mol_book2
+	plot_raw $mpds_visavis_plot_raw
+	phase_click? null
 	colors_by_nphases *
 		1 \#d1cde6
 		alt_1 \#9cf
@@ -166,7 +167,7 @@ $visavis_plot_phase $mol_book2
 	sub /
 		<= Label $mol_view sub /
 			<= label? \
-		<= Root $visavis_plotly
+		<= Root $mpds_visavis_plotly
 			data <= data *
 			layout <= layout *
 			subscribe_events <= subscribe_events null

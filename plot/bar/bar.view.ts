@@ -8,15 +8,15 @@ namespace $.$$ {
 		ytitle: $mol_data_optional( $mol_data_string ),
 	})
 
-	export const $visavis_plot_bar_json = $mol_data_record({
+	export const $mpds_visavis_plot_bar_json = $mol_data_record({
 		payload: Payload,
 		payload2: $mol_data_optional( Payload ),
 	})
 
-	export class $visavis_plot_bar extends $.$visavis_plot_bar {
+	export class $mpds_visavis_plot_bar extends $.$mpds_visavis_plot_bar {
 
 		json() {
-			return $visavis_plot_bar_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_bar_json( this.plot_raw().json() as any )
 		}
 
 		@ $mol_action

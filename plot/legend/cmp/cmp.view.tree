@@ -1,4 +1,4 @@
-$visavis_plot_legend_cmp $mol_view
+$mpds_visavis_plot_legend_cmp $mol_view
 	sub /
 		<= First_cmp_label $mol_view
 			sub / <= first_cmp_label? \

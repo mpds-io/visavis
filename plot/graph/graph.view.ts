@@ -24,18 +24,18 @@ namespace $.$$ {
 		target: Node,
 	}
 
-	export const $visavis_plot_graph_json = $mol_data_record({
+	export const $mpds_visavis_plot_graph_json = $mol_data_record({
 		error: $mol_data_nullable( $mol_data_string ),
 		warning: $mol_data_nullable( $mol_data_string ),
 		graph_rel: $mol_data_string,
 		payload: $mol_data_array( Link ),
 	})
 
-	export class $visavis_plot_graph extends $.$visavis_plot_graph {
+	export class $mpds_visavis_plot_graph extends $.$mpds_visavis_plot_graph {
 
 		@ $mol_mem
 		json() {
-			return $visavis_plot_graph_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_graph_json( this.plot_raw().json() as any )
 		}
 		
 		plot_title() {
@@ -96,7 +96,7 @@ namespace $.$$ {
 		
 			const { nodes, edges, labels, radii, foci, table, circle_cls, text_cls } = this.data()
 			
-			const d3 = $visavis_lib.d3()
+			const d3 = $mpds_visavis_lib.d3()
 
 			const svg_element = $mol_wire_sync( document ).createElementNS( 'http://www.w3.org/2000/svg', 'svg' )
 			const svg = d3.select(svg_element)

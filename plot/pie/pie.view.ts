@@ -2,7 +2,7 @@ namespace $.$$ {
 
 	const Facet_names = {props: 'properties', elements: 'elements', classes: 'classes', lattices: 'crystal systems'} as const
 
-	export const $visavis_plot_pie_json = $mol_data_record( {
+	export const $mpds_visavis_plot_pie_json = $mol_data_record( {
 		payload: $mol_data_array( $mol_data_record( {
 			facet: $mol_data_enum( 'facet', {props: 'props', elements: 'elements', classes: 'classes', lattices: 'lattices'} as const ),
 			value: $mol_data_string,
@@ -33,10 +33,10 @@ namespace $.$$ {
 		return {x: x, y: y};
 	}
 
-	export class $visavis_plot_pie extends $.$visavis_plot_pie {
+	export class $mpds_visavis_plot_pie extends $.$mpds_visavis_plot_pie {
 
 		json() {
-			return $visavis_plot_pie_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_pie_json( this.plot_raw().json() as any )
 		}
 
 		@ $mol_action

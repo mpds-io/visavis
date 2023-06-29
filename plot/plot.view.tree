@@ -1,4 +1,4 @@
-$visavis_plot $mol_view
+$mpds_visavis_plot $mol_view
 	attr *
 		^
 		mol_theme \$mol_theme_light
@@ -13,7 +13,7 @@ $visavis_plot $mol_view
 		Icon <= Expand_icon $mol_icon_arrow_expand_all
 		checked? <=> fullscreen? false
 	plots *
-		matrix <= Matrix $visavis_plot_matrix
+		matrix <= Matrix $mpds_visavis_plot_matrix
 			plot_raw <= plot_raw
 			json_cmp <= json_cmp
 			show_setup <= show_setup
@@ -24,7 +24,7 @@ $visavis_plot $mol_view
 			x_sort? => matrix_x_sort?
 			y_sort? => matrix_y_sort?
 			matrix_click? <=> matrix_click? null
-		plot3d <= Cube $visavis_plot_cube
+		plot3d <= Cube $mpds_visavis_plot_cube
 			plot_raw <= plot_raw
 			json_cmp <= json_cmp
 			show_setup <= show_setup
@@ -38,30 +38,30 @@ $visavis_plot $mol_view
 			y_sort? => y_sort?
 			z_sort? => z_sort?
 			cube_click? <=> cube_click? null
-		pd <= Phase $visavis_plot_phase
+		pd <= Phase $mpds_visavis_plot_phase
 			plot_raw <= plot_raw
 			phase_click? <=> phase_click? null
-		bar <= Bar $visavis_plot_bar
+		bar <= Bar $mpds_visavis_plot_bar
 			plot_raw <= plot_raw
 			bar_click? <=> bar_click? null
-		discovery <= Discovery $visavis_plot_discovery
+		discovery <= Discovery $mpds_visavis_plot_discovery
 			plot_raw <= plot_raw
 			json_cmp <= json_cmp
 			show_setup <= show_setup
 			elementals_on? => discovery_elementals_on?
 			discovery_click? <=> discovery_click? null
-		eigenplot <= Eigen $visavis_plot_eigen
+		eigenplot <= Eigen $mpds_visavis_plot_eigen
 			plot_raw <= plot_raw
-		pie <= Pie $visavis_plot_pie
+		pie <= Pie $mpds_visavis_plot_pie
 			plot_raw <= plot_raw
 			pie_click? <=> pie_click? null
-		scatter <= Scatter $visavis_plot_scatter
+		scatter <= Scatter $mpds_visavis_plot_scatter
 			plot_raw <= plot_raw
-		customscatter <= Customscatter $visavis_plot_customscatter
+		customscatter <= Customscatter $mpds_visavis_plot_customscatter
 			plot_raw <= plot_raw
-		heatmap <= Heatmap $visavis_plot_heatmap
+		heatmap <= Heatmap $mpds_visavis_plot_heatmap
 			plot_raw <= plot_raw
-		graph <= Graph $visavis_plot_graph
+		graph <= Graph $mpds_visavis_plot_graph
 			plot_raw <= plot_raw
 			graph_rel? => graph_rel?
 			graph_click? <=> graph_click? null

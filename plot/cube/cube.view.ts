@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	const $visavis_plot_cube_json = $mol_data_record({
+	const $mpds_visavis_plot_cube_json = $mol_data_record({
 		payload: $mol_data_record({
 			tcube: $mol_data_optional( $mol_data_boolean ),
 			points: $mol_data_record({
@@ -18,9 +18,9 @@ namespace $.$$ {
 		answerto: $mol_data_optional( $mol_data_string ),
 	})
 
-	type Prop_name = keyof ReturnType<typeof $visavis_elements_list.prop_names>
+	type Prop_name = keyof ReturnType<typeof $mpds_visavis_elements_list.prop_names>
 
-	export class $visavis_plot_cube extends $.$visavis_plot_cube {
+	export class $mpds_visavis_plot_cube extends $.$mpds_visavis_plot_cube {
 
 		@ $mol_mem
 		setup() {
@@ -41,7 +41,7 @@ namespace $.$$ {
 		}
 
 		json() {
-			return $visavis_plot_cube_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_cube_json( this.plot_raw().json() as any )
 		}
 
 
@@ -61,7 +61,7 @@ namespace $.$$ {
 		@ $mol_mem_key
 		order(order: Prop_name) {
 			return $lib_d3.all().range(95).sort( (a: any, b: any) =>
-				$visavis_elements_list.element_by_num(a + 1)[order] - $visavis_elements_list.element_by_num(b + 1)[order]
+				$mpds_visavis_elements_list.element_by_num(a + 1)[order] - $mpds_visavis_elements_list.element_by_num(b + 1)[order]
 			) as number[]
 		}
 
@@ -104,10 +104,10 @@ namespace $.$$ {
 
 		@ $mol_mem
 		data_nonformers() {
-			const { x, y, z } = $visavis_elements_nonformer.pd_tri_nums()
+			const { x, y, z } = $mpds_visavis_elements_nonformer.pd_tri_nums()
 			return {
 				...this.scatter3d_common(),
-				text: $visavis_elements_nonformer.pd_tri_labels(),
+				text: $mpds_visavis_elements_nonformer.pd_tri_labels(),
 				marker: {color: "#ccc", size: 4, opacity: 0.9},
 				...this.convert_to_axes(x, y, z, 
 					this.x_sort() as Prop_name, 
@@ -268,17 +268,17 @@ namespace $.$$ {
 			if (x_op){
 				var x_temp = [];
 				for (var i = 0; i < x_src.length; i++){
-					//console.log('x', $visavis_elementals[x_sort][x_src[i]], $visavis_elementals[x_sort][y_src[i]], $visavis_elementals[x_sort][z_src[i]], ter_op(x_op, $visavis_elementals[x_sort][x_src[i]], $visavis_elementals[x_sort][y_src[i]], $visavis_elementals[x_sort][z_src[i]]));
+					//console.log('x', $mpds_visavis_elementals[x_sort][x_src[i]], $mpds_visavis_elementals[x_sort][y_src[i]], $mpds_visavis_elementals[x_sort][z_src[i]], ter_op(x_op, $mpds_visavis_elementals[x_sort][x_src[i]], $mpds_visavis_elementals[x_sort][y_src[i]], $mpds_visavis_elementals[x_sort][z_src[i]]));
 		
 					x_temp.push( this.ter_op(
 						x_op, 
-						$visavis_elements_list.element_by_num( x_src[i] )[ x_sort ], 
-						$visavis_elements_list.element_by_num( y_src[i] )[ x_sort ], 
-						$visavis_elements_list.element_by_num( z_src[i] )[ x_sort ], 
+						$mpds_visavis_elements_list.element_by_num( x_src[i] )[ x_sort ], 
+						$mpds_visavis_elements_list.element_by_num( y_src[i] )[ x_sort ], 
+						$mpds_visavis_elements_list.element_by_num( z_src[i] )[ x_sort ], 
 					) )
 				}
 				var x_renorm = $lib_d3.all().scaleQuantize()
-					.range( $visavis_elements_list.list().slice(1).map( el => el.num ) )
+					.range( $mpds_visavis_elements_list.list().slice(1).map( el => el.num ) )
 					.domain( [$lib_d3.all().min(x_temp), $lib_d3.all().max(x_temp)] )
 				//console.log(x_temp);
 				converted['x'] = x_temp.map(x_renorm);
@@ -291,17 +291,17 @@ namespace $.$$ {
 			if (y_op){
 				var y_temp = [];
 				for (var i = 0; i < y_src.length; i++){
-					//console.log('y', $visavis_elementals[y_sort][x_src[i]], $visavis_elementals[y_sort][y_src[i]], $visavis_elementals[y_sort][z_src[i]], ter_op(y_op, $visavis_elementals[y_sort][x_src[i]], $visavis_elementals[y_sort][y_src[i]], $visavis_elementals[y_sort][z_src[i]]));
+					//console.log('y', $mpds_visavis_elementals[y_sort][x_src[i]], $mpds_visavis_elementals[y_sort][y_src[i]], $mpds_visavis_elementals[y_sort][z_src[i]], ter_op(y_op, $mpds_visavis_elementals[y_sort][x_src[i]], $mpds_visavis_elementals[y_sort][y_src[i]], $mpds_visavis_elementals[y_sort][z_src[i]]));
 		
 					y_temp.push( this.ter_op(
 						y_op, 
-						$visavis_elements_list.element_by_num( x_src[i] )[ y_sort ], 
-						$visavis_elements_list.element_by_num( y_src[i] )[ y_sort ], 
-						$visavis_elements_list.element_by_num( z_src[i] )[ y_sort ], 
+						$mpds_visavis_elements_list.element_by_num( x_src[i] )[ y_sort ], 
+						$mpds_visavis_elements_list.element_by_num( y_src[i] )[ y_sort ], 
+						$mpds_visavis_elements_list.element_by_num( z_src[i] )[ y_sort ], 
 					) )
 				}
 				var y_renorm = $lib_d3.all().scaleQuantize()
-					.range( $visavis_elements_list.list().slice(1).map( el => el.num ) )
+					.range( $mpds_visavis_elements_list.list().slice(1).map( el => el.num ) )
 					.domain( [$lib_d3.all().min(y_temp), $lib_d3.all().max(y_temp)] );
 				//console.log(y_temp);
 				converted['y'] = y_temp.map(y_renorm);
@@ -314,17 +314,17 @@ namespace $.$$ {
 			if (z_op){
 				var z_temp = [];
 				for (var i = 0; i < z_src.length; i++){
-					//console.log('z', $visavis_elementals[z_sort][x_src[i]], $visavis_elementals[z_sort][y_src[i]], $visavis_elementals[z_sort][z_src[i]], ter_op(z_op, $visavis_elementals[z_sort][x_src[i]], $visavis_elementals[z_sort][y_src[i]], $visavis_elementals[z_sort][z_src[i]]));
+					//console.log('z', $mpds_visavis_elementals[z_sort][x_src[i]], $mpds_visavis_elementals[z_sort][y_src[i]], $mpds_visavis_elementals[z_sort][z_src[i]], ter_op(z_op, $mpds_visavis_elementals[z_sort][x_src[i]], $mpds_visavis_elementals[z_sort][y_src[i]], $mpds_visavis_elementals[z_sort][z_src[i]]));
 		
 					z_temp.push( this.ter_op(
 						z_op, 
-						$visavis_elements_list.element_by_num( x_src[i] )[ z_sort ], 
-						$visavis_elements_list.element_by_num( y_src[i] )[ z_sort ], 
-						$visavis_elements_list.element_by_num( z_src[i] )[ z_sort ], 
+						$mpds_visavis_elements_list.element_by_num( x_src[i] )[ z_sort ], 
+						$mpds_visavis_elements_list.element_by_num( y_src[i] )[ z_sort ], 
+						$mpds_visavis_elements_list.element_by_num( z_src[i] )[ z_sort ], 
 					) )
 				}
 				var z_renorm = $lib_d3.all().scaleQuantize()
-					.range( $visavis_elements_list.list().slice(1).map( el => el.num ) )
+					.range( $mpds_visavis_elements_list.list().slice(1).map( el => el.num ) )
 					.domain([$lib_d3.all().min(z_temp), $lib_d3.all().max(z_temp)]);
 				//console.log(z_temp);
 				converted['z'] = z_temp.map(z_renorm);
@@ -340,7 +340,7 @@ namespace $.$$ {
 
 		@ $mol_mem_key
 		order_els(prop: Prop_name) {
-			return $visavis_elements_list.list().slice(1).sort(function(a, b){
+			return $mpds_visavis_elements_list.list().slice(1).sort(function(a, b){
 				return a[prop] - b[prop]
 			}).map( el => el.name )
 		}

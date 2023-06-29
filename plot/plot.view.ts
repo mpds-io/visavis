@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	export class $visavis_plot extends $.$visavis_plot {
+	export class $mpds_visavis_plot extends $.$mpds_visavis_plot {
 
 		@ $mol_action
 		fetch_plot_json( request: RequestInfo ){
@@ -27,7 +27,7 @@ namespace $.$$ {
 		@ $mol_mem
 		plot_raw() {
 			return this.json() ? 
-				$visavis_plot_raw_from_json( this.json() ) : null
+				$mpds_visavis_plot_raw_from_json( this.json() ) : null
 		}
 
 		@ $mol_mem
@@ -59,11 +59,11 @@ namespace $.$$ {
 
 		@ $mol_mem
 		static register(){
-			$mol_view_component( $visavis_plot )
+			$mol_view_component( $mpds_visavis_plot )
 		}
 
 	}
 
-	$visavis_plot.register()
+	$mpds_visavis_plot.register()
 
 }

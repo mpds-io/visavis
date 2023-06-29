@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	const $visavis_plot_matrix_json_node = $mol_data_record({
+	const $mpds_visavis_plot_matrix_json_node = $mol_data_record({
 		name: $mol_data_string,
 		num: $mol_data_number,
 		nump: $mol_data_number,
@@ -15,7 +15,7 @@ namespace $.$$ {
 		count: $mol_data_optional( $mol_data_number ),
 	})
 
-	const $visavis_plot_matrix_json_link = $mol_data_record({
+	const $mpds_visavis_plot_matrix_json_link = $mol_data_record({
 		source: $mol_data_number,
 		target: $mol_data_number,
 		value: $mol_data_number,
@@ -23,11 +23,11 @@ namespace $.$$ {
 		cmp: $mol_data_optional( $mol_data_number ),
 	})
 
-	const $visavis_plot_matrix_json = $mol_data_record({
+	const $mpds_visavis_plot_matrix_json = $mol_data_record({
 		answerto: $mol_data_optional( $mol_data_string ),
 		payload: $mol_data_record({
-			nodes: $mol_data_array( $visavis_plot_matrix_json_node ),
-			links: $mol_data_array( $visavis_plot_matrix_json_link ),
+			nodes: $mol_data_array( $mpds_visavis_plot_matrix_json_node ),
+			links: $mol_data_array( $mpds_visavis_plot_matrix_json_link ),
 			fixel: $mol_data_nullable( $mol_data_number ),
 		}),
 	})
@@ -41,9 +41,9 @@ namespace $.$$ {
 		nonformer: boolean 
 	}
 
-	type Prop_name = keyof ReturnType<typeof $visavis_elements_list.prop_names>
+	type Prop_name = keyof ReturnType<typeof $mpds_visavis_elements_list.prop_names>
 
-	export class $visavis_plot_matrix extends $.$visavis_plot_matrix {
+	export class $mpds_visavis_plot_matrix extends $.$mpds_visavis_plot_matrix {
 
 		@ $mol_mem
 		setup() {
@@ -65,7 +65,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		json() {
-			return $visavis_plot_matrix_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_matrix_json( this.plot_raw().json() as any )
 		}
 
 		@ $mol_mem
@@ -82,7 +82,7 @@ namespace $.$$ {
 			this.first_cmp_label( this.json().answerto )
 			this.second_cmp_label( this.json_cmp().answerto )
 
-			return $visavis_plot_matrix_json( json_master )
+			return $mpds_visavis_plot_matrix_json( json_master )
 		}
 
 		nodes() {
@@ -113,7 +113,7 @@ namespace $.$$ {
 
 		@ $mol_mem_key
 		order_by_prop( prop: Prop_name ): any[] {
-			return $visavis_lib.d3().range(95).sort( (a: number, b: any) => {
+			return $mpds_visavis_lib.d3().range(95).sort( (a: number, b: any) => {
 				return this.nodes()[ a ][ prop ] - this.nodes()[ b ][ prop ] 
 			})
 		}
@@ -125,7 +125,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		matrix() {
-			const matrix: Matrix_cell[][] = this.nodes().map( (node, i) => $visavis_lib.d3().range(95).map( (j: any) => ({ x: j, y: i, z: 0, cmt: '', cmp: 0, nonformer: false }) ) )
+			const matrix: Matrix_cell[][] = this.nodes().map( (node, i) => $mpds_visavis_lib.d3().range(95).map( (j: any) => ({ x: j, y: i, z: 0, cmt: '', cmp: 0, nonformer: false }) ) )
 
 			for (const link of this.links()) {
 				matrix[link.source][link.target].z += link.value;
@@ -137,7 +137,7 @@ namespace $.$$ {
 			}
 
 			if (this.nonformers_checked()) {
-				for (const item of $visavis_elements_nonformer.pd_bin()) {
+				for (const item of $mpds_visavis_elements_nonformer.pd_bin()) {
 					matrix[item[0]][item[1]].z = 1;
 					matrix[item[1]][item[0]].z = 1; // NB only AB-all
 					matrix[item[0]][item[1]].nonformer = true;
@@ -157,8 +157,8 @@ namespace $.$$ {
 
 		@ $mol_mem
 		opacity_scale() {
-			// return $visavis_lib.d3().scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true) // for new d3 version
-			return $visavis_lib.d3().scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true)
+			// return $mpds_visavis_lib.d3().scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true) // for new d3 version
+			return $mpds_visavis_lib.d3().scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true)
 		}
 
 		opacity(index: number) {
@@ -167,8 +167,8 @@ namespace $.$$ {
 
 		@ $mol_mem
 		color_heatmap() {
-			// return $visavis_lib.d3().scaleLinear().domain($visavis_lib.d3().range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors() as any) // for new d3 version
-			return $visavis_lib.d3().scale.linear().domain($visavis_lib.d3().range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors() as any)
+			// return $mpds_visavis_lib.d3().scaleLinear().domain($mpds_visavis_lib.d3().range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors() as any) // for new d3 version
+			return $mpds_visavis_lib.d3().scale.linear().domain($mpds_visavis_lib.d3().range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors() as any)
 		}
 
 		heatmap_color( index: number ) {
@@ -185,8 +185,8 @@ namespace $.$$ {
 
 		@ $mol_mem
 		color_heatmap_scale() {
-			// return $visavis_lib.d3().scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1]) // for new d3 version
-			return $visavis_lib.d3().scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1])
+			// return $mpds_visavis_lib.d3().scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1]) // for new d3 version
+			return $mpds_visavis_lib.d3().scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1])
 		}
 
 		color(index: number, cmp: number) {
@@ -196,8 +196,8 @@ namespace $.$$ {
 
 		@ $mol_mem
 		range() {
-			// return $visavis_lib.d3().scaleBand().domain(this.order()).range([0, this.size()]) // for new d3 version
-			return $visavis_lib.d3().scale.ordinal().rangeBands([0, this.size()]).domain(this.default_order())
+			// return $mpds_visavis_lib.d3().scaleBand().domain(this.order()).range([0, this.size()]) // for new d3 version
+			return $mpds_visavis_lib.d3().scale.ordinal().rangeBands([0, this.size()]).domain(this.default_order())
 		}
 
 		svg_title_text(cell: Matrix_cell) {
@@ -213,7 +213,7 @@ namespace $.$$ {
 
 		@ $mol_mem_key
 		draw_cells(node: SVGElement, row: Matrix_cell[]) {
-			const d3 = $visavis_lib.d3()
+			const d3 = $mpds_visavis_lib.d3()
 			const that = this
 			d3.select(node)
 				.selectAll('.cell')
@@ -257,7 +257,7 @@ namespace $.$$ {
 		draw() {
 			if (Number.isNaN( this.size() )) return
 
-			const d3 = $visavis_lib.d3()
+			const d3 = $mpds_visavis_lib.d3()
 
 			const svg_element = $mol_wire_sync( document ).createElementNS( 'http://www.w3.org/2000/svg', 'svg' )
 			const svg = d3.select(svg_element)
@@ -328,33 +328,33 @@ namespace $.$$ {
 		get_bin_domain( args: { sort: Prop_name, op: string } ){
 
 			const { sort, op } = args
-			const d3 = $visavis_lib.d3()
-			var cond_slice = $visavis_elements_list.prop_values(sort).slice(1);
+			const d3 = $mpds_visavis_lib.d3()
+			var cond_slice = $mpds_visavis_elements_list.prop_values(sort).slice(1);
 		
 			switch (op){
 				case 'sum': return [
 					d3.min(cond_slice) * 2,
-					d3.max($visavis_elements_list.prop_values(sort)) * 2
+					d3.max($mpds_visavis_elements_list.prop_values(sort)) * 2
 				];
 				case 'diff': return [
 					d3.min(cond_slice),
-					d3.max($visavis_elements_list.prop_values(sort)) - d3.min(cond_slice)
+					d3.max($mpds_visavis_elements_list.prop_values(sort)) - d3.min(cond_slice)
 				];
 				case 'product': return [
 					Math.pow( d3.min(cond_slice), 2 ),
-					Math.pow( d3.max($visavis_elements_list.prop_values(sort)), 2 )
+					Math.pow( d3.max($mpds_visavis_elements_list.prop_values(sort)), 2 )
 				];
 				case 'ratio': return [
-					d3.min(cond_slice) / d3.max($visavis_elements_list.prop_values(sort)),
-					d3.max($visavis_elements_list.prop_values(sort)) / d3.min(cond_slice)
+					d3.min(cond_slice) / d3.max($mpds_visavis_elements_list.prop_values(sort)),
+					d3.max($mpds_visavis_elements_list.prop_values(sort)) / d3.min(cond_slice)
 				];
 				case 'max': return [
 					d3.min(cond_slice),
-					d3.max($visavis_elements_list.prop_values(sort))
+					d3.max($mpds_visavis_elements_list.prop_values(sort))
 				];
 				case 'min': return [
 					d3.min(cond_slice),
-					d3.max($visavis_elements_list.prop_values(sort))
+					d3.max($mpds_visavis_elements_list.prop_values(sort))
 				];
 			}
 		}
@@ -362,7 +362,7 @@ namespace $.$$ {
 		@ $mol_mem_key
 		renorm( args: { sort: Prop_name, op?: string } ) {
 			const { sort, op } = args
-			const d3 = $visavis_lib.d3()
+			const d3 = $mpds_visavis_lib.d3()
 			const svgdim = this.size()
 			return op ?
 				d3.scale.quantize().range(d3.range(0, svgdim, svgdim / 95)).domain( this.get_bin_domain( {sort, op} ) ) :
@@ -387,7 +387,7 @@ namespace $.$$ {
 			const x_op = this.x_op() as string | undefined
 			const y_op = this.y_op() as string | undefined
 
-			const d3 = $visavis_lib.d3()
+			const d3 = $mpds_visavis_lib.d3()
 			const svg = d3.select(this.Root().dom_node_actual().firstChild)
 			
 			function bin_op( op: string, a: number, b: number ){
@@ -402,10 +402,10 @@ namespace $.$$ {
 			}
 
 			const arrange = ( sort: Prop_name, op: string, input: any, index?: any)=> {
-				const x = input.x !== undefined ? $visavis_elements_list.prop_values(sort)[input.x + 1] : 
-					$visavis_elements_list.prop_values(sort)[index]
-				const y = input.y !== undefined ? $visavis_elements_list.prop_values(sort)[input.y + 1] : 
-					$visavis_elements_list.prop_values(sort)[index]
+				const x = input.x !== undefined ? $mpds_visavis_elements_list.prop_values(sort)[input.x + 1] : 
+					$mpds_visavis_elements_list.prop_values(sort)[index]
+				const y = input.y !== undefined ? $mpds_visavis_elements_list.prop_values(sort)[input.y + 1] : 
+					$mpds_visavis_elements_list.prop_values(sort)[index]
 				var bin = bin_op( op, x, y )
 				return this.renorm( { sort, op } )( bin )
 			}

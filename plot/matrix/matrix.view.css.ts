@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	$mol_style_define( $.$visavis_plot_matrix, {
+	$mol_style_define( $.$mpds_visavis_plot_matrix, {
 
 		flex: {
 			grow: 1,

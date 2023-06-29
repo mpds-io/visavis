@@ -11,9 +11,9 @@ namespace $.$$ {
 		name: $mol_data_string
 	})
 
-	type Element_prop = keyof ReturnType<typeof $visavis_elements_list.prop_names>
+	type Element_prop = keyof ReturnType<typeof $mpds_visavis_elements_list.prop_names>
 
-	export const $visavis_plot_discovery_json = $mol_data_record({
+	export const $mpds_visavis_plot_discovery_json = $mol_data_record({
 		payload: Payload,
 		answerto: $mol_data_string,
 	})
@@ -23,7 +23,7 @@ namespace $.$$ {
 		first: typeof Discover_item.Value, 
 		second?: typeof Discover_item.Value
 	) {
-		const mlPca: any = $visavis_lib.pca()
+		const mlPca: any = $mpds_visavis_lib.pca()
 		if (!mlPca) return $mol_fail( new $mol_data_error('Sorry, your web-browser is too old for this task') );
 	
 		// if (!first.points.length || (second && !second.points.length)) return urge('Error: not enough data for analysis');
@@ -38,9 +38,9 @@ namespace $.$$ {
 
 			element_ids.forEach( element_num => {
 				const props = elementals_on.map( 
-					prop_name => $visavis_elements_list.element_by_num( element_num )[ prop_name ]
+					prop_name => $mpds_visavis_elements_list.element_by_num( element_num )[ prop_name ]
 				)
-				const name = $visavis_elements_list.element_by_num( element_num ).name
+				const name = $mpds_visavis_elements_list.element_by_num( element_num ).name
 				prop_array.push( ...props )
 				if ( element_num != 0 ) label_parts.push( name );
 			})
@@ -99,7 +99,7 @@ namespace $.$$ {
 		}];
 	}
 
-	export class $visavis_plot_discovery extends $.$visavis_plot_discovery {
+	export class $mpds_visavis_plot_discovery extends $.$mpds_visavis_plot_discovery {
 
 		sub() {
 			return [ 
@@ -110,11 +110,11 @@ namespace $.$$ {
 		}
 
 		json() {
-			return $visavis_plot_discovery_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_discovery_json( this.plot_raw().json() as any )
 		}
 
 		elementals_dict() {
-			return $visavis_elements_list.prop_names()
+			return $mpds_visavis_elements_list.prop_names()
 		}
 
 		@ $mol_action

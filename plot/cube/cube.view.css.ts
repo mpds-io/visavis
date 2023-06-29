@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	$mol_style_define( $visavis_plot_cube, {
+	$mol_style_define( $mpds_visavis_plot_cube, {
 
 		Plot: {
 			flex: {

@@ -1,4 +1,4 @@
-$visavis_app $mol_book2
+$mpds_visavis_app $mol_book2
 	attr * mol_theme \$mol_theme_light
 	title \Vis-a-vis
 	Placeholder null
@@ -63,6 +63,6 @@ $visavis_app $mol_book2
 	Plot_page* $mol_page
 		title <= plot_id* \
 		body /
-			<= Plot_view* $visavis_plot
+			<= Plot_view* $mpds_visavis_plot
 				plot_raw <= plot_raw* null
 				show_setup true

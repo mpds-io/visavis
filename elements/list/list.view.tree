@@ -1,4 +1,4 @@
-$visavis_elements_list $mol_object
+$mpds_visavis_elements_list $mol_object
 	prop_names *
 		num \atomic number
 		nump \periodic number
