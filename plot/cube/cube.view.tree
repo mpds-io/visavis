@@ -2,6 +2,7 @@ $visavis_plot_cube $mol_view
 	plot_raw $visavis_plot_raw
 	json_cmp? null
 	show_setup true
+	show_fixel? true
 	heatmap? false
 	order* /number
 	order_current? \nump

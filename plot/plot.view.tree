@@ -28,6 +28,7 @@ $visavis_plot $mol_view
 			plot_raw <= plot_raw
 			json_cmp <= json_cmp
 			show_setup <= show_setup
+			show_fixel? <= show_fixel? true
 			nonformers_checked? <=> nonformers_checked?
 			fixel_checked? <=> cube_fixel_checked? false
 			x_op? => x_op?

@@ -25,7 +25,7 @@ namespace $.$$ {
 		@ $mol_mem
 		setup() {
 			return [
-				this.Fixel(),
+				... this.show_fixel() ? [ this.Fixel() ] : [],
 				this.json_cmp() ? this.Diffrence_on() : this.Nonformers(),
 				... this.show_setup() ? [ this.X_order(), this.Y_order(), this.Z_order() ] : [],
 			]

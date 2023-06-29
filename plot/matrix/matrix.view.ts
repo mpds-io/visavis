@@ -119,7 +119,7 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		order() {
+		default_order() {
 			return this.order_by_prop( 'nump' )
 		}
 
@@ -197,7 +197,7 @@ namespace $.$$ {
 		@ $mol_mem
 		range() {
 			// return $visavis_lib.d3().scaleBand().domain(this.order()).range([0, this.size()]) // for new d3 version
-			return $visavis_lib.d3().scale.ordinal().rangeBands([0, this.size()]).domain(this.order())
+			return $visavis_lib.d3().scale.ordinal().rangeBands([0, this.size()]).domain(this.default_order())
 		}
 
 		svg_title_text(cell: Matrix_cell) {
@@ -321,7 +321,7 @@ namespace $.$$ {
 		}
 
 		auto() {
-			this.reorder()
+			this.auto_reorder()
 		}
 
 		@ $mol_mem_key
@@ -380,7 +380,8 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		reorder(){
+		auto_reorder(){
+			this.nonformers_checked()
 			const x_sort = this.x_sort() as Prop_name
 			const y_sort = this.y_sort() as Prop_name || x_sort
 			const x_op = this.x_op() as string | undefined
