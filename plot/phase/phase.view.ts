@@ -264,17 +264,17 @@ namespace $.$$ {
 			const that = this
 			const figures = d3.select( this.dom_node_actual() ).selectAll('[visavis_plot_phase_root] .shapelayer path')
 			figures.on('mouseover', function(this: any) {
-				const that = d3.select(this)
-				let idx = that.attr('data-index')
+				const figure = d3.select(this)
+				let idx = figure.attr('data-index')
 
 				if (is_triangle){
 					if (idx == 0) return false;
 					idx--;
 				}
 
-				that.attr('data-state', that.style('fill'));
-				that.style('cursor', 'pointer');
-				that.style('fill', '#3e3f95');
+				figure.attr('data-state', figure.style('fill'));
+				figure.style('cursor', 'pointer');
+				figure.style('fill', '#3e3f95');
 
 				const reflabel = json.shapes[idx]?.reflabel
 				if (reflabel !== undefined && json.labels[reflabel] !== undefined){
@@ -287,16 +287,27 @@ namespace $.$$ {
 			})
 
 			figures.on('mouseout', function(this: any) {
-				const that = d3.select(this)
-				const state = that.attr('data-state')
+				const figure = d3.select(this)
+				const state = figure.attr('data-state')
 
 				if (state){
-					that.style('fill', state)
-					that.style('cursor', 'default')
+					figure.style('fill', state)
+					figure.style('cursor', 'default')
 					d3.select( that.dom_node_actual() ).selectAll('[visavis_plot_phase_root] g.annotation').select('text').style('fill', '#000');
 				}
 			})
 
+
+			figures.on('click', function(this: any) {
+				const figure = d3.select(this)
+
+				let idx = figure.attr( 'data-index' )
+				if ( json.naxes == 3 ) idx--
+				if ( json.shapes[idx].phase_id ) {
+					this.phase_click( json.shapes[idx].phase_id )
+				}
+			})
+			
 			const canvas = this.Root().dom_node().firstChild as any
 
 			// rectangle

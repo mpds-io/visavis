@@ -39,6 +39,7 @@ $visavis_plot $mol_view
 			cube_click? <=> cube_click? null
 		pd <= Phase $visavis_plot_phase
 			plot_raw <= plot_raw
+			phase_click? <=> phase_click? null
 		bar <= Bar $visavis_plot_bar
 			plot_raw <= plot_raw
 			bar_click? <=> bar_click? null
