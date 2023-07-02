@@ -18,7 +18,7 @@ namespace $.$$ {
 		// both
 		naxes: $mol_data_number,
 		arity: $mol_data_number,
-		diatype: $mol_data_string,
+		diatype: $mol_data_optional( $mol_data_string ),
 		chemical_elements: $mol_data_array( $mol_data_string ),
 		temp: $mol_data_array( $mol_data_number ),
 		labels: $mol_data_array( Label_json ), // Array<[string, number[], null | number]>
@@ -256,7 +256,7 @@ namespace $.$$ {
 			if ( this.is_triangle() ) this.pd_fix_triangle()
 
 			// skip unsupported PD types
-			if ( this.json().diatype && this.json().diatype.indexOf( 'projection' ) !== -1 ) return
+			if ( this.json().diatype && this.json().diatype?.indexOf( 'projection' ) !== -1 ) return
 
 			const json = this.json()
 			const is_triangle = this.is_triangle()
