@@ -57,13 +57,8 @@ namespace $.$$ {
 		@ $mol_action
 		on_fixel_checked( checked: boolean ) { }
 
-		@ $mol_mem
-		static register(){
-			$mol_view_component( $mpds_visavis_plot )
-		}
-
 	}
 
-	$mpds_visavis_plot.register()
+	$mol_view_component( $mpds_visavis_plot )
 
 }
