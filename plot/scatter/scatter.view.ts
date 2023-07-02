@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	export const $visavis_plot_scatter_json = $mol_data_record( {
+	export const $mpds_visavis_plot_scatter_json = $mol_data_record( {
 		sample: $mol_data_record( {
 			material: $mol_data_record( {
 				chemical_formula: $mol_data_string,
@@ -42,11 +42,11 @@ namespace $.$$ {
 			phase: $mol_data_optional( $mol_data_string ),
 		}),
 	})
-	export class $visavis_plot_scatter extends $.$visavis_plot_scatter {
+	export class $mpds_visavis_plot_scatter extends $.$mpds_visavis_plot_scatter {
 
 		json() {
 			// notify('Cannot get plot data, please, try again');
-			return $visavis_plot_scatter_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_scatter_json( this.plot_raw().json() as any )
 		}
 
 		@ $mol_action
@@ -197,7 +197,7 @@ namespace $.$$ {
 
 			return {
 				showlegend: true,
-				legend: {x: 100, y: 1, font: {family: "Exo2", size: 14}},
+				legend: {x: 100, y: 1, font: {size: 14}},
 				xaxis: {
 					autorange: true,
 					showgrid: true,
@@ -216,7 +216,7 @@ namespace $.$$ {
 					ticklen: 4,
 					title: 'Cell parameters' + y_comment + ', A'
 				},
-				font: {family: "Exo2", size: 13}
+				font: {size: 13}
 			}
 		}
 

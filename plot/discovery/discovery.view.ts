@@ -11,9 +11,9 @@ namespace $.$$ {
 		name: $mol_data_string
 	})
 
-	type Element_prop = keyof ReturnType<typeof $visavis_elements_list.prop_names>
+	type Element_prop = keyof ReturnType<typeof $mpds_visavis_elements_list.prop_names>
 
-	export const $visavis_plot_discovery_json = $mol_data_record({
+	export const $mpds_visavis_plot_discovery_json = $mol_data_record({
 		payload: Payload,
 		answerto: $mol_data_string,
 	})
@@ -23,7 +23,7 @@ namespace $.$$ {
 		first: typeof Discover_item.Value, 
 		second?: typeof Discover_item.Value
 	) {
-		const mlPca: any = $visavis_lib.pca()
+		const mlPca: any = $mpds_visavis_lib.pca()
 		if (!mlPca) return $mol_fail( new $mol_data_error('Sorry, your web-browser is too old for this task') );
 	
 		// if (!first.points.length || (second && !second.points.length)) return urge('Error: not enough data for analysis');
@@ -38,14 +38,13 @@ namespace $.$$ {
 
 			element_ids.forEach( element_num => {
 				const props = elementals_on.map( 
-					prop_name => $visavis_elements_list.element_by_num( element_num )[ prop_name ]
+					prop_name => $mpds_visavis_elements_list.element_by_num( element_num )[ prop_name ]
 				)
-				const name = $visavis_elements_list.element_by_num( element_num ).name
+				const name = $mpds_visavis_elements_list.element_by_num( element_num ).name
 				prop_array.push( ...props )
-				label_parts.push( name );
+				if ( element_num != 0 ) label_parts.push( name );
 			})
-
-			const label = label_parts.filter( x => x ).join('-')
+			const label = label_parts.join('-')
 			return { prop_array, label }
 		}
 
@@ -66,7 +65,7 @@ namespace $.$$ {
 				const { prop_array, label } = elements_data( element_ids )
 	
 				// discard points in the *second* that are already in the *first*
-				if (labels.includes( label )) {
+				if (!labels.includes( label )) {
 					to_predict.push( prop_array );
 					labels.push( label );
 				}
@@ -100,37 +99,34 @@ namespace $.$$ {
 		}];
 	}
 
-	export class $visavis_plot_discovery extends $.$visavis_plot_discovery {
+	export class $mpds_visavis_plot_discovery extends $.$mpds_visavis_plot_discovery {
 
 		sub() {
-			return [ this.Plot(), ...(this.show_setup()? [ this.Setup() ] : []) ]
+			return [ 
+				this.Plot(), 
+				...( this.json_cmp() ? [ this.Cmp_legend() ] : [] ),
+				...( this.show_setup() ? [ this.Setup() ] : [] ),
+			]
 		}
 
 		json() {
-			return $visavis_plot_discovery_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_discovery_json( this.plot_raw().json() as any )
 		}
 
 		elementals_dict() {
-			return $visavis_elements_list.prop_names()
+			return $mpds_visavis_elements_list.prop_names()
 		}
 
 		@ $mol_action
 		subscribe_events() {
+			const d3 = $mpds_visavis_lib.d3()
 
-			// if (visavis.mpds_embedded) {
-			// 	document.getElementById('expander').style.display = 'block';
-			// } else {
-			// 	return
-			// }
-			
-			const d3 = $lib_d3.all()
-
-			d3.select('div.js-plotly-plot').on('click', (event: MouseEvent)=> {
+			d3.select( this.dom_node_actual() ).select('div.js-plotly-plot').on('click', (event: MouseEvent)=> {
 
 				const node = event.target as HTMLElement
 				if (node.getAttribute('class') != 'point') return false;
 				
-				node.classList.add('clicked')
+				node.classList.add('visited')
 
 				const point = d3.select(node)
 				const label = point.data()[0].tx
@@ -178,7 +174,7 @@ namespace $.$$ {
 						text: '<i>Second Principal Component (a<sub>1</sub>x + b<sub>1</sub>y + c<sub>1</sub>z + ...)</i>', 
 						showarrow: false, 
 						bgcolor: '#fff', 
-						font: { family: "Exo2", size: 14 } 
+						font: { size: 14 } 
 					},
 					{ 
 						x: 0.97, 
@@ -191,7 +187,7 @@ namespace $.$$ {
 						showarrow: false, 
 						bgcolor: '#fff', 
 						textangle: 270, 
-						font: { family: "Exo2", size: 14 } 
+						font: { size: 14 } 
 					}
 				]
 			}
@@ -224,21 +220,17 @@ namespace $.$$ {
 		data() {
 		
 			const json = this.json()
+			const json_cmp = this.json_cmp()
 
 			const elementals_on = this.elementals_on()
 
-			// if (visavis.cache && visavis.cache.type == 'discovery'){
-			// 	var ref = {points: visavis.cache.ref.points, name: visavis.cache.ref.name},
-			// 		cmp = {points: json.payload.points, name: json.answerto};
-			// 	visavis.cache.cmp = cmp;
-		
-			// } else {
-			// 	var ref = {points: json.payload.points, name: json.answerto},
-			// 		cmp = false;
-			// 	visavis.cache = {ref: ref, type: 'discovery'};
-			// }
+			const first = Discover_item({points: json.payload.points, name: json.answerto})
+			this.first_cmp_label( first.name )
+			
+			const second = json_cmp ? Discover_item({points: json_cmp.payload.points, name: json_cmp.answerto}) : undefined
+			this.second_cmp_label( second?.name )
 
-			const result = discover(elementals_on, Discover_item({points: json.payload.points, name: json.answerto}));
+			const result = discover(elementals_on, first, second)
 		
 			const traces = [];
 		

@@ -8,21 +8,21 @@ namespace $.$$ {
 		ytitle: $mol_data_optional( $mol_data_string ),
 	})
 
-	export const $visavis_plot_bar_json = $mol_data_record({
+	export const $mpds_visavis_plot_bar_json = $mol_data_record({
 		payload: Payload,
 		payload2: $mol_data_optional( Payload ),
 	})
 
-	export class $visavis_plot_bar extends $.$visavis_plot_bar {
+	export class $mpds_visavis_plot_bar extends $.$mpds_visavis_plot_bar {
 
 		json() {
-			return $visavis_plot_bar_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_bar_json( this.plot_raw().json() as any )
 		}
 
 		@ $mol_action
 		subscribe_events() {
 
-			const d3 = $lib_d3.all()
+			const d3 = $mpds_visavis_lib.d3()
 
 			const json = this.json() as any
 
@@ -30,7 +30,7 @@ namespace $.$$ {
 			
 			// warn_demo();1
 			// if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
-			const paths = d3.selectAll('g.point path')
+			const paths = d3.select( this.dom_node_actual() ).selectAll( 'g.point path' )
 
 			const that = this
 			paths.on('click', function(this: any, event: MouseEvent){
@@ -45,7 +45,7 @@ namespace $.$$ {
 			const json = this.json()
 			return {
 				showlegend: json.payload2 ? true : false,
-				legend: {x: 0, y: 1, font: {family: "Exo2", size: 17}},
+				legend: {x: 0, y: 1, font: {size: 17}},
 				xaxis: {
 					autorange: true,
 					showgrid: false,
@@ -66,9 +66,9 @@ namespace $.$$ {
 					ticklen: 0,
 					title: json.payload.ytitle,
 					rangemode: "nonnegative",
-					type: "log", tickfont: {family: "Exo2", size: 17}
+					type: "log", tickfont: {size: 17}
 				},
-				font: {family: "Exo2", size: 13}
+				font: {size: 13}
 			}
 		}
 

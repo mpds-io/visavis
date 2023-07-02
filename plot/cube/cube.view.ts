@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	const $visavis_plot_cube_json = $mol_data_record({
+	const $mpds_visavis_plot_cube_json = $mol_data_record({
 		payload: $mol_data_record({
 			tcube: $mol_data_optional( $mol_data_boolean ),
 			points: $mol_data_record({
@@ -10,31 +10,40 @@ namespace $.$$ {
 				v: $mol_data_array( $mol_data_number ),
 				labels: $mol_data_array( $mol_data_string ),
 			}),
-			fixel: $mol_data_nullable( $mol_data_boolean ),
+			fixel: $mol_data_nullable( $mol_data_variant( $mol_data_boolean, $mol_data_number ) ),
 			xtitle: $mol_data_optional( $mol_data_string ),
 			ytitle: $mol_data_optional( $mol_data_string ),
 			ztitle: $mol_data_optional( $mol_data_string ),
 		}),
+		answerto: $mol_data_optional( $mol_data_string ),
 	})
 
-	type Element_prop = keyof ReturnType<typeof $visavis_elements_list.prop_names>
+	type Prop_name = keyof ReturnType<typeof $mpds_visavis_elements_list.prop_names>
 
-	export class $visavis_plot_cube extends $.$visavis_plot_cube {
+	export class $mpds_visavis_plot_cube extends $.$mpds_visavis_plot_cube {
 
+		@ $mol_mem
+		setup() {
+			return [
+				... this.show_fixel() ? [ this.Fixel() ] : [],
+				this.json_cmp() ? this.Diffrence_on() : this.Nonformers(),
+				... this.show_setup() ? [ this.X_order(), this.Y_order(), this.Z_order() ] : [],
+			]
+		}
+		
+		@ $mol_mem
 		plot_body() {
 			return [
 				this.Root(),
+				... this.json_cmp() ? [ this.Cmp_legend() ] : [],
 				... this.heatmap() ? [ this.Side_right() ] : [],
 			]
 		}
 
-		sub() {
-			return [ this.Plot(), ...(this.show_setup()? [ this.Setup() ] : []) ]
+		json() {
+			return $mpds_visavis_plot_cube_json( this.plot_raw().json() as any )
 		}
 
-		json() {
-			return $visavis_plot_cube_json( this.plot_raw().json() as any )
-		}
 
 		@ $mol_mem
 		value_list() {
@@ -50,9 +59,9 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem_key
-		order(order: Element_prop) {
-			return $lib_d3.all().range(95).sort( (a: any, b: any) =>
-				$visavis_elements_list.element_by_num(a + 1)[order] - $visavis_elements_list.element_by_num(b + 1)[order]
+		order(order: Prop_name) {
+			return $mpds_visavis_lib.d3().range(95).sort( (a: any, b: any) =>
+				$mpds_visavis_elements_list.element_by_num(a + 1)[order] - $mpds_visavis_elements_list.element_by_num(b + 1)[order]
 			) as number[]
 		}
 
@@ -73,10 +82,10 @@ namespace $.$$ {
 			]
 		}
 
-		@ $mol_mem
-		marker() {
+		@ $mol_mem_key
+		marker( color_id: number ) {
 			return {
-				color: this.heatmap() ? this.json().payload.points.v : this.colorset()[0],
+				color: this.heatmap() ? this.json().payload.points.v : this.colorset()[ color_id ],
 				... this.heatmap() ? { colorscale: 'Rainbow' } : {},
 				size: 4,
 				opacity: 0.9
@@ -84,19 +93,26 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		data_nonformers() {
-			const { x, y, z } = $visavis_elements_nonformer.pd_tri_nums()
+		scatter3d_common() {
 			return {
 				type: "scatter3d",
-				text: $visavis_elements_nonformer.pd_tri_labels(),
 				mode: "markers",
 				hoverinfo: "text",
-				marker: {color: "#ccc", size: 4, opacity: 0.9},
 				projection: {x: {show: true, opacity: 0.25}, y: {show: true, opacity: 0.25}, z: {show: true, opacity: 0.25}},
+			}
+		}
+
+		@ $mol_mem
+		data_nonformers() {
+			const { x, y, z } = $mpds_visavis_elements_nonformer.pd_tri_nums()
+			return {
+				...this.scatter3d_common(),
+				text: $mpds_visavis_elements_nonformer.pd_tri_labels(),
+				marker: {color: "#ccc", size: 4, opacity: 0.9},
 				...this.convert_to_axes(x, y, z, 
-					this.x_sort() as Element_prop, 
-					this.y_sort() as Element_prop, 
-					this.z_sort() as Element_prop
+					this.x_sort() as Prop_name, 
+					this.y_sort() as Prop_name, 
+					this.z_sort() as Prop_name
 				)
 			}
 		}
@@ -104,19 +120,37 @@ namespace $.$$ {
 		@ $mol_mem
 		data() {
 			return {
-				type: "scatter3d",
+				...this.scatter3d_common(),
 				text: this.json().payload.points.labels,
-				mode: "markers",
-				hoverinfo: "text",
-				marker: this.marker(),
-				projection: {x: {show: true, opacity: 0.05}, y: {show: true, opacity: 0.05}, z: {show: true, opacity: 0.05}},
+				marker: this.marker( 0 ),
 				...this.convert_to_axes(
 					this.json().payload.points.x, 
 					this.json().payload.points.y, 
 					this.json().payload.points.z, 
-					this.x_sort() as Element_prop, 
-					this.y_sort() as Element_prop, 
-					this.z_sort() as Element_prop,
+					this.x_sort() as Prop_name, 
+					this.y_sort() as Prop_name, 
+					this.z_sort() as Prop_name,
+				)
+			}
+		}
+
+		@ $mol_mem
+		data_cmp() {
+			if (!this.json_cmp() ) return null
+			this.nonformers_checked( false )
+			this.first_cmp_label( this.json().answerto )
+			this.second_cmp_label( this.json_cmp().answerto )
+			return {
+				...this.scatter3d_common(),
+				text: this.json_cmp().payload.points.labels,
+				marker: this.marker( 1 ),
+				...this.convert_to_axes(
+					this.json_cmp().payload.points.x, 
+					this.json_cmp().payload.points.y, 
+					this.json_cmp().payload.points.z, 
+					this.x_sort() as Prop_name, 
+					this.y_sort() as Prop_name, 
+					this.z_sort() as Prop_name,
 				)
 			}
 		}
@@ -124,8 +158,9 @@ namespace $.$$ {
 		@ $mol_mem
 		data_shown() {
 			return [
-				... this.nonformers() ? [this.data_nonformers()] : [],
+				... this.nonformers_checked() ? [this.data_nonformers()] : [],
 				this.data(),
+				... this.json_cmp() ? [this.data_cmp()] : [],
 			]
 		}
 
@@ -143,8 +178,8 @@ namespace $.$$ {
 					showticklabels: !this.x_op(),
 					showline: false,
 					tickfont: {size: 11},
-					ticktext: this.order_els(this.x_sort() as Element_prop).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
-					tickvals: $lib_d3.all().range(1, 96, 2)
+					ticktext: this.order_els(this.x_sort() as Prop_name).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
+					tickvals: $mpds_visavis_lib.d3().range(1, 96, 2)
 				},
 				yaxis: {
 					title: 'y_sort',
@@ -156,8 +191,8 @@ namespace $.$$ {
 					showticklabels: !this.y_op(),
 					showline: false,
 					tickfont: {size: 11},
-					ticktext: this.order_els(this.y_sort() as Element_prop).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
-					tickvals: $lib_d3.all().range(1, 96, 2)
+					ticktext: this.order_els(this.y_sort() as Prop_name).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
+					tickvals: $mpds_visavis_lib.d3().range(1, 96, 2)
 				},
 				zaxis: {
 					title: 'z_sort',
@@ -169,17 +204,30 @@ namespace $.$$ {
 					showticklabels: !this.z_op(),
 					showline: false,
 					tickfont: {size: 11},
-					ticktext: this.order_els(this.z_sort() as Element_prop).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
-					tickvals: $lib_d3.all().range(1, 96, 2)
+					ticktext: this.order_els(this.z_sort() as Prop_name).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
+					tickvals: $mpds_visavis_lib.d3().range(1, 96, 2)
 				},
 				camera: {projection: {type: 'perspective'}},
 			}	
 		}
 
+		@ $mol_action
+		subscribe_events() {
+			const d3 = $mpds_visavis_lib.d3()
+
+			const that = this
+			d3.select( this.dom_node_actual() ).select( 'div.js-plotly-plot' ).on( 'click', (event: MouseEvent)=> {
+				const node = event.target as HTMLElement
+				if (node.getAttribute('class') != 'nums') return false;
+				
+				const label_data = d3.select(node).data()[0]
+				that.cube_click( { label: label_data.text } )
+			} )
+		}
+
 		@ $mol_mem
 		layout() {
 			return {
-				font: {family: "Exo2"},
 				showlegend: false,
 				scene: this.scene() as any,
 				margin: {
@@ -207,9 +255,9 @@ namespace $.$$ {
 			x_src: readonly number[], 
 			y_src: readonly number[], 
 			z_src: readonly number[], 
-			x_sort: Element_prop, 
-			y_sort: Element_prop, 
-			z_sort: Element_prop, 
+			x_sort: Prop_name, 
+			y_sort: Prop_name, 
+			z_sort: Prop_name, 
 			x_op?: any, 
 			y_op?: any, 
 			z_op?: any
@@ -220,18 +268,18 @@ namespace $.$$ {
 			if (x_op){
 				var x_temp = [];
 				for (var i = 0; i < x_src.length; i++){
-					//console.log('x', $visavis_elementals[x_sort][x_src[i]], $visavis_elementals[x_sort][y_src[i]], $visavis_elementals[x_sort][z_src[i]], ter_op(x_op, $visavis_elementals[x_sort][x_src[i]], $visavis_elementals[x_sort][y_src[i]], $visavis_elementals[x_sort][z_src[i]]));
+					//console.log('x', $mpds_visavis_elementals[x_sort][x_src[i]], $mpds_visavis_elementals[x_sort][y_src[i]], $mpds_visavis_elementals[x_sort][z_src[i]], ter_op(x_op, $mpds_visavis_elementals[x_sort][x_src[i]], $mpds_visavis_elementals[x_sort][y_src[i]], $mpds_visavis_elementals[x_sort][z_src[i]]));
 		
 					x_temp.push( this.ter_op(
 						x_op, 
-						$visavis_elements_list.element_by_num( x_src[i] )[ x_sort ], 
-						$visavis_elements_list.element_by_num( y_src[i] )[ x_sort ], 
-						$visavis_elements_list.element_by_num( z_src[i] )[ x_sort ], 
+						$mpds_visavis_elements_list.element_by_num( x_src[i] )[ x_sort ], 
+						$mpds_visavis_elements_list.element_by_num( y_src[i] )[ x_sort ], 
+						$mpds_visavis_elements_list.element_by_num( z_src[i] )[ x_sort ], 
 					) )
 				}
-				var x_renorm = $lib_d3.all().scaleQuantize()
-					.range( $visavis_elements_list.list().slice(1).map( el => el.num ) )
-					.domain( [$lib_d3.all().min(x_temp), $lib_d3.all().max(x_temp)] )
+				var x_renorm = $mpds_visavis_lib.d3().scaleQuantize()
+					.range( $mpds_visavis_elements_list.list().slice(1).map( el => el.num ) )
+					.domain( [$mpds_visavis_lib.d3().min(x_temp), $mpds_visavis_lib.d3().max(x_temp)] )
 				//console.log(x_temp);
 				converted['x'] = x_temp.map(x_renorm);
 		
@@ -243,18 +291,18 @@ namespace $.$$ {
 			if (y_op){
 				var y_temp = [];
 				for (var i = 0; i < y_src.length; i++){
-					//console.log('y', $visavis_elementals[y_sort][x_src[i]], $visavis_elementals[y_sort][y_src[i]], $visavis_elementals[y_sort][z_src[i]], ter_op(y_op, $visavis_elementals[y_sort][x_src[i]], $visavis_elementals[y_sort][y_src[i]], $visavis_elementals[y_sort][z_src[i]]));
+					//console.log('y', $mpds_visavis_elementals[y_sort][x_src[i]], $mpds_visavis_elementals[y_sort][y_src[i]], $mpds_visavis_elementals[y_sort][z_src[i]], ter_op(y_op, $mpds_visavis_elementals[y_sort][x_src[i]], $mpds_visavis_elementals[y_sort][y_src[i]], $mpds_visavis_elementals[y_sort][z_src[i]]));
 		
 					y_temp.push( this.ter_op(
 						y_op, 
-						$visavis_elements_list.element_by_num( x_src[i] )[ y_sort ], 
-						$visavis_elements_list.element_by_num( y_src[i] )[ y_sort ], 
-						$visavis_elements_list.element_by_num( z_src[i] )[ y_sort ], 
+						$mpds_visavis_elements_list.element_by_num( x_src[i] )[ y_sort ], 
+						$mpds_visavis_elements_list.element_by_num( y_src[i] )[ y_sort ], 
+						$mpds_visavis_elements_list.element_by_num( z_src[i] )[ y_sort ], 
 					) )
 				}
-				var y_renorm = $lib_d3.all().scaleQuantize()
-					.range( $visavis_elements_list.list().slice(1).map( el => el.num ) )
-					.domain( [$lib_d3.all().min(y_temp), $lib_d3.all().max(y_temp)] );
+				var y_renorm = $mpds_visavis_lib.d3().scaleQuantize()
+					.range( $mpds_visavis_elements_list.list().slice(1).map( el => el.num ) )
+					.domain( [$mpds_visavis_lib.d3().min(y_temp), $mpds_visavis_lib.d3().max(y_temp)] );
 				//console.log(y_temp);
 				converted['y'] = y_temp.map(y_renorm);
 		
@@ -266,18 +314,18 @@ namespace $.$$ {
 			if (z_op){
 				var z_temp = [];
 				for (var i = 0; i < z_src.length; i++){
-					//console.log('z', $visavis_elementals[z_sort][x_src[i]], $visavis_elementals[z_sort][y_src[i]], $visavis_elementals[z_sort][z_src[i]], ter_op(z_op, $visavis_elementals[z_sort][x_src[i]], $visavis_elementals[z_sort][y_src[i]], $visavis_elementals[z_sort][z_src[i]]));
+					//console.log('z', $mpds_visavis_elementals[z_sort][x_src[i]], $mpds_visavis_elementals[z_sort][y_src[i]], $mpds_visavis_elementals[z_sort][z_src[i]], ter_op(z_op, $mpds_visavis_elementals[z_sort][x_src[i]], $mpds_visavis_elementals[z_sort][y_src[i]], $mpds_visavis_elementals[z_sort][z_src[i]]));
 		
 					z_temp.push( this.ter_op(
 						z_op, 
-						$visavis_elements_list.element_by_num( x_src[i] )[ z_sort ], 
-						$visavis_elements_list.element_by_num( y_src[i] )[ z_sort ], 
-						$visavis_elements_list.element_by_num( z_src[i] )[ z_sort ], 
+						$mpds_visavis_elements_list.element_by_num( x_src[i] )[ z_sort ], 
+						$mpds_visavis_elements_list.element_by_num( y_src[i] )[ z_sort ], 
+						$mpds_visavis_elements_list.element_by_num( z_src[i] )[ z_sort ], 
 					) )
 				}
-				var z_renorm = $lib_d3.all().scaleQuantize()
-					.range( $visavis_elements_list.list().slice(1).map( el => el.num ) )
-					.domain([$lib_d3.all().min(z_temp), $lib_d3.all().max(z_temp)]);
+				var z_renorm = $mpds_visavis_lib.d3().scaleQuantize()
+					.range( $mpds_visavis_elements_list.list().slice(1).map( el => el.num ) )
+					.domain([$mpds_visavis_lib.d3().min(z_temp), $mpds_visavis_lib.d3().max(z_temp)]);
 				//console.log(z_temp);
 				converted['z'] = z_temp.map(z_renorm);
 		
@@ -291,8 +339,8 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem_key
-		order_els(prop: Element_prop) {
-			return $visavis_elements_list.list().slice(1).sort(function(a, b){
+		order_els(prop: Prop_name) {
+			return $mpds_visavis_elements_list.list().slice(1).sort(function(a, b){
 				return a[prop] - b[prop]
 			}).map( el => el.name )
 		}

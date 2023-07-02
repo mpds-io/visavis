@@ -1,2 +1,2 @@
-$visavis_plot_customscatter $visavis_plotly
-	plot_raw $visavis_plot_raw
+$mpds_visavis_plot_customscatter $mpds_visavis_plotly
+	plot_raw $mpds_visavis_plot_raw

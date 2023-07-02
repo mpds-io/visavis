@@ -1,4 +1,4 @@
-$visavis_plotly $mol_view
+$mpds_visavis_plotly $mol_view
 	data *
 	layout *
 	subscribe_events null

@@ -1,14 +1,16 @@
 namespace $.$$ {
 
-	$mol_style_define( $visavis_plot_discovery, {
+	$mol_style_define( $mpds_visavis_plot_discovery, {
 
 		Setup: {
 			flex: {
-				basis: '20rem',
-				shrink: 0,
+				direction: 'column',
+				basis: '10rem',
 			},
-			alignItems: 'flex-start',
-			padding: $mol_gap.block,
+			font: {
+				size: '.75rem',
+			},
+			justifyContent: 'center',
 		},
 		
 		flex: {

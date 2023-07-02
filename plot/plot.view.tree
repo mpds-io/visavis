@@ -1,29 +1,67 @@
-$visavis_plot $mol_ghost
-	plot_raw $visavis_plot_raw
-	show_setup true
+$mpds_visavis_plot $mol_view
+	attr *
+		^
+		mol_theme \$mol_theme_light
+		fullscreen <= fullscreen?
+	json_request? null
+	json null
+	json_cmp_request? null
+	json_cmp null
+	plot_raw null
+	show_setup false
+	Fullscreen $mol_check
+		Icon <= Expand_icon $mol_icon_arrow_expand_all
+		checked? <=> fullscreen? false
 	plots *
-		matrix <= Matrix $visavis_plot_matrix
+		matrix <= Matrix $mpds_visavis_plot_matrix
 			plot_raw <= plot_raw
+			json_cmp <= json_cmp
 			show_setup <= show_setup
-		plot3d <= Cube $visavis_plot_cube
+			nonformers_checked? <=> nonformers_checked? false
+			fixel_checked? <=> matrix_fixel_checked? true
+			x_op? => matrix_x_op?
+			y_op? => matrix_y_op?
+			x_sort? => matrix_x_sort?
+			y_sort? => matrix_y_sort?
+			matrix_click? <=> matrix_click? null
+		plot3d <= Cube $mpds_visavis_plot_cube
 			plot_raw <= plot_raw
+			json_cmp <= json_cmp
 			show_setup <= show_setup
-		pd <= Phase $visavis_plot_phase
+			show_fixel? <= show_fixel? true
+			nonformers_checked? <=> nonformers_checked?
+			fixel_checked? <=> cube_fixel_checked? false
+			x_op? => x_op?
+			y_op? => y_op?
+			z_op? => z_op?
+			x_sort? => x_sort?
+			y_sort? => y_sort?
+			z_sort? => z_sort?
+			cube_click? <=> cube_click? null
+		pd <= Phase $mpds_visavis_plot_phase
 			plot_raw <= plot_raw
-		bar <= Bar $visavis_plot_bar
+			phase_click? <=> phase_click? null
+		bar <= Bar $mpds_visavis_plot_bar
 			plot_raw <= plot_raw
-		discovery <= Discovery $visavis_plot_discovery
+			bar_click? <=> bar_click? null
+		discovery <= Discovery $mpds_visavis_plot_discovery
 			plot_raw <= plot_raw
+			json_cmp <= json_cmp
 			show_setup <= show_setup
-		eigenplot <= Eigen $visavis_plot_eigen
+			elementals_on? => discovery_elementals_on?
+			discovery_click? <=> discovery_click? null
+		eigenplot <= Eigen $mpds_visavis_plot_eigen
 			plot_raw <= plot_raw
-		pie <= Pie $visavis_plot_pie
+		pie <= Pie $mpds_visavis_plot_pie
 			plot_raw <= plot_raw
-		scatter <= Scatter $visavis_plot_scatter
+			pie_click? <=> pie_click? null
+		scatter <= Scatter $mpds_visavis_plot_scatter
 			plot_raw <= plot_raw
-		customscatter <= Customscatter $visavis_plot_customscatter
+		customscatter <= Customscatter $mpds_visavis_plot_customscatter
 			plot_raw <= plot_raw
-		heatmap <= Heatmap $visavis_plot_heatmap
+		heatmap <= Heatmap $mpds_visavis_plot_heatmap
 			plot_raw <= plot_raw
-		graph <= Graph $visavis_plot_graph
+		graph <= Graph $mpds_visavis_plot_graph
 			plot_raw <= plot_raw
+			graph_rel? => graph_rel?
+			graph_click? <=> graph_click? null

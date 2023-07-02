@@ -1,15 +1,15 @@
 namespace $ {
 
-	export class $visavis_lib extends $mol_object2 {
+	export class $mpds_visavis_lib extends $mol_object2 {
 
 		@ $mol_mem
 		static plotly() {
-			return $mol_import.script('/visavis/lib/bundle/plotly.custom.min.js').Plotly as any
+			return require('../mpds/visavis/lib/plotly.custom.min.js')
 		}
 		
 		@ $mol_mem
 		static pca() {
-			return $mol_import.script('/visavis/lib/bundle/pca.js').mlPca as any
+			return require('../mpds/visavis/lib/pca.js')
 		}
 
 		@ $mol_mem

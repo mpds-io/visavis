@@ -1,12 +1,12 @@
 namespace $.$$ {
 
-	// export const $visavis_plot_heatmap_json = 
+	// export const $mpds_visavis_plot_heatmap_json = 
 
-	export class $visavis_plot_heatmap extends $.$visavis_plot_heatmap {
+	export class $mpds_visavis_plot_heatmap extends $.$mpds_visavis_plot_heatmap {
 
 		json() {
 			return this.plot_raw().json() as any
-			// return $visavis_plot_heatmap_json( this.plot_raw().json() as any )
+			// return $mpds_visavis_plot_heatmap_json( this.plot_raw().json() as any )
 		}
 
 		@ $mol_mem

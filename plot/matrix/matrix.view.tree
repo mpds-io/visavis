@@ -1,11 +1,19 @@
-$visavis_plot_matrix $mol_view
-	plot_raw $visavis_plot_raw
+$mpds_visavis_plot_matrix $mol_view
+	plot_raw $mpds_visavis_plot_raw
+	json_cmp? null
+	json_master null
 	show_setup true
 	size 0
 	links_value_min? 0
 	links_value_max? 0
 	heatmap? false
 	matrix /
+	order /number
+	x_sort? \nump
+	y_sort? \nump
+	x_op? null
+	y_op? null
+	matrix_click? null
 	heatmap_colors /
 		\rgb(150,0,90)
 		\rgb(0,0,200)
@@ -27,14 +35,16 @@ $visavis_plot_matrix $mol_view
 		\#0f3
 		\#0ff
 		\#90c
-	order /number
-	order_current? \nump
 	plot_padding 32
 	axis_width 24
 	sub /
 		<= Plot $mol_view
 			sub <= plot_body /
-				<= Root $mol_svg
+				<= Root $mol_view
+					render <= draw null
+				<= Cmp_legend $mpds_visavis_plot_legend_cmp
+					first_cmp_label? <= first_cmp_label? \
+					second_cmp_label? <= second_cmp_label? \
 				<= Side_right $mol_scroll
 					sub /
 						<= Heatmap_legend $mol_list
@@ -43,27 +53,30 @@ $visavis_plot_matrix $mol_view
 								<= Heatmap_color*0 $mol_view
 									style * background <= heatmap_color* \
 								<= Heatmap_max $mol_view sub / <= links_value_max
-			auto <= draw null
 		<= Setup $mol_view
-			sub /
-				<= Nonformers_label $mol_labeler
-					title @ \Non-formers
-					Content <= Nonformers $mol_check_box
-						hint @ \Continuous solid solutions and complete insolubility systems
-						title @ \Show
-						checked? <=> nonformers? false
-				<= Order_label $mol_labeler
-					title @ \Sort by
+			sub <= setup /
+				<= Fixel $mol_check_box
+					title \Project on 2d
+					checked? <=> fixel_checked? true
+				<= Nonformers $mol_check_box
+					hint \Continuous solid solutions and complete insolubility systems
+					title \Show non-formers
+					checked? <=> nonformers_checked? false
+				<= Diffrence_on $mol_check_box
+					title \Show diffrence
+					checked? <=> diffrence_checked? false
+				<= Order $mol_labeler
+					title \Sort by
 					Content <= Order_switch $mol_switch
-						value? <=> order_current?
+						value? <=> sort_control? \nump
 						options <= order_dict *
-							nump @ \Periodic number
-							num @ \Atomic number
-							size @ \Atomic size
-							rea @ \Atomic reactivity
-							rpp @ \Pseudopotential radii
-							rion @ \Ionic radii
-							rcov @ \Covalent radii
-							rmet @ \Metallic radii
-							tmelt @ \Melting temperature
-							eneg @ \Electronegativity
+							nump \Periodic number
+							num \Atomic number
+							size \Atomic size
+							rea \Atomic reactivity
+							rpp \Pseudopotential radii
+							rion \Ionic radii
+							rcov \Covalent radii
+							rmet \Metallic radii
+							tmelt \Melting temperature
+							eneg \Electronegativity

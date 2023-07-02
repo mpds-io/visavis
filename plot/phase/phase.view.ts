@@ -14,11 +14,11 @@ namespace $.$$ {
 	}
 
 	// source https://developer.mpds.io/mpds.schema.json#/definitions/phase_diagram
-	const $visavis_plot_phase_rect_json = $mol_data_record( {
+	const $mpds_visavis_plot_phase_rect_json = $mol_data_record( {
 		// both
 		naxes: $mol_data_number,
 		arity: $mol_data_number,
-		diatype: $mol_data_string,
+		diatype: $mol_data_optional( $mol_data_string ),
 		chemical_elements: $mol_data_array( $mol_data_string ),
 		temp: $mol_data_array( $mol_data_number ),
 		labels: $mol_data_array( Label_json ), // Array<[string, number[], null | number]>
@@ -77,7 +77,7 @@ namespace $.$$ {
 			}
 		} )
 
-		return formula.substr( 0, formula.length - 2 )
+		return formula.slice( 0, formula.length - 2 )
 	}
 
 	function get_tri_pd_compound( a: any, b: any, c: any, obj_a: any, obj_b: any, obj_c: any ) {
@@ -91,7 +91,7 @@ namespace $.$$ {
 			formula += el + ' &times; ' + coeff.toFixed( 2 ) + ', '
 		} )
 
-		return formula.substr( 0, formula.length - 2 )
+		return formula.slice( 0, formula.length - 2 )
 	}
 
 	export function inside_triangle( x: number, y: number, x1: number, y1: number, x2: number, y2: number, x3: number, y3: number ) {
@@ -153,10 +153,10 @@ namespace $.$$ {
 		return false
 	}
 
-	export class $visavis_plot_phase extends $.$visavis_plot_phase {
+	export class $mpds_visavis_plot_phase extends $.$mpds_visavis_plot_phase {
 
 		json() {
-			return $visavis_plot_phase_rect_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_phase_rect_json( this.plot_raw().json() as any )
 		}
 
 		json_title_b() {
@@ -229,7 +229,7 @@ namespace $.$$ {
 		}
 
 		mouseover() {
-			const that = $lib_d3.all().select( this )
+			const that = $mpds_visavis_lib.d3().select( this )
 			console.log( that )
 			const idx = that.attr( 'data-index' )
 
@@ -250,52 +250,64 @@ namespace $.$$ {
 
 		@$mol_action
 		subscribe_events() {
-			const d3 = $lib_d3.all()
+			const d3 = $mpds_visavis_lib.d3()
 			console.log('is trinagle', this.is_triangle())
 
 			if ( this.is_triangle() ) this.pd_fix_triangle()
 
 			// skip unsupported PD types
-			if ( this.json().diatype && this.json().diatype.indexOf( 'projection' ) !== -1 ) return
+			if ( this.json().diatype && this.json().diatype?.indexOf( 'projection' ) !== -1 ) return
 
 			const json = this.json()
 			const is_triangle = this.is_triangle()
 
-			const figures = d3.selectAll('[visavis_phase_root] .shapelayer path')
+			const that = this
+			const figures = d3.select( this.dom_node_actual() ).selectAll('[mpds_visavis_plot_phase_root] .shapelayer path')
 			figures.on('mouseover', function(this: any) {
-				const that = d3.select(this)
-				let idx = that.attr('data-index')
+				const figure = d3.select(this)
+				let idx = figure.attr('data-index')
 
 				if (is_triangle){
 					if (idx == 0) return false;
 					idx--;
 				}
 
-				that.attr('data-state', that.style('fill'));
-				that.style('cursor', 'pointer');
-				that.style('fill', '#3e3f95');
+				figure.attr('data-state', figure.style('fill'));
+				figure.style('cursor', 'pointer');
+				figure.style('fill', '#3e3f95');
 
 				const reflabel = json.shapes[idx]?.reflabel
 				if (reflabel !== undefined && json.labels[reflabel] !== undefined){
-					d3.select(`g.annotation[data-index="'${reflabel}'"]`).select('text').style('fill', '#f30');
+					d3.select( that.dom_node_actual() ).select(`g.annotation[data-index="'${reflabel}'"]`).select('text').style('fill', '#f30');
 				}
 				// original
-				// if (visavis.pd_phases[idx] !== undefined && json.labels[visavis.pd_phases[idx]] !== undefined){
+				// if (visavis.pd_phases[idx] !== undefined && json.labels[mpds_visavis.pd_phases[idx]] !== undefined){
 				// 	Plotly.d3.select('g.annotation[data-index="' + visavis.pd_phases[idx] + '"]').select('text').style('fill', '#f30');
 				// }
 			})
 
 			figures.on('mouseout', function(this: any) {
-				const that = d3.select(this)
-				const state = that.attr('data-state')
+				const figure = d3.select(this)
+				const state = figure.attr('data-state')
 
 				if (state){
-					that.style('fill', state)
-					that.style('cursor', 'default')
-					d3.selectAll('[visavis_phase_root] g.annotation').select('text').style('fill', '#000');
+					figure.style('fill', state)
+					figure.style('cursor', 'default')
+					d3.select( that.dom_node_actual() ).selectAll('[mpds_visavis_plot_phase_root] g.annotation').select('text').style('fill', '#000');
 				}
 			})
 
+
+			figures.on('click', function(this: any) {
+				const figure = d3.select(this)
+
+				let idx = figure.attr( 'data-index' )
+				if ( json.naxes == 3 ) idx--
+				if ( json.shapes[idx].phase_id ) {
+					this.phase_click( json.shapes[idx].phase_id )
+				}
+			})
+			
 			const canvas = this.Root().dom_node().firstChild as any
 
 			// rectangle
@@ -338,7 +350,7 @@ namespace $.$$ {
 		}
 
 		pd_fix_triangle() {
-			const d3 = $lib_d3.all()
+			const d3 = $mpds_visavis_lib.d3()
 
 			function make_absolute_context( element: SVGGraphicsElement, root: HTMLElement ) {
 				return function( x: number, y: number ) {
@@ -357,10 +369,10 @@ namespace $.$$ {
 				return fn( b.x, b.y )
 			}
 
-			const svgroot = d3.select( "[visavis_phase_root] svg.main-svg" )[ 0 ][ 0 ] // window
-			let graph_node = d3.select( "[visavis_phase_root] g.toplevel.plotbg" )[ 0 ][ 0 ] // graph frame
+			const svgroot = d3.select( this.dom_node_actual() ).select( "[mpds_visavis_plot_phase_root] svg.main-svg" )[ 0 ][ 0 ] // window
+			let graph_node = d3.select( this.dom_node_actual() ).select( "[mpds_visavis_plot_phase_root] g.toplevel.plotbg" )[ 0 ][ 0 ] // graph frame
 			const graph_coords = get_absolute_coords( graph_node, svgroot )
-			const svg_el = d3.select( "[visavis_phase_root] g.layer-above" ) // actual drawing
+			const svg_el = d3.select( this.dom_node_actual() ).select( "[mpds_visavis_plot_phase_root] g.layer-above" ) // actual drawing
 			let svg_node = svg_el[ 0 ][ 0 ]
 
 			graph_node = graph_node.getBoundingClientRect()
@@ -373,13 +385,13 @@ namespace $.$$ {
 
 			const origdims = [] as number[]
 
-			d3.selectAll( "[visavis_phase_root] text.annotation-text" ).each( function( this: any ) {
+			d3.select( this.dom_node_actual() ).selectAll( "[mpds_visavis_plot_phase_root] text.annotation-text" ).each( function( this: any ) {
 				origdims.push( parseInt( this.getBoundingClientRect().left ) )
 			} )
 
 			svg_el.attr( "transform", "translate(" + ( -centerX * ( scaleX - 1 ) ) + ", " + ( -centerY * ( scaleY - 1 ) ) + ") scale(" + scaleX + ", " + scaleY + ")" )
 
-			d3.selectAll( "[visavis_phase_root] g.annotation" ).each( function( this: any, d: any, i: any ) {
+			d3.select( this.dom_node_actual() ).selectAll( "[mpds_visavis_plot_phase_root] g.annotation" ).each( function( this: any, d: any, i: any ) {
 				d3.select( this ).attr( "transform", "translate(" + ( -centerX * ( scaleX - 1 ) ) + ", " + ( -centerY * ( scaleY - 1 ) ) + ") scale(" + scaleX + ", " + scaleY + ") translate(" + ( -origdims[ i ] / 1.25 ) + ", 0) scale(1.75, 1)" )
 			} )
 		}

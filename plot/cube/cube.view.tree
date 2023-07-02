@@ -1,6 +1,8 @@
-$visavis_plot_cube $mol_view
-	plot_raw $visavis_plot_raw
+$mpds_visavis_plot_cube $mol_view
+	plot_raw $mpds_visavis_plot_raw
+	json_cmp? null
 	show_setup true
+	show_fixel? true
 	heatmap? false
 	order* /number
 	order_current? \nump
@@ -10,6 +12,7 @@ $visavis_plot_cube $mol_view
 	x_sort? \nump
 	y_sort? \nump
 	z_sort? \nump
+	cube_click? null
 	colorset /
 		\#3e3f95
 		\#c00
@@ -33,11 +36,14 @@ $visavis_plot_cube $mol_view
 		\rgb(255,0,0)
 	sub /
 		<= Plot $mol_view
-			sub /
-				<= Root $visavis_plotly
+			sub <= plot_body /
+				<= Root $mpds_visavis_plotly
 					data <= data_shown *
 					layout <= layout *
 					subscribe_events <= subscribe_events null
+				<= Cmp_legend $mpds_visavis_plot_legend_cmp
+					first_cmp_label? <= first_cmp_label? \
+					second_cmp_label? <= second_cmp_label? \
 				<= Side_right $mol_scroll
 					sub /
 						<= Heatmap_legend $mol_list
@@ -47,35 +53,39 @@ $visavis_plot_cube $mol_view
 									style * background <= heatmap_color* \
 								<= Heatmap_max $mol_view sub / <= value_max 0
 		<= Setup $mol_view
-			sub /
-				<= Nonformers_label $mol_labeler
-					title @ \Non-formers
-					Content <= Nonformers $mol_check_box
-						hint @ \Continuous solid solutions and complete insolubility systems
-						title @ \Show
-						checked? <=> nonformers? false
-				<= X_order_label $mol_labeler
-					title @ \X sort by
+			sub <= setup /
+				<= Fixel $mol_check_box
+					title \Project on 2d
+					checked? <=> fixel_checked? false
+				<= Nonformers $mol_check_box
+					hint \Continuous solid solutions and complete insolubility systems
+					title \Show non-formers
+					checked? <=> nonformers_checked? false
+				<= Diffrence_on $mol_check_box
+					title \Show diffrence
+					checked? <=> diffrence_checked? false
+				<= X_order $mol_labeler
+					title \X sort by
 					Content <= X_order_select $mol_select
 						value? <=> x_sort? 
 						dictionary <= order_dict *
-							nump @ \Periodic number
-							num @ \Atomic number
-							size @ \Atomic size
-							rea @ \Atomic reactivity
-							rpp @ \Pseudopotential radii
-							rion @ \Ionic radii
-							rcov @ \Covalent radii
-							rmet @ \Metallic radii
-							tmelt @ \Melting temperature
-							eneg @ \Electronegativity
-				<= Y_order_label $mol_labeler
-					title @ \Y sort by
+							nump \Periodic number
+							num \Atomic number
+							size \Atomic size
+							rea \Atomic reactivity
+							rpp \Pseudopotential radii
+							rion \Ionic radii
+							rcov \Covalent radii
+							rmet \Metallic radii
+							tmelt \Melting temperature
+							eneg \Electronegativity
+				<= Y_order $mol_labeler
+					title \Y sort by
 					Content <= Y_order_select $mol_select
 						value? <=> y_sort? 
 						dictionary <= order_dict
-				<= Z_order_label $mol_labeler
-					title @ \Z sort by
+				<= Z_order $mol_labeler
+					title \Z sort by
 					Content <= Z_order_select $mol_select
 						value? <=> z_sort? 
 						dictionary <= order_dict

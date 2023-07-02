@@ -29,20 +29,27 @@ namespace $.$$ {
 		eneg: $mol_data_string,
 	})
 
-	export class $visavis_elements_list {
+	export class $mpds_visavis_elements_list extends $.$mpds_visavis_elements_list {
+		
+		@ $mol_mem
+		static data() {
+			return new $mpds_visavis_elements_list()
+		}
 
 		@ $mol_mem
 		static prop_names() {
-			const tree = $$.$mol_tree2_from_string( $mol_fetch.text( '/visavis/elements/data/prop_names.json.tree' ) )
-			const json: any = $$.$mol_tree2_to_json( tree )
-			return Prop_names(json)
+			// const tree = $$.$mol_tree2_from_string( $mol_fetch.text( '/mpds/visavis/elements/data/prop_names.json.tree' ) )
+			// const json: any = $$.$mol_tree2_to_json( tree )
+			// return Prop_names( json )
+			return Prop_names( this.data().prop_names() as typeof Prop_names.Value )
 		}
 
 		@ $mol_mem
 		static list() {
-			const tree = $$.$mol_tree2_from_string( $mol_fetch.text( '/visavis/elements/data/elements.json.tree' ) )
-			const json: any = tree.kids.map( tree => $$.$mol_tree2_to_json( tree ) )
-			return Elements_list( json )
+			// const tree = $$.$mol_tree2_from_string( $mol_fetch.text( '/mpds/visavis/elements/data/elements.json.tree' ) )
+			// const json: any = tree.kids.map( tree => $$.$mol_tree2_to_json( tree ) )
+			// return Elements_list( json )
+			return Elements_list( this.data().list() )
 		}
 
 		@ $mol_mem_key
@@ -58,6 +65,11 @@ namespace $.$$ {
 		@ $mol_mem_key
 		static element_by_name(name: string) {
 			return this.index_by_prop( 'name' )[ name ]
+		}
+
+		@ $mol_mem_key
+		static prop_values( prop: keyof typeof Prop_names.Value ) {
+			return this.list().map( el => el[prop] )
 		}
 
 	}

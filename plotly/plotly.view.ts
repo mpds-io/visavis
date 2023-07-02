@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	export class $visavis_plotly extends $.$visavis_plotly {
+	export class $mpds_visavis_plotly extends $.$mpds_visavis_plotly {
 
 		@ $mol_action
 		subscribe_events() {
@@ -15,18 +15,19 @@ namespace $.$$ {
 			const plotly_root = $mol_wire_sync( document ).createElement( 'div' ) as HTMLElement
 			plotly_root.style.position = 'absolute' //otherwise plotly_root prevents dom_node from resizing
 			
-			const promise = $lib_plotly.all().react(
+			const promise = $mpds_visavis_lib.plotly().react(
 				plotly_root,
 				this.data(), 
-				{ ...this.layout(), width, height },
+				{ ...this.layout(), width, height, font: { family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" } },
 				this.plot_options(),
 			)
-				
+			
 			const dom_node = this.dom_node_actual() as HTMLElement
 			promise.then( ( plotly_root: HTMLElement )=> {
 				dom_node.replaceChildren( plotly_root )
 				this.subscribe_events() 
 			})
+			
 		}
 
 	}

@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	export const $visavis_plot_customscatter_json = $mol_data_record({
+	export const $mpds_visavis_plot_customscatter_json = $mol_data_record({
 		plots: $mol_data_array(
 			$mol_data_record( {
 				name: $mol_data_string,
@@ -17,10 +17,10 @@ namespace $.$$ {
 		ylog: $mol_data_nullable( $mol_data_boolean ),
 	})
 
-	export class $visavis_plot_customscatter extends $.$visavis_plot_customscatter {
+	export class $mpds_visavis_plot_customscatter extends $.$mpds_visavis_plot_customscatter {
 
 		json() {
-			return $visavis_plot_customscatter_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_customscatter_json( this.plot_raw().json() as any )
 		}
 
 		@ $mol_action
@@ -36,7 +36,7 @@ namespace $.$$ {
 			const json = this.json()
 			return {
 				showlegend: true,
-				legend: {x: 100, y: 1, font: {family: "Exo2", size: 14}},
+				legend: {x: 100, y: 1, font: {size: 14}},
 				xaxis: {
 					type: json.xlog ? 'log' : '-',
 					autorange: true,
@@ -61,7 +61,7 @@ namespace $.$$ {
 					ticklen: 4,
 					title: json.ytitle
 				},
-				font: {family: "Exo2", size: 13},
+				font: {size: 13},
 				margin: {
 					t: 0,
 					r: 0

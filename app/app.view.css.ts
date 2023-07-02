@@ -1,6 +1,13 @@
 namespace $.$$ {
 
-	$mol_style_define( $.$visavis_app, {
+	$mol_style_define( $.$mpds_visavis_app, {
+
+		Plot_view: {
+			flex: {
+				direction: 'column',
+			},
+			height: '100%',
+		},
 
 		Start_page: {
 			'@': {
@@ -99,6 +106,9 @@ namespace $.$$ {
 		Plot_page: {
 			flex: {
 				grow: 1,
+			},
+			Body: {
+				contain: 'none', //otherwise plot position 'fixed' doesn't work (for fullscreen)
 			},
 		},
 

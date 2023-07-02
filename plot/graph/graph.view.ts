@@ -24,18 +24,18 @@ namespace $.$$ {
 		target: Node,
 	}
 
-	export const $visavis_plot_graph_json = $mol_data_record({
+	export const $mpds_visavis_plot_graph_json = $mol_data_record({
 		error: $mol_data_nullable( $mol_data_string ),
 		warning: $mol_data_nullable( $mol_data_string ),
 		graph_rel: $mol_data_string,
 		payload: $mol_data_array( Link ),
 	})
 
-	export class $visavis_plot_graph extends $.$visavis_plot_graph {
+	export class $mpds_visavis_plot_graph extends $.$mpds_visavis_plot_graph {
 
 		@ $mol_mem
 		json() {
-			return $visavis_plot_graph_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_graph_json( this.plot_raw().json() as any )
 		}
 		
 		plot_title() {
@@ -60,7 +60,7 @@ namespace $.$$ {
 			// filter edges and compute the distinct nodes from the links
 			visavis_cache.ref.forEach( (link) => {
 				if (link.type == graph_rel){
-					foci[link.source] = link.source.substr(0, 1); // setting default color
+					foci[link.source] = link.source.slice(0, 1); // setting default color
 					const sourceNode = nodes[link.source] || (nodes[link.source] = {name: link.source});
 					const targetNode = nodes[link.target] || (nodes[link.target] = {name: String(link.target)});
 					const lrep = { source: sourceNode, type: link.type, target: targetNode };
@@ -72,7 +72,6 @@ namespace $.$$ {
 		
 				} else if (link.type == 'radius'){
 					const radius = Math.min($mol_data_number(link.target as number), 36)
-					// link.target = radius;
 					radii[link.source] = radius + 2;
 				}
 			});
@@ -92,48 +91,36 @@ namespace $.$$ {
 
 		@ $mol_mem
 		draw() {
-			// const predefined_h;
-			// if (window.location.hash.indexOf('visavis_height=') !== -1){
-			// 	// internal client-only URL param (to be ignored by the server)
-			// 	predefined_h = window.location.hash.split('visavis_height=');
-			// 	predefined_h = predefined_h[predefined_h.length - 1];
-			// 	predefined_h = parseInt(predefined_h.split('&')[0]);
-			// }
 			// var width = predefined_h ? document.body.clientWidth : document.body.clientWidth - 15,
 			// 	height = predefined_h || parseInt(0.8 * width);
 		
-			// reset_canvas();
-		
 			const { nodes, edges, labels, radii, foci, table, circle_cls, text_cls } = this.data()
 			
-			const d3 = $visavis_lib.d3()
+			const d3 = $mpds_visavis_lib.d3()
 
 			const svg_element = $mol_wire_sync( document ).createElementNS( 'http://www.w3.org/2000/svg', 'svg' )
 			const svg = d3.select(svg_element)
-				// .attr("width", width)
-				// .attr("height", height);
 		
-			const visavis_force = d3.layout.force()
-				// .size([width, height])
+			const force = d3.layout.force()
 				.nodes(d3.values(nodes))
 				.links(edges)
 				.linkDistance(90)
 				.gravity(0.3)
 				.charge(-2500)
-				.on("tick", tick);
+				.on("tick", tick)
 		
-			const drag = visavis_force.drag()
+			const drag = force.drag()
 				.on("dragstart", function(this: any, d: any){
 					d3.select(this).classed("fixed", d.fixed = true);
 				});
 		
 			const path = svg.append("g").selectAll("path")
-				.data(visavis_force.links())
+				.data(force.links())
 				.enter().append("path")
 				.attr("class", function(d: any){ return "edge " + d.type; });
 		
 			const circle = svg.append("g").selectAll("circle")
-				.data(visavis_force.nodes())
+				.data(force.nodes())
 				.enter().append("circle")
 				.attr("r", function(d: any, i: any){ return radii[d.name] || 10 })
 				.attr("id", function(d: any, i: any){ return "c_" + table[d.name] })
@@ -141,7 +128,7 @@ namespace $.$$ {
 				.call(drag);
 		
 			const text = svg.append("g").selectAll("g")
-				.data(visavis_force.nodes())
+				.data(force.nodes())
 				.enter().append("g");
 		
 			// a copy of the text with a thick white stroke for legibility
@@ -182,12 +169,12 @@ namespace $.$$ {
 				return "translate(" + d.x + "," + d.y + ")";
 			}
 		
-			visavis_force.start();
+			force.start()
+			for (var i = 400; i > 0; i--) force.tick()
+			force.stop()
 
 			this.Root().dom_node_actual().replaceChildren( svg_element )
 
-			// for (var i = 400; i > 0; i--) visavis_force.tick();
-			// visavis_force.stop();
 			// hide_preloader();
 			// hide_messages();
 			// warn_demo();

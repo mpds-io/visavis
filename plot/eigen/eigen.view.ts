@@ -12,7 +12,7 @@ namespace $.$$ {
 	})
 	type Dos_matrix = ReturnType<typeof Dos_matrix>
 
-	export const $visavis_plot_eigen_json = $mol_data_record( {
+	export const $mpds_visavis_plot_eigen_json = $mol_data_record( {
 		sample: $mol_data_record( {
 			material: $mol_data_record( {
 				chemical_formula: $mol_data_string,
@@ -58,10 +58,10 @@ namespace $.$$ {
 		}),
 	})
 
-	export class $visavis_plot_eigen extends $.$visavis_plot_eigen {
+	export class $mpds_visavis_plot_eigen extends $.$mpds_visavis_plot_eigen {
 
 		json() {
-			return $visavis_plot_eigen_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_eigen_json( this.plot_raw().json() as any )
 		}
 
 		@ $mol_mem
@@ -99,7 +99,7 @@ namespace $.$$ {
 			if (bands_matrix){
 				for (let i = 0; i < bands_matrix.bands.length; i++){
 					dataset.push({
-						x: $lib_d3.all().range(bands_matrix.bands[i].length),
+						x: $mpds_visavis_lib.d3().range(bands_matrix.bands[i].length),
 						y: bands_matrix.bands[i],
 						mode: "lines",
 						type: "scatter",
@@ -116,7 +116,7 @@ namespace $.$$ {
 				});
 			} else {
 				// return notify('Cannot get plot data, please, try again');
-				// ^ it will be validated id $visavis_plot_eigen_json()
+				// ^ it will be validated id $mpds_visavis_plot_eigen_json()
 			}
 
 			return dataset	
@@ -143,7 +143,7 @@ namespace $.$$ {
 					zeroline: false,
 					showgrid: false,
 					tickmode: 'array',
-					tickvals: $lib_d3.all().range(bands_matrix.kpoints.length),
+					tickvals: $mpds_visavis_lib.d3().range(bands_matrix.kpoints.length),
 					ticktext: x_labels,
 					tickfont: {size: 20}
 				};
@@ -175,7 +175,7 @@ namespace $.$$ {
 					ticklen: 4,
 					title: y_title
 				},
-				font: {family: "Exo2", size: 13}
+				font: {size: 13}
 			}
 		}
 

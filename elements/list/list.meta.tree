@@ -1,2 +1,2 @@
-deploy \/visavis/elements/data/elements.json.tree
-deploy \/visavis/elements/data/prop_names.json.tree
+deploy \/mpds/visavis/elements/data/elements.json.tree
+deploy \/mpds/visavis/elements/data/prop_names.json.tree

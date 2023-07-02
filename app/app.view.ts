@@ -1,12 +1,12 @@
 namespace $.$$ {
 
-	export class $visavis_app extends $.$visavis_app {
+	export class $mpds_visavis_app extends $.$mpds_visavis_app {
 
 		@ $mol_action
 		files_read(next: readonly File[]) {
 			const data = $mol_wire_sync( $mol_blob_json )( next[0] )
 
-			const plot_raw = $visavis_plot_raw_from_json( data, next[0].name )
+			const plot_raw = $mpds_visavis_plot_raw_from_json( data, next[0].name )
 
 			this.plot_opened_id( this.history_add( plot_raw ) )
 		}
@@ -17,7 +17,7 @@ namespace $.$$ {
 		}
 
 		@ $mol_action
-		history_add(plot_raw: $visavis_plot_raw) {
+		history_add(plot_raw: $mpds_visavis_plot_raw) {
 			const duplicates = this.history_plot_ids().filter( id => id.replace(/\[\d+?\]/, '') === plot_raw.id() )
 			const count = Math.max( ... duplicates.map( id => Number( id.match(/\[(\d+?)\]$/)?.[1] ?? 0 ) ) )
 			const postfix = duplicates.length ? `[${ count + 1 }]` : ''
@@ -43,9 +43,9 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem_key
-		plot_raw(id: string, next?: $visavis_plot_raw | null) {
+		plot_raw(id: string, next?: $mpds_visavis_plot_raw | null) {
 			const json = this.$.$mol_state_local.value( `${this}.plot_raw('${id}')` , next && next.data() )
-			return json ? new $visavis_plot_raw( json ) : null
+			return json ? new $mpds_visavis_plot_raw( json ) : null
 		}
 
 		@ $mol_mem
@@ -58,8 +58,8 @@ namespace $.$$ {
 			const names = [ 'bar_sci_literature.json' ]
 
 			return names.map( name => {
-				const json = $mol_fetch.json( '/visavis/examples/' + name )
-				const plot_raw = $visavis_plot_raw_from_json( json, name )
+				const json = $mol_fetch.json( '/mpds/visavis/examples/' + name )
+				const plot_raw = $mpds_visavis_plot_raw_from_json( json, name )
 
 				this.plot_raw( plot_raw.id(), plot_raw )
 				
@@ -114,5 +114,7 @@ namespace $.$$ {
 		}
 
 	}
+
+	$mol_view_component( $mpds_visavis_app )
 
 }
