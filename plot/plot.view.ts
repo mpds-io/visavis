@@ -33,8 +33,16 @@ namespace $.$$ {
 
 		@ $mol_mem
 		sub() {
-			return this.plot_raw() ?
-				[ this.Fullscreen(), this.plots()[ this.plot_raw()!.type() ] ] : []
+			const phase_data_demo = this.plot_raw()?.type()! == 'pd' ? this.phase_data_demo() : false
+			const show_demo_warn = this.show_demo_warn() 
+				&& ! [ 'matrix', 'discovery' ].includes( this.plot_raw()?.type()! ) 
+				&& ! phase_data_demo
+
+			return this.plot_raw() ? [
+				... show_demo_warn ? [ this.Demo_warn() ] : [],
+				this.Fullscreen(), 
+				this.plots()[ this.plot_raw()!.type() ] 
+			] : []
 		}
 
 		@ $mol_mem

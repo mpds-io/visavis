@@ -12,6 +12,9 @@ $mpds_visavis_plot $mol_view
 	Fullscreen $mol_check
 		Icon <= Expand_icon $mol_icon_arrow_expand_all
 		checked? <=> fullscreen? false
+	show_demo_warn? true
+	Demo_warn $mol_paragraph
+		title \You are using the limited demo. Buy the full access and support our work.
 	plots *
 		matrix <= Matrix $mpds_visavis_plot_matrix
 			plot_raw <= plot_raw
@@ -41,6 +44,7 @@ $mpds_visavis_plot $mol_view
 		pd <= Phase $mpds_visavis_plot_phase
 			plot_raw <= plot_raw
 			phase_click? <=> phase_click? null
+			data_demo => phase_data_demo
 		bar <= Bar $mpds_visavis_plot_bar
 			plot_raw <= plot_raw
 			bar_click? <=> bar_click? null
