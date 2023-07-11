@@ -16,7 +16,8 @@ namespace $.$$ {
 
 		@ $mol_mem
 		json() {
-			return this.fetch_plot_json( this.json_request() )
+			const request = this.json_request() || this.$.$mol_state_arg.href().split( '#' )[1]
+			return this.fetch_plot_json( request )
 		}
 
 		@ $mol_mem
