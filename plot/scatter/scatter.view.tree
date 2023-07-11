@@ -1,2 +1,3 @@
 $mpds_visavis_plot_scatter $mpds_visavis_plotly
 	plot_raw $mpds_visavis_plot_raw
+	notify? null
