@@ -7751,6 +7751,7 @@ $mpds_visavis_plot_pie $mpds_visavis_plotly
 
 $mpds_visavis_plot_scatter $mpds_visavis_plotly
 	plot_raw $mpds_visavis_plot_raw
+	notify? null
 
 $mpds_visavis_plot_customscatter $mpds_visavis_plotly
 	plot_raw $mpds_visavis_plot_raw
@@ -7777,9 +7778,13 @@ $mpds_visavis_plot $mol_view
 	json_cmp null
 	plot_raw null
 	show_setup false
+	notify? null
 	Fullscreen $mol_check
 		Icon <= Expand_icon $mol_icon_arrow_expand_all
 		checked? <=> fullscreen? false
+	show_demo_warn? true
+	Demo_warn $mol_paragraph
+		title \You are using the limited demo. Buy the full access and support our work.
 	plots *
 		matrix <= Matrix $mpds_visavis_plot_matrix
 			plot_raw <= plot_raw
@@ -7809,6 +7814,7 @@ $mpds_visavis_plot $mol_view
 		pd <= Phase $mpds_visavis_plot_phase
 			plot_raw <= plot_raw
 			phase_click? <=> phase_click? null
+			data_demo => phase_data_demo
 		bar <= Bar $mpds_visavis_plot_bar
 			plot_raw <= plot_raw
 			bar_click? <=> bar_click? null
@@ -7825,6 +7831,7 @@ $mpds_visavis_plot $mol_view
 			pie_click? <=> pie_click? null
 		scatter <= Scatter $mpds_visavis_plot_scatter
 			plot_raw <= plot_raw
+			notify? <=> notify?
 		customscatter <= Customscatter $mpds_visavis_plot_customscatter
 			plot_raw <= plot_raw
 		heatmap <= Heatmap $mpds_visavis_plot_heatmap
