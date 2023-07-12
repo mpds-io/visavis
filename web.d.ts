@@ -748,6 +748,7 @@ declare namespace $ {
         static view_names(suffix: string): string[];
         view_names_owned(): string[];
         view_names(): Set<string>;
+        theme(next?: string | null): string | null;
         attr_static(): {
             [key: string]: string | number | boolean | null;
         };
@@ -4865,7 +4866,6 @@ declare namespace $ {
 declare namespace $ {
     class $mpds_visavis_plot_scatter extends $mpds_visavis_plotly {
         plot_raw(): $mpds_visavis_plot_raw;
-        notify(next?: any): any;
     }
 }
 
@@ -6028,10 +6028,7 @@ declare namespace $ {
         json_cmp(): any;
         plot_raw(): any;
         show_setup(): boolean;
-        notify(next?: any): any;
         Fullscreen(): $$.$mol_check;
-        show_demo_warn(next?: any): boolean;
-        Demo_warn(): $$.$mol_paragraph;
         plots(): Record<string, any>;
         Expand_icon(): $mol_icon_arrow_expand_all;
         fullscreen(next?: any): boolean;
@@ -6054,7 +6051,6 @@ declare namespace $ {
         z_sort(next?: any): string;
         Cube(): $$.$mpds_visavis_plot_cube;
         phase_click(next?: any): any;
-        phase_data_demo(): boolean;
         Phase(): $$.$mpds_visavis_plot_phase;
         bar_click(next?: any): any;
         Bar(): $$.$mpds_visavis_plot_bar;
@@ -6407,16 +6403,14 @@ declare namespace $ {
 
 declare namespace $.$$ {
     class $mpds_visavis_plot extends $.$mpds_visavis_plot {
-        fetch_plot_json(request: RequestInfo | null): any;
+        fetch_plot_json(request: RequestInfo): any;
         json(): any;
         json_cmp(): any;
-        json_cmp_request(next?: string | null): string | null;
         plot_raw(): $mpds_visavis_plot_raw | null;
         sub(): any[];
         matrix_fixel_checked(next?: any): boolean;
         cube_fixel_checked(next?: any): boolean;
         on_fixel_checked(checked: boolean): void;
-        notify(msg: string): void;
     }
 }
 

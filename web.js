@@ -2266,6 +2266,9 @@ var $;
             }
             return names;
         }
+        theme(next = null) {
+            return next;
+        }
         attr_static() {
             let attrs = {};
             for (let name of this.view_names())
@@ -2273,7 +2276,9 @@ var $;
             return attrs;
         }
         attr() {
-            return {};
+            return {
+                mol_theme: this.theme(),
+            };
         }
         style_size() {
             return {
@@ -2389,6 +2394,9 @@ var $;
     __decorate([
         $mol_memo.method
     ], $mol_view.prototype, "view_names", null);
+    __decorate([
+        $mol_mem
+    ], $mol_view.prototype, "theme", null);
     __decorate([
         $mol_mem_key
     ], $mol_view, "Root", null);
@@ -17499,7 +17507,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("mpds/visavis/plot/matrix/matrix.view.css", "[mpds_visavis_plot_matrix_plot][mol_view_error]:not([mol_view_error=\"Promise\"]) {\n    background-image: none;\n\tpadding-top: 6rem;\n    align-items: flex-start;\n    justify-content: center;\n}\n\n[mpds_visavis_plot_matrix_plot] rect.nonformer {\n\tfill:url(#nonformer) !important;\n\tfill-opacity:1.0 !important;\n}\n\n[mpds_visavis_plot_matrix_plot] rect.visited{\n\tfill:#0f0 !important;\n\tfill-opacity:1.0 !important;\n}\n\n[mpds_visavis_plot_matrix_plot] rect.bgmatrix {\n\tfill:#f6f6f6;\n}\n\n[mpds_visavis_plot_matrix_plot] rect.bgmatrix.hidden {\n\tfill:#fff;\n}\n\n[mpds_visavis_plot_matrix_plot] line {\n\tstroke:#fff;\n}\n\n[mpds_visavis_plot_matrix_plot] text.active {\n\tfill:#f00;\n\tfont-weight:bold;\n}\n");
+    $mol_style_attach("mpds/visavis/plot/matrix/matrix.view.css", "[mpds_visavis_plot_matrix_plot] rect.nonformer {\n\tfill:url(#nonformer) !important;\n\tfill-opacity:1.0 !important;\n}\n\n[mpds_visavis_plot_matrix_plot] rect.visited{\n\tfill:#0f0 !important;\n\tfill-opacity:1.0 !important;\n}\n\n[mpds_visavis_plot_matrix_plot] rect.bgmatrix {\n\tfill:#f6f6f6;\n}\n\n[mpds_visavis_plot_matrix_plot] rect.bgmatrix.hidden {\n\tfill:#fff;\n}\n\n[mpds_visavis_plot_matrix_plot] line {\n\tstroke:#fff;\n}\n\n[mpds_visavis_plot_matrix_plot] text.active {\n\tfill:#f00;\n\tfont-weight:bold;\n}\n");
 })($ || ($ = {}));
 //mpds/visavis/plot/matrix/-css/matrix.view.css.ts
 ;
@@ -17622,7 +17630,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("mpds/visavis/plotly/plotly.view.css", "[mpds_visavis_plotly][mol_view_error]:not([mol_view_error=\"Promise\"]) {\n    background-image: none;\n\tpadding-top: 6rem;\n    align-items: flex-start;\n    justify-content: center;\n}\n\n/* default plotly styles for shadow DOM */\n.js-plotly-plot .plotly button,\n.js-plotly-plot .plotly input,\n.plotly-notifier {\n\tfont-family: \"Open Sans\", verdana, arial, sans-serif\n}\n\n.js-plotly-plot .plotly,\n.js-plotly-plot .plotly div {\n\tdirection: ltr;\n\tfont-family: \"Open Sans\", verdana, arial, sans-serif;\n\tmargin: 0;\n\tpadding: 0\n}\n\n.js-plotly-plot .plotly button:focus,\n.js-plotly-plot .plotly input:focus {\n\toutline: 0\n}\n\n.js-plotly-plot .plotly a,\n.js-plotly-plot .plotly a:hover {\n\ttext-decoration: none\n}\n\n.js-plotly-plot .plotly .crisp {\n\tshape-rendering: crispEdges\n}\n\n.js-plotly-plot .plotly .user-select-none {\n\t-webkit-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\t-o-user-select: none;\n\tuser-select: none\n}\n\n.js-plotly-plot .plotly svg {\n\toverflow: hidden\n}\n\n.js-plotly-plot .plotly svg a {\n\tfill: #447adb\n}\n\n.js-plotly-plot .plotly svg a:hover {\n\tfill: #3c6dc5\n}\n\n.js-plotly-plot .plotly .main-svg {\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n\tpointer-events: none\n}\n\n.js-plotly-plot .plotly .main-svg .draglayer {\n\tpointer-events: all\n}\n\n.js-plotly-plot .plotly .cursor-default {\n\tcursor: default\n}\n\n.js-plotly-plot .plotly .cursor-pointer {\n\tcursor: pointer\n}\n\n.js-plotly-plot .plotly .cursor-crosshair {\n\tcursor: crosshair\n}\n\n.js-plotly-plot .plotly .cursor-move {\n\tcursor: move\n}\n\n.js-plotly-plot .plotly .cursor-col-resize {\n\tcursor: col-resize\n}\n\n.js-plotly-plot .plotly .cursor-row-resize {\n\tcursor: row-resize\n}\n\n.js-plotly-plot .plotly .cursor-ns-resize {\n\tcursor: ns-resize\n}\n\n.js-plotly-plot .plotly .cursor-ew-resize {\n\tcursor: ew-resize\n}\n\n.js-plotly-plot .plotly .cursor-sw-resize {\n\tcursor: sw-resize\n}\n\n.js-plotly-plot .plotly .cursor-s-resize {\n\tcursor: s-resize\n}\n\n.js-plotly-plot .plotly .cursor-se-resize {\n\tcursor: se-resize\n}\n\n.js-plotly-plot .plotly .cursor-w-resize {\n\tcursor: w-resize\n}\n\n.js-plotly-plot .plotly .cursor-e-resize {\n\tcursor: e-resize\n}\n\n.js-plotly-plot .plotly .cursor-nw-resize {\n\tcursor: nw-resize\n}\n\n.js-plotly-plot .plotly .cursor-n-resize {\n\tcursor: n-resize\n}\n\n.js-plotly-plot .plotly .cursor-ne-resize {\n\tcursor: ne-resize\n}\n\n.js-plotly-plot .plotly .cursor-grab {\n\tcursor: -webkit-grab;\n\tcursor: grab\n}\n\n.js-plotly-plot .plotly .modebar {\n\tposition: absolute;\n\ttop: 2px;\n\tright: 2px\n}\n\n.js-plotly-plot .plotly .ease-bg {\n\t-webkit-transition: background-color .3s;\n\t-moz-transition: background-color .3s;\n\t-ms-transition: background-color .3s;\n\t-o-transition: background-color .3s;\n\ttransition: background-color .3s\n}\n\n.js-plotly-plot .plotly .modebar--hover>:not(.watermark) {\n\topacity: 0;\n\t-webkit-transition: opacity .3s;\n\t-moz-transition: opacity .3s;\n\t-ms-transition: opacity .3s;\n\t-o-transition: opacity .3s;\n\ttransition: opacity .3s\n}\n\n.js-plotly-plot .plotly:hover .modebar--hover .modebar-group {\n\topacity: 1\n}\n\n.js-plotly-plot .plotly .modebar-group {\n\tfloat: left;\n\tdisplay: inline-block;\n\tbox-sizing: border-box;\n\tpadding-left: 8px;\n\tposition: relative;\n\tvertical-align: middle;\n\twhite-space: nowrap\n}\n\n.js-plotly-plot .plotly .modebar-btn {\n\tposition: relative;\n\tfont-size: 16px;\n\tpadding: 3px 4px;\n\theight: 22px;\n\tcursor: pointer;\n\tline-height: normal;\n\tbox-sizing: border-box\n}\n\n.js-plotly-plot .plotly .modebar-btn svg {\n\tposition: relative;\n\ttop: 2px\n}\n\n.js-plotly-plot .plotly .modebar.vertical {\n\tdisplay: flex;\n\tflex-direction: column;\n\tflex-wrap: wrap;\n\talign-content: flex-end;\n\tmax-height: 100%\n}\n\n.js-plotly-plot .plotly .modebar.vertical svg {\n\ttop: -1px\n}\n\n.js-plotly-plot .plotly .modebar.vertical .modebar-group {\n\tdisplay: block;\n\tfloat: none;\n\tpadding-left: 0;\n\tpadding-bottom: 8px\n}\n\n.js-plotly-plot .plotly .modebar.vertical .modebar-group .modebar-btn {\n\tdisplay: block;\n\ttext-align: center\n}\n\n.js-plotly-plot .plotly [data-title]:after,\n.js-plotly-plot .plotly [data-title]:before {\n\tposition: absolute;\n\t-webkit-transform: translate3d(0, 0, 0);\n\t-moz-transform: translate3d(0, 0, 0);\n\t-ms-transform: translate3d(0, 0, 0);\n\t-o-transform: translate3d(0, 0, 0);\n\ttransform: translate3d(0, 0, 0);\n\tdisplay: none;\n\topacity: 0;\n\tz-index: 1001;\n\tpointer-events: none;\n\ttop: 110%;\n\tright: 50%\n}\n\n.js-plotly-plot .plotly [data-title]:hover:after,\n.js-plotly-plot .plotly [data-title]:hover:before {\n\tdisplay: block;\n\topacity: 1\n}\n\n.js-plotly-plot .plotly [data-title]:before {\n\tcontent: \"\";\n\tposition: absolute;\n\tbackground: 0 0;\n\tborder: 6px solid transparent;\n\tz-index: 1002;\n\tmargin-top: -12px;\n\tborder-bottom-color: #69738a;\n\tmargin-right: -6px\n}\n\n.js-plotly-plot .plotly [data-title]:after {\n\tcontent: attr(data-title);\n\tbackground: #69738a;\n\tcolor: #fff;\n\tpadding: 8px 10px;\n\tfont-size: 12px;\n\tline-height: 12px;\n\twhite-space: nowrap;\n\tmargin-right: -18px;\n\tborder-radius: 2px\n}\n\n.js-plotly-plot .plotly .vertical [data-title]:after,\n.js-plotly-plot .plotly .vertical [data-title]:before {\n\ttop: 0;\n\tright: 200%\n}\n\n.js-plotly-plot .plotly .vertical [data-title]:before {\n\tborder: 6px solid transparent;\n\tborder-left-color: #69738a;\n\tmargin-top: 8px;\n\tmargin-right: -30px\n}\n\n.plotly-notifier {\n\tposition: fixed;\n\ttop: 50px;\n\tright: 20px;\n\tz-index: 10000;\n\tfont-size: 10pt;\n\tmax-width: 180px\n}\n\n.plotly-notifier p {\n\tmargin: 0\n}\n\n.plotly-notifier .notifier-note {\n\tmin-width: 180px;\n\tmax-width: 250px;\n\tborder: 1px solid #fff;\n\tz-index: 3000;\n\tmargin: 0;\n\tbackground-color: rgba(140, 151, 175, .9);\n\tcolor: #fff;\n\tpadding: 10px;\n\toverflow-wrap: break-word;\n\tword-wrap: break-word;\n\t-ms-hyphens: auto;\n\t-webkit-hyphens: auto;\n\thyphens: auto\n}\n\n.plotly-notifier .notifier-close {\n\tcolor: #fff;\n\topacity: .8;\n\tfloat: right;\n\tpadding: 0 5px;\n\tbackground: 0 0;\n\tborder: none;\n\tfont-size: 20px;\n\tfont-weight: 700;\n\tline-height: 20px\n}\n\n.plotly-notifier .notifier-close:hover {\n\tcolor: #444;\n\ttext-decoration: none;\n\tcursor: pointer\n}\n");
+    $mol_style_attach("mpds/visavis/plotly/plotly.view.css", "/* default plotly styles for shadow DOM */\n.js-plotly-plot .plotly button,\n.js-plotly-plot .plotly input,\n.plotly-notifier {\n\tfont-family: \"Open Sans\", verdana, arial, sans-serif\n}\n\n.js-plotly-plot .plotly,\n.js-plotly-plot .plotly div {\n\tdirection: ltr;\n\tfont-family: \"Open Sans\", verdana, arial, sans-serif;\n\tmargin: 0;\n\tpadding: 0\n}\n\n.js-plotly-plot .plotly button:focus,\n.js-plotly-plot .plotly input:focus {\n\toutline: 0\n}\n\n.js-plotly-plot .plotly a,\n.js-plotly-plot .plotly a:hover {\n\ttext-decoration: none\n}\n\n.js-plotly-plot .plotly .crisp {\n\tshape-rendering: crispEdges\n}\n\n.js-plotly-plot .plotly .user-select-none {\n\t-webkit-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\t-o-user-select: none;\n\tuser-select: none\n}\n\n.js-plotly-plot .plotly svg {\n\toverflow: hidden\n}\n\n.js-plotly-plot .plotly svg a {\n\tfill: #447adb\n}\n\n.js-plotly-plot .plotly svg a:hover {\n\tfill: #3c6dc5\n}\n\n.js-plotly-plot .plotly .main-svg {\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n\tpointer-events: none\n}\n\n.js-plotly-plot .plotly .main-svg .draglayer {\n\tpointer-events: all\n}\n\n.js-plotly-plot .plotly .cursor-default {\n\tcursor: default\n}\n\n.js-plotly-plot .plotly .cursor-pointer {\n\tcursor: pointer\n}\n\n.js-plotly-plot .plotly .cursor-crosshair {\n\tcursor: crosshair\n}\n\n.js-plotly-plot .plotly .cursor-move {\n\tcursor: move\n}\n\n.js-plotly-plot .plotly .cursor-col-resize {\n\tcursor: col-resize\n}\n\n.js-plotly-plot .plotly .cursor-row-resize {\n\tcursor: row-resize\n}\n\n.js-plotly-plot .plotly .cursor-ns-resize {\n\tcursor: ns-resize\n}\n\n.js-plotly-plot .plotly .cursor-ew-resize {\n\tcursor: ew-resize\n}\n\n.js-plotly-plot .plotly .cursor-sw-resize {\n\tcursor: sw-resize\n}\n\n.js-plotly-plot .plotly .cursor-s-resize {\n\tcursor: s-resize\n}\n\n.js-plotly-plot .plotly .cursor-se-resize {\n\tcursor: se-resize\n}\n\n.js-plotly-plot .plotly .cursor-w-resize {\n\tcursor: w-resize\n}\n\n.js-plotly-plot .plotly .cursor-e-resize {\n\tcursor: e-resize\n}\n\n.js-plotly-plot .plotly .cursor-nw-resize {\n\tcursor: nw-resize\n}\n\n.js-plotly-plot .plotly .cursor-n-resize {\n\tcursor: n-resize\n}\n\n.js-plotly-plot .plotly .cursor-ne-resize {\n\tcursor: ne-resize\n}\n\n.js-plotly-plot .plotly .cursor-grab {\n\tcursor: -webkit-grab;\n\tcursor: grab\n}\n\n.js-plotly-plot .plotly .modebar {\n\tposition: absolute;\n\ttop: 2px;\n\tright: 2px\n}\n\n.js-plotly-plot .plotly .ease-bg {\n\t-webkit-transition: background-color .3s;\n\t-moz-transition: background-color .3s;\n\t-ms-transition: background-color .3s;\n\t-o-transition: background-color .3s;\n\ttransition: background-color .3s\n}\n\n.js-plotly-plot .plotly .modebar--hover>:not(.watermark) {\n\topacity: 0;\n\t-webkit-transition: opacity .3s;\n\t-moz-transition: opacity .3s;\n\t-ms-transition: opacity .3s;\n\t-o-transition: opacity .3s;\n\ttransition: opacity .3s\n}\n\n.js-plotly-plot .plotly:hover .modebar--hover .modebar-group {\n\topacity: 1\n}\n\n.js-plotly-plot .plotly .modebar-group {\n\tfloat: left;\n\tdisplay: inline-block;\n\tbox-sizing: border-box;\n\tpadding-left: 8px;\n\tposition: relative;\n\tvertical-align: middle;\n\twhite-space: nowrap\n}\n\n.js-plotly-plot .plotly .modebar-btn {\n\tposition: relative;\n\tfont-size: 16px;\n\tpadding: 3px 4px;\n\theight: 22px;\n\tcursor: pointer;\n\tline-height: normal;\n\tbox-sizing: border-box\n}\n\n.js-plotly-plot .plotly .modebar-btn svg {\n\tposition: relative;\n\ttop: 2px\n}\n\n.js-plotly-plot .plotly .modebar.vertical {\n\tdisplay: flex;\n\tflex-direction: column;\n\tflex-wrap: wrap;\n\talign-content: flex-end;\n\tmax-height: 100%\n}\n\n.js-plotly-plot .plotly .modebar.vertical svg {\n\ttop: -1px\n}\n\n.js-plotly-plot .plotly .modebar.vertical .modebar-group {\n\tdisplay: block;\n\tfloat: none;\n\tpadding-left: 0;\n\tpadding-bottom: 8px\n}\n\n.js-plotly-plot .plotly .modebar.vertical .modebar-group .modebar-btn {\n\tdisplay: block;\n\ttext-align: center\n}\n\n.js-plotly-plot .plotly [data-title]:after,\n.js-plotly-plot .plotly [data-title]:before {\n\tposition: absolute;\n\t-webkit-transform: translate3d(0, 0, 0);\n\t-moz-transform: translate3d(0, 0, 0);\n\t-ms-transform: translate3d(0, 0, 0);\n\t-o-transform: translate3d(0, 0, 0);\n\ttransform: translate3d(0, 0, 0);\n\tdisplay: none;\n\topacity: 0;\n\tz-index: 1001;\n\tpointer-events: none;\n\ttop: 110%;\n\tright: 50%\n}\n\n.js-plotly-plot .plotly [data-title]:hover:after,\n.js-plotly-plot .plotly [data-title]:hover:before {\n\tdisplay: block;\n\topacity: 1\n}\n\n.js-plotly-plot .plotly [data-title]:before {\n\tcontent: \"\";\n\tposition: absolute;\n\tbackground: 0 0;\n\tborder: 6px solid transparent;\n\tz-index: 1002;\n\tmargin-top: -12px;\n\tborder-bottom-color: #69738a;\n\tmargin-right: -6px\n}\n\n.js-plotly-plot .plotly [data-title]:after {\n\tcontent: attr(data-title);\n\tbackground: #69738a;\n\tcolor: #fff;\n\tpadding: 8px 10px;\n\tfont-size: 12px;\n\tline-height: 12px;\n\twhite-space: nowrap;\n\tmargin-right: -18px;\n\tborder-radius: 2px\n}\n\n.js-plotly-plot .plotly .vertical [data-title]:after,\n.js-plotly-plot .plotly .vertical [data-title]:before {\n\ttop: 0;\n\tright: 200%\n}\n\n.js-plotly-plot .plotly .vertical [data-title]:before {\n\tborder: 6px solid transparent;\n\tborder-left-color: #69738a;\n\tmargin-top: 8px;\n\tmargin-right: -30px\n}\n\n.plotly-notifier {\n\tposition: fixed;\n\ttop: 50px;\n\tright: 20px;\n\tz-index: 10000;\n\tfont-size: 10pt;\n\tmax-width: 180px\n}\n\n.plotly-notifier p {\n\tmargin: 0\n}\n\n.plotly-notifier .notifier-note {\n\tmin-width: 180px;\n\tmax-width: 250px;\n\tborder: 1px solid #fff;\n\tz-index: 3000;\n\tmargin: 0;\n\tbackground-color: rgba(140, 151, 175, .9);\n\tcolor: #fff;\n\tpadding: 10px;\n\toverflow-wrap: break-word;\n\tword-wrap: break-word;\n\t-ms-hyphens: auto;\n\t-webkit-hyphens: auto;\n\thyphens: auto\n}\n\n.plotly-notifier .notifier-close {\n\tcolor: #fff;\n\topacity: .8;\n\tfloat: right;\n\tpadding: 0 5px;\n\tbackground: 0 0;\n\tborder: none;\n\tfont-size: 20px;\n\tfont-weight: 700;\n\tline-height: 20px\n}\n\n.plotly-notifier .notifier-close:hover {\n\tcolor: #444;\n\ttext-decoration: none;\n\tcursor: pointer\n}\n");
 })($ || ($ = {}));
 //mpds/visavis/plotly/-css/plotly.view.css.ts
 ;
@@ -21581,18 +21589,10 @@ var $;
             const obj = new this.$.$mpds_visavis_plot_raw();
             return obj;
         }
-        notify(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
     }
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_scatter.prototype, "plot_raw", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_scatter.prototype, "notify", null);
     $.$mpds_visavis_plot_scatter = $mpds_visavis_plot_scatter;
 })($ || ($ = {}));
 //mpds/visavis/plot/scatter/-view.tree/scatter.view.tree.ts
@@ -21670,9 +21670,11 @@ var $;
                     return 'pressure';
                 }
                 else if (Math.abs(t_data[0] - t_data_sum / t_data.length) > 0.1 && Math.abs(p_data[0] - p_data_sum / p_data.length) > 0.1) {
-                    this.notify('Sorry, plotting both temperature and pressure is not yet supported');
+                    return $mol_fail(new $mol_data_error('Sorry, plotting both temperature and pressure is not yet supported'));
                 }
-                return 'temperature';
+                else {
+                    return 'temperature';
+                }
             }
             x_data() {
                 switch (this.x_data_type()) {
@@ -22225,7 +22227,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("mpds/visavis/plot/graph/graph.view.css", "[mpds_visavis_plot_graph_root][mol_view_error]:not([mol_view_error=\"Promise\"]) {\n    background-image: none;\n\tpadding-top: 6rem;\n    align-items: flex-start;\n    justify-content: center;\n}\n\n[mpds_visavis_plot_graph_root] svg {\n\twidth: 100%;\n\theight: 100%;\n}\n\n[mpds_visavis_plot_graph_root] .edge {\n\tfill: none;\n\tstroke: #ddd;\n\tstroke-width: 1px;\n}\n\n[mpds_visavis_plot_graph_root] .edge.prel {\n\tstroke: #FE9A2E;\n}\n\n[mpds_visavis_plot_graph_root] .edge.hrel {\n\tstroke: #3e3f95;\n}\n\n[mpds_visavis_plot_graph_root] .edge.trel {\n\tstroke: #3e3f95;\n}\n\n[mpds_visavis_plot_graph_root] .edge.arel {\n\tstroke: #E36868;\n}\n\n[mpds_visavis_plot_graph_root] .edge.grel {\n\tstroke: #acc2b3;\n}\n\n[mpds_visavis_plot_graph_root] circle {\n\tcursor: move;\n\tfill: #ccc;\n}\n\n[mpds_visavis_plot_graph_root] circle.f {\n\tfill: #acc2b3;\n}\n\n[mpds_visavis_plot_graph_root] circle.p {\n\tfill: #FE9A2E;\n}\n\n[mpds_visavis_plot_graph_root] circle.h, circle.t {\n\tfill: #3e3f95;\n}\n\n[mpds_visavis_plot_graph_root] circle.a {\n\tfill: #E36868;\n}\n\n[mpds_visavis_plot_graph_root] text.micro {\n\tfont-size: 11px;\n\tletter-spacing: -0.5px;\n}\n\n[mpds_visavis_plot_graph_root] text.macro {\n\tfont-size: 14px;\n\tletter-spacing: 0.5px;\n}\n\n[mpds_visavis_plot_graph_root] text.captions {\n\tcursor: pointer;\n\tfill: #333;\n}\n\n[mpds_visavis_plot_graph_root] text.shadow {\n\tstroke: #fff;\n\tstroke-width: 3px;\n\tstroke-opacity: 0.8;\n}\n");
+    $mol_style_attach("mpds/visavis/plot/graph/graph.view.css", "[mpds_visavis_plot_graph_root] svg {\n\twidth: 100%;\n\theight: 100%;\n}\n\n[mpds_visavis_plot_graph_root] .edge {\n\tfill: none;\n\tstroke: #ddd;\n\tstroke-width: 1px;\n}\n\n[mpds_visavis_plot_graph_root] .edge.prel {\n\tstroke: #FE9A2E;\n}\n\n[mpds_visavis_plot_graph_root] .edge.hrel {\n\tstroke: #3e3f95;\n}\n\n[mpds_visavis_plot_graph_root] .edge.trel {\n\tstroke: #3e3f95;\n}\n\n[mpds_visavis_plot_graph_root] .edge.arel {\n\tstroke: #E36868;\n}\n\n[mpds_visavis_plot_graph_root] .edge.grel {\n\tstroke: #acc2b3;\n}\n\n[mpds_visavis_plot_graph_root] circle {\n\tcursor: move;\n\tfill: #ccc;\n}\n\n[mpds_visavis_plot_graph_root] circle.f {\n\tfill: #acc2b3;\n}\n\n[mpds_visavis_plot_graph_root] circle.p {\n\tfill: #FE9A2E;\n}\n\n[mpds_visavis_plot_graph_root] circle.h, circle.t {\n\tfill: #3e3f95;\n}\n\n[mpds_visavis_plot_graph_root] circle.a {\n\tfill: #E36868;\n}\n\n[mpds_visavis_plot_graph_root] text.micro {\n\tfont-size: 11px;\n\tletter-spacing: -0.5px;\n}\n\n[mpds_visavis_plot_graph_root] text.macro {\n\tfont-size: 14px;\n\tletter-spacing: 0.5px;\n}\n\n[mpds_visavis_plot_graph_root] text.captions {\n\tcursor: pointer;\n\tfill: #333;\n}\n\n[mpds_visavis_plot_graph_root] text.shadow {\n\tstroke: #fff;\n\tstroke-width: 3px;\n\tstroke-opacity: 0.8;\n}\n");
 })($ || ($ = {}));
 //mpds/visavis/plot/graph/-css/graph.view.css.ts
 ;
@@ -22280,25 +22282,10 @@ var $;
         show_setup() {
             return false;
         }
-        notify(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
         Fullscreen() {
             const obj = new this.$.$mol_check();
             obj.Icon = () => this.Expand_icon();
             obj.checked = (next) => this.fullscreen(next);
-            return obj;
-        }
-        show_demo_warn(next) {
-            if (next !== undefined)
-                return next;
-            return true;
-        }
-        Demo_warn() {
-            const obj = new this.$.$mol_paragraph();
-            obj.title = () => "You are using the limited demo. Buy the full access and support our work.";
             return obj;
         }
         plots() {
@@ -22411,9 +22398,6 @@ var $;
                 return next;
             return null;
         }
-        phase_data_demo() {
-            return this.Phase().data_demo();
-        }
         Phase() {
             const obj = new this.$.$mpds_visavis_plot_phase();
             obj.plot_raw = () => this.plot_raw();
@@ -22466,7 +22450,6 @@ var $;
         Scatter() {
             const obj = new this.$.$mpds_visavis_plot_scatter();
             obj.plot_raw = () => this.plot_raw();
-            obj.notify = (next) => this.notify(next);
             return obj;
         }
         Customscatter() {
@@ -22502,16 +22485,7 @@ var $;
     ], $mpds_visavis_plot.prototype, "json_cmp_request", null);
     __decorate([
         $mol_mem
-    ], $mpds_visavis_plot.prototype, "notify", null);
-    __decorate([
-        $mol_mem
     ], $mpds_visavis_plot.prototype, "Fullscreen", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "show_demo_warn", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "Demo_warn", null);
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot.prototype, "Expand_icon", null);
@@ -22639,8 +22613,6 @@ var $;
                 const descr = Reflect.getOwnPropertyDescriptor(proto, field);
                 if (typeof descr.value !== 'function')
                     continue;
-                if (descr.value.length === 0)
-                    continue;
                 Component.observedAttributes.add(field);
             }
             attributes_observe(Reflect.getPrototypeOf(proto));
@@ -22670,32 +22642,18 @@ var $;
                 return json;
             }
             json() {
-                const request = this.json_request() || this.$.$mol_state_arg.href().split('#')[1];
-                return this.fetch_plot_json(request);
+                return this.fetch_plot_json(this.json_request());
             }
             json_cmp() {
                 return this.fetch_plot_json(this.json_cmp_request());
-            }
-            json_cmp_request(next) {
-                if (next === null && $mol_wire_probe(() => this.json_cmp_request()) === null) {
-                    this.notify('Comparison was reset');
-                }
-                return next ?? null;
             }
             plot_raw() {
                 return this.json() ?
                     $mpds_visavis_plot_raw_from_json(this.json()) : null;
             }
             sub() {
-                const phase_data_demo = this.plot_raw()?.type() == 'pd' ? this.phase_data_demo() : false;
-                const show_demo_warn = this.show_demo_warn()
-                    && !['matrix', 'discovery'].includes(this.plot_raw()?.type())
-                    && !phase_data_demo;
-                return this.plot_raw() ? [
-                    ...show_demo_warn ? [this.Demo_warn()] : [],
-                    this.Fullscreen(),
-                    this.plots()[this.plot_raw().type()]
-                ] : [];
+                return this.plot_raw() ?
+                    [this.Fullscreen(), this.plots()[this.plot_raw().type()]] : [];
             }
             matrix_fixel_checked(next) {
                 if (next !== undefined) {
@@ -22712,9 +22670,6 @@ var $;
                 return false;
             }
             on_fixel_checked(checked) { }
-            notify(msg) {
-                alert(msg);
-            }
         }
         __decorate([
             $mol_action
@@ -22725,9 +22680,6 @@ var $;
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot.prototype, "json_cmp", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot.prototype, "json_cmp_request", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot.prototype, "plot_raw", null);
@@ -22743,9 +22695,6 @@ var $;
         __decorate([
             $mol_action
         ], $mpds_visavis_plot.prototype, "on_fixel_checked", null);
-        __decorate([
-            $mol_action
-        ], $mpds_visavis_plot.prototype, "notify", null);
         $$.$mpds_visavis_plot = $mpds_visavis_plot;
         $mol_view_component($mpds_visavis_plot);
     })($$ = $.$$ || ($.$$ = {}));
@@ -22774,19 +22723,6 @@ var $;
                 },
                 zIndex: 5,
             },
-            Demo_warn: {
-                position: 'absolute',
-                left: 0,
-                right: 0,
-                justify: {
-                    content: 'center'
-                },
-                font: {
-                    size: '.75rem',
-                },
-                zIndex: 1,
-                cursor: 'default',
-            }
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
