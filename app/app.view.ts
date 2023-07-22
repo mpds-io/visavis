@@ -44,8 +44,12 @@ namespace $.$$ {
 
 		@ $mol_mem_key
 		plot_raw(id: string, next?: $mpds_visavis_plot_raw | null) {
-			const json = this.$.$mol_state_local.value( `${this}.plot_raw('${id}')` , next && next.data() )
-			return json ? new $mpds_visavis_plot_raw( json ) : null
+			if ( this.json_request_hash() ) {
+				const json = $mpds_visavis_plot.fetch_plot_json( this.json_request_hash() )
+				return $mpds_visavis_plot_raw_from_json( json, this.json_request_hash()! )
+			}
+			const data = this.$.$mol_state_local.value( `${this}.plot_raw('${id}')` , next && next.data() )
+			return data ? new $mpds_visavis_plot_raw( data ) : null
 		}
 
 		@ $mol_mem
@@ -73,7 +77,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		plot_opened_id(next?: string | null) {
-			return this.$.$mol_state_arg.value( 'file' , next ) ?? ''
+			return this.$.$mol_state_arg.value( 'file' , next ) ?? this.json_request_hash() ?? ''
 		}
 
 		@ $mol_mem
@@ -111,6 +115,13 @@ namespace $.$$ {
 		@ $mol_mem
 		menu_section() {
 			return this.$.$mol_state_arg.value('section')
+		}
+
+		@ $mol_mem
+		json_request_hash() {
+			const hash = this.$.$mol_state_arg.href().split( '#' )[1]
+			if ( hash.slice(0, 4) == 'http' ) return hash
+			return null
 		}
 
 	}

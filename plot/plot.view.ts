@@ -3,7 +3,7 @@ namespace $.$$ {
 	export class $mpds_visavis_plot extends $.$mpds_visavis_plot {
 
 		@ $mol_action
-		fetch_plot_json( request: RequestInfo | null ){
+		static fetch_plot_json( request: RequestInfo | null ){
 			if ( request == null ) return null
 
 			const json = $mol_fetch.json( request ) as any
@@ -17,12 +17,12 @@ namespace $.$$ {
 		@ $mol_mem
 		json() {
 			const request = this.json_request() || this.$.$mol_state_arg.href().split( '#' )[1]
-			return this.fetch_plot_json( request )
+			return $mpds_visavis_plot.fetch_plot_json( request )
 		}
 
 		@ $mol_mem
 		json_cmp() {
-			return this.fetch_plot_json( this.json_cmp_request() )
+			return $mpds_visavis_plot.fetch_plot_json( this.json_cmp_request() )
 		}
 
 		@ $mol_mem
