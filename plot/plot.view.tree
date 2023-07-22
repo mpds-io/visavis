@@ -67,7 +67,7 @@ $mpds_visavis_plot $mol_view
 			plot_raw <= plot_raw
 			font_family <= font_family
 			pie_click? <=> pie_click? null
-	scatter <= Scatter $mpds_visavis_plot_scatter
+		scatter <= Scatter $mpds_visavis_plot_scatter
 			plot_raw <= plot_raw
 			font_family <= font_family
 			notify? <=> notify?
