@@ -22,7 +22,6 @@ $mpds_visavis_plot $mol_view
 			plot_raw <= plot_raw
 			json_cmp <= json_cmp
 			show_setup <= show_setup
-			font_family <= font_family
 			nonformers_checked? <=> nonformers_checked? false
 			fixel_checked? <=> matrix_fixel_checked? true
 			x_op? => matrix_x_op?
@@ -68,7 +67,7 @@ $mpds_visavis_plot $mol_view
 			plot_raw <= plot_raw
 			font_family <= font_family
 			pie_click? <=> pie_click? null
-		scatter <= Scatter $mpds_visavis_plot_scatter
+	scatter <= Scatter $mpds_visavis_plot_scatter
 			plot_raw <= plot_raw
 			font_family <= font_family
 			notify? <=> notify?
@@ -77,9 +76,7 @@ $mpds_visavis_plot $mol_view
 			font_family <= font_family
 		heatmap <= Heatmap $mpds_visavis_plot_heatmap
 			plot_raw <= plot_raw
-			font_family <= font_family
 		graph <= Graph $mpds_visavis_plot_graph
 			plot_raw <= plot_raw
-			font_family <= font_family
 			graph_rel? => graph_rel?
 			graph_click? <=> graph_click? null
