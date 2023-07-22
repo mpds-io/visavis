@@ -174,7 +174,7 @@ namespace $.$$ {
 						text: '<i>Second Principal Component (a<sub>1</sub>x + b<sub>1</sub>y + c<sub>1</sub>z + ...)</i>', 
 						showarrow: false, 
 						bgcolor: '#fff', 
-						font: { size: 14 } 
+						font: { family: this.font_family(), size: 14 } 
 					},
 					{ 
 						x: 0.97, 
@@ -187,7 +187,7 @@ namespace $.$$ {
 						showarrow: false, 
 						bgcolor: '#fff', 
 						textangle: 270, 
-						font: { size: 14 } 
+						font: { family: this.font_family(), size: 14 } 
 					}
 				]
 			}

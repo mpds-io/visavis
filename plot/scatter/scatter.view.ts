@@ -196,7 +196,7 @@ namespace $.$$ {
 
 			return {
 				showlegend: true,
-				legend: {x: 100, y: 1, font: {size: 14}},
+				legend: {x: 100, y: 1, font: {family: this.font_family(), size: 14}},
 				xaxis: {
 					autorange: true,
 					showgrid: true,
@@ -215,7 +215,7 @@ namespace $.$$ {
 					ticklen: 4,
 					title: 'Cell parameters' + y_comment + ', A'
 				},
-				font: {size: 13}
+				font: {family: this.font_family(), size: 13}
 			}
 		}
 

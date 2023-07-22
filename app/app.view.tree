@@ -66,3 +66,4 @@ $mpds_visavis_app $mol_book2
 			<= Plot_view* $mpds_visavis_plot
 				plot_raw <= plot_raw* null
 				show_setup true
+				font_family \Tahoma	

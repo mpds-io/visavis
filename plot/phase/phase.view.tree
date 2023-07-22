@@ -30,6 +30,7 @@ $mpds_visavis_plot_phase $mol_book2
 			font *
 				size 20
 				color \#333
+				family <= font_family \
 			ternary *
 				aaxis *
 					title <= json_title_b \
@@ -69,6 +70,7 @@ $mpds_visavis_plot_phase $mol_book2
 			yref \paper
 			font *
 				size 15
+				family <= font_family
 	rectangle *
 		datamock /
 			*
@@ -88,6 +90,7 @@ $mpds_visavis_plot_phase $mol_book2
 			font *
 				size 16
 				color \#333
+				family <= font_family
 			xaxis *
 				title \at. %
 				range <= json_comp_range /
@@ -146,6 +149,7 @@ $mpds_visavis_plot_phase $mol_book2
 			yref \paper
 			font *
 				size 20
+				family <= font_family
 		*
 			text <= json_title_b
 			x 1.03
@@ -155,10 +159,12 @@ $mpds_visavis_plot_phase $mol_book2
 			yref \paper
 			font *
 				size 20
+				family <= font_family
 	annotation *
 		show_arrow false
 		font *
 			size 13
+			family <= font_family
 	annotation_textangle* 0
 	plot_options *
 		displaylogo false

@@ -36,7 +36,7 @@ namespace $.$$ {
 			const json = this.json()
 			return {
 				showlegend: true,
-				legend: {x: 100, y: 1, font: {size: 14}},
+				legend: {x: 100, y: 1, font: {family: this.font_family(), size: 14}},
 				xaxis: {
 					type: json.xlog ? 'log' : '-',
 					autorange: true,
@@ -61,7 +61,7 @@ namespace $.$$ {
 					ticklen: 4,
 					title: json.ytitle
 				},
-				font: {size: 13},
+				font: {family: this.font_family(), size: 13},
 				margin: {
 					t: 0,
 					r: 0
