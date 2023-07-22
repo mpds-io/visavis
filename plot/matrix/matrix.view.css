@@ -1,10 +1,3 @@
-[mpds_visavis_plot_matrix_plot][mol_view_error]:not([mol_view_error="Promise"]) {
-    background-image: none;
-	padding-top: 6rem;
-    align-items: flex-start;
-    justify-content: center;
-}
-
 [mpds_visavis_plot_matrix_plot] rect.nonformer {
 	fill:url(#nonformer) !important;
 	fill-opacity:1.0 !important;

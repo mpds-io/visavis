@@ -1,3 +1,12 @@
+[mpds_visavis_plot_matrix_root][mol_view_error]:not([mol_view_error="Promise"]),
+[mpds_visavis_plot_graph_root][mol_view_error]:not([mol_view_error="Promise"]),
+[mpds_visavis_plotly][mol_view_error]:not([mol_view_error="Promise"]) {
+    background-image: none;
+	padding-top: 6rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+
 [mpds_visavis_plot][fullscreen] {
 	position: fixed;
 	z-index: 9999;
