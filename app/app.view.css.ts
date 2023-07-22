@@ -100,7 +100,9 @@ namespace $.$$ {
 		Plot_link: {
 			flex: {
 				grow: 1,
+				shrink: 1,
 			},
+			wordBreak: 'break-word'
 		},
 
 		Plot_page: {
