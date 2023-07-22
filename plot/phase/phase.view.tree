@@ -32,14 +32,14 @@ $mpds_visavis_plot_phase $mol_book2
 				color \#333
 			ternary *
 				aaxis *
-					title <= json_title_a \
+					title <= json_title_b \
 					ticks \
 					showline true
 					showgrid false
 					fixedrange true
 					linewidth 1
 				baxis *
-					title <= json_title_b \
+					title <= json_title_a \
 					ticks \
 					showline true
 					showgrid false
@@ -62,11 +62,11 @@ $mpds_visavis_plot_phase $mol_book2
 	triangle_annotations /
 		*
 			text <= triangle_annotation_text \
-			x: -0.25
-			y: 0.96
+			x -0.25
+			y 0.96
 			showarrow false
-			xref \papper
-			yref \papper
+			xref \paper
+			yref \paper
 			font *
 				size 15
 	rectangle *
@@ -115,7 +115,7 @@ $mpds_visavis_plot_phase $mol_book2
 				range <= json_temp /
 				fixedrange true
 				showticks <= show_ticks
-				showticklabels <= data_demo false
+				showticklabels <= not_demo false
 				showline true
 				zeroline false
 				showgrid false
@@ -126,7 +126,7 @@ $mpds_visavis_plot_phase $mol_book2
 				range <= json_temp
 				fixedrange true
 				showticks <= show_ticks
-				showticklabels <= data_demo 
+				showticklabels <= not_demo 
 				showline true
 				zeroline false
 				showgrid false
@@ -142,8 +142,8 @@ $mpds_visavis_plot_phase $mol_book2
 			x -0.03
 			y -0.11
 			showarrow false
-			xref \papper
-			yref \papper
+			xref \paper
+			yref \paper
 			font *
 				size 20
 		*
@@ -151,8 +151,8 @@ $mpds_visavis_plot_phase $mol_book2
 			x 1.03
 			y -0.11
 			showarrow false
-			xref \papper
-			yref \papper
+			xref \paper
+			yref \paper
 			font *
 				size 20
 	annotation *
