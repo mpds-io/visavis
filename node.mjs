@@ -18206,6 +18206,11 @@ var $;
         subscribe_events() {
             return null;
         }
+        font_family(next) {
+            if (next !== undefined)
+                return next;
+            return "";
+        }
         plot_options() {
             return {
                 displaylogo: false,
@@ -18214,6 +18219,9 @@ var $;
             };
         }
     }
+    __decorate([
+        $mol_mem
+    ], $mpds_visavis_plotly.prototype, "font_family", null);
     $.$mpds_visavis_plotly = $mpds_visavis_plotly;
 })($ || ($ = {}));
 //mpds/visavis/plotly/-view.tree/plotly.view.tree.ts
@@ -18232,7 +18240,7 @@ var $;
                 const { width, height } = this.view_rect();
                 const plotly_root = $mol_wire_sync(document).createElement('div');
                 plotly_root.style.position = 'absolute';
-                const promise = $mpds_visavis_lib.plotly().react(plotly_root, this.data(), { ...this.layout(), width, height, font: { family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" } }, this.plot_options());
+                const promise = $mpds_visavis_lib.plotly().react(plotly_root, this.data(), { ...this.layout(), width, height }, this.plot_options());
                 const dom_node = this.dom_node_actual();
                 promise.then((plotly_root) => {
                     dom_node.replaceChildren(plotly_root);
@@ -19817,11 +19825,17 @@ var $;
         subscribe_events() {
             return null;
         }
+        font_family(next) {
+            if (next !== undefined)
+                return next;
+            return "";
+        }
         Root() {
             const obj = new this.$.$mpds_visavis_plotly();
             obj.data = () => this.data_shown();
             obj.layout = () => this.layout();
             obj.subscribe_events = () => this.subscribe_events();
+            obj.font_family = () => this.font_family();
             return obj;
         }
         first_cmp_label(next) {
@@ -20037,6 +20051,9 @@ var $;
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_cube.prototype, "cube_click", null);
+    __decorate([
+        $mol_mem
+    ], $mpds_visavis_plot_cube.prototype, "font_family", null);
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_cube.prototype, "Root", null);
@@ -20326,6 +20343,9 @@ var $;
             }
             layout() {
                 return {
+                    font: {
+                        family: this.font_family(),
+                    },
                     showlegend: false,
                     scene: this.scene(),
                     margin: {
@@ -20570,11 +20590,12 @@ var $;
                     hovermode: "closest",
                     font: {
                         size: 20,
-                        color: "#333"
+                        color: "#333",
+                        family: this.font_family()
                     },
                     ternary: {
                         aaxis: {
-                            title: this.json_title_a(),
+                            title: this.json_title_b(),
                             ticks: "",
                             showline: true,
                             showgrid: false,
@@ -20582,7 +20603,7 @@ var $;
                             linewidth: 1
                         },
                         baxis: {
-                            title: this.json_title_b(),
+                            title: this.json_title_a(),
                             ticks: "",
                             showline: true,
                             showgrid: false,
@@ -20616,13 +20637,14 @@ var $;
             return [
                 {
                     text: this.triangle_annotation_text(),
-                    "x:": -0.25,
-                    "y:": 0.96,
+                    x: -0.25,
+                    y: 0.96,
                     showarrow: false,
-                    xref: "papper",
-                    yref: "papper",
+                    xref: "paper",
+                    yref: "paper",
                     font: {
-                        size: 15
+                        size: 15,
+                        family: this.font_family()
                     }
                 }
             ];
@@ -20649,7 +20671,8 @@ var $;
                     hovermode: "closest",
                     font: {
                         size: 16,
-                        color: "#333"
+                        color: "#333",
+                        family: this.font_family()
                     },
                     xaxis: {
                         title: "at. %",
@@ -20684,7 +20707,7 @@ var $;
                         range: this.json_temp(),
                         fixedrange: true,
                         showticks: this.show_ticks(),
-                        showticklabels: this.data_demo(),
+                        showticklabels: this.not_demo(),
                         showline: true,
                         zeroline: false,
                         showgrid: false,
@@ -20698,7 +20721,7 @@ var $;
                         range: this.json_temp(),
                         fixedrange: true,
                         showticks: this.show_ticks(),
-                        showticklabels: this.data_demo(),
+                        showticklabels: this.not_demo(),
                         showline: true,
                         zeroline: false,
                         showgrid: false,
@@ -20721,10 +20744,11 @@ var $;
                     x: -0.03,
                     y: -0.11,
                     showarrow: false,
-                    xref: "papper",
-                    yref: "papper",
+                    xref: "paper",
+                    yref: "paper",
                     font: {
-                        size: 20
+                        size: 20,
+                        family: this.font_family()
                     }
                 },
                 {
@@ -20732,10 +20756,11 @@ var $;
                     x: 1.03,
                     y: -0.11,
                     showarrow: false,
-                    xref: "papper",
-                    yref: "papper",
+                    xref: "paper",
+                    yref: "paper",
                     font: {
-                        size: 20
+                        size: 20,
+                        family: this.font_family()
                     }
                 }
             ];
@@ -20744,7 +20769,8 @@ var $;
             return {
                 show_arrow: false,
                 font: {
-                    size: 13
+                    size: 13,
+                    family: this.font_family()
                 }
             };
         }
@@ -20764,10 +20790,13 @@ var $;
                 this.Root()
             ];
         }
-        json_title_a() {
+        font_family() {
             return "";
         }
         json_title_b() {
+            return "";
+        }
+        json_title_a() {
             return "";
         }
         json_title_c() {
@@ -20791,7 +20820,7 @@ var $;
         json_temp() {
             return [];
         }
-        data_demo() {
+        not_demo() {
             return false;
         }
         label(next) {
@@ -21052,6 +21081,9 @@ var $;
             data_demo() {
                 return !this.json().comp_a && !this.json().comp_start;
             }
+            not_demo() {
+                return !this.data_demo();
+            }
             show_ticks() {
                 return this.json().labels.length > 0;
             }
@@ -21072,6 +21104,10 @@ var $;
             }
             annotation_textangle(label) {
                 return label[0].replace(/<\/?sub>/g, '').length > 10 ? -65 : 0;
+            }
+            triangle_annotation_text() {
+                const json = this.json();
+                return (json.diatype ? json.diatype + " " : "") + (json.temp[0] ? json.temp[0] + " &deg;C" : "");
             }
             annotations() {
                 const list = this.json().labels.map(label => ({
@@ -21235,7 +21271,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("mpds/visavis/plot/phase/phase.view.css", "path{pointer-events:painted;}\ng{pointer-events:painted;}\n");
+    $mol_style_attach("mpds/visavis/plot/phase/phase.view.css", "path{pointer-events:painted;}\ng{pointer-events:painted;}\n\n/* PLOTLY SVG HACKS */\n@media all and (max-aspect-ratio:10/9){g.toplevel.aline, g.toplevel.bline, g.toplevel.cline{display:none;}}\n@media all and (max-aspect-ratio:5/6){\n    g.g-atitle, g.g-btitle, g.g-ctitle{transform:translateY(75px);}\n    g.annotation{display:none;}\n}\ng.aaxis, g.baxis, g.caxis{display:none;}\n");
 })($ || ($ = {}));
 //mpds/visavis/plot/phase/-css/phase.view.css.ts
 ;
@@ -21320,7 +21356,7 @@ var $;
                 const json = this.json();
                 return {
                     showlegend: json.payload2 ? true : false,
-                    legend: { x: 0, y: 1, font: { size: 17 } },
+                    legend: { x: 0, y: 1, font: { family: this.font_family(), size: 17 } },
                     xaxis: {
                         autorange: true,
                         showgrid: false,
@@ -21340,9 +21376,9 @@ var $;
                         ticklen: 0,
                         title: json.payload.ytitle,
                         rangemode: "nonnegative",
-                        type: "log", tickfont: { size: 17 }
+                        type: "log", tickfont: { family: this.font_family(), size: 17 }
                     },
-                    font: { size: 13 }
+                    font: { family: this.font_family(), size: 13 }
                 };
             }
             data() {
@@ -21417,11 +21453,17 @@ var $;
         subscribe_events() {
             return null;
         }
+        font_family(next) {
+            if (next !== undefined)
+                return next;
+            return "";
+        }
         Plot() {
             const obj = new this.$.$mpds_visavis_plotly();
             obj.data = () => this.data();
             obj.layout = () => this.layout();
             obj.subscribe_events = () => this.subscribe_events();
+            obj.font_family = () => this.font_family();
             return obj;
         }
         first_cmp_label(next) {
@@ -21480,6 +21522,9 @@ var $;
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_discovery.prototype, "discovery_click", null);
+    __decorate([
+        $mol_mem
+    ], $mpds_visavis_plot_discovery.prototype, "font_family", null);
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_discovery.prototype, "Plot", null);
@@ -21634,7 +21679,7 @@ var $;
                             text: '<i>Second Principal Component (a<sub>1</sub>x + b<sub>1</sub>y + c<sub>1</sub>z + ...)</i>',
                             showarrow: false,
                             bgcolor: '#fff',
-                            font: { size: 14 }
+                            font: { family: this.font_family(), size: 14 }
                         },
                         {
                             x: 0.97,
@@ -21647,7 +21692,7 @@ var $;
                             showarrow: false,
                             bgcolor: '#fff',
                             textangle: 270,
-                            font: { size: 14 }
+                            font: { family: this.font_family(), size: 14 }
                         }
                     ]
                 };
@@ -21889,7 +21934,7 @@ var $;
                         tickmode: 'array',
                         tickvals: $mpds_visavis_lib.d3().range(bands_matrix.kpoints.length),
                         ticktext: x_labels,
-                        tickfont: { size: 20 }
+                        tickfont: { family: this.font_family(), size: 20 }
                     };
                 }
                 else {
@@ -21919,7 +21964,7 @@ var $;
                         ticklen: 4,
                         title: y_title
                     },
-                    font: { size: 13 }
+                    font: { family: this.font_family(), size: 13 }
                 };
             }
         }
@@ -22072,7 +22117,7 @@ var $;
                 const data = this.data();
                 const tot_count = this.tot_count();
                 const xy_domains = this.xy_domains();
-                const annotations_layout = { showarrow: false, font: { size: 13 }, borderpad: 0, bgcolor: '#fff' };
+                const annotations_layout = { showarrow: false, font: { family: this.font_family(), size: 13 }, borderpad: 0, bgcolor: '#fff' };
                 const annotations = data.map((pie, loc_count) => {
                     let label = pie.name + ' distribution';
                     label = 'Fig. ' + (loc_count + 1) + '. ' + label.charAt(0).toUpperCase() + label.slice(1);
@@ -22213,10 +22258,18 @@ var $;
             const obj = new this.$.$mpds_visavis_plot_raw();
             return obj;
         }
+        notify(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
     }
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_scatter.prototype, "plot_raw", null);
+    __decorate([
+        $mol_mem
+    ], $mpds_visavis_plot_scatter.prototype, "notify", null);
     $.$mpds_visavis_plot_scatter = $mpds_visavis_plot_scatter;
 })($ || ($ = {}));
 //mpds/visavis/plot/scatter/-view.tree/scatter.view.tree.ts
@@ -22294,11 +22347,9 @@ var $;
                     return 'pressure';
                 }
                 else if (Math.abs(t_data[0] - t_data_sum / t_data.length) > 0.1 && Math.abs(p_data[0] - p_data_sum / p_data.length) > 0.1) {
-                    return $mol_fail(new $mol_data_error('Sorry, plotting both temperature and pressure is not yet supported'));
+                    this.notify('Sorry, plotting both temperature and pressure is not yet supported');
                 }
-                else {
-                    return 'temperature';
-                }
+                return 'temperature';
             }
             x_data() {
                 switch (this.x_data_type()) {
@@ -22393,7 +22444,7 @@ var $;
                 }
                 return {
                     showlegend: true,
-                    legend: { x: 100, y: 1, font: { size: 14 } },
+                    legend: { x: 100, y: 1, font: { family: this.font_family(), size: 14 } },
                     xaxis: {
                         autorange: true,
                         showgrid: true,
@@ -22412,7 +22463,7 @@ var $;
                         ticklen: 4,
                         title: 'Cell parameters' + y_comment + ', A'
                     },
-                    font: { size: 13 }
+                    font: { family: this.font_family(), size: 13 }
                 };
             }
         }
@@ -22496,7 +22547,7 @@ var $;
                 const json = this.json();
                 return {
                     showlegend: true,
-                    legend: { x: 100, y: 1, font: { size: 14 } },
+                    legend: { x: 100, y: 1, font: { family: this.font_family(), size: 14 } },
                     xaxis: {
                         type: json.xlog ? 'log' : '-',
                         autorange: true,
@@ -22521,7 +22572,7 @@ var $;
                         ticklen: 4,
                         title: json.ytitle
                     },
-                    font: { size: 13 },
+                    font: { family: this.font_family(), size: 13 },
                     margin: {
                         t: 0,
                         r: 0
@@ -22906,10 +22957,30 @@ var $;
         show_setup() {
             return false;
         }
+        font_family(next) {
+            if (next !== undefined)
+                return next;
+            return "";
+        }
+        notify(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
         Fullscreen() {
             const obj = new this.$.$mol_check();
             obj.Icon = () => this.Expand_icon();
             obj.checked = (next) => this.fullscreen(next);
+            return obj;
+        }
+        show_demo_warn(next) {
+            if (next !== undefined)
+                return next;
+            return true;
+        }
+        Demo_warn() {
+            const obj = new this.$.$mol_paragraph();
+            obj.title = () => "You are using the limited demo. Buy the full access and support our work.";
             return obj;
         }
         plots() {
@@ -23011,6 +23082,7 @@ var $;
             obj.plot_raw = () => this.plot_raw();
             obj.json_cmp = () => this.json_cmp();
             obj.show_setup = () => this.show_setup();
+            obj.font_family = () => this.font_family();
             obj.show_fixel = (next) => this.show_fixel();
             obj.nonformers_checked = (next) => this.nonformers_checked(next);
             obj.fixel_checked = (next) => this.cube_fixel_checked(next);
@@ -23022,9 +23094,13 @@ var $;
                 return next;
             return null;
         }
+        phase_data_demo() {
+            return this.Phase().data_demo();
+        }
         Phase() {
             const obj = new this.$.$mpds_visavis_plot_phase();
             obj.plot_raw = () => this.plot_raw();
+            obj.font_family = () => this.font_family();
             obj.phase_click = (next) => this.phase_click(next);
             return obj;
         }
@@ -23036,6 +23112,7 @@ var $;
         Bar() {
             const obj = new this.$.$mpds_visavis_plot_bar();
             obj.plot_raw = () => this.plot_raw();
+            obj.font_family = () => this.font_family();
             obj.bar_click = (next) => this.bar_click(next);
             return obj;
         }
@@ -23050,6 +23127,7 @@ var $;
         Discovery() {
             const obj = new this.$.$mpds_visavis_plot_discovery();
             obj.plot_raw = () => this.plot_raw();
+            obj.font_family = () => this.font_family();
             obj.json_cmp = () => this.json_cmp();
             obj.show_setup = () => this.show_setup();
             obj.discovery_click = (next) => this.discovery_click(next);
@@ -23058,6 +23136,7 @@ var $;
         Eigen() {
             const obj = new this.$.$mpds_visavis_plot_eigen();
             obj.plot_raw = () => this.plot_raw();
+            obj.font_family = () => this.font_family();
             return obj;
         }
         pie_click(next) {
@@ -23068,17 +23147,21 @@ var $;
         Pie() {
             const obj = new this.$.$mpds_visavis_plot_pie();
             obj.plot_raw = () => this.plot_raw();
+            obj.font_family = () => this.font_family();
             obj.pie_click = (next) => this.pie_click(next);
             return obj;
         }
         Scatter() {
             const obj = new this.$.$mpds_visavis_plot_scatter();
             obj.plot_raw = () => this.plot_raw();
+            obj.font_family = () => this.font_family();
+            obj.notify = (next) => this.notify(next);
             return obj;
         }
         Customscatter() {
             const obj = new this.$.$mpds_visavis_plot_customscatter();
             obj.plot_raw = () => this.plot_raw();
+            obj.font_family = () => this.font_family();
             return obj;
         }
         Heatmap() {
@@ -23109,7 +23192,19 @@ var $;
     ], $mpds_visavis_plot.prototype, "json_cmp_request", null);
     __decorate([
         $mol_mem
+    ], $mpds_visavis_plot.prototype, "font_family", null);
+    __decorate([
+        $mol_mem
+    ], $mpds_visavis_plot.prototype, "notify", null);
+    __decorate([
+        $mol_mem
     ], $mpds_visavis_plot.prototype, "Fullscreen", null);
+    __decorate([
+        $mol_mem
+    ], $mpds_visavis_plot.prototype, "show_demo_warn", null);
+    __decorate([
+        $mol_mem
+    ], $mpds_visavis_plot.prototype, "Demo_warn", null);
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot.prototype, "Expand_icon", null);
@@ -23255,7 +23350,7 @@ var $;
     var $$;
     (function ($$) {
         class $mpds_visavis_plot extends $.$mpds_visavis_plot {
-            fetch_plot_json(request) {
+            static fetch_plot_json(request) {
                 if (request == null)
                     return null;
                 const json = $mol_fetch.json(request);
@@ -23266,18 +23361,32 @@ var $;
                 return json;
             }
             json() {
-                return this.fetch_plot_json(this.json_request());
+                const request = this.json_request() || this.$.$mol_state_arg.href().split('#')[1];
+                return $mpds_visavis_plot.fetch_plot_json(request);
             }
             json_cmp() {
-                return this.fetch_plot_json(this.json_cmp_request());
+                return $mpds_visavis_plot.fetch_plot_json(this.json_cmp_request());
+            }
+            json_cmp_request(next) {
+                if (next === null && $mol_wire_probe(() => this.json_cmp_request()) === null) {
+                    this.notify('Comparison was reset');
+                }
+                return next ?? null;
             }
             plot_raw() {
                 return this.json() ?
                     $mpds_visavis_plot_raw_from_json(this.json()) : null;
             }
             sub() {
-                return this.plot_raw() ?
-                    [this.Fullscreen(), this.plots()[this.plot_raw().type()]] : [];
+                const phase_data_demo = this.plot_raw()?.type() == 'pd' ? this.phase_data_demo() : false;
+                const show_demo_warn = this.show_demo_warn()
+                    && !['matrix', 'discovery'].includes(this.plot_raw()?.type())
+                    && !phase_data_demo;
+                return this.plot_raw() ? [
+                    ...show_demo_warn ? [this.Demo_warn()] : [],
+                    this.Fullscreen(),
+                    this.plots()[this.plot_raw().type()]
+                ] : [];
             }
             matrix_fixel_checked(next) {
                 if (next !== undefined) {
@@ -23294,16 +23403,19 @@ var $;
                 return false;
             }
             on_fixel_checked(checked) { }
+            notify(msg) {
+                alert(msg);
+            }
         }
-        __decorate([
-            $mol_action
-        ], $mpds_visavis_plot.prototype, "fetch_plot_json", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot.prototype, "json", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot.prototype, "json_cmp", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot.prototype, "json_cmp_request", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot.prototype, "plot_raw", null);
@@ -23319,6 +23431,12 @@ var $;
         __decorate([
             $mol_action
         ], $mpds_visavis_plot.prototype, "on_fixel_checked", null);
+        __decorate([
+            $mol_action
+        ], $mpds_visavis_plot.prototype, "notify", null);
+        __decorate([
+            $mol_action
+        ], $mpds_visavis_plot, "fetch_plot_json", null);
         $$.$mpds_visavis_plot = $mpds_visavis_plot;
         $mol_view_component($mpds_visavis_plot);
     })($$ = $.$$ || ($.$$ = {}));
@@ -23328,7 +23446,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("mpds/visavis/plot/plot.view.css", "[mpds_visavis_plot][fullscreen] {\n\tposition: fixed;\n\tz-index: 9999;\n\ttop: 0;\n\tleft: 0;\n\tright: 0;\n\tbottom: 0;\n}\n");
+    $mol_style_attach("mpds/visavis/plot/plot.view.css", "[mpds_visavis_plot_matrix_root][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_plot_graph_root][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_plotly][mol_view_error]:not([mol_view_error=\"Promise\"]) {\n    background-image: none;\n\tpadding-top: 6rem;\n    align-items: flex-start;\n    justify-content: center;\n}\n\n[mpds_visavis_plot][fullscreen] {\n\tposition: fixed;\n\tz-index: 9999;\n\ttop: 0;\n\tleft: 0;\n\tright: 0;\n\tbottom: 0;\n}\n");
 })($ || ($ = {}));
 //mpds/visavis/plot/-css/plot.view.css.ts
 ;
@@ -23347,6 +23465,19 @@ var $;
                 },
                 zIndex: 5,
             },
+            Demo_warn: {
+                position: 'absolute',
+                left: 0,
+                right: 0,
+                justify: {
+                    content: 'center'
+                },
+                font: {
+                    size: '.75rem',
+                },
+                zIndex: 1,
+                cursor: 'default',
+            }
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
@@ -23588,6 +23719,7 @@ var $;
             const obj = new this.$.$mpds_visavis_plot();
             obj.plot_raw = () => this.plot_raw(id);
             obj.show_setup = () => true;
+            obj.font_family = () => "Tahoma\t";
             return obj;
         }
     }
@@ -23744,8 +23876,12 @@ var $;
                 return this.$.$mol_state_local.value(`${this}.history_plot_ids()`, next) ?? [];
             }
             plot_raw(id, next) {
-                const json = this.$.$mol_state_local.value(`${this}.plot_raw('${id}')`, next && next.data());
-                return json ? new $mpds_visavis_plot_raw(json) : null;
+                if (this.json_request_hash()) {
+                    const json = $mpds_visavis_plot.fetch_plot_json(this.json_request_hash());
+                    return $mpds_visavis_plot_raw_from_json(json, this.json_request_hash());
+                }
+                const data = this.$.$mol_state_local.value(`${this}.plot_raw('${id}')`, next && next.data());
+                return data ? new $mpds_visavis_plot_raw(data) : null;
             }
             history_rows() {
                 return this.history_plot_ids().map((id) => this.History_plot_link(id));
@@ -23763,7 +23899,7 @@ var $;
                 return id;
             }
             plot_opened_id(next) {
-                return this.$.$mol_state_arg.value('file', next) ?? '';
+                return this.$.$mol_state_arg.value('file', next) ?? this.json_request_hash() ?? '';
             }
             Plot_opened() {
                 const id = this.plot_opened_id();
@@ -23793,6 +23929,12 @@ var $;
             }
             menu_section() {
                 return this.$.$mol_state_arg.value('section');
+            }
+            json_request_hash() {
+                const hash = this.$.$mol_state_arg.href().split('#')[1];
+                if (hash.slice(0, 4) == 'http')
+                    return hash;
+                return null;
             }
         }
         __decorate([
@@ -23837,6 +23979,9 @@ var $;
         __decorate([
             $mol_mem
         ], $mpds_visavis_app.prototype, "menu_section", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_app.prototype, "json_request_hash", null);
         $$.$mpds_visavis_app = $mpds_visavis_app;
         $mol_view_component($mpds_visavis_app);
     })($$ = $.$$ || ($.$$ = {}));
@@ -23849,6 +23994,7 @@ var $;
     var $$;
     (function ($$) {
         $mol_style_define($.$mpds_visavis_app, {
+            contain: 'none',
             Plot_view: {
                 flex: {
                     direction: 'column',
@@ -23936,7 +24082,9 @@ var $;
             Plot_link: {
                 flex: {
                     grow: 1,
+                    shrink: 1,
                 },
+                wordBreak: 'break-word'
             },
             Plot_page: {
                 flex: {

@@ -7286,6 +7286,7 @@ $mpds_visavis_plotly $mol_view
 	data *
 	layout *
 	subscribe_events null
+	font_family? \
 	plot_options *
 		displaylogo false
 		displayModeBar false
@@ -7480,6 +7481,7 @@ $mpds_visavis_plot_cube $mol_view
 					data <= data_shown *
 					layout <= layout *
 					subscribe_events <= subscribe_events null
+					font_family <= font_family? \
 				<= Cmp_legend $mpds_visavis_plot_legend_cmp
 					first_cmp_label? <= first_cmp_label? \
 					second_cmp_label? <= second_cmp_label? \
@@ -7561,16 +7563,17 @@ $mpds_visavis_plot_phase $mol_book2
 			font *
 				size 20
 				color \#333
+				family <= font_family \
 			ternary *
 				aaxis *
-					title <= json_title_a \
+					title <= json_title_b \
 					ticks \
 					showline true
 					showgrid false
 					fixedrange true
 					linewidth 1
 				baxis *
-					title <= json_title_b \
+					title <= json_title_a \
 					ticks \
 					showline true
 					showgrid false
@@ -7593,13 +7596,14 @@ $mpds_visavis_plot_phase $mol_book2
 	triangle_annotations /
 		*
 			text <= triangle_annotation_text \
-			x: -0.25
-			y: 0.96
+			x -0.25
+			y 0.96
 			showarrow false
-			xref \papper
-			yref \papper
+			xref \paper
+			yref \paper
 			font *
 				size 15
+				family <= font_family
 	rectangle *
 		datamock /
 			*
@@ -7619,6 +7623,7 @@ $mpds_visavis_plot_phase $mol_book2
 			font *
 				size 16
 				color \#333
+				family <= font_family
 			xaxis *
 				title \at. %
 				range <= json_comp_range /
@@ -7646,7 +7651,7 @@ $mpds_visavis_plot_phase $mol_book2
 				range <= json_temp /
 				fixedrange true
 				showticks <= show_ticks
-				showticklabels <= data_demo false
+				showticklabels <= not_demo false
 				showline true
 				zeroline false
 				showgrid false
@@ -7657,7 +7662,7 @@ $mpds_visavis_plot_phase $mol_book2
 				range <= json_temp
 				fixedrange true
 				showticks <= show_ticks
-				showticklabels <= data_demo 
+				showticklabels <= not_demo 
 				showline true
 				zeroline false
 				showgrid false
@@ -7673,23 +7678,26 @@ $mpds_visavis_plot_phase $mol_book2
 			x -0.03
 			y -0.11
 			showarrow false
-			xref \papper
-			yref \papper
+			xref \paper
+			yref \paper
 			font *
 				size 20
+				family <= font_family
 		*
 			text <= json_title_b
 			x 1.03
 			y -0.11
 			showarrow false
-			xref \papper
-			yref \papper
+			xref \paper
+			yref \paper
 			font *
 				size 20
+				family <= font_family
 	annotation *
 		show_arrow false
 		font *
 			size 13
+			family <= font_family
 	annotation_textangle* 0
 	plot_options *
 		displaylogo false
@@ -7720,6 +7728,7 @@ $mpds_visavis_plot_discovery $mol_view
 			data <= data *
 			layout <= layout *
 			subscribe_events <= subscribe_events null
+			font_family <= font_family? \
 		<= Cmp_legend $mpds_visavis_plot_legend_cmp
 			first_cmp_label? <= first_cmp_label? \
 			second_cmp_label? <= second_cmp_label? \
@@ -7751,6 +7760,7 @@ $mpds_visavis_plot_pie $mpds_visavis_plotly
 
 $mpds_visavis_plot_scatter $mpds_visavis_plotly
 	plot_raw $mpds_visavis_plot_raw
+	notify? null
 
 $mpds_visavis_plot_customscatter $mpds_visavis_plotly
 	plot_raw $mpds_visavis_plot_raw
@@ -7777,9 +7787,14 @@ $mpds_visavis_plot $mol_view
 	json_cmp null
 	plot_raw null
 	show_setup false
+	font_family? \
+	notify? null
 	Fullscreen $mol_check
 		Icon <= Expand_icon $mol_icon_arrow_expand_all
 		checked? <=> fullscreen? false
+	show_demo_warn? true
+	Demo_warn $mol_paragraph
+		title \You are using the limited demo. Buy the full access and support our work.
 	plots *
 		matrix <= Matrix $mpds_visavis_plot_matrix
 			plot_raw <= plot_raw
@@ -7796,6 +7811,7 @@ $mpds_visavis_plot $mol_view
 			plot_raw <= plot_raw
 			json_cmp <= json_cmp
 			show_setup <= show_setup
+			font_family <= font_family
 			show_fixel? <= show_fixel? true
 			nonformers_checked? <=> nonformers_checked?
 			fixel_checked? <=> cube_fixel_checked? false
@@ -7808,25 +7824,34 @@ $mpds_visavis_plot $mol_view
 			cube_click? <=> cube_click? null
 		pd <= Phase $mpds_visavis_plot_phase
 			plot_raw <= plot_raw
+			font_family <= font_family
 			phase_click? <=> phase_click? null
+			data_demo => phase_data_demo
 		bar <= Bar $mpds_visavis_plot_bar
 			plot_raw <= plot_raw
+			font_family <= font_family
 			bar_click? <=> bar_click? null
 		discovery <= Discovery $mpds_visavis_plot_discovery
 			plot_raw <= plot_raw
+			font_family <= font_family
 			json_cmp <= json_cmp
 			show_setup <= show_setup
 			elementals_on? => discovery_elementals_on?
 			discovery_click? <=> discovery_click? null
 		eigenplot <= Eigen $mpds_visavis_plot_eigen
 			plot_raw <= plot_raw
+			font_family <= font_family
 		pie <= Pie $mpds_visavis_plot_pie
 			plot_raw <= plot_raw
+			font_family <= font_family
 			pie_click? <=> pie_click? null
 		scatter <= Scatter $mpds_visavis_plot_scatter
 			plot_raw <= plot_raw
+			font_family <= font_family
+			notify? <=> notify?
 		customscatter <= Customscatter $mpds_visavis_plot_customscatter
 			plot_raw <= plot_raw
+			font_family <= font_family
 		heatmap <= Heatmap $mpds_visavis_plot_heatmap
 			plot_raw <= plot_raw
 		graph <= Graph $mpds_visavis_plot_graph
@@ -7902,3 +7927,4 @@ $mpds_visavis_app $mol_book2
 			<= Plot_view* $mpds_visavis_plot
 				plot_raw <= plot_raw* null
 				show_setup true
+				font_family \Tahoma	

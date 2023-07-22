@@ -2261,6 +2261,7 @@ declare namespace $ {
         data(): Record<string, any>;
         layout(): Record<string, any>;
         subscribe_events(): any;
+        font_family(next?: any): string;
         plot_options(): Record<string, any>;
     }
 }
@@ -2743,6 +2744,7 @@ declare namespace $ {
         data_shown(): Record<string, any>;
         layout(): Record<string, any>;
         subscribe_events(): any;
+        font_family(next?: any): string;
         Root(): $$.$mpds_visavis_plotly;
         first_cmp_label(next?: any): string;
         second_cmp_label(next?: any): string;
@@ -3047,6 +3049,9 @@ declare namespace $.$$ {
         };
         subscribe_events(): void;
         layout(): {
+            font: {
+                family: string;
+            };
             showlegend: boolean;
             scene: any;
             margin: {
@@ -3090,8 +3095,9 @@ declare namespace $ {
         annotation_textangle(id: any): number;
         plot_options(): Record<string, any>;
         sub(): readonly any[];
-        json_title_a(): string;
+        font_family(): string;
         json_title_b(): string;
+        json_title_a(): string;
         json_title_c(): string;
         layout_shapes(): readonly any[];
         annotations(): readonly any[];
@@ -3099,7 +3105,7 @@ declare namespace $ {
         json_comp_range(): readonly any[];
         show_ticks(): boolean;
         json_temp(): readonly any[];
-        data_demo(): boolean;
+        not_demo(): boolean;
         label(next?: any): string;
         Label(): $mol_view;
         data(): Record<string, any>;
@@ -3181,6 +3187,7 @@ declare namespace $.$$ {
         json_comp_range(): readonly number[];
         json_temp(): readonly number[];
         data_demo(): boolean;
+        not_demo(): boolean;
         show_ticks(): boolean;
         is_triangle(): boolean;
         layout_shapes(): (Record<string, any> | {
@@ -3191,6 +3198,7 @@ declare namespace $.$$ {
             line: any;
         })[];
         annotation_textangle(label: ReturnType<typeof Label_json>): 0 | -65;
+        triangle_annotation_text(): string;
         annotations(): any[];
         mouseover(): void;
         mouseout(): void;
@@ -3414,6 +3422,7 @@ declare namespace $.$$ {
                 x: number;
                 y: number;
                 font: {
+                    family: string;
                     size: number;
                 };
             };
@@ -3438,10 +3447,12 @@ declare namespace $.$$ {
                 rangemode: string;
                 type: string;
                 tickfont: {
+                    family: string;
                     size: number;
                 };
             };
             font: {
+                family: string;
                 size: number;
             };
         };
@@ -3468,6 +3479,7 @@ declare namespace $ {
         data(): Record<string, any>;
         layout(): Record<string, any>;
         subscribe_events(): any;
+        font_family(next?: any): string;
         Plot(): $$.$mpds_visavis_plotly;
         first_cmp_label(next?: any): string;
         second_cmp_label(next?: any): string;
@@ -3568,6 +3580,7 @@ declare namespace $.$$ {
                 showarrow: boolean;
                 bgcolor: string;
                 font: {
+                    family: string;
                     size: number;
                 };
                 textangle?: undefined;
@@ -3583,6 +3596,7 @@ declare namespace $.$$ {
                 bgcolor: string;
                 textangle: number;
                 font: {
+                    family: string;
                     size: number;
                 };
             })[];
@@ -4697,6 +4711,7 @@ declare namespace $.$$ {
                 title: string;
             };
             font: {
+                family: string;
                 size: number;
             };
         };
@@ -4822,6 +4837,7 @@ declare namespace $.$$ {
             } & {
                 showarrow: boolean;
                 font: {
+                    family: string;
                     size: number;
                 };
                 borderpad: number;
@@ -4866,6 +4882,7 @@ declare namespace $ {
 declare namespace $ {
     class $mpds_visavis_plot_scatter extends $mpds_visavis_plotly {
         plot_raw(): $mpds_visavis_plot_raw;
+        notify(next?: any): any;
     }
 }
 
@@ -5576,6 +5593,7 @@ declare namespace $.$$ {
                 x: number;
                 y: number;
                 font: {
+                    family: string;
                     size: number;
                 };
             };
@@ -5598,6 +5616,7 @@ declare namespace $.$$ {
                 title: string;
             };
             font: {
+                family: string;
                 size: number;
             };
         };
@@ -5761,6 +5780,7 @@ declare namespace $.$$ {
                 x: number;
                 y: number;
                 font: {
+                    family: string;
                     size: number;
                 };
             };
@@ -5789,6 +5809,7 @@ declare namespace $.$$ {
                 title: string | undefined;
             };
             font: {
+                family: string;
                 size: number;
             };
             margin: {
@@ -6028,7 +6049,11 @@ declare namespace $ {
         json_cmp(): any;
         plot_raw(): any;
         show_setup(): boolean;
+        font_family(next?: any): string;
+        notify(next?: any): any;
         Fullscreen(): $$.$mol_check;
+        show_demo_warn(next?: any): boolean;
+        Demo_warn(): $$.$mol_paragraph;
         plots(): Record<string, any>;
         Expand_icon(): $mol_icon_arrow_expand_all;
         fullscreen(next?: any): boolean;
@@ -6051,6 +6076,7 @@ declare namespace $ {
         z_sort(next?: any): string;
         Cube(): $$.$mpds_visavis_plot_cube;
         phase_click(next?: any): any;
+        phase_data_demo(): boolean;
         Phase(): $$.$mpds_visavis_plot_phase;
         bar_click(next?: any): any;
         Bar(): $$.$mpds_visavis_plot_bar;
@@ -6403,14 +6429,16 @@ declare namespace $ {
 
 declare namespace $.$$ {
     class $mpds_visavis_plot extends $.$mpds_visavis_plot {
-        fetch_plot_json(request: RequestInfo): any;
+        static fetch_plot_json(request: RequestInfo | null): any;
         json(): any;
         json_cmp(): any;
+        json_cmp_request(next?: string | null): string | null;
         plot_raw(): $mpds_visavis_plot_raw | null;
         sub(): any[];
         matrix_fixel_checked(next?: any): boolean;
         cube_fixel_checked(next?: any): boolean;
         on_fixel_checked(checked: boolean): void;
+        notify(msg: string): void;
     }
 }
 
@@ -6497,6 +6525,7 @@ declare namespace $.$$ {
         pages(): ($mol_drop | $mol_page | null)[];
         menu_body(): $mol_list[];
         menu_section(): string | null;
+        json_request_hash(): string | null;
     }
 }
 
