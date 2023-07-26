@@ -6,23 +6,14 @@ Standalone and self-contained HTML5 widget, based on the D3 and Plotly libs and 
 Supports the following plot types (see `examples` folder):
 
 - `bar`
-
 - `cube`
-
 - `scatter` and `customscatter`
-
 - `discovery`
-
 - `eigenplot`
-
 - `graph`
-
 - `heatmap`
-
 - `matrix`
-
 - `phase diagram`
-
 - `pie`
 
 
@@ -50,7 +41,7 @@ As a part of the [MPDS desktop GUI](https://github.com/mpds-io/ermac), being use
 ## Installation
 
 ```bash
-npm install
+npm exec mam@latest mpds/visavis
 ```
 
 
