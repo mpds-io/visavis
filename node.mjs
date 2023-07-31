@@ -23602,7 +23602,8 @@ var $;
             const obj = new this.$.$mol_link();
             obj.title = () => this.$.$mol_locale.text('$mpds_visavis_app_History_link_title');
             obj.arg = () => ({
-                section: null
+                section: null,
+                file: null
             });
             return obj;
         }
@@ -23610,7 +23611,8 @@ var $;
             const obj = new this.$.$mol_link();
             obj.title = () => this.$.$mol_locale.text('$mpds_visavis_app_Examples_link_title');
             obj.arg = () => ({
-                section: "examples"
+                section: "examples",
+                file: null
             });
             return obj;
         }

@@ -7883,10 +7883,14 @@ $mpds_visavis_app $mol_book2
 			tools /
 				<= History_link $mol_link
 					title @ \Uploads
-					arg * section null
+					arg * 
+						section null
+						file null
 				<= Examples_link $mol_link
 					title @ \Examples
-					arg * section \examples
+					arg * 
+						section \examples
+						file null
 			body <= menu_body /
 				<= History $mol_list
 					title @ \Uploads
