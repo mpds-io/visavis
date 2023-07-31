@@ -120,7 +120,7 @@ namespace $.$$ {
 		@ $mol_mem
 		json_request_hash() {
 			const hash = this.$.$mol_state_arg.href().split( '#' )[1]
-			if ( hash.slice(0, 4) == 'http' ) return hash
+			if ( hash?.slice(0, 4) == 'http' ) return hash
 			return null
 		}
 
