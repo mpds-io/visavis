@@ -48,8 +48,24 @@ namespace $.$$ {
 				const json = $mpds_visavis_plot.fetch_plot_json( this.json_request_hash() )
 				return $mpds_visavis_plot_raw_from_json( json, this.json_request_hash()! )
 			}
+
+			if ( this.menu_section() == 'examples' ) {
+				return this.plot_raw_example(id)
+			}
+
 			const data = this.$.$mol_state_local.value( `${this}.plot_raw('${id}')` , next && next.data() )
 			return data ? new $mpds_visavis_plot_raw( data ) : null
+		}
+
+		@ $mol_mem_key
+		plot_raw_example(id: string) {
+			const data: $mpds_visavis_plot_raw['data_default'] | null = this.$.$mol_state_local.value( `${this}.plot_raw_example('${id}')` )
+			if ( data ) return new $mpds_visavis_plot_raw( data )
+
+			const json = $mol_fetch.json( this.examples()[ id ] )
+			const plot_raw = $mpds_visavis_plot_raw_from_json( json, id )
+			this.$.$mol_state_local.value( `${this}.plot_raw_example('${id}')`, plot_raw.data() )
+			return plot_raw
 		}
 
 		@ $mol_mem
@@ -59,15 +75,8 @@ namespace $.$$ {
 
 		@ $mol_mem
 		example_rows() {
-			const names = [ 'bar_sci_literature.json' ]
-
-			return names.map( name => {
-				const json = $mol_fetch.json( '/mpds/visavis/examples/' + name )
-				const plot_raw = $mpds_visavis_plot_raw_from_json( json, name )
-
-				this.plot_raw( plot_raw.id(), plot_raw )
-				
-				return this.Plot_link( plot_raw.id() )
+			return Object.keys( this.examples() ).map( name => {
+				return this.Plot_link( name )
 			} )
 		}
 
