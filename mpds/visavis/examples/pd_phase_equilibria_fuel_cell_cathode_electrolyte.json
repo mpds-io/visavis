@@ -1,0 +1,127 @@
+{
+ "temp": [
+  800
+ ],
+ "arity": 4,
+ "entry": "C300452",
+ "naxes": 3,
+ "comp_a": {
+  "O": 3.0,
+  "Bi": 2.0,
+  "Ce": 0,
+  "Ru": 0
+ },
+ "comp_b": {
+  "O": 2.0,
+  "Bi": 0,
+  "Ce": 1,
+  "Ru": 0
+ },
+ "comp_c": {
+  "O": 2.0,
+  "Bi": 0,
+  "Ce": 0,
+  "Ru": 1
+ },
+ "labels": [
+  [
+   "( 1073K )",
+   [
+    0.9143980200902606,
+    0.9198971925201889
+   ],
+   null
+  ],
+  [
+   "CeO<sub>2</sub>",
+   [
+    0.827786067841025,
+    0.426371001938389
+   ],
+   6314
+  ],
+  [
+   "Bi<sub>2</sub>O<sub>3</sub>",
+   [
+    0.1836056922405008,
+    0.4908034812592091
+   ],
+   null
+  ],
+  [
+   "Bi<sub>2</sub>O<sub>3</sub> rt",
+   [
+    -0.018303974377622184,
+    0.03715697428474496
+   ],
+   5116
+  ],
+  [
+   "CeO<sub>2</sub>",
+   [
+    0.5469500655117193,
+    0.8501550660217446
+   ],
+   6314
+  ],
+  [
+   "RuO<sub>2</sub>",
+   [
+    1.0463808414616558,
+    0.03715697428474496
+   ],
+   12432
+  ],
+  [
+   "Ru<sub>2</sub>Bi<sub>2</sub>O<sub>7</sub>",
+   [
+    0.6357548405881497,
+    -0.08619486197720028
+   ],
+   17451
+  ]
+ ],
+ "shapes": [
+  {
+   "kind": "phase",
+   "nphases": 3,
+   "svgpath": "M 0.666618,0 L 0.499927,0.866025 L 1,0 L 0,0 L 0.397001,0.687521 L 0.666618,0"
+  },
+  {
+   "kind": "phase",
+   "nphases": 2,
+   "svgpath": "M 0.498706,0.86391 L 0.397977,0.689417 L 0.398147,0.688984 L 0.398147,0.688984 L 0.661757,0.0167813 L 0.498706,0.86391",
+   "is_solid": true
+  }
+ ],
+ "diatype": "isothermal section",
+ "range_a": [
+  0.0,
+  100.0
+ ],
+ "range_b": [
+  0.0,
+  100.0
+ ],
+ "range_c": [
+  0.0,
+  100.0
+ ],
+ "title_a": "Bi<sub>2</sub>O<sub>3</sub>",
+ "title_b": "CeO<sub>2</sub>",
+ "title_c": "RuO<sub>2</sub>",
+ "chemical_elements": [
+  "Bi",
+  "Ce",
+  "O",
+  "Ru"
+ ],
+ "object_repr": "C-MPDS",
+ "$schema": "https://developer.mpds.io/mpds.schema.json#/definitions/phase_diagram",
+ "version": "1.0.7",
+ "object_type": "C",
+ "use_visavis_type": "pd",
+ "reference": {
+  "entry": "https://mpds.io/#entry/C300452"
+ }
+}

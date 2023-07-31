@@ -22881,6 +22881,24 @@ var $;
         title() {
             return "Vis-a-vis";
         }
+        examples() {
+            return {
+                bar_sci_literature: "/mpds/visavis/examples/bar_sci_literature.json",
+                customscatter_Ge_elastic_constant: "/mpds/visavis/examples/customscatter_Ge_elastic_constant.json",
+                discovery_ferroelectrics: "/mpds/visavis/examples/discovery_ferroelectrics.json",
+                eigenplot_bands_CaTiO3: "/mpds/visavis/examples/eigenplot_bands_CaTiO3.json",
+                eigenplot_dos_CaTiO3: "/mpds/visavis/examples/eigenplot_dos_CaTiO3.json",
+                graph_ternary_Sr_Ru_O: "/mpds/visavis/examples/graph_ternary_Sr_Ru_O.json",
+                matrix_square_Pu: "/mpds/visavis/examples/matrix_square_Pu.json",
+                "matrix.heatmap": "/mpds/visavis/examples/matrix.heatmap.json",
+                pd_phase_equilibria_fuel_cell_cathode_electrolyte: "/mpds/visavis/examples/pd_phase_equilibria_fuel_cell_cathode_electrolyte.json",
+                phase_diagram_Ga_In_binary_eutectics: "/mpds/visavis/examples/phase_diagram_Ga_In_binary_eutectics.json",
+                pie_overview_Pu: "/mpds/visavis/examples/pie_overview_Pu.json",
+                plot3d_cube_Pu: "/mpds/visavis/examples/plot3d_cube_Pu.json",
+                plot3d_heatmap: "/mpds/visavis/examples/plot3d_heatmap.json",
+                scatter_SrTiO3_thermal_expansion: "/mpds/visavis/examples/scatter_SrTiO3_thermal_expansion.json"
+            };
+        }
         Placeholder() {
             return null;
         }
@@ -23105,6 +23123,8 @@ var $;
             const obj = new this.$.$mpds_visavis_plot();
             obj.plot_raw = () => this.plot_raw(id);
             obj.show_setup = () => true;
+            obj.show_fixel = () => false;
+            obj.show_demo_warn = () => false;
             return obj;
         }
     }
@@ -23265,19 +23285,27 @@ var $;
                     const json = $mpds_visavis_plot.fetch_plot_json(this.json_request_hash());
                     return $mpds_visavis_plot_raw_from_json(json, this.json_request_hash());
                 }
+                if (this.menu_section() == 'examples') {
+                    return this.plot_raw_example(id);
+                }
                 const data = this.$.$mol_state_local.value(`${this}.plot_raw('${id}')`, next && next.data());
                 return data ? new $mpds_visavis_plot_raw(data) : null;
+            }
+            plot_raw_example(id) {
+                const data = this.$.$mol_state_local.value(`${this}.plot_raw_example('${id}')`);
+                if (data)
+                    return new $mpds_visavis_plot_raw(data);
+                const json = $mol_fetch.json(this.examples()[id]);
+                const plot_raw = $mpds_visavis_plot_raw_from_json(json, id);
+                this.$.$mol_state_local.value(`${this}.plot_raw_example('${id}')`, plot_raw.data());
+                return plot_raw;
             }
             history_rows() {
                 return this.history_plot_ids().map((id) => this.History_plot_link(id));
             }
             example_rows() {
-                const names = ['bar_sci_literature.json'];
-                return names.map(name => {
-                    const json = $mol_fetch.json('/mpds/visavis/examples/' + name);
-                    const plot_raw = $mpds_visavis_plot_raw_from_json(json, name);
-                    this.plot_raw(plot_raw.id(), plot_raw);
-                    return this.Plot_link(plot_raw.id());
+                return Object.keys(this.examples()).map(name => {
+                    return this.Plot_link(name);
                 });
             }
             plot_id(id) {
@@ -23340,6 +23368,9 @@ var $;
         __decorate([
             $mol_mem_key
         ], $mpds_visavis_app.prototype, "plot_raw", null);
+        __decorate([
+            $mol_mem_key
+        ], $mpds_visavis_app.prototype, "plot_raw_example", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_app.prototype, "history_rows", null);

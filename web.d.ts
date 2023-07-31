@@ -6291,6 +6291,7 @@ declare namespace $ {
     class $mpds_visavis_app extends $mol_book2 {
         attr(): Record<string, any>;
         title(): string;
+        examples(): Record<string, any>;
         Placeholder(): any;
         pages(): readonly any[];
         Plot_page(id: any): $mol_page;
@@ -6355,6 +6356,7 @@ declare namespace $.$$ {
         history_drop(id: string): void;
         history_plot_ids(next?: string[]): string[];
         plot_raw(id: string, next?: $mpds_visavis_plot_raw | null): $mpds_visavis_plot_raw | null;
+        plot_raw_example(id: string): $mpds_visavis_plot_raw;
         history_rows(): $mol_view[];
         example_rows(): $mol_link[];
         plot_id(id: string): string;
