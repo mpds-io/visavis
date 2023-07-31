@@ -1,6 +1,21 @@
 $mpds_visavis_app $mol_book2
 	attr * mol_theme \$mol_theme_light
 	title \Vis-a-vis
+	examples *
+		bar_sci_literature \/mpds/visavis/examples/bar_sci_literature.json
+		customscatter_Ge_elastic_constant \/mpds/visavis/examples/customscatter_Ge_elastic_constant.json
+		discovery_ferroelectrics \/mpds/visavis/examples/discovery_ferroelectrics.json
+		eigenplot_bands_CaTiO3 \/mpds/visavis/examples/eigenplot_bands_CaTiO3.json
+		eigenplot_dos_CaTiO3 \/mpds/visavis/examples/eigenplot_dos_CaTiO3.json
+		graph_ternary_Sr_Ru_O \/mpds/visavis/examples/graph_ternary_Sr_Ru_O.json
+		matrix_square_Pu \/mpds/visavis/examples/matrix_square_Pu.json
+		matrix.heatmap \/mpds/visavis/examples/matrix.heatmap.json
+		pd_phase_equilibria_fuel_cell_cathode_electrolyte \/mpds/visavis/examples/pd_phase_equilibria_fuel_cell_cathode_electrolyte.json
+		phase_diagram_Ga_In_binary_eutectics \/mpds/visavis/examples/phase_diagram_Ga_In_binary_eutectics.json
+		pie_overview_Pu \/mpds/visavis/examples/pie_overview_Pu.json
+		plot3d_cube_Pu \/mpds/visavis/examples/plot3d_cube_Pu.json
+		plot3d_heatmap \/mpds/visavis/examples/plot3d_heatmap.json
+		scatter_SrTiO3_thermal_expansion \/mpds/visavis/examples/scatter_SrTiO3_thermal_expansion.json
 	Placeholder null
 	pages /
 		<= Start_page $mol_drop
@@ -23,10 +38,14 @@ $mpds_visavis_app $mol_book2
 			tools /
 				<= History_link $mol_link
 					title @ \Uploads
-					arg * section null
+					arg * 
+						section null
+						file null
 				<= Examples_link $mol_link
 					title @ \Examples
-					arg * section \examples
+					arg * 
+						section \examples
+						file null
 			body <= menu_body /
 				<= History $mol_list
 					title @ \Uploads
@@ -66,3 +85,5 @@ $mpds_visavis_app $mol_book2
 			<= Plot_view* $mpds_visavis_plot
 				plot_raw <= plot_raw* null
 				show_setup true
+				show_fixel false
+				show_demo_warn false
