@@ -18,7 +18,7 @@ namespace $.$$ {
 			const promise = $mpds_visavis_lib.plotly().react(
 				plotly_root,
 				this.data(), 
-				{ ...this.layout(), width, height, font: { family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" } },
+				{ ...this.layout(), width, height },
 				this.plot_options(),
 			)
 			

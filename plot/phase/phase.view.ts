@@ -183,6 +183,10 @@ namespace $.$$ {
 			return !this.json().comp_a && !this.json().comp_start
 		}
 
+		not_demo() {
+			return !this.data_demo()
+		}
+
 		show_ticks() {
 			return this.json().labels.length > 0
 		}
@@ -208,6 +212,11 @@ namespace $.$$ {
 
 		annotation_textangle( label: ReturnType<typeof Label_json> ) {
 			return label[ 0 ].replace( /<\/?sub>/g, '' ).length > 10 ? -65 : 0
+		}
+
+		triangle_annotation_text() {
+			const json = this.json()
+			return (json.diatype ? json.diatype + " " : "") + (json.temp[0] ? json.temp[0] + " &deg;C" : "")
 		}
 
 		@$mol_mem

@@ -3,7 +3,7 @@ namespace $.$$ {
 	export class $mpds_visavis_plot extends $.$mpds_visavis_plot {
 
 		@ $mol_action
-		fetch_plot_json( request: RequestInfo ){
+		static fetch_plot_json( request: RequestInfo | null ){
 			if ( request == null ) return null
 
 			const json = $mol_fetch.json( request ) as any
@@ -16,12 +16,21 @@ namespace $.$$ {
 
 		@ $mol_mem
 		json() {
-			return this.fetch_plot_json( this.json_request() )
+			const request = this.json_request() || this.$.$mol_state_arg.href().split( '#' )[1]
+			return $mpds_visavis_plot.fetch_plot_json( request )
 		}
 
 		@ $mol_mem
 		json_cmp() {
-			return this.fetch_plot_json( this.json_cmp_request() )
+			return $mpds_visavis_plot.fetch_plot_json( this.json_cmp_request() )
+		}
+
+		@ $mol_mem
+		json_cmp_request( next?: string | null ) {
+			if ( next === null && $mol_wire_probe( ()=> this.json_cmp_request() ) === null ) {
+				this.notify( 'Comparison was reset' )
+			}
+			return next ?? null
 		}
 
 		@ $mol_mem
@@ -32,8 +41,16 @@ namespace $.$$ {
 
 		@ $mol_mem
 		sub() {
-			return this.plot_raw() ?
-				[ this.Fullscreen(), this.plots()[ this.plot_raw()!.type() ] ] : []
+			const phase_data_demo = this.plot_raw()?.type()! == 'pd' ? this.phase_data_demo() : false
+			const show_demo_warn = this.show_demo_warn() 
+				&& ! [ 'matrix', 'discovery' ].includes( this.plot_raw()?.type()! ) 
+				&& ! phase_data_demo
+
+			return this.plot_raw() ? [
+				... show_demo_warn ? [ this.Demo_warn() ] : [],
+				this.Fullscreen(), 
+				this.plots()[ this.plot_raw()!.type() ] 
+			] : []
 		}
 
 		@ $mol_mem
@@ -56,6 +73,11 @@ namespace $.$$ {
 
 		@ $mol_action
 		on_fixel_checked( checked: boolean ) { }
+
+		@ $mol_action
+		notify( msg: string ) {
+			alert( msg )
+		}
 
 	}
 

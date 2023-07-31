@@ -228,6 +228,9 @@ namespace $.$$ {
 		@ $mol_mem
 		layout() {
 			return {
+				font: {
+					family: 'inherit', 
+				},
 				showlegend: false,
 				scene: this.scene() as any,
 				margin: {

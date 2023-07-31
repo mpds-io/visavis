@@ -2,6 +2,8 @@ namespace $.$$ {
 
 	$mol_style_define( $.$mpds_visavis_app, {
 
+		contain: 'none', //otherwise in fullscreen 'fixed' positions plot relative to parent not to the viewport
+
 		Plot_view: {
 			flex: {
 				direction: 'column',
@@ -100,7 +102,9 @@ namespace $.$$ {
 		Plot_link: {
 			flex: {
 				grow: 1,
+				shrink: 1,
 			},
+			wordBreak: 'break-word'
 		},
 
 		Plot_page: {
@@ -108,7 +112,7 @@ namespace $.$$ {
 				grow: 1,
 			},
 			Body: {
-				contain: 'none', //otherwise plot position 'fixed' doesn't work (for fullscreen)
+				contain: 'none', //otherwise in fullscreen 'fixed' positions plot relative to parent not to the viewport
 			},
 		},
 

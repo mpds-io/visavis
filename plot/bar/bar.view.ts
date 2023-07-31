@@ -45,7 +45,13 @@ namespace $.$$ {
 			const json = this.json()
 			return {
 				showlegend: json.payload2 ? true : false,
-				legend: {x: 0, y: 1, font: {size: 17}},
+				legend: {
+					x: 0,
+					y: 1,
+					font: {
+						size: 17,
+					},
+				},
 				xaxis: {
 					autorange: true,
 					showgrid: false,
@@ -66,9 +72,15 @@ namespace $.$$ {
 					ticklen: 0,
 					title: json.payload.ytitle,
 					rangemode: "nonnegative",
-					type: "log", tickfont: {size: 17}
+					type: "log", 
+					tickfont: {
+						size: 17,
+					},
 				},
-				font: {size: 13}
+				font: {
+					family: 'inherit',
+					size: 13,
+				}
 			}
 		}
 

@@ -145,7 +145,9 @@ namespace $.$$ {
 					tickmode: 'array',
 					tickvals: $mpds_visavis_lib.d3().range(bands_matrix.kpoints.length),
 					ticktext: x_labels,
-					tickfont: {size: 20}
+					tickfont: {
+						size: 20,
+					},
 				};
 			} else {
 				x_title = 'E - E<sub>F</sub>, eV'
@@ -175,7 +177,10 @@ namespace $.$$ {
 					ticklen: 4,
 					title: y_title
 				},
-				font: {size: 13}
+				font: {
+					family: 'inherit',
+					size: 13,
+				},
 			}
 		}
 

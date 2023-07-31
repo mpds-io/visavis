@@ -83,11 +83,10 @@ namespace $.$$ {
 			if (Math.abs(t_data[0] - t_data_sum/t_data.length) < 0.1 && Math.abs(p_data[0] - p_data_sum/p_data.length) > 0.1){
 				return 'pressure'
 			} else if (Math.abs(t_data[0] - t_data_sum/t_data.length) > 0.1 && Math.abs(p_data[0] - p_data_sum/p_data.length) > 0.1){
-				return $mol_fail( new $mol_data_error('Sorry, plotting both temperature and pressure is not yet supported') )
+				this.notify( 'Sorry, plotting both temperature and pressure is not yet supported' )
 				// return 'pressure and temperature'
-			} else {
-				return 'temperature'
 			}
+			return 'temperature'
 		}
 
 		@ $mol_mem
@@ -197,7 +196,13 @@ namespace $.$$ {
 
 			return {
 				showlegend: true,
-				legend: {x: 100, y: 1, font: {size: 14}},
+				legend: {
+					x: 100, 
+					y: 1, 
+					font: {
+						size: 14,
+					},
+				},
 				xaxis: {
 					autorange: true,
 					showgrid: true,
@@ -216,7 +221,10 @@ namespace $.$$ {
 					ticklen: 4,
 					title: 'Cell parameters' + y_comment + ', A'
 				},
-				font: {size: 13}
+				font: {
+					family: 'inherit', 
+					size: 13,
+				},
 			}
 		}
 
