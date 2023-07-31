@@ -7561,16 +7561,17 @@ $mpds_visavis_plot_phase $mol_book2
 			font *
 				size 20
 				color \#333
+				family \inherit
 			ternary *
 				aaxis *
-					title <= json_title_a \
+					title <= json_title_b \
 					ticks \
 					showline true
 					showgrid false
 					fixedrange true
 					linewidth 1
 				baxis *
-					title <= json_title_b \
+					title <= json_title_a \
 					ticks \
 					showline true
 					showgrid false
@@ -7593,11 +7594,11 @@ $mpds_visavis_plot_phase $mol_book2
 	triangle_annotations /
 		*
 			text <= triangle_annotation_text \
-			x: -0.25
-			y: 0.96
+			x -0.25
+			y 0.96
 			showarrow false
-			xref \papper
-			yref \papper
+			xref \paper
+			yref \paper
 			font *
 				size 15
 	rectangle *
@@ -7619,6 +7620,7 @@ $mpds_visavis_plot_phase $mol_book2
 			font *
 				size 16
 				color \#333
+				family \inherit
 			xaxis *
 				title \at. %
 				range <= json_comp_range /
@@ -7646,7 +7648,7 @@ $mpds_visavis_plot_phase $mol_book2
 				range <= json_temp /
 				fixedrange true
 				showticks <= show_ticks
-				showticklabels <= data_demo false
+				showticklabels <= not_demo false
 				showline true
 				zeroline false
 				showgrid false
@@ -7657,7 +7659,7 @@ $mpds_visavis_plot_phase $mol_book2
 				range <= json_temp
 				fixedrange true
 				showticks <= show_ticks
-				showticklabels <= data_demo 
+				showticklabels <= not_demo 
 				showline true
 				zeroline false
 				showgrid false
@@ -7673,8 +7675,8 @@ $mpds_visavis_plot_phase $mol_book2
 			x -0.03
 			y -0.11
 			showarrow false
-			xref \papper
-			yref \papper
+			xref \paper
+			yref \paper
 			font *
 				size 20
 		*
@@ -7682,8 +7684,8 @@ $mpds_visavis_plot_phase $mol_book2
 			x 1.03
 			y -0.11
 			showarrow false
-			xref \papper
-			yref \papper
+			xref \paper
+			yref \paper
 			font *
 				size 20
 	annotation *
@@ -7751,6 +7753,7 @@ $mpds_visavis_plot_pie $mpds_visavis_plotly
 
 $mpds_visavis_plot_scatter $mpds_visavis_plotly
 	plot_raw $mpds_visavis_plot_raw
+	notify? null
 
 $mpds_visavis_plot_customscatter $mpds_visavis_plotly
 	plot_raw $mpds_visavis_plot_raw
@@ -7777,9 +7780,13 @@ $mpds_visavis_plot $mol_view
 	json_cmp null
 	plot_raw null
 	show_setup false
+	notify? null
 	Fullscreen $mol_check
 		Icon <= Expand_icon $mol_icon_arrow_expand_all
 		checked? <=> fullscreen? false
+	show_demo_warn? true
+	Demo_warn $mol_paragraph
+		title \You are using the limited demo. Buy the full access and support our work.
 	plots *
 		matrix <= Matrix $mpds_visavis_plot_matrix
 			plot_raw <= plot_raw
@@ -7809,6 +7816,7 @@ $mpds_visavis_plot $mol_view
 		pd <= Phase $mpds_visavis_plot_phase
 			plot_raw <= plot_raw
 			phase_click? <=> phase_click? null
+			data_demo => phase_data_demo
 		bar <= Bar $mpds_visavis_plot_bar
 			plot_raw <= plot_raw
 			bar_click? <=> bar_click? null
@@ -7825,6 +7833,7 @@ $mpds_visavis_plot $mol_view
 			pie_click? <=> pie_click? null
 		scatter <= Scatter $mpds_visavis_plot_scatter
 			plot_raw <= plot_raw
+			notify? <=> notify?
 		customscatter <= Customscatter $mpds_visavis_plot_customscatter
 			plot_raw <= plot_raw
 		heatmap <= Heatmap $mpds_visavis_plot_heatmap
