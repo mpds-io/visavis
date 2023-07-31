@@ -229,7 +229,7 @@ namespace $.$$ {
 		layout() {
 			return {
 				font: {
-					family: this.font_family(), 
+					family: 'inherit', 
 				},
 				showlegend: false,
 				scene: this.scene() as any,

@@ -7,6 +7,15 @@
     justify-content: center;
 }
 
+[mpds_visavis_plot] {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+[mpds_visavis_plot] .js-plotly-plot .plotly,
+[mpds_visavis_plot] .js-plotly-plot .plotly div {
+	font-family: inherit;
+}
+
 [mpds_visavis_plot][fullscreen] {
 	position: fixed;
 	z-index: 9999;

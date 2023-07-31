@@ -80,14 +80,28 @@ namespace $.$$ {
 			const tot_count = this.tot_count()
 			const xy_domains = this.xy_domains()
 
-			const annotations_layout = {showarrow: false, font: {family: this.font_family(), size: 13}, borderpad: 0, bgcolor: '#fff'}
+			const annotations_layout = {
+				font: {
+					size: 13,
+				},
+				showarrow: false,
+				borderpad: 0,
+				bgcolor: '#fff',
+			}
+
 			const annotations = data.map((pie, loc_count) => {
 				let label = pie.name + ' distribution';
 				label = 'Fig. ' + (loc_count+1) + '. ' + label.charAt(0).toUpperCase() + label.slice(1);
 				return Object.assign({text: label}, locate_label(xy_domains[tot_count]![loc_count]), annotations_layout);
 			})
 
-			return {showlegend: false, annotations}
+			return {
+				font: { 
+					family: 'inherit',
+				},
+				showlegend: false, 
+				annotations,
+			}
 		}
 
 		@ $mol_mem

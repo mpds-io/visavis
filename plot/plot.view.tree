@@ -9,7 +9,6 @@ $mpds_visavis_plot $mol_view
 	json_cmp null
 	plot_raw null
 	show_setup false
-	font_family? \
 	notify? null
 	Fullscreen $mol_check
 		Icon <= Expand_icon $mol_icon_arrow_expand_all
@@ -33,7 +32,6 @@ $mpds_visavis_plot $mol_view
 			plot_raw <= plot_raw
 			json_cmp <= json_cmp
 			show_setup <= show_setup
-			font_family <= font_family
 			show_fixel? <= show_fixel? true
 			nonformers_checked? <=> nonformers_checked?
 			fixel_checked? <=> cube_fixel_checked? false
@@ -46,34 +44,27 @@ $mpds_visavis_plot $mol_view
 			cube_click? <=> cube_click? null
 		pd <= Phase $mpds_visavis_plot_phase
 			plot_raw <= plot_raw
-			font_family <= font_family
 			phase_click? <=> phase_click? null
 			data_demo => phase_data_demo
 		bar <= Bar $mpds_visavis_plot_bar
 			plot_raw <= plot_raw
-			font_family <= font_family
 			bar_click? <=> bar_click? null
 		discovery <= Discovery $mpds_visavis_plot_discovery
 			plot_raw <= plot_raw
-			font_family <= font_family
 			json_cmp <= json_cmp
 			show_setup <= show_setup
 			elementals_on? => discovery_elementals_on?
 			discovery_click? <=> discovery_click? null
 		eigenplot <= Eigen $mpds_visavis_plot_eigen
 			plot_raw <= plot_raw
-			font_family <= font_family
 		pie <= Pie $mpds_visavis_plot_pie
 			plot_raw <= plot_raw
-			font_family <= font_family
 			pie_click? <=> pie_click? null
 		scatter <= Scatter $mpds_visavis_plot_scatter
 			plot_raw <= plot_raw
-			font_family <= font_family
 			notify? <=> notify?
 		customscatter <= Customscatter $mpds_visavis_plot_customscatter
 			plot_raw <= plot_raw
-			font_family <= font_family
 		heatmap <= Heatmap $mpds_visavis_plot_heatmap
 			plot_raw <= plot_raw
 		graph <= Graph $mpds_visavis_plot_graph

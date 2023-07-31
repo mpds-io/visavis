@@ -12,6 +12,9 @@ namespace $.$$ {
 		@ $mol_mem
 		layout() {
 			return {
+				font: { 
+					family: 'inherit' 
+				},
 				showlegend: false,
 				hovermode: "closest",
 				xaxis: {
