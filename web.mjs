@@ -22783,12 +22783,16 @@ var $;
             const obj = new this.$.$mol_touch();
             return obj;
         }
+        view_box() {
+            return "0 0 0 0";
+        }
         draw() {
             return null;
         }
         Root() {
-            const obj = new this.$.$mol_svg();
-            obj.render = () => this.draw();
+            const obj = new this.$.$mol_svg_root();
+            obj.view_box = () => this.view_box();
+            obj.auto = () => this.draw();
             return obj;
         }
     }
@@ -22871,15 +22875,12 @@ var $;
                 });
                 return { nodes, edges, labels, radii, foci, table, circle_cls, text_cls };
             }
-            auto_view_box() {
+            view_box() {
                 if (!this.view_rect())
-                    return;
+                    return '0 0 0 0';
                 const [x, y] = this.pan();
                 const { width, height } = this.view_rect();
-                this.Root().dom_node().setAttribute('viewBox', `${-x} ${-y} ${width} ${height}`);
-            }
-            auto() {
-                this.auto_view_box();
+                return `${-x} ${-y} ${width} ${height}`;
             }
             draw() {
                 const { nodes, edges, labels, radii, foci, table, circle_cls, text_cls } = this.data();
@@ -22955,7 +22956,7 @@ var $;
         ], $mpds_visavis_plot_graph.prototype, "data", null);
         __decorate([
             $mol_mem
-        ], $mpds_visavis_plot_graph.prototype, "auto_view_box", null);
+        ], $mpds_visavis_plot_graph.prototype, "view_box", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_graph.prototype, "draw", null);

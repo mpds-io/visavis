@@ -7824,8 +7824,9 @@ $mpds_visavis_plot_graph $mol_view
 		<= Touch $mol_touch
 			pan? => pan?
 	sub /
-		<= Root $mol_svg
-			render <= draw null
+		<= Root $mol_svg_root
+			view_box <= view_box \0 0 0 0
+			auto <= draw null
 	graph_rel? \
 	graph_click? null
 

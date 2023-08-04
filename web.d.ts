@@ -5884,8 +5884,9 @@ declare namespace $ {
         graph_click(next?: any): any;
         pan(next?: any): $mol_vector_2d<number>;
         Touch(): $$.$mol_touch;
+        view_box(): string;
         draw(): any;
-        Root(): $$.$mol_svg;
+        Root(): $mol_svg_root;
     }
 }
 
@@ -6005,8 +6006,7 @@ declare namespace $.$$ {
             circle_cls: string;
             text_cls: string;
         };
-        auto_view_box(): void;
-        auto(): void;
+        view_box(): string;
         draw(): void;
     }
     export {};
