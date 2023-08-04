@@ -90,16 +90,12 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		auto_view_box() {
-			if ( ! this.view_rect() ) return
+		view_box() {
+			if ( ! this.view_rect() ) return '0 0 0 0'
 
 			const [ x, y ] = this.pan()
 			const { width, height } = this.view_rect()!
-			this.Root().dom_node().setAttribute( 'viewBox', `${ - x } ${ - y } ${ width } ${ height }` )
-		}
-
-		auto() {
-			this.auto_view_box()
+			return `${ - x } ${ - y } ${ width } ${ height }`
 		}
 
 		@ $mol_mem
