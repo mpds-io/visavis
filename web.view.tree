@@ -7882,18 +7882,17 @@ $mpds_visavis_app $mol_book2
 		<= Menu $mol_page
 			title \Vis-a-vis
 			tools /
-				<= Source $mol_link_source
-					uri \https://github.com/mpds-io/visavis
 				<= History_link $mol_link
 					title @ \Uploads
 					arg * 
 						section null
-						file null
 				<= Examples_link $mol_link
 					title @ \Examples
 					arg * 
 						section \examples
 						file null
+				<= Source $mol_link_source
+					uri \https://github.com/mpds-io/visavis
 			body <= menu_body /
 				<= History $mol_list
 					title @ \Uploads
@@ -7921,7 +7920,6 @@ $mpds_visavis_app $mol_book2
 						<= Plot_link*0 $mol_link
 							arg * 
 								file <= plot_id* \
-								section <= menu_section null
 							title <= plot_id*
 		<= Plot_opened null 
 	Plot_page* $mol_page

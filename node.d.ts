@@ -6434,9 +6434,9 @@ declare namespace $ {
         Examples_open(): $$.$mol_link;
         Start_page_content(): $$.$mol_list;
         Start_page(): $$.$mol_drop;
-        Source(): $mol_link_source;
         History_link(): $$.$mol_link;
         Examples_link(): $$.$mol_link;
+        Source(): $mol_link_source;
         History_upload_label(): $$.$mol_paragraph;
         History_upload_icon(): $mol_icon_upload;
         History_upload_native(): $$.$mol_button_open_native;
@@ -6450,7 +6450,6 @@ declare namespace $ {
         History_rows(): $$.$mol_list;
         History(): $$.$mol_list;
         plot_id(id: any): string;
-        menu_section(): any;
         Plot_link(id: any): $$.$mol_link;
         example_rows(): readonly any[];
         Examples(): $$.$mol_list;

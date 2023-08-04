@@ -23576,17 +23576,11 @@ var $;
             obj.Sub = () => this.Start_page_content();
             return obj;
         }
-        Source() {
-            const obj = new this.$.$mol_link_source();
-            obj.uri = () => "https://github.com/mpds-io/visavis";
-            return obj;
-        }
         History_link() {
             const obj = new this.$.$mol_link();
             obj.title = () => this.$.$mol_locale.text('$mpds_visavis_app_History_link_title');
             obj.arg = () => ({
-                section: null,
-                file: null
+                section: null
             });
             return obj;
         }
@@ -23597,6 +23591,11 @@ var $;
                 section: "examples",
                 file: null
             });
+            return obj;
+        }
+        Source() {
+            const obj = new this.$.$mol_link_source();
+            obj.uri = () => "https://github.com/mpds-io/visavis";
             return obj;
         }
         History_upload_label() {
@@ -23676,14 +23675,10 @@ var $;
         plot_id(id) {
             return "";
         }
-        menu_section() {
-            return null;
-        }
         Plot_link(id) {
             const obj = new this.$.$mol_link();
             obj.arg = () => ({
-                file: this.plot_id(id),
-                section: this.menu_section()
+                file: this.plot_id(id)
             });
             obj.title = () => this.plot_id(id);
             return obj;
@@ -23709,9 +23704,9 @@ var $;
             const obj = new this.$.$mol_page();
             obj.title = () => "Vis-a-vis";
             obj.tools = () => [
-                this.Source(),
                 this.History_link(),
-                this.Examples_link()
+                this.Examples_link(),
+                this.Source()
             ];
             obj.body = () => this.menu_body();
             return obj;
@@ -23763,13 +23758,13 @@ var $;
     ], $mpds_visavis_app.prototype, "Start_page", null);
     __decorate([
         $mol_mem
-    ], $mpds_visavis_app.prototype, "Source", null);
-    __decorate([
-        $mol_mem
     ], $mpds_visavis_app.prototype, "History_link", null);
     __decorate([
         $mol_mem
     ], $mpds_visavis_app.prototype, "Examples_link", null);
+    __decorate([
+        $mol_mem
+    ], $mpds_visavis_app.prototype, "Source", null);
     __decorate([
         $mol_mem
     ], $mpds_visavis_app.prototype, "History_upload_label", null);
