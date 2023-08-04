@@ -22717,10 +22717,651 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $mol_vector extends Array {
+        get length() {
+            return super.length;
+        }
+        constructor(...values) { super(...values); }
+        map(convert, self) {
+            return super.map(convert, self);
+        }
+        merged(patches, combine) {
+            return this.map((value, index) => combine(value, patches[index]));
+        }
+        limited(limits) {
+            return this.merged(limits, (value, [min, max]) => (value < min) ? min : (value > max) ? max : value);
+        }
+        added0(diff) {
+            return this.map(value => value + diff);
+        }
+        added1(diff) {
+            return this.merged(diff, (a, b) => a + b);
+        }
+        multed0(mult) {
+            return this.map(value => value * mult);
+        }
+        multed1(mults) {
+            return this.merged(mults, (a, b) => a * b);
+        }
+        powered0(mult) {
+            return this.map(value => value ** mult);
+        }
+        expanded1(point) {
+            return this.merged(point, (range, value) => range.expanded0(value));
+        }
+        expanded2(point) {
+            return this.merged(point, (range1, range2) => {
+                let next = range1;
+                const Range = range1.constructor;
+                if (range1[0] > range2[0])
+                    next = new Range(range2[0], next.max);
+                if (range1[1] < range2[1])
+                    next = new Range(next.min, range2[1]);
+                return next;
+            });
+        }
+        center() {
+            const Result = this[0].constructor;
+            return new Result(...this[0].map((_, i) => this.reduce((sum, point) => sum + point[i], 0) / this.length));
+        }
+        distance() {
+            let distance = 0;
+            for (let i = 1; i < this.length; ++i) {
+                distance += this[i - 1].reduce((sum, min, j) => sum + (min - this[i][j]) ** 2, 0) ** (1 / this[i].length);
+            }
+            return distance;
+        }
+        transponed() {
+            return this[0].map((_, i) => this.map(row => row[i]));
+        }
+        get x() { return this[0]; }
+        set x(next) { this[0] = next; }
+        get y() { return this[1]; }
+        set y(next) { this[1] = next; }
+        get z() { return this[2]; }
+        set z(next) { this[2] = next; }
+    }
+    $.$mol_vector = $mol_vector;
+    class $mol_vector_1d extends $mol_vector {
+    }
+    $.$mol_vector_1d = $mol_vector_1d;
+    class $mol_vector_2d extends $mol_vector {
+    }
+    $.$mol_vector_2d = $mol_vector_2d;
+    class $mol_vector_3d extends $mol_vector {
+    }
+    $.$mol_vector_3d = $mol_vector_3d;
+    class $mol_vector_range extends $mol_vector {
+        0;
+        1;
+        constructor(min, max = min) {
+            super(min, max);
+            this[0] = min;
+            this[1] = max;
+        }
+        get min() { return this[0]; }
+        set min(next) { this[0] = next; }
+        get max() { return this[1]; }
+        set max(next) { this[1] = next; }
+        get inversed() {
+            return new this.constructor(this.max, this.min);
+        }
+        expanded0(value) {
+            const Range = this.constructor;
+            let range = this;
+            if (value > range.max)
+                range = new Range(range.min, value);
+            if (value < range.min)
+                range = new Range(value, range.max);
+            return range;
+        }
+    }
+    $.$mol_vector_range = $mol_vector_range;
+    $.$mol_vector_range_full = new $mol_vector_range(Number.NEGATIVE_INFINITY, Number.POSITIVE_INFINITY);
+    class $mol_vector_matrix extends $mol_vector {
+        added2(diff) {
+            return this.merged(diff, (a, b) => a.map((a2, index) => a2 + b[index]));
+        }
+        multed2(diff) {
+            return this.merged(diff, (a, b) => a.map((a2, index) => a2 * b[index]));
+        }
+    }
+    $.$mol_vector_matrix = $mol_vector_matrix;
+})($ || ($ = {}));
+//mol/vector/vector.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_touch extends $mol_plugin {
+        start_zoom(next) {
+            if (next !== undefined)
+                return next;
+            return 0;
+        }
+        start_distance(next) {
+            if (next !== undefined)
+                return next;
+            return 0;
+        }
+        zoom(next) {
+            if (next !== undefined)
+                return next;
+            return 1;
+        }
+        allow_draw() {
+            return true;
+        }
+        allow_pan() {
+            return true;
+        }
+        allow_zoom() {
+            return true;
+        }
+        action_type(next) {
+            if (next !== undefined)
+                return next;
+            return "";
+        }
+        action_point(next) {
+            if (next !== undefined)
+                return next;
+            const obj = new this.$.$mol_vector_2d(NaN, NaN);
+            return obj;
+        }
+        start_pan(next) {
+            if (next !== undefined)
+                return next;
+            return [
+                0,
+                0
+            ];
+        }
+        pan(next) {
+            if (next !== undefined)
+                return next;
+            const obj = new this.$.$mol_vector_2d(0, 0);
+            return obj;
+        }
+        pointer_center() {
+            const obj = new this.$.$mol_vector_2d(NaN, NaN);
+            return obj;
+        }
+        start_pos(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        swipe_precision() {
+            return 16;
+        }
+        swipe_right(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        swipe_bottom(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        swipe_left(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        swipe_top(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        swipe_from_right(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        swipe_from_bottom(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        swipe_from_left(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        swipe_from_top(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        swipe_to_right(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        swipe_to_bottom(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        swipe_to_left(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        swipe_to_top(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        draw_start(event) {
+            if (event !== undefined)
+                return event;
+            return null;
+        }
+        draw(event) {
+            if (event !== undefined)
+                return event;
+            return null;
+        }
+        draw_end(event) {
+            if (event !== undefined)
+                return event;
+            return null;
+        }
+        style() {
+            return {
+                ...super.style(),
+                "touch-action": "none",
+                "overscroll-behavior": "none"
+            };
+        }
+        event() {
+            return {
+                ...super.event(),
+                pointerdown: (event) => this.event_start(event),
+                pointermove: (event) => this.event_move(event),
+                pointerup: (event) => this.event_end(event),
+                pointerleave: (event) => this.event_leave(event),
+                wheel: (event) => this.event_wheel(event)
+            };
+        }
+        event_start(event) {
+            if (event !== undefined)
+                return event;
+            return null;
+        }
+        event_move(event) {
+            if (event !== undefined)
+                return event;
+            return null;
+        }
+        event_end(event) {
+            if (event !== undefined)
+                return event;
+            return null;
+        }
+        event_leave(event) {
+            if (event !== undefined)
+                return event;
+            return null;
+        }
+        event_wheel(event) {
+            if (event !== undefined)
+                return event;
+            return null;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "start_zoom", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "start_distance", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "zoom", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "action_type", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "action_point", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "start_pan", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "pan", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "pointer_center", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "start_pos", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "swipe_right", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "swipe_bottom", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "swipe_left", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "swipe_top", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "swipe_from_right", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "swipe_from_bottom", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "swipe_from_left", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "swipe_from_top", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "swipe_to_right", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "swipe_to_bottom", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "swipe_to_left", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "swipe_to_top", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "draw_start", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "draw", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "draw_end", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "event_start", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "event_move", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "event_end", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "event_leave", null);
+    __decorate([
+        $mol_mem
+    ], $mol_touch.prototype, "event_wheel", null);
+    $.$mol_touch = $mol_touch;
+})($ || ($ = {}));
+//mol/touch/-view.tree/touch.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $mol_touch extends $.$mol_touch {
+            auto() {
+                this.pointer_events();
+                this.start_pan();
+                this.start_pos();
+                this.start_distance();
+                this.start_zoom();
+                this.action_type();
+                this.view_rect();
+            }
+            pointer_events(next = []) {
+                return next;
+            }
+            pointer_coords() {
+                const events = this.pointer_events();
+                const touches = events.filter(e => e.pointerType === 'touch');
+                const pens = events.filter(e => e.pointerType === 'pen');
+                const mouses = events.filter(e => !e.pointerType || e.pointerType === 'mouse');
+                const choosen = touches.length ? touches : pens.length ? pens : mouses;
+                return new $mol_vector(...choosen.map(event => this.event_coords(event)));
+            }
+            pointer_center() {
+                const coords = this.pointer_coords();
+                return coords.length ? coords.center() : new $mol_vector_2d(NaN, NaN);
+            }
+            event_coords(event) {
+                const { left, top } = this.view_rect();
+                return new $mol_vector_2d(Math.round(event.pageX - left), Math.round(event.pageY - top));
+            }
+            action_point() {
+                const coord = this.pointer_center();
+                if (!coord)
+                    return null;
+                const zoom = this.zoom();
+                const pan = this.pan();
+                return new $mol_vector_2d((coord.x - pan.x) / zoom, (coord.y - pan.y) / zoom);
+            }
+            event_eat(event) {
+                if (event instanceof PointerEvent) {
+                    const events = this.pointer_events()
+                        .filter(e => e instanceof PointerEvent)
+                        .filter(e => e.pointerId !== event.pointerId);
+                    if (event.type !== 'pointerup' && event.type !== 'pointerleave')
+                        events.push(event);
+                    this.pointer_events(events);
+                    const touch_count = events.filter(e => e.pointerType === 'touch').length;
+                    if (this.allow_zoom() && touch_count === 2) {
+                        return this.action_type('zoom');
+                    }
+                    if (this.action_type() === 'zoom' && touch_count === 1) {
+                        return this.action_type('zoom');
+                    }
+                    let button;
+                    (function (button) {
+                        button[button["left"] = 1] = "left";
+                        button[button["right"] = 2] = "right";
+                        button[button["middle"] = 4] = "middle";
+                    })(button || (button = {}));
+                    if (events.length > 0) {
+                        if (event.ctrlKey && this.allow_zoom())
+                            return this.action_type('zoom');
+                        if (event.buttons === button.left && this.allow_draw())
+                            return this.action_type('draw');
+                        if (event.buttons && this.allow_pan())
+                            return this.action_type('pan');
+                    }
+                    return this.action_type('');
+                }
+                if (event instanceof WheelEvent) {
+                    this.pointer_events([event]);
+                    if (event.shiftKey)
+                        return this.action_type('pan');
+                    return this.action_type('zoom');
+                }
+                return this.action_type('');
+            }
+            event_start(event) {
+                if (event.defaultPrevented)
+                    return;
+                this.start_pan(this.pan());
+                const action_type = this.event_eat(event);
+                if (!action_type)
+                    return;
+                const coords = this.pointer_coords();
+                this.start_pos(coords.center());
+                if (action_type === 'draw') {
+                    this.draw_start(event);
+                    return;
+                }
+                this.start_distance(coords.distance());
+                this.start_zoom(this.zoom());
+            }
+            event_move(event) {
+                if (event.defaultPrevented)
+                    return;
+                const rect = this.view_rect();
+                if (!rect)
+                    return;
+                const start_pan = this.start_pan();
+                const action_type = this.event_eat(event);
+                const start_pos = this.start_pos();
+                let pos = this.pointer_center();
+                if (!action_type)
+                    return;
+                if (!start_pos)
+                    return;
+                if (action_type === 'draw') {
+                    const distance = new $mol_vector(start_pos, pos).distance();
+                    if (distance >= 4) {
+                        this.draw(event);
+                    }
+                    return;
+                }
+                if (action_type === 'pan') {
+                    this.dom_node().setPointerCapture(event.pointerId);
+                    this.pan(new $mol_vector_2d(start_pan[0] + pos[0] - start_pos[0], start_pan[1] + pos[1] - start_pos[1]));
+                }
+                const precision = this.swipe_precision();
+                if ((this.swipe_right !== $mol_touch.prototype.swipe_right
+                    || this.swipe_from_left !== $mol_touch.prototype.swipe_from_left
+                    || this.swipe_to_right !== $mol_touch.prototype.swipe_to_right)
+                    && pos[0] - start_pos[0] > precision * 2
+                    && Math.abs(pos[1] - start_pos[1]) < precision) {
+                    this.swipe_right(event);
+                }
+                if ((this.swipe_left !== $mol_touch.prototype.swipe_left
+                    || this.swipe_from_right !== $mol_touch.prototype.swipe_from_right
+                    || this.swipe_to_left !== $mol_touch.prototype.swipe_to_left)
+                    && start_pos[0] - pos[0] > precision * 2
+                    && Math.abs(pos[1] - start_pos[1]) < precision) {
+                    this.swipe_left(event);
+                }
+                if ((this.swipe_bottom !== $mol_touch.prototype.swipe_bottom
+                    || this.swipe_from_top !== $mol_touch.prototype.swipe_from_top
+                    || this.swipe_to_bottom !== $mol_touch.prototype.swipe_to_bottom)
+                    && pos[1] - start_pos[1] > precision * 2
+                    && Math.abs(pos[0] - start_pos[0]) < precision) {
+                    this.swipe_bottom(event);
+                }
+                if ((this.swipe_top !== $mol_touch.prototype.swipe_top
+                    || this.swipe_from_bottom !== $mol_touch.prototype.swipe_from_bottom
+                    || this.swipe_to_top !== $mol_touch.prototype.swipe_to_top)
+                    && start_pos[1] - pos[1] > precision * 2
+                    && Math.abs(pos[0] - start_pos[0]) < precision) {
+                    this.swipe_top(event);
+                }
+                if (action_type === 'zoom') {
+                    const coords = this.pointer_coords();
+                    const distance = coords.distance();
+                    const start_distance = this.start_distance();
+                    const center = coords.center();
+                    const start_zoom = this.start_zoom();
+                    let mult = Math.abs(distance - start_distance) < 32 ? 1 : distance / start_distance;
+                    this.zoom(start_zoom * mult);
+                    const pan = new $mol_vector_2d((start_pan[0] - center[0] + pos[0] - start_pos[0]) * mult + center[0], (start_pan[1] - center[1] + pos[1] - start_pos[1]) * mult + center[1]);
+                    this.pan(pan);
+                }
+            }
+            event_end(event) {
+                const action = this.action_type();
+                if (action === 'draw') {
+                    this.draw_end(event);
+                }
+                this.event_leave(event);
+            }
+            event_leave(event) {
+                this.event_eat(event);
+                this.dom_node().releasePointerCapture(event.pointerId);
+                this.start_pos(null);
+            }
+            swipe_left(event) {
+                if (this.view_rect().right - this.start_pos()[0] < this.swipe_precision() * 2)
+                    this.swipe_from_right(event);
+                else
+                    this.swipe_to_left(event);
+                this.event_end(event);
+            }
+            swipe_right(event) {
+                if (this.start_pos()[0] - this.view_rect().left < this.swipe_precision() * 2)
+                    this.swipe_from_left(event);
+                else
+                    this.swipe_to_right(event);
+                this.event_end(event);
+            }
+            swipe_top(event) {
+                if (this.view_rect().bottom - this.start_pos()[1] < this.swipe_precision() * 2)
+                    this.swipe_from_bottom(event);
+                else
+                    this.swipe_to_top(event);
+                this.event_end(event);
+            }
+            swipe_bottom(event) {
+                if (this.start_pos()[1] - this.view_rect().top < this.swipe_precision() * 2)
+                    this.swipe_from_top(event);
+                else
+                    this.swipe_to_bottom(event);
+                this.event_end(event);
+            }
+            event_wheel(event) {
+                if (event.defaultPrevented)
+                    return;
+                if (this.pan === $mol_touch.prototype.pan && this.zoom === $mol_touch.prototype.zoom)
+                    return;
+                if (this.pan !== $mol_touch.prototype.pan) {
+                    event.preventDefault();
+                }
+                const action_type = this.event_eat(event);
+                if (action_type === 'zoom') {
+                    const zoom_prev = this.zoom() || 0.001;
+                    const zoom_next = zoom_prev * (1 - .001 * Math.min(event.deltaY, 100));
+                    const mult = zoom_next / zoom_prev;
+                    this.zoom(zoom_next);
+                    const pan_prev = this.pan();
+                    const center = this.pointer_center();
+                    const pan_next = pan_prev.multed0(mult).added1(center.multed0(1 - mult));
+                    this.pan(pan_next);
+                }
+                if (action_type === 'pan') {
+                    const pan_prev = this.pan();
+                    const pan_next = new $mol_vector_2d(pan_prev.x - event.deltaX, pan_prev.y - event.deltaY);
+                    this.pan(pan_next);
+                }
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $mol_touch.prototype, "pointer_events", null);
+        __decorate([
+            $mol_mem
+        ], $mol_touch.prototype, "pointer_coords", null);
+        __decorate([
+            $mol_mem
+        ], $mol_touch.prototype, "pointer_center", null);
+        __decorate([
+            $mol_mem
+        ], $mol_touch.prototype, "action_point", null);
+        $$.$mol_touch = $mol_touch;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//mol/touch/touch.view.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $mpds_visavis_plot_graph extends $mol_view {
         plot_raw() {
             const obj = new this.$.$mpds_visavis_plot_raw();
             return obj;
+        }
+        plugins() {
+            return [
+                this.Touch()
+            ];
         }
         sub() {
             return [
@@ -22737,11 +23378,18 @@ var $;
                 return next;
             return null;
         }
+        pan(next) {
+            return this.Touch().pan(next);
+        }
+        Touch() {
+            const obj = new this.$.$mol_touch();
+            return obj;
+        }
         draw() {
             return null;
         }
         Root() {
-            const obj = new this.$.$mol_view();
+            const obj = new this.$.$mol_svg();
             obj.render = () => this.draw();
             return obj;
         }
@@ -22755,6 +23403,9 @@ var $;
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_graph.prototype, "graph_click", null);
+    __decorate([
+        $mol_mem
+    ], $mpds_visavis_plot_graph.prototype, "Touch", null);
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_graph.prototype, "Root", null);
@@ -22822,10 +23473,20 @@ var $;
                 });
                 return { nodes, edges, labels, radii, foci, table, circle_cls, text_cls };
             }
+            auto_view_box() {
+                if (!this.view_rect())
+                    return;
+                const [x, y] = this.pan();
+                const { width, height } = this.view_rect();
+                this.Root().dom_node().setAttribute('viewBox', `${-x} ${-y} ${width} ${height}`);
+            }
+            auto() {
+                this.auto_view_box();
+            }
             draw() {
                 const { nodes, edges, labels, radii, foci, table, circle_cls, text_cls } = this.data();
                 const d3 = $mpds_visavis_lib.d3();
-                const svg_element = $mol_wire_sync(document).createElementNS('http://www.w3.org/2000/svg', 'svg');
+                const svg_element = this.Root().dom_node();
                 const svg = d3.select(svg_element);
                 const force = d3.layout.force()
                     .nodes(d3.values(nodes))
@@ -22886,7 +23547,6 @@ var $;
                 for (var i = 400; i > 0; i--)
                     force.tick();
                 force.stop();
-                this.Root().dom_node_actual().replaceChildren(svg_element);
             }
         }
         __decorate([
@@ -22895,6 +23555,9 @@ var $;
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_graph.prototype, "data", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_graph.prototype, "auto_view_box", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_graph.prototype, "draw", null);
@@ -22919,6 +23582,7 @@ var $;
             Root: {
                 width: '100%',
                 height: '100%',
+                userSelect: 'none',
             },
             flex: {
                 grow: 1,
@@ -28353,5 +29017,95 @@ var $;
     });
 })($ || ($ = {}));
 //mol/data/enum/enum.test.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_test({
+        'Vector limiting'() {
+            let point = new $mol_vector_3d(7, 10, 13);
+            const res = point.limited([[1, 5], [15, 20], [5, 10]]);
+            $mol_assert_equal(res.x, 5);
+            $mol_assert_equal(res.y, 15);
+            $mol_assert_equal(res.z, 10);
+        },
+        'Vector adding scalar'() {
+            let point = new $mol_vector_3d(1, 2, 3);
+            let res = point.added0(5);
+            $mol_assert_equal(res.x, 6);
+            $mol_assert_equal(res.y, 7);
+            $mol_assert_equal(res.z, 8);
+        },
+        'Vector adding vector'() {
+            let point = new $mol_vector_3d(1, 2, 3);
+            let res = point.added1([5, 10, 15]);
+            $mol_assert_equal(res.x, 6);
+            $mol_assert_equal(res.y, 12);
+            $mol_assert_equal(res.z, 18);
+        },
+        'Vector multiplying scalar'() {
+            let point = new $mol_vector_3d(2, 3, 4);
+            let res = point.multed0(-1);
+            $mol_assert_equal(res.x, -2);
+            $mol_assert_equal(res.y, -3);
+            $mol_assert_equal(res.z, -4);
+        },
+        'Vector multiplying vector'() {
+            let point = new $mol_vector_3d(2, 3, 4);
+            let res = point.multed1([5, 2, -2]);
+            $mol_assert_equal(res.x, 10);
+            $mol_assert_equal(res.y, 6);
+            $mol_assert_equal(res.z, -8);
+        },
+        'Matrix adding matrix'() {
+            let matrix = new $mol_vector_matrix(...[[1, 2], [3, 4], [5, 6]]);
+            let res = matrix.added2([[10, 20], [30, 40], [50, 60]]);
+            $mol_assert_equal(res[0][0], 11);
+            $mol_assert_equal(res[0][1], 22);
+            $mol_assert_equal(res[1][0], 33);
+            $mol_assert_equal(res[1][1], 44);
+            $mol_assert_equal(res[2][0], 55);
+            $mol_assert_equal(res[2][1], 66);
+        },
+        'Matrix multiplying matrix'() {
+            let matrix = new $mol_vector_matrix(...[[2, 3], [4, 5], [6, 7]]);
+            let res = matrix.multed2([[2, 3], [4, 5], [6, 7]]);
+            $mol_assert_equal(res[0][0], 4);
+            $mol_assert_equal(res[0][1], 9);
+            $mol_assert_equal(res[1][0], 16);
+            $mol_assert_equal(res[1][1], 25);
+            $mol_assert_equal(res[2][0], 36);
+            $mol_assert_equal(res[2][1], 49);
+        },
+        'Range expanding'() {
+            let range = $mol_vector_range_full.inversed;
+            const expanded = range.expanded0(10).expanded0(5);
+            $mol_assert_like([...expanded], [5, 10]);
+        },
+        'Vector of range expanding by vector'() {
+            let dimensions = new $mol_vector_2d($mol_vector_range_full.inversed, $mol_vector_range_full.inversed);
+            const expanded = dimensions.expanded1([1, 7]).expanded1([3, 5]);
+            $mol_assert_like([...expanded.x], [1, 3]);
+            $mol_assert_like([...expanded.y], [5, 7]);
+        },
+        'Vector of range expanding by vector of range'() {
+            let dimensions = new $mol_vector_2d($mol_vector_range_full.inversed, $mol_vector_range_full.inversed);
+            const expanded = dimensions
+                .expanded2([[1, 3], [7, 9]])
+                .expanded2([[2, 4], [6, 8]]);
+            $mol_assert_like([...expanded.x], [1, 4]);
+            $mol_assert_like([...expanded.y], [6, 9]);
+        },
+        'Vector of infinity range expanding by vector of range'() {
+            let dimensions = new $mol_vector_2d($mol_vector_range_full.inversed, $mol_vector_range_full.inversed);
+            const next = new $mol_vector_2d($mol_vector_range_full.inversed, $mol_vector_range_full.inversed);
+            const expanded = next
+                .expanded2(dimensions);
+            $mol_assert_like([...expanded.x], [Infinity, -Infinity]);
+            $mol_assert_like([...expanded.y], [Infinity, -Infinity]);
+        },
+    });
+})($ || ($ = {}));
+//mol/vector/vector.test.ts
 
 //# sourceMappingURL=node.test.js.map

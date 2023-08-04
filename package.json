@@ -228,6 +228,8 @@
     "$mpds_visavis_plot_customscatter",
     "$mpds_visavis_plot_heatmap",
     "$mpds_visavis_plot_graph",
+    "$mol_touch",
+    "$mol_vector",
     "$mol_view_component",
     "$mol_blob_json",
     "$mol_blob",

@@ -7761,10 +7761,70 @@ $mpds_visavis_plot_customscatter $mpds_visavis_plotly
 $mpds_visavis_plot_heatmap $mpds_visavis_plotly
 	plot_raw $mpds_visavis_plot_raw
 
+$mol_touch $mol_plugin
+	start_zoom? 0
+	start_distance? 0
+	zoom? 1
+	allow_draw true
+	allow_pan true
+	allow_zoom true
+	action_type? \
+	action_point? $mol_vector_2d /
+		NaN
+		NaN
+	-
+	start_pan? /
+		0
+		0
+	pan? $mol_vector_2d /
+		0
+		0
+	pointer_center $mol_vector_2d /
+		NaN
+		NaN
+	-
+	start_pos? null
+	swipe_precision 16
+	-
+	swipe_right? null
+	swipe_bottom? null
+	swipe_left? null
+	swipe_top? null
+	-
+	swipe_from_right? null
+	swipe_from_bottom? null
+	swipe_from_left? null
+	swipe_from_top? null
+	-
+	swipe_to_right? null
+	swipe_to_bottom? null
+	swipe_to_left? null
+	swipe_to_top? null
+	-
+	draw_start?event null
+	draw?event null
+	draw_end?event null
+	-
+	style *
+		^
+		touch-action \none
+		overscroll-behavior \none
+	-
+	event *
+		^
+		pointerdown?event <=> event_start?event null
+		pointermove?event <=> event_move?event null
+		pointerup?event <=> event_end?event null
+		pointerleave?event <=> event_leave?event null
+		wheel?event <=> event_wheel?event null
+
 $mpds_visavis_plot_graph $mol_view
 	plot_raw $mpds_visavis_plot_raw
+	plugins /
+		<= Touch $mol_touch
+			pan? => pan?
 	sub /
-		<= Root $mol_view
+		<= Root $mol_svg
 			render <= draw null
 	graph_rel? \
 	graph_click? null

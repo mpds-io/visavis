@@ -5873,13 +5873,149 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
+    class $mol_vector<Value, Length extends number> extends Array<Value> {
+        get length(): Length;
+        constructor(...values: Value[] & {
+            length: Length;
+        });
+        map<Res>(convert: (value: Value, index: number, array: this) => Res, self?: any): $mol_vector<Res, Length>;
+        merged<Patch>(patches: readonly Patch[] & {
+            length: Length;
+        }, combine: (value: Value, patch: Patch) => Value): this;
+        limited(this: $mol_vector<number, Length>, limits: readonly (readonly [number, number])[] & {
+            length: Length;
+        }): this;
+        added0(this: $mol_vector<number, Length>, diff: number): this;
+        added1(this: $mol_vector<number, Length>, diff: readonly number[] & {
+            length: Length;
+        }): this;
+        multed0(this: $mol_vector<number, Length>, mult: number): this;
+        multed1(this: $mol_vector<number, Length>, mults: readonly number[] & {
+            length: Length;
+        }): this;
+        powered0(this: $mol_vector<number, Length>, mult: number): this;
+        expanded1(this: $mol_vector<$mol_vector_range<number>, Length>, point: readonly number[] & {
+            length: Length;
+        }): this;
+        expanded2(this: $mol_vector<$mol_vector_range<number>, Length>, point: readonly (readonly [number, number])[] & {
+            length: Length;
+        }): this;
+        center<Item extends $mol_vector<number, number>>(this: $mol_vector<Item, Length>): Item;
+        distance(this: $mol_vector<$mol_vector<number, number>, Length>): number;
+        transponed(this: $mol_vector<$mol_vector<number, number>, Length>): $mol_vector<$mol_vector<number, Length>, typeof this[0]['length']>;
+        get x(): Value;
+        set x(next: Value);
+        get y(): Value;
+        set y(next: Value);
+        get z(): Value;
+        set z(next: Value);
+    }
+    class $mol_vector_1d<Value> extends $mol_vector<Value, 1> {
+    }
+    class $mol_vector_2d<Value> extends $mol_vector<Value, 2> {
+    }
+    class $mol_vector_3d<Value> extends $mol_vector<Value, 3> {
+    }
+    class $mol_vector_range<Value> extends $mol_vector<Value, 2> {
+        0: Value;
+        1: Value;
+        constructor(min: Value, max?: Value);
+        get min(): Value;
+        set min(next: Value);
+        get max(): Value;
+        set max(next: Value);
+        get inversed(): $mol_vector_range<Value>;
+        expanded0(value: Value): $mol_vector_range<Value>;
+    }
+    let $mol_vector_range_full: $mol_vector_range<number>;
+    class $mol_vector_matrix<Width extends number, Height extends number> extends $mol_vector<readonly number[] & {
+        length: Width;
+    }, Height> {
+        added2(diff: readonly (readonly number[] & {
+            length: Width;
+        })[] & {
+            length: Height;
+        }): this;
+        multed2(diff: readonly (readonly number[] & {
+            length: Width;
+        })[] & {
+            length: Height;
+        }): this;
+    }
+}
+
+declare namespace $ {
+    class $mol_touch extends $mol_plugin {
+        start_zoom(next?: any): number;
+        start_distance(next?: any): number;
+        zoom(next?: any): number;
+        allow_draw(): boolean;
+        allow_pan(): boolean;
+        allow_zoom(): boolean;
+        action_type(next?: any): string;
+        action_point(next?: any): $mol_vector_2d<number>;
+        start_pan(next?: any): readonly any[];
+        pan(next?: any): $mol_vector_2d<number>;
+        pointer_center(): $mol_vector_2d<number>;
+        start_pos(next?: any): any;
+        swipe_precision(): number;
+        swipe_right(next?: any): any;
+        swipe_bottom(next?: any): any;
+        swipe_left(next?: any): any;
+        swipe_top(next?: any): any;
+        swipe_from_right(next?: any): any;
+        swipe_from_bottom(next?: any): any;
+        swipe_from_left(next?: any): any;
+        swipe_from_top(next?: any): any;
+        swipe_to_right(next?: any): any;
+        swipe_to_bottom(next?: any): any;
+        swipe_to_left(next?: any): any;
+        swipe_to_top(next?: any): any;
+        draw_start(event?: any): any;
+        draw(event?: any): any;
+        draw_end(event?: any): any;
+        style(): Record<string, any>;
+        event(): Record<string, any>;
+        event_start(event?: any): any;
+        event_move(event?: any): any;
+        event_end(event?: any): any;
+        event_leave(event?: any): any;
+        event_wheel(event?: any): any;
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_touch extends $.$mol_touch {
+        auto(): void;
+        pointer_events(next?: readonly PointerEvent[]): readonly PointerEvent[];
+        pointer_coords(): $mol_vector<$mol_vector_2d<number>, number>;
+        pointer_center(): $mol_vector_2d<number>;
+        event_coords(event: PointerEvent | WheelEvent): $mol_vector_2d<number>;
+        action_point(): $mol_vector_2d<number>;
+        event_eat(event: PointerEvent | WheelEvent): string;
+        event_start(event: PointerEvent): void;
+        event_move(event: PointerEvent): void;
+        event_end(event: PointerEvent): void;
+        event_leave(event: PointerEvent): void;
+        swipe_left(event: PointerEvent): void;
+        swipe_right(event: PointerEvent): void;
+        swipe_top(event: PointerEvent): void;
+        swipe_bottom(event: PointerEvent): void;
+        event_wheel(event: WheelEvent): void;
+    }
+}
+
+declare namespace $ {
     class $mpds_visavis_plot_graph extends $mol_view {
         plot_raw(): $mpds_visavis_plot_raw;
+        plugins(): readonly any[];
         sub(): readonly any[];
         graph_rel(next?: any): string;
         graph_click(next?: any): any;
+        pan(next?: any): $mol_vector_2d<number>;
+        Touch(): $$.$mol_touch;
         draw(): any;
-        Root(): $mol_view;
+        Root(): $$.$mol_svg;
     }
 }
 
@@ -5999,6 +6135,8 @@ declare namespace $.$$ {
             circle_cls: string;
             text_cls: string;
         };
+        auto_view_box(): void;
+        auto(): void;
         draw(): void;
     }
     export {};
