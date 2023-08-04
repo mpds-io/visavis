@@ -110,6 +110,7 @@ namespace $.$$ {
 		Plot_page: {
 			flex: {
 				grow: 1,
+				basis: '40rem',
 			},
 			Body: {
 				contain: 'none', //otherwise in fullscreen 'fixed' positions plot relative to parent not to the viewport

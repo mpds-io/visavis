@@ -35,7 +35,10 @@ $mpds_visavis_app $mol_book2
 						title \Or go to examples
 						arg * section \examples
 		<= Menu $mol_page
+			title \Vis-a-vis
 			tools /
+				<= Source $mol_link_source
+					uri \https://github.com/mpds-io/visavis
 				<= History_link $mol_link
 					title @ \Uploads
 					arg * 
@@ -75,9 +78,6 @@ $mpds_visavis_app $mol_book2
 								file <= plot_id* \
 								section <= menu_section null
 							title <= plot_id*
-			foot /
-				<= Source $mol_link_source
-					uri \https://github.com/mpds-io/visavis
 		<= Plot_opened null 
 	Plot_page* $mol_page
 		title <= plot_id* \
