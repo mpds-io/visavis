@@ -90,6 +90,19 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
+		auto_view_box() {
+			if ( ! this.view_rect() ) return
+
+			const [ x, y ] = this.pan()
+			const { width, height } = this.view_rect()!
+			this.Root().dom_node().setAttribute( 'viewBox', `${ - x } ${ - y } ${ width } ${ height }` )
+		}
+
+		auto() {
+			this.auto_view_box()
+		}
+
+		@ $mol_mem
 		draw() {
 			// var width = predefined_h ? document.body.clientWidth : document.body.clientWidth - 15,
 			// 	height = predefined_h || parseInt(0.8 * width);
@@ -98,7 +111,7 @@ namespace $.$$ {
 			
 			const d3 = $mpds_visavis_lib.d3()
 
-			const svg_element = $mol_wire_sync( document ).createElementNS( 'http://www.w3.org/2000/svg', 'svg' )
+			const svg_element = this.Root().dom_node()
 			const svg = d3.select(svg_element)
 		
 			const force = d3.layout.force()
@@ -172,8 +185,6 @@ namespace $.$$ {
 			force.start()
 			for (var i = 400; i > 0; i--) force.tick()
 			force.stop()
-
-			this.Root().dom_node_actual().replaceChildren( svg_element )
 
 			// hide_preloader();
 			// hide_messages();

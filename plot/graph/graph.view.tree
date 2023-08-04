@@ -1,7 +1,10 @@
 $mpds_visavis_plot_graph $mol_view
 	plot_raw $mpds_visavis_plot_raw
+	plugins /
+		<= Touch $mol_touch
+			pan? => pan?
 	sub /
-		<= Root $mol_view
+		<= Root $mol_svg
 			render <= draw null
 	graph_rel? \
 	graph_click? null
