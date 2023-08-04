@@ -1685,12 +1685,6 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $mol_icon_delete extends $mol_icon {
-        path(): string;
-    }
-}
-
-declare namespace $ {
     class $mol_icon_github_circle extends $mol_icon {
         path(): string;
     }
@@ -1701,6 +1695,12 @@ declare namespace $ {
         hint(): string;
         sub(): readonly any[];
         Icon(): $mol_icon_github_circle;
+    }
+}
+
+declare namespace $ {
+    class $mol_icon_delete extends $mol_icon {
+        path(): string;
     }
 }
 
@@ -6434,6 +6434,7 @@ declare namespace $ {
         Examples_open(): $$.$mol_link;
         Start_page_content(): $$.$mol_list;
         Start_page(): $$.$mol_drop;
+        Source(): $mol_link_source;
         History_link(): $$.$mol_link;
         Examples_link(): $$.$mol_link;
         History_upload_label(): $$.$mol_paragraph;
@@ -6454,7 +6455,6 @@ declare namespace $ {
         example_rows(): readonly any[];
         Examples(): $$.$mol_list;
         menu_body(): readonly any[];
-        Source(): $mol_link_source;
         Menu(): $mol_page;
         Plot_opened(): any;
         plot_raw(id: any): any;
