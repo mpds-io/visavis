@@ -177,7 +177,7 @@ namespace $.$$ {
 					showbackground: true,
 					showticklabels: !this.x_op(),
 					showline: false,
-					tickfont: {size: 11},
+					tickfont: {size: 10},
 					ticktext: this.order_els(this.x_sort() as Prop_name).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
 					tickvals: $mpds_visavis_lib.d3().range(1, 96, 2)
 				},
@@ -190,7 +190,7 @@ namespace $.$$ {
 					showbackground: true,
 					showticklabels: !this.y_op(),
 					showline: false,
-					tickfont: {size: 11},
+					tickfont: {size: 10},
 					ticktext: this.order_els(this.y_sort() as Prop_name).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
 					tickvals: $mpds_visavis_lib.d3().range(1, 96, 2)
 				},
@@ -203,7 +203,7 @@ namespace $.$$ {
 					showbackground: true,
 					showticklabels: !this.z_op(),
 					showline: false,
-					tickfont: {size: 11},
+					tickfont: {size: 10},
 					ticktext: this.order_els(this.z_sort() as Prop_name).slice(0, 95).filter(function(el, idx){ return idx % 2 === 0 }),
 					tickvals: $mpds_visavis_lib.d3().range(1, 96, 2)
 				},
@@ -229,7 +229,7 @@ namespace $.$$ {
 		layout() {
 			return {
 				font: {
-					family: 'inherit', 
+					// family: 'inherit', // <- can't use font-family from css because it renders on canvas
 				},
 				showlegend: false,
 				scene: this.scene() as any,

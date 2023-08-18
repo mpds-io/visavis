@@ -16,8 +16,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		json() {
-			const request = this.json_request() || this.$.$mol_state_arg.href().split( '#' )[1]
-			return $mpds_visavis_plot.fetch_plot_json( request )
+			return $mpds_visavis_plot.fetch_plot_json( this.json_request() )
 		}
 
 		@ $mol_mem

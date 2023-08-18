@@ -38,19 +38,24 @@ As a part of the [MPDS desktop GUI](https://github.com/mpds-io/ermac), being use
 - `npm -v >= 7`
 
 
-## Installation
+## Installation and development
 
+One command to install [MAM](https://github.com/hyoo-ru/mam), node modules, and build dev server from actual sources:
 ```bash
 npm exec mam@latest mpds/visavis
 ```
-
+Start dev server:
+```bash
+npm start
+```
 
 ## Building
 
+Build standalone application at `mpds/visavis/app/-`:
 ```bash
-npm run build
+npm start mpds/visavis/app
 ```
-
+[Build mpds-visavis-plot Web Component](https://github.com/mpds-io/visavis/blob/master/plot/readme.md)
 
 ## Sources file layout
 
