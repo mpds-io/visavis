@@ -3029,9 +3029,7 @@ declare namespace $.$$ {
         };
         subscribe_events(): void;
         layout(): {
-            font: {
-                family: string;
-            };
+            font: {};
             showlegend: boolean;
             scene: any;
             margin: {

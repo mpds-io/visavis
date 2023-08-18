@@ -2168,7 +2168,8 @@ var $;
             }
             catch (error) {
                 $mol_fail_log(error);
-                $mol_dom_render_attributes(node, { mol_view_error: error.name || error.constructor.name });
+                const mol_view_error = $mol_promise_like(error) ? 'Promise' : error.name || error.constructor.name;
+                $mol_dom_render_attributes(node, { mol_view_error });
                 if ($mol_promise_like(error))
                     break render;
                 if ((error_showed.get(error) ?? this) !== this)
@@ -19670,7 +19671,7 @@ var $;
                         showbackground: true,
                         showticklabels: !this.x_op(),
                         showline: false,
-                        tickfont: { size: 11 },
+                        tickfont: { size: 10 },
                         ticktext: this.order_els(this.x_sort()).slice(0, 95).filter(function (el, idx) { return idx % 2 === 0; }),
                         tickvals: $mpds_visavis_lib.d3().range(1, 96, 2)
                     },
@@ -19683,7 +19684,7 @@ var $;
                         showbackground: true,
                         showticklabels: !this.y_op(),
                         showline: false,
-                        tickfont: { size: 11 },
+                        tickfont: { size: 10 },
                         ticktext: this.order_els(this.y_sort()).slice(0, 95).filter(function (el, idx) { return idx % 2 === 0; }),
                         tickvals: $mpds_visavis_lib.d3().range(1, 96, 2)
                     },
@@ -19696,7 +19697,7 @@ var $;
                         showbackground: true,
                         showticklabels: !this.z_op(),
                         showline: false,
-                        tickfont: { size: 11 },
+                        tickfont: { size: 10 },
                         ticktext: this.order_els(this.z_sort()).slice(0, 95).filter(function (el, idx) { return idx % 2 === 0; }),
                         tickvals: $mpds_visavis_lib.d3().range(1, 96, 2)
                     },
@@ -19716,9 +19717,7 @@ var $;
             }
             layout() {
                 return {
-                    font: {
-                        family: 'inherit',
-                    },
+                    font: {},
                     showlegend: false,
                     scene: this.scene(),
                     margin: {
@@ -23425,8 +23424,7 @@ var $;
                 return json;
             }
             json() {
-                const request = this.json_request() || this.$.$mol_state_arg.href().split('#')[1];
-                return $mpds_visavis_plot.fetch_plot_json(request);
+                return $mpds_visavis_plot.fetch_plot_json(this.json_request());
             }
             json_cmp() {
                 return $mpds_visavis_plot.fetch_plot_json(this.json_cmp_request());
@@ -23510,7 +23508,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("mpds/visavis/plot/plot.view.css", "[mpds_visavis_plot_matrix_root][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_plot_graph_root][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_plotly][mol_view_error]:not([mol_view_error=\"Promise\"]) {\n    background-image: none;\n\tpadding-top: 6rem;\n    align-items: flex-start;\n    justify-content: center;\n}\n\n[mpds_visavis_plot] {\n\tfont-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n}\n\n[mpds_visavis_plot] .js-plotly-plot .plotly,\n[mpds_visavis_plot] .js-plotly-plot .plotly div {\n\tfont-family: inherit;\n}\n\n[mpds_visavis_plot][fullscreen] {\n\tposition: fixed;\n\tz-index: 9999;\n\ttop: 0;\n\tleft: 0;\n\tright: 0;\n\tbottom: 0;\n}\n");
+    $mol_style_attach("mpds/visavis/plot/plot.view.css", "[mpds_visavis_plot][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_plot_matrix_root][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_plot_graph_root][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_plotly][mol_view_error]:not([mol_view_error=\"Promise\"]) {\n    background-image: none;\n\tpadding-top: 6rem;\n    align-items: flex-start;\n    justify-content: center;\n}\n\n[mpds_visavis_plot],\n[mpds_visavis_plot] .js-plotly-plot .plotly,\n[mpds_visavis_plot] .js-plotly-plot .plotly div {\n\tfont-family: inherit;\n}\n\n[mpds_visavis_plot][fullscreen] {\n\tposition: fixed;\n\tz-index: 9999;\n\ttop: 0;\n\tleft: 0;\n\tright: 0;\n\tbottom: 0;\n}\n");
 })($ || ($ = {}));
 //mpds/visavis/plot/-css/plot.view.css.ts
 ;
