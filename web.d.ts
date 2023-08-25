@@ -6074,11 +6074,15 @@ declare namespace $ {
             readonly offsetTop: number;
             readonly offsetWidth: number;
             outerText: string;
+            popover: string | null;
             spellcheck: boolean;
             title: string;
             translate: boolean;
             attachInternals(): ElementInternals;
             click(): void;
+            hidePopover(): void;
+            showPopover(): void;
+            togglePopover(force?: boolean | undefined): void;
             addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions | undefined): void;
             addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions | undefined): void;
             removeEventListener<K_1 extends keyof HTMLElementEventMap>(type: K_1, listener: (this: HTMLElement, ev: HTMLElementEventMap[K_1]) => any, options?: boolean | EventListenerOptions | undefined): void;
@@ -6343,6 +6347,7 @@ declare namespace $ {
             onreset: ((this: GlobalEventHandlers, ev: Event) => any) | null;
             onresize: ((this: GlobalEventHandlers, ev: UIEvent) => any) | null;
             onscroll: ((this: GlobalEventHandlers, ev: Event) => any) | null;
+            onscrollend: ((this: GlobalEventHandlers, ev: Event) => any) | null;
             onsecuritypolicyviolation: ((this: GlobalEventHandlers, ev: SecurityPolicyViolationEvent) => any) | null;
             onseeked: ((this: GlobalEventHandlers, ev: Event) => any) | null;
             onseeking: ((this: GlobalEventHandlers, ev: Event) => any) | null;
