@@ -3,7 +3,7 @@
  * Author: Evgeny Blokhin /
  * Tilde Materials Informatics
  * eb@tilde.pro
- * Version: 0.7.8
+ * Version: 0.8.0
  */
 "use strict";
 
@@ -195,7 +195,7 @@ function call_ajax(url, callback){
     Plotly.d3.json(url, function(error, json){
         if (error){
             console.error(error);
-            return notify('Connection error, please, retry');
+            return urge('Error: no plot was found');
         }
         callback(json);
     });
@@ -2439,10 +2439,15 @@ function visavis__customscatter(json){
         },
         {displaylogo: false, displayModeBar: false, staticPlot: true},
         function(){
-            //document.getElementById('visavis').on('plotly_legendclick', function(){ return false }); // requires at least v1.37
             // yet another iframe communication API for mpds-labs via postMessage
+            document.getElementById('visavis').on('plotly_legendclick', function(evt){
+                // API CORRECT
+                if (window.parent)
+                    window.parent.postMessage({type: 'curve', plotindex: evt.curveNumber,
+                        name: evt.data[evt.curveNumber].name}, '*');
+            });
             // API CORRECT
-            if (window.parent) window.parent.postMessage({type: 'nplots', nplots: json.plots.length}, '*');
+            //if (window.parent) window.parent.postMessage({type: 'nplots', nplots: json.plots.length}, '*');
         }
     );
 }
