@@ -4934,11 +4934,8 @@ var $;
     var $$;
     (function ($$) {
         class $mol_ghost extends $.$mol_ghost {
-            dom_node(next) {
-                const node = this.Sub().dom_node(next);
-                $mol_dom_render_attributes(node, this.attr_static());
-                $mol_dom_render_events(node, this.event());
-                return node;
+            dom_node_external(next) {
+                return this.Sub().dom_node(next);
             }
             dom_node_actual() {
                 this.dom_node();
@@ -4973,9 +4970,6 @@ var $;
                 return this.Sub().minimal_height();
             }
         }
-        __decorate([
-            $mol_mem
-        ], $mol_ghost.prototype, "dom_node", null);
         __decorate([
             $mol_mem
         ], $mol_ghost.prototype, "dom_node_actual", null);
