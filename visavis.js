@@ -2411,7 +2411,7 @@ function visavis__customscatter(json){
                 y: 100,
                 xref: 'x',
                 yref: 'y',
-                text: 'Cu K-alpha',
+                text: 'simulated Cu K-alpha',
                 font: {family: "Exo2", size: 13},
                 showarrow: false
             }] : false,
