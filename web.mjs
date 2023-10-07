@@ -24355,7 +24355,7 @@ var $;
             $mol_action
         ], $mpds_visavis_app.prototype, "history_drop", null);
         __decorate([
-            $mol_mem_key
+            $mol_mem
         ], $mpds_visavis_app.prototype, "history_plot_ids", null);
         __decorate([
             $mol_mem_key
