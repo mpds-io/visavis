@@ -37,7 +37,7 @@ namespace $.$$ {
 			this.history_plot_ids( this.history_plot_ids().filter( plot_id => plot_id !== id ) )
 		}
 
-		@ $mol_mem_key
+		@ $mol_mem
 		history_plot_ids(next?: string[]) {
 			return this.$.$mol_state_local.value( `${this}.history_plot_ids()` , next ) ?? []
 		}
