@@ -2,20 +2,20 @@ $mpds_visavis_app $mol_book2
 	attr * mol_theme \$mol_theme_light
 	title \Vis-a-vis
 	examples *
-		bar_sci_literature \/mpds/visavis/examples/bar_sci_literature.json
-		customscatter_Ge_elastic_constant \/mpds/visavis/examples/customscatter_Ge_elastic_constant.json
-		discovery_ferroelectrics \/mpds/visavis/examples/discovery_ferroelectrics.json
-		eigenplot_bands_CaTiO3 \/mpds/visavis/examples/eigenplot_bands_CaTiO3.json
-		eigenplot_dos_CaTiO3 \/mpds/visavis/examples/eigenplot_dos_CaTiO3.json
-		graph_ternary_Sr_Ru_O \/mpds/visavis/examples/graph_ternary_Sr_Ru_O.json
-		matrix_square_Pu \/mpds/visavis/examples/matrix_square_Pu.json
-		matrix.heatmap \/mpds/visavis/examples/matrix.heatmap.json
-		pd_phase_equilibria_fuel_cell_cathode_electrolyte \/mpds/visavis/examples/pd_phase_equilibria_fuel_cell_cathode_electrolyte.json
-		phase_diagram_Ga_In_binary_eutectics \/mpds/visavis/examples/phase_diagram_Ga_In_binary_eutectics.json
-		pie_overview_Pu \/mpds/visavis/examples/pie_overview_Pu.json
-		plot3d_cube_Pu \/mpds/visavis/examples/plot3d_cube_Pu.json
-		plot3d_heatmap \/mpds/visavis/examples/plot3d_heatmap.json
-		scatter_SrTiO3_thermal_expansion \/mpds/visavis/examples/scatter_SrTiO3_thermal_expansion.json
+		bar plot \/mpds/visavis/examples/bar_sci_literature.json
+		scatter plot \/mpds/visavis/examples/customscatter_Ge_elastic_constant.json
+		another scatter plot \/mpds/visavis/examples/scatter_SrTiO3_thermal_expansion.json
+		PCA plot \/mpds/visavis/examples/discovery_ferroelectrics.json
+		custom scatter plot \/mpds/visavis/examples/eigenplot_bands_CaTiO3.json
+		custom scatter plot \/mpds/visavis/examples/eigenplot_dos_CaTiO3.json
+		graph plot \/mpds/visavis/examples/graph_ternary_Sr_Ru_O.json
+		matrix plot \/mpds/visavis/examples/matrix_square_Pu.json
+		matrix heatmap plot \/mpds/visavis/examples/matrix.heatmap.json
+		ternary plot \/mpds/visavis/examples/pd_phase_equilibria_fuel_cell_cathode_electrolyte.json
+		phase diagram plot \/mpds/visavis/examples/phase_diagram_Ga_In_binary_eutectics.json
+		pie plot \/mpds/visavis/examples/pie_overview_Pu.json
+		cube plot \/mpds/visavis/examples/plot3d_cube_Pu.json
+		cube heatmap plot \/mpds/visavis/examples/plot3d_heatmap.json
 	Placeholder null
 	pages /
 		<= Start_page $mol_drop
@@ -25,25 +25,25 @@ $mpds_visavis_app $mol_book2
 					<= Upload_content $mol_list
 						sub /
 							<= Upload_label_choose $mol_paragraph
-								title \Choose a plot file in JSON format
+								title \Choose a plot JSON file
 							<= Upload_label_drop $mol_paragraph
 								title \(drag and drop is supported)
 							<= Start_page_upload $mol_button_open
 								accept \application/json
 								files? <=> files_read? null
 					<= Examples_open $mol_link
-						title \Or go to examples
+						title \Or browse examples
 						arg * section \examples
 		<= Menu $mol_page
 			title \Vis-a-vis
 			tools /
 				<= History_link $mol_link
 					title @ \Uploads
-					arg * 
+					arg *
 						section null
 				<= Examples_link $mol_link
 					title @ \Examples
-					arg * 
+					arg *
 						section \examples
 						file null
 				<= Source $mol_link_source
@@ -73,10 +73,10 @@ $mpds_visavis_app $mol_book2
 					title @ \Examples
 					rows <= example_rows /
 						<= Plot_link*0 $mol_link
-							arg * 
+							arg *
 								file <= plot_id* \
 							title <= plot_id*
-		<= Plot_opened null 
+		<= Plot_opened null
 	Plot_page* $mol_page
 		title <= plot_id* \
 		body /
