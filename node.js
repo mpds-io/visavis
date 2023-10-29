@@ -1469,7 +1469,7 @@ var $;
             return new $mol_span(uri, source, 1, 1, 0);
         }
         static end(uri, source) {
-            return new $mol_span(uri, source, 1, source.length + 1, length);
+            return new $mol_span(uri, source, 1, source.length + 1, 0);
         }
         static entire(uri, source) {
             return new $mol_span(uri, source, 1, 1, source.length);
@@ -2934,7 +2934,7 @@ var $;
             if (win.parent !== win.self && !win.document.hasFocus())
                 return;
             new this.$.$mol_after_frame(() => {
-                this.dom_node().scrollIntoView({ block: 'start', inline: 'end' });
+                this.dom_node().scrollIntoView({ block: 'start', inline: 'nearest' });
                 this.focused(true);
             });
         }
@@ -3014,7 +3014,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("mol/view/view/view.css", "[mol_view] {\n\ttransition-property: height, width, min-height, min-width, max-width, max-height, transform;\n\ttransition-duration: .2s;\n\ttransition-timing-function: ease-out;\n\t-webkit-appearance: none;\n\tbox-sizing: border-box;\n\tdisplay: flex;\n\tflex-shrink: 0;\n\tcontain: style;\n\tscrollbar-color: var(--mol_theme_line) transparent;\n\tscrollbar-width: thin;\n}\t\n\n[mol_view]::selection {\n\tbackground: var(--mol_theme_line);\n}\t\n\n[mol_view]::-webkit-scrollbar {\n\twidth: .25rem;\n\theight: .25rem;\n}\n\n[mol_view]::-webkit-scrollbar-corner {\n\tbackground-color: var(--mol_theme_line);\n}\n\n[mol_view]::-webkit-scrollbar-track {\n\tbackground-color: transparent;\n}\n\n[mol_view]::-webkit-scrollbar-thumb {\n\tbackground-color: var(--mol_theme_line);\n\tborder-radius: var(--mol_gap_round);\n}\n\n[mol_view] > * {\n\tword-break: inherit;\n}\n\n[mol_view_root] {\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 100%;\n\theight: 100%;\n\tbox-sizing: border-box;\n\tfont-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n\tfont-size: 1rem;\n\tline-height: 1.5rem;\n\tbackground: var(--mol_theme_back);\n\tcolor: var(--mol_theme_text);\n\tcontain: unset; /** Fixes bg ignoring when applied to body on Chrome */\n\ttab-size: 4;\n}\n\n@media print {\n\t[mol_view_root] {\n\t\theight: auto;\n\t}\n}\n\n[mol_view][mol_view_error]:not([mol_view_error=\"Promise\"]) {\n\tbackground-image: repeating-linear-gradient(\n\t\t-45deg,\n\t\t#f92323,\n\t\t#f92323 .5rem,\n\t\t#ff3d3d .5rem,\n\t\t#ff3d3d 1.5rem\n\t);\n\tcolor: black;\n\talign-items: center;\n\tjustify-content: center;\n}\n\n@keyframes mol_view_wait {\n\tfrom {\n\t\topacity: .25;\n\t}\n\t20% {\n\t\topacity: .75;\n\t}\n\tto {\n\t\topacity: .25;\n\t}\n}\n\n:where([mol_view][mol_view_error=\"Promise\"]) {\n\tbackground: var(--mol_theme_hover);\n}\n\n[mol_view][mol_view_error=\"Promise\"] {\n\tanimation: mol_view_wait 1s steps( 20, end ) infinite;\n}\n");
+    $mol_style_attach("mol/view/view/view.css", "[mol_view] {\n\ttransition-property: height, width, min-height, min-width, max-width, max-height, transform;\n\ttransition-duration: .2s;\n\ttransition-timing-function: ease-out;\n\t-webkit-appearance: none;\n\tbox-sizing: border-box;\n\tdisplay: flex;\n\tflex-shrink: 0;\n\tcontain: style;\n\tscrollbar-color: var(--mol_theme_line) transparent;\n\tscrollbar-width: thin;\n}\t\n\n[mol_view]::selection {\n\tbackground: var(--mol_theme_line);\n}\t\n\n[mol_view]::-webkit-scrollbar {\n\twidth: .25rem;\n\theight: .25rem;\n}\n\n[mol_view]::-webkit-scrollbar-corner {\n\tbackground-color: var(--mol_theme_line);\n}\n\n[mol_view]::-webkit-scrollbar-track {\n\tbackground-color: transparent;\n}\n\n[mol_view]::-webkit-scrollbar-thumb {\n\tbackground-color: var(--mol_theme_line);\n\tborder-radius: var(--mol_gap_round);\n}\n\n[mol_view] > * {\n\tword-break: inherit;\n}\n\n[mol_view_root] {\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 100%;\n\theight: 100%;\n\tbox-sizing: border-box;\n\tfont-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n\tfont-size: 1rem;\n\tline-height: 1.5rem;\n\tbackground: var(--mol_theme_back);\n\tcolor: var(--mol_theme_text);\n\tcontain: unset; /** Fixes bg ignoring when applied to body on Chrome */\n\ttab-size: 4;\n\toverscroll-behavior: contain; /** Disable navigation gestures **/\n}\n\n@media print {\n\t[mol_view_root] {\n\t\theight: auto;\n\t}\n}\n\n[mol_view][mol_view_error]:not([mol_view_error=\"Promise\"]) {\n\tbackground-image: repeating-linear-gradient(\n\t\t-45deg,\n\t\t#f92323,\n\t\t#f92323 .5rem,\n\t\t#ff3d3d .5rem,\n\t\t#ff3d3d 1.5rem\n\t);\n\tcolor: black;\n\talign-items: center;\n\tjustify-content: center;\n}\n\n@keyframes mol_view_wait {\n\tfrom {\n\t\topacity: .25;\n\t}\n\t20% {\n\t\topacity: .75;\n\t}\n\tto {\n\t\topacity: .25;\n\t}\n}\n\n:where([mol_view][mol_view_error=\"Promise\"]) {\n\tbackground: var(--mol_theme_hover);\n}\n\n[mol_view][mol_view_error=\"Promise\"] {\n\tanimation: mol_view_wait 1s steps( 20, end ) infinite;\n}\n");
 })($ || ($ = {}));
 //mol/view/view/-css/view.css.ts
 ;
@@ -4062,7 +4062,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("mol/button/button.view.css", "[mol_button] {\n\tborder: none;\n\tfont: inherit;\n\tdisplay: inline-flex;\n\tflex-shrink: 0;\n\ttext-decoration: inherit;\n\tcursor: inherit;\n\tposition: relative;\n\tbox-sizing: border-box;\n\tword-break: normal;\n\tcursor: default;\n\tuser-select: none;\n\tborder-radius: var(--mol_gap_round);\n}\n\n[mol_button]:where(:not(:disabled)):hover {\n\tz-index: var(--mol_layer_hover);\n}\n\n[mol_button]:focus {\n\toutline: none;\n\tz-index: var(--mol_layer_focus);\n}\n");
+    $mol_style_attach("mol/button/button.view.css", "[mol_button] {\n\tborder: none;\n\tfont: inherit;\n\tdisplay: inline-flex;\n\tflex-shrink: 0;\n\ttext-decoration: inherit;\n\tcursor: inherit;\n\tposition: relative;\n\tbox-sizing: border-box;\n\tword-break: normal;\n\tcursor: default;\n\tuser-select: none;\n\tborder-radius: var(--mol_gap_round);\n}\n\n[mol_button]:where(:not(:disabled)):hover {\n\tz-index: var(--mol_layer_hover);\n}\n\n[mol_button]:focus-visible {\n\toutline: none;\n\tz-index: var(--mol_layer_focus);\n}\n");
 })($ || ($ = {}));
 //mol/button/-css/button.view.css.ts
 ;
@@ -4084,7 +4084,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("mol/button/typed/typed.view.css", "[mol_button_typed] {\n\talign-content: center;\n\talign-items: center;\n\tpadding: var(--mol_gap_text);\n\tborder-radius: var(--mol_gap_round);\n\tgap: var(--mol_gap_space);\n\tuser-select: none;\n\tcursor: pointer;\n}\n\n[mol_button_typed][disabled] {\n\tpointer-events: none;\n}\n\n[mol_button_typed]:hover ,\n[mol_button_typed]:focus {\n\tbackground-color: var(--mol_theme_hover);\n}\n\n[mol_button_typed]:active {\n\tcolor: var(--mol_theme_focus);\n}\n\n");
+    $mol_style_attach("mol/button/typed/typed.view.css", "[mol_button_typed] {\n\talign-content: center;\n\talign-items: center;\n\tpadding: var(--mol_gap_text);\n\tborder-radius: var(--mol_gap_round);\n\tgap: var(--mol_gap_space);\n\tuser-select: none;\n\tcursor: pointer;\n}\n\n[mol_button_typed][disabled] {\n\tpointer-events: none;\n}\n\n[mol_button_typed]:hover ,\n[mol_button_typed]:focus-visible {\n\tbackground-color: var(--mol_theme_hover);\n}\n\n[mol_button_typed]:active {\n\tcolor: var(--mol_theme_focus);\n}\n\n");
 })($ || ($ = {}));
 //mol/button/typed/-css/typed.view.css.ts
 ;
@@ -4630,6 +4630,15 @@ var $;
         dom_name() {
             return "a";
         }
+        uri_off() {
+            return "";
+        }
+        uri_native() {
+            return null;
+        }
+        external() {
+            return false;
+        }
         attr() {
             return {
                 ...super.attr(),
@@ -4893,17 +4902,11 @@ var $;
                 color: $mol_theme.hover,
             },
         },
-        ':focus': {
+        ':focus-visible': {
             outline: 'none',
             background: {
                 color: $mol_theme.hover,
             },
-        },
-        ':focus-within': {
-            outline: 'none',
-            background: {
-                color: $mol_theme.hover,
-            }
         },
         ':active': {
             color: $mol_theme.focus,
@@ -23732,11 +23735,18 @@ var $;
                 return next;
             return null;
         }
+        allow_pan(next) {
+            if (next !== undefined)
+                return next;
+            return true;
+        }
         pan(next) {
             return this.Touch().pan(next);
         }
         Touch() {
             const obj = new this.$.$mol_touch();
+            obj.allow_draw = () => false;
+            obj.allow_pan = () => this.allow_pan();
             return obj;
         }
         view_box() {
@@ -23761,6 +23771,9 @@ var $;
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_graph.prototype, "graph_click", null);
+    __decorate([
+        $mol_mem
+    ], $mpds_visavis_plot_graph.prototype, "allow_pan", null);
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_graph.prototype, "Touch", null);
@@ -23834,8 +23847,10 @@ var $;
             view_box() {
                 if (!this.view_rect())
                     return '0 0 0 0';
-                const [x, y] = this.pan();
+                const [pan_x, pan_y] = this.pan();
                 const { width, height } = this.view_rect();
+                const x = pan_x + width / 2;
+                const y = pan_y + height / 2;
                 return `${-x} ${-y} ${width} ${height}`;
             }
             draw() {
@@ -23864,6 +23879,8 @@ var $;
                     .attr("r", function (d, i) { return radii[d.name] || 10; })
                     .attr("id", function (d, i) { return "c_" + table[d.name]; })
                     .attr("class", function (d, i) { return foci[d.name] || circle_cls; })
+                    .on("mouseenter", () => this.allow_pan(false))
+                    .on("mouseleave", () => this.allow_pan(true))
                     .call(drag);
                 const text = svg.append("g").selectAll("g")
                     .data(force.nodes())
@@ -23880,6 +23897,8 @@ var $;
                     .attr("class", "captions " + text_cls)
                     .attr("id", function (d, i) { return "t_" + table[d.name]; })
                     .html(function (d) { return labels[d.name]; })
+                    .on("mouseenter", () => this.allow_pan(false))
+                    .on("mouseleave", () => this.allow_pan(true))
                     .call(drag);
                 text.on("click", (d) => {
                     const graph_mapping = { f: 'formulae', p: 'props', h: 'aetypes', t: 'lattices', a: 'codens', g: 'geos' };
@@ -24499,24 +24518,24 @@ var $;
             };
         }
         title() {
-            return "Vis-a-vis";
+            return "Vis-à-vis";
         }
         examples() {
             return {
-                bar_sci_literature: "/mpds/visavis/examples/bar_sci_literature.json",
-                customscatter_Ge_elastic_constant: "/mpds/visavis/examples/customscatter_Ge_elastic_constant.json",
-                discovery_ferroelectrics: "/mpds/visavis/examples/discovery_ferroelectrics.json",
-                eigenplot_bands_CaTiO3: "/mpds/visavis/examples/eigenplot_bands_CaTiO3.json",
-                eigenplot_dos_CaTiO3: "/mpds/visavis/examples/eigenplot_dos_CaTiO3.json",
-                graph_ternary_Sr_Ru_O: "/mpds/visavis/examples/graph_ternary_Sr_Ru_O.json",
-                matrix_square_Pu: "/mpds/visavis/examples/matrix_square_Pu.json",
-                "matrix.heatmap": "/mpds/visavis/examples/matrix.heatmap.json",
-                pd_phase_equilibria_fuel_cell_cathode_electrolyte: "/mpds/visavis/examples/pd_phase_equilibria_fuel_cell_cathode_electrolyte.json",
-                phase_diagram_Ga_In_binary_eutectics: "/mpds/visavis/examples/phase_diagram_Ga_In_binary_eutectics.json",
-                pie_overview_Pu: "/mpds/visavis/examples/pie_overview_Pu.json",
-                plot3d_cube_Pu: "/mpds/visavis/examples/plot3d_cube_Pu.json",
-                plot3d_heatmap: "/mpds/visavis/examples/plot3d_heatmap.json",
-                scatter_SrTiO3_thermal_expansion: "/mpds/visavis/examples/scatter_SrTiO3_thermal_expansion.json"
+                "bar-plot": "/mpds/visavis/examples/bar_sci_literature.json",
+                "scatter-plot": "/mpds/visavis/examples/customscatter_Ge_elastic_constant.json",
+                "another-scatter-plot": "/mpds/visavis/examples/scatter_SrTiO3_thermal_expansion.json",
+                "PCA-plot": "/mpds/visavis/examples/discovery_ferroelectrics.json",
+                "custom-scatter-plot": "/mpds/visavis/examples/eigenplot_bands_CaTiO3.json",
+                "another-custom-scatter-plot": "/mpds/visavis/examples/eigenplot_dos_CaTiO3.json",
+                "graph-plot": "/mpds/visavis/examples/graph_ternary_Sr_Ru_O.json",
+                "matrix-plot": "/mpds/visavis/examples/matrix_square_Pu.json",
+                "matrix-heatmap-plot": "/mpds/visavis/examples/matrix.heatmap.json",
+                "ternary-plot": "/mpds/visavis/examples/pd_phase_equilibria_fuel_cell_cathode_electrolyte.json",
+                "phase-diagram-plot": "/mpds/visavis/examples/phase_diagram_Ga_In_binary_eutectics.json",
+                "pie-plot": "/mpds/visavis/examples/pie_overview_Pu.json",
+                "cube-plot": "/mpds/visavis/examples/plot3d_cube_Pu.json",
+                "cube-heatmap-plot": "/mpds/visavis/examples/plot3d_heatmap.json"
             };
         }
         Placeholder() {
@@ -24544,7 +24563,7 @@ var $;
         }
         Upload_label_choose() {
             const obj = new this.$.$mol_paragraph();
-            obj.title = () => "Choose a plot file in JSON format";
+            obj.title = () => "Choose a plot JSON file";
             return obj;
         }
         Upload_label_drop() {
@@ -24574,7 +24593,7 @@ var $;
         }
         Examples_open() {
             const obj = new this.$.$mol_link();
-            obj.title = () => "Or go to examples";
+            obj.title = () => "Or browse examples";
             obj.arg = () => ({
                 section: "examples"
             });

@@ -1,7 +1,7 @@
 Vis-à-vis web-viewer for scientific plots in chemistry and physics
 ==========
 
-Standalone and self-contained HTML5 widget, based on the D3 and Plotly libs and written in [$mol](https://github.com/hyoo-ru) hyper-reactive micromodular UI framework.
+Standalone and self-contained HTML5 widget, based on the D3 and Plotly libs, written in [$mol](https://github.com/hyoo-ru) hyper-reactive micromodular UI framework.
 
 Supports the following plot types (see `examples` folder):
 
@@ -17,7 +17,7 @@ Supports the following plot types (see `examples` folder):
 - `pie`
 
 
-All the plot types must conform the specs:
+All the plot types being visualized must conform the spec:
 
 ```
 {
@@ -40,26 +40,33 @@ As a part of the [MPDS desktop GUI](https://github.com/mpds-io/ermac), being use
 
 ## Installation and development
 
-One command to install [MAM](https://github.com/hyoo-ru/mam), node modules, and build dev server from actual sources:
+Make empty directory for MAM dev environment:
+
 ```bash
-npm exec mam@latest mpds/visavis
+mkdir mam && cd mam
 ```
+
 Start dev server:
+
 ```bash
-npm start
+npm exec mam@latest
 ```
+
+Use this link to build app on the fly and run it with hot reload support: [http://localhost:9080/mpds/visavis/app/-/test.html](http://localhost:9080/mpds/visavis/app/-/test.html)
 
 ## Building
 
 Build standalone application at `mpds/visavis/app/-`:
+
 ```bash
-npm start mpds/visavis/app
+npm exec mam@latest mpds/visavis/app
 ```
 [Build mpds-visavis-plot Web Component](https://github.com/mpds-io/visavis/blob/master/plot/readme.md)
 
+
 ## Sources file layout
 
-`app` - the main **$mol** app
+`app` - the main `$mol` app
 
 `elements` - elemental properties and constants
 
