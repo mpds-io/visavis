@@ -6,7 +6,7 @@ Can be used as [Web Component](https://developer.mozilla.org/en-US/docs/Web/Web_
 ## Building
 
 ```bash
-npm start mpds/visavis/plot
+npm exec mam@latest mpds/visavis/plot
 ```
 The module bundle will be at `mpds/visavis/plot/-/web.js`
 
