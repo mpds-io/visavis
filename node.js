@@ -24522,20 +24522,20 @@ var $;
         }
         examples() {
             return {
-                "bar plot": "/mpds/visavis/examples/bar_sci_literature.json",
-                "scatter plot": "/mpds/visavis/examples/customscatter_Ge_elastic_constant.json",
-                "another-scatter-plot": "/mpds/visavis/examples/scatter_SrTiO3_thermal_expansion.json",
-                "PCA-plot": "/mpds/visavis/examples/discovery_ferroelectrics.json",
-                "custom-scatter-plot": "/mpds/visavis/examples/eigenplot_bands_CaTiO3.json",
-                "another-custom-scatter-plot": "/mpds/visavis/examples/eigenplot_dos_CaTiO3.json",
-                "graph-plot": "/mpds/visavis/examples/graph_ternary_Sr_Ru_O.json",
-                "matrix-plot": "/mpds/visavis/examples/matrix_square_Pu.json",
-                "matrix-heatmap-plot": "/mpds/visavis/examples/matrix.heatmap.json",
-                "ternary-plot": "/mpds/visavis/examples/pd_phase_equilibria_fuel_cell_cathode_electrolyte.json",
-                "phase-diagram-plot": "/mpds/visavis/examples/phase_diagram_Ga_In_binary_eutectics.json",
-                "pie-plot": "/mpds/visavis/examples/pie_overview_Pu.json",
-                "cube-plot": "/mpds/visavis/examples/plot3d_cube_Pu.json",
-                "cube-heatmap-plot": "/mpds/visavis/examples/plot3d_heatmap.json"
+                "Bar plot": "/mpds/visavis/examples/bar_sci_literature.json",
+                "Pie plot": "/mpds/visavis/examples/pie_overview_Pu.json",
+                "Scatter plot": "/mpds/visavis/examples/customscatter_Ge_elastic_constant.json",
+                "Another scatter plot": "/mpds/visavis/examples/scatter_SrTiO3_thermal_expansion.json",
+                "Custom scatter plot": "/mpds/visavis/examples/eigenplot_bands_CaTiO3.json",
+                "Another custom scatter plot": "/mpds/visavis/examples/eigenplot_dos_CaTiO3.json",
+                "PCA plot": "/mpds/visavis/examples/discovery_ferroelectrics.json",
+                "Graph plot": "/mpds/visavis/examples/graph_ternary_Sr_Ru_O.json",
+                "Matrix 2d plot": "/mpds/visavis/examples/matrix_square_Pu.json",
+                "Matrix 2d heatmap plot": "/mpds/visavis/examples/matrix.heatmap.json",
+                "Cube 3d plot": "/mpds/visavis/examples/plot3d_cube_Pu.json",
+                "Cube 3d heatmap plot": "/mpds/visavis/examples/plot3d_heatmap.json",
+                "Binary phase diagram": "/mpds/visavis/examples/phase_diagram_Ga_In_binary_eutectics.json",
+                "Ternary phase diagram": "/mpds/visavis/examples/pd_phase_equilibria_fuel_cell_cathode_electrolyte.json"
             };
         }
         Placeholder() {
