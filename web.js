@@ -24327,21 +24327,21 @@ var $;
             }
             Plot_opened() {
                 const id = this.plot_opened_id();
-                if (!id || this.Start_page_showed())
-                    return null;
-                return this.Plot_page(id);
+                return id ? this.Plot_page(id) : null;
             }
             Start_page_showed() {
                 return !this.$.$mol_state_arg.value('section') && this.history_plot_ids().length == 0;
             }
             pages() {
-                return [
-                    ...[this.Start_page_showed() ?
-                            this.Start_page() :
-                            this.Menu()
-                    ],
-                    this.Plot_opened(),
-                ];
+                return this.json_request_hash()
+                    ? [this.Plot_opened()]
+                    : [
+                        ...[this.Start_page_showed() ?
+                                this.Start_page() :
+                                this.Menu()
+                        ],
+                        this.Plot_opened(),
+                    ];
             }
             menu_body() {
                 if (this.menu_section() == 'examples') {
