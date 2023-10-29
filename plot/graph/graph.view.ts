@@ -93,8 +93,10 @@ namespace $.$$ {
 		view_box() {
 			if ( ! this.view_rect() ) return '0 0 0 0'
 
-			const [ x, y ] = this.pan()
+			const [ pan_x, pan_y ] = this.pan()
 			const { width, height } = this.view_rect()!
+			const x = pan_x + width / 2
+			const y = pan_y + height / 2
 			return `${ - x } ${ - y } ${ width } ${ height }`
 		}
 
@@ -134,6 +136,8 @@ namespace $.$$ {
 				.attr("r", function(d: any, i: any){ return radii[d.name] || 10 })
 				.attr("id", function(d: any, i: any){ return "c_" + table[d.name] })
 				.attr("class", function(d: any, i: any){ return foci[d.name] || circle_cls })
+				.on("mouseenter", ()=> this.allow_pan( false ))
+				.on("mouseleave", ()=> this.allow_pan( true ))
 				.call(drag);
 		
 			const text = svg.append("g").selectAll("g")
@@ -154,6 +158,8 @@ namespace $.$$ {
 				.attr("class", "captions " + text_cls)
 				.attr("id", function(d: any, i: any){ return "t_" + table[d.name] })
 				.html(function(d: any){ return labels[d.name] })
+				.on("mouseenter", ()=> this.allow_pan( false ))
+				.on("mouseleave", ()=> this.allow_pan( true ))
 				.call(drag);
 		
 			text.on("click", (d: any)=> {
