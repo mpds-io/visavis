@@ -24500,7 +24500,7 @@ var $;
         }
         examples() {
             return {
-                "bar-plot": "/mpds/visavis/examples/bar_sci_literature.json",
+                "bar plot": "/mpds/visavis/examples/bar_sci_literature.json",
                 "scatter-plot": "/mpds/visavis/examples/customscatter_Ge_elastic_constant.json",
                 "another-scatter-plot": "/mpds/visavis/examples/scatter_SrTiO3_thermal_expansion.json",
                 "PCA-plot": "/mpds/visavis/examples/discovery_ferroelectrics.json",
