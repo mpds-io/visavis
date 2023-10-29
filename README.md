@@ -40,23 +40,26 @@ As a part of the [MPDS desktop GUI](https://github.com/mpds-io/ermac), being use
 
 ## Installation and development
 
-Run to install [$mol MAM](https://github.com/hyoo-ru/mam) (`$mol` abstract modules) and dependencies and build dev server from actual sources:
+Make empty directory for MAM dev environment:
+
 ```bash
-npm exec mam@latest mpds/visavis
+mkdir mam && cd mam
 ```
 
 Start dev server:
+
 ```bash
-npm start
+npm exec mam@latest
 ```
 
+Use this link to build app on the fly and run it with hot reload support: [http://localhost:9080/mpds/visavis/app/-/test.html](http://localhost:9080/mpds/visavis/app/-/test.html)
 
 ## Building
 
 Build standalone application at `mpds/visavis/app/-`:
 
 ```bash
-npm start mpds/visavis/app
+npm exec mam@latest mpds/visavis/app
 ```
 [Build mpds-visavis-plot Web Component](https://github.com/mpds-io/visavis/blob/master/plot/readme.md)
 
