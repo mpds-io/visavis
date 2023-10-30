@@ -46,10 +46,10 @@ $mpds_visavis_app $mol_book2
 								accept \application/json
 								files? <=> files_read? null
 					<= Examples_open $mol_link
-						title \Or browse examples
+						title \or browse examples
 						arg * section \examples
 		<= Menu $mol_page
-			title \Vis-a-vis
+			title \Vis-à-vis
 			tools /
 				<= History_link $mol_link
 					title @ \Uploads
@@ -71,7 +71,7 @@ $mpds_visavis_app $mol_book2
 							Sub <= History_upload $mol_button_minor
 								sub /
 									<= History_upload_label $mol_paragraph
-										title \Add new (choose a plot file in JSON format)
+										title \Choose a plot JSON file
 									<= History_upload_icon $mol_icon_upload
 									<= History_upload_native $mol_button_open_native
 										accept \application/json
