@@ -24593,7 +24593,7 @@ var $;
         }
         Examples_open() {
             const obj = new this.$.$mol_link();
-            obj.title = () => "Or browse examples";
+            obj.title = () => "or browse examples";
             obj.arg = () => ({
                 section: "examples"
             });
@@ -24637,7 +24637,7 @@ var $;
         }
         History_upload_label() {
             const obj = new this.$.$mol_paragraph();
-            obj.title = () => "Add new (choose a plot file in JSON format)";
+            obj.title = () => "Choose a plot JSON file";
             return obj;
         }
         History_upload_icon() {
@@ -24739,7 +24739,7 @@ var $;
         }
         Menu() {
             const obj = new this.$.$mol_page();
-            obj.title = () => "Vis-a-vis";
+            obj.title = () => "Vis-à-vis";
             obj.tools = () => [
                 this.History_link(),
                 this.Examples_link(),

@@ -1,7 +1,7 @@
-Vis-à-vis web-viewer for scientific plots in chemistry and physics
+Web-viewer for plots in materials science, chemistry, and physics
 ==========
 
-Standalone and self-contained HTML5 widget, based on the D3 and Plotly libs, written in [$mol](https://github.com/hyoo-ru) hyper-reactive micromodular UI framework.
+**Vis-à-vis** is a standalone and self-contained HTML5 widget, written in the [$mol](https://github.com/hyoo-ru) framework and based on the D3 and Plotly libs.
 
 Supports the following plot types (see `examples` folder):
 
@@ -29,7 +29,7 @@ All the plot types being visualized must conform the spec:
 }
 ```
 
-As a part of the [MPDS desktop GUI](https://github.com/mpds-io/ermac), being used in an **iframe**, tries to access the `window.parent` and `window.parent.wmgui`, as well as the methods therein.
+**Vis-à-vis** exists in two realizations: standalone application called `app` and embeddable web component called `plot`.
 
 
 ### Requirements
@@ -40,41 +40,49 @@ As a part of the [MPDS desktop GUI](https://github.com/mpds-io/ermac), being use
 
 ## Installation and development
 
-Make empty directory for MAM dev environment:
+Note, that, unlike many other frontend frameworks, `$mol` provides the same single environment for all its projects. That is, all your `$mol`-based code lives inside some directory `$MOL_HOME`. So if you don't have `$MOL_HOME`, create it and navigate there:
 
 ```bash
-mkdir mam && cd mam
+mkdir $MOL_HOME && cd $MOL_HOME
 ```
 
-Start dev server:
+Run `$mol` MAM server (MAM stands for the `$mol` abstract modules) inside your `$MOL_HOME`:
 
 ```bash
 npm exec mam@latest
 ```
 
-Use this link to build app on the fly and run it with hot reload support: [http://localhost:9080/mpds/visavis/app/-/test.html](http://localhost:9080/mpds/visavis/app/-/test.html)
+Use a link to run the standalone **Vis-à-vis** application `app` with the hot reload support: http://localhost:9080/mpds/visavis/app/-/test.html
+
 
 ## Building
 
-Build standalone application at `mpds/visavis/app/-`:
+Build the standalone application `app` at `mpds/visavis/app/-` using:
 
 ```bash
 npm exec mam@latest mpds/visavis/app
 ```
-[Build mpds-visavis-plot Web Component](https://github.com/mpds-io/visavis/blob/master/plot/readme.md)
+
+Build the embeddable web component `plot` at `mpds/visavis/plot/-/web.js` using:
+
+```bash
+npm exec mam@latest mpds/visavis/plot
+```
+
+See also the [mpds-visavis-plot web component description](https://github.com/mpds-io/visavis/blob/master/plot/README.md).
 
 
 ## Sources file layout
 
 `app` - the main `$mol` app
 
-`elements` - elemental properties and constants
+`elements` - **Vis-à-vis** elemental properties and constants
 
-`examples` - supported data samples, see also **plots** on [MPDS platform](https://mpds.io/#plot/matrix/inquiry/formulae=TiO2)
+`examples` - **Vis-à-vis** supported data samples, see also **plots** on [MPDS platform](https://mpds.io/#plot/matrix/inquiry/formulae=TiO2)
 
-`lib` - external libraries
+`lib` - external libraries bundled
 
-`plot` - plot types implementations
+`plot` - plot types + embeddable web component implementation
 
 `plotly` - Plotly library embedding description
 
