@@ -791,7 +791,7 @@ var $;
                     if ('outerHTML' in val)
                         return val.outerHTML;
                     try {
-                        return JSON.stringify(val);
+                        return JSON.stringify(val, null, '\t');
                     }
                     catch (error) {
                         console.error(error);
@@ -837,6 +837,12 @@ var $;
         },
         'three must be alike'() {
             $mol_assert_like([3], [3], [3]);
+        },
+        'two object must be alike'() {
+            $mol_assert_like({ a: 1 }, { a: 1 });
+        },
+        'three object must be alike'() {
+            $mol_assert_like({ a: 1 }, { a: 1 }, { a: 1 });
         },
     });
 })($ || ($ = {}));
@@ -1798,6 +1804,31 @@ var $;
 var $;
 (function ($_1) {
     $mol_test({
+        async 'Error caching'($) {
+            const next_cached = 123;
+            class Some extends $mol_object2 {
+                static $ = $;
+                static data(id, next) {
+                    if (next)
+                        return next;
+                    setTimeout(() => {
+                        $mol_wire_async(this).data(id, next_cached);
+                    }, 10);
+                    $mol_fail_hidden(new Promise(() => { }));
+                }
+                static run() {
+                    return this.data('1');
+                }
+            }
+            __decorate([
+                $mol_wire_plex
+            ], Some, "data", null);
+            __decorate([
+                $mol_wire_method
+            ], Some, "run", null);
+            const val = await $mol_wire_async(Some).run();
+            $mol_assert_equal(val, next_cached);
+        },
         'Memoize by single simple key'($) {
             class Team extends $mol_object2 {
                 static $ = $;
