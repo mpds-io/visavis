@@ -4,9 +4,5 @@
 	"$mol_search_hint": "Search...",
 	"$mol_select_filter_hint": "Filter..",
 	"$mol_select_hint": "Pick..",
-	"$mol_select_no_options_message": "No options",
-	"$mpds_visavis_app_Examples_link_title": "Examples",
-	"$mpds_visavis_app_Examples_title": "Examples",
-	"$mpds_visavis_app_History_link_title": "Uploads",
-	"$mpds_visavis_app_History_title": "Uploads"
+	"$mol_select_no_options_message": "No options"
 }
