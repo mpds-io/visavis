@@ -52,11 +52,11 @@ $mpds_visavis_app $mol_book2
 			title \Vis-à-vis
 			tools /
 				<= History_link $mol_link
-					title @ \Uploads
+					title \Uploads
 					arg *
 						section null
 				<= Examples_link $mol_link
-					title @ \Examples
+					title \Examples
 					arg *
 						section \examples
 						file null
@@ -64,7 +64,7 @@ $mpds_visavis_app $mol_book2
 					uri \https://github.com/mpds-io/visavis
 			body <= menu_body /
 				<= History $mol_list
-					title @ \Uploads
+					title \Uploads
 					sub /
 						<= History_drop_area $mol_drop
 							receive? <=> drop_file?
@@ -84,7 +84,7 @@ $mpds_visavis_app $mol_book2
 										click? <=> history_drop*? null
 										sub / <= Plot_drop_icon* $mol_icon_delete
 				<= Examples $mol_list
-					title @ \Examples
+					title \Examples
 					rows <= example_rows /
 						<= Plot_link*0 $mol_link
 							arg *
