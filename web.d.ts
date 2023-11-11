@@ -1813,8 +1813,8 @@ declare namespace $ {
         Fixel(): $mol_check_box;
         nonformers_checked(next?: any): boolean;
         Nonformers(): $mol_check_box;
-        diffrence_checked(next?: any): boolean;
-        Diffrence_on(): $mol_check_box;
+        difference_checked(next?: any): boolean;
+        Difference_on(): $mol_check_box;
         sort_control(next?: any): string;
         order_dict(): Record<string, any>;
         Order_switch(): $$.$mol_switch;
@@ -2859,8 +2859,8 @@ declare namespace $ {
         Fixel(): $mol_check_box;
         nonformers_checked(next?: any): boolean;
         Nonformers(): $mol_check_box;
-        diffrence_checked(next?: any): boolean;
-        Diffrence_on(): $mol_check_box;
+        difference_checked(next?: any): boolean;
+        Difference_on(): $mol_check_box;
         order_dict(): Record<string, any>;
         X_order_select(): $$.$mol_select;
         X_order(): $mol_labeler;

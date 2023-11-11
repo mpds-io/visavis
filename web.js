@@ -6215,15 +6215,15 @@ var $;
             obj.checked = (next) => this.nonformers_checked(next);
             return obj;
         }
-        diffrence_checked(next) {
+        difference_checked(next) {
             if (next !== undefined)
                 return next;
             return false;
         }
-        Diffrence_on() {
+        Difference_on() {
             const obj = new this.$.$mol_check_box();
-            obj.title = () => "Show diffrence";
-            obj.checked = (next) => this.diffrence_checked(next);
+            obj.title = () => "Show difference";
+            obj.checked = (next) => this.difference_checked(next);
             return obj;
         }
         sort_control(next) {
@@ -6261,7 +6261,7 @@ var $;
             return [
                 this.Fixel(),
                 this.Nonformers(),
-                this.Diffrence_on(),
+                this.Difference_on(),
                 this.Order()
             ];
         }
@@ -6339,10 +6339,10 @@ var $;
     ], $mpds_visavis_plot_matrix.prototype, "Nonformers", null);
     __decorate([
         $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "diffrence_checked", null);
+    ], $mpds_visavis_plot_matrix.prototype, "difference_checked", null);
     __decorate([
         $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "Diffrence_on", null);
+    ], $mpds_visavis_plot_matrix.prototype, "Difference_on", null);
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_matrix.prototype, "sort_control", null);
@@ -17224,7 +17224,7 @@ var $;
             setup() {
                 return [
                     ...this.json().payload.fixel ? [this.Fixel()] : [],
-                    this.multi_jsons() ? this.Diffrence_on() : this.Nonformers(),
+                    this.multi_jsons() ? this.Difference_on() : this.Nonformers(),
                     ...this.show_setup() ? [this.Order()] : [],
                 ];
             }
@@ -19747,15 +19747,15 @@ var $;
             obj.checked = (next) => this.nonformers_checked(next);
             return obj;
         }
-        diffrence_checked(next) {
+        difference_checked(next) {
             if (next !== undefined)
                 return next;
             return false;
         }
-        Diffrence_on() {
+        Difference_on() {
             const obj = new this.$.$mol_check_box();
-            obj.title = () => "Show diffrence";
-            obj.checked = (next) => this.diffrence_checked(next);
+            obj.title = () => "Show difference";
+            obj.checked = (next) => this.difference_checked(next);
             return obj;
         }
         order_dict() {
@@ -19812,7 +19812,7 @@ var $;
             return [
                 this.Fixel(),
                 this.Nonformers(),
-                this.Diffrence_on(),
+                this.Difference_on(),
                 this.X_order(),
                 this.Y_order(),
                 this.Z_order()
@@ -19898,10 +19898,10 @@ var $;
     ], $mpds_visavis_plot_cube.prototype, "Nonformers", null);
     __decorate([
         $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "diffrence_checked", null);
+    ], $mpds_visavis_plot_cube.prototype, "difference_checked", null);
     __decorate([
         $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "Diffrence_on", null);
+    ], $mpds_visavis_plot_cube.prototype, "Difference_on", null);
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_cube.prototype, "X_order_select", null);
@@ -19993,7 +19993,7 @@ var $;
             setup() {
                 return [
                     ...this.show_fixel() ? [this.Fixel()] : [],
-                    this.multi_jsons() ? this.Diffrence_on() : this.Nonformers(),
+                    this.multi_jsons() ? this.Difference_on() : this.Nonformers(),
                     ...this.show_setup() ? [this.X_order(), this.Y_order(), this.Z_order()] : [],
                 ];
             }
