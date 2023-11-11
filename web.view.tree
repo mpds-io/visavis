@@ -208,11 +208,19 @@ $mol_icon_arrow_expand_all $mol_icon path \M9.5,13.09L10.91,14.5L6.41,19H10V21H3
 
 $mpds_visavis_plot_legend_cmp $mol_view
 	sub /
-		<= First_cmp_label $mol_view
-			sub / <= first_cmp_label? \
+		<= Label*0 $mpds_visavis_plot_legend_cmp_label
+			label <= label* \
+			background <= background* \
 		\vs.
-		<= Second_cmp_label $mol_view
-			sub / <= second_cmp_label? \
+		<= Label*1
+	labels /
+	colorset /
+
+$mpds_visavis_plot_legend_cmp_label $mol_view
+	sub / <= label \
+	style *
+		^
+		background <= background \
 
 $mol_icon_tick $mol_icon path \M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z
 
@@ -247,7 +255,7 @@ $mol_labeler $mol_list
 
 $mpds_visavis_plot_matrix $mol_view
 	plot_raw $mpds_visavis_plot_raw
-	json_cmp? null
+	multi_jsons? null
 	json_master null
 	show_setup true
 	size 0
@@ -290,8 +298,8 @@ $mpds_visavis_plot_matrix $mol_view
 				<= Root $mol_view
 					render <= draw null
 				<= Cmp_legend $mpds_visavis_plot_legend_cmp
-					first_cmp_label? <= first_cmp_label? \
-					second_cmp_label? <= second_cmp_label? \
+					labels <= cmp_labels /
+					colorset <= colorset
 				<= Side_right $mol_scroll
 					sub /
 						<= Heatmap_legend $mol_list
@@ -7484,7 +7492,7 @@ $mol_select $mol_pick
 
 $mpds_visavis_plot_cube $mol_view
 	plot_raw $mpds_visavis_plot_raw
-	json_cmp? null
+	multi_jsons? null
 	show_setup true
 	show_fixel? true
 	heatmap? false
@@ -7526,8 +7534,8 @@ $mpds_visavis_plot_cube $mol_view
 					layout <= layout *
 					subscribe_events <= subscribe_events null
 				<= Cmp_legend $mpds_visavis_plot_legend_cmp
-					first_cmp_label? <= first_cmp_label? \
-					second_cmp_label? <= second_cmp_label? \
+					labels <= cmp_labels /
+					colorset <= colorset
 				<= Side_right $mol_scroll
 					sub /
 						<= Heatmap_legend $mol_list
@@ -7762,14 +7770,17 @@ $mpds_visavis_plot_discovery $mol_view
 	elementals_on? /
 	show_setup true
 	discovery_click? null
+	colorset /
+		\#3e3f95
+		\#c00
 	sub /
 		<= Plot $mpds_visavis_plotly
 			data <= data *
 			layout <= layout *
 			subscribe_events <= subscribe_events null
 		<= Cmp_legend $mpds_visavis_plot_legend_cmp
-			first_cmp_label? <= first_cmp_label? \
-			second_cmp_label? <= second_cmp_label? \
+			labels <= cmp_labels /
+			colorset <= colorset
 		<= Setup $mol_view
 			sub /
 				<= Elementals $mol_labeler
@@ -7886,6 +7897,8 @@ $mpds_visavis_plot $mol_view
 	json null
 	json_cmp_request? null
 	json_cmp null
+	multi_requests? /
+	multi_jsons null
 	plot_raw null
 	show_setup false
 	notify? null
@@ -7898,7 +7911,7 @@ $mpds_visavis_plot $mol_view
 	plots *
 		matrix <= Matrix $mpds_visavis_plot_matrix
 			plot_raw <= plot_raw
-			json_cmp <= json_cmp
+			multi_jsons <= multi_jsons
 			show_setup <= show_setup
 			nonformers_checked? <=> nonformers_checked? false
 			fixel_checked? <=> matrix_fixel_checked? true
@@ -7909,7 +7922,7 @@ $mpds_visavis_plot $mol_view
 			matrix_click? <=> matrix_click? null
 		plot3d <= Cube $mpds_visavis_plot_cube
 			plot_raw <= plot_raw
-			json_cmp <= json_cmp
+			multi_jsons <= multi_jsons
 			show_setup <= show_setup
 			show_fixel? <= show_fixel? true
 			nonformers_checked? <=> nonformers_checked?

@@ -2574,7 +2574,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("mol/theme/theme.css", ":root {\n\t--mol_theme_hue: 240deg;\n}\n\n:where([mol_theme]) {\n\tcolor: var(--mol_theme_text);\n\tfill: var(--mol_theme_text);\n\tbackground-color: var(--mol_theme_back);\n}\n\t\n:root, [mol_theme=\"$mol_theme_dark\"], :where([mol_theme=\"$mol_theme_dark\"]) [mol_theme]  {\n\n\t--mol_theme_luma: -1;\n\t--mol_theme_image: invert(1) hue-rotate( 180deg );\n\n\t--mol_theme_back: oklch( 20% .03 var(--mol_theme_hue) );\n\t--mol_theme_card: oklch( 30% .05 var(--mol_theme_hue) / .25 );\n\t--mol_theme_field: oklch( 0% 0 var(--mol_theme_hue) / .25 );\n\t--mol_theme_hover: oklch( 70% 0 var(--mol_theme_hue) / .1 );\n\t\n\t--mol_theme_text: oklch( 80% 0 var(--mol_theme_hue) );\n\t--mol_theme_shade: oklch( 60% 0 var(--mol_theme_hue) );\n\t--mol_theme_line: oklch( 50% 0 var(--mol_theme_hue) / .2 );\n\t--mol_theme_focus: oklch( 80% .2 calc( var(--mol_theme_hue) + 120deg ) );\n\t\n\t--mol_theme_control: oklch( 60% .1 var(--mol_theme_hue) );\n\t--mol_theme_current: oklch( 70% .3 calc( var(--mol_theme_hue) - 60deg ) );\n\t--mol_theme_special: oklch( 70% .3 calc( var(--mol_theme_hue) + 60deg ) );\n\n}\n\n[mol_theme=\"$mol_theme_light\"], :where([mol_theme=\"$mol_theme_light\"]) [mol_theme] {\n\t\n\t--mol_theme_luma: 1;\n\t--mol_theme_image: none;\n\t\n\t--mol_theme_back: oklch( 93% .01 var(--mol_theme_hue) );\n\t--mol_theme_card: oklch( 100% .02 var(--mol_theme_hue) / .25 );\n\t--mol_theme_field: oklch( 100% 0 var(--mol_theme_hue) / .5 );\n\t--mol_theme_hover: oklch( 70% 0 var(--mol_theme_hue) / .1 );\n\t\n\t--mol_theme_text: oklch( 20% 0 var(--mol_theme_hue) );\n\t--mol_theme_shade: oklch( 60% 0 var(--mol_theme_hue) );\n\t--mol_theme_line: oklch( 70% 0 var(--mol_theme_hue) / .2 );\n\t--mol_theme_focus: oklch( 20% .8 calc( var(--mol_theme_hue) + 120deg ) );\n\t\n\t--mol_theme_control: oklch( 45% .25 var(--mol_theme_hue) );\n\t--mol_theme_current: oklch( 45% .5 calc( var(--mol_theme_hue) - 60deg ) );\n\t--mol_theme_special: oklch( 45% .5 calc( var(--mol_theme_hue) + 60deg ) );\n\n}\n\n:where( :root, [mol_theme=\"$mol_theme_dark\"] ) [mol_theme=\"$mol_theme_base\"] {\n\t--mol_theme_back: oklch( 25% .05 var(--mol_theme_hue) );\n\t--mol_theme_card: oklch( 35% .1 var(--mol_theme_hue) / .25 );\n}\n:where( [mol_theme=\"$mol_theme_light\"] ) [mol_theme=\"$mol_theme_base\"] {\n\t--mol_theme_back: oklch( 95% .02 var(--mol_theme_hue) );\n\t--mol_theme_card: oklch( 80% .05 var(--mol_theme_hue) / .25 );\n}\n\n:where( :root, [mol_theme=\"$mol_theme_dark\"] ) [mol_theme=\"$mol_theme_accent\"] {\n\t--mol_theme_back: oklch( 40% .2 calc( var(--mol_theme_hue) + 120deg ) );\n\t--mol_theme_card: oklch( 50% .3 calc( var(--mol_theme_hue) + 120deg ) / .25 );\n}\n:where( [mol_theme=\"$mol_theme_light\"] ) [mol_theme=\"$mol_theme_accent\"] {\n\t--mol_theme_back: oklch( 90% .03 calc( var(--mol_theme_hue) + 120deg ) );\n\t--mol_theme_card: oklch( 80% .05 calc( var(--mol_theme_hue) + 120deg ) / .25 );\n}\n\n:where( :root, [mol_theme=\"$mol_theme_dark\"] ) [mol_theme=\"$mol_theme_current\"] {\n\t--mol_theme_back: oklch( 25% .05 calc( var(--mol_theme_hue) - 60deg ) );\n\t--mol_theme_card: oklch( 35% .1 calc( var(--mol_theme_hue) - 60deg ) / .25 );\n}\n:where( [mol_theme=\"$mol_theme_light\"] ) [mol_theme=\"$mol_theme_current\"] {\n\t--mol_theme_back: oklch( 95% .02 calc( var(--mol_theme_hue) - 60deg ) );\n\t--mol_theme_card: oklch( 80% .05 calc( var(--mol_theme_hue) - 60deg ) / .25 );\n}\n\n:where( :root, [mol_theme=\"$mol_theme_dark\"] ) [mol_theme=\"$mol_theme_special\"] {\n\t--mol_theme_back: oklch( 25% .05 calc( var(--mol_theme_hue) + 60deg ) );\n\t--mol_theme_card: oklch( 35% .1 calc( var(--mol_theme_hue) + 60deg ) / .25 );\n}\n:where( [mol_theme=\"$mol_theme_light\"] ) [mol_theme=\"$mol_theme_special\"] {\n\t--mol_theme_back: oklch( 95% .02 calc( var(--mol_theme_hue) + 60deg ) );\n\t--mol_theme_card: oklch( 80% .05 calc( var(--mol_theme_hue) + 60deg ) / .25 );\n}\n");
+    $mol_style_attach("mol/theme/theme.css", ":root {\n\t--mol_theme_hue: 210deg;\n\t--mol_theme_hue_spread: 90deg;\n}\n\n:where([mol_theme]) {\n\tcolor: var(--mol_theme_text);\n\tfill: var(--mol_theme_text);\n\tbackground-color: var(--mol_theme_back);\n}\n\t\n:root, [mol_theme=\"$mol_theme_dark\"], :where([mol_theme=\"$mol_theme_dark\"]) [mol_theme]  {\n\n\t--mol_theme_luma: -1;\n\t--mol_theme_image: invert(1) hue-rotate( 180deg );\n\n\t--mol_theme_back: hsl( var(--mol_theme_hue), 20%, 10% );\n\t--mol_theme_card: hsl( var(--mol_theme_hue), 50%, 20%, .25 );\n\t--mol_theme_field: hsl( var(--mol_theme_hue), 50%, 8%, .25 );\n\t--mol_theme_hover: hsl( var(--mol_theme_hue), 0%, 50%, .1 );\n\t\n\t--mol_theme_text: hsl( var(--mol_theme_hue), 0%, 80% );\n\t--mol_theme_shade: hsl( var(--mol_theme_hue), 0%, 60%, 1 );\n\t--mol_theme_line: hsl( var(--mol_theme_hue), 0%, 50%, .2 );\n\t--mol_theme_focus: hsl( calc( var(--mol_theme_hue) + 180deg ), 100%, 65% );\n\t\n\t--mol_theme_control: hsl( var(--mol_theme_hue), 60%, 65% );\n\t--mol_theme_current: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 60%, 65% );\n\t--mol_theme_special: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 60%, 65% );\n\n\t/* --mol_theme_back: oklch( 20% .03 var(--mol_theme_hue) );\n\t--mol_theme_card: oklch( 35% .05 var(--mol_theme_hue) / .25 );\n\t--mol_theme_field: oklch( 0% 0 var(--mol_theme_hue) / .25 );\n\t--mol_theme_hover: oklch( 70% 0 var(--mol_theme_hue) / .1 );\n\t\n\t--mol_theme_text: oklch( 80% 0 var(--mol_theme_hue) );\n\t--mol_theme_shade: oklch( 60% 0 var(--mol_theme_hue) );\n\t--mol_theme_line: oklch( 50% 0 var(--mol_theme_hue) / .2 );\n\t--mol_theme_focus: oklch( 80% .2 calc( var(--mol_theme_hue) + 120deg ) );\n\t\n\t--mol_theme_control: oklch( 70% .1 var(--mol_theme_hue) );\n\t--mol_theme_current: oklch( 80% .2 calc( var(--mol_theme_hue) - 60deg ) );\n\t--mol_theme_special: oklch( 80% .3 calc( var(--mol_theme_hue) + 60deg ) ); */\n\n}\n\n[mol_theme=\"$mol_theme_light\"], :where([mol_theme=\"$mol_theme_light\"]) [mol_theme] {\n\t\n\t--mol_theme_luma: 1;\n\t--mol_theme_image: none;\n\t\n\t--mol_theme_back: hsl( var(--mol_theme_hue), 20%, 99% );\n\t--mol_theme_card: hsl( var(--mol_theme_hue), 50%, 90%, .25 );\n\t--mol_theme_field: hsl( var(--mol_theme_hue), 50%, 100%, .5 );\n\t--mol_theme_hover: hsl( var(--mol_theme_hue), 0%, 50%, .1 );\n\t\n\t--mol_theme_text: hsl( var(--mol_theme_hue), 0%, 0% );\n\t--mol_theme_shade: hsl( var(--mol_theme_hue), 0%, 40%, 1 );\n\t--mol_theme_line: hsl( var(--mol_theme_hue), 0%, 50%, .2 );\n\t--mol_theme_focus: hsl( calc( var(--mol_theme_hue) + 180deg ), 100%, 40% );\n\t\n\t--mol_theme_control: hsl( var(--mol_theme_hue), 80%, 30% );\n\t--mol_theme_current: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 80%, 30% );\n\t--mol_theme_special: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 80%, 30% );\n\t\n\t/* --mol_theme_back: oklch( 93% .01 var(--mol_theme_hue) );\n\t--mol_theme_card: oklch( 100% .02 var(--mol_theme_hue) / .25 );\n\t--mol_theme_field: oklch( 100% 0 var(--mol_theme_hue) / .5 );\n\t--mol_theme_hover: oklch( 70% 0 var(--mol_theme_hue) / .1 );\n\t\n\t--mol_theme_text: oklch( 20% 0 var(--mol_theme_hue) );\n\t--mol_theme_shade: oklch( 60% 0 var(--mol_theme_hue) );\n\t--mol_theme_line: oklch( 70% 0 var(--mol_theme_hue) / .2 );\n\t--mol_theme_focus: oklch( 20% .8 calc( var(--mol_theme_hue) + 120deg ) );\n\t\n\t--mol_theme_control: oklch( 45% .25 var(--mol_theme_hue) );\n\t--mol_theme_current: oklch( 45% .5 calc( var(--mol_theme_hue) - 60deg ) );\n\t--mol_theme_special: oklch( 45% .5 calc( var(--mol_theme_hue) + 60deg ) ); */\n\n}\n\n:where( :root, [mol_theme=\"$mol_theme_dark\"] ) [mol_theme=\"$mol_theme_base\"] {\n\t--mol_theme_back: hsl( var(--mol_theme_hue), 50%, 30% );\n\t--mol_theme_card: hsl( var(--mol_theme_hue), 40%, 20%, .25 );\n\t/* --mol_theme_back: oklch( 25% .05 var(--mol_theme_hue) );\n\t--mol_theme_card: oklch( 35% .1 var(--mol_theme_hue) / .25 ); */\n}\n:where( [mol_theme=\"$mol_theme_light\"] ) [mol_theme=\"$mol_theme_base\"] {\n\t--mol_theme_back: hsl( var(--mol_theme_hue), 50%, 80% );\n\t--mol_theme_card: hsl( var(--mol_theme_hue), 80%, 95%, .25 );\n\t/* --mol_theme_back: oklch( 95% .02 var(--mol_theme_hue) );\n\t--mol_theme_card: oklch( 80% .05 var(--mol_theme_hue) / .25 ); */\n}\n\n:where( :root, [mol_theme=\"$mol_theme_dark\"] ) [mol_theme=\"$mol_theme_accent\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) + 180deg ), 90%, 30% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) + 180deg ), 80%, 20%, .25 );\n\t/* --mol_theme_back: oklch( 40% .2 calc( var(--mol_theme_hue) + 120deg ) );\n\t--mol_theme_card: oklch( 50% .3 calc( var(--mol_theme_hue) + 120deg ) / .25 ); */\n}\n:where( [mol_theme=\"$mol_theme_light\"] ) [mol_theme=\"$mol_theme_accent\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) + 180deg ), 90%, 75% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) + 180deg ), 80%, 90%, .25 );\n\t/* --mol_theme_back: oklch( 90% .03 calc( var(--mol_theme_hue) + 120deg ) );\n\t--mol_theme_card: oklch( 80% .05 calc( var(--mol_theme_hue) + 120deg ) / .25 ); */\n}\n\n:where( :root, [mol_theme=\"$mol_theme_dark\"] ) [mol_theme=\"$mol_theme_current\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 50%, 30% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 40%, 20%, .25 );\n\t/* --mol_theme_back: oklch( 25% .05 calc( var(--mol_theme_hue) - 60deg ) );\n\t--mol_theme_card: oklch( 35% .1 calc( var(--mol_theme_hue) - 60deg ) / .25 ); */\n}\n:where( [mol_theme=\"$mol_theme_light\"] ) [mol_theme=\"$mol_theme_current\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 50%, 80% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 80%, 95%, .25 );\n\t/* --mol_theme_back: oklch( 95% .02 calc( var(--mol_theme_hue) - 60deg ) );\n\t--mol_theme_card: oklch( 80% .05 calc( var(--mol_theme_hue) - 60deg ) / .25 ); */\n}\n\n:where( :root, [mol_theme=\"$mol_theme_dark\"] ) [mol_theme=\"$mol_theme_special\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 50%, 30% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 40%, 20%, .25 );\n\t/* --mol_theme_back: oklch( 25% .05 calc( var(--mol_theme_hue) + 60deg ) );\n\t--mol_theme_card: oklch( 35% .1 calc( var(--mol_theme_hue) + 60deg ) / .25 ); */\n}\n:where( [mol_theme=\"$mol_theme_light\"] ) [mol_theme=\"$mol_theme_special\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 50%, 80% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 80%, 95%, .25 );\n\t/* --mol_theme_back: oklch( 95% .02 calc( var(--mol_theme_hue) + 60deg ) );\n\t--mol_theme_card: oklch( 80% .05 calc( var(--mol_theme_hue) + 60deg ) / .25 ); */\n}\n");
 })($ || ($ = {}));
 //mol/theme/-css/theme.css.ts
 ;
@@ -5163,6 +5163,33 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $mol_storage extends $mol_object2 {
+        static native() {
+            return null;
+        }
+        static persisted(next) {
+            return false;
+        }
+        static estimate() {
+            return 0;
+        }
+        static dir() {
+            return null;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_storage, "native", null);
+    __decorate([
+        $mol_mem
+    ], $mol_storage, "persisted", null);
+    $.$mol_storage = $mol_storage;
+})($ || ($ = {}));
+//mol/storage/storage.node.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $mol_state_local extends $mol_object {
         static 'native()';
         static native() {
@@ -5196,10 +5223,18 @@ var $;
             this.changes();
             if (next === void 0)
                 return JSON.parse(this.native().getItem(key) || 'null');
-            if (next === null)
+            if (next === null) {
                 this.native().removeItem(key);
-            else
+            }
+            else {
                 this.native().setItem(key, JSON.stringify(next));
+                try {
+                    this.$.$mol_storage.persisted(true);
+                }
+                catch (error) {
+                    $mol_fail_log(error);
+                }
+            }
             return next;
         }
         prefix() { return ''; }
@@ -6200,49 +6235,54 @@ var $;
     class $mpds_visavis_plot_legend_cmp extends $mol_view {
         sub() {
             return [
-                this.First_cmp_label(),
+                this.Label("0"),
                 "vs.",
-                this.Second_cmp_label()
+                this.Label("1")
             ];
         }
-        first_cmp_label(next) {
-            if (next !== undefined)
-                return next;
+        labels() {
+            return [];
+        }
+        colorset() {
+            return [];
+        }
+        label(id) {
             return "";
         }
-        First_cmp_label() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.first_cmp_label()
-            ];
-            return obj;
-        }
-        second_cmp_label(next) {
-            if (next !== undefined)
-                return next;
+        background(id) {
             return "";
         }
-        Second_cmp_label() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.second_cmp_label()
-            ];
+        Label(id) {
+            const obj = new this.$.$mpds_visavis_plot_legend_cmp_label();
+            obj.label = () => this.label(id);
+            obj.background = () => this.background(id);
             return obj;
         }
     }
     __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_legend_cmp.prototype, "first_cmp_label", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_legend_cmp.prototype, "First_cmp_label", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_legend_cmp.prototype, "second_cmp_label", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_legend_cmp.prototype, "Second_cmp_label", null);
+        $mol_mem_key
+    ], $mpds_visavis_plot_legend_cmp.prototype, "Label", null);
     $.$mpds_visavis_plot_legend_cmp = $mpds_visavis_plot_legend_cmp;
+    class $mpds_visavis_plot_legend_cmp_label extends $mol_view {
+        sub() {
+            return [
+                this.label()
+            ];
+        }
+        style() {
+            return {
+                ...super.style(),
+                background: this.background()
+            };
+        }
+        label() {
+            return "";
+        }
+        background() {
+            return "";
+        }
+    }
+    $.$mpds_visavis_plot_legend_cmp_label = $mpds_visavis_plot_legend_cmp_label;
 })($ || ($ = {}));
 //mpds/visavis/plot/legend/cmp/-view.tree/cmp.view.tree.ts
 ;
@@ -6251,37 +6291,52 @@ var $;
 (function ($) {
     var $$;
     (function ($$) {
-        const Cmp_label = {
+        class $mpds_visavis_plot_legend_cmp extends $.$mpds_visavis_plot_legend_cmp {
+            sub() {
+                return this.labels().length == 2
+                    ? super.sub()
+                    : this.labels().map((label, ind) => this.Label(ind));
+            }
+            label(index) {
+                return this.labels()[index] ?? '';
+            }
+            background(index) {
+                return this.colorset()[index] ?? '';
+            }
+        }
+        $$.$mpds_visavis_plot_legend_cmp = $mpds_visavis_plot_legend_cmp;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//mpds/visavis/plot/legend/cmp/cmp.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        $mol_style_define($mpds_visavis_plot_legend_cmp, {
+            lineHeight: '1',
+            position: 'absolute',
+            left: 0,
+            bottom: 0,
+            width: '100%',
+            padding: {
+                bottom: $mol_gap.space,
+            },
+            gap: $mol_gap.block,
+            align: {
+                items: 'center',
+            },
+            justify: {
+                content: 'center',
+            }
+        });
+        $mol_style_define($mpds_visavis_plot_legend_cmp_label, {
             color: 'white',
             padding: {
                 left: $mol_gap.space,
                 right: $mol_gap.space,
             }
-        };
-        $mol_style_define($mpds_visavis_plot_legend_cmp, {
-            position: 'absolute',
-            left: 0,
-            bottom: 0,
-            width: '100%',
-            gap: $mol_gap.block,
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: {
-                bottom: $mol_gap.space,
-            },
-            lineHeight: '1',
-            First_cmp_label: {
-                ...Cmp_label,
-                background: {
-                    color: '#3e3f95',
-                },
-            },
-            Second_cmp_label: {
-                ...Cmp_label,
-                background: {
-                    color: '#c00',
-                },
-            },
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
@@ -6578,7 +6633,7 @@ var $;
             const obj = new this.$.$mpds_visavis_plot_raw();
             return obj;
         }
-        json_cmp(next) {
+        multi_jsons(next) {
             if (next !== undefined)
                 return next;
             return null;
@@ -6685,20 +6740,13 @@ var $;
             obj.render = () => this.draw();
             return obj;
         }
-        first_cmp_label(next) {
-            if (next !== undefined)
-                return next;
-            return "";
-        }
-        second_cmp_label(next) {
-            if (next !== undefined)
-                return next;
-            return "";
+        cmp_labels() {
+            return [];
         }
         Cmp_legend() {
             const obj = new this.$.$mpds_visavis_plot_legend_cmp();
-            obj.first_cmp_label = (next) => this.first_cmp_label();
-            obj.second_cmp_label = (next) => this.second_cmp_label();
+            obj.labels = () => this.cmp_labels();
+            obj.colorset = () => this.colorset();
             return obj;
         }
         Heatmap_min() {
@@ -6840,7 +6888,7 @@ var $;
     ], $mpds_visavis_plot_matrix.prototype, "plot_raw", null);
     __decorate([
         $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "json_cmp", null);
+    ], $mpds_visavis_plot_matrix.prototype, "multi_jsons", null);
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_matrix.prototype, "links_value_min", null);
@@ -6868,12 +6916,6 @@ var $;
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_matrix.prototype, "Root", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "first_cmp_label", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "second_cmp_label", null);
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_matrix.prototype, "Cmp_legend", null);
@@ -17794,31 +17836,36 @@ var $;
             setup() {
                 return [
                     ...this.json().payload.fixel ? [this.Fixel()] : [],
-                    this.json_cmp() ? this.Diffrence_on() : this.Nonformers(),
+                    this.multi_jsons() ? this.Diffrence_on() : this.Nonformers(),
                     ...this.show_setup() ? [this.Order()] : [],
                 ];
             }
             plot_body() {
                 return [
                     this.Root(),
-                    ...this.json_cmp() ? [this.Cmp_legend()] : [],
+                    ...this.multi_jsons() ? [this.Cmp_legend()] : [],
                     ...this.heatmap() ? [this.Side_right()] : [],
                 ];
             }
             json() {
                 return $mpds_visavis_plot_matrix_json(this.plot_raw().json());
             }
+            cmp_labels() {
+                return this.multi_jsons() ? this.multi_jsons().map((json) => json.answerto) : [];
+            }
             json_master() {
-                if (!this.json_cmp())
+                if (!this.multi_jsons())
                     return this.json();
-                const json_master = JSON.parse(JSON.stringify(this.json()));
-                this.json_cmp().payload.links.forEach((item) => {
-                    item.cmp = 1;
-                    json_master.payload.links.push(item);
-                });
+                const jsons = this.multi_jsons();
+                const json_master = JSON.parse(JSON.stringify(jsons[0]));
+                for (let i = 1; i < jsons.length; i++) {
+                    const json = jsons[i];
+                    json.payload.links.forEach((item) => {
+                        item.cmp = i;
+                        json_master.payload.links.push(item);
+                    });
+                }
                 this.nonformers_checked(false);
-                this.first_cmp_label(this.json().answerto);
-                this.second_cmp_label(this.json_cmp().answerto);
                 return $mpds_visavis_plot_matrix_json(json_master);
             }
             nodes() {
@@ -18119,6 +18166,9 @@ var $;
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_matrix.prototype, "json", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "cmp_labels", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_matrix.prototype, "json_master", null);
@@ -20097,7 +20147,7 @@ var $;
             const obj = new this.$.$mpds_visavis_plot_raw();
             return obj;
         }
-        json_cmp(next) {
+        multi_jsons(next) {
             if (next !== undefined)
                 return next;
             return null;
@@ -20207,20 +20257,13 @@ var $;
             obj.subscribe_events = () => this.subscribe_events();
             return obj;
         }
-        first_cmp_label(next) {
-            if (next !== undefined)
-                return next;
-            return "";
-        }
-        second_cmp_label(next) {
-            if (next !== undefined)
-                return next;
-            return "";
+        cmp_labels() {
+            return [];
         }
         Cmp_legend() {
             const obj = new this.$.$mpds_visavis_plot_legend_cmp();
-            obj.first_cmp_label = (next) => this.first_cmp_label();
-            obj.second_cmp_label = (next) => this.second_cmp_label();
+            obj.labels = () => this.cmp_labels();
+            obj.colorset = () => this.colorset();
             return obj;
         }
         value_min() {
@@ -20389,7 +20432,7 @@ var $;
     ], $mpds_visavis_plot_cube.prototype, "plot_raw", null);
     __decorate([
         $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "json_cmp", null);
+    ], $mpds_visavis_plot_cube.prototype, "multi_jsons", null);
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_cube.prototype, "show_fixel", null);
@@ -20423,12 +20466,6 @@ var $;
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_cube.prototype, "Root", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "first_cmp_label", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "second_cmp_label", null);
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_cube.prototype, "Cmp_legend", null);
@@ -20559,14 +20596,14 @@ var $;
             setup() {
                 return [
                     ...this.show_fixel() ? [this.Fixel()] : [],
-                    this.json_cmp() ? this.Diffrence_on() : this.Nonformers(),
+                    this.multi_jsons() ? this.Diffrence_on() : this.Nonformers(),
                     ...this.show_setup() ? [this.X_order(), this.Y_order(), this.Z_order()] : [],
                 ];
             }
             plot_body() {
                 return [
                     this.Root(),
-                    ...this.json_cmp() ? [this.Cmp_legend()] : [],
+                    ...this.multi_jsons() ? [this.Cmp_legend()] : [],
                     ...this.heatmap() ? [this.Side_right()] : [],
                 ];
             }
@@ -20631,24 +20668,26 @@ var $;
                     ...this.convert_to_axes(this.json().payload.points.x, this.json().payload.points.y, this.json().payload.points.z, this.x_sort(), this.y_sort(), this.z_sort())
                 };
             }
-            data_cmp() {
-                if (!this.json_cmp())
+            multi_dataset() {
+                if (!this.multi_jsons())
                     return null;
                 this.nonformers_checked(false);
-                this.first_cmp_label(this.json().answerto);
-                this.second_cmp_label(this.json_cmp().answerto);
-                return {
-                    ...this.scatter3d_common(),
-                    text: this.json_cmp().payload.points.labels,
-                    marker: this.marker(1),
-                    ...this.convert_to_axes(this.json_cmp().payload.points.x, this.json_cmp().payload.points.y, this.json_cmp().payload.points.z, this.x_sort(), this.y_sort(), this.z_sort())
-                };
+                return this.multi_jsons().map((json, index) => {
+                    return {
+                        ...this.scatter3d_common(),
+                        text: json.payload.points.labels,
+                        marker: this.marker(index),
+                        ...this.convert_to_axes(json.payload.points.x, json.payload.points.y, json.payload.points.z, this.x_sort(), this.y_sort(), this.z_sort())
+                    };
+                });
+            }
+            cmp_labels() {
+                return this.multi_jsons() ? this.multi_jsons().map((json) => json.answerto) : [];
             }
             data_shown() {
                 return [
                     ...this.nonformers_checked() ? [this.data_nonformers()] : [],
-                    this.data(),
-                    ...this.json_cmp() ? [this.data_cmp()] : [],
+                    ...this.multi_dataset() ? this.multi_dataset() : [this.data()],
                 ];
             }
             scene() {
@@ -20815,7 +20854,10 @@ var $;
         ], $mpds_visavis_plot_cube.prototype, "data", null);
         __decorate([
             $mol_mem
-        ], $mpds_visavis_plot_cube.prototype, "data_cmp", null);
+        ], $mpds_visavis_plot_cube.prototype, "multi_dataset", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_cube.prototype, "cmp_labels", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_cube.prototype, "data_shown", null);
@@ -21806,6 +21848,12 @@ var $;
                 return next;
             return null;
         }
+        colorset() {
+            return [
+                "#3e3f95",
+                "#c00"
+            ];
+        }
         sub() {
             return [
                 this.Plot(),
@@ -21829,20 +21877,13 @@ var $;
             obj.subscribe_events = () => this.subscribe_events();
             return obj;
         }
-        first_cmp_label(next) {
-            if (next !== undefined)
-                return next;
-            return "";
-        }
-        second_cmp_label(next) {
-            if (next !== undefined)
-                return next;
-            return "";
+        cmp_labels() {
+            return [];
         }
         Cmp_legend() {
             const obj = new this.$.$mpds_visavis_plot_legend_cmp();
-            obj.first_cmp_label = (next) => this.first_cmp_label();
-            obj.second_cmp_label = (next) => this.second_cmp_label();
+            obj.labels = () => this.cmp_labels();
+            obj.colorset = () => this.colorset();
             return obj;
         }
         elemental_checked(id, next) {
@@ -21888,12 +21929,6 @@ var $;
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_discovery.prototype, "Plot", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_discovery.prototype, "first_cmp_label", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_discovery.prototype, "second_cmp_label", null);
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_discovery.prototype, "Cmp_legend", null);
@@ -22087,13 +22122,11 @@ var $;
                 const json_cmp = this.json_cmp();
                 const elementals_on = this.elementals_on();
                 const first = Discover_item({ points: json.payload.points, name: json.answerto });
-                this.first_cmp_label(first.name);
                 const second = json_cmp ? Discover_item({ points: json_cmp.payload.points, name: json_cmp.answerto }) : undefined;
-                this.second_cmp_label(second?.name);
                 const result = discover(elementals_on, first, second);
                 const traces = [];
                 for (let i = 0; i < result.length; i++) {
-                    const dscolor = (i == 0) ? '#3e3f95' : '#900';
+                    const dscolor = this.colorset()[i];
                     const oflag = (i == 0) ? 1 : 0.9;
                     traces.push({
                         x: result[i].discovery.map((item) => item[0]),
@@ -22106,6 +22139,9 @@ var $;
                     });
                 }
                 return traces;
+            }
+            cmp_labels() {
+                return this.json_cmp() ? [this.json().answerto, this.json_cmp().answerto] : [];
             }
         }
         __decorate([
@@ -22123,6 +22159,9 @@ var $;
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_discovery.prototype, "data", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_discovery.prototype, "cmp_labels", null);
         $$.$mpds_visavis_plot_discovery = $mpds_visavis_plot_discovery;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
@@ -24038,6 +24077,14 @@ var $;
         json_cmp() {
             return null;
         }
+        multi_requests(next) {
+            if (next !== undefined)
+                return next;
+            return [];
+        }
+        multi_jsons() {
+            return null;
+        }
         plot_raw() {
             return null;
         }
@@ -24119,7 +24166,7 @@ var $;
         Matrix() {
             const obj = new this.$.$mpds_visavis_plot_matrix();
             obj.plot_raw = () => this.plot_raw();
-            obj.json_cmp = () => this.json_cmp();
+            obj.multi_jsons = () => this.multi_jsons();
             obj.show_setup = () => this.show_setup();
             obj.nonformers_checked = (next) => this.nonformers_checked(next);
             obj.fixel_checked = (next) => this.matrix_fixel_checked(next);
@@ -24162,7 +24209,7 @@ var $;
         Cube() {
             const obj = new this.$.$mpds_visavis_plot_cube();
             obj.plot_raw = () => this.plot_raw();
-            obj.json_cmp = () => this.json_cmp();
+            obj.multi_jsons = () => this.multi_jsons();
             obj.show_setup = () => this.show_setup();
             obj.show_fixel = (next) => this.show_fixel();
             obj.nonformers_checked = (next) => this.nonformers_checked(next);
@@ -24264,6 +24311,9 @@ var $;
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot.prototype, "json_cmp_request", null);
+    __decorate([
+        $mol_mem
+    ], $mpds_visavis_plot.prototype, "multi_requests", null);
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot.prototype, "notify", null);
@@ -24437,6 +24487,11 @@ var $;
             json_cmp() {
                 return $mpds_visavis_plot.fetch_plot_json(this.json_cmp_request());
             }
+            multi_jsons() {
+                return this.multi_requests().length > 0
+                    ? this.multi_requests().map(req => $mpds_visavis_plot.fetch_plot_json(req))
+                    : this.json_cmp() ? [this.json(), this.json_cmp()] : null;
+            }
             json_cmp_request(next) {
                 if (next === null && $mol_wire_probe(() => this.json_cmp_request()) === null) {
                     this.notify('Comparison was reset');
@@ -24483,6 +24538,9 @@ var $;
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot.prototype, "json_cmp", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot.prototype, "multi_jsons", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot.prototype, "json_cmp_request", null);

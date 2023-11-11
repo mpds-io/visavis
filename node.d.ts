@@ -1520,6 +1520,15 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
+    class $mol_storage extends $mol_object2 {
+        static native(): any;
+        static persisted(next?: boolean): boolean;
+        static estimate(): number;
+        static dir(): FileSystemDirectoryHandle;
+    }
+}
+
+declare namespace $ {
     class $mol_state_local<Value> extends $mol_object {
         static 'native()': Pick<Storage, 'getItem' | 'setItem' | 'removeItem'>;
         static native(): Storage | {
@@ -1773,10 +1782,25 @@ declare namespace $ {
 declare namespace $ {
     class $mpds_visavis_plot_legend_cmp extends $mol_view {
         sub(): readonly any[];
-        first_cmp_label(next?: any): string;
-        First_cmp_label(): $mol_view;
-        second_cmp_label(next?: any): string;
-        Second_cmp_label(): $mol_view;
+        labels(): readonly any[];
+        colorset(): readonly any[];
+        label(id: any): string;
+        background(id: any): string;
+        Label(id: any): $mpds_visavis_plot_legend_cmp_label;
+    }
+    class $mpds_visavis_plot_legend_cmp_label extends $mol_view {
+        sub(): readonly any[];
+        style(): Record<string, any>;
+        label(): string;
+        background(): string;
+    }
+}
+
+declare namespace $.$$ {
+    class $mpds_visavis_plot_legend_cmp extends $.$mpds_visavis_plot_legend_cmp {
+        sub(): readonly any[];
+        label(index: number): string;
+        background(index: number): string;
     }
 }
 
@@ -1874,7 +1898,7 @@ declare namespace $ {
 declare namespace $ {
     class $mpds_visavis_plot_matrix extends $mol_view {
         plot_raw(): $mpds_visavis_plot_raw;
-        json_cmp(next?: any): any;
+        multi_jsons(next?: any): any;
         json_master(): any;
         show_setup(): boolean;
         size(): number;
@@ -1895,9 +1919,8 @@ declare namespace $ {
         sub(): readonly any[];
         draw(): any;
         Root(): $mol_view;
-        first_cmp_label(next?: any): string;
-        second_cmp_label(next?: any): string;
-        Cmp_legend(): $mpds_visavis_plot_legend_cmp;
+        cmp_labels(): readonly any[];
+        Cmp_legend(): $$.$mpds_visavis_plot_legend_cmp;
         Heatmap_min(): $mol_view;
         heatmap_color(id: any): string;
         Heatmap_color(id: any): $mol_view;
@@ -2299,6 +2322,7 @@ declare namespace $.$$ {
                 fixel: number | null;
             }>;
         }>;
+        cmp_labels(): any;
         json_master(): Readonly<{
             answerto?: string | undefined;
             payload: Readonly<{
@@ -2915,7 +2939,7 @@ declare namespace $ {
 declare namespace $ {
     class $mpds_visavis_plot_cube extends $mol_view {
         plot_raw(): $mpds_visavis_plot_raw;
-        json_cmp(next?: any): any;
+        multi_jsons(next?: any): any;
         show_setup(): boolean;
         show_fixel(next?: any): boolean;
         heatmap(next?: any): boolean;
@@ -2935,9 +2959,8 @@ declare namespace $ {
         layout(): Record<string, any>;
         subscribe_events(): any;
         Root(): $$.$mpds_visavis_plotly;
-        first_cmp_label(next?: any): string;
-        second_cmp_label(next?: any): string;
-        Cmp_legend(): $mpds_visavis_plot_legend_cmp;
+        cmp_labels(): readonly any[];
+        Cmp_legend(): $$.$mpds_visavis_plot_legend_cmp;
         value_min(): number;
         Heatmap_min(): $mol_view;
         heatmap_color(id: any): string;
@@ -3089,91 +3112,9 @@ declare namespace $.$$ {
                 };
             };
         };
-        data_cmp(): {
-            x: never[];
-            y: never[];
-            z: never[];
-            text: any;
-            marker: {
-                size: number;
-                opacity: number;
-                colorscale?: string | undefined;
-                color: any;
-            };
-            type: string;
-            mode: string;
-            hoverinfo: string;
-            projection: {
-                x: {
-                    show: boolean;
-                    opacity: number;
-                };
-                y: {
-                    show: boolean;
-                    opacity: number;
-                };
-                z: {
-                    show: boolean;
-                    opacity: number;
-                };
-            };
-        } | null;
-        data_shown(): ({
-            x: never[];
-            y: never[];
-            z: never[];
-            text: readonly string[];
-            marker: {
-                color: string;
-                size: number;
-                opacity: number;
-            };
-            type: string;
-            mode: string;
-            hoverinfo: string;
-            projection: {
-                x: {
-                    show: boolean;
-                    opacity: number;
-                };
-                y: {
-                    show: boolean;
-                    opacity: number;
-                };
-                z: {
-                    show: boolean;
-                    opacity: number;
-                };
-            };
-        } | {
-            x: never[];
-            y: never[];
-            z: never[];
-            text: any;
-            marker: {
-                size: number;
-                opacity: number;
-                colorscale?: string | undefined;
-                color: any;
-            };
-            type: string;
-            mode: string;
-            hoverinfo: string;
-            projection: {
-                x: {
-                    show: boolean;
-                    opacity: number;
-                };
-                y: {
-                    show: boolean;
-                    opacity: number;
-                };
-                z: {
-                    show: boolean;
-                    opacity: number;
-                };
-            };
-        } | null)[];
+        multi_dataset(): any[] | null;
+        cmp_labels(): any;
+        data_shown(): any[];
         scene(): {
             aspectmode: string;
             xaxis: {
@@ -3659,14 +3600,14 @@ declare namespace $ {
         elementals_on(next?: any): readonly any[];
         show_setup(): boolean;
         discovery_click(next?: any): any;
+        colorset(): readonly any[];
         sub(): readonly any[];
         data(): Record<string, any>;
         layout(): Record<string, any>;
         subscribe_events(): any;
         Plot(): $$.$mpds_visavis_plotly;
-        first_cmp_label(next?: any): string;
-        second_cmp_label(next?: any): string;
-        Cmp_legend(): $mpds_visavis_plot_legend_cmp;
+        cmp_labels(): readonly any[];
+        Cmp_legend(): $$.$mpds_visavis_plot_legend_cmp;
         elemental_checked(id: any, next?: any): boolean;
         elementals_dict(): Record<string, any>;
         Elementals_check(): $$.$mol_check_list;
@@ -3796,11 +3737,12 @@ declare namespace $.$$ {
             hoverinfo: string;
             marker: {
                 size: number;
-                color: string;
+                color: any;
                 opacity: number;
                 symbol: string;
             };
         }[];
+        cmp_labels(): any[];
     }
 }
 
@@ -6213,6 +6155,8 @@ declare namespace $ {
         json(): any;
         json_cmp_request(next?: any): any;
         json_cmp(): any;
+        multi_requests(next?: any): readonly any[];
+        multi_jsons(): any;
         plot_raw(): any;
         show_setup(): boolean;
         notify(next?: any): any;
@@ -6602,6 +6546,7 @@ declare namespace $.$$ {
         static fetch_plot_json(request: RequestInfo | null): any;
         json(): any;
         json_cmp(): any;
+        multi_jsons(): any[] | null;
         json_cmp_request(next?: string | null): string | null;
         plot_raw(): $mpds_visavis_plot_raw | null;
         sub(): any[];
