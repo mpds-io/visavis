@@ -2301,6 +2301,10 @@ declare namespace $ {
 declare namespace $.$$ {
     class $mpds_visavis_plotly extends $.$mpds_visavis_plotly {
         subscribe_events(): void;
+        size(): {
+            width: number;
+            height: number;
+        } | undefined;
         render(): void;
     }
 }
