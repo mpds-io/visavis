@@ -1,6 +1,6 @@
 $mpds_visavis_plot_cube $mol_view
 	plot_raw $mpds_visavis_plot_raw
-	json_cmp? null
+	multi_jsons? null
 	show_setup true
 	show_fixel? true
 	heatmap? false
@@ -42,8 +42,8 @@ $mpds_visavis_plot_cube $mol_view
 					layout <= layout *
 					subscribe_events <= subscribe_events null
 				<= Cmp_legend $mpds_visavis_plot_legend_cmp
-					first_cmp_label? <= first_cmp_label? \
-					second_cmp_label? <= second_cmp_label? \
+					labels <= cmp_labels /
+					colorset <= colorset
 				<= Side_right $mol_scroll
 					sub /
 						<= Heatmap_legend $mol_list

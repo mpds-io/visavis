@@ -49,7 +49,7 @@ namespace $.$$ {
 		setup() {
 			return [
 				... this.json().payload.fixel ? [ this.Fixel() ] : [],
-				this.json_cmp() ? this.Diffrence_on() : this.Nonformers(),
+				this.multi_jsons() ? this.Diffrence_on() : this.Nonformers(),
 				... this.show_setup() ? [ this.Order() ] : [],
 			]
 		}
@@ -58,7 +58,7 @@ namespace $.$$ {
 		plot_body() {
 			return [
 				this.Root(),
-				... this.json_cmp() ? [ this.Cmp_legend() ] : [],
+				... this.multi_jsons() ? [ this.Cmp_legend() ] : [],
 				... this.heatmap() ? [ this.Side_right() ] : [],
 			]
 		}
@@ -69,18 +69,27 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
+		cmp_labels() {
+			return this.multi_jsons() ? this.multi_jsons()!.map( (json: any) => json.answerto ) : []
+		}
+
+		@ $mol_mem
 		json_master() {
-			if ( !this.json_cmp() ) return this.json()
+			if ( ! this.multi_jsons() ) return this.json()
+
+			const jsons = this.multi_jsons()!
 			
-			const json_master = JSON.parse(JSON.stringify( this.json() ));
-			this.json_cmp().payload.links.forEach( (item: any)=> {
-				item.cmp = 1;
-				json_master.payload.links.push(item);
-			});
-			
+			const json_master = JSON.parse( JSON.stringify( jsons[0] ) )
+
+			for (let i = 1; i < jsons.length; i++) {
+				const json = jsons[i]
+				json.payload.links.forEach( ( item: any ) => {
+					item.cmp = i
+					json_master.payload.links.push( item )
+				} )
+			}
+
 			this.nonformers_checked( false )
-			this.first_cmp_label( this.json().answerto )
-			this.second_cmp_label( this.json_cmp().answerto )
 
 			return $mpds_visavis_plot_matrix_json( json_master )
 		}

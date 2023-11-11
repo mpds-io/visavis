@@ -1,6 +1,6 @@
 $mpds_visavis_plot_matrix $mol_view
 	plot_raw $mpds_visavis_plot_raw
-	json_cmp? null
+	multi_jsons? null
 	json_master null
 	show_setup true
 	size 0
@@ -43,8 +43,8 @@ $mpds_visavis_plot_matrix $mol_view
 				<= Root $mol_view
 					render <= draw null
 				<= Cmp_legend $mpds_visavis_plot_legend_cmp
-					first_cmp_label? <= first_cmp_label? \
-					second_cmp_label? <= second_cmp_label? \
+					labels <= cmp_labels /
+					colorset <= colorset
 				<= Side_right $mol_scroll
 					sub /
 						<= Heatmap_legend $mol_list

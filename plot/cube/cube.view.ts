@@ -26,7 +26,7 @@ namespace $.$$ {
 		setup() {
 			return [
 				... this.show_fixel() ? [ this.Fixel() ] : [],
-				this.json_cmp() ? this.Diffrence_on() : this.Nonformers(),
+				this.multi_jsons() ? this.Diffrence_on() : this.Nonformers(),
 				... this.show_setup() ? [ this.X_order(), this.Y_order(), this.Z_order() ] : [],
 			]
 		}
@@ -35,7 +35,7 @@ namespace $.$$ {
 		plot_body() {
 			return [
 				this.Root(),
-				... this.json_cmp() ? [ this.Cmp_legend() ] : [],
+				... this.multi_jsons() ? [ this.Cmp_legend() ] : [],
 				... this.heatmap() ? [ this.Side_right() ] : [],
 			]
 		}
@@ -135,32 +135,38 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		data_cmp() {
-			if (!this.json_cmp() ) return null
+		multi_dataset(): any[] | null {
+			if( ! this.multi_jsons() ) return null
+
 			this.nonformers_checked( false )
-			this.first_cmp_label( this.json().answerto )
-			this.second_cmp_label( this.json_cmp().answerto )
-			return {
-				...this.scatter3d_common(),
-				text: this.json_cmp().payload.points.labels,
-				marker: this.marker( 1 ),
-				...this.convert_to_axes(
-					this.json_cmp().payload.points.x, 
-					this.json_cmp().payload.points.y, 
-					this.json_cmp().payload.points.z, 
-					this.x_sort() as Prop_name, 
-					this.y_sort() as Prop_name, 
-					this.z_sort() as Prop_name,
-				)
-			}
+
+			return this.multi_jsons().map( (json: any, index: number) => {
+				return {
+					...this.scatter3d_common(),
+					text: json.payload.points.labels,
+					marker: this.marker( index ),
+					...this.convert_to_axes(
+						json.payload.points.x, 
+						json.payload.points.y, 
+						json.payload.points.z, 
+						this.x_sort() as Prop_name, 
+						this.y_sort() as Prop_name, 
+						this.z_sort() as Prop_name,
+					)
+				}
+			} )
+		}
+
+		@ $mol_mem
+		cmp_labels() {
+			return this.multi_jsons() ? this.multi_jsons()!.map( (json: any) => json.answerto ) : []
 		}
 
 		@ $mol_mem
 		data_shown() {
 			return [
-				... this.nonformers_checked() ? [this.data_nonformers()] : [],
-				this.data(),
-				... this.json_cmp() ? [this.data_cmp()] : [],
+				... this.nonformers_checked() ? [ this.data_nonformers() ] : [],
+				... this.multi_dataset() ? this.multi_dataset()! : [ this.data() ],
 			]
 		}
 

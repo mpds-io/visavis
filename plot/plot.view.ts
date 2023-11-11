@@ -25,6 +25,13 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
+		multi_jsons() {
+			return this.multi_requests().length > 0 
+				? this.multi_requests().map( req => $mpds_visavis_plot.fetch_plot_json( req ) )
+				: this.json_cmp() ? [ this.json(), this.json_cmp() ] : null
+		}
+
+		@ $mol_mem
 		json_cmp_request( next?: string | null ) {
 			if ( next === null && $mol_wire_probe( ()=> this.json_cmp_request() ) === null ) {
 				this.notify( 'Comparison was reset' )
