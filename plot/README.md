@@ -35,7 +35,15 @@ visavis_plot.notify = ( msg ) => alert( msg )
 
 **`json_request( next?: string ) : string`**
 
-Request url to get JSON (plot data)
+Request URL to get JSON (plot data)
+
+**`json_cmp_request( next?: string | null ) : string | null`**
+
+Second request URL to get JSON for comparison (matrix, cube and discovery plots)
+
+**`multi_requests( next?: string[] ) : string[]`**
+
+Multiple request URLs to get JSON for comparison (matrix and cube plots)
 
 **`notify( msg: string ) : void`**
 
