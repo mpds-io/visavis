@@ -7897,7 +7897,7 @@ $mpds_visavis_plot $mol_view
 	json null
 	json_cmp_request? null
 	json_cmp null
-	multi_requests? /
+	multi_requests? /string
 	multi_jsons null
 	plot_raw null
 	show_setup false

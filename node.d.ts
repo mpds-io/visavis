@@ -6155,7 +6155,7 @@ declare namespace $ {
         json(): any;
         json_cmp_request(next?: any): any;
         json_cmp(): any;
-        multi_requests(next?: any): readonly any[];
+        multi_requests(next?: any): readonly string[];
         multi_jsons(): any;
         plot_raw(): any;
         show_setup(): boolean;
