@@ -232,17 +232,15 @@ namespace $.$$ {
 			const elementals_on = this.elementals_on()
 
 			const first = Discover_item({points: json.payload.points, name: json.answerto})
-			this.first_cmp_label( first.name )
-			
+
 			const second = json_cmp ? Discover_item({points: json_cmp.payload.points, name: json_cmp.answerto}) : undefined
-			this.second_cmp_label( second?.name )
 
 			const result = discover(elementals_on, first, second)
 		
 			const traces = [];
 		
 			for (let i = 0; i < result.length; i++){
-				const dscolor = (i == 0) ? '#3e3f95' : '#900'
+				const dscolor = this.colorset()[ i ]
 				const oflag = (i == 0) ? 1 : 0.9
 				traces.push({
 					x: result[i].discovery.map((item: any) => item[0] ),
@@ -256,6 +254,11 @@ namespace $.$$ {
 			}
 
 			return traces
+		}
+
+		@ $mol_mem
+		cmp_labels() {
+			return this.json_cmp() ? [ this.json().answerto, this.json_cmp().answerto ] : []
 		}
 
 	}

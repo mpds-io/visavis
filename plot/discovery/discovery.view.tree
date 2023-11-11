@@ -4,14 +4,17 @@ $mpds_visavis_plot_discovery $mol_view
 	elementals_on? /
 	show_setup true
 	discovery_click? null
+	colorset /
+		\#3e3f95
+		\#c00
 	sub /
 		<= Plot $mpds_visavis_plotly
 			data <= data *
 			layout <= layout *
 			subscribe_events <= subscribe_events null
 		<= Cmp_legend $mpds_visavis_plot_legend_cmp
-			first_cmp_label? <= first_cmp_label? \
-			second_cmp_label? <= second_cmp_label? \
+			labels <= cmp_labels /
+			colorset <= colorset
 		<= Setup $mol_view
 			sub /
 				<= Elementals $mol_labeler
