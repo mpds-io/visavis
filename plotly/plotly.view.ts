@@ -8,9 +8,16 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		render() {
-			if (!this.view_rect()) return
+		size() {
+			if ( !this.view_rect() ) return
 			const { width, height } = this.view_rect()!
+			return { width, height }
+		}
+
+		@ $mol_mem
+		render() {
+			if ( !this.size() ) return
+			const { width, height } = this.size()!
 			
 			const plotly_root = $mol_wire_sync( document ).createElement( 'div' ) as HTMLElement
 			plotly_root.style.position = 'absolute' //otherwise plotly_root prevents dom_node from resizing
