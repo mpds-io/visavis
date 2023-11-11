@@ -49,7 +49,7 @@ namespace $.$$ {
 		setup() {
 			return [
 				... this.json().payload.fixel ? [ this.Fixel() ] : [],
-				this.multi_jsons() ? this.Diffrence_on() : this.Nonformers(),
+				this.multi_jsons() ? this.Difference_on() : this.Nonformers(),
 				... this.show_setup() ? [ this.Order() ] : [],
 			]
 		}

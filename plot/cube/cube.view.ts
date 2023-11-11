@@ -26,7 +26,7 @@ namespace $.$$ {
 		setup() {
 			return [
 				... this.show_fixel() ? [ this.Fixel() ] : [],
-				this.multi_jsons() ? this.Diffrence_on() : this.Nonformers(),
+				this.multi_jsons() ? this.Difference_on() : this.Nonformers(),
 				... this.show_setup() ? [ this.X_order(), this.Y_order(), this.Z_order() ] : [],
 			]
 		}
