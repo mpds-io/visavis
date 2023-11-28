@@ -6447,7 +6447,7 @@ var $;
 ;
 
 var $node = $node || {}
-void function( module ) { var exports = module.exports = this; function require( id ) { return $node[ id.replace( /^.\// , "../mpds/visavis/lib/plotly/1.35.2/" ) ] }; 
+void function( module ) { var exports = module.exports = this; function require( id ) { return $node[ id.replace( /^.\// , "../mpds/visavis/lib/plotly/bundle/" ) ] }; 
 ;
 /* Custom build of Plotly v1.35.2, Copyright (c) 2018 Plotly, Inc, MIT License */
 try{self}catch{return}(function(b){"object"===typeof exports&&"undefined"!==typeof module?module.exports=b():"function"===typeof define&&define.amd?define([],b):("undefined"!==typeof window?window:"undefined"!==typeof global?global:"undefined"!==typeof self?self:this).Plotly=b()})(function(){return function(){function b(p,l,n){function g(d,e){if(!l[d]){if(!p[d]){var h="function"==typeof require&&require;if(!e&&h)return h(d,!0);if(k)return k(d,!0);e=Error("Cannot find module '"+d+"'");throw e.code="MODULE_NOT_FOUND",e;
@@ -8974,12 +8974,12 @@ opacity:{valType:"number",role:"style",min:0,max:1,dflt:1,description:"Sets the 
 
 ;
 
-$node[ "../mpds/visavis/lib/plotly/1.35.2/plotly.custom.min" ] = $node[ "../mpds/visavis/lib/plotly/1.35.2/plotly.custom.min.js" ] = module.exports }.call( {} , {} )
+$node[ "../mpds/visavis/lib/plotly/bundle/plotly.custom.min" ] = $node[ "../mpds/visavis/lib/plotly/bundle/plotly.custom.min.js" ] = module.exports }.call( {} , {} )
 ;
 "use strict";
 var $;
 (function ($) {
-    $.$mpds_visavis_lib_plotly = require('../mpds/visavis/lib/plotly/1.35.2/plotly.custom.min.js');
+    $.$mpds_visavis_lib_plotly = require('../mpds/visavis/lib/plotly/bundle/plotly.custom.min.js');
 })($ || ($ = {}));
 //mpds/visavis/lib/plotly/plotly.ts
 ;

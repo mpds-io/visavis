@@ -73,9 +73,7 @@
 	pack idea git \https://github.com/hyoo-ru/idea.hyoo.ru.git
 	pack intern git \https://github.com/hyoo-ru/intern.hyoo.ru.git
 \/mpds/visavis/lib/plotly
-	require \/mpds/visavis/lib/plotly/1.35.2
-	- require \/mpds/visavis/lib/plotly/1.37.1
-	- require \/mpds/visavis/lib/plotly/2.27.1
+	require \/mpds/visavis/lib/plotly/bundle
 \/mpds/visavis/elements/list
 	deploy \/mpds/visavis/elements/data/elements.json.tree
 	deploy \/mpds/visavis/elements/data/prop_names.json.tree

@@ -9515,7 +9515,7 @@ opacity:{valType:"number",role:"style",min:0,max:1,dflt:1,description:"Sets the 
 "use strict";
 var $;
 (function ($) {
-    $.$mpds_visavis_lib_plotly = require('../mpds/visavis/lib/plotly/1.35.2/plotly.custom.min.js');
+    $.$mpds_visavis_lib_plotly = require('../mpds/visavis/lib/plotly/bundle/plotly.custom.min.js');
 })($ || ($ = {}));
 //mpds/visavis/lib/plotly/plotly.ts
 ;

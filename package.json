@@ -182,6 +182,7 @@
     "$mol_labeler",
     "$mpds_visavis_lib_plotly",
     "$mpds_visavis_lib",
+    "$mpds_visavis_lib_plotly_bundle",
     "$mol_data_record",
     "$mol_data",
     "$mol_data_value",
