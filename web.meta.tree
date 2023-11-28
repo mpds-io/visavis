@@ -72,12 +72,18 @@
 	pack home git \https://github.com/hyoo-ru/hyoo.ru.git
 	pack idea git \https://github.com/hyoo-ru/idea.hyoo.ru.git
 	pack intern git \https://github.com/hyoo-ru/intern.hyoo.ru.git
+\/mpds/visavis/lib/plotly
+	require \/mpds/visavis/lib/plotly/1.35.2
+	- require \/mpds/visavis/lib/plotly/1.37.1
+	- require \/mpds/visavis/lib/plotly/2.27.1
 \/mpds/visavis/elements/list
 	deploy \/mpds/visavis/elements/data/elements.json.tree
 	deploy \/mpds/visavis/elements/data/prop_names.json.tree
 \/mpds/visavis/elements/nonformer
 	deploy \/mpds/visavis/elements/data/nonfromer_pd_bin.json.tree
 	deploy \/mpds/visavis/elements/data/nonfromer_pd_tri.json.tree
+\/mpds/visavis/lib/pca
+	require \/mpds/visavis/lib/pca/bundle
 \/mpds/visavis/app
 	deploy \/mpds/visavis/examples/bar_sci_literature.json
 	deploy \/mpds/visavis/examples/customscatter_Ge_elastic_constant.json

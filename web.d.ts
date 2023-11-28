@@ -907,6 +907,41 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    class $mol_list extends $mol_view {
+        render_visible_only(): boolean;
+        render_over(): number;
+        sub(): readonly $mol_view[];
+        Empty(): $mol_view;
+        Gap_before(): $mol_view;
+        Gap_after(): $mol_view;
+        view_window(): readonly any[];
+        rows(): readonly $mol_view[];
+        gap_before(): number;
+        gap_after(): number;
+    }
+}
+
+declare namespace $ {
+    function $mol_support_css_overflow_anchor(this: $): boolean;
+}
+
+declare namespace $.$$ {
+    class $mol_list extends $.$mol_list {
+        sub(): readonly $mol_view[];
+        render_visible_only(): boolean;
+        view_window(next?: [number, number]): [number, number];
+        gap_before(): number;
+        gap_after(): number;
+        sub_visible(): $mol_view[];
+        minimal_height(): number;
+        force_render(path: Set<$mol_view>): void;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
     class $mol_page extends $mol_view {
         dom_name(): string;
         field(): Record<string, any>;
@@ -919,7 +954,9 @@ declare namespace $ {
         Tools(): $mol_view;
         head(): readonly any[];
         Head(): $mol_view;
-        body(): readonly $mol_view_content[];
+        body(): readonly $mol_view[];
+        Body_content(): $$.$mol_list;
+        body_content(): readonly any[];
         body_scroll_top(next?: any): number;
         Body(): $$.$mol_scroll;
         foot(): readonly $mol_view[];
@@ -1238,41 +1275,6 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $mol_list extends $mol_view {
-        render_visible_only(): boolean;
-        render_over(): number;
-        sub(): readonly $mol_view[];
-        Empty(): $mol_view;
-        Gap_before(): $mol_view;
-        Gap_after(): $mol_view;
-        view_window(): readonly any[];
-        rows(): readonly $mol_view[];
-        gap_before(): number;
-        gap_after(): number;
-    }
-}
-
-declare namespace $ {
-    function $mol_support_css_overflow_anchor(this: $): boolean;
-}
-
-declare namespace $.$$ {
-    class $mol_list extends $.$mol_list {
-        sub(): readonly $mol_view[];
-        render_visible_only(): boolean;
-        view_window(next?: [number, number]): [number, number];
-        gap_before(): number;
-        gap_after(): number;
-        sub_visible(): $mol_view[];
-        minimal_height(): number;
-        force_render(path: Set<$mol_view>): void;
-    }
-}
-
-declare namespace $ {
-}
-
-declare namespace $ {
     class $mol_link extends $mol_view {
         uri(): string;
         dom_name(): string;
@@ -1395,6 +1397,35 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
+    let $mol_mem_persist: typeof $mol_wire_solid;
+}
+
+declare namespace $ {
+    type $mol_log3_event<Fields> = {
+        [key in string]: unknown;
+    } & {
+        time?: string;
+        place: unknown;
+        message: string;
+    } & Fields;
+    type $mol_log3_logger<Fields, Res = void> = (this: $, event: $mol_log3_event<Fields>) => Res;
+    let $mol_log3_come: $mol_log3_logger<{}>;
+    let $mol_log3_done: $mol_log3_logger<{}>;
+    let $mol_log3_fail: $mol_log3_logger<{}>;
+    let $mol_log3_warn: $mol_log3_logger<{
+        hint: string;
+    }>;
+    let $mol_log3_rise: $mol_log3_logger<{}>;
+    let $mol_log3_area: $mol_log3_logger<{}, () => void>;
+    function $mol_log3_area_lazy(this: $, event: $mol_log3_event<{}>): () => void;
+    let $mol_log3_stack: (() => void)[];
+}
+
+declare namespace $ {
+    function $mol_log3_web_make(level: $mol_type_keys_extract<Console, Function>, color: string): (this: $, event: $mol_log3_event<{}>) => () => void;
+}
+
+declare namespace $ {
     export function $mol_wire_sync<Host extends object>(obj: Host): ObjectOrFunctionResultAwaited<Host>;
     type FunctionResultAwaited<Some> = Some extends (...args: infer Args) => infer Res ? (...args: Args) => Awaited<Res> : Some;
     type MethodsResultAwaited<Host extends Object> = {
@@ -1405,18 +1436,9 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    let $mol_mem_persist: typeof $mol_wire_solid;
-}
-
-declare namespace $ {
     class $mol_storage extends $mol_object2 {
-        static native(): {
-            estimate: () => StorageEstimate;
-            getDirectory: () => FileSystemDirectoryHandle;
-            persist: () => boolean;
-            persisted: () => boolean;
-        };
-        static persisted(next?: boolean): boolean;
+        static native(): StorageManager;
+        static persisted(next?: boolean, cache?: 'cache'): boolean;
         static estimate(): StorageEstimate;
         static dir(): FileSystemDirectoryHandle;
     }
@@ -1825,6 +1847,10 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    const $mpds_visavis_lib_plotly: any;
+}
+
+declare namespace $ {
     type $mol_data_value<Input = any, Output = any> = (val: Input) => Output;
 }
 
@@ -2134,14 +2160,6 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    class $mpds_visavis_lib extends $mol_object2 {
-        static plotly(): any;
-        static pca(): any;
-        static d3(): any;
-    }
-}
-
-declare namespace $ {
     class $mpds_visavis_elements_nonformer extends $mol_object {
         pd_bin(): readonly any[];
         pd_tri(): readonly string[];
@@ -2291,21 +2309,21 @@ declare namespace $.$$ {
 
 declare namespace $ {
     class $mpds_visavis_plotly extends $mol_view {
-        data(): Record<string, any>;
+        sub(): readonly any[];
+        data(): readonly any[];
         layout(): Record<string, any>;
-        subscribe_events(): any;
         plot_options(): Record<string, any>;
+        Plotly_root(): any;
     }
 }
 
 declare namespace $.$$ {
     class $mpds_visavis_plotly extends $.$mpds_visavis_plotly {
-        subscribe_events(): void;
         size(): {
             width: number;
             height: number;
         } | undefined;
-        render(): void;
+        Plotly_root(): any;
     }
 }
 
@@ -2402,7 +2420,7 @@ declare namespace $ {
 declare namespace $.$$ {
     class $mol_hotkey extends $.$mol_hotkey {
         key(): {
-            [x: number]: ((event: KeyboardEvent) => void) | undefined;
+            readonly [x: number]: ((event: KeyboardEvent) => void) | undefined;
             readonly backspace?: ((event: KeyboardEvent) => void) | undefined;
             readonly tab?: ((event: KeyboardEvent) => void) | undefined;
             readonly enter?: ((event: KeyboardEvent) => void) | undefined;
@@ -2838,9 +2856,9 @@ declare namespace $ {
         colorset(): readonly any[];
         heatmap_colors(): readonly any[];
         sub(): readonly any[];
-        data_shown(): Record<string, any>;
+        data_shown(): readonly any[];
         layout(): Record<string, any>;
-        subscribe_events(): any;
+        Plotly_root(): any;
         Root(): $$.$mpds_visavis_plotly;
         cmp_labels(): readonly any[];
         Cmp_legend(): $$.$mpds_visavis_plot_legend_cmp;
@@ -3060,7 +3078,7 @@ declare namespace $.$$ {
                 };
             };
         };
-        subscribe_events(): void;
+        auto(): void;
         layout(): {
             font: {};
             showlegend: boolean;
@@ -3118,10 +3136,9 @@ declare namespace $ {
         not_demo(): boolean;
         label(next?: any): string;
         Label(): $mol_view;
-        data(): Record<string, any>;
+        data(): readonly any[];
         layout(): Record<string, any>;
-        subscribe_events(): any;
-        mousemove(): any;
+        Plotly_root(): any;
         Root(): $$.$mpds_visavis_plotly;
     }
 }
@@ -3151,23 +3168,13 @@ declare namespace $.$$ {
             title_a?: string | undefined;
             title_b?: string | undefined;
             object_repr?: string | undefined;
-            comp_end?: {
-                [x: string]: number;
-            } | undefined;
+            comp_end?: Readonly<Record<string, number>> | undefined;
             comp_range?: readonly number[] | undefined;
-            comp_start?: {
-                [x: string]: number;
-            } | undefined;
+            comp_start?: Readonly<Record<string, number>> | undefined;
             title_c?: string | undefined;
-            comp_a?: {
-                [x: string]: number;
-            } | undefined;
-            comp_b?: {
-                [x: string]: number;
-            } | undefined;
-            comp_c?: {
-                [x: string]: number;
-            } | undefined;
+            comp_a?: Readonly<Record<string, number>> | undefined;
+            comp_b?: Readonly<Record<string, number>> | undefined;
+            comp_c?: Readonly<Record<string, number>> | undefined;
             range_a?: readonly number[] | undefined;
             range_b?: readonly number[] | undefined;
             range_c?: readonly number[] | undefined;
@@ -3210,11 +3217,7 @@ declare namespace $.$$ {
         annotation_textangle(label: ReturnType<typeof Label_json>): 0 | -65;
         triangle_annotation_text(): string;
         annotations(): any[];
-        mouseover(): void;
-        mouseout(): void;
-        click(): void;
-        mousemove(): void;
-        subscribe_events(): void;
+        auto(): void;
         data(): any;
         layout(): any;
         pd_fix_triangle(): void;
@@ -3425,7 +3428,7 @@ declare namespace $.$$ {
                 dx: number;
             }>;
         }>;
-        subscribe_events(): void;
+        auto(): void;
         layout(): {
             showlegend: boolean;
             legend: {
@@ -3485,9 +3488,9 @@ declare namespace $ {
         discovery_click(next?: any): any;
         colorset(): readonly any[];
         sub(): readonly any[];
-        data(): Record<string, any>;
+        data(): readonly any[];
         layout(): Record<string, any>;
-        subscribe_events(): any;
+        Plotly_root(): any;
         Plot(): $$.$mpds_visavis_plotly;
         cmp_labels(): readonly any[];
         Cmp_legend(): $$.$mpds_visavis_plot_legend_cmp;
@@ -3497,6 +3500,10 @@ declare namespace $ {
         Elementals(): $mol_labeler;
         Setup(): $mol_view;
     }
+}
+
+declare namespace $ {
+    const $mpds_visavis_lib_pca: any;
 }
 
 declare namespace $.$$ {
@@ -3540,7 +3547,7 @@ declare namespace $.$$ {
         }>;
     };
     class $mpds_visavis_plot_discovery extends $.$mpds_visavis_plot_discovery {
-        sub(): ($mol_view | $mpds_visavis_plot_legend_cmp)[];
+        sub(): ($mol_view | $mpds_visavis_plot_legend_cmp | $mpds_visavis_plotly)[];
         json(): Readonly<{
             answerto: string;
             payload: Readonly<{
@@ -3559,7 +3566,7 @@ declare namespace $.$$ {
             tmelt: string;
             eneg: string;
         }>;
-        subscribe_events(): void;
+        auto(): void;
         layout(): {
             font: {
                 family: string;
@@ -4535,7 +4542,6 @@ declare namespace $.$$ {
         }>;
         bands_matrix(): Bands_matrix | null;
         dos_matrix(): Dos_matrix | null;
-        subscribe_events(): void;
         data(): {
             x: any;
             y: readonly number[];
@@ -4675,7 +4681,7 @@ declare namespace $.$$ {
             }>[];
             total_count: number;
         }>;
-        subscribe_events(): void;
+        auto(): void;
         layout(): {
             font: {
                 family: string;
@@ -5418,7 +5424,6 @@ declare namespace $.$$ {
                 entry: string;
             }>;
         }>;
-        subscribe_events(): void;
         p_data(): number[];
         t_data(): number[];
         p_data_sum(): number;
@@ -5476,6 +5481,9 @@ declare namespace $.$$ {
 declare namespace $ {
     class $mpds_visavis_plot_customscatter extends $mpds_visavis_plotly {
         plot_raw(): $mpds_visavis_plot_raw;
+        nplots_changed(next?: any): any;
+        legend_click(next?: any): any;
+        nplots(): number;
     }
 }
 
@@ -5483,6 +5491,7 @@ declare namespace $.$$ {
     const $mpds_visavis_plot_customscatter_json: ((val: {
         xtitle?: string | undefined;
         ytitle?: string | undefined;
+        xrpd?: boolean | undefined;
         plots: readonly {
             type: string;
             name: string;
@@ -5496,6 +5505,7 @@ declare namespace $.$$ {
     }) => Readonly<{
         xtitle?: string | undefined;
         ytitle?: string | undefined;
+        xrpd?: boolean | undefined;
         plots: readonly Readonly<{
             type: string;
             name: string;
@@ -5592,10 +5602,18 @@ declare namespace $.$$ {
                 config: (val: boolean) => boolean;
                 Value: boolean | null;
             };
+            xrpd: ((val: boolean | undefined) => boolean | undefined) & {
+                config: {
+                    sub: (val: boolean) => boolean;
+                    fallback: (() => boolean) | undefined;
+                };
+                Value: boolean | undefined;
+            };
         };
         Value: Readonly<{
             xtitle?: string | undefined;
             ytitle?: string | undefined;
+            xrpd?: boolean | undefined;
             plots: readonly Readonly<{
                 type: string;
                 name: string;
@@ -5612,6 +5630,7 @@ declare namespace $.$$ {
         json(): Readonly<{
             xtitle?: string | undefined;
             ytitle?: string | undefined;
+            xrpd?: boolean | undefined;
             plots: readonly Readonly<{
                 type: string;
                 name: string;
@@ -5623,9 +5642,18 @@ declare namespace $.$$ {
             xlog: boolean | null;
             ylog: boolean | null;
         }>;
-        subscribe_events(): void;
+        auto(): void;
+        nplots(): number;
         layout(): {
             showlegend: boolean;
+            annotations: boolean | {
+                x: number;
+                y: number;
+                xref: string;
+                yref: string;
+                text: string;
+                showarrow: boolean;
+            }[];
             legend: {
                 x: number;
                 y: number;
@@ -6079,6 +6107,8 @@ declare namespace $ {
         pie_click(next?: any): any;
         Pie(): $$.$mpds_visavis_plot_pie;
         Scatter(): $$.$mpds_visavis_plot_scatter;
+        nplots_changed(next?: any): any;
+        legend_click(next?: any): any;
         Customscatter(): $$.$mpds_visavis_plot_customscatter;
         Heatmap(): $$.$mpds_visavis_plot_heatmap;
         graph_click(next?: any): any;

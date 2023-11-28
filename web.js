@@ -331,7 +331,12 @@ var $;
             if (!val)
                 return null;
             if ($.$mol_dev_format_head in val) {
-                return val[$.$mol_dev_format_head]();
+                try {
+                    return val[$.$mol_dev_format_head]();
+                }
+                catch (error) {
+                    return $.$mol_dev_format_accent($mol_dev_format_native(val), '💨', $mol_dev_format_native(error), '');
+                }
             }
             if (typeof val === 'function') {
                 return $mol_dev_format_native(val);
@@ -385,7 +390,6 @@ var $;
     $.$mol_dev_format_element = $mol_dev_format_element;
     function $mol_dev_format_span(style, ...content) {
         return $mol_dev_format_element('span', {
-            'vertical-align': '8%',
             ...style,
         }, ...content);
     }
@@ -879,11 +883,15 @@ var $;
 (function ($) {
     $.$mol_key_store = new WeakMap();
     function $mol_key(value) {
+        if (typeof value === 'bigint')
+            return value.toString() + 'n';
         if (!value)
             return JSON.stringify(value);
         if (typeof value !== 'object' && typeof value !== 'function')
             return JSON.stringify(value);
         return JSON.stringify(value, (field, value) => {
+            if (typeof value === 'bigint')
+                return value.toString() + 'n';
             if (!value)
                 return value;
             if (typeof value !== 'object' && typeof value !== 'function')
@@ -990,6 +998,8 @@ var $;
         return true;
     }
     function compare_buffer(left, right) {
+        if (left instanceof DataView)
+            return compare_buffer(new Uint8Array(left.buffer, left.byteOffset, left.byteLength), new Uint8Array(right.buffer, left.byteOffset, left.byteLength));
         const len = left.byteLength;
         if (len !== right.byteLength)
             return false;
@@ -1599,6 +1609,7 @@ var $;
         const getter = (() => value);
         getter['()'] = value;
         getter[Symbol.toStringTag] = value;
+        getter[$mol_dev_format_head] = () => $mol_dev_format_span({}, '()=> ', $mol_dev_format_auto(value));
         return getter;
     }
     $.$mol_const = $mol_const;
@@ -2756,7 +2767,7 @@ var $;
     (function ($$) {
         const { per, rem, px } = $mol_style_unit;
         $mol_style_define($mol_scroll, {
-            display: 'flex',
+            display: 'grid',
             overflow: 'auto',
             flex: {
                 direction: 'column',
@@ -2777,6 +2788,7 @@ var $;
             '>': {
                 $mol_view: {
                     transform: 'translateZ(0)',
+                    gridArea: '1/1',
                 },
             },
             '::before': {
@@ -2904,6 +2916,217 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $mol_list extends $mol_view {
+        render_visible_only() {
+            return true;
+        }
+        render_over() {
+            return 0;
+        }
+        sub() {
+            return this.rows();
+        }
+        Empty() {
+            const obj = new this.$.$mol_view();
+            return obj;
+        }
+        Gap_before() {
+            const obj = new this.$.$mol_view();
+            obj.style = () => ({
+                paddingTop: this.gap_before()
+            });
+            return obj;
+        }
+        Gap_after() {
+            const obj = new this.$.$mol_view();
+            obj.style = () => ({
+                paddingTop: this.gap_after()
+            });
+            return obj;
+        }
+        view_window() {
+            return [
+                0,
+                0
+            ];
+        }
+        rows() {
+            return [];
+        }
+        gap_before() {
+            return 0;
+        }
+        gap_after() {
+            return 0;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_list.prototype, "Empty", null);
+    __decorate([
+        $mol_mem
+    ], $mol_list.prototype, "Gap_before", null);
+    __decorate([
+        $mol_mem
+    ], $mol_list.prototype, "Gap_after", null);
+    $.$mol_list = $mol_list;
+})($ || ($ = {}));
+//mol/list/-view.tree/list.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    let cache = null;
+    function $mol_support_css_overflow_anchor() {
+        return cache ?? (cache = (!/Gecko\//.test(navigator.userAgent)
+            && this.$mol_dom_context.CSS?.supports('overflow-anchor:auto')) ?? false);
+    }
+    $.$mol_support_css_overflow_anchor = $mol_support_css_overflow_anchor;
+})($ || ($ = {}));
+//mol/support/css/css.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $mol_list extends $.$mol_list {
+            sub() {
+                const rows = this.rows();
+                return (rows.length === 0) ? [this.Empty()] : rows;
+            }
+            render_visible_only() {
+                return this.$.$mol_support_css_overflow_anchor();
+            }
+            view_window(next) {
+                const kids = this.sub();
+                if (kids.length < 3)
+                    return [0, kids.length];
+                if (this.$.$mol_print.active())
+                    return [0, kids.length];
+                const rect = this.view_rect();
+                if (next)
+                    return next;
+                let [min, max] = $mol_mem_cached(() => this.view_window()) ?? [0, 0];
+                let max2 = max = Math.min(max, kids.length);
+                let min2 = min = Math.max(0, Math.min(min, max - 1));
+                const anchoring = this.render_visible_only();
+                const window_height = this.$.$mol_window.size().height + 40;
+                const over = Math.ceil(window_height * this.render_over());
+                const limit_top = -over;
+                const limit_bottom = window_height + over;
+                const gap_before = $mol_mem_cached(() => this.gap_before()) ?? 0;
+                const gap_after = $mol_mem_cached(() => this.gap_after()) ?? 0;
+                let top = Math.ceil(rect?.top ?? 0) + gap_before;
+                let bottom = Math.ceil(rect?.bottom ?? 0) - gap_after;
+                if (top <= limit_top && bottom >= limit_bottom) {
+                    return [min2, max2];
+                }
+                if (anchoring && ((bottom < limit_top) || (top > limit_bottom))) {
+                    min = 0;
+                    top = Math.ceil(rect?.top ?? 0);
+                    while (min < (kids.length - 1)) {
+                        const height = kids[min].minimal_height();
+                        if (top + height >= limit_top)
+                            break;
+                        top += height;
+                        ++min;
+                    }
+                    min2 = min;
+                    max2 = max = min;
+                    bottom = top;
+                }
+                let top2 = top;
+                let bottom2 = bottom;
+                if (anchoring && (top <= limit_top) && (bottom2 < limit_bottom)) {
+                    min2 = Math.max(0, max - 1);
+                    top2 = bottom;
+                }
+                if ((bottom >= limit_bottom) && (top2 >= limit_top)) {
+                    max2 = Math.min(min + 1, kids.length);
+                    bottom2 = top;
+                }
+                while (bottom2 < limit_bottom && max2 < kids.length) {
+                    bottom2 += kids[max2].minimal_height();
+                    ++max2;
+                }
+                while (anchoring && ((top2 >= limit_top) && (min2 > 0))) {
+                    --min2;
+                    top2 -= kids[min2].minimal_height();
+                }
+                return [min2, max2];
+            }
+            gap_before() {
+                const skipped = this.sub().slice(0, this.view_window()[0]);
+                return Math.max(0, skipped.reduce((sum, view) => sum + view.minimal_height(), 0));
+            }
+            gap_after() {
+                const skipped = this.sub().slice(this.view_window()[1]);
+                return Math.max(0, skipped.reduce((sum, view) => sum + view.minimal_height(), 0));
+            }
+            sub_visible() {
+                return [
+                    ...this.gap_before() ? [this.Gap_before()] : [],
+                    ...this.sub().slice(...this.view_window()),
+                    ...this.gap_after() ? [this.Gap_after()] : [],
+                ];
+            }
+            minimal_height() {
+                return this.sub().reduce((sum, view) => {
+                    try {
+                        return sum + view.minimal_height();
+                    }
+                    catch (error) {
+                        $mol_fail_log(error);
+                        return sum;
+                    }
+                }, 0);
+            }
+            force_render(path) {
+                const kids = this.rows();
+                const index = kids.findIndex(item => path.has(item));
+                if (index >= 0) {
+                    const win = this.view_window();
+                    if (index < win[0] || index >= win[1]) {
+                        this.view_window([this.render_visible_only() ? index : 0, index + 1]);
+                    }
+                    kids[index].force_render(path);
+                }
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $mol_list.prototype, "sub", null);
+        __decorate([
+            $mol_mem
+        ], $mol_list.prototype, "view_window", null);
+        __decorate([
+            $mol_mem
+        ], $mol_list.prototype, "gap_before", null);
+        __decorate([
+            $mol_mem
+        ], $mol_list.prototype, "gap_after", null);
+        __decorate([
+            $mol_mem
+        ], $mol_list.prototype, "sub_visible", null);
+        __decorate([
+            $mol_mem
+        ], $mol_list.prototype, "minimal_height", null);
+        $$.$mol_list = $mol_list;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//mol/list/list.view.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/list/list.view.css", "[mol_list] {\n\twill-change: contents;\n\tdisplay: flex;\n\tflex-direction: column;\n\tflex-shrink: 0;\n\tmax-width: 100%;\n\t/* display: flex;\n\talign-items: stretch;\n\talign-content: stretch; */\n\ttransition: none;\n\tmin-height: 1.5rem;\n}\n\n[mol_list_gap_before] ,\n[mol_list_gap_after] {\n\tdisplay: block !important;\n\tflex: none;\n\ttransition: none;\n\toverflow-anchor: none;\n}\n");
+})($ || ($ = {}));
+//mol/list/-css/list.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $mol_page extends $mol_view {
         dom_name() {
             return "article";
@@ -2963,12 +3186,22 @@ var $;
         body() {
             return [];
         }
+        Body_content() {
+            const obj = new this.$.$mol_list();
+            obj.rows = () => this.body();
+            return obj;
+        }
+        body_content() {
+            return [
+                this.Body_content()
+            ];
+        }
         body_scroll_top(next) {
             return this.Body().scroll_top(next);
         }
         Body() {
             const obj = new this.$.$mol_scroll();
-            obj.sub = () => this.body();
+            obj.sub = () => this.body_content();
             return obj;
         }
         foot() {
@@ -2990,6 +3223,9 @@ var $;
     __decorate([
         $mol_mem
     ], $mol_page.prototype, "Head", null);
+    __decorate([
+        $mol_mem
+    ], $mol_page.prototype, "Body_content", null);
     __decorate([
         $mol_mem
     ], $mol_page.prototype, "Body", null);
@@ -3074,7 +3310,12 @@ var $;
                     shrink: 1,
                     basis: per(100),
                 },
+            },
+            Body_content: {
                 padding: $mol_gap.block,
+                justify: {
+                    self: 'stretch',
+                },
             },
             Foot: {
                 display: 'flex',
@@ -3885,217 +4126,6 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    class $mol_list extends $mol_view {
-        render_visible_only() {
-            return true;
-        }
-        render_over() {
-            return 0;
-        }
-        sub() {
-            return this.rows();
-        }
-        Empty() {
-            const obj = new this.$.$mol_view();
-            return obj;
-        }
-        Gap_before() {
-            const obj = new this.$.$mol_view();
-            obj.style = () => ({
-                paddingTop: this.gap_before()
-            });
-            return obj;
-        }
-        Gap_after() {
-            const obj = new this.$.$mol_view();
-            obj.style = () => ({
-                paddingTop: this.gap_after()
-            });
-            return obj;
-        }
-        view_window() {
-            return [
-                0,
-                0
-            ];
-        }
-        rows() {
-            return [];
-        }
-        gap_before() {
-            return 0;
-        }
-        gap_after() {
-            return 0;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_list.prototype, "Empty", null);
-    __decorate([
-        $mol_mem
-    ], $mol_list.prototype, "Gap_before", null);
-    __decorate([
-        $mol_mem
-    ], $mol_list.prototype, "Gap_after", null);
-    $.$mol_list = $mol_list;
-})($ || ($ = {}));
-//mol/list/-view.tree/list.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    let cache = null;
-    function $mol_support_css_overflow_anchor() {
-        return cache ?? (cache = (!/Gecko\//.test(navigator.userAgent)
-            && this.$mol_dom_context.CSS?.supports('overflow-anchor:auto')) ?? false);
-    }
-    $.$mol_support_css_overflow_anchor = $mol_support_css_overflow_anchor;
-})($ || ($ = {}));
-//mol/support/css/css.ts
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        class $mol_list extends $.$mol_list {
-            sub() {
-                const rows = this.rows();
-                return (rows.length === 0) ? [this.Empty()] : rows;
-            }
-            render_visible_only() {
-                return this.$.$mol_support_css_overflow_anchor();
-            }
-            view_window(next) {
-                const kids = this.sub();
-                if (kids.length < 3)
-                    return [0, kids.length];
-                if (this.$.$mol_print.active())
-                    return [0, kids.length];
-                const rect = this.view_rect();
-                if (next)
-                    return next;
-                let [min, max] = $mol_mem_cached(() => this.view_window()) ?? [0, 0];
-                let max2 = max = Math.min(max, kids.length);
-                let min2 = min = Math.max(0, Math.min(min, max - 1));
-                const anchoring = this.render_visible_only();
-                const window_height = this.$.$mol_window.size().height + 40;
-                const over = Math.ceil(window_height * this.render_over());
-                const limit_top = -over;
-                const limit_bottom = window_height + over;
-                const gap_before = $mol_mem_cached(() => this.gap_before()) ?? 0;
-                const gap_after = $mol_mem_cached(() => this.gap_after()) ?? 0;
-                let top = Math.ceil(rect?.top ?? 0) + gap_before;
-                let bottom = Math.ceil(rect?.bottom ?? 0) - gap_after;
-                if (top <= limit_top && bottom >= limit_bottom) {
-                    return [min2, max2];
-                }
-                if (anchoring && ((bottom < limit_top) || (top > limit_bottom))) {
-                    min = 0;
-                    top = Math.ceil(rect?.top ?? 0);
-                    while (min < (kids.length - 1)) {
-                        const height = kids[min].minimal_height();
-                        if (top + height >= limit_top)
-                            break;
-                        top += height;
-                        ++min;
-                    }
-                    min2 = min;
-                    max2 = max = min;
-                    bottom = top;
-                }
-                let top2 = top;
-                let bottom2 = bottom;
-                if (anchoring && (top <= limit_top) && (bottom2 < limit_bottom)) {
-                    min2 = Math.max(0, max - 1);
-                    top2 = bottom;
-                }
-                if ((bottom >= limit_bottom) && (top2 >= limit_top)) {
-                    max2 = Math.min(min + 1, kids.length);
-                    bottom2 = top;
-                }
-                while (bottom2 < limit_bottom && max2 < kids.length) {
-                    bottom2 += kids[max2].minimal_height();
-                    ++max2;
-                }
-                while (anchoring && ((top2 >= limit_top) && (min2 > 0))) {
-                    --min2;
-                    top2 -= kids[min2].minimal_height();
-                }
-                return [min2, max2];
-            }
-            gap_before() {
-                const skipped = this.sub().slice(0, this.view_window()[0]);
-                return Math.max(0, skipped.reduce((sum, view) => sum + view.minimal_height(), 0));
-            }
-            gap_after() {
-                const skipped = this.sub().slice(this.view_window()[1]);
-                return Math.max(0, skipped.reduce((sum, view) => sum + view.minimal_height(), 0));
-            }
-            sub_visible() {
-                return [
-                    ...this.gap_before() ? [this.Gap_before()] : [],
-                    ...this.sub().slice(...this.view_window()),
-                    ...this.gap_after() ? [this.Gap_after()] : [],
-                ];
-            }
-            minimal_height() {
-                return this.sub().reduce((sum, view) => {
-                    try {
-                        return sum + view.minimal_height();
-                    }
-                    catch (error) {
-                        $mol_fail_log(error);
-                        return sum;
-                    }
-                }, 0);
-            }
-            force_render(path) {
-                const kids = this.rows();
-                const index = kids.findIndex(item => path.has(item));
-                if (index >= 0) {
-                    const win = this.view_window();
-                    if (index < win[0] || index >= win[1]) {
-                        this.view_window([this.render_visible_only() ? index : 0, index + 1]);
-                    }
-                    kids[index].force_render(path);
-                }
-            }
-        }
-        __decorate([
-            $mol_mem
-        ], $mol_list.prototype, "sub", null);
-        __decorate([
-            $mol_mem
-        ], $mol_list.prototype, "view_window", null);
-        __decorate([
-            $mol_mem
-        ], $mol_list.prototype, "gap_before", null);
-        __decorate([
-            $mol_mem
-        ], $mol_list.prototype, "gap_after", null);
-        __decorate([
-            $mol_mem
-        ], $mol_list.prototype, "sub_visible", null);
-        __decorate([
-            $mol_mem
-        ], $mol_list.prototype, "minimal_height", null);
-        $$.$mol_list = $mol_list;
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-//mol/list/list.view.ts
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_style_attach("mol/list/list.view.css", "[mol_list] {\n\twill-change: contents;\n\tdisplay: flex;\n\tflex-direction: column;\n\tflex-shrink: 0;\n\tmax-width: 100%;\n\t/* display: flex;\n\talign-items: stretch;\n\talign-content: stretch; */\n\ttransition: none;\n\tmin-height: 1.5rem;\n}\n\n[mol_list_gap_before] ,\n[mol_list_gap_after] {\n\tdisplay: block !important;\n\tflex: none;\n\ttransition: none;\n\toverflow-anchor: none;\n}\n");
-})($ || ($ = {}));
-//mol/list/-css/list.view.css.ts
-;
-"use strict";
-var $;
-(function ($) {
     class $mol_link extends $mol_view {
         uri() {
             return "";
@@ -4662,6 +4692,66 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    $.$mol_mem_persist = $mol_wire_solid;
+})($ || ($ = {}));
+//mol/mem/persist/persist.ts
+;
+"use strict";
+var $;
+(function ($) {
+    function $mol_log3_area_lazy(event) {
+        const self = this;
+        const stack = self.$mol_log3_stack;
+        const deep = stack.length;
+        let logged = false;
+        stack.push(() => {
+            logged = true;
+            self.$mol_log3_area.call(self, event);
+        });
+        return () => {
+            if (logged)
+                self.console.groupEnd();
+            if (stack.length > deep)
+                stack.length = deep;
+        };
+    }
+    $.$mol_log3_area_lazy = $mol_log3_area_lazy;
+    $.$mol_log3_stack = [];
+})($ || ($ = {}));
+//mol/log3/log3.ts
+;
+"use strict";
+var $;
+(function ($) {
+    function $mol_log3_web_make(level, color) {
+        return function $mol_log3_logger(event) {
+            const pending = this.$mol_log3_stack.pop();
+            if (pending)
+                pending();
+            let tpl = '%c';
+            const chunks = Object.values(event);
+            for (let i = 0; i < chunks.length; ++i) {
+                tpl += (typeof chunks[i] === 'string') ? ' ⦙ %s' : ' ⦙ %o';
+            }
+            const style = `color:${color};font-weight:bolder`;
+            this.console[level](tpl, style, ...chunks);
+            const self = this;
+            return () => self.console.groupEnd();
+        };
+    }
+    $.$mol_log3_web_make = $mol_log3_web_make;
+    $.$mol_log3_come = $mol_log3_web_make('info', 'royalblue');
+    $.$mol_log3_done = $mol_log3_web_make('info', 'forestgreen');
+    $.$mol_log3_fail = $mol_log3_web_make('error', 'orangered');
+    $.$mol_log3_warn = $mol_log3_web_make('warn', 'goldenrod');
+    $.$mol_log3_rise = $mol_log3_web_make('log', 'magenta');
+    $.$mol_log3_area = $mol_log3_web_make('group', 'cyan');
+})($ || ($ = {}));
+//mol/log3/log3.web.ts
+;
+"use strict";
+var $;
+(function ($) {
     function $mol_wire_sync(obj) {
         return new Proxy(obj, {
             get(obj, field) {
@@ -4688,30 +4778,31 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $.$mol_mem_persist = $mol_wire_solid;
-})($ || ($ = {}));
-//mol/mem/persist/persist.ts
-;
-"use strict";
-var $;
-(function ($) {
     class $mol_storage extends $mol_object2 {
         static native() {
-            return $mol_wire_sync(this.$.$mol_dom_context.navigator.storage);
+            return this.$.$mol_dom_context.navigator.storage;
         }
-        static persisted(next) {
+        static persisted(next, cache) {
             $mol_mem_persist();
+            if (cache)
+                return Boolean(next);
             const native = this.native();
-            const prev = $mol_mem_cached(() => this.persisted()) ?? native.persisted();
-            if (next && !prev)
-                native.persist();
-            return next ?? prev;
+            if (next && !$mol_mem_cached(() => this.persisted())) {
+                native.persist().then(actual => {
+                    setTimeout(() => this.persisted(actual, 'cache'), 5000);
+                    if (actual)
+                        this.$.$mol_log3_rise({ place: this, message: `Persist` });
+                    else
+                        this.$.$mol_log3_fail({ place: this, message: `Non persist` });
+                });
+            }
+            return next ?? $mol_wire_sync(native).persisted();
         }
         static estimate() {
-            return this.native().estimate();
+            return $mol_wire_sync(this.native()).estimate();
         }
         static dir() {
-            return this.native().getDirectory();
+            return $mol_wire_sync(this.native()).getDirectory();
         }
     }
     __decorate([
@@ -4765,12 +4856,7 @@ var $;
             }
             else {
                 this.native().setItem(key, JSON.stringify(next));
-                try {
-                    this.$.$mol_storage.persisted(true);
-                }
-                catch (error) {
-                    $mol_fail_log(error);
-                }
+                this.$.$mol_storage.persisted(true);
             }
             return next;
         }
@@ -5477,7 +5563,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("mol/check/check.css", "[mol_check] {\n\tflex: 0 0 auto;\n\tjustify-content: flex-start;\n\talign-content: center;\n\talign-items: flex-start;\n\tborder: none;\n\tfont-weight: inherit;\n\tbox-shadow: none;\n\ttext-align: left;\n\tdisplay: inline-flex;\n\tflex-wrap: nowrap;\n}\n\n[mol_check_title] {\n\tflex-shrink: 1;\n}\n");
+    $mol_style_attach("mol/check/check.css", "[mol_check] {\n\tflex: 0 0 auto;\n\tjustify-content: flex-start;\n\talign-content: center;\n\t/* align-items: flex-start; */\n\tborder: none;\n\tfont-weight: inherit;\n\tbox-shadow: none;\n\ttext-align: left;\n\tdisplay: inline-flex;\n\tflex-wrap: nowrap;\n}\n\n[mol_check_title] {\n\tflex-shrink: 1;\n}\n");
 })($ || ($ = {}));
 //mol/check/-css/check.css.ts
 ;
@@ -6359,1695 +6445,9 @@ var $;
 })($ || ($ = {}));
 //mpds/visavis/plot/matrix/-view.tree/matrix.view.tree.ts
 ;
-"use strict";
-//mol/data/value/value.ts
-;
-"use strict";
-//mol/type/equals/equals.ts
-;
-"use strict";
-//mol/type/merge/merge.ts
-;
-"use strict";
-//mol/type/partial/undefined/undefined.ts
-;
-"use strict";
-var $;
-(function ($) {
-    function $mol_data_setup(value, config) {
-        return Object.assign(value, {
-            config,
-            Value: null
-        });
-    }
-    $.$mol_data_setup = $mol_data_setup;
-})($ || ($ = {}));
-//mol/data/setup/setup.ts
-;
-"use strict";
-var $;
-(function ($) {
-    function $mol_data_record(sub) {
-        return $mol_data_setup((val) => {
-            let res = {};
-            for (const field in sub) {
-                try {
-                    res[field] =
-                        sub[field](val[field]);
-                }
-                catch (error) {
-                    if (error instanceof Promise)
-                        return $mol_fail_hidden(error);
-                    error.message = `[${JSON.stringify(field)}] ${error.message}`;
-                    return $mol_fail(error);
-                }
-            }
-            return res;
-        }, sub);
-    }
-    $.$mol_data_record = $mol_data_record;
-})($ || ($ = {}));
-//mol/data/record/record.ts
-;
-"use strict";
-var $;
-(function ($) {
-    function $mol_diff_path(...paths) {
-        const limit = Math.min(...paths.map(path => path.length));
-        lookup: for (var i = 0; i < limit; ++i) {
-            const first = paths[0][i];
-            for (let j = 1; j < paths.length; ++j) {
-                if (paths[j][i] !== first)
-                    break lookup;
-            }
-        }
-        return {
-            prefix: paths[0].slice(0, i),
-            suffix: paths.map(path => path.slice(i)),
-        };
-    }
-    $.$mol_diff_path = $mol_diff_path;
-})($ || ($ = {}));
-//mol/diff/path/path.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_error_mix extends Error {
-        errors;
-        constructor(message, ...errors) {
-            super(message);
-            this.errors = errors;
-            if (errors.length) {
-                const stacks = [...errors.map(error => error.stack), this.stack];
-                const diff = $mol_diff_path(...stacks.map(stack => {
-                    if (!stack)
-                        return [];
-                    return stack.split('\n').reverse();
-                }));
-                const head = diff.prefix.reverse().join('\n');
-                const tails = diff.suffix.map(path => path.reverse().map(line => line.replace(/^(?!\s+at)/, '\tat (.) ')).join('\n')).join('\n\tat (.) -----\n');
-                this.stack = `Error: ${this.constructor.name}\n\tat (.) /"""\\\n${tails}\n\tat (.) \\___/\n${head}`;
-                this.message += errors.map(error => '\n' + error.message).join('');
-            }
-        }
-        toJSON() {
-            return this.message;
-        }
-    }
-    $.$mol_error_mix = $mol_error_mix;
-})($ || ($ = {}));
-//mol/error/mix/mix.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mol_data_error extends $mol_error_mix {
-    }
-    $.$mol_data_error = $mol_data_error;
-})($ || ($ = {}));
-//mol/data/error/error.ts
-;
-"use strict";
-var $;
-(function ($) {
-    $.$mol_data_string = (val) => {
-        if (typeof val === 'string')
-            return val;
-        return $mol_fail(new $mol_data_error(`${val} is not a string`));
-    };
-})($ || ($ = {}));
-//mol/data/string/string.ts
-;
-"use strict";
-var $;
-(function ($) {
-    $.$mol_data_number = (val) => {
-        if (typeof val === 'number')
-            return val;
-        return $mol_fail(new $mol_data_error(`${val} is not a number`));
-    };
-})($ || ($ = {}));
-//mol/data/number/number.ts
-;
-"use strict";
-var $;
-(function ($) {
-    function $mol_data_optional(sub, fallback) {
-        return $mol_data_setup((val) => {
-            if (val === undefined) {
-                return fallback?.();
-            }
-            return sub(val);
-        }, { sub, fallback });
-    }
-    $.$mol_data_optional = $mol_data_optional;
-})($ || ($ = {}));
-//mol/data/optional/optional.ts
-;
-"use strict";
-var $;
-(function ($) {
-    function $mol_data_array(sub) {
-        return $mol_data_setup((val) => {
-            if (!Array.isArray(val))
-                return $mol_fail(new $mol_data_error(`${val} is not an array`));
-            return val.map((item, index) => {
-                try {
-                    return sub(item);
-                }
-                catch (error) {
-                    if (error instanceof Promise)
-                        return $mol_fail_hidden(error);
-                    error.message = `[${index}] ${error.message}`;
-                    return $mol_fail(error);
-                }
-            });
-        }, sub);
-    }
-    $.$mol_data_array = $mol_data_array;
-})($ || ($ = {}));
-//mol/data/array/array.ts
-;
-"use strict";
-var $;
-(function ($) {
-    function $mol_data_nullable(sub) {
-        return $mol_data_setup((val) => {
-            if (val === null)
-                return null;
-            return sub(val);
-        }, sub);
-    }
-    $.$mol_data_nullable = $mol_data_nullable;
-})($ || ($ = {}));
-//mol/data/nullable/nullable.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_elements_list extends $mol_object {
-        prop_names() {
-            return {
-                num: "atomic number",
-                nump: "periodic number",
-                size: "atomic size",
-                rea: "atomic reactivity",
-                rpp: "pseudopotential radii",
-                rion: "ionic radii",
-                rcov: "covalent radii",
-                rmet: "metallic radii",
-                tmelt: "melting temperature",
-                eneg: "electronegativit"
-            };
-        }
-        list() {
-            return [
-                {
-                    name: "null",
-                    num: 0,
-                    nump: 0,
-                    size: 0,
-                    rea: 0,
-                    rpp: 0,
-                    rion: 0,
-                    rcov: 0,
-                    rmet: 0,
-                    tmelt: 0,
-                    eneg: 0
-                },
-                {
-                    name: "H",
-                    num: 1,
-                    nump: 1,
-                    size: 0.040000098,
-                    rea: 2.953092434,
-                    rpp: 1.25,
-                    rion: 0,
-                    rcov: 30,
-                    rmet: 0.78,
-                    tmelt: 0.003664921,
-                    eneg: 3.69
-                },
-                {
-                    name: "He",
-                    num: 2,
-                    nump: 112,
-                    size: 0.05525814,
-                    rea: 2.137675759,
-                    rpp: 0,
-                    rion: 0,
-                    rcov: 0,
-                    rmet: 0,
-                    tmelt: 0.00026178,
-                    eneg: 6.29
-                },
-                {
-                    name: "Li",
-                    num: 3,
-                    nump: 2,
-                    size: 0.32352134,
-                    rea: 0.365119614,
-                    rpp: 1.61,
-                    rion: 0.6,
-                    rcov: 123,
-                    rmet: 1.562,
-                    tmelt: 0.118586387,
-                    eneg: 2.32
-                },
-                {
-                    name: "Be",
-                    num: 4,
-                    nump: 8,
-                    size: 0.149871021,
-                    rea: 0.788170962,
-                    rpp: 1.08,
-                    rion: 0.3,
-                    rcov: 89,
-                    rmet: 1.128,
-                    tmelt: 0.405759162,
-                    eneg: 3.71
-                },
-                {
-                    name: "B",
-                    num: 5,
-                    nump: 82,
-                    size: 0.15316946,
-                    rea: 0.771198036,
-                    rpp: 0.795,
-                    rion: 0.2,
-                    rcov: 88,
-                    rmet: 0.98,
-                    tmelt: 0.673560209,
-                    eneg: 4.88
-                },
-                {
-                    name: "C",
-                    num: 6,
-                    nump: 88,
-                    size: 0.152079019,
-                    rea: 0.776727701,
-                    rpp: 0.64,
-                    rion: 0.15,
-                    rcov: 77,
-                    rmet: 0.916,
-                    tmelt: 1,
-                    eneg: 6.08
-                },
-                {
-                    name: "N",
-                    num: 7,
-                    nump: 94,
-                    size: 0.147837836,
-                    rea: 0.799010527,
-                    rpp: 0.54,
-                    rion: 0.12,
-                    rcov: 70,
-                    rmet: 0.88,
-                    tmelt: 0.016492147,
-                    eneg: 7.31
-                },
-                {
-                    name: "O",
-                    num: 8,
-                    nump: 100,
-                    size: 0.141252647,
-                    rea: 0.836260342,
-                    rpp: 0.465,
-                    rion: 0.1,
-                    rcov: 66,
-                    rmet: 0.89,
-                    tmelt: 0.014397906,
-                    eneg: 8.5
-                },
-                {
-                    name: "F",
-                    num: 9,
-                    nump: 106,
-                    size: 0.130400994,
-                    rea: 0.905851889,
-                    rpp: 0.405,
-                    rion: 0.09,
-                    rcov: 58,
-                    rmet: 0,
-                    tmelt: 0.014136126,
-                    eneg: 9.7
-                },
-                {
-                    name: "Ne",
-                    num: 10,
-                    nump: 113,
-                    size: 0.118123987,
-                    rea: 0.999999998,
-                    rpp: 0,
-                    rion: 0,
-                    rcov: 0,
-                    rmet: 0,
-                    tmelt: 0.006544503,
-                    eneg: 10.92
-                },
-                {
-                    name: "Na",
-                    num: 11,
-                    nump: 3,
-                    size: 0.578463822,
-                    rea: 0.204202895,
-                    rpp: 2.65,
-                    rion: 0.96,
-                    rcov: 0,
-                    rmet: 1.911,
-                    tmelt: 0.097120419,
-                    eneg: 2.27
-                },
-                {
-                    name: "Mg",
-                    num: 12,
-                    nump: 9,
-                    size: 0.235527361,
-                    rea: 0.501529786,
-                    rpp: 2.03,
-                    rion: 0.63,
-                    rcov: 136,
-                    rmet: 1.602,
-                    tmelt: 0.241361257,
-                    eneg: 3.37
-                },
-                {
-                    name: "Al",
-                    num: 13,
-                    nump: 83,
-                    size: 0.222322819,
-                    rea: 0.531317421,
-                    rpp: 1.675,
-                    rion: 0.5,
-                    rcov: 125,
-                    rmet: 1.432,
-                    tmelt: 0.244240838,
-                    eneg: 4.21
-                },
-                {
-                    name: "Si",
-                    num: 14,
-                    nump: 89,
-                    size: 0.208407341,
-                    rea: 0.56679379,
-                    rpp: 1.42,
-                    rion: 0.42,
-                    rcov: 117,
-                    rmet: 1.319,
-                    tmelt: 0.440575916,
-                    eneg: 5.08
-                },
-                {
-                    name: "P",
-                    num: 15,
-                    nump: 95,
-                    size: 0.19392461,
-                    rea: 0.609123241,
-                    rpp: 1.24,
-                    rion: 0.36,
-                    rcov: 110,
-                    rmet: 1.28,
-                    tmelt: 0.082984293,
-                    eneg: 5.95
-                },
-                {
-                    name: "S",
-                    num: 16,
-                    nump: 101,
-                    size: 0.178988166,
-                    rea: 0.659954172,
-                    rpp: 1.1,
-                    rion: 0.32,
-                    rcov: 104,
-                    rmet: 1.27,
-                    tmelt: 0.10104712,
-                    eneg: 6.79
-                },
-                {
-                    name: "Cl",
-                    num: 17,
-                    nump: 107,
-                    size: 0.160596861,
-                    rea: 0.735531107,
-                    rpp: 1.01,
-                    rion: 0.28,
-                    rcov: 99,
-                    rmet: 0,
-                    tmelt: 0.045026178,
-                    eneg: 7.64
-                },
-                {
-                    name: "Ar",
-                    num: 18,
-                    nump: 114,
-                    size: 0.14201091,
-                    rea: 0.831795156,
-                    rpp: 0,
-                    rion: 0,
-                    rcov: 0,
-                    rmet: 0,
-                    tmelt: 0.021989529,
-                    eneg: 8.5
-                },
-                {
-                    name: "K",
-                    num: 19,
-                    nump: 4,
-                    size: 0.692195698,
-                    rea: 0.170651143,
-                    rpp: 3.69,
-                    rion: 1.33,
-                    rcov: 203,
-                    rmet: 2.376,
-                    tmelt: 0.088219895,
-                    eneg: 2.08
-                },
-                {
-                    name: "Ca",
-                    num: 20,
-                    nump: 10,
-                    size: 0.671411055,
-                    rea: 0.175933932,
-                    rpp: 3,
-                    rion: 0.96,
-                    rcov: 174,
-                    rmet: 1.974,
-                    tmelt: 0.290837696,
-                    eneg: 3
-                },
-                {
-                    name: "Sc",
-                    num: 21,
-                    nump: 14,
-                    size: 0.64709144,
-                    rea: 0.182546051,
-                    rpp: 2.75,
-                    rion: 0.8,
-                    rcov: 144,
-                    rmet: 1.941,
-                    tmelt: 0.47434555,
-                    eneg: 3.11
-                },
-                {
-                    name: "Ti",
-                    num: 22,
-                    nump: 46,
-                    size: 0.440998616,
-                    rea: 0.267855686,
-                    rpp: 2.58,
-                    rion: 0.68,
-                    rcov: 132,
-                    rmet: 1.462,
-                    tmelt: 0.506020942,
-                    eneg: 3.19
-                },
-                {
-                    name: "V",
-                    num: 23,
-                    nump: 50,
-                    size: 0.425579654,
-                    rea: 0.27756023,
-                    rpp: 2.43,
-                    rion: 0.65,
-                    rcov: 0,
-                    rmet: 1.346,
-                    tmelt: 0.566230366,
-                    eneg: 3.27
-                },
-                {
-                    name: "Cr",
-                    num: 24,
-                    nump: 54,
-                    size: 0.410235863,
-                    rea: 0.28794164,
-                    rpp: 2.44,
-                    rion: 0.62,
-                    rcov: 0,
-                    rmet: 1.36,
-                    tmelt: 0.557591623,
-                    eneg: 3.41
-                },
-                {
-                    name: "Mn",
-                    num: 25,
-                    nump: 58,
-                    size: 0.394967358,
-                    rea: 0.299072783,
-                    rpp: 2.22,
-                    rion: 0.6,
-                    rcov: 117,
-                    rmet: 1.304,
-                    tmelt: 0.397382199,
-                    eneg: 3.4
-                },
-                {
-                    name: "Fe",
-                    num: 26,
-                    nump: 62,
-                    size: 0.379774576,
-                    rea: 0.311037111,
-                    rpp: 2.11,
-                    rion: 0.59,
-                    rcov: 116,
-                    rmet: 1.274,
-                    tmelt: 0.473298429,
-                    eneg: 3.47
-                },
-                {
-                    name: "Co",
-                    num: 27,
-                    nump: 66,
-                    size: 0.364658122,
-                    rea: 0.323930772,
-                    rpp: 2.02,
-                    rion: 0.62,
-                    rcov: 116,
-                    rmet: 1.252,
-                    tmelt: 0.462827225,
-                    eneg: 3.53
-                },
-                {
-                    name: "Ni",
-                    num: 28,
-                    nump: 70,
-                    size: 0.349618659,
-                    rea: 0.337865225,
-                    rpp: 2.18,
-                    rion: 0.59,
-                    rcov: 115,
-                    rmet: 1.246,
-                    tmelt: 0.451832461,
-                    eneg: 3.59
-                },
-                {
-                    name: "Cu",
-                    num: 29,
-                    nump: 74,
-                    size: 0.334656835,
-                    rea: 0.352970489,
-                    rpp: 2.04,
-                    rion: 0.96,
-                    rcov: 117,
-                    rmet: 1.278,
-                    tmelt: 0.354973822,
-                    eneg: 3.74
-                },
-                {
-                    name: "Zn",
-                    num: 30,
-                    nump: 78,
-                    size: 0.310912262,
-                    rea: 0.379927077,
-                    rpp: 1.88,
-                    rion: 0.78,
-                    rcov: 125,
-                    rmet: 1.394,
-                    tmelt: 0.181413613,
-                    eneg: 3.7
-                },
-                {
-                    name: "Ga",
-                    num: 31,
-                    nump: 84,
-                    size: 0.287688252,
-                    rea: 0.410597187,
-                    rpp: 1.695,
-                    rion: 0.63,
-                    rcov: 125,
-                    rmet: 1.411,
-                    tmelt: 0.079319372,
-                    eneg: 4.37
-                },
-                {
-                    name: "Ge",
-                    num: 32,
-                    nump: 90,
-                    size: 0.264934676,
-                    rea: 0.445860802,
-                    rpp: 1.56,
-                    rion: 0.53,
-                    rcov: 122,
-                    rmet: 1.369,
-                    tmelt: 0.317015707,
-                    eneg: 5.09
-                },
-                {
-                    name: "As",
-                    num: 33,
-                    nump: 96,
-                    size: 0.242609734,
-                    rea: 0.486888901,
-                    rpp: 1.415,
-                    rion: 0.46,
-                    rcov: 121,
-                    rmet: 1.39,
-                    tmelt: 0.285340314,
-                    eneg: 5.82
-                },
-                {
-                    name: "Se",
-                    num: 34,
-                    nump: 102,
-                    size: 0.220678182,
-                    rea: 0.535277144,
-                    rpp: 1.285,
-                    rion: 0.41,
-                    rcov: 117,
-                    rmet: 1.4,
-                    tmelt: 0.128272251,
-                    eneg: 6.53
-                },
-                {
-                    name: "Br",
-                    num: 35,
-                    nump: 108,
-                    size: 0.195297025,
-                    rea: 0.604842736,
-                    rpp: 1.2,
-                    rion: 0.37,
-                    rcov: 114,
-                    rmet: 0,
-                    tmelt: 0.069633508,
-                    eneg: 7.21
-                },
-                {
-                    name: "Kr",
-                    num: 36,
-                    nump: 115,
-                    size: 0.170450145,
-                    rea: 0.693011946,
-                    rpp: 0,
-                    rion: 0,
-                    rcov: 0,
-                    rmet: 0,
-                    tmelt: 0.030628272,
-                    eneg: 7.93
-                },
-                {
-                    name: "Rb",
-                    num: 37,
-                    nump: 5,
-                    size: 0.832019702,
-                    rea: 0.141972584,
-                    rpp: 4.1,
-                    rion: 1.49,
-                    rcov: 217,
-                    rmet: 2.546,
-                    tmelt: 0.081675393,
-                    eneg: 2.04
-                },
-                {
-                    name: "Sr",
-                    num: 38,
-                    nump: 11,
-                    size: 0.797564264,
-                    rea: 0.148105917,
-                    rpp: 3.21,
-                    rion: 1.11,
-                    rcov: 192,
-                    rmet: 2.151,
-                    tmelt: 0.273036649,
-                    eneg: 2.89
-                },
-                {
-                    name: "Y",
-                    num: 39,
-                    nump: 15,
-                    size: 0.762242103,
-                    rea: 0.154969119,
-                    rpp: 2.94,
-                    rion: 0.93,
-                    rcov: 162,
-                    rmet: 1.801,
-                    tmelt: 0.470157068,
-                    eneg: 3.04
-                },
-                {
-                    name: "Zr",
-                    num: 40,
-                    nump: 47,
-                    size: 0.515950935,
-                    rea: 0.228944225,
-                    rpp: 2.825,
-                    rion: 0.8,
-                    rcov: 145,
-                    rmet: 1.602,
-                    tmelt: 0.556282723,
-                    eneg: 3.14
-                },
-                {
-                    name: "Nb",
-                    num: 41,
-                    nump: 51,
-                    size: 0.494387183,
-                    rea: 0.238930116,
-                    rpp: 2.76,
-                    rion: 0.77,
-                    rcov: 134,
-                    rmet: 1.468,
-                    tmelt: 0.717539267,
-                    eneg: 3.25
-                },
-                {
-                    name: "Mo",
-                    num: 42,
-                    nump: 55,
-                    size: 0.473421463,
-                    rea: 0.249511262,
-                    rpp: 2.72,
-                    rion: 0.75,
-                    rcov: 129,
-                    rmet: 1.4,
-                    tmelt: 0.756544503,
-                    eneg: 3.41
-                },
-                {
-                    name: "Tc",
-                    num: 43,
-                    nump: 59,
-                    size: 0.452993466,
-                    rea: 0.260763114,
-                    rpp: 2.65,
-                    rion: 0.72,
-                    rcov: 0,
-                    rmet: 1.36,
-                    tmelt: 0.640052356,
-                    eneg: 3.35
-                },
-                {
-                    name: "Ru",
-                    num: 44,
-                    nump: 63,
-                    size: 0.433052136,
-                    rea: 0.272770822,
-                    rpp: 2.605,
-                    rion: 0.69,
-                    rcov: 124,
-                    rmet: 1.339,
-                    tmelt: 0.67617801,
-                    eneg: 3.47
-                },
-                {
-                    name: "Rh",
-                    num: 45,
-                    nump: 67,
-                    size: 0.413553912,
-                    rea: 0.28563141,
-                    rpp: 2.52,
-                    rion: 0.75,
-                    rcov: 125,
-                    rmet: 1.345,
-                    tmelt: 0.586125654,
-                    eneg: 3.57
-                },
-                {
-                    name: "Pd",
-                    num: 46,
-                    nump: 71,
-                    size: 0.394461351,
-                    rea: 0.299456427,
-                    rpp: 2.45,
-                    rion: 0.85,
-                    rcov: 128,
-                    rmet: 1.376,
-                    tmelt: 0.477748691,
-                    eneg: 3.73
-                },
-                {
-                    name: "Ag",
-                    num: 47,
-                    nump: 75,
-                    size: 0.375742041,
-                    rea: 0.31437522,
-                    rpp: 2.375,
-                    rion: 1.12,
-                    rcov: 134,
-                    rmet: 1.445,
-                    tmelt: 0.323036649,
-                    eneg: 3.81
-                },
-                {
-                    name: "Cd",
-                    num: 48,
-                    nump: 79,
-                    size: 0.347395886,
-                    rea: 0.340027017,
-                    rpp: 2.215,
-                    rion: 0.93,
-                    rcov: 141,
-                    rmet: 1.568,
-                    tmelt: 0.155497382,
-                    eneg: 3.6
-                },
-                {
-                    name: "In",
-                    num: 49,
-                    nump: 85,
-                    size: 0.319938571,
-                    rea: 0.369208334,
-                    rpp: 2.05,
-                    rion: 0.76,
-                    rcov: 150,
-                    rmet: 1.663,
-                    tmelt: 0.112565445,
-                    eneg: 4.19
-                },
-                {
-                    name: "Sn",
-                    num: 50,
-                    nump: 91,
-                    size: 0.293280312,
-                    rea: 0.402768213,
-                    rpp: 1.88,
-                    rion: 0.65,
-                    rcov: 140,
-                    rmet: 1.623,
-                    tmelt: 0.132198953,
-                    eneg: 4.83
-                },
-                {
-                    name: "Sb",
-                    num: 51,
-                    nump: 97,
-                    size: 0.267345197,
-                    rea: 0.441840692,
-                    rpp: 1.765,
-                    rion: 0.57,
-                    rcov: 141,
-                    rmet: 1.59,
-                    tmelt: 0.236649215,
-                    eneg: 5.47
-                },
-                {
-                    name: "Te",
-                    num: 52,
-                    nump: 103,
-                    size: 0.242068451,
-                    rea: 0.487977621,
-                    rpp: 1.67,
-                    rion: 0.51,
-                    rcov: 137,
-                    rmet: 1.6,
-                    tmelt: 0.189267016,
-                    eneg: 6.08
-                },
-                {
-                    name: "I",
-                    num: 53,
-                    nump: 109,
-                    size: 0.213172397,
-                    rea: 0.554124213,
-                    rpp: 1.585,
-                    rion: 0.46,
-                    rcov: 133,
-                    rmet: 0,
-                    tmelt: 0.101308901,
-                    eneg: 6.69
-                },
-                {
-                    name: "Xe",
-                    num: 54,
-                    nump: 116,
-                    size: 0.185071259,
-                    rea: 0.63826219,
-                    rpp: 0,
-                    rion: 0,
-                    rcov: 0,
-                    rmet: 0,
-                    tmelt: 0.042146597,
-                    eneg: 7.29
-                },
-                {
-                    name: "Cs",
-                    num: 55,
-                    nump: 6,
-                    size: 0.910157427,
-                    rea: 0.129784127,
-                    rpp: 4.31,
-                    rion: 1.65,
-                    rcov: 235,
-                    rmet: 2.731,
-                    tmelt: 0.079057592,
-                    eneg: 1.97
-                },
-                {
-                    name: "Ba",
-                    num: 56,
-                    nump: 12,
-                    size: 0.868793456,
-                    rea: 0.135963256,
-                    rpp: 3.402,
-                    rion: 1.26,
-                    rcov: 198,
-                    rmet: 2.243,
-                    tmelt: 0.261256545,
-                    eneg: 2.76
-                },
-                {
-                    name: "La",
-                    num: 57,
-                    nump: 16,
-                    size: 0.828185801,
-                    rea: 0.142629814,
-                    rpp: 0,
-                    rion: 1.06,
-                    rcov: 169,
-                    rmet: 1.877,
-                    tmelt: 0.312303665,
-                    eneg: 2.89
-                },
-                {
-                    name: "Ce",
-                    num: 58,
-                    nump: 18,
-                    size: 0.810462652,
-                    rea: 0.145748835,
-                    rpp: 0,
-                    rion: 1.05,
-                    rcov: 165,
-                    rmet: 1.715,
-                    tmelt: 0.280366492,
-                    eneg: 2.86
-                },
-                {
-                    name: "Pr",
-                    num: 59,
-                    nump: 20,
-                    size: 0.793233638,
-                    rea: 0.148914495,
-                    rpp: 0,
-                    rion: 1.04,
-                    rcov: 165,
-                    rmet: 1.828,
-                    tmelt: 0.315183246,
-                    eneg: 2.83
-                },
-                {
-                    name: "Nd",
-                    num: 60,
-                    nump: 22,
-                    size: 0.776484764,
-                    rea: 0.1521266,
-                    rpp: 0,
-                    rion: 1.03,
-                    rcov: 164,
-                    rmet: 1.821,
-                    tmelt: 0.338743455,
-                    eneg: 2.85
-                },
-                {
-                    name: "Pm",
-                    num: 61,
-                    nump: 24,
-                    size: 0.760190637,
-                    rea: 0.155387322,
-                    rpp: 0,
-                    rion: 1.02,
-                    rcov: 0,
-                    rmet: 1.81,
-                    tmelt: 0.377225131,
-                    eneg: 2.87
-                },
-                {
-                    name: "Sm",
-                    num: 62,
-                    nump: 26,
-                    size: 0.744322073,
-                    rea: 0.158700099,
-                    rpp: 0,
-                    rion: 1.01,
-                    rcov: 166,
-                    rmet: 1.802,
-                    tmelt: 0.352094241,
-                    eneg: 2.89
-                },
-                {
-                    name: "Eu",
-                    num: 63,
-                    nump: 28,
-                    size: 0.728849599,
-                    rea: 0.162069084,
-                    rpp: 0,
-                    rion: 1.01,
-                    rcov: 185,
-                    rmet: 1.799,
-                    tmelt: 0.286649215,
-                    eneg: 2.91
-                },
-                {
-                    name: "Gd",
-                    num: 64,
-                    nump: 30,
-                    size: 0.713745039,
-                    rea: 0.165498855,
-                    rpp: 0,
-                    rion: 1,
-                    rcov: 161,
-                    rmet: 1.802,
-                    tmelt: 0.414921466,
-                    eneg: 3.02
-                },
-                {
-                    name: "Tb",
-                    num: 65,
-                    nump: 32,
-                    size: 0.698982175,
-                    rea: 0.168994276,
-                    rpp: 0,
-                    rion: 0.99,
-                    rcov: 159,
-                    rmet: 1.782,
-                    tmelt: 0.427486911,
-                    eneg: 2.95
-                },
-                {
-                    name: "Dy",
-                    num: 66,
-                    nump: 34,
-                    size: 0.684536953,
-                    rea: 0.172560424,
-                    rpp: 0,
-                    rion: 0.98,
-                    rcov: 159,
-                    rmet: 1.773,
-                    tmelt: 0.439790576,
-                    eneg: 2.97
-                },
-                {
-                    name: "Ho",
-                    num: 67,
-                    nump: 36,
-                    size: 0.670387461,
-                    rea: 0.17620256,
-                    rpp: 0,
-                    rion: 0.97,
-                    rcov: 158,
-                    rmet: 1.766,
-                    tmelt: 0.456282723,
-                    eneg: 2.99
-                },
-                {
-                    name: "Er",
-                    num: 68,
-                    nump: 38,
-                    size: 0.65651381,
-                    rea: 0.179926127,
-                    rpp: 0,
-                    rion: 0.96,
-                    rcov: 157,
-                    rmet: 1.757,
-                    tmelt: 0.469895288,
-                    eneg: 3
-                },
-                {
-                    name: "Tm",
-                    num: 69,
-                    nump: 40,
-                    size: 0.642897972,
-                    rea: 0.183736755,
-                    rpp: 0,
-                    rion: 0.95,
-                    rcov: 156,
-                    rmet: 1.746,
-                    tmelt: 0.47591623,
-                    eneg: 3.02
-                },
-                {
-                    name: "Yb",
-                    num: 70,
-                    nump: 42,
-                    size: 0.629523601,
-                    rea: 0.187640284,
-                    rpp: 0,
-                    rion: 0.94,
-                    rcov: 170,
-                    rmet: 1.74,
-                    tmelt: 0.287172775,
-                    eneg: 3.04
-                },
-                {
-                    name: "Lu",
-                    num: 71,
-                    nump: 44,
-                    size: 0.616375866,
-                    rea: 0.191642784,
-                    rpp: 0,
-                    rion: 0.93,
-                    rcov: 156,
-                    rmet: 1.734,
-                    tmelt: 0.504973822,
-                    eneg: 3.11
-                },
-                {
-                    name: "Hf",
-                    num: 72,
-                    nump: 48,
-                    size: 0.588840308,
-                    rea: 0.200604451,
-                    rpp: 2.91,
-                    rion: 0.8,
-                    rcov: 144,
-                    rmet: 1.58,
-                    tmelt: 0.653141361,
-                    eneg: 3.3
-                },
-                {
-                    name: "Ta",
-                    num: 73,
-                    nump: 52,
-                    size: 0.562314966,
-                    rea: 0.210067301,
-                    rpp: 2.79,
-                    rion: 0.77,
-                    rcov: 134,
-                    rmet: 1.467,
-                    tmelt: 0.856806283,
-                    eneg: 3.45
-                },
-                {
-                    name: "W",
-                    num: 74,
-                    nump: 56,
-                    size: 0.536696361,
-                    rea: 0.22009463,
-                    rpp: 2.735,
-                    rion: 0.75,
-                    rcov: 130,
-                    rmet: 1.408,
-                    tmelt: 0.964136126,
-                    eneg: 3.48
-                },
-                {
-                    name: "Re",
-                    num: 75,
-                    nump: 60,
-                    size: 0.51189659,
-                    rea: 0.230757519,
-                    rpp: 2.68,
-                    rion: 0.72,
-                    rcov: 128,
-                    rmet: 1.375,
-                    tmelt: 0.903926702,
-                    eneg: 3.5
-                },
-                {
-                    name: "Os",
-                    num: 76,
-                    nump: 64,
-                    size: 0.487840384,
-                    rea: 0.242136549,
-                    rpp: 2.65,
-                    rion: 0.69,
-                    rcov: 126,
-                    rmet: 1.353,
-                    tmelt: 0.868586387,
-                    eneg: 3.57
-                },
-                {
-                    name: "Ir",
-                    num: 77,
-                    nump: 68,
-                    size: 0.464462811,
-                    rea: 0.254323886,
-                    rpp: 2.628,
-                    rion: 0.81,
-                    rcov: 126,
-                    rmet: 1.357,
-                    tmelt: 0.702356021,
-                    eneg: 3.6
-                },
-                {
-                    name: "Pt",
-                    num: 78,
-                    nump: 72,
-                    size: 0.441707474,
-                    rea: 0.267425828,
-                    rpp: 2.7,
-                    rion: 0.9,
-                    rcov: 129,
-                    rmet: 1.387,
-                    tmelt: 0.535340314,
-                    eneg: 3.71
-                },
-                {
-                    name: "Au",
-                    num: 79,
-                    nump: 76,
-                    size: 0.419525064,
-                    rea: 0.281565982,
-                    rpp: 2.66,
-                    rion: 1.11,
-                    rcov: 134,
-                    rmet: 1.442,
-                    tmelt: 0.35,
-                    eneg: 3.84
-                },
-                {
-                    name: "Hg",
-                    num: 80,
-                    nump: 80,
-                    size: 0.386690726,
-                    rea: 0.305474062,
-                    rpp: 2.41,
-                    rion: 0.97,
-                    rcov: 144,
-                    rmet: 1.573,
-                    tmelt: 0.061256545,
-                    eneg: 3.82
-                },
-                {
-                    name: "Tl",
-                    num: 81,
-                    nump: 86,
-                    size: 0.355029594,
-                    rea: 0.332715889,
-                    rpp: 2.235,
-                    rion: 0.9,
-                    rcov: 155,
-                    rmet: 1.716,
-                    tmelt: 0.15104712,
-                    eneg: 4.34
-                },
-                {
-                    name: "Pb",
-                    num: 82,
-                    nump: 92,
-                    size: 0.324425963,
-                    rea: 0.364101522,
-                    rpp: 2.09,
-                    rion: 0.83,
-                    rcov: 154,
-                    rmet: 1.75,
-                    tmelt: 0.157329843,
-                    eneg: 4.92
-                },
-                {
-                    name: "Bi",
-                    num: 83,
-                    nump: 98,
-                    size: 0.294781292,
-                    rea: 0.400717379,
-                    rpp: 1.997,
-                    rion: 0.77,
-                    rcov: 152,
-                    rmet: 1.7,
-                    tmelt: 0.142408377,
-                    eneg: 5.47
-                },
-                {
-                    name: "Po",
-                    num: 84,
-                    nump: 104,
-                    size: 0.266010922,
-                    rea: 0.444056906,
-                    rpp: 1.9,
-                    rion: 0.56,
-                    rcov: 153,
-                    rmet: 1.76,
-                    tmelt: 0.137958115,
-                    eneg: 6.01
-                },
-                {
-                    name: "At",
-                    num: 85,
-                    nump: 110,
-                    size: 0.233351806,
-                    rea: 0.506205582,
-                    rpp: 1.83,
-                    rion: 0.51,
-                    rcov: 0,
-                    rmet: 0,
-                    tmelt: 0.15052356,
-                    eneg: 6.56
-                },
-                {
-                    name: "Rn",
-                    num: 86,
-                    nump: 117,
-                    size: 0.201712905,
-                    rea: 0.58560451,
-                    rpp: 0,
-                    rion: 0,
-                    rcov: 0,
-                    rmet: 0,
-                    tmelt: 0.052879581,
-                    eneg: 7.12
-                },
-                {
-                    name: "Fr",
-                    num: 87,
-                    nump: 7,
-                    size: 1,
-                    rea: 0.118123987,
-                    rpp: 4.37,
-                    rion: 1.74,
-                    rcov: 0,
-                    rmet: 2.8,
-                    tmelt: 0.078534031,
-                    eneg: 2.02
-                },
-                {
-                    name: "Ra",
-                    num: 88,
-                    nump: 13,
-                    size: 0.952025289,
-                    rea: 0.124076522,
-                    rpp: 3.53,
-                    rion: 1.34,
-                    rcov: 0,
-                    rmet: 2.26,
-                    tmelt: 0.254712042,
-                    eneg: 2.78
-                },
-                {
-                    name: "Ac",
-                    num: 89,
-                    nump: 17,
-                    size: 0.905996701,
-                    rea: 0.130380151,
-                    rpp: 0,
-                    rion: 1.14,
-                    rcov: 0,
-                    rmet: 1.878,
-                    tmelt: 0.346335079,
-                    eneg: 2.93
-                },
-                {
-                    name: "Th",
-                    num: 90,
-                    nump: 19,
-                    size: 0.885161237,
-                    rea: 0.133449119,
-                    rpp: 0,
-                    rion: 1.11,
-                    rcov: 0,
-                    rmet: 1.798,
-                    tmelt: 0.528795812,
-                    eneg: 3.02
-                },
-                {
-                    name: "Pa",
-                    num: 91,
-                    nump: 21,
-                    size: 0.864979518,
-                    rea: 0.136562756,
-                    rpp: 0,
-                    rion: 1.08,
-                    rcov: 0,
-                    rmet: 1.63,
-                    tmelt: 0.553141361,
-                    eneg: 2.98
-                },
-                {
-                    name: "U",
-                    num: 92,
-                    nump: 23,
-                    size: 0.845420273,
-                    rea: 0.139722208,
-                    rpp: 0,
-                    rion: 1.05,
-                    rcov: 0,
-                    rmet: 1.56,
-                    tmelt: 0.368062827,
-                    eneg: 2.98
-                },
-                {
-                    name: "Np",
-                    num: 93,
-                    nump: 25,
-                    size: 0.826445343,
-                    rea: 0.142930186,
-                    rpp: 0,
-                    rion: 1.04,
-                    rcov: 0,
-                    rmet: 1.555,
-                    tmelt: 0.239005236,
-                    eneg: 2.98
-                },
-                {
-                    name: "Pu",
-                    num: 94,
-                    nump: 27,
-                    size: 0.808015348,
-                    rea: 0.146190276,
-                    rpp: 0,
-                    rion: 1.03,
-                    rcov: 0,
-                    rmet: 1.58,
-                    tmelt: 0.239267016,
-                    eneg: 2.96
-                },
-                {
-                    name: "Am",
-                    num: 95,
-                    nump: 29,
-                    size: 0.790092251,
-                    rea: 0.149506576,
-                    rpp: 0,
-                    rion: 1.02,
-                    rcov: 0,
-                    rmet: 1.81,
-                    tmelt: 0.331675393,
-                    eneg: 2.97
-                }
-            ];
-        }
-    }
-    $.$mpds_visavis_elements_list = $mpds_visavis_elements_list;
-})($ || ($ = {}));
-//mpds/visavis/elements/list/-view.tree/list.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        const Elements_list = $mol_data_array($mol_data_record({
-            name: $mol_data_string,
-            num: $mol_data_number,
-            nump: $mol_data_number,
-            size: $mol_data_number,
-            rea: $mol_data_number,
-            rpp: $mol_data_number,
-            rion: $mol_data_number,
-            rcov: $mol_data_number,
-            rmet: $mol_data_number,
-            tmelt: $mol_data_number,
-            eneg: $mol_data_number,
-        }));
-        const Prop_names = $mol_data_record({
-            num: $mol_data_string,
-            nump: $mol_data_string,
-            size: $mol_data_string,
-            rea: $mol_data_string,
-            rpp: $mol_data_string,
-            rion: $mol_data_string,
-            rcov: $mol_data_string,
-            rmet: $mol_data_string,
-            tmelt: $mol_data_string,
-            eneg: $mol_data_string,
-        });
-        class $mpds_visavis_elements_list extends $.$mpds_visavis_elements_list {
-            static data() {
-                return new $mpds_visavis_elements_list();
-            }
-            static prop_names() {
-                return Prop_names(this.data().prop_names());
-            }
-            static list() {
-                return Elements_list(this.data().list());
-            }
-            static index_by_prop(prop) {
-                return Object.fromEntries(this.list().map(el => [el[prop], el]));
-            }
-            static element_by_num(num) {
-                return this.list()[num];
-            }
-            static element_by_name(name) {
-                return this.index_by_prop('name')[name];
-            }
-            static prop_values(prop) {
-                return this.list().map(el => el[prop]);
-            }
-        }
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_elements_list, "data", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_elements_list, "prop_names", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_elements_list, "list", null);
-        __decorate([
-            $mol_mem_key
-        ], $mpds_visavis_elements_list, "index_by_prop", null);
-        __decorate([
-            $mol_mem_key
-        ], $mpds_visavis_elements_list, "element_by_num", null);
-        __decorate([
-            $mol_mem_key
-        ], $mpds_visavis_elements_list, "element_by_name", null);
-        __decorate([
-            $mol_mem_key
-        ], $mpds_visavis_elements_list, "prop_values", null);
-        $$.$mpds_visavis_elements_list = $mpds_visavis_elements_list;
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-//mpds/visavis/elements/list/list.view.ts
-;
-"use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_lib extends $mol_object2 {
-        static plotly() {
-            return require('../mpds/visavis/lib/plotly.custom.min.js');
-        }
-        static pca() {
-            return require('../mpds/visavis/lib/pca.js');
-        }
-        static d3() {
-            $mol_wire_solid();
-            return this.plotly().d3;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_lib, "plotly", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_lib, "pca", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_lib, "d3", null);
-    $.$mpds_visavis_lib = $mpds_visavis_lib;
-})($ || ($ = {}));
-//mpds/visavis/lib/lib.ts
-;
 
 var $node = $node || {}
-void function( module ) { var exports = module.exports = this; function require( id ) { return $node[ id.replace( /^.\// , "../mpds/visavis/lib/" ) ] }; 
-;
-'use strict';(function(ma){typeof exports==="object"&&typeof module!=="undefined"?module.exports=ma():typeof define==="function"&&define.amd?define([],ma):(typeof window!=="undefined"?window:typeof global!=="undefined"?global:typeof self!=="undefined"?self:this).mlPca=ma()})(function(){var ma;return function H(Z,ha,d){function ia(U,T){if(!ha[U]){if(!Z[U]){var V=typeof require=="function"&&require;if(!T&&V)return V(U,true);if(da)return da(U,true);T=Error("Cannot find module '"+U+"'");throw T.code=
-"MODULE_NOT_FOUND",T;}T=ha[U]={exports:{}};Z[U][0].call(T.exports,function(d){var m=Z[U][1][d];return ia(m?m:d)},T,T.exports,H,Z,ha,d)}return ha[U].exports}for(var da=typeof require=="function"&&require,V=0;V<d.length;V++)ia(d[V]);return ia}({1:[function(Z,ha,d){function H(d,a){if(Math.abs(d)>Math.abs(a)){var c=a/d;return Math.abs(d)*Math.sqrt(1+c*c)}if(a!==0){c=d/a;return Math.abs(a)*Math.sqrt(1+c*c)}return 0}function ia(d,a,c){for(var f=Array(d),e=0;e<d;e++){f[e]=Array(a);for(var b=0;b<a;b++)f[e][b]=
-c}return f}function da(d,a,c){d=c?d.rows:d.rows-1;if(a<0||a>d)throw new RangeError("Row index out of range");}function V(d,a,c){d=c?d.columns:d.columns-1;if(a<0||a>d)throw new RangeError("Column index out of range");}function U(d,a){a.to1DArray&&(a=a.to1DArray());if(a.length!==d.columns)throw new RangeError("vector size must be the same as the number of columns");return a}function T(d,a){a.to1DArray&&(a=a.to1DArray());if(a.length!==d.rows)throw new RangeError("vector size must be the same as the number of rows");
-return a}function ka(d,a,c){return{row:x(d,a),column:m(d,c)}}function x(d,a){if(typeof a!=="object")throw new TypeError("unexpected type for row indices");if(a.some((a)=>a<0||a>=d.rows))throw new RangeError("row indices are out of range");Array.isArray(a)||(a=Array.from(a));return a}function m(d,a){if(typeof a!=="object")throw new TypeError("unexpected type for column indices");if(a.some((a)=>a<0||a>=d.columns))throw new RangeError("column indices are out of range");Array.isArray(a)||(a=Array.from(a));
-return a}function P(d,a,c,f,e){if(arguments.length!==5)throw new TypeError("Invalid argument type");if(Array.from(arguments).slice(1).some(function(a){return typeof a!=="number"}))throw new TypeError("Invalid argument type");if(a>c||f>e||a<0||a>=d.rows||c<0||c>=d.rows||f<0||f>=d.columns||e<0||e>=d.columns)throw new RangeError("Submatrix indices are out of range");}function J(d){for(var a=K.zeros(d.rows,1),c=0;c<d.rows;++c)for(var f=0;f<d.columns;++f)a.set(c,0,a.get(c,0)+d.get(c,f));return a}function W(d){for(var a=
-K.zeros(1,d.columns),c=0;c<d.rows;++c)for(var f=0;f<d.columns;++f)a.set(0,f,a.get(0,f)+d.get(c,f));return a}function N(d){for(var a=0,c=0;c<d.rows;c++)for(var f=0;f<d.columns;f++)a+=d.get(c,f);return a}function v(d){function a(a,w){return a-w}function c(a,w){for(var p in w)a=a.replace(new RegExp("%"+p+"%","g"),w[p]);return a}d===void 0&&(d=Object);class f extends d{static get [Symbol.species](){return this}static from1DArray(a,w,b){if(a*w!==b.length)throw new RangeError("Data length does not match given dimensions");
-for(var p=new this(a,w),c=0;c<a;c++)for(var ea=0;ea<w;ea++)p.set(c,ea,b[c*w+ea]);return p}static rowVector(a){for(var w=new this(1,a.length),p=0;p<a.length;p++)w.set(0,p,a[p]);return w}static columnVector(a){for(var p=new this(a.length,1),b=0;b<a.length;b++)p.set(b,0,a[b]);return p}static empty(a,b){return new this(a,b)}static zeros(a,b){return this.empty(a,b).fill(0)}static ones(a,b){return this.empty(a,b).fill(1)}static rand(a,b,c){if(c===void 0)c=Math.random;for(var p=this.empty(a,b),w=0;w<a;w++)for(var ea=
-0;ea<b;ea++)p.set(w,ea,c());return p}static randInt(a,b,c,e){c===void 0&&(c=1E3);if(e===void 0)e=Math.random;for(var p=this.empty(a,b),w=0;w<a;w++)for(var ea=0;ea<b;ea++){var f=Math.floor(e()*c);p.set(w,ea,f)}return p}static eye(a,b,c){b===void 0&&(b=a);c===void 0&&(c=1);var p=Math.min(a,b);a=this.zeros(a,b);for(b=0;b<p;b++)a.set(b,b,c);return a}static diag(a,b,c){var p=a.length;b===void 0&&(b=p);c===void 0&&(c=b);p=Math.min(p,b,c);b=this.zeros(b,c);for(c=0;c<p;c++)b.set(c,c,a[c]);return b}static min(a,
-b){a=this.checkMatrix(a);b=this.checkMatrix(b);for(var p=a.rows,w=a.columns,c=new this(p,w),e=0;e<p;e++)for(var f=0;f<w;f++)c.set(e,f,Math.min(a.get(e,f),b.get(e,f)));return c}static max(a,b){a=this.checkMatrix(a);b=this.checkMatrix(b);for(var p=a.rows,w=a.columns,c=new this(p,w),e=0;e<p;e++)for(var f=0;f<w;f++)c.set(e,f,Math.max(a.get(e,f),b.get(e,f)));return c}static checkMatrix(a){return f.isMatrix(a)?a:new this(a)}static isMatrix(a){return a!=null&&a.klass==="Matrix"}get size(){return this.rows*
-this.columns}apply(a){if(typeof a!=="function")throw new TypeError("callback must be a function");for(var b=this.rows,p=this.columns,c=0;c<b;c++)for(var e=0;e<p;e++)a.call(this,c,e);return this}to1DArray(){for(var a=Array(this.size),b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)a[b*this.columns+c]=this.get(b,c);return a}to2DArray(){for(var a=Array(this.rows),b=0;b<this.rows;b++){a[b]=Array(this.columns);for(var c=0;c<this.columns;c++)a[b][c]=this.get(b,c)}return a}isRowVector(){return this.rows===
-1}isColumnVector(){return this.columns===1}isVector(){return this.rows===1||this.columns===1}isSquare(){return this.rows===this.columns}isSymmetric(){if(this.isSquare()){for(var a=0;a<this.rows;a++)for(var b=0;b<=a;b++)if(this.get(a,b)!==this.get(b,a))return false;return true}return false}set(a,b,c){throw Error("set method is unimplemented");}get(a,b){throw Error("get method is unimplemented");}repeat(a,b){a=a||1;b=b||1;for(var c=new this.constructor[Symbol.species](this.rows*a,this.columns*b),p=
-0;p<a;p++)for(var w=0;w<b;w++)c.setSubMatrix(this,this.rows*p,this.columns*w);return c}fill(a){for(var b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.set(b,c,a);return this}neg(){return this.mulS(-1)}getRow(a){da(this,a);for(var b=Array(this.columns),c=0;c<this.columns;c++)b[c]=this.get(a,c);return b}getRowVector(a){return this.constructor.rowVector(this.getRow(a))}setRow(a,b){da(this,a);b=U(this,b);for(var c=0;c<this.columns;c++)this.set(a,c,b[c]);return this}swapRows(a,b){da(this,a);da(this,
-b);for(var c=0;c<this.columns;c++){var p=this.get(a,c);this.set(a,c,this.get(b,c));this.set(b,c,p)}return this}getColumn(a){V(this,a);for(var b=Array(this.rows),c=0;c<this.rows;c++)b[c]=this.get(c,a);return b}getColumnVector(a){return this.constructor.columnVector(this.getColumn(a))}setColumn(a,b){V(this,a);b=T(this,b);for(var c=0;c<this.rows;c++)this.set(c,a,b[c]);return this}swapColumns(a,b){V(this,a);V(this,b);for(var c=0;c<this.rows;c++){var p=this.get(c,a);this.set(c,a,this.get(c,b));this.set(c,
-b,p)}return this}addRowVector(a){a=U(this,a);for(var b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.set(b,c,this.get(b,c)+a[c]);return this}subRowVector(a){a=U(this,a);for(var b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.set(b,c,this.get(b,c)-a[c]);return this}mulRowVector(a){a=U(this,a);for(var b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.set(b,c,this.get(b,c)*a[c]);return this}divRowVector(a){a=U(this,a);for(var b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.set(b,
-c,this.get(b,c)/a[c]);return this}addColumnVector(a){a=T(this,a);for(var b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.set(b,c,this.get(b,c)+a[b]);return this}subColumnVector(a){a=T(this,a);for(var b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.set(b,c,this.get(b,c)-a[b]);return this}mulColumnVector(a){a=T(this,a);for(var b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.set(b,c,this.get(b,c)*a[b]);return this}divColumnVector(a){a=T(this,a);for(var b=0;b<this.rows;b++)for(var c=
-0;c<this.columns;c++)this.set(b,c,this.get(b,c)/a[b]);return this}mulRow(a,b){da(this,a);for(var c=0;c<this.columns;c++)this.set(a,c,this.get(a,c)*b);return this}mulColumn(a,b){V(this,a);for(var c=0;c<this.rows;c++)this.set(c,a,this.get(c,a)*b);return this}max(){for(var a=this.get(0,0),b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.get(b,c)>a&&(a=this.get(b,c));return a}maxIndex(){for(var a=this.get(0,0),b=[0,0],c=0;c<this.rows;c++)for(var e=0;e<this.columns;e++)if(this.get(c,e)>a){a=this.get(c,
-e);b[0]=c;b[1]=e}return b}min(){for(var a=this.get(0,0),b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.get(b,c)<a&&(a=this.get(b,c));return a}minIndex(){for(var a=this.get(0,0),b=[0,0],c=0;c<this.rows;c++)for(var e=0;e<this.columns;e++)if(this.get(c,e)<a){a=this.get(c,e);b[0]=c;b[1]=e}return b}maxRow(a){da(this,a);for(var b=this.get(a,0),c=1;c<this.columns;c++)this.get(a,c)>b&&(b=this.get(a,c));return b}maxRowIndex(a){da(this,a);for(var b=this.get(a,0),c=[a,0],e=1;e<this.columns;e++)if(this.get(a,
-e)>b){b=this.get(a,e);c[1]=e}return c}minRow(a){da(this,a);for(var b=this.get(a,0),c=1;c<this.columns;c++)this.get(a,c)<b&&(b=this.get(a,c));return b}minRowIndex(a){da(this,a);for(var b=this.get(a,0),c=[a,0],e=1;e<this.columns;e++)if(this.get(a,e)<b){b=this.get(a,e);c[1]=e}return c}maxColumn(a){V(this,a);for(var b=this.get(0,a),c=1;c<this.rows;c++)this.get(c,a)>b&&(b=this.get(c,a));return b}maxColumnIndex(a){V(this,a);for(var b=this.get(0,a),c=[0,a],e=1;e<this.rows;e++)if(this.get(e,a)>b){b=this.get(e,
-a);c[0]=e}return c}minColumn(a){V(this,a);for(var b=this.get(0,a),c=1;c<this.rows;c++)this.get(c,a)<b&&(b=this.get(c,a));return b}minColumnIndex(a){V(this,a);for(var b=this.get(0,a),c=[0,a],e=1;e<this.rows;e++)if(this.get(e,a)<b){b=this.get(e,a);c[0]=e}return c}diag(){for(var a=Math.min(this.rows,this.columns),b=Array(a),c=0;c<a;c++)b[c]=this.get(c,c);return b}sum(a){switch(a){case "row":return J(this);case "column":return W(this);default:return N(this)}}mean(){return this.sum()/this.size}prod(){for(var a=
-1,b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)a*=this.get(b,c);return a}norm(a="frobenius"){var b=0;if(a==="max")return this.max();if(a==="frobenius"){for(a=0;a<this.rows;a++)for(var c=0;c<this.columns;c++)b+=this.get(a,c)*this.get(a,c);return Math.sqrt(b)}throw new RangeError(`unknown norm type: ${a}`);}cumulativeSum(){for(var a=0,b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++){a+=this.get(b,c);this.set(b,c,a)}return this}dot(a){f.isMatrix(a)&&(a=a.to1DArray());var b=this.to1DArray();
-if(b.length!==a.length)throw new RangeError("vectors do not have the same size");for(var c=0,e=0;e<b.length;e++)c+=b[e]*a[e];return c}mmul(a){a=this.constructor.checkMatrix(a);this.columns!==a.rows&&console.warn("Number of columns of left matrix are not equal to number of rows of right matrix.");for(var b=this.rows,c=this.columns,e=a.columns,f=new this.constructor[Symbol.species](b,e),h=Array(c),p=0;p<e;p++){for(var g=0;g<c;g++)h[g]=a.get(g,p);for(var k=0;k<b;k++){var d=0;for(g=0;g<c;g++)d+=this.get(k,
-g)*h[g];f.set(k,p,d)}}return f}strassen2x2(a){var b=new this.constructor[Symbol.species](2,2),c=this.get(0,0);const e=a.get(0,0),f=this.get(0,1),h=a.get(0,1),p=this.get(1,0),g=a.get(1,0),k=this.get(1,1);a=a.get(1,1);const d=(c+k)*(e+a),Q=(p+k)*e,m=c*(h-a),x=k*(g-e),r=(c+f)*a,fa=m+r,ja=Q+x;c=d-Q+m+(p-c)*(e+h);b.set(0,0,d+x-r+(f-k)*(g+a));b.set(0,1,fa);b.set(1,0,ja);b.set(1,1,c);return b}strassen3x3(a){var b=new this.constructor[Symbol.species](3,3),c=this.get(0,0);const e=this.get(0,1),f=this.get(0,
-2);var h=this.get(1,0),g=this.get(1,1),p=this.get(1,2),k=this.get(2,0),d=this.get(2,1),Q=this.get(2,2);const m=a.get(0,0),x=a.get(0,1),r=a.get(0,2),fa=a.get(1,0),ja=a.get(1,1),q=a.get(1,2),l=a.get(2,0),u=a.get(2,1),z=a.get(2,2),na=(c-h)*(-x+ja),v=(-c+h+g)*(m-x+ja),A=(h+g)*(-m+x);a=c*m;const J=(-c+k+d)*(m-r+q),D=(-c+k)*(r-q),E=(k+d)*(-m+r),P=(-f+d+Q)*(ja+l-u),F=(f-Q)*(ja-u),C=f*l,oa=(d+Q)*(-l+u),N=(-f+g+p)*(q+l-z),G=(f-p)*(q-z),I=(g+p)*(-l+z),K=(c+e+f-h-g-d-Q)*ja+v+A+a+P+C+oa;c=a+J+E+(c+e+f-g-p-k-
-d)*q+C+N+I;g=na+g*(-m+x+fa-ja-q-l+z)+v+a+C+N+G;p=na+v+A+a+p*u;h=C+N+G+I+h*r;d=a+J+D+d*(-m+r+fa-ja-q-l+u)+P+F+C;k=P+F+C+oa+k*x;Q=a+J+D+E+Q*z;b.set(0,0,a+C+e*fa);b.set(0,1,K);b.set(0,2,c);b.set(1,0,g);b.set(1,1,p);b.set(1,2,h);b.set(2,0,d);b.set(2,1,k);b.set(2,2,Q);return b}mmulStrassen(a){function b(a,b,c){var e=a.columns;if(a.rows===b&&e===c)return a;b=f.zeros(b,c);return b=b.setSubMatrix(a,0,0)}function c(a,e,h,g){if(h<=512||g<=512)return a.mmul(e);if(h%2===1&&g%2===1){a=b(a,h+1,g+1);e=b(e,h+1,g+
-1)}else if(h%2===1){a=b(a,h+1,g);e=b(e,h+1,g)}else if(g%2===1){a=b(a,h,g+1);e=b(e,h,g+1)}var p=parseInt(a.rows/2),k=parseInt(a.columns/2),w=a.subMatrix(0,p-1,0,k-1),n=e.subMatrix(0,p-1,0,k-1),d=a.subMatrix(0,p-1,k,a.columns-1),t=e.subMatrix(0,p-1,k,e.columns-1),B=a.subMatrix(p,a.rows-1,0,k-1),y=e.subMatrix(p,e.rows-1,0,k-1),ea=a.subMatrix(p,a.rows-1,k,a.columns-1),Q=e.subMatrix(p,e.rows-1,k,e.columns-1);a=c(f.add(w,ea),f.add(n,Q),p,k);var m=c(f.add(B,ea),n,p,k);e=c(w,f.sub(t,Q),p,k);var x=c(ea,f.sub(y,
-n),p,k),r=c(f.add(w,d),Q,p,k);w=c(f.sub(B,w),f.add(n,t),p,k);k=c(f.sub(d,ea),f.add(y,Q),p,k);p=f.add(a,x);p.sub(r);p.add(k);k=f.add(e,r);x=f.add(m,x);a=f.sub(a,m);a.add(e);a.add(w);e=f.zeros(2*p.rows,2*p.columns);e=e.setSubMatrix(p,0,0);e=e.setSubMatrix(k,p.rows,0);e=e.setSubMatrix(x,0,p.columns);e=e.setSubMatrix(a,p.rows,p.columns);return e.subMatrix(0,h-1,0,g-1)}var e=this.clone(),h=e.rows,g=e.columns,p=a.rows,d=a.columns;g!==p&&console.warn(`Multiplying ${h} x ${g} and ${p} x ${d} matrix: dimensions do not match.`);
-h=Math.max(h,p);g=Math.max(g,d);e=b(e,h,g);a=b(a,h,g);return c(e,a,h,g)}scaleRows(a,b){a=a===void 0?0:a;b=b===void 0?1:b;if(a>=b)throw new RangeError("min should be strictly smaller than max");for(var c=this.constructor.empty(this.rows,this.columns),e=0;e<this.rows;e++){var f=I(this.getRow(e),{min:a,max:b});c.setRow(e,f)}return c}scaleColumns(a,b){a=a===void 0?0:a;b=b===void 0?1:b;if(a>=b)throw new RangeError("min should be strictly smaller than max");for(var c=this.constructor.empty(this.rows,this.columns),
-e=0;e<this.columns;e++){var f=I(this.getColumn(e),{min:a,max:b});c.setColumn(e,f)}return c}kroneckerProduct(a){a=this.constructor.checkMatrix(a);for(var b=this.rows,c=this.columns,e=a.rows,f=a.columns,h=new this.constructor[Symbol.species](b*e,c*f),g=0;g<b;g++)for(var p=0;p<c;p++)for(var k=0;k<e;k++)for(var d=0;d<f;d++)h[e*g+k][f*p+d]=this.get(g,p)*a.get(k,d);return h}transpose(){for(var a=new this.constructor[Symbol.species](this.columns,this.rows),b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)a.set(c,
-b,this.get(b,c));return a}sortRows(b){b===void 0&&(b=a);for(var c=0;c<this.rows;c++)this.setRow(c,this.getRow(c).sort(b));return this}sortColumns(b){b===void 0&&(b=a);for(var c=0;c<this.columns;c++)this.setColumn(c,this.getColumn(c).sort(b));return this}subMatrix(a,b,c,e){P(this,a,b,c,e);for(var f=new this.constructor[Symbol.species](b-a+1,e-c+1),h=a;h<=b;h++)for(var g=c;g<=e;g++)f[h-a][g-c]=this.get(h,g);return f}subMatrixRow(a,b,c){b===void 0&&(b=0);c===void 0&&(c=this.columns-1);if(b>c||b<0||b>=
-this.columns||c<0||c>=this.columns)throw new RangeError("Argument out of range");for(var e=new this.constructor[Symbol.species](a.length,c-b+1),f=0;f<a.length;f++)for(var h=b;h<=c;h++){if(a[f]<0||a[f]>=this.rows)throw new RangeError("Row index out of range: "+a[f]);e.set(f,h-b,this.get(a[f],h))}return e}subMatrixColumn(a,b,c){b===void 0&&(b=0);c===void 0&&(c=this.rows-1);if(b>c||b<0||b>=this.rows||c<0||c>=this.rows)throw new RangeError("Argument out of range");for(var e=new this.constructor[Symbol.species](c-
-b+1,a.length),f=0;f<a.length;f++)for(var h=b;h<=c;h++){if(a[f]<0||a[f]>=this.columns)throw new RangeError("Column index out of range: "+a[f]);e.set(h-b,f,this.get(h,a[f]))}return e}setSubMatrix(a,b,c){a=this.constructor.checkMatrix(a);P(this,b,b+a.rows-1,c,c+a.columns-1);for(var e=0;e<a.rows;e++)for(var f=0;f<a.columns;f++)this[b+e][c+f]=a.get(e,f);return this}selection(a,b){var c=ka(this,a,b);a=new this.constructor[Symbol.species](a.length,b.length);for(b=0;b<c.row.length;b++)for(var e=c.row[b],
-f=0;f<c.column.length;f++)a[b][f]=this.get(e,c.column[f]);return a}trace(){for(var a=Math.min(this.rows,this.columns),b=0,c=0;c<a;c++)b+=this.get(c,c);return b}transposeView(){return new D(this)}rowView(a){da(this,a);return new l(this,a)}columnView(a){V(this,a);return new z(this,a)}flipRowView(){return new O(this)}flipColumnView(){return new ba(this)}subMatrixView(a,b,c,e){return new q(this,a,b,c,e)}selectionView(a,b){return new L(this,a,b)}rowSelectionView(a){return new A(this,a)}columnSelectionView(a){return new R(this,
-a)}det(){if(this.isSquare()){if(this.columns===2){var a=this.get(0,0);var b=this.get(0,1);var c=this.get(1,0);var e=this.get(1,1);return a*e-b*c}if(this.columns===3){e=this.selectionView([1,2],[1,2]);var f=this.selectionView([1,2],[0,2]);var h=this.selectionView([1,2],[0,1]);a=this.get(0,0);b=this.get(0,1);c=this.get(0,2);return a*e.det()-b*f.det()+c*h.det()}return(new E(this)).determinant}throw Error("Determinant can only be calculated for a square matrix.");}pseudoInverse(a){if(a===void 0)a=Number.EPSILON;
-var b=new G(this,{autoTranspose:true}),c=b.leftSingularVectors,e=b.rightSingularVectors;b=b.diagonal;for(var f=0;f<b.length;f++)b[f]=Math.abs(b[f])>a?1/b[f]:0;b=this.constructor[Symbol.species].diag(b);return e.mmul(b.mmul(c.transposeView()))}clone(){for(var a=new this.constructor[Symbol.species](this.rows,this.columns),b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)a.set(b,c,this.get(b,c));return a}}f.prototype.klass="Matrix";f.random=f.rand;f.diagonal=f.diag;f.prototype.diagonal=f.prototype.diag;
-f.identity=f.eye;f.prototype.negate=f.prototype.neg;f.prototype.tensorProduct=f.prototype.kroneckerProduct;f.prototype.determinant=f.prototype.det;var e=[["+","add"],["-","sub","subtract"],["*","mul","multiply"],["/","div","divide"],["%","mod","modulus"],["&","and"],["|","or"],["^","xor"],["<<","leftShift"],[">>","signPropagatingRightShift"],[">>>","rightShift","zeroFillRightShift"]];d=eval;for(var b of e){var h=d(c("\n(function %name%(value) {\n    if (typeof value === 'number') return this.%name%S(value);\n    return this.%name%M(value);\n})\n",
-{name:b[1],op:b[0]})),g=d(c("\n(function %name%S(value) {\n    for (var i = 0; i < this.rows; i++) {\n        for (var j = 0; j < this.columns; j++) {\n            this.set(i, j, this.get(i, j) %op% value);\n        }\n    }\n    return this;\n})\n",{name:b[1]+"S",op:b[0]})),Q=d(c("\n(function %name%M(matrix) {\n    matrix = this.constructor.checkMatrix(matrix);\n    if (this.rows !== matrix.rows ||\n        this.columns !== matrix.columns) {\n        throw new RangeError('Matrices dimensions must be equal');\n    }\n    for (var i = 0; i < this.rows; i++) {\n        for (var j = 0; j < this.columns; j++) {\n            this.set(i, j, this.get(i, j) %op% matrix.get(i, j));\n        }\n    }\n    return this;\n})\n",
-{name:b[1]+"M",op:b[0]})),m=d(c("\n(function %name%(matrix, value) {\n    var newMatrix = new this[Symbol.species](matrix);\n    return newMatrix.%name%(value);\n})\n",{name:b[1]}));for(e=1;e<b.length;e++){f.prototype[b[e]]=h;f.prototype[b[e]+"S"]=g;f.prototype[b[e]+"M"]=Q;f[b[e]]=m}}var x=[["~","not"]];["abs","acos","acosh","asin","asinh","atan","atanh","cbrt","ceil","clz32","cos","cosh","exp","expm1","floor","fround","log","log1p","log10","log2","round","sign","sin","sinh","sqrt","tan","tanh","trunc"].forEach(function(a){x.push(["Math."+
-a,a])});for(var fa of x){b=d(c("\n(function %name%() {\n    for (var i = 0; i < this.rows; i++) {\n        for (var j = 0; j < this.columns; j++) {\n            this.set(i, j, %method%(this.get(i, j)));\n        }\n    }\n    return this;\n})\n",{name:fa[1],method:fa[0]}));h=d(c("\n(function %name%(matrix) {\n    var newMatrix = new this[Symbol.species](matrix);\n    return newMatrix.%name%();\n})\n",{name:fa[1]}));for(e=1;e<fa.length;e++){f.prototype[fa[e]]=b;f[fa[e]]=h}}e=[["Math.pow",1,"pow"]];
-for(var r of e){b="arg0";for(e=1;e<r[1];e++)b+=`, arg${e}`;if(r[1]!==1){fa=d(c("\n(function %name%(%args%) {\n    for (var i = 0; i < this.rows; i++) {\n        for (var j = 0; j < this.columns; j++) {\n            this.set(i, j, %method%(this.get(i, j), %args%));\n        }\n    }\n    return this;\n})\n",{name:r[2],method:r[0],args:b}));b=d(c("\n(function %name%(matrix, %args%) {\n    var newMatrix = new this[Symbol.species](matrix);\n    return newMatrix.%name%(%args%);\n})\n",{name:r[2],args:b}));
-for(e=2;e<r.length;e++){f.prototype[r[e]]=fa;f[r[e]]=b}}else{e={name:r[2],args:b,method:r[0]};fa=d(c("\n(function %name%(value) {\n    if (typeof value === 'number') return this.%name%S(value);\n    return this.%name%M(value);\n})\n",e));b=d(c("\n(function %name%S(value) {\n    for (var i = 0; i < this.rows; i++) {\n        for (var j = 0; j < this.columns; j++) {\n            this.set(i, j, %method%(this.get(i, j), value));\n        }\n    }\n    return this;\n})\n",e));h=d(c("\n(function %name%M(matrix) {\n    matrix = this.constructor.checkMatrix(matrix);\n    if (this.rows !== matrix.rows ||\n        this.columns !== matrix.columns) {\n        throw new RangeError('Matrices dimensions must be equal');\n    }\n    for (var i = 0; i < this.rows; i++) {\n        for (var j = 0; j < this.columns; j++) {\n            this.set(i, j, %method%(this.get(i, j), matrix.get(i, j)));\n        }\n    }\n    return this;\n})\n",
-e));g=d(c("\n(function %name%(matrix, %args%) {\n    var newMatrix = new this[Symbol.species](matrix);\n    return newMatrix.%name%(%args%);\n})\n",e));for(e=2;e<r.length;e++){f.prototype[r[e]]=fa;f.prototype[r[e]+"M"]=h;f.prototype[r[e]+"S"]=b;f[r[e]]=g}}}return f}function F(d,a,c=false){d=S.checkMatrix(d);a=S.checkMatrix(a);return c?(new G(d)).solve(a):d.isSquare()?(new E(d)).solve(a):(new aa(d)).solve(a)}function C(d,a,c,f){var e,b,h,g;for(h=0;h<d;h++)c[h]=f[d-1][h];for(b=d-1;b>0;b--){for(g=e=
-h=0;g<b;g++)h+=Math.abs(c[g]);if(h===0){a[b]=c[b-1];for(h=0;h<b;h++){c[h]=f[b-1][h];f[b][h]=0;f[h][b]=0}}else{for(g=0;g<b;g++){c[g]=c[g]/h;e+=c[g]*c[g]}var Q=c[b-1];var m=Math.sqrt(e);Q>0&&(m=-m);a[b]=h*m;e-=Q*m;c[b-1]=Q-m;for(h=0;h<b;h++)a[h]=0;for(h=0;h<b;h++){Q=c[h];f[h][b]=Q;m=a[h]+f[h][h]*Q;for(g=h+1;g<=b-1;g++){m+=f[g][h]*c[g];a[g]=a[g]+f[g][h]*Q}a[h]=m}for(h=Q=0;h<b;h++){a[h]=a[h]/e;Q+=a[h]*c[h]}Q/=e+e;for(h=0;h<b;h++)a[h]=a[h]-Q*c[h];for(h=0;h<b;h++){Q=c[h];m=a[h];for(g=h;g<=b-1;g++)f[g][h]=
-f[g][h]-(Q*a[g]+m*c[g]);c[h]=f[b-1][h];f[b][h]=0}}c[b]=e}for(b=0;b<d-1;b++){f[d-1][b]=f[b][b];f[b][b]=1;e=c[b+1];if(e!==0){for(g=0;g<=b;g++)c[g]=f[g][b+1]/e;for(h=0;h<=b;h++){for(g=m=0;g<=b;g++)m+=f[g][b+1]*f[g][h];for(g=0;g<=b;g++)f[g][h]=f[g][h]-m*c[g]}}for(g=0;g<=b;g++)f[g][b+1]=0}for(h=0;h<d;h++){c[h]=f[d-1][h];f[d-1][h]=0}f[d-1][d-1]=1;a[0]=0}function la(d,a,c,f){var e,b,h,g,Q;for(e=1;e<d;e++)a[e-1]=a[e];var m=a[d-1]=0,x=0,r=Number.EPSILON;for(b=0;b<d;b++){x=Math.max(x,Math.abs(c[b])+Math.abs(a[b]));
-for(h=b;h<d;){if(Math.abs(a[h])<=r*x)break;h++}if(h>b){var q=0;do{q+=1;var p=c[b];var w=(c[b+1]-p)/(2*a[b]);var l=H(w,1);w<0&&(l=-l);c[b]=a[b]/(w+l);c[b+1]=a[b]*(w+l);var t=c[b+1];var B=p-c[b];for(e=b+2;e<d;e++)c[e]=c[e]-B;m+=B;w=c[h];var n=g=l=1;var y=a[b+1];var u=Q=0;for(e=h-1;e>=b;e--){n=g;g=l;u=Q;p=l*a[e];B=l*w;l=H(w,a[e]);a[e+1]=Q*l;Q=a[e]/l;l=w/l;w=l*c[e]-Q*p;c[e+1]=B+Q*(l*p+Q*c[e]);for(p=0;p<d;p++){B=f[p][e+1];f[p][e+1]=Q*f[p][e]+l*B;f[p][e]=l*f[p][e]-Q*B}}w=-Q*u*n*y*a[b]/t;a[b]=Q*w;c[b]=l*
-w}while(Math.abs(a[b])>r*x)}c[b]=c[b]+m;a[b]=0}for(e=0;e<d-1;e++){p=e;w=c[e];for(a=e+1;a<d;a++)if(c[a]<w){p=a;w=c[a]}if(p!==e){c[p]=c[e];c[e]=w;for(a=0;a<d;a++){w=f[a][e];f[a][e]=f[a][p];f[a][p]=w}}}}function ca(d,a,c,f){var e=d-1,b,h,g;for(g=1;g<=e-1;g++){var Q=0;for(b=g;b<=e;b++)Q+=Math.abs(a[b][g-1]);if(Q!==0){var m=0;for(b=e;b>=g;b--){c[b]=a[b][g-1]/Q;m+=c[b]*c[b]}var x=Math.sqrt(m);c[g]>0&&(x=-x);m-=c[g]*x;c[g]=c[g]-x;for(h=g;h<d;h++){var r=0;for(b=e;b>=g;b--)r+=c[b]*a[b][h];r/=m;for(b=g;b<=
-e;b++)a[b][h]=a[b][h]-r*c[b]}for(b=0;b<=e;b++){r=0;for(h=e;h>=g;h--)r+=c[h]*a[b][h];r/=m;for(h=g;h<=e;h++)a[b][h]=a[b][h]-r*c[h]}c[g]=Q*c[g];a[g][g-1]=Q*x}}for(b=0;b<d;b++)for(h=0;h<d;h++)f[b][h]=b===h?1:0;for(g=e-1;g>=1;g--)if(a[g][g-1]!==0){for(b=g+1;b<=e;b++)c[b]=a[b][g-1];for(h=g;h<=e;h++){x=0;for(b=g;b<=e;b++)x+=c[b]*f[b][h];x=x/c[g]/a[g][g-1];for(b=g;b<=e;b++)f[b][h]=f[b][h]+x*c[b]}}}function M(d,a,c,f,e){var b=d-1,h=d-1,g=Number.EPSILON,m=0,x=0,l=0,q=0,u=0,p=0,w=0,z=0,t,B,n,y,v;for(t=0;t<d;t++){if(t<
-0||t>h){c[t]=e[t][t];a[t]=0}for(B=Math.max(t-1,0);B<d;B++)x+=Math.abs(e[t][B])}for(;b>=0;){for(n=b;n>0;){p=Math.abs(e[n-1][n-1])+Math.abs(e[n][n]);p===0&&(p=x);if(Math.abs(e[n][n-1])<g*p)break;n--}if(n===b){e[b][b]=e[b][b]+m;c[b]=e[b][b];a[b]=0;b--;z=0}else if(n===b-1){var k=e[b][b-1]*e[b-1][b];l=(e[b-1][b-1]-e[b][b])/2;q=l*l+k;w=Math.sqrt(Math.abs(q));e[b][b]=e[b][b]+m;e[b-1][b-1]=e[b-1][b-1]+m;var X=e[b][b];if(q>=0){w=l>=0?l+w:l-w;c[b-1]=X+w;c[b]=c[b-1];w!==0&&(c[b]=X-k/w);a[b-1]=0;a[b]=0;X=e[b][b-
-1];p=Math.abs(X)+Math.abs(w);l=X/p;q=w/p;u=Math.sqrt(l*l+q*q);l/=u;q/=u;for(B=b-1;B<d;B++){w=e[b-1][B];e[b-1][B]=q*w+l*e[b][B];e[b][B]=q*e[b][B]-l*w}for(t=0;t<=b;t++){w=e[t][b-1];e[t][b-1]=q*w+l*e[t][b];e[t][b]=q*e[t][b]-l*w}for(t=0;t<=h;t++){w=f[t][b-1];f[t][b-1]=q*w+l*f[t][b];f[t][b]=q*f[t][b]-l*w}}else{c[b-1]=X+l;c[b]=X+l;a[b-1]=w;a[b]=-w}b-=2;z=0}else{X=e[b][b];k=v=0;if(n<b){v=e[b-1][b-1];k=e[b][b-1]*e[b-1][b]}if(z===10){m+=X;for(t=0;t<=b;t++)e[t][t]=e[t][t]-X;p=Math.abs(e[b][b-1])+Math.abs(e[b-
-1][b-2]);X=v=.75*p;k=-.4375*p*p}if(z===30){p=(v-X)/2;p=p*p+k;if(p>0){p=Math.sqrt(p);v<X&&(p=-p);p=X-k/((v-X)/2+p);for(t=0;t<=b;t++)e[t][t]=e[t][t]-p;m+=p;X=v=k=.964}}z+=1;for(y=b-2;y>=n;){w=e[y][y];u=X-w;p=v-w;l=(u*p-k)/e[y+1][y]+e[y][y+1];q=e[y+1][y+1]-w-u-p;u=e[y+2][y+1];p=Math.abs(l)+Math.abs(q)+Math.abs(u);l/=p;q/=p;u/=p;if(y===n)break;if(Math.abs(e[y][y-1])*(Math.abs(q)+Math.abs(u))<g*(Math.abs(l)*(Math.abs(e[y-1][y-1])+Math.abs(w)+Math.abs(e[y+1][y+1]))))break;y--}for(t=y+2;t<=b;t++){e[t][t-
-2]=0;t>y+2&&(e[t][t-3]=0)}for(k=y;k<=b-1;k++){var A=k!==b-1;if(k!==y){l=e[k][k-1];q=e[k+1][k-1];u=A?e[k+2][k-1]:0;X=Math.abs(l)+Math.abs(q)+Math.abs(u);if(X!==0){l/=X;q/=X;u/=X}}if(X===0)break;p=Math.sqrt(l*l+q*q+u*u);l<0&&(p=-p);if(p!==0){k!==y?e[k][k-1]=-p*X:n!==y&&(e[k][k-1]=-e[k][k-1]);l+=p;X=l/p;v=q/p;w=u/p;q/=l;u/=l;for(B=k;B<d;B++){l=e[k][B]+q*e[k+1][B];if(A){l+=u*e[k+2][B];e[k+2][B]=e[k+2][B]-l*w}e[k][B]=e[k][B]-l*X;e[k+1][B]=e[k+1][B]-l*v}for(t=0;t<=Math.min(b,k+3);t++){l=X*e[t][k]+v*e[t][k+
-1];if(A){l+=w*e[t][k+2];e[t][k+2]=e[t][k+2]-l*u}e[t][k]=e[t][k]-l;e[t][k+1]=e[t][k+1]-l*q}for(t=0;t<=h;t++){l=X*f[t][k]+v*f[t][k+1];if(A){l+=w*f[t][k+2];f[t][k+2]=f[t][k+2]-l*u}f[t][k]=f[t][k]-l;f[t][k+1]=f[t][k+1]-l*q}}}}}if(x!==0){for(b=d-1;b>=0;b--){l=c[b];q=a[b];if(q===0){n=b;e[b][b]=1;for(t=b-1;t>=0;t--){k=e[t][t]-l;u=0;for(B=n;B<=b;B++)u+=e[t][B]*e[B][b];if(a[t]<0){w=k;p=u}else{n=t;if(a[t]===0)e[t][b]=k!==0?-u/k:-u/(g*x);else{X=e[t][t+1];v=e[t+1][t];q=(c[t]-l)*(c[t]-l)+a[t]*a[t];m=(X*p-w*u)/
-q;e[t][b]=m;e[t+1][b]=Math.abs(X)>Math.abs(w)?(-u-k*m)/X:(-p-v*m)/w}m=Math.abs(e[t][b]);if(g*m*m>1)for(B=t;B<=b;B++)e[B][b]=e[B][b]/m}}}else if(q<0){n=b-1;if(Math.abs(e[b][b-1])>Math.abs(e[b-1][b])){e[b-1][b-1]=q/e[b][b-1];e[b-1][b]=-(e[b][b]-l)/e[b][b-1]}else{B=r(0,-e[b-1][b],e[b-1][b-1]-l,q);e[b-1][b-1]=B[0];e[b-1][b]=B[1]}e[b][b-1]=0;e[b][b]=1;for(t=b-2;t>=0;t--){z=m=0;for(B=n;B<=b;B++){m+=e[t][B]*e[B][b-1];z+=e[t][B]*e[B][b]}k=e[t][t]-l;if(a[t]<0){w=k;u=m;p=z}else{n=t;if(a[t]===0){B=r(-m,-z,k,
-q);e[t][b-1]=B[0];e[t][b]=B[1]}else{X=e[t][t+1];v=e[t+1][t];B=(c[t]-l)*(c[t]-l)+a[t]*a[t]-q*q;y=(c[t]-l)*2*q;B===0&&y===0&&(B=g*x*(Math.abs(k)+Math.abs(q)+Math.abs(X)+Math.abs(v)+Math.abs(w)));B=r(X*u-w*m+q*z,X*p-w*z-q*m,B,y);e[t][b-1]=B[0];e[t][b]=B[1];if(Math.abs(X)>Math.abs(w)+Math.abs(q)){e[t+1][b-1]=(-m-k*e[t][b-1]+q*e[t][b])/X;e[t+1][b]=(-z-k*e[t][b]-q*e[t][b-1])/X}else{B=r(-u-v*e[t][b-1],-p-v*e[t][b],w,q);e[t+1][b-1]=B[0];e[t+1][b]=B[1]}}m=Math.max(Math.abs(e[t][b-1]),Math.abs(e[t][b]));if(g*
-m*m>1)for(B=t;B<=b;B++){e[B][b-1]=e[B][b-1]/m;e[B][b]=e[B][b]/m}}}}}for(t=0;t<d;t++)if(t<0||t>h)for(B=t;B<d;B++)f[t][B]=e[t][B];for(B=d-1;B>=0;B--)for(t=0;t<=h;t++){for(k=w=0;k<=Math.min(B,h);k++)w+=f[t][k]*e[k][B];f[t][B]=w}}}function r(d,a,c,f){if(Math.abs(c)>Math.abs(f)){var e=f/c;c+=e*f;return[(d+e*a)/c,(a-e*d)/c]}e=c/f;c=f+e*c;return[(e*d+a)/c,(e*a-d)/c]}Object.defineProperty(d,"__esModule",{value:true});var I=function c(a){return a&&typeof a==="object"&&"default"in a?a["default"]:a}(Z("ml-array-rescale"));
-if(!Symbol.species)Symbol.species=Symbol.for("@@species");class E{constructor(a){a=S.checkMatrix(a);a=a.clone();var c=a.rows,f=a.columns,e=Array(c),b=1,h,g,d,l;for(h=0;h<c;h++)e[h]=h;var m=Array(c);for(g=0;g<f;g++){for(h=0;h<c;h++)m[h]=a.get(h,g);for(h=0;h<c;h++){var q=Math.min(h,g);for(d=l=0;d<q;d++)l+=a.get(h,d)*m[d];m[h]=m[h]-l;a.set(h,g,m[h])}l=g;for(h=g+1;h<c;h++)Math.abs(m[h])>Math.abs(m[l])&&(l=h);if(l!==g){for(d=0;d<f;d++){h=a.get(l,d);a.set(l,d,a.get(g,d));a.set(g,d,h)}d=e[l];e[l]=e[g];e[g]=
-d;b=-b}if(g<c&&a.get(g,g)!==0)for(h=g+1;h<c;h++)a.set(h,g,a.get(h,g)/a.get(g,g))}this.LU=a;this.pivotVector=e;this.pivotSign=b}isSingular(){for(var a=this.LU,c=a.columns,f=0;f<c;f++)if(a[f][f]===0)return true;return false}solve(a){a=K.checkMatrix(a);var c=this.LU;if(c.rows!==a.rows)throw Error("Invalid matrix dimensions");if(this.isSingular())throw Error("LU matrix is singular");var f=a.columns;a=a.subMatrixRow(this.pivotVector,0,f-1);var e=c.columns,b,h,g;for(g=0;g<e;g++)for(b=g+1;b<e;b++)for(h=
-0;h<f;h++)a[b][h]=a[b][h]-a[g][h]*c[b][g];for(g=e-1;g>=0;g--){for(h=0;h<f;h++)a[g][h]=a[g][h]/c[g][g];for(b=0;b<g;b++)for(h=0;h<f;h++)a[b][h]=a[b][h]-a[g][h]*c[b][g]}return a}get determinant(){var a=this.LU;if(!a.isSquare())throw Error("Matrix must be square");for(var c=this.pivotSign,f=a.columns,e=0;e<f;e++)c*=a[e][e];return c}get lowerTriangularMatrix(){for(var a=this.LU,c=a.rows,f=a.columns,e=new K(c,f),b=0;b<c;b++)for(var h=0;h<f;h++)e[b][h]=b>h?a[b][h]:b===h?1:0;return e}get upperTriangularMatrix(){for(var a=
-this.LU,c=a.rows,f=a.columns,e=new K(c,f),b=0;b<c;b++)for(var h=0;h<f;h++)e[b][h]=b<=h?a[b][h]:0;return e}get pivotPermutationVector(){return this.pivotVector.slice()}}class G{constructor(a,c={}){a=S.checkMatrix(a);c=a.rows;var f=a.columns,e=Math.min(c,f);const {computeLeftSingularVectors:b=true,computeRightSingularVectors:h=true,autoTranspose:g=false}=c;var d=!!b,l=!!h,m=false;if(c<f)if(g){var q=a.transpose();c=q.rows;f=q.columns;m=true;a=d;d=l;l=a}else{q=a.clone();console.warn("Computing SVD on a matrix with more columns than rows. Consider enabling autoTranspose")}else q=
-a.clone();a=Array(Math.min(c+1,f));var x=ia(c,e,0),p=ia(f,f,0),w=Array(f),r=Array(c),t=Math.min(c-1,f),u=Math.max(0,Math.min(f-2,c)),n,y,z;var k=0;for(z=Math.max(t,u);k<z;k++){if(k<t){a[k]=0;for(n=k;n<c;n++)a[k]=H(a[k],q[n][k]);if(a[k]!==0){q[k][k]<0&&(a[k]=-a[k]);for(n=k;n<c;n++)q[n][k]=q[n][k]/a[k];q[k][k]=q[k][k]+1}a[k]=-a[k]}for(y=k+1;y<f;y++){if(k<t&&a[k]!==0){var v=0;for(n=k;n<c;n++)v+=q[n][k]*q[n][y];v=-v/q[k][k];for(n=k;n<c;n++)q[n][y]=q[n][y]+v*q[n][k]}w[y]=q[k][y]}if(d&&k<t)for(n=k;n<c;n++)x[n][k]=
-q[n][k];if(k<u){w[k]=0;for(n=k+1;n<f;n++)w[k]=H(w[k],w[n]);if(w[k]!==0){w[k+1]<0&&(w[k]=0-w[k]);for(n=k+1;n<f;n++)w[n]=w[n]/w[k];w[k+1]=w[k+1]+1}w[k]=-w[k];if(k+1<c&&w[k]!==0){for(n=k+1;n<c;n++)r[n]=0;for(y=k+1;y<f;y++)for(n=k+1;n<c;n++)r[n]=r[n]+w[y]*q[n][y];for(y=k+1;y<f;y++){v=-w[y]/w[k+1];for(n=k+1;n<c;n++)q[n][y]=q[n][y]+v*r[n]}}if(l)for(n=k+1;n<f;n++)p[n][k]=w[n]}}r=Math.min(f,c+1);t<f&&(a[t]=q[t][t]);c<r&&(a[r-1]=0);u+1<r&&(w[u]=q[u][r-1]);w[r-1]=0;if(d){for(y=t;y<e;y++){for(n=0;n<c;n++)x[n][y]=
-0;x[y][y]=1}for(k=t-1;k>=0;k--)if(a[k]!==0){for(y=k+1;y<e;y++){v=0;for(n=k;n<c;n++)v+=x[n][k]*x[n][y];v=-v/x[k][k];for(n=k;n<c;n++)x[n][y]=x[n][y]+v*x[n][k]}for(n=k;n<c;n++)x[n][k]=-x[n][k];x[k][k]=1+x[k][k];for(n=0;n<k-1;n++)x[n][k]=0}else{for(n=0;n<c;n++)x[n][k]=0;x[k][k]=1}}if(l)for(k=f-1;k>=0;k--){if(k<u&&w[k]!==0)for(y=k+1;y<f;y++){v=0;for(n=k+1;n<f;n++)v+=p[n][k]*p[n][y];v=-v/p[k+1][k];for(n=k+1;n<f;n++)p[n][y]=p[n][y]+v*p[n][k]}for(n=0;n<f;n++)p[n][k]=0;p[k][k]=1}e=r-1;q=0;for(t=Number.EPSILON;r>
-0;){for(k=r-2;k>=-1;k--){if(k===-1)break;if(Math.abs(w[k])<=t*(Math.abs(a[k])+Math.abs(a[k+1]))){w[k]=0;break}}if(k===r-2)v=4;else{for(n=r-1;n>=k;n--){if(n===k)break;v=(n!==r?Math.abs(w[n]):0)+(n!==k+1?Math.abs(w[n-1]):0);if(Math.abs(a[n])<=t*v){a[n]=0;break}}if(n===k)v=3;else if(n===r-1)v=1;else{v=2;k=n}}k++;switch(v){case 1:u=w[r-2];w[r-2]=0;for(y=r-2;y>=k;y--){v=H(a[y],u);z=a[y]/v;var A=u/v;a[y]=v;if(y!==k){u=-A*w[y-1];w[y-1]=z*w[y-1]}if(l)for(n=0;n<f;n++){v=z*p[n][y]+A*p[n][r-1];p[n][r-1]=-A*
-p[n][y]+z*p[n][r-1];p[n][y]=v}}break;case 2:u=w[k-1];w[k-1]=0;for(y=k;y<r;y++){v=H(a[y],u);z=a[y]/v;A=u/v;a[y]=v;u=-A*w[y];w[y]=z*w[y];if(d)for(n=0;n<c;n++){v=z*x[n][y]+A*x[n][k-1];x[n][k-1]=-A*x[n][y]+z*x[n][k-1];x[n][y]=v}}break;case 3:y=Math.max(Math.abs(a[r-1]),Math.abs(a[r-2]),Math.abs(w[r-2]),Math.abs(a[k]),Math.abs(w[k]));n=a[r-1]/y;z=a[r-2]/y;u=w[r-2]/y;v=a[k]/y;y=w[k]/y;z=((z+n)*(z-n)+u*u)/2;u=n*u*(n*u);A=0;if(z!==0||u!==0){A=Math.sqrt(z*z+u);z<0&&(A=-A);A=u/(z+A)}u=(v+n)*(v-n)+A;var C=v*
-y;for(y=k;y<r-1;y++){v=H(u,C);z=u/v;A=C/v;y!==k&&(w[y-1]=v);u=z*a[y]+A*w[y];w[y]=z*w[y]-A*a[y];C=A*a[y+1];a[y+1]=z*a[y+1];if(l)for(n=0;n<f;n++){v=z*p[n][y]+A*p[n][y+1];p[n][y+1]=-A*p[n][y]+z*p[n][y+1];p[n][y]=v}v=H(u,C);z=u/v;A=C/v;a[y]=v;u=z*w[y]+A*a[y+1];a[y+1]=-A*w[y]+z*a[y+1];C=A*w[y+1];w[y+1]=z*w[y+1];if(d&&y<c-1)for(n=0;n<c;n++){v=z*x[n][y]+A*x[n][y+1];x[n][y+1]=-A*x[n][y]+z*x[n][y+1];x[n][y]=v}}w[r-2]=u;q+=1;break;case 4:if(a[k]<=0){a[k]=a[k]<0?-a[k]:0;if(l)for(n=0;n<=e;n++)p[n][k]=-p[n][k]}for(;k<
-e;){if(a[k]>=a[k+1])break;v=a[k];a[k]=a[k+1];a[k+1]=v;if(l&&k<f-1)for(n=0;n<f;n++){v=p[n][k+1];p[n][k+1]=p[n][k];p[n][k]=v}if(d&&k<c-1)for(n=0;n<c;n++){v=x[n][k+1];x[n][k+1]=x[n][k];x[n][k]=v}k++}q=0;r--}}if(m){d=p;p=x;x=d}this.m=c;this.n=f;this.s=a;this.U=x;this.V=p}solve(a){var c=this.threshold,f=this.s.length,e=K.zeros(f,f),b;for(b=0;b<f;b++)e[b][b]=Math.abs(this.s[b])<=c?0:1/this.s[b];c=this.U;b=this.rightSingularVectors;e=b.mmul(e);var h=b.rows,g=c.length,d=K.zeros(h,g),l,m,x;for(b=0;b<h;b++)for(l=
-0;l<g;l++){for(m=x=0;m<f;m++)x+=e[b][m]*c[l][m];d[b][l]=x}return d.mmul(a)}solveForDiagonal(a){return this.solve(K.diag(a))}inverse(){var a=this.V,c=this.threshold,f=a.length,e=a[0].length,b=new K(f,this.s.length),h,g;for(h=0;h<f;h++)for(g=0;g<e;g++)b[h][g]=Math.abs(this.s[g])>c?a[h][g]/this.s[g]:0;a=this.U;c=a.length;e=a[0].length;var d=new K(f,c),l,m;for(h=0;h<f;h++)for(g=0;g<c;g++){for(l=m=0;l<e;l++)m+=b[h][l]*a[g][l];d[h][g]=m}return d}get condition(){return this.s[0]/this.s[Math.min(this.m,this.n)-
-1]}get norm2(){return this.s[0]}get rank(){for(var a=Math.max(this.m,this.n)*this.s[0]*Number.EPSILON,c=0,f=this.s,e=0,b=f.length;e<b;e++)f[e]>a&&c++;return c}get diagonal(){return this.s}get threshold(){return Number.EPSILON/2*Math.max(this.m,this.n)*this.s[0]}get leftSingularVectors(){if(!K.isMatrix(this.U))this.U=new K(this.U);return this.U}get rightSingularVectors(){if(!K.isMatrix(this.V))this.V=new K(this.V);return this.V}get diagonalMatrix(){return K.diag(this.s)}}class u extends v(){constructor(a,
-c,f){super();this.matrix=a;this.rows=c;this.columns=f}static get [Symbol.species](){return K}}class D extends u{constructor(a){super(a,a.columns,a.rows)}set(a,c,f){this.matrix.set(c,a,f);return this}get(a,c){return this.matrix.get(c,a)}}class l extends u{constructor(a,c){super(a,1,a.columns);this.row=c}set(a,c,f){this.matrix.set(this.row,c,f);return this}get(a,c){return this.matrix.get(this.row,c)}}class q extends u{constructor(a,c,f,e,b){P(a,c,f,e,b);super(a,f-c+1,b-e+1);this.startRow=c;this.startColumn=
-e}set(a,c,f){this.matrix.set(this.startRow+a,this.startColumn+c,f);return this}get(a,c){return this.matrix.get(this.startRow+a,this.startColumn+c)}}class L extends u{constructor(a,c,f){c=ka(a,c,f);super(a,c.row.length,c.column.length);this.rowIndices=c.row;this.columnIndices=c.column}set(a,c,f){this.matrix.set(this.rowIndices[a],this.columnIndices[c],f);return this}get(a,c){return this.matrix.get(this.rowIndices[a],this.columnIndices[c])}}class A extends u{constructor(a,c){c=x(a,c);super(a,c.length,
-a.columns);this.rowIndices=c}set(a,c,f){this.matrix.set(this.rowIndices[a],c,f);return this}get(a,c){return this.matrix.get(this.rowIndices[a],c)}}class R extends u{constructor(a,c){c=m(a,c);super(a,a.rows,c.length);this.columnIndices=c}set(a,c,f){this.matrix.set(a,this.columnIndices[c],f);return this}get(a,c){return this.matrix.get(a,this.columnIndices[c])}}class z extends u{constructor(a,c){super(a,a.rows,1);this.column=c}set(a,c,f){this.matrix.set(a,this.column,f);return this}get(a){return this.matrix.get(a,
-this.column)}}class O extends u{constructor(a){super(a,a.rows,a.columns)}set(a,c,f){this.matrix.set(this.rows-a-1,c,f);return this}get(a,c){return this.matrix.get(this.rows-a-1,c)}}class ba extends u{constructor(a){super(a,a.rows,a.columns)}set(a,c,f){this.matrix.set(a,this.columns-c-1,f);return this}get(a,c){return this.matrix.get(a,this.columns-c-1)}}class K extends v(Array){constructor(a,c){var f;if(arguments.length===1&&typeof a==="number")return Array(a);if(K.isMatrix(a))return a.clone();if(Number.isInteger(a)&&
-a>0){super(a);if(Number.isInteger(c)&&c>0)for(f=0;f<a;f++)this[f]=Array(c);else throw new TypeError("nColumns must be a positive integer");}else if(Array.isArray(a)){const e=a;a=e.length;c=e[0].length;if(typeof c!=="number"||c===0)throw new TypeError("Data must be a 2D array with at least one element");super(a);for(f=0;f<a;f++){if(e[f].length!==c)throw new RangeError("Inconsistent array dimensions");this[f]=[].concat(e[f])}}else throw new TypeError("First argument must be a positive number or an array");
-this.rows=a;this.columns=c;return this}set(a,c,f){this[a][c]=f;return this}get(a,c){return this[a][c]}removeRow(a){da(this,a);if(this.rows===1)throw new RangeError("A matrix cannot have less than one row");this.splice(a,1);--this.rows;return this}addRow(a,c){if(c===void 0){c=a;a=this.rows}da(this,a,true);c=U(this,c,true);this.splice(a,0,c);this.rows=this.rows+1;return this}removeColumn(a){V(this,a);if(this.columns===1)throw new RangeError("A matrix cannot have less than one column");for(var c=0;c<
-this.rows;c++)this[c].splice(a,1);--this.columns;return this}addColumn(a,c){if(typeof c==="undefined"){c=a;a=this.columns}V(this,a,true);c=T(this,c);for(var f=0;f<this.rows;f++)this[f].splice(a,0,c[f]);this.columns=this.columns+1;return this}}class Y extends v(){constructor(a,c={}){var {rows:c=1}=c;if(a.length%c!==0)throw Error("the data length is not divisible by the number of rows");super();this.rows=c;this.columns=a.length/c;this.data=a}set(a,c,f){a=this._calculateIndex(a,c);this.data[a]=f;return this}get(a,
-c){a=this._calculateIndex(a,c);return this.data[a]}_calculateIndex(a,c){return a*this.columns+c}static get [Symbol.species](){return K}}class S extends v(){constructor(a){super();this.data=a;this.rows=a.length;this.columns=a[0].length}set(a,c,f){this.data[a][c]=f;return this}get(a,c){return this.data[a][c]}static get [Symbol.species](){return K}}class aa{constructor(a){a=S.checkMatrix(a);var c=a.clone(),f=a.rows;a=a.columns;var e=Array(a),b,h,g;for(g=0;g<a;g++){var d=0;for(b=g;b<f;b++)d=H(d,c.get(b,
-g));if(d!==0){c.get(g,g)<0&&(d=-d);for(b=g;b<f;b++)c.set(b,g,c.get(b,g)/d);c.set(g,g,c.get(g,g)+1);for(h=g+1;h<a;h++){var l=0;for(b=g;b<f;b++)l+=c.get(b,g)*c.get(b,h);l=-l/c.get(g,g);for(b=g;b<f;b++)c.set(b,h,c.get(b,h)+l*c.get(b,g))}}e[g]=-d}this.QR=c;this.Rdiag=e}solve(a){a=K.checkMatrix(a);var c=this.QR,f=c.rows;if(a.rows!==f)throw Error("Matrix row dimensions must agree");if(!this.isFullRank())throw Error("Matrix is rank deficient");var e=a.columns;a=a.clone();var b=c.columns,h,d,l;for(l=0;l<
-b;l++)for(d=0;d<e;d++){var m=0;for(h=l;h<f;h++)m+=c[h][l]*a[h][d];m=-m/c[l][l];for(h=l;h<f;h++)a[h][d]=a[h][d]+m*c[h][l]}for(l=b-1;l>=0;l--){for(d=0;d<e;d++)a[l][d]=a[l][d]/this.Rdiag[l];for(h=0;h<l;h++)for(d=0;d<e;d++)a[h][d]=a[h][d]-a[l][d]*c[h][l]}return a.subMatrix(0,b-1,0,e-1)}isFullRank(){for(var a=this.QR.columns,c=0;c<a;c++)if(this.Rdiag[c]===0)return false;return true}get upperTriangularMatrix(){var a=this.QR,c=a.columns,f=new K(c,c),e,b;for(e=0;e<c;e++)for(b=0;b<c;b++)f[e][b]=e<b?a[e][b]:
-e===b?this.Rdiag[e]:0;return f}get orthogonalMatrix(){var a=this.QR,c=a.rows,f=a.columns,e=new K(c,f),b,d,g;for(g=f-1;g>=0;g--){for(b=0;b<c;b++)e[b][g]=0;e[g][g]=1;for(d=g;d<f;d++)if(a[g][g]!==0){var l=0;for(b=g;b<c;b++)l+=a[b][g]*e[b][d];l=-l/a[g][g];for(b=g;b<c;b++)e[b][d]=e[b][d]+l*a[b][g]}}return e}}class pa{constructor(a,c={}){var {assumeSymmetric:f=false}=c;a=S.checkMatrix(a);if(!a.isSquare())throw Error("Matrix is not a square matrix");c=a.columns;var e=ia(c,c,0),b=Array(c),d=Array(c),g=a;
-if(f||a.isSymmetric()){for(a=0;a<c;a++)for(f=0;f<c;f++)e[a][f]=g.get(a,f);C(c,d,b,e);la(c,d,b,e)}else{var l=ia(c,c,0),m=Array(c);for(f=0;f<c;f++)for(a=0;a<c;a++)l[a][f]=g.get(a,f);ca(c,l,m,e);M(c,d,b,e,l)}this.n=c;this.e=d;this.d=b;this.V=e}get realEigenvalues(){return this.d}get imaginaryEigenvalues(){return this.e}get eigenvectorMatrix(){if(!K.isMatrix(this.V))this.V=new K(this.V);return this.V}get diagonalMatrix(){var a=this.n,c=this.e,f=this.d,e=new K(a,a),b,d;for(b=0;b<a;b++){for(d=0;d<a;d++)e[b][d]=
-0;e[b][b]=f[b];c[b]>0?e[b][b+1]=c[b]:c[b]<0&&(e[b][b-1]=c[b])}return e}}class qa{constructor(a){a=S.checkMatrix(a);if(!a.isSymmetric())throw Error("Matrix is not symmetric");var c=a.rows,f=new K(c,c),e=true,b,d,g;for(d=0;d<c;d++){var l=f[d],m=0;for(g=0;g<d;g++){var x=f[g],q=0;for(b=0;b<g;b++)q+=x[b]*l[b];l[g]=q=(a.get(d,g)-q)/f[g][g];m+=q*q}m=a.get(d,d)-m;e&=m>0;f[d][d]=Math.sqrt(Math.max(m,0));for(g=d+1;g<c;g++)f[d][g]=0}if(!e)throw Error("Matrix is not positive definite");this.L=f}solve(a){a=S.checkMatrix(a);
-var c=this.L,f=c.rows;if(a.rows!==f)throw Error("Matrix dimensions do not match");var e=a.columns;a=a.clone();var b,d,g;for(g=0;g<f;g++)for(d=0;d<e;d++){for(b=0;b<g;b++)a[g][d]=a[g][d]-a[b][d]*c[g][b];a[g][d]=a[g][d]/c[g][g]}for(g=f-1;g>=0;g--)for(d=0;d<e;d++){for(b=g+1;b<f;b++)a[g][d]=a[g][d]-a[b][d]*c[b][g];a[g][d]=a[g][d]/c[g][g]}return a}get lowerTriangularMatrix(){return this.L}}d["default"]=K;d.Matrix=K;d.abstractMatrix=v;d.wrap=function e(c,d){if(Array.isArray(c))return c[0]&&Array.isArray(c[0])?
-new S(c):new Y(c,d);throw Error("the argument is not an array");};d.WrapperMatrix2D=S;d.WrapperMatrix1D=Y;d.solve=F;d.inverse=function b(d,e=false){d=S.checkMatrix(d);return e?(new G(d)).inverse():F(d,K.eye(d.rows))};d.SingularValueDecomposition=G;d.SVD=G;d.EigenvalueDecomposition=pa;d.EVD=pa;d.CholeskyDecomposition=qa;d.CHO=qa;d.LuDecomposition=E;d.LU=E;d.QrDecomposition=aa;d.QR=aa},{"ml-array-rescale":2}],2:[function(Z,ha,d){function H(d){return d&&typeof d==="object"&&"default"in d?d["default"]:
-d}var ia=H(Z("ml-array-max")),da=H(Z("ml-array-min"));ha.exports=function ka(d,T={}){if(!Array.isArray(d))throw new TypeError("input must be an array");if(d.length===0)throw new TypeError("input must not be empty");if(T.output!==void 0){if(!Array.isArray(T.output))throw new TypeError("output option must be an array if specified");T=T.output}else T=Array(d.length);const x=da(d);var m=ia(d);if(x===m)throw new RangeError("minimum and maximum input values are equal. Cannot rescale a constant array");
-const {min:P=T.autoMinMax?x:0,max:J=T.autoMinMax?m:1}=T;if(P>=J)throw new RangeError("min option must be smaller than max option");m=(J-P)/(m-x);for(var W=0;W<d.length;W++)T[W]=(d[W]-x)*m+P;return T}},{"ml-array-max":3,"ml-array-min":4}],3:[function(Z,ha,d){ha.exports=function da(d){if(!Array.isArray(d))throw Error("input must be an array");if(d.length===0)throw Error("input must not be empty");for(var V=d[0],U=1;U<d.length;U++)d[U]>V&&(V=d[U]);return V}},{}],4:[function(Z,ha,d){ha.exports=function da(d){if(!Array.isArray(d))throw Error("input must be an array");
-if(d.length===0)throw Error("input must not be empty");for(var V=d[0],U=1;U<d.length;U++)d[U]<V&&(V=d[U]);return V}},{}],5:[function(Z,ha,d){function H(d,da){return d-da}d.sum=function V(d){for(var U=0,T=0;T<d.length;T++)U+=d[T];return U};d.max=function U(d){for(var T=d[0],V=d.length,x=1;x<V;x++)d[x]>T&&(T=d[x]);return T};d.min=function T(d){for(var U=d[0],x=d.length,m=1;m<x;m++)d[m]<U&&(U=d[m]);return U};d.minMax=function ka(d){for(var x=d[0],m=d[0],P=d.length,J=1;J<P;J++){d[J]<x&&(x=d[J]);d[J]>
-m&&(m=d[J])}return{min:x,max:m}};d.arithmeticMean=function x(d){for(var m=0,P=d.length,J=0;J<P;J++)m+=d[J];return m/P};d.mean=d.arithmeticMean;d.geometricMean=function m(d){for(var x=1,J=d.length,W=0;W<J;W++)x*=d[W];return Math.pow(x,1/J)};d.logMean=function P(d){for(var m=0,W=d.length,N=0;N<W;N++)m+=Math.log(d[N]);return m/W};d.grandMean=function W(d,J){for(var P=0,v=0,F=d.length,C=0;C<F;C++){P+=J[C]*d[C];v+=J[C]}return P/v};d.truncatedMean=function v(d,W,N){N===void 0&&(N=false);N||(d=[].concat(d).sort(H));
-N=d.length;W=Math.floor(N*W);for(var F=0,C=W;C<N-W;C++)F+=d[C];return F/(N-2*W)};d.harmonicMean=function N(d){for(var v=0,F=d.length,C=0;C<F;C++){if(d[C]===0)throw new RangeError("value at index "+C+"is zero");v+=1/d[C]}return F/v};d.contraHarmonicMean=function v(d){for(var F=0,C=0,N=d.length,ca=0;ca<N;ca++){F+=d[ca]*d[ca];C+=d[ca]}if(C<0)throw new RangeError("sum of values is negative");return F/C};d.median=function C(d,F){F===void 0&&(F=false);F||(d=[].concat(d).sort(H));F=d.length;var v=Math.floor(F/
-2);return F%2===0?(d[v-1]+d[v])*.5:d[v]};d.variance=function la(F,C){C===void 0&&(C=true);for(var ca=d.mean(F),M=0,r=F.length,I=0;I<r;I++){var E=F[I]-ca;M+=E*E}return C?M/(r-1):M/r};d.standardDeviation=function ca(C,la){return Math.sqrt(d.variance(C,la))};d.standardError=function ca(la){return d.standardDeviation(la)/Math.sqrt(la.length)};d.robustMeanAndStdev=function M(d){var r=0,I=d.length,E;for(E=0;E<I;E++)r+=d[E];r/=I;var G=Array(I);for(E=0;E<I;E++)G[E]=Math.abs(d[E]-r);G.sort(H);return{mean:r,
-stdev:I%2===1?G[(I-1)/2]/.6745:.5*(G[I/2]+G[I/2-1])/.6745}};d.quartiles=function I(M,r){typeof r==="undefined"&&(r=false);r||(M=[].concat(M).sort(H));r=M.length/4;var E=M[Math.ceil(r)-1],G=d.median(M,true);return{q1:E,q2:G,q3:M[Math.ceil(r*3)-1]}};d.pooledStandardDeviation=function E(r,I){return Math.sqrt(d.pooledVariance(r,I))};d.pooledVariance=function G(I,E){typeof E==="undefined"&&(E=true);for(var u=0,D=0,l=I.length,q=0;q<l;q++){var L=I[q],A=d.variance(L);u+=(L.length-1)*A;D=E?D+(L.length-1):
-D+L.length}return u/D};d.mode=function G(d){var u=d.length,D=Array(u),l;for(l=0;l<u;l++)D[l]=0;var q=Array(u),E=0;for(l=0;l<u;l++){var A=q.indexOf(d[l]);if(A>=0)D[A]++;else{q[E]=d[l];D[E]=1;E++}}for(l=u=d=0;l<E;l++)if(D[l]>d){d=D[l];u=l}return q[u]};d.covariance=function l(G,u,D){typeof D==="undefined"&&(D=true);var q=d.mean(G),L=d.mean(u);if(G.length!==u.length)throw"Vectors do not have the same dimensions";for(var A=0,R=G.length,z=0;z<R;z++)A+=(G[z]-q)*(u[z]-L);return D?A/(R-1):A/R};d.skewness=
-function l(u,D){typeof D==="undefined"&&(D=true);for(var q=d.mean(u),L=0,A=0,R=u.length,z=0;z<R;z++){var O=u[z]-q;L+=O*O;A+=O*O*O}u=A/R/Math.pow(L/R,1.5);return D?Math.sqrt(R*(R-1))/(R-2)*u:u};d.kurtosis=function q(D,l){typeof l==="undefined"&&(l=true);for(var L=d.mean(D),A=D.length,R=0,z=0,O=0;O<A;O++){var ba=D[O]-L;R+=ba*ba;z+=ba*ba*ba*ba}D=R/A;if(l){l=R/(A-1);return A*(A+1)/((A-1)*(A-2)*(A-3))*(z/(l*l))-3*((A-1)*(A-1)/((A-2)*(A-3)))}return z/A/(D*D)-3};d.entropy=function L(d,q){typeof q==="undefined"&&
-(q=0);for(var l=0,R=d.length,z=0;z<R;z++)l+=d[z]*Math.log(d[z]+q);return-l};d.weightedMean=function A(d,L){for(var q=0,z=d.length,O=0;O<z;O++)q+=d[O]*L[O];return q};d.weightedStandardDeviation=function R(L,A){return Math.sqrt(d.weightedVariance(L,A))};d.weightedVariance=function z(A,R){for(var O=d.weightedMean(A,R),ba=0,K=A.length,Y=0,S=0,aa=0;aa<K;aa++){var H=A[aa]-O,Z=R[aa];ba+=Z*(H*H);S+=Z;Y+=Z*Z}return ba*(S/(S*S-Y))};d.center=function O(R,z){typeof z==="undefined"&&(z=false);var ba=R;z||(ba=
-[].concat(R));R=d.mean(ba);z=ba.length;for(var K=0;K<z;K++)ba[K]=ba[K]-R};d.standardize=function K(z,O,ba){typeof O==="undefined"&&(O=d.standardDeviation(z));typeof ba==="undefined"&&(ba=false);var Y=z.length;ba=ba?z:Array(Y);for(var S=0;S<Y;S++)ba[S]=z[S]/O;return ba};d.cumulativeSum=function ba(d){var K=d.length,O=Array(K);O[0]=d[0];for(var S=1;S<K;S++)O[S]=O[S-1]+d[S];return O}},{}],6:[function(Z,ha,d){function H(d,V){return d-V}var ia=Z("./array");d.max=function U(d){for(var T=-Infinity,V=0;V<
-d.length;V++)for(var x=0;x<d[V].length;x++)d[V][x]>T&&(T=d[V][x]);return T};d.min=function T(d){for(var U=Infinity,x=0;x<d.length;x++)for(var m=0;m<d[x].length;m++)d[x][m]<U&&(U=d[x][m]);return U};d.minMax=function ka(d){for(var x=Infinity,m=-Infinity,P=0;P<d.length;P++)for(var J=0;J<d[P].length;J++){d[P][J]<x&&(x=d[P][J]);d[P][J]>m&&(m=d[P][J])}return{min:x,max:m}};d.entropy=function m(d,x){typeof x==="undefined"&&(x=0);for(var P=0,J=d.length,W=d[0].length,N=0;N<J;N++)for(var v=0;v<W;v++)P+=d[N][v]*
-Math.log(d[N][v]+x);return-P};d.mean=function P(d,m){typeof m==="undefined"&&(m=0);var x=d.length,W=d[0].length,N,v;if(m===-1){m=[0];var F=x*W;for(N=0;N<x;N++)for(v=0;v<W;v++)m[0]=m[0]+d[N][v];m[0]=m[0]/F}else if(m===0){m=Array(W);F=x;for(v=0;v<W;v++){for(N=m[v]=0;N<x;N++)m[v]=m[v]+d[N][v];m[v]=m[v]/F}}else if(m===1){m=Array(x);F=W;for(v=0;v<x;v++){for(N=m[v]=0;N<W;N++)m[v]=m[v]+d[v][N];m[v]=m[v]/F}}else throw Error("Invalid dimension");return m};d.sum=function J(d,P){typeof P==="undefined"&&(P=0);
-var m=d.length,N=d[0].length,v,F;if(P===-1){P=[0];for(v=0;v<m;v++)for(F=0;F<N;F++)P[0]=P[0]+d[v][F]}else if(P===0){P=Array(N);for(F=0;F<N;F++)for(v=P[F]=0;v<m;v++)P[F]=P[F]+d[v][F]}else if(P===1){P=Array(m);for(F=0;F<m;F++)for(v=P[F]=0;v<N;v++)P[F]=P[F]+d[F][v]}else throw Error("Invalid dimension");return P};d.product=function W(d,J){typeof J==="undefined"&&(J=0);var P=d.length,v=d[0].length,F,C;if(J===-1){J=[1];for(F=0;F<P;F++)for(C=0;C<v;C++)J[0]=J[0]*d[F][C]}else if(J===0){J=Array(v);for(C=0;C<
-v;C++){J[C]=1;for(F=0;F<P;F++)J[C]=J[C]*d[F][C]}}else if(J===1){J=Array(P);for(C=0;C<P;C++){J[C]=1;for(F=0;F<v;F++)J[C]=J[C]*d[C][F]}}else throw Error("Invalid dimension");return J};d.standardDeviation=function v(J,W,N){J=d.variance(J,W,N);W=J.length;for(N=0;N<W;N++)J[N]=Math.sqrt(J[N]);return J};d.variance=function F(W,N,v){typeof v==="undefined"&&(v=true);N=N||d.mean(W);var C=W.length;if(C===0)return[];for(var H=W[0].length,ca=Array(H),M=0;M<H;M++){for(var r=0,I=0,E,G=0;G<C;G++){E=W[G][M]-N[M];
-r+=E;I+=E*E}ca[M]=v?(I-r*r/C)/(C-1):(I-r*r/C)/C}return ca};d.median=function v(d){for(var F=d.length,C=d[0].length,N=Array(C),ca=0;ca<C;ca++){for(var M=Array(F),r=0;r<F;r++)M[r]=d[r][ca];M.sort(H);r=M.length;N[ca]=r%2===0?(M[r/2]+M[r/2-1])*.5:M[Math.floor(r/2)]}return N};d.mode=function F(d){var v=d.length,H=d[0].length,ca=Array(H),M,r;for(M=0;M<H;M++){var I=Array(v);for(r=0;r<v;r++)I[r]=0;var E=Array(v),G=0;for(r=0;r<v;r++){var u=E.indexOf(d[r][M]);if(u>=0)I[u]++;else{E[G]=d[r][M];I[G]=1;G++}}var D=
-u=0;for(r=0;r<G;r++)if(I[r]>u){u=I[r];D=r}ca[M]=E[D]}return ca};d.skewness=function la(F,C){typeof C==="undefined"&&(C=true);for(var H=d.mean(F),M=F.length,r=H.length,I=Array(r),E=0;E<r;E++){for(var G=0,u=0,D=0;D<M;D++){var l=F[D][E]-H[E];G+=l*l;u+=l*l*l}G=u/M/Math.pow(G/M,1.5);I[E]=C?Math.sqrt(M*(M-1))/(M-2)*G:G}return I};d.kurtosis=function ca(C,H){typeof H==="undefined"&&(H=true);for(var M=d.mean(C),r=C.length,I=C[0].length,E=Array(I),G=0;G<I;G++){for(var u=0,D=0,l=0;l<r;l++){var q=C[l][G]-M[G];
-u+=q*q;D+=q*q*q*q}l=u/r;q=D/r;if(H){u/=r-1;E[G]=r*(r+1)/((r-1)*(r-2)*(r-3))*(D/(u*u))-3*((r-1)*(r-1)/((r-2)*(r-3)))}else E[G]=q/(l*l)-3}return E};d.standardError=function ca(H){var M=H.length;H=d.standardDeviation(H);var r=H.length,I=Array(r);M=Math.sqrt(M);for(var E=0;E<r;E++)I[E]=H[E]/M;return I};d.covariance=function r(H,M){return d.scatter(H,void 0,M)};d.scatter=function E(M,r,I){typeof I==="undefined"&&(I=0);typeof r==="undefined"&&(I===0?r=M.length-1:I===1&&(r=M[0].length-1));var G=d.mean(M,
-I),u=M.length;if(u===0)return[[]];var D=M[0].length,l,q,L,A;if(I===0){I=Array(D);for(l=0;l<D;l++)I[l]=Array(D);for(l=0;l<D;l++)for(q=l;q<D;q++){for(A=L=0;A<u;A++)L+=(M[A][q]-G[q])*(M[A][l]-G[l]);L/=r;I[l][q]=L;I[q][l]=L}}else if(I===1){I=Array(u);for(l=0;l<u;l++)I[l]=Array(u);for(l=0;l<u;l++)for(q=l;q<u;q++){for(A=L=0;A<D;A++)L+=(M[q][A]-G[q])*(M[l][A]-G[l]);L/=r;I[l][q]=L;I[q][l]=L}}else throw Error("Invalid dimension");return I};d.correlation=function I(r){var E=d.mean(r),G=d.standardDeviation(r,
-true,E);E=d.zScores(r,E,G);G=r.length;r=r[0].length;var u,D,l=Array(r);for(u=0;u<r;u++)l[u]=Array(r);for(u=0;u<r;u++)for(D=u;D<r;D++){for(var q=0,L=0,A=E.length;L<A;L++)q+=E[L][D]*E[L][u];q/=G-1;l[u][D]=q;l[D][u]=q}return l};d.zScores=function u(I,E,G){E=E||d.mean(I);typeof G==="undefined"&&(G=d.standardDeviation(I,true,E));return d.standardize(d.center(I,E,false),G,true)};d.center=function D(E,G,u){G=G||d.mean(E);var l=E,q=E.length,L;if(!u){l=Array(q);for(u=0;u<q;u++)l[u]=Array(E[u].length)}for(u=
-0;u<q;u++){var A=l[u];var R=0;for(L=A.length;R<L;R++)A[R]=E[u][R]-G[R]}return l};d.standardize=function l(G,u,D){typeof u==="undefined"&&(u=d.standardDeviation(G));var q=G,L=G.length,A;if(!D){q=Array(L);for(D=0;D<L;D++)q[D]=Array(G[D].length)}for(D=0;D<L;D++){var R=q[D],z=G[D];var O=0;for(A=R.length;O<A;O++)u[O]===0||isNaN(u[O])||(R[O]=z[O]/u[O])}return q};d.weightedVariance=function l(u,D){var q=d.mean(u),L=u.length;if(L===0)return[];for(var A=u[0].length,R=Array(A),z=0;z<A;z++){for(var O=0,H=0,
-K=0,Y=0;Y<L;Y++){var S=u[Y][z]-q[z],aa=D[Y];O+=aa*(S*S);K+=aa;H+=aa*aa}R[z]=O*(K/(K*K-H))}return R};d.weightedMean=function L(d,l,q){typeof q==="undefined"&&(q=0);var A=d.length;if(A===0)return[];var D=d[0].length,z,O;if(q===0){q=Array(D);for(z=0;z<D;z++)q[z]=0;for(z=0;z<A;z++){var H=d[z];var K=l[z];for(O=0;O<D;O++)q[O]=q[O]+H[O]*K}}else if(q===1){q=Array(A);for(z=0;z<A;z++)q[z]=0;for(O=0;O<A;O++){H=d[O];K=l[O];for(z=0;z<D;z++)q[O]=q[O]+H[z]*K}}else throw Error("Invalid dimension");l=ia.sum(l);if(l!==
-0){z=0;for(d=q.length;z<d;z++)q[z]=q[z]/l}return q};d.weightedCovariance=function R(l,q,H,A){A=A||0;H=H||d.weightedMean(l,q,A);for(var z=0,O=0,L=0,K=q.length;L<K;L++){z+=q[L];O+=q[L]*q[L]}return d.weightedScatter(l,q,H,z/(z*z-O),A)};d.weightedScatter=function O(q,H,A,R,z){z=z||0;A=A||d.weightedMean(q,H,z);typeof R==="undefined"&&(R=1);var L=q.length;if(L===0)return[[]];var K=q[0].length,Y,S,aa,Z;if(z===0){z=Array(K);for(Y=0;Y<K;Y++)z[Y]=Array(K);for(Y=0;Y<K;Y++)for(S=Y;S<K;S++){for(aa=Z=0;aa<L;aa++)Z+=
-H[aa]*(q[aa][S]-A[S])*(q[aa][Y]-A[Y]);z[Y][S]=Z*R;z[S][Y]=Z*R}}else if(z===1){z=Array(L);for(Y=0;Y<L;Y++)z[Y]=Array(L);for(Y=0;Y<L;Y++)for(S=Y;S<L;S++){for(aa=Z=0;aa<K;aa++)Z+=H[aa]*(q[S][aa]-A[S])*(q[Y][aa]-A[Y]);z[Y][S]=Z*R;z[S][Y]=Z*R}}else throw Error("Invalid dimension");return z}},{"./array":5}],7:[function(Z,ha,d){d=Z("ml-matrix");const H=d.Matrix,ia=d.EVD,da=d.SVD;Z=Z("ml-stat/matrix");const V=Z.mean,U=Z.standardDeviation,T={isCovarianceMatrix:false,center:true,scale:false};class ka{constructor(d,
-m){if(d===true){d=m;this.center=d.center;this.scale=d.scale;this.means=d.means;this.stdevs=d.stdevs;this.U=H.checkMatrix(d.U);this.S=d.S}else{m=Object.assign({},T,m);this.scale=this.center=false;this.stdevs=this.means=null;if(m.isCovarianceMatrix)this._computeFromCovarianceMatrix(d);else if(typeof m.useCovarianceMatrix==="boolean"?m.useCovarianceMatrix:d.length>d[0].length){d=this._adjust(d,m);d=d.transposeView().mmul(d).div(d.rows-1);this._computeFromCovarianceMatrix(d)}else{d=this._adjust(d,m);
-m=new da(d,{computeLeftSingularVectors:false,computeRightSingularVectors:true,autoTranspose:true});this.U=m.rightSingularVectors;const x=m.diagonal,H=Array(x.length);for(m=0;m<x.length;m++)H[m]=x[m]*x[m]/(d.length-1);this.S=H}}}static load(d){if(d.name!=="PCA")throw new RangeError("Invalid model: "+d.name);return new ka(true,d)}predict(d,m={}){var {nComponents:m=this.U.columns}=m;d=new H(d);if(this.center){d.subRowVector(this.means);this.scale&&d.divRowVector(this.stdevs)}d=d.mmul(this.U);return d.subMatrix(0,
-d.rows-1,0,m-1)}getExplainedVariance(){for(var d=0,m=0;m<this.S.length;m++)d+=this.S[m];return this.S.map((m)=>m/d)}getCumulativeVariance(){for(var d=this.getExplainedVariance(),m=1;m<d.length;m++)d[m]=d[m]+d[m-1];return d}getEigenvectors(){return this.U}getEigenvalues(){return this.S}getStandardDeviations(){return this.S.map((d)=>Math.sqrt(d))}getLoadings(){return this.U.transpose()}toJSON(){return{name:"PCA",center:this.center,scale:this.scale,means:this.means,stdevs:this.stdevs,U:this.U,S:this.S}}_adjust(d,
-m){this.center=!!m.center;this.scale=!!m.scale;d=new H(d);if(this.center){var x=V(d);m=this.scale?U(d,x,true):null;this.means=x;d.subRowVector(x);if(this.scale){for(x=0;x<m.length;x++)if(m[x]===0)throw new RangeError("Cannot scale the dataset (standard deviation is zero at index "+x);this.stdevs=m;d.divRowVector(m)}}return d}_computeFromCovarianceMatrix(d){d=new ia(d,{assumeSymmetric:true});this.U=d.eigenvectorMatrix;for(var m=0;m<this.U.length;m++)this.U[m].reverse();this.S=d.realEigenvalues.reverse()}}
-ha.exports=ka},{"ml-matrix":1,"ml-stat/matrix":6}]},{},[7])(7)});
-
-;
-
-$node[ "../mpds/visavis/lib/pca" ] = $node[ "../mpds/visavis/lib/pca.js" ] = module.exports }.call( {} , {} )
-;
-
-var $node = $node || {}
-void function( module ) { var exports = module.exports = this; function require( id ) { return $node[ id.replace( /^.\// , "../mpds/visavis/lib/" ) ] }; 
+void function( module ) { var exports = module.exports = this; function require( id ) { return $node[ id.replace( /^.\// , "../mpds/visavis/lib/plotly/1.35.2/" ) ] }; 
 ;
 /* Custom build of Plotly v1.35.2, Copyright (c) 2018 Plotly, Inc, MIT License */
 try{self}catch{return}(function(b){"object"===typeof exports&&"undefined"!==typeof module?module.exports=b():"function"===typeof define&&define.amd?define([],b):("undefined"!==typeof window?window:"undefined"!==typeof global?global:"undefined"!==typeof self?self:this).Plotly=b()})(function(){return function(){function b(p,l,n){function g(d,e){if(!l[d]){if(!p[d]){var h="function"==typeof require&&require;if(!e&&h)return h(d,!0);if(k)return k(d,!0);e=Error("Cannot find module '"+d+"'");throw e.code="MODULE_NOT_FOUND",e;
@@ -10574,7 +8974,1552 @@ opacity:{valType:"number",role:"style",min:0,max:1,dflt:1,description:"Sets the 
 
 ;
 
-$node[ "../mpds/visavis/lib/plotly.custom.min" ] = $node[ "../mpds/visavis/lib/plotly.custom.min.js" ] = module.exports }.call( {} , {} )
+$node[ "../mpds/visavis/lib/plotly/1.35.2/plotly.custom.min" ] = $node[ "../mpds/visavis/lib/plotly/1.35.2/plotly.custom.min.js" ] = module.exports }.call( {} , {} )
+;
+"use strict";
+var $;
+(function ($) {
+    $.$mpds_visavis_lib_plotly = require('../mpds/visavis/lib/plotly/1.35.2/plotly.custom.min.js');
+})($ || ($ = {}));
+//mpds/visavis/lib/plotly/plotly.ts
+;
+"use strict";
+//mol/data/value/value.ts
+;
+"use strict";
+//mol/type/equals/equals.ts
+;
+"use strict";
+//mol/type/merge/merge.ts
+;
+"use strict";
+//mol/type/partial/undefined/undefined.ts
+;
+"use strict";
+var $;
+(function ($) {
+    function $mol_data_setup(value, config) {
+        return Object.assign(value, {
+            config,
+            Value: null
+        });
+    }
+    $.$mol_data_setup = $mol_data_setup;
+})($ || ($ = {}));
+//mol/data/setup/setup.ts
+;
+"use strict";
+var $;
+(function ($) {
+    function $mol_data_record(sub) {
+        return $mol_data_setup((val) => {
+            let res = {};
+            for (const field in sub) {
+                try {
+                    res[field] =
+                        sub[field](val[field]);
+                }
+                catch (error) {
+                    if (error instanceof Promise)
+                        return $mol_fail_hidden(error);
+                    error.message = `[${JSON.stringify(field)}] ${error.message}`;
+                    return $mol_fail(error);
+                }
+            }
+            return res;
+        }, sub);
+    }
+    $.$mol_data_record = $mol_data_record;
+})($ || ($ = {}));
+//mol/data/record/record.ts
+;
+"use strict";
+var $;
+(function ($) {
+    function $mol_diff_path(...paths) {
+        const limit = Math.min(...paths.map(path => path.length));
+        lookup: for (var i = 0; i < limit; ++i) {
+            const first = paths[0][i];
+            for (let j = 1; j < paths.length; ++j) {
+                if (paths[j][i] !== first)
+                    break lookup;
+            }
+        }
+        return {
+            prefix: paths[0].slice(0, i),
+            suffix: paths.map(path => path.slice(i)),
+        };
+    }
+    $.$mol_diff_path = $mol_diff_path;
+})($ || ($ = {}));
+//mol/diff/path/path.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_error_mix extends Error {
+        errors;
+        constructor(message, ...errors) {
+            super(message);
+            this.errors = errors;
+            if (errors.length) {
+                const stacks = [...errors.map(error => error.stack), this.stack];
+                const diff = $mol_diff_path(...stacks.map(stack => {
+                    if (!stack)
+                        return [];
+                    return stack.split('\n').reverse();
+                }));
+                const head = diff.prefix.reverse().join('\n');
+                const tails = diff.suffix.map(path => path.reverse().map(line => line.replace(/^(?!\s+at)/, '\tat (.) ')).join('\n')).join('\n\tat (.) -----\n');
+                this.stack = `Error: ${this.constructor.name}\n\tat (.) /"""\\\n${tails}\n\tat (.) \\___/\n${head}`;
+                this.message += errors.map(error => '\n' + error.message).join('');
+            }
+        }
+        toJSON() {
+            return this.message;
+        }
+    }
+    $.$mol_error_mix = $mol_error_mix;
+})($ || ($ = {}));
+//mol/error/mix/mix.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_data_error extends $mol_error_mix {
+    }
+    $.$mol_data_error = $mol_data_error;
+})($ || ($ = {}));
+//mol/data/error/error.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $.$mol_data_string = (val) => {
+        if (typeof val === 'string')
+            return val;
+        return $mol_fail(new $mol_data_error(`${val} is not a string`));
+    };
+})($ || ($ = {}));
+//mol/data/string/string.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $.$mol_data_number = (val) => {
+        if (typeof val === 'number')
+            return val;
+        return $mol_fail(new $mol_data_error(`${val} is not a number`));
+    };
+})($ || ($ = {}));
+//mol/data/number/number.ts
+;
+"use strict";
+var $;
+(function ($) {
+    function $mol_data_optional(sub, fallback) {
+        return $mol_data_setup((val) => {
+            if (val === undefined) {
+                return fallback?.();
+            }
+            return sub(val);
+        }, { sub, fallback });
+    }
+    $.$mol_data_optional = $mol_data_optional;
+})($ || ($ = {}));
+//mol/data/optional/optional.ts
+;
+"use strict";
+var $;
+(function ($) {
+    function $mol_data_array(sub) {
+        return $mol_data_setup((val) => {
+            if (!Array.isArray(val))
+                return $mol_fail(new $mol_data_error(`${val} is not an array`));
+            return val.map((item, index) => {
+                try {
+                    return sub(item);
+                }
+                catch (error) {
+                    if (error instanceof Promise)
+                        return $mol_fail_hidden(error);
+                    error.message = `[${index}] ${error.message}`;
+                    return $mol_fail(error);
+                }
+            });
+        }, sub);
+    }
+    $.$mol_data_array = $mol_data_array;
+})($ || ($ = {}));
+//mol/data/array/array.ts
+;
+"use strict";
+var $;
+(function ($) {
+    function $mol_data_nullable(sub) {
+        return $mol_data_setup((val) => {
+            if (val === null)
+                return null;
+            return sub(val);
+        }, sub);
+    }
+    $.$mol_data_nullable = $mol_data_nullable;
+})($ || ($ = {}));
+//mol/data/nullable/nullable.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mpds_visavis_elements_list extends $mol_object {
+        prop_names() {
+            return {
+                num: "atomic number",
+                nump: "periodic number",
+                size: "atomic size",
+                rea: "atomic reactivity",
+                rpp: "pseudopotential radii",
+                rion: "ionic radii",
+                rcov: "covalent radii",
+                rmet: "metallic radii",
+                tmelt: "melting temperature",
+                eneg: "electronegativit"
+            };
+        }
+        list() {
+            return [
+                {
+                    name: "null",
+                    num: 0,
+                    nump: 0,
+                    size: 0,
+                    rea: 0,
+                    rpp: 0,
+                    rion: 0,
+                    rcov: 0,
+                    rmet: 0,
+                    tmelt: 0,
+                    eneg: 0
+                },
+                {
+                    name: "H",
+                    num: 1,
+                    nump: 1,
+                    size: 0.040000098,
+                    rea: 2.953092434,
+                    rpp: 1.25,
+                    rion: 0,
+                    rcov: 30,
+                    rmet: 0.78,
+                    tmelt: 0.003664921,
+                    eneg: 3.69
+                },
+                {
+                    name: "He",
+                    num: 2,
+                    nump: 112,
+                    size: 0.05525814,
+                    rea: 2.137675759,
+                    rpp: 0,
+                    rion: 0,
+                    rcov: 0,
+                    rmet: 0,
+                    tmelt: 0.00026178,
+                    eneg: 6.29
+                },
+                {
+                    name: "Li",
+                    num: 3,
+                    nump: 2,
+                    size: 0.32352134,
+                    rea: 0.365119614,
+                    rpp: 1.61,
+                    rion: 0.6,
+                    rcov: 123,
+                    rmet: 1.562,
+                    tmelt: 0.118586387,
+                    eneg: 2.32
+                },
+                {
+                    name: "Be",
+                    num: 4,
+                    nump: 8,
+                    size: 0.149871021,
+                    rea: 0.788170962,
+                    rpp: 1.08,
+                    rion: 0.3,
+                    rcov: 89,
+                    rmet: 1.128,
+                    tmelt: 0.405759162,
+                    eneg: 3.71
+                },
+                {
+                    name: "B",
+                    num: 5,
+                    nump: 82,
+                    size: 0.15316946,
+                    rea: 0.771198036,
+                    rpp: 0.795,
+                    rion: 0.2,
+                    rcov: 88,
+                    rmet: 0.98,
+                    tmelt: 0.673560209,
+                    eneg: 4.88
+                },
+                {
+                    name: "C",
+                    num: 6,
+                    nump: 88,
+                    size: 0.152079019,
+                    rea: 0.776727701,
+                    rpp: 0.64,
+                    rion: 0.15,
+                    rcov: 77,
+                    rmet: 0.916,
+                    tmelt: 1,
+                    eneg: 6.08
+                },
+                {
+                    name: "N",
+                    num: 7,
+                    nump: 94,
+                    size: 0.147837836,
+                    rea: 0.799010527,
+                    rpp: 0.54,
+                    rion: 0.12,
+                    rcov: 70,
+                    rmet: 0.88,
+                    tmelt: 0.016492147,
+                    eneg: 7.31
+                },
+                {
+                    name: "O",
+                    num: 8,
+                    nump: 100,
+                    size: 0.141252647,
+                    rea: 0.836260342,
+                    rpp: 0.465,
+                    rion: 0.1,
+                    rcov: 66,
+                    rmet: 0.89,
+                    tmelt: 0.014397906,
+                    eneg: 8.5
+                },
+                {
+                    name: "F",
+                    num: 9,
+                    nump: 106,
+                    size: 0.130400994,
+                    rea: 0.905851889,
+                    rpp: 0.405,
+                    rion: 0.09,
+                    rcov: 58,
+                    rmet: 0,
+                    tmelt: 0.014136126,
+                    eneg: 9.7
+                },
+                {
+                    name: "Ne",
+                    num: 10,
+                    nump: 113,
+                    size: 0.118123987,
+                    rea: 0.999999998,
+                    rpp: 0,
+                    rion: 0,
+                    rcov: 0,
+                    rmet: 0,
+                    tmelt: 0.006544503,
+                    eneg: 10.92
+                },
+                {
+                    name: "Na",
+                    num: 11,
+                    nump: 3,
+                    size: 0.578463822,
+                    rea: 0.204202895,
+                    rpp: 2.65,
+                    rion: 0.96,
+                    rcov: 0,
+                    rmet: 1.911,
+                    tmelt: 0.097120419,
+                    eneg: 2.27
+                },
+                {
+                    name: "Mg",
+                    num: 12,
+                    nump: 9,
+                    size: 0.235527361,
+                    rea: 0.501529786,
+                    rpp: 2.03,
+                    rion: 0.63,
+                    rcov: 136,
+                    rmet: 1.602,
+                    tmelt: 0.241361257,
+                    eneg: 3.37
+                },
+                {
+                    name: "Al",
+                    num: 13,
+                    nump: 83,
+                    size: 0.222322819,
+                    rea: 0.531317421,
+                    rpp: 1.675,
+                    rion: 0.5,
+                    rcov: 125,
+                    rmet: 1.432,
+                    tmelt: 0.244240838,
+                    eneg: 4.21
+                },
+                {
+                    name: "Si",
+                    num: 14,
+                    nump: 89,
+                    size: 0.208407341,
+                    rea: 0.56679379,
+                    rpp: 1.42,
+                    rion: 0.42,
+                    rcov: 117,
+                    rmet: 1.319,
+                    tmelt: 0.440575916,
+                    eneg: 5.08
+                },
+                {
+                    name: "P",
+                    num: 15,
+                    nump: 95,
+                    size: 0.19392461,
+                    rea: 0.609123241,
+                    rpp: 1.24,
+                    rion: 0.36,
+                    rcov: 110,
+                    rmet: 1.28,
+                    tmelt: 0.082984293,
+                    eneg: 5.95
+                },
+                {
+                    name: "S",
+                    num: 16,
+                    nump: 101,
+                    size: 0.178988166,
+                    rea: 0.659954172,
+                    rpp: 1.1,
+                    rion: 0.32,
+                    rcov: 104,
+                    rmet: 1.27,
+                    tmelt: 0.10104712,
+                    eneg: 6.79
+                },
+                {
+                    name: "Cl",
+                    num: 17,
+                    nump: 107,
+                    size: 0.160596861,
+                    rea: 0.735531107,
+                    rpp: 1.01,
+                    rion: 0.28,
+                    rcov: 99,
+                    rmet: 0,
+                    tmelt: 0.045026178,
+                    eneg: 7.64
+                },
+                {
+                    name: "Ar",
+                    num: 18,
+                    nump: 114,
+                    size: 0.14201091,
+                    rea: 0.831795156,
+                    rpp: 0,
+                    rion: 0,
+                    rcov: 0,
+                    rmet: 0,
+                    tmelt: 0.021989529,
+                    eneg: 8.5
+                },
+                {
+                    name: "K",
+                    num: 19,
+                    nump: 4,
+                    size: 0.692195698,
+                    rea: 0.170651143,
+                    rpp: 3.69,
+                    rion: 1.33,
+                    rcov: 203,
+                    rmet: 2.376,
+                    tmelt: 0.088219895,
+                    eneg: 2.08
+                },
+                {
+                    name: "Ca",
+                    num: 20,
+                    nump: 10,
+                    size: 0.671411055,
+                    rea: 0.175933932,
+                    rpp: 3,
+                    rion: 0.96,
+                    rcov: 174,
+                    rmet: 1.974,
+                    tmelt: 0.290837696,
+                    eneg: 3
+                },
+                {
+                    name: "Sc",
+                    num: 21,
+                    nump: 14,
+                    size: 0.64709144,
+                    rea: 0.182546051,
+                    rpp: 2.75,
+                    rion: 0.8,
+                    rcov: 144,
+                    rmet: 1.941,
+                    tmelt: 0.47434555,
+                    eneg: 3.11
+                },
+                {
+                    name: "Ti",
+                    num: 22,
+                    nump: 46,
+                    size: 0.440998616,
+                    rea: 0.267855686,
+                    rpp: 2.58,
+                    rion: 0.68,
+                    rcov: 132,
+                    rmet: 1.462,
+                    tmelt: 0.506020942,
+                    eneg: 3.19
+                },
+                {
+                    name: "V",
+                    num: 23,
+                    nump: 50,
+                    size: 0.425579654,
+                    rea: 0.27756023,
+                    rpp: 2.43,
+                    rion: 0.65,
+                    rcov: 0,
+                    rmet: 1.346,
+                    tmelt: 0.566230366,
+                    eneg: 3.27
+                },
+                {
+                    name: "Cr",
+                    num: 24,
+                    nump: 54,
+                    size: 0.410235863,
+                    rea: 0.28794164,
+                    rpp: 2.44,
+                    rion: 0.62,
+                    rcov: 0,
+                    rmet: 1.36,
+                    tmelt: 0.557591623,
+                    eneg: 3.41
+                },
+                {
+                    name: "Mn",
+                    num: 25,
+                    nump: 58,
+                    size: 0.394967358,
+                    rea: 0.299072783,
+                    rpp: 2.22,
+                    rion: 0.6,
+                    rcov: 117,
+                    rmet: 1.304,
+                    tmelt: 0.397382199,
+                    eneg: 3.4
+                },
+                {
+                    name: "Fe",
+                    num: 26,
+                    nump: 62,
+                    size: 0.379774576,
+                    rea: 0.311037111,
+                    rpp: 2.11,
+                    rion: 0.59,
+                    rcov: 116,
+                    rmet: 1.274,
+                    tmelt: 0.473298429,
+                    eneg: 3.47
+                },
+                {
+                    name: "Co",
+                    num: 27,
+                    nump: 66,
+                    size: 0.364658122,
+                    rea: 0.323930772,
+                    rpp: 2.02,
+                    rion: 0.62,
+                    rcov: 116,
+                    rmet: 1.252,
+                    tmelt: 0.462827225,
+                    eneg: 3.53
+                },
+                {
+                    name: "Ni",
+                    num: 28,
+                    nump: 70,
+                    size: 0.349618659,
+                    rea: 0.337865225,
+                    rpp: 2.18,
+                    rion: 0.59,
+                    rcov: 115,
+                    rmet: 1.246,
+                    tmelt: 0.451832461,
+                    eneg: 3.59
+                },
+                {
+                    name: "Cu",
+                    num: 29,
+                    nump: 74,
+                    size: 0.334656835,
+                    rea: 0.352970489,
+                    rpp: 2.04,
+                    rion: 0.96,
+                    rcov: 117,
+                    rmet: 1.278,
+                    tmelt: 0.354973822,
+                    eneg: 3.74
+                },
+                {
+                    name: "Zn",
+                    num: 30,
+                    nump: 78,
+                    size: 0.310912262,
+                    rea: 0.379927077,
+                    rpp: 1.88,
+                    rion: 0.78,
+                    rcov: 125,
+                    rmet: 1.394,
+                    tmelt: 0.181413613,
+                    eneg: 3.7
+                },
+                {
+                    name: "Ga",
+                    num: 31,
+                    nump: 84,
+                    size: 0.287688252,
+                    rea: 0.410597187,
+                    rpp: 1.695,
+                    rion: 0.63,
+                    rcov: 125,
+                    rmet: 1.411,
+                    tmelt: 0.079319372,
+                    eneg: 4.37
+                },
+                {
+                    name: "Ge",
+                    num: 32,
+                    nump: 90,
+                    size: 0.264934676,
+                    rea: 0.445860802,
+                    rpp: 1.56,
+                    rion: 0.53,
+                    rcov: 122,
+                    rmet: 1.369,
+                    tmelt: 0.317015707,
+                    eneg: 5.09
+                },
+                {
+                    name: "As",
+                    num: 33,
+                    nump: 96,
+                    size: 0.242609734,
+                    rea: 0.486888901,
+                    rpp: 1.415,
+                    rion: 0.46,
+                    rcov: 121,
+                    rmet: 1.39,
+                    tmelt: 0.285340314,
+                    eneg: 5.82
+                },
+                {
+                    name: "Se",
+                    num: 34,
+                    nump: 102,
+                    size: 0.220678182,
+                    rea: 0.535277144,
+                    rpp: 1.285,
+                    rion: 0.41,
+                    rcov: 117,
+                    rmet: 1.4,
+                    tmelt: 0.128272251,
+                    eneg: 6.53
+                },
+                {
+                    name: "Br",
+                    num: 35,
+                    nump: 108,
+                    size: 0.195297025,
+                    rea: 0.604842736,
+                    rpp: 1.2,
+                    rion: 0.37,
+                    rcov: 114,
+                    rmet: 0,
+                    tmelt: 0.069633508,
+                    eneg: 7.21
+                },
+                {
+                    name: "Kr",
+                    num: 36,
+                    nump: 115,
+                    size: 0.170450145,
+                    rea: 0.693011946,
+                    rpp: 0,
+                    rion: 0,
+                    rcov: 0,
+                    rmet: 0,
+                    tmelt: 0.030628272,
+                    eneg: 7.93
+                },
+                {
+                    name: "Rb",
+                    num: 37,
+                    nump: 5,
+                    size: 0.832019702,
+                    rea: 0.141972584,
+                    rpp: 4.1,
+                    rion: 1.49,
+                    rcov: 217,
+                    rmet: 2.546,
+                    tmelt: 0.081675393,
+                    eneg: 2.04
+                },
+                {
+                    name: "Sr",
+                    num: 38,
+                    nump: 11,
+                    size: 0.797564264,
+                    rea: 0.148105917,
+                    rpp: 3.21,
+                    rion: 1.11,
+                    rcov: 192,
+                    rmet: 2.151,
+                    tmelt: 0.273036649,
+                    eneg: 2.89
+                },
+                {
+                    name: "Y",
+                    num: 39,
+                    nump: 15,
+                    size: 0.762242103,
+                    rea: 0.154969119,
+                    rpp: 2.94,
+                    rion: 0.93,
+                    rcov: 162,
+                    rmet: 1.801,
+                    tmelt: 0.470157068,
+                    eneg: 3.04
+                },
+                {
+                    name: "Zr",
+                    num: 40,
+                    nump: 47,
+                    size: 0.515950935,
+                    rea: 0.228944225,
+                    rpp: 2.825,
+                    rion: 0.8,
+                    rcov: 145,
+                    rmet: 1.602,
+                    tmelt: 0.556282723,
+                    eneg: 3.14
+                },
+                {
+                    name: "Nb",
+                    num: 41,
+                    nump: 51,
+                    size: 0.494387183,
+                    rea: 0.238930116,
+                    rpp: 2.76,
+                    rion: 0.77,
+                    rcov: 134,
+                    rmet: 1.468,
+                    tmelt: 0.717539267,
+                    eneg: 3.25
+                },
+                {
+                    name: "Mo",
+                    num: 42,
+                    nump: 55,
+                    size: 0.473421463,
+                    rea: 0.249511262,
+                    rpp: 2.72,
+                    rion: 0.75,
+                    rcov: 129,
+                    rmet: 1.4,
+                    tmelt: 0.756544503,
+                    eneg: 3.41
+                },
+                {
+                    name: "Tc",
+                    num: 43,
+                    nump: 59,
+                    size: 0.452993466,
+                    rea: 0.260763114,
+                    rpp: 2.65,
+                    rion: 0.72,
+                    rcov: 0,
+                    rmet: 1.36,
+                    tmelt: 0.640052356,
+                    eneg: 3.35
+                },
+                {
+                    name: "Ru",
+                    num: 44,
+                    nump: 63,
+                    size: 0.433052136,
+                    rea: 0.272770822,
+                    rpp: 2.605,
+                    rion: 0.69,
+                    rcov: 124,
+                    rmet: 1.339,
+                    tmelt: 0.67617801,
+                    eneg: 3.47
+                },
+                {
+                    name: "Rh",
+                    num: 45,
+                    nump: 67,
+                    size: 0.413553912,
+                    rea: 0.28563141,
+                    rpp: 2.52,
+                    rion: 0.75,
+                    rcov: 125,
+                    rmet: 1.345,
+                    tmelt: 0.586125654,
+                    eneg: 3.57
+                },
+                {
+                    name: "Pd",
+                    num: 46,
+                    nump: 71,
+                    size: 0.394461351,
+                    rea: 0.299456427,
+                    rpp: 2.45,
+                    rion: 0.85,
+                    rcov: 128,
+                    rmet: 1.376,
+                    tmelt: 0.477748691,
+                    eneg: 3.73
+                },
+                {
+                    name: "Ag",
+                    num: 47,
+                    nump: 75,
+                    size: 0.375742041,
+                    rea: 0.31437522,
+                    rpp: 2.375,
+                    rion: 1.12,
+                    rcov: 134,
+                    rmet: 1.445,
+                    tmelt: 0.323036649,
+                    eneg: 3.81
+                },
+                {
+                    name: "Cd",
+                    num: 48,
+                    nump: 79,
+                    size: 0.347395886,
+                    rea: 0.340027017,
+                    rpp: 2.215,
+                    rion: 0.93,
+                    rcov: 141,
+                    rmet: 1.568,
+                    tmelt: 0.155497382,
+                    eneg: 3.6
+                },
+                {
+                    name: "In",
+                    num: 49,
+                    nump: 85,
+                    size: 0.319938571,
+                    rea: 0.369208334,
+                    rpp: 2.05,
+                    rion: 0.76,
+                    rcov: 150,
+                    rmet: 1.663,
+                    tmelt: 0.112565445,
+                    eneg: 4.19
+                },
+                {
+                    name: "Sn",
+                    num: 50,
+                    nump: 91,
+                    size: 0.293280312,
+                    rea: 0.402768213,
+                    rpp: 1.88,
+                    rion: 0.65,
+                    rcov: 140,
+                    rmet: 1.623,
+                    tmelt: 0.132198953,
+                    eneg: 4.83
+                },
+                {
+                    name: "Sb",
+                    num: 51,
+                    nump: 97,
+                    size: 0.267345197,
+                    rea: 0.441840692,
+                    rpp: 1.765,
+                    rion: 0.57,
+                    rcov: 141,
+                    rmet: 1.59,
+                    tmelt: 0.236649215,
+                    eneg: 5.47
+                },
+                {
+                    name: "Te",
+                    num: 52,
+                    nump: 103,
+                    size: 0.242068451,
+                    rea: 0.487977621,
+                    rpp: 1.67,
+                    rion: 0.51,
+                    rcov: 137,
+                    rmet: 1.6,
+                    tmelt: 0.189267016,
+                    eneg: 6.08
+                },
+                {
+                    name: "I",
+                    num: 53,
+                    nump: 109,
+                    size: 0.213172397,
+                    rea: 0.554124213,
+                    rpp: 1.585,
+                    rion: 0.46,
+                    rcov: 133,
+                    rmet: 0,
+                    tmelt: 0.101308901,
+                    eneg: 6.69
+                },
+                {
+                    name: "Xe",
+                    num: 54,
+                    nump: 116,
+                    size: 0.185071259,
+                    rea: 0.63826219,
+                    rpp: 0,
+                    rion: 0,
+                    rcov: 0,
+                    rmet: 0,
+                    tmelt: 0.042146597,
+                    eneg: 7.29
+                },
+                {
+                    name: "Cs",
+                    num: 55,
+                    nump: 6,
+                    size: 0.910157427,
+                    rea: 0.129784127,
+                    rpp: 4.31,
+                    rion: 1.65,
+                    rcov: 235,
+                    rmet: 2.731,
+                    tmelt: 0.079057592,
+                    eneg: 1.97
+                },
+                {
+                    name: "Ba",
+                    num: 56,
+                    nump: 12,
+                    size: 0.868793456,
+                    rea: 0.135963256,
+                    rpp: 3.402,
+                    rion: 1.26,
+                    rcov: 198,
+                    rmet: 2.243,
+                    tmelt: 0.261256545,
+                    eneg: 2.76
+                },
+                {
+                    name: "La",
+                    num: 57,
+                    nump: 16,
+                    size: 0.828185801,
+                    rea: 0.142629814,
+                    rpp: 0,
+                    rion: 1.06,
+                    rcov: 169,
+                    rmet: 1.877,
+                    tmelt: 0.312303665,
+                    eneg: 2.89
+                },
+                {
+                    name: "Ce",
+                    num: 58,
+                    nump: 18,
+                    size: 0.810462652,
+                    rea: 0.145748835,
+                    rpp: 0,
+                    rion: 1.05,
+                    rcov: 165,
+                    rmet: 1.715,
+                    tmelt: 0.280366492,
+                    eneg: 2.86
+                },
+                {
+                    name: "Pr",
+                    num: 59,
+                    nump: 20,
+                    size: 0.793233638,
+                    rea: 0.148914495,
+                    rpp: 0,
+                    rion: 1.04,
+                    rcov: 165,
+                    rmet: 1.828,
+                    tmelt: 0.315183246,
+                    eneg: 2.83
+                },
+                {
+                    name: "Nd",
+                    num: 60,
+                    nump: 22,
+                    size: 0.776484764,
+                    rea: 0.1521266,
+                    rpp: 0,
+                    rion: 1.03,
+                    rcov: 164,
+                    rmet: 1.821,
+                    tmelt: 0.338743455,
+                    eneg: 2.85
+                },
+                {
+                    name: "Pm",
+                    num: 61,
+                    nump: 24,
+                    size: 0.760190637,
+                    rea: 0.155387322,
+                    rpp: 0,
+                    rion: 1.02,
+                    rcov: 0,
+                    rmet: 1.81,
+                    tmelt: 0.377225131,
+                    eneg: 2.87
+                },
+                {
+                    name: "Sm",
+                    num: 62,
+                    nump: 26,
+                    size: 0.744322073,
+                    rea: 0.158700099,
+                    rpp: 0,
+                    rion: 1.01,
+                    rcov: 166,
+                    rmet: 1.802,
+                    tmelt: 0.352094241,
+                    eneg: 2.89
+                },
+                {
+                    name: "Eu",
+                    num: 63,
+                    nump: 28,
+                    size: 0.728849599,
+                    rea: 0.162069084,
+                    rpp: 0,
+                    rion: 1.01,
+                    rcov: 185,
+                    rmet: 1.799,
+                    tmelt: 0.286649215,
+                    eneg: 2.91
+                },
+                {
+                    name: "Gd",
+                    num: 64,
+                    nump: 30,
+                    size: 0.713745039,
+                    rea: 0.165498855,
+                    rpp: 0,
+                    rion: 1,
+                    rcov: 161,
+                    rmet: 1.802,
+                    tmelt: 0.414921466,
+                    eneg: 3.02
+                },
+                {
+                    name: "Tb",
+                    num: 65,
+                    nump: 32,
+                    size: 0.698982175,
+                    rea: 0.168994276,
+                    rpp: 0,
+                    rion: 0.99,
+                    rcov: 159,
+                    rmet: 1.782,
+                    tmelt: 0.427486911,
+                    eneg: 2.95
+                },
+                {
+                    name: "Dy",
+                    num: 66,
+                    nump: 34,
+                    size: 0.684536953,
+                    rea: 0.172560424,
+                    rpp: 0,
+                    rion: 0.98,
+                    rcov: 159,
+                    rmet: 1.773,
+                    tmelt: 0.439790576,
+                    eneg: 2.97
+                },
+                {
+                    name: "Ho",
+                    num: 67,
+                    nump: 36,
+                    size: 0.670387461,
+                    rea: 0.17620256,
+                    rpp: 0,
+                    rion: 0.97,
+                    rcov: 158,
+                    rmet: 1.766,
+                    tmelt: 0.456282723,
+                    eneg: 2.99
+                },
+                {
+                    name: "Er",
+                    num: 68,
+                    nump: 38,
+                    size: 0.65651381,
+                    rea: 0.179926127,
+                    rpp: 0,
+                    rion: 0.96,
+                    rcov: 157,
+                    rmet: 1.757,
+                    tmelt: 0.469895288,
+                    eneg: 3
+                },
+                {
+                    name: "Tm",
+                    num: 69,
+                    nump: 40,
+                    size: 0.642897972,
+                    rea: 0.183736755,
+                    rpp: 0,
+                    rion: 0.95,
+                    rcov: 156,
+                    rmet: 1.746,
+                    tmelt: 0.47591623,
+                    eneg: 3.02
+                },
+                {
+                    name: "Yb",
+                    num: 70,
+                    nump: 42,
+                    size: 0.629523601,
+                    rea: 0.187640284,
+                    rpp: 0,
+                    rion: 0.94,
+                    rcov: 170,
+                    rmet: 1.74,
+                    tmelt: 0.287172775,
+                    eneg: 3.04
+                },
+                {
+                    name: "Lu",
+                    num: 71,
+                    nump: 44,
+                    size: 0.616375866,
+                    rea: 0.191642784,
+                    rpp: 0,
+                    rion: 0.93,
+                    rcov: 156,
+                    rmet: 1.734,
+                    tmelt: 0.504973822,
+                    eneg: 3.11
+                },
+                {
+                    name: "Hf",
+                    num: 72,
+                    nump: 48,
+                    size: 0.588840308,
+                    rea: 0.200604451,
+                    rpp: 2.91,
+                    rion: 0.8,
+                    rcov: 144,
+                    rmet: 1.58,
+                    tmelt: 0.653141361,
+                    eneg: 3.3
+                },
+                {
+                    name: "Ta",
+                    num: 73,
+                    nump: 52,
+                    size: 0.562314966,
+                    rea: 0.210067301,
+                    rpp: 2.79,
+                    rion: 0.77,
+                    rcov: 134,
+                    rmet: 1.467,
+                    tmelt: 0.856806283,
+                    eneg: 3.45
+                },
+                {
+                    name: "W",
+                    num: 74,
+                    nump: 56,
+                    size: 0.536696361,
+                    rea: 0.22009463,
+                    rpp: 2.735,
+                    rion: 0.75,
+                    rcov: 130,
+                    rmet: 1.408,
+                    tmelt: 0.964136126,
+                    eneg: 3.48
+                },
+                {
+                    name: "Re",
+                    num: 75,
+                    nump: 60,
+                    size: 0.51189659,
+                    rea: 0.230757519,
+                    rpp: 2.68,
+                    rion: 0.72,
+                    rcov: 128,
+                    rmet: 1.375,
+                    tmelt: 0.903926702,
+                    eneg: 3.5
+                },
+                {
+                    name: "Os",
+                    num: 76,
+                    nump: 64,
+                    size: 0.487840384,
+                    rea: 0.242136549,
+                    rpp: 2.65,
+                    rion: 0.69,
+                    rcov: 126,
+                    rmet: 1.353,
+                    tmelt: 0.868586387,
+                    eneg: 3.57
+                },
+                {
+                    name: "Ir",
+                    num: 77,
+                    nump: 68,
+                    size: 0.464462811,
+                    rea: 0.254323886,
+                    rpp: 2.628,
+                    rion: 0.81,
+                    rcov: 126,
+                    rmet: 1.357,
+                    tmelt: 0.702356021,
+                    eneg: 3.6
+                },
+                {
+                    name: "Pt",
+                    num: 78,
+                    nump: 72,
+                    size: 0.441707474,
+                    rea: 0.267425828,
+                    rpp: 2.7,
+                    rion: 0.9,
+                    rcov: 129,
+                    rmet: 1.387,
+                    tmelt: 0.535340314,
+                    eneg: 3.71
+                },
+                {
+                    name: "Au",
+                    num: 79,
+                    nump: 76,
+                    size: 0.419525064,
+                    rea: 0.281565982,
+                    rpp: 2.66,
+                    rion: 1.11,
+                    rcov: 134,
+                    rmet: 1.442,
+                    tmelt: 0.35,
+                    eneg: 3.84
+                },
+                {
+                    name: "Hg",
+                    num: 80,
+                    nump: 80,
+                    size: 0.386690726,
+                    rea: 0.305474062,
+                    rpp: 2.41,
+                    rion: 0.97,
+                    rcov: 144,
+                    rmet: 1.573,
+                    tmelt: 0.061256545,
+                    eneg: 3.82
+                },
+                {
+                    name: "Tl",
+                    num: 81,
+                    nump: 86,
+                    size: 0.355029594,
+                    rea: 0.332715889,
+                    rpp: 2.235,
+                    rion: 0.9,
+                    rcov: 155,
+                    rmet: 1.716,
+                    tmelt: 0.15104712,
+                    eneg: 4.34
+                },
+                {
+                    name: "Pb",
+                    num: 82,
+                    nump: 92,
+                    size: 0.324425963,
+                    rea: 0.364101522,
+                    rpp: 2.09,
+                    rion: 0.83,
+                    rcov: 154,
+                    rmet: 1.75,
+                    tmelt: 0.157329843,
+                    eneg: 4.92
+                },
+                {
+                    name: "Bi",
+                    num: 83,
+                    nump: 98,
+                    size: 0.294781292,
+                    rea: 0.400717379,
+                    rpp: 1.997,
+                    rion: 0.77,
+                    rcov: 152,
+                    rmet: 1.7,
+                    tmelt: 0.142408377,
+                    eneg: 5.47
+                },
+                {
+                    name: "Po",
+                    num: 84,
+                    nump: 104,
+                    size: 0.266010922,
+                    rea: 0.444056906,
+                    rpp: 1.9,
+                    rion: 0.56,
+                    rcov: 153,
+                    rmet: 1.76,
+                    tmelt: 0.137958115,
+                    eneg: 6.01
+                },
+                {
+                    name: "At",
+                    num: 85,
+                    nump: 110,
+                    size: 0.233351806,
+                    rea: 0.506205582,
+                    rpp: 1.83,
+                    rion: 0.51,
+                    rcov: 0,
+                    rmet: 0,
+                    tmelt: 0.15052356,
+                    eneg: 6.56
+                },
+                {
+                    name: "Rn",
+                    num: 86,
+                    nump: 117,
+                    size: 0.201712905,
+                    rea: 0.58560451,
+                    rpp: 0,
+                    rion: 0,
+                    rcov: 0,
+                    rmet: 0,
+                    tmelt: 0.052879581,
+                    eneg: 7.12
+                },
+                {
+                    name: "Fr",
+                    num: 87,
+                    nump: 7,
+                    size: 1,
+                    rea: 0.118123987,
+                    rpp: 4.37,
+                    rion: 1.74,
+                    rcov: 0,
+                    rmet: 2.8,
+                    tmelt: 0.078534031,
+                    eneg: 2.02
+                },
+                {
+                    name: "Ra",
+                    num: 88,
+                    nump: 13,
+                    size: 0.952025289,
+                    rea: 0.124076522,
+                    rpp: 3.53,
+                    rion: 1.34,
+                    rcov: 0,
+                    rmet: 2.26,
+                    tmelt: 0.254712042,
+                    eneg: 2.78
+                },
+                {
+                    name: "Ac",
+                    num: 89,
+                    nump: 17,
+                    size: 0.905996701,
+                    rea: 0.130380151,
+                    rpp: 0,
+                    rion: 1.14,
+                    rcov: 0,
+                    rmet: 1.878,
+                    tmelt: 0.346335079,
+                    eneg: 2.93
+                },
+                {
+                    name: "Th",
+                    num: 90,
+                    nump: 19,
+                    size: 0.885161237,
+                    rea: 0.133449119,
+                    rpp: 0,
+                    rion: 1.11,
+                    rcov: 0,
+                    rmet: 1.798,
+                    tmelt: 0.528795812,
+                    eneg: 3.02
+                },
+                {
+                    name: "Pa",
+                    num: 91,
+                    nump: 21,
+                    size: 0.864979518,
+                    rea: 0.136562756,
+                    rpp: 0,
+                    rion: 1.08,
+                    rcov: 0,
+                    rmet: 1.63,
+                    tmelt: 0.553141361,
+                    eneg: 2.98
+                },
+                {
+                    name: "U",
+                    num: 92,
+                    nump: 23,
+                    size: 0.845420273,
+                    rea: 0.139722208,
+                    rpp: 0,
+                    rion: 1.05,
+                    rcov: 0,
+                    rmet: 1.56,
+                    tmelt: 0.368062827,
+                    eneg: 2.98
+                },
+                {
+                    name: "Np",
+                    num: 93,
+                    nump: 25,
+                    size: 0.826445343,
+                    rea: 0.142930186,
+                    rpp: 0,
+                    rion: 1.04,
+                    rcov: 0,
+                    rmet: 1.555,
+                    tmelt: 0.239005236,
+                    eneg: 2.98
+                },
+                {
+                    name: "Pu",
+                    num: 94,
+                    nump: 27,
+                    size: 0.808015348,
+                    rea: 0.146190276,
+                    rpp: 0,
+                    rion: 1.03,
+                    rcov: 0,
+                    rmet: 1.58,
+                    tmelt: 0.239267016,
+                    eneg: 2.96
+                },
+                {
+                    name: "Am",
+                    num: 95,
+                    nump: 29,
+                    size: 0.790092251,
+                    rea: 0.149506576,
+                    rpp: 0,
+                    rion: 1.02,
+                    rcov: 0,
+                    rmet: 1.81,
+                    tmelt: 0.331675393,
+                    eneg: 2.97
+                }
+            ];
+        }
+    }
+    $.$mpds_visavis_elements_list = $mpds_visavis_elements_list;
+})($ || ($ = {}));
+//mpds/visavis/elements/list/-view.tree/list.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        const Elements_list = $mol_data_array($mol_data_record({
+            name: $mol_data_string,
+            num: $mol_data_number,
+            nump: $mol_data_number,
+            size: $mol_data_number,
+            rea: $mol_data_number,
+            rpp: $mol_data_number,
+            rion: $mol_data_number,
+            rcov: $mol_data_number,
+            rmet: $mol_data_number,
+            tmelt: $mol_data_number,
+            eneg: $mol_data_number,
+        }));
+        const Prop_names = $mol_data_record({
+            num: $mol_data_string,
+            nump: $mol_data_string,
+            size: $mol_data_string,
+            rea: $mol_data_string,
+            rpp: $mol_data_string,
+            rion: $mol_data_string,
+            rcov: $mol_data_string,
+            rmet: $mol_data_string,
+            tmelt: $mol_data_string,
+            eneg: $mol_data_string,
+        });
+        class $mpds_visavis_elements_list extends $.$mpds_visavis_elements_list {
+            static data() {
+                return new $mpds_visavis_elements_list();
+            }
+            static prop_names() {
+                return Prop_names(this.data().prop_names());
+            }
+            static list() {
+                return Elements_list(this.data().list());
+            }
+            static index_by_prop(prop) {
+                return Object.fromEntries(this.list().map(el => [el[prop], el]));
+            }
+            static element_by_num(num) {
+                return this.list()[num];
+            }
+            static element_by_name(name) {
+                return this.index_by_prop('name')[name];
+            }
+            static prop_values(prop) {
+                return this.list().map(el => el[prop]);
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_elements_list, "data", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_elements_list, "prop_names", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_elements_list, "list", null);
+        __decorate([
+            $mol_mem_key
+        ], $mpds_visavis_elements_list, "index_by_prop", null);
+        __decorate([
+            $mol_mem_key
+        ], $mpds_visavis_elements_list, "element_by_num", null);
+        __decorate([
+            $mol_mem_key
+        ], $mpds_visavis_elements_list, "element_by_name", null);
+        __decorate([
+            $mol_mem_key
+        ], $mpds_visavis_elements_list, "prop_values", null);
+        $$.$mpds_visavis_elements_list = $mpds_visavis_elements_list;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//mpds/visavis/elements/list/list.view.ts
 ;
 "use strict";
 var $;
@@ -17191,6 +17136,7 @@ var $;
 (function ($) {
     var $$;
     (function ($$) {
+        const d3 = $mpds_visavis_lib_plotly.d3;
         const $mpds_visavis_plot_matrix_json_node = $mol_data_record({
             name: $mol_data_string,
             num: $mol_data_number,
@@ -17278,7 +17224,7 @@ var $;
                 }, false);
             }
             order_by_prop(prop) {
-                return $mpds_visavis_lib.d3().range(95).sort((a, b) => {
+                return d3.range(95).sort((a, b) => {
                     return this.nodes()[a][prop] - this.nodes()[b][prop];
                 });
             }
@@ -17286,7 +17232,9 @@ var $;
                 return this.order_by_prop('nump');
             }
             matrix() {
-                const matrix = this.nodes().map((node, i) => $mpds_visavis_lib.d3().range(95).map((j) => ({ x: j, y: i, z: 0, cmt: '', cmp: 0, nonformer: false })));
+                const matrix = this.nodes().map((node, i) => {
+                    return d3.range(95).map((j) => ({ x: j, y: i, z: 0, cmt: '', cmp: 0, nonformer: false }));
+                });
                 for (const link of this.links()) {
                     matrix[link.source][link.target].z += link.value;
                     matrix[link.target][link.source].z += link.value;
@@ -17312,13 +17260,13 @@ var $;
                 return Math.min(rect.width, rect.height) - this.plot_padding() - this.axis_width();
             }
             opacity_scale() {
-                return $mpds_visavis_lib.d3().scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true);
+                return d3.scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true);
             }
             opacity(index) {
                 return this.heatmap() ? 1 : this.opacity_scale()(index);
             }
             color_heatmap() {
-                return $mpds_visavis_lib.d3().scale.linear().domain($mpds_visavis_lib.d3().range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors());
+                return d3.scale.linear().domain(d3.range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors());
             }
             heatmap_color(index) {
                 return this.heatmap_colors()[index];
@@ -17331,7 +17279,7 @@ var $;
                 ];
             }
             color_heatmap_scale() {
-                return $mpds_visavis_lib.d3().scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1]);
+                return d3.scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1]);
             }
             color(index, cmp) {
                 if (this.heatmap())
@@ -17339,7 +17287,7 @@ var $;
                 return this.colorset()[cmp] || '#ccc';
             }
             range() {
-                return $mpds_visavis_lib.d3().scale.ordinal().rangeBands([0, this.size()]).domain(this.default_order());
+                return d3.scale.ordinal().rangeBands([0, this.size()]).domain(this.default_order());
             }
             svg_title_text(cell) {
                 if (!cell.cmt)
@@ -17351,7 +17299,6 @@ var $;
                 return title;
             }
             draw_cells(node, row) {
-                const d3 = $mpds_visavis_lib.d3();
                 const that = this;
                 d3.select(node)
                     .selectAll('.cell')
@@ -17386,7 +17333,6 @@ var $;
             draw() {
                 if (Number.isNaN(this.size()))
                     return;
-                const d3 = $mpds_visavis_lib.d3();
                 const svg_element = $mol_wire_sync(document).createElementNS('http://www.w3.org/2000/svg', 'svg');
                 const svg = d3.select(svg_element);
                 svg.attr('width', this.size() + this.axis_width())
@@ -17435,7 +17381,6 @@ var $;
             }
             get_bin_domain(args) {
                 const { sort, op } = args;
-                const d3 = $mpds_visavis_lib.d3();
                 var cond_slice = $mpds_visavis_elements_list.prop_values(sort).slice(1);
                 switch (op) {
                     case 'sum': return [
@@ -17466,7 +17411,6 @@ var $;
             }
             renorm(args) {
                 const { sort, op } = args;
-                const d3 = $mpds_visavis_lib.d3();
                 const svgdim = this.size();
                 return op ?
                     d3.scale.quantize().range(d3.range(0, svgdim, svgdim / 95)).domain(this.get_bin_domain({ sort, op })) :
@@ -17486,7 +17430,6 @@ var $;
                 const y_sort = this.y_sort() || x_sort;
                 const x_op = this.x_op();
                 const y_op = this.y_op();
-                const d3 = $mpds_visavis_lib.d3();
                 const svg = d3.select(this.Root().dom_node_actual().firstChild);
                 function bin_op(op, a, b) {
                     switch (op) {
@@ -17682,14 +17625,16 @@ var $;
 var $;
 (function ($) {
     class $mpds_visavis_plotly extends $mol_view {
+        sub() {
+            return [
+                this.Plotly_root()
+            ];
+        }
         data() {
-            return {};
+            return [];
         }
         layout() {
             return {};
-        }
-        subscribe_events() {
-            return null;
         }
         plot_options() {
             return {
@@ -17697,6 +17642,9 @@ var $;
                 displayModeBar: false,
                 staticPlot: false
             };
+        }
+        Plotly_root() {
+            return null;
         }
     }
     $.$mpds_visavis_plotly = $mpds_visavis_plotly;
@@ -17709,37 +17657,27 @@ var $;
     var $$;
     (function ($$) {
         class $mpds_visavis_plotly extends $.$mpds_visavis_plotly {
-            subscribe_events() {
-            }
             size() {
                 if (!this.view_rect())
                     return;
                 const { width, height } = this.view_rect();
                 return { width, height };
             }
-            render() {
+            Plotly_root() {
                 if (!this.size())
                     return;
                 const { width, height } = this.size();
                 const plotly_root = $mol_wire_sync(document).createElement('div');
-                plotly_root.style.position = 'absolute';
-                const promise = $mpds_visavis_lib.plotly().react(plotly_root, this.data(), { ...this.layout(), width, height }, this.plot_options());
-                const dom_node = this.dom_node_actual();
-                promise.then((plotly_root) => {
-                    dom_node.replaceChildren(plotly_root);
-                    this.subscribe_events();
-                });
+                const plotly_root_actual = $mol_wire_sync($mpds_visavis_lib_plotly).react(plotly_root, this.data(), { ...this.layout(), width, height }, this.plot_options());
+                return plotly_root_actual;
             }
         }
-        __decorate([
-            $mol_action
-        ], $mpds_visavis_plotly.prototype, "subscribe_events", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plotly.prototype, "size", null);
         __decorate([
             $mol_mem
-        ], $mpds_visavis_plotly.prototype, "render", null);
+        ], $mpds_visavis_plotly.prototype, "Plotly_root", null);
         $$.$mpds_visavis_plotly = $mpds_visavis_plotly;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
@@ -17748,7 +17686,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("mpds/visavis/plotly/plotly.view.css", "/* default plotly styles for shadow DOM */\n.js-plotly-plot .plotly button,\n.js-plotly-plot .plotly input,\n.plotly-notifier {\n\tfont-family: \"Open Sans\", verdana, arial, sans-serif\n}\n\n.js-plotly-plot .plotly,\n.js-plotly-plot .plotly div {\n\tdirection: ltr;\n\tfont-family: \"Open Sans\", verdana, arial, sans-serif;\n\tmargin: 0;\n\tpadding: 0\n}\n\n.js-plotly-plot .plotly button:focus,\n.js-plotly-plot .plotly input:focus {\n\toutline: 0\n}\n\n.js-plotly-plot .plotly a,\n.js-plotly-plot .plotly a:hover {\n\ttext-decoration: none\n}\n\n.js-plotly-plot .plotly .crisp {\n\tshape-rendering: crispEdges\n}\n\n.js-plotly-plot .plotly .user-select-none {\n\t-webkit-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\t-o-user-select: none;\n\tuser-select: none\n}\n\n.js-plotly-plot .plotly svg {\n\toverflow: hidden\n}\n\n.js-plotly-plot .plotly svg a {\n\tfill: #447adb\n}\n\n.js-plotly-plot .plotly svg a:hover {\n\tfill: #3c6dc5\n}\n\n.js-plotly-plot .plotly .main-svg {\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n\tpointer-events: none\n}\n\n.js-plotly-plot .plotly .main-svg .draglayer {\n\tpointer-events: all\n}\n\n.js-plotly-plot .plotly .cursor-default {\n\tcursor: default\n}\n\n.js-plotly-plot .plotly .cursor-pointer {\n\tcursor: pointer\n}\n\n.js-plotly-plot .plotly .cursor-crosshair {\n\tcursor: crosshair\n}\n\n.js-plotly-plot .plotly .cursor-move {\n\tcursor: move\n}\n\n.js-plotly-plot .plotly .cursor-col-resize {\n\tcursor: col-resize\n}\n\n.js-plotly-plot .plotly .cursor-row-resize {\n\tcursor: row-resize\n}\n\n.js-plotly-plot .plotly .cursor-ns-resize {\n\tcursor: ns-resize\n}\n\n.js-plotly-plot .plotly .cursor-ew-resize {\n\tcursor: ew-resize\n}\n\n.js-plotly-plot .plotly .cursor-sw-resize {\n\tcursor: sw-resize\n}\n\n.js-plotly-plot .plotly .cursor-s-resize {\n\tcursor: s-resize\n}\n\n.js-plotly-plot .plotly .cursor-se-resize {\n\tcursor: se-resize\n}\n\n.js-plotly-plot .plotly .cursor-w-resize {\n\tcursor: w-resize\n}\n\n.js-plotly-plot .plotly .cursor-e-resize {\n\tcursor: e-resize\n}\n\n.js-plotly-plot .plotly .cursor-nw-resize {\n\tcursor: nw-resize\n}\n\n.js-plotly-plot .plotly .cursor-n-resize {\n\tcursor: n-resize\n}\n\n.js-plotly-plot .plotly .cursor-ne-resize {\n\tcursor: ne-resize\n}\n\n.js-plotly-plot .plotly .cursor-grab {\n\tcursor: -webkit-grab;\n\tcursor: grab\n}\n\n.js-plotly-plot .plotly .modebar {\n\tposition: absolute;\n\ttop: 2px;\n\tright: 2px\n}\n\n.js-plotly-plot .plotly .ease-bg {\n\t-webkit-transition: background-color .3s;\n\t-moz-transition: background-color .3s;\n\t-ms-transition: background-color .3s;\n\t-o-transition: background-color .3s;\n\ttransition: background-color .3s\n}\n\n.js-plotly-plot .plotly .modebar--hover>:not(.watermark) {\n\topacity: 0;\n\t-webkit-transition: opacity .3s;\n\t-moz-transition: opacity .3s;\n\t-ms-transition: opacity .3s;\n\t-o-transition: opacity .3s;\n\ttransition: opacity .3s\n}\n\n.js-plotly-plot .plotly:hover .modebar--hover .modebar-group {\n\topacity: 1\n}\n\n.js-plotly-plot .plotly .modebar-group {\n\tfloat: left;\n\tdisplay: inline-block;\n\tbox-sizing: border-box;\n\tpadding-left: 8px;\n\tposition: relative;\n\tvertical-align: middle;\n\twhite-space: nowrap\n}\n\n.js-plotly-plot .plotly .modebar-btn {\n\tposition: relative;\n\tfont-size: 16px;\n\tpadding: 3px 4px;\n\theight: 22px;\n\tcursor: pointer;\n\tline-height: normal;\n\tbox-sizing: border-box\n}\n\n.js-plotly-plot .plotly .modebar-btn svg {\n\tposition: relative;\n\ttop: 2px\n}\n\n.js-plotly-plot .plotly .modebar.vertical {\n\tdisplay: flex;\n\tflex-direction: column;\n\tflex-wrap: wrap;\n\talign-content: flex-end;\n\tmax-height: 100%\n}\n\n.js-plotly-plot .plotly .modebar.vertical svg {\n\ttop: -1px\n}\n\n.js-plotly-plot .plotly .modebar.vertical .modebar-group {\n\tdisplay: block;\n\tfloat: none;\n\tpadding-left: 0;\n\tpadding-bottom: 8px\n}\n\n.js-plotly-plot .plotly .modebar.vertical .modebar-group .modebar-btn {\n\tdisplay: block;\n\ttext-align: center\n}\n\n.js-plotly-plot .plotly [data-title]:after,\n.js-plotly-plot .plotly [data-title]:before {\n\tposition: absolute;\n\t-webkit-transform: translate3d(0, 0, 0);\n\t-moz-transform: translate3d(0, 0, 0);\n\t-ms-transform: translate3d(0, 0, 0);\n\t-o-transform: translate3d(0, 0, 0);\n\ttransform: translate3d(0, 0, 0);\n\tdisplay: none;\n\topacity: 0;\n\tz-index: 1001;\n\tpointer-events: none;\n\ttop: 110%;\n\tright: 50%\n}\n\n.js-plotly-plot .plotly [data-title]:hover:after,\n.js-plotly-plot .plotly [data-title]:hover:before {\n\tdisplay: block;\n\topacity: 1\n}\n\n.js-plotly-plot .plotly [data-title]:before {\n\tcontent: \"\";\n\tposition: absolute;\n\tbackground: 0 0;\n\tborder: 6px solid transparent;\n\tz-index: 1002;\n\tmargin-top: -12px;\n\tborder-bottom-color: #69738a;\n\tmargin-right: -6px\n}\n\n.js-plotly-plot .plotly [data-title]:after {\n\tcontent: attr(data-title);\n\tbackground: #69738a;\n\tcolor: #fff;\n\tpadding: 8px 10px;\n\tfont-size: 12px;\n\tline-height: 12px;\n\twhite-space: nowrap;\n\tmargin-right: -18px;\n\tborder-radius: 2px\n}\n\n.js-plotly-plot .plotly .vertical [data-title]:after,\n.js-plotly-plot .plotly .vertical [data-title]:before {\n\ttop: 0;\n\tright: 200%\n}\n\n.js-plotly-plot .plotly .vertical [data-title]:before {\n\tborder: 6px solid transparent;\n\tborder-left-color: #69738a;\n\tmargin-top: 8px;\n\tmargin-right: -30px\n}\n\n.plotly-notifier {\n\tposition: fixed;\n\ttop: 50px;\n\tright: 20px;\n\tz-index: 10000;\n\tfont-size: 10pt;\n\tmax-width: 180px\n}\n\n.plotly-notifier p {\n\tmargin: 0\n}\n\n.plotly-notifier .notifier-note {\n\tmin-width: 180px;\n\tmax-width: 250px;\n\tborder: 1px solid #fff;\n\tz-index: 3000;\n\tmargin: 0;\n\tbackground-color: rgba(140, 151, 175, .9);\n\tcolor: #fff;\n\tpadding: 10px;\n\toverflow-wrap: break-word;\n\tword-wrap: break-word;\n\t-ms-hyphens: auto;\n\t-webkit-hyphens: auto;\n\thyphens: auto\n}\n\n.plotly-notifier .notifier-close {\n\tcolor: #fff;\n\topacity: .8;\n\tfloat: right;\n\tpadding: 0 5px;\n\tbackground: 0 0;\n\tborder: none;\n\tfont-size: 20px;\n\tfont-weight: 700;\n\tline-height: 20px\n}\n\n.plotly-notifier .notifier-close:hover {\n\tcolor: #444;\n\ttext-decoration: none;\n\tcursor: pointer\n}\n");
+    $mol_style_attach("mpds/visavis/plotly/plotly.view.css", ".js-plotly-plot {\n\tposition: absolute;\n}\n\n/* default plotly styles for shadow DOM */\n.js-plotly-plot .plotly button,\n.js-plotly-plot .plotly input,\n.plotly-notifier {\n\tfont-family: \"Open Sans\", verdana, arial, sans-serif\n}\n\n.js-plotly-plot .plotly,\n.js-plotly-plot .plotly div {\n\tdirection: ltr;\n\tfont-family: \"Open Sans\", verdana, arial, sans-serif;\n\tmargin: 0;\n\tpadding: 0\n}\n\n.js-plotly-plot .plotly button:focus,\n.js-plotly-plot .plotly input:focus {\n\toutline: 0\n}\n\n.js-plotly-plot .plotly a,\n.js-plotly-plot .plotly a:hover {\n\ttext-decoration: none\n}\n\n.js-plotly-plot .plotly .crisp {\n\tshape-rendering: crispEdges\n}\n\n.js-plotly-plot .plotly .user-select-none {\n\t-webkit-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\t-o-user-select: none;\n\tuser-select: none\n}\n\n.js-plotly-plot .plotly svg {\n\toverflow: hidden\n}\n\n.js-plotly-plot .plotly svg a {\n\tfill: #447adb\n}\n\n.js-plotly-plot .plotly svg a:hover {\n\tfill: #3c6dc5\n}\n\n.js-plotly-plot .plotly .main-svg {\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n\tpointer-events: none\n}\n\n.js-plotly-plot .plotly .main-svg .draglayer {\n\tpointer-events: all\n}\n\n.js-plotly-plot .plotly .cursor-default {\n\tcursor: default\n}\n\n.js-plotly-plot .plotly .cursor-pointer {\n\tcursor: pointer\n}\n\n.js-plotly-plot .plotly .cursor-crosshair {\n\tcursor: crosshair\n}\n\n.js-plotly-plot .plotly .cursor-move {\n\tcursor: move\n}\n\n.js-plotly-plot .plotly .cursor-col-resize {\n\tcursor: col-resize\n}\n\n.js-plotly-plot .plotly .cursor-row-resize {\n\tcursor: row-resize\n}\n\n.js-plotly-plot .plotly .cursor-ns-resize {\n\tcursor: ns-resize\n}\n\n.js-plotly-plot .plotly .cursor-ew-resize {\n\tcursor: ew-resize\n}\n\n.js-plotly-plot .plotly .cursor-sw-resize {\n\tcursor: sw-resize\n}\n\n.js-plotly-plot .plotly .cursor-s-resize {\n\tcursor: s-resize\n}\n\n.js-plotly-plot .plotly .cursor-se-resize {\n\tcursor: se-resize\n}\n\n.js-plotly-plot .plotly .cursor-w-resize {\n\tcursor: w-resize\n}\n\n.js-plotly-plot .plotly .cursor-e-resize {\n\tcursor: e-resize\n}\n\n.js-plotly-plot .plotly .cursor-nw-resize {\n\tcursor: nw-resize\n}\n\n.js-plotly-plot .plotly .cursor-n-resize {\n\tcursor: n-resize\n}\n\n.js-plotly-plot .plotly .cursor-ne-resize {\n\tcursor: ne-resize\n}\n\n.js-plotly-plot .plotly .cursor-grab {\n\tcursor: -webkit-grab;\n\tcursor: grab\n}\n\n.js-plotly-plot .plotly .modebar {\n\tposition: absolute;\n\ttop: 2px;\n\tright: 2px\n}\n\n.js-plotly-plot .plotly .ease-bg {\n\t-webkit-transition: background-color .3s;\n\t-moz-transition: background-color .3s;\n\t-ms-transition: background-color .3s;\n\t-o-transition: background-color .3s;\n\ttransition: background-color .3s\n}\n\n.js-plotly-plot .plotly .modebar--hover>:not(.watermark) {\n\topacity: 0;\n\t-webkit-transition: opacity .3s;\n\t-moz-transition: opacity .3s;\n\t-ms-transition: opacity .3s;\n\t-o-transition: opacity .3s;\n\ttransition: opacity .3s\n}\n\n.js-plotly-plot .plotly:hover .modebar--hover .modebar-group {\n\topacity: 1\n}\n\n.js-plotly-plot .plotly .modebar-group {\n\tfloat: left;\n\tdisplay: inline-block;\n\tbox-sizing: border-box;\n\tpadding-left: 8px;\n\tposition: relative;\n\tvertical-align: middle;\n\twhite-space: nowrap\n}\n\n.js-plotly-plot .plotly .modebar-btn {\n\tposition: relative;\n\tfont-size: 16px;\n\tpadding: 3px 4px;\n\theight: 22px;\n\tcursor: pointer;\n\tline-height: normal;\n\tbox-sizing: border-box\n}\n\n.js-plotly-plot .plotly .modebar-btn svg {\n\tposition: relative;\n\ttop: 2px\n}\n\n.js-plotly-plot .plotly .modebar.vertical {\n\tdisplay: flex;\n\tflex-direction: column;\n\tflex-wrap: wrap;\n\talign-content: flex-end;\n\tmax-height: 100%\n}\n\n.js-plotly-plot .plotly .modebar.vertical svg {\n\ttop: -1px\n}\n\n.js-plotly-plot .plotly .modebar.vertical .modebar-group {\n\tdisplay: block;\n\tfloat: none;\n\tpadding-left: 0;\n\tpadding-bottom: 8px\n}\n\n.js-plotly-plot .plotly .modebar.vertical .modebar-group .modebar-btn {\n\tdisplay: block;\n\ttext-align: center\n}\n\n.js-plotly-plot .plotly [data-title]:after,\n.js-plotly-plot .plotly [data-title]:before {\n\tposition: absolute;\n\t-webkit-transform: translate3d(0, 0, 0);\n\t-moz-transform: translate3d(0, 0, 0);\n\t-ms-transform: translate3d(0, 0, 0);\n\t-o-transform: translate3d(0, 0, 0);\n\ttransform: translate3d(0, 0, 0);\n\tdisplay: none;\n\topacity: 0;\n\tz-index: 1001;\n\tpointer-events: none;\n\ttop: 110%;\n\tright: 50%\n}\n\n.js-plotly-plot .plotly [data-title]:hover:after,\n.js-plotly-plot .plotly [data-title]:hover:before {\n\tdisplay: block;\n\topacity: 1\n}\n\n.js-plotly-plot .plotly [data-title]:before {\n\tcontent: \"\";\n\tposition: absolute;\n\tbackground: 0 0;\n\tborder: 6px solid transparent;\n\tz-index: 1002;\n\tmargin-top: -12px;\n\tborder-bottom-color: #69738a;\n\tmargin-right: -6px\n}\n\n.js-plotly-plot .plotly [data-title]:after {\n\tcontent: attr(data-title);\n\tbackground: #69738a;\n\tcolor: #fff;\n\tpadding: 8px 10px;\n\tfont-size: 12px;\n\tline-height: 12px;\n\twhite-space: nowrap;\n\tmargin-right: -18px;\n\tborder-radius: 2px\n}\n\n.js-plotly-plot .plotly .vertical [data-title]:after,\n.js-plotly-plot .plotly .vertical [data-title]:before {\n\ttop: 0;\n\tright: 200%\n}\n\n.js-plotly-plot .plotly .vertical [data-title]:before {\n\tborder: 6px solid transparent;\n\tborder-left-color: #69738a;\n\tmargin-top: 8px;\n\tmargin-right: -30px\n}\n\n.plotly-notifier {\n\tposition: fixed;\n\ttop: 50px;\n\tright: 20px;\n\tz-index: 10000;\n\tfont-size: 10pt;\n\tmax-width: 180px\n}\n\n.plotly-notifier p {\n\tmargin: 0\n}\n\n.plotly-notifier .notifier-note {\n\tmin-width: 180px;\n\tmax-width: 250px;\n\tborder: 1px solid #fff;\n\tz-index: 3000;\n\tmargin: 0;\n\tbackground-color: rgba(140, 151, 175, .9);\n\tcolor: #fff;\n\tpadding: 10px;\n\toverflow-wrap: break-word;\n\tword-wrap: break-word;\n\t-ms-hyphens: auto;\n\t-webkit-hyphens: auto;\n\thyphens: auto\n}\n\n.plotly-notifier .notifier-close {\n\tcolor: #fff;\n\topacity: .8;\n\tfloat: right;\n\tpadding: 0 5px;\n\tbackground: 0 0;\n\tborder: none;\n\tfont-size: 20px;\n\tfont-weight: 700;\n\tline-height: 20px\n}\n\n.plotly-notifier .notifier-close:hover {\n\tcolor: #444;\n\ttext-decoration: none;\n\tcursor: pointer\n}\n");
 })($ || ($ = {}));
 //mpds/visavis/plotly/-css/plotly.view.css.ts
 ;
@@ -17760,7 +17698,7 @@ var $;
         $mol_style_define($mpds_visavis_plotly, {
             flex: {
                 grow: 1
-            }
+            },
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
@@ -19639,19 +19577,18 @@ var $;
             ];
         }
         data_shown() {
-            return {};
+            return [];
         }
         layout() {
             return {};
         }
-        subscribe_events() {
-            return null;
+        Plotly_root() {
+            return this.Root().Plotly_root();
         }
         Root() {
             const obj = new this.$.$mpds_visavis_plotly();
             obj.data = () => this.data_shown();
             obj.layout = () => this.layout();
-            obj.subscribe_events = () => this.subscribe_events();
             return obj;
         }
         cmp_labels() {
@@ -19972,6 +19909,7 @@ var $;
 (function ($) {
     var $$;
     (function ($$) {
+        const d3 = $mpds_visavis_lib_plotly.d3;
         const $mpds_visavis_plot_cube_json = $mol_data_record({
             payload: $mol_data_record({
                 tcube: $mol_data_optional($mol_data_boolean),
@@ -20017,7 +19955,7 @@ var $;
                 return this.value_list().slice(-1)[0];
             }
             order(order) {
-                return $mpds_visavis_lib.d3().range(95).sort((a, b) => $mpds_visavis_elements_list.element_by_num(a + 1)[order] - $mpds_visavis_elements_list.element_by_num(b + 1)[order]);
+                return d3.range(95).sort((a, b) => $mpds_visavis_elements_list.element_by_num(a + 1)[order] - $mpds_visavis_elements_list.element_by_num(b + 1)[order]);
             }
             heatmap() {
                 return this.json().payload.points.v.some(val => Math.floor(val) !== val);
@@ -20101,7 +20039,7 @@ var $;
                         showline: false,
                         tickfont: { size: 10 },
                         ticktext: this.order_els(this.x_sort()).slice(0, 95).filter(function (el, idx) { return idx % 2 === 0; }),
-                        tickvals: $mpds_visavis_lib.d3().range(1, 96, 2)
+                        tickvals: d3.range(1, 96, 2)
                     },
                     yaxis: {
                         title: 'y_sort',
@@ -20114,7 +20052,7 @@ var $;
                         showline: false,
                         tickfont: { size: 10 },
                         ticktext: this.order_els(this.y_sort()).slice(0, 95).filter(function (el, idx) { return idx % 2 === 0; }),
-                        tickvals: $mpds_visavis_lib.d3().range(1, 96, 2)
+                        tickvals: d3.range(1, 96, 2)
                     },
                     zaxis: {
                         title: 'z_sort',
@@ -20127,15 +20065,16 @@ var $;
                         showline: false,
                         tickfont: { size: 10 },
                         ticktext: this.order_els(this.z_sort()).slice(0, 95).filter(function (el, idx) { return idx % 2 === 0; }),
-                        tickvals: $mpds_visavis_lib.d3().range(1, 96, 2)
+                        tickvals: d3.range(1, 96, 2)
                     },
                     camera: { projection: { type: 'perspective' } },
                 };
             }
-            subscribe_events() {
-                const d3 = $mpds_visavis_lib.d3();
+            auto() {
+                if (!this.Plotly_root())
+                    return;
                 const that = this;
-                d3.select(this.dom_node_actual()).select('div.js-plotly-plot').on('click', (event) => {
+                d3.select(this.Plotly_root()).on('click', (event) => {
                     const node = event.target;
                     if (node.getAttribute('class') != 'nums')
                         return false;
@@ -20174,9 +20113,9 @@ var $;
                     for (var i = 0; i < x_src.length; i++) {
                         x_temp.push(this.ter_op(x_op, $mpds_visavis_elements_list.element_by_num(x_src[i])[x_sort], $mpds_visavis_elements_list.element_by_num(y_src[i])[x_sort], $mpds_visavis_elements_list.element_by_num(z_src[i])[x_sort]));
                     }
-                    var x_renorm = $mpds_visavis_lib.d3().scaleQuantize()
+                    var x_renorm = d3.scaleQuantize()
                         .range($mpds_visavis_elements_list.list().slice(1).map(el => el.num))
-                        .domain([$mpds_visavis_lib.d3().min(x_temp), $mpds_visavis_lib.d3().max(x_temp)]);
+                        .domain([d3.min(x_temp), d3.max(x_temp)]);
                     converted['x'] = x_temp.map(x_renorm);
                 }
                 else {
@@ -20189,9 +20128,9 @@ var $;
                     for (var i = 0; i < y_src.length; i++) {
                         y_temp.push(this.ter_op(y_op, $mpds_visavis_elements_list.element_by_num(x_src[i])[y_sort], $mpds_visavis_elements_list.element_by_num(y_src[i])[y_sort], $mpds_visavis_elements_list.element_by_num(z_src[i])[y_sort]));
                     }
-                    var y_renorm = $mpds_visavis_lib.d3().scaleQuantize()
+                    var y_renorm = d3.scaleQuantize()
                         .range($mpds_visavis_elements_list.list().slice(1).map(el => el.num))
-                        .domain([$mpds_visavis_lib.d3().min(y_temp), $mpds_visavis_lib.d3().max(y_temp)]);
+                        .domain([d3.min(y_temp), d3.max(y_temp)]);
                     converted['y'] = y_temp.map(y_renorm);
                 }
                 else {
@@ -20204,9 +20143,9 @@ var $;
                     for (var i = 0; i < z_src.length; i++) {
                         z_temp.push(this.ter_op(z_op, $mpds_visavis_elements_list.element_by_num(x_src[i])[z_sort], $mpds_visavis_elements_list.element_by_num(y_src[i])[z_sort], $mpds_visavis_elements_list.element_by_num(z_src[i])[z_sort]));
                     }
-                    var z_renorm = $mpds_visavis_lib.d3().scaleQuantize()
+                    var z_renorm = d3.scaleQuantize()
                         .range($mpds_visavis_elements_list.list().slice(1).map(el => el.num))
-                        .domain([$mpds_visavis_lib.d3().min(z_temp), $mpds_visavis_lib.d3().max(z_temp)]);
+                        .domain([d3.min(z_temp), d3.max(z_temp)]);
                     converted['z'] = z_temp.map(z_renorm);
                 }
                 else {
@@ -20261,9 +20200,6 @@ var $;
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_cube.prototype, "scene", null);
-        __decorate([
-            $mol_action
-        ], $mpds_visavis_plot_cube.prototype, "subscribe_events", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_cube.prototype, "layout", null);
@@ -20632,25 +20568,18 @@ var $;
             return obj;
         }
         data() {
-            return {};
+            return [];
         }
         layout() {
             return {};
         }
-        subscribe_events() {
-            return null;
-        }
-        mousemove() {
-            return null;
+        Plotly_root() {
+            return this.Root().Plotly_root();
         }
         Root() {
             const obj = new this.$.$mpds_visavis_plotly();
             obj.data = () => this.data();
             obj.layout = () => this.layout();
-            obj.subscribe_events = () => this.subscribe_events();
-            obj.event = () => ({
-                mousemove: this.mousemove()
-            });
             return obj;
         }
     }
@@ -20719,6 +20648,7 @@ var $;
 (function ($) {
     var $$;
     (function ($$) {
+        const d3 = $mpds_visavis_lib_plotly.d3;
         const Label_json = (val) => {
             if (!Array.isArray(val))
                 return $mol_fail(new $mol_data_error(`${val} is not a array`));
@@ -20920,30 +20850,20 @@ var $;
                     ...this.json().naxes === 2 ? this.rectangle_annotations() : [],
                 ];
             }
-            mouseover() {
-                const that = $mpds_visavis_lib.d3().select(this);
-                console.log(that);
-                const idx = that.attr('data-index');
-                that.attr('data-state', that.style('fill'));
-                that.style({ 'cursor': 'pointer', 'fill': '#3e3f95' });
-            }
-            mouseout() { }
-            click() { }
-            mousemove() { }
-            subscribe_events() {
-                const d3 = $mpds_visavis_lib.d3();
-                console.log('is trinagle', this.is_triangle());
+            auto() {
+                if (!this.Plotly_root())
+                    return;
+                const plotly_root = this.Plotly_root();
                 if (this.is_triangle())
                     this.pd_fix_triangle();
                 if (this.json().diatype && this.json().diatype?.indexOf('projection') !== -1)
                     return;
                 const json = this.json();
                 const is_triangle = this.is_triangle();
-                const that = this;
-                const figures = d3.select(this.dom_node_actual()).selectAll('[mpds_visavis_plot_phase_root] .shapelayer path');
+                const figures = d3.select(plotly_root).selectAll('path');
                 figures.on('mouseover', function () {
                     const figure = d3.select(this);
-                    let idx = figure.attr('data-index');
+                    let idx = Number(figure.attr('data-index'));
                     if (is_triangle) {
                         if (idx == 0)
                             return false;
@@ -20954,7 +20874,7 @@ var $;
                     figure.style('fill', '#3e3f95');
                     const reflabel = json.shapes[idx]?.reflabel;
                     if (reflabel !== undefined && json.labels[reflabel] !== undefined) {
-                        d3.select(that.dom_node_actual()).select(`g.annotation[data-index="'${reflabel}'"]`).select('text').style('fill', '#f30');
+                        d3.select(plotly_root).select(`g.annotation[data-index="'${reflabel}'"]`).select('text').style('fill', '#f30');
                     }
                 });
                 figures.on('mouseout', function () {
@@ -20963,7 +20883,7 @@ var $;
                     if (state) {
                         figure.style('fill', state);
                         figure.style('cursor', 'default');
-                        d3.select(that.dom_node_actual()).selectAll('[mpds_visavis_plot_phase_root] g.annotation').select('text').style('fill', '#000');
+                        d3.select(plotly_root).selectAll('g.annotation').select('text').style('fill', '#000');
                     }
                 });
                 figures.on('click', function () {
@@ -20975,7 +20895,7 @@ var $;
                         this.phase_click(json.shapes[idx].phase_id);
                     }
                 });
-                const canvas = this.Root().dom_node().firstChild;
+                const canvas = plotly_root;
                 if (!this.is_triangle()) {
                     const fixed = fix_comp_impossible(json.comp_range, json.comp_start, json.comp_end);
                     const comp_start = fixed?.comp_start ?? json.comp_start;
@@ -21007,7 +20927,9 @@ var $;
                 return layout;
             }
             pd_fix_triangle() {
-                const d3 = $mpds_visavis_lib.d3();
+                if (!this.Plotly_root())
+                    return;
+                const plotly_root = this.Plotly_root();
                 function make_absolute_context(element, root) {
                     return function (x, y) {
                         var offset = root.getBoundingClientRect();
@@ -21023,11 +20945,11 @@ var $;
                     const b = el.getBBox();
                     return fn(b.x, b.y);
                 }
-                const svgroot = d3.select(this.dom_node_actual()).select("[mpds_visavis_plot_phase_root] svg.main-svg")[0][0];
-                let graph_node = d3.select(this.dom_node_actual()).select("[mpds_visavis_plot_phase_root] g.toplevel.plotbg")[0][0];
+                const svgroot = d3.select(plotly_root).select("svg.main-svg").node();
+                let graph_node = d3.select(plotly_root).select("[mpds_visavis_plot_phase_root] g.toplevel.plotbg").node();
                 const graph_coords = get_absolute_coords(graph_node, svgroot);
-                const svg_el = d3.select(this.dom_node_actual()).select("[mpds_visavis_plot_phase_root] g.layer-above");
-                let svg_node = svg_el[0][0];
+                const svg_el = d3.select(plotly_root).select("[mpds_visavis_plot_phase_root] g.layer-above");
+                let svg_node = svg_el.node();
                 graph_node = graph_node.getBoundingClientRect();
                 svg_node = svg_node.getBoundingClientRect();
                 const scaleX = graph_node.width / svg_node.width;
@@ -21035,11 +20957,11 @@ var $;
                 const centerX = graph_coords.x + graph_node.width / 2;
                 const centerY = graph_coords.y + graph_node.height;
                 const origdims = [];
-                d3.select(this.dom_node_actual()).selectAll("[mpds_visavis_plot_phase_root] text.annotation-text").each(function () {
+                d3.select(plotly_root).selectAll("[mpds_visavis_plot_phase_root] text.annotation-text").each(function () {
                     origdims.push(parseInt(this.getBoundingClientRect().left));
                 });
                 svg_el.attr("transform", "translate(" + (-centerX * (scaleX - 1)) + ", " + (-centerY * (scaleY - 1)) + ") scale(" + scaleX + ", " + scaleY + ")");
-                d3.select(this.dom_node_actual()).selectAll("[mpds_visavis_plot_phase_root] g.annotation").each(function (d, i) {
+                d3.select(plotly_root).selectAll("[mpds_visavis_plot_phase_root] g.annotation").each(function (d, i) {
                     d3.select(this).attr("transform", "translate(" + (-centerX * (scaleX - 1)) + ", " + (-centerY * (scaleY - 1)) + ") scale(" + scaleX + ", " + scaleY + ") translate(" + (-origdims[i] / 1.25) + ", 0) scale(1.75, 1)");
                 });
             }
@@ -21050,9 +20972,6 @@ var $;
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_phase.prototype, "annotations", null);
-        __decorate([
-            $mol_action
-        ], $mpds_visavis_plot_phase.prototype, "subscribe_events", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_phase.prototype, "data", null);
@@ -21135,15 +21054,16 @@ var $;
             json() {
                 return $$.$mpds_visavis_plot_bar_json(this.plot_raw().json());
             }
-            subscribe_events() {
-                const d3 = $mpds_visavis_lib.d3();
+            auto() {
+                if (!this.Plotly_root())
+                    return;
                 const json = this.json();
                 if (json.payload2 && json.p1ayload2.x && json.payload2.y)
                     return;
-                const paths = d3.select(this.dom_node_actual()).selectAll('g.point path');
+                const paths = $mpds_visavis_lib_plotly.d3.select(this.Plotly_root()).selectAll('g.point path');
                 const that = this;
                 paths.on('click', function (event) {
-                    const selection = d3.select(this);
+                    const selection = $mpds_visavis_lib_plotly.d3.select(this);
                     const value = selection.data()[0].x;
                     that.bar_click({ facet: "years", value });
                 });
@@ -21198,9 +21118,6 @@ var $;
                 return payload;
             }
         }
-        __decorate([
-            $mol_action
-        ], $mpds_visavis_plot_bar.prototype, "subscribe_events", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_bar.prototype, "layout", null);
@@ -21259,19 +21176,18 @@ var $;
             ];
         }
         data() {
-            return {};
+            return [];
         }
         layout() {
             return {};
         }
-        subscribe_events() {
-            return null;
+        Plotly_root() {
+            return this.Plot().Plotly_root();
         }
         Plot() {
             const obj = new this.$.$mpds_visavis_plotly();
             obj.data = () => this.data();
             obj.layout = () => this.layout();
-            obj.subscribe_events = () => this.subscribe_events();
             return obj;
         }
         cmp_labels() {
@@ -21345,6 +21261,133 @@ var $;
 })($ || ($ = {}));
 //mpds/visavis/plot/discovery/-view.tree/discovery.view.tree.ts
 ;
+
+var $node = $node || {}
+void function( module ) { var exports = module.exports = this; function require( id ) { return $node[ id.replace( /^.\// , "../mpds/visavis/lib/pca/bundle/" ) ] }; 
+;
+'use strict';(function(ma){typeof exports==="object"&&typeof module!=="undefined"?module.exports=ma():typeof define==="function"&&define.amd?define([],ma):(typeof window!=="undefined"?window:typeof global!=="undefined"?global:typeof self!=="undefined"?self:this).mlPca=ma()})(function(){var ma;return function H(Z,ha,d){function ia(U,T){if(!ha[U]){if(!Z[U]){var V=typeof require=="function"&&require;if(!T&&V)return V(U,true);if(da)return da(U,true);T=Error("Cannot find module '"+U+"'");throw T.code=
+"MODULE_NOT_FOUND",T;}T=ha[U]={exports:{}};Z[U][0].call(T.exports,function(d){var m=Z[U][1][d];return ia(m?m:d)},T,T.exports,H,Z,ha,d)}return ha[U].exports}for(var da=typeof require=="function"&&require,V=0;V<d.length;V++)ia(d[V]);return ia}({1:[function(Z,ha,d){function H(d,a){if(Math.abs(d)>Math.abs(a)){var c=a/d;return Math.abs(d)*Math.sqrt(1+c*c)}if(a!==0){c=d/a;return Math.abs(a)*Math.sqrt(1+c*c)}return 0}function ia(d,a,c){for(var f=Array(d),e=0;e<d;e++){f[e]=Array(a);for(var b=0;b<a;b++)f[e][b]=
+c}return f}function da(d,a,c){d=c?d.rows:d.rows-1;if(a<0||a>d)throw new RangeError("Row index out of range");}function V(d,a,c){d=c?d.columns:d.columns-1;if(a<0||a>d)throw new RangeError("Column index out of range");}function U(d,a){a.to1DArray&&(a=a.to1DArray());if(a.length!==d.columns)throw new RangeError("vector size must be the same as the number of columns");return a}function T(d,a){a.to1DArray&&(a=a.to1DArray());if(a.length!==d.rows)throw new RangeError("vector size must be the same as the number of rows");
+return a}function ka(d,a,c){return{row:x(d,a),column:m(d,c)}}function x(d,a){if(typeof a!=="object")throw new TypeError("unexpected type for row indices");if(a.some((a)=>a<0||a>=d.rows))throw new RangeError("row indices are out of range");Array.isArray(a)||(a=Array.from(a));return a}function m(d,a){if(typeof a!=="object")throw new TypeError("unexpected type for column indices");if(a.some((a)=>a<0||a>=d.columns))throw new RangeError("column indices are out of range");Array.isArray(a)||(a=Array.from(a));
+return a}function P(d,a,c,f,e){if(arguments.length!==5)throw new TypeError("Invalid argument type");if(Array.from(arguments).slice(1).some(function(a){return typeof a!=="number"}))throw new TypeError("Invalid argument type");if(a>c||f>e||a<0||a>=d.rows||c<0||c>=d.rows||f<0||f>=d.columns||e<0||e>=d.columns)throw new RangeError("Submatrix indices are out of range");}function J(d){for(var a=K.zeros(d.rows,1),c=0;c<d.rows;++c)for(var f=0;f<d.columns;++f)a.set(c,0,a.get(c,0)+d.get(c,f));return a}function W(d){for(var a=
+K.zeros(1,d.columns),c=0;c<d.rows;++c)for(var f=0;f<d.columns;++f)a.set(0,f,a.get(0,f)+d.get(c,f));return a}function N(d){for(var a=0,c=0;c<d.rows;c++)for(var f=0;f<d.columns;f++)a+=d.get(c,f);return a}function v(d){function a(a,w){return a-w}function c(a,w){for(var p in w)a=a.replace(new RegExp("%"+p+"%","g"),w[p]);return a}d===void 0&&(d=Object);class f extends d{static get [Symbol.species](){return this}static from1DArray(a,w,b){if(a*w!==b.length)throw new RangeError("Data length does not match given dimensions");
+for(var p=new this(a,w),c=0;c<a;c++)for(var ea=0;ea<w;ea++)p.set(c,ea,b[c*w+ea]);return p}static rowVector(a){for(var w=new this(1,a.length),p=0;p<a.length;p++)w.set(0,p,a[p]);return w}static columnVector(a){for(var p=new this(a.length,1),b=0;b<a.length;b++)p.set(b,0,a[b]);return p}static empty(a,b){return new this(a,b)}static zeros(a,b){return this.empty(a,b).fill(0)}static ones(a,b){return this.empty(a,b).fill(1)}static rand(a,b,c){if(c===void 0)c=Math.random;for(var p=this.empty(a,b),w=0;w<a;w++)for(var ea=
+0;ea<b;ea++)p.set(w,ea,c());return p}static randInt(a,b,c,e){c===void 0&&(c=1E3);if(e===void 0)e=Math.random;for(var p=this.empty(a,b),w=0;w<a;w++)for(var ea=0;ea<b;ea++){var f=Math.floor(e()*c);p.set(w,ea,f)}return p}static eye(a,b,c){b===void 0&&(b=a);c===void 0&&(c=1);var p=Math.min(a,b);a=this.zeros(a,b);for(b=0;b<p;b++)a.set(b,b,c);return a}static diag(a,b,c){var p=a.length;b===void 0&&(b=p);c===void 0&&(c=b);p=Math.min(p,b,c);b=this.zeros(b,c);for(c=0;c<p;c++)b.set(c,c,a[c]);return b}static min(a,
+b){a=this.checkMatrix(a);b=this.checkMatrix(b);for(var p=a.rows,w=a.columns,c=new this(p,w),e=0;e<p;e++)for(var f=0;f<w;f++)c.set(e,f,Math.min(a.get(e,f),b.get(e,f)));return c}static max(a,b){a=this.checkMatrix(a);b=this.checkMatrix(b);for(var p=a.rows,w=a.columns,c=new this(p,w),e=0;e<p;e++)for(var f=0;f<w;f++)c.set(e,f,Math.max(a.get(e,f),b.get(e,f)));return c}static checkMatrix(a){return f.isMatrix(a)?a:new this(a)}static isMatrix(a){return a!=null&&a.klass==="Matrix"}get size(){return this.rows*
+this.columns}apply(a){if(typeof a!=="function")throw new TypeError("callback must be a function");for(var b=this.rows,p=this.columns,c=0;c<b;c++)for(var e=0;e<p;e++)a.call(this,c,e);return this}to1DArray(){for(var a=Array(this.size),b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)a[b*this.columns+c]=this.get(b,c);return a}to2DArray(){for(var a=Array(this.rows),b=0;b<this.rows;b++){a[b]=Array(this.columns);for(var c=0;c<this.columns;c++)a[b][c]=this.get(b,c)}return a}isRowVector(){return this.rows===
+1}isColumnVector(){return this.columns===1}isVector(){return this.rows===1||this.columns===1}isSquare(){return this.rows===this.columns}isSymmetric(){if(this.isSquare()){for(var a=0;a<this.rows;a++)for(var b=0;b<=a;b++)if(this.get(a,b)!==this.get(b,a))return false;return true}return false}set(a,b,c){throw Error("set method is unimplemented");}get(a,b){throw Error("get method is unimplemented");}repeat(a,b){a=a||1;b=b||1;for(var c=new this.constructor[Symbol.species](this.rows*a,this.columns*b),p=
+0;p<a;p++)for(var w=0;w<b;w++)c.setSubMatrix(this,this.rows*p,this.columns*w);return c}fill(a){for(var b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.set(b,c,a);return this}neg(){return this.mulS(-1)}getRow(a){da(this,a);for(var b=Array(this.columns),c=0;c<this.columns;c++)b[c]=this.get(a,c);return b}getRowVector(a){return this.constructor.rowVector(this.getRow(a))}setRow(a,b){da(this,a);b=U(this,b);for(var c=0;c<this.columns;c++)this.set(a,c,b[c]);return this}swapRows(a,b){da(this,a);da(this,
+b);for(var c=0;c<this.columns;c++){var p=this.get(a,c);this.set(a,c,this.get(b,c));this.set(b,c,p)}return this}getColumn(a){V(this,a);for(var b=Array(this.rows),c=0;c<this.rows;c++)b[c]=this.get(c,a);return b}getColumnVector(a){return this.constructor.columnVector(this.getColumn(a))}setColumn(a,b){V(this,a);b=T(this,b);for(var c=0;c<this.rows;c++)this.set(c,a,b[c]);return this}swapColumns(a,b){V(this,a);V(this,b);for(var c=0;c<this.rows;c++){var p=this.get(c,a);this.set(c,a,this.get(c,b));this.set(c,
+b,p)}return this}addRowVector(a){a=U(this,a);for(var b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.set(b,c,this.get(b,c)+a[c]);return this}subRowVector(a){a=U(this,a);for(var b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.set(b,c,this.get(b,c)-a[c]);return this}mulRowVector(a){a=U(this,a);for(var b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.set(b,c,this.get(b,c)*a[c]);return this}divRowVector(a){a=U(this,a);for(var b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.set(b,
+c,this.get(b,c)/a[c]);return this}addColumnVector(a){a=T(this,a);for(var b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.set(b,c,this.get(b,c)+a[b]);return this}subColumnVector(a){a=T(this,a);for(var b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.set(b,c,this.get(b,c)-a[b]);return this}mulColumnVector(a){a=T(this,a);for(var b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.set(b,c,this.get(b,c)*a[b]);return this}divColumnVector(a){a=T(this,a);for(var b=0;b<this.rows;b++)for(var c=
+0;c<this.columns;c++)this.set(b,c,this.get(b,c)/a[b]);return this}mulRow(a,b){da(this,a);for(var c=0;c<this.columns;c++)this.set(a,c,this.get(a,c)*b);return this}mulColumn(a,b){V(this,a);for(var c=0;c<this.rows;c++)this.set(c,a,this.get(c,a)*b);return this}max(){for(var a=this.get(0,0),b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.get(b,c)>a&&(a=this.get(b,c));return a}maxIndex(){for(var a=this.get(0,0),b=[0,0],c=0;c<this.rows;c++)for(var e=0;e<this.columns;e++)if(this.get(c,e)>a){a=this.get(c,
+e);b[0]=c;b[1]=e}return b}min(){for(var a=this.get(0,0),b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)this.get(b,c)<a&&(a=this.get(b,c));return a}minIndex(){for(var a=this.get(0,0),b=[0,0],c=0;c<this.rows;c++)for(var e=0;e<this.columns;e++)if(this.get(c,e)<a){a=this.get(c,e);b[0]=c;b[1]=e}return b}maxRow(a){da(this,a);for(var b=this.get(a,0),c=1;c<this.columns;c++)this.get(a,c)>b&&(b=this.get(a,c));return b}maxRowIndex(a){da(this,a);for(var b=this.get(a,0),c=[a,0],e=1;e<this.columns;e++)if(this.get(a,
+e)>b){b=this.get(a,e);c[1]=e}return c}minRow(a){da(this,a);for(var b=this.get(a,0),c=1;c<this.columns;c++)this.get(a,c)<b&&(b=this.get(a,c));return b}minRowIndex(a){da(this,a);for(var b=this.get(a,0),c=[a,0],e=1;e<this.columns;e++)if(this.get(a,e)<b){b=this.get(a,e);c[1]=e}return c}maxColumn(a){V(this,a);for(var b=this.get(0,a),c=1;c<this.rows;c++)this.get(c,a)>b&&(b=this.get(c,a));return b}maxColumnIndex(a){V(this,a);for(var b=this.get(0,a),c=[0,a],e=1;e<this.rows;e++)if(this.get(e,a)>b){b=this.get(e,
+a);c[0]=e}return c}minColumn(a){V(this,a);for(var b=this.get(0,a),c=1;c<this.rows;c++)this.get(c,a)<b&&(b=this.get(c,a));return b}minColumnIndex(a){V(this,a);for(var b=this.get(0,a),c=[0,a],e=1;e<this.rows;e++)if(this.get(e,a)<b){b=this.get(e,a);c[0]=e}return c}diag(){for(var a=Math.min(this.rows,this.columns),b=Array(a),c=0;c<a;c++)b[c]=this.get(c,c);return b}sum(a){switch(a){case "row":return J(this);case "column":return W(this);default:return N(this)}}mean(){return this.sum()/this.size}prod(){for(var a=
+1,b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)a*=this.get(b,c);return a}norm(a="frobenius"){var b=0;if(a==="max")return this.max();if(a==="frobenius"){for(a=0;a<this.rows;a++)for(var c=0;c<this.columns;c++)b+=this.get(a,c)*this.get(a,c);return Math.sqrt(b)}throw new RangeError(`unknown norm type: ${a}`);}cumulativeSum(){for(var a=0,b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++){a+=this.get(b,c);this.set(b,c,a)}return this}dot(a){f.isMatrix(a)&&(a=a.to1DArray());var b=this.to1DArray();
+if(b.length!==a.length)throw new RangeError("vectors do not have the same size");for(var c=0,e=0;e<b.length;e++)c+=b[e]*a[e];return c}mmul(a){a=this.constructor.checkMatrix(a);this.columns!==a.rows&&console.warn("Number of columns of left matrix are not equal to number of rows of right matrix.");for(var b=this.rows,c=this.columns,e=a.columns,f=new this.constructor[Symbol.species](b,e),h=Array(c),p=0;p<e;p++){for(var g=0;g<c;g++)h[g]=a.get(g,p);for(var k=0;k<b;k++){var d=0;for(g=0;g<c;g++)d+=this.get(k,
+g)*h[g];f.set(k,p,d)}}return f}strassen2x2(a){var b=new this.constructor[Symbol.species](2,2),c=this.get(0,0);const e=a.get(0,0),f=this.get(0,1),h=a.get(0,1),p=this.get(1,0),g=a.get(1,0),k=this.get(1,1);a=a.get(1,1);const d=(c+k)*(e+a),Q=(p+k)*e,m=c*(h-a),x=k*(g-e),r=(c+f)*a,fa=m+r,ja=Q+x;c=d-Q+m+(p-c)*(e+h);b.set(0,0,d+x-r+(f-k)*(g+a));b.set(0,1,fa);b.set(1,0,ja);b.set(1,1,c);return b}strassen3x3(a){var b=new this.constructor[Symbol.species](3,3),c=this.get(0,0);const e=this.get(0,1),f=this.get(0,
+2);var h=this.get(1,0),g=this.get(1,1),p=this.get(1,2),k=this.get(2,0),d=this.get(2,1),Q=this.get(2,2);const m=a.get(0,0),x=a.get(0,1),r=a.get(0,2),fa=a.get(1,0),ja=a.get(1,1),q=a.get(1,2),l=a.get(2,0),u=a.get(2,1),z=a.get(2,2),na=(c-h)*(-x+ja),v=(-c+h+g)*(m-x+ja),A=(h+g)*(-m+x);a=c*m;const J=(-c+k+d)*(m-r+q),D=(-c+k)*(r-q),E=(k+d)*(-m+r),P=(-f+d+Q)*(ja+l-u),F=(f-Q)*(ja-u),C=f*l,oa=(d+Q)*(-l+u),N=(-f+g+p)*(q+l-z),G=(f-p)*(q-z),I=(g+p)*(-l+z),K=(c+e+f-h-g-d-Q)*ja+v+A+a+P+C+oa;c=a+J+E+(c+e+f-g-p-k-
+d)*q+C+N+I;g=na+g*(-m+x+fa-ja-q-l+z)+v+a+C+N+G;p=na+v+A+a+p*u;h=C+N+G+I+h*r;d=a+J+D+d*(-m+r+fa-ja-q-l+u)+P+F+C;k=P+F+C+oa+k*x;Q=a+J+D+E+Q*z;b.set(0,0,a+C+e*fa);b.set(0,1,K);b.set(0,2,c);b.set(1,0,g);b.set(1,1,p);b.set(1,2,h);b.set(2,0,d);b.set(2,1,k);b.set(2,2,Q);return b}mmulStrassen(a){function b(a,b,c){var e=a.columns;if(a.rows===b&&e===c)return a;b=f.zeros(b,c);return b=b.setSubMatrix(a,0,0)}function c(a,e,h,g){if(h<=512||g<=512)return a.mmul(e);if(h%2===1&&g%2===1){a=b(a,h+1,g+1);e=b(e,h+1,g+
+1)}else if(h%2===1){a=b(a,h+1,g);e=b(e,h+1,g)}else if(g%2===1){a=b(a,h,g+1);e=b(e,h,g+1)}var p=parseInt(a.rows/2),k=parseInt(a.columns/2),w=a.subMatrix(0,p-1,0,k-1),n=e.subMatrix(0,p-1,0,k-1),d=a.subMatrix(0,p-1,k,a.columns-1),t=e.subMatrix(0,p-1,k,e.columns-1),B=a.subMatrix(p,a.rows-1,0,k-1),y=e.subMatrix(p,e.rows-1,0,k-1),ea=a.subMatrix(p,a.rows-1,k,a.columns-1),Q=e.subMatrix(p,e.rows-1,k,e.columns-1);a=c(f.add(w,ea),f.add(n,Q),p,k);var m=c(f.add(B,ea),n,p,k);e=c(w,f.sub(t,Q),p,k);var x=c(ea,f.sub(y,
+n),p,k),r=c(f.add(w,d),Q,p,k);w=c(f.sub(B,w),f.add(n,t),p,k);k=c(f.sub(d,ea),f.add(y,Q),p,k);p=f.add(a,x);p.sub(r);p.add(k);k=f.add(e,r);x=f.add(m,x);a=f.sub(a,m);a.add(e);a.add(w);e=f.zeros(2*p.rows,2*p.columns);e=e.setSubMatrix(p,0,0);e=e.setSubMatrix(k,p.rows,0);e=e.setSubMatrix(x,0,p.columns);e=e.setSubMatrix(a,p.rows,p.columns);return e.subMatrix(0,h-1,0,g-1)}var e=this.clone(),h=e.rows,g=e.columns,p=a.rows,d=a.columns;g!==p&&console.warn(`Multiplying ${h} x ${g} and ${p} x ${d} matrix: dimensions do not match.`);
+h=Math.max(h,p);g=Math.max(g,d);e=b(e,h,g);a=b(a,h,g);return c(e,a,h,g)}scaleRows(a,b){a=a===void 0?0:a;b=b===void 0?1:b;if(a>=b)throw new RangeError("min should be strictly smaller than max");for(var c=this.constructor.empty(this.rows,this.columns),e=0;e<this.rows;e++){var f=I(this.getRow(e),{min:a,max:b});c.setRow(e,f)}return c}scaleColumns(a,b){a=a===void 0?0:a;b=b===void 0?1:b;if(a>=b)throw new RangeError("min should be strictly smaller than max");for(var c=this.constructor.empty(this.rows,this.columns),
+e=0;e<this.columns;e++){var f=I(this.getColumn(e),{min:a,max:b});c.setColumn(e,f)}return c}kroneckerProduct(a){a=this.constructor.checkMatrix(a);for(var b=this.rows,c=this.columns,e=a.rows,f=a.columns,h=new this.constructor[Symbol.species](b*e,c*f),g=0;g<b;g++)for(var p=0;p<c;p++)for(var k=0;k<e;k++)for(var d=0;d<f;d++)h[e*g+k][f*p+d]=this.get(g,p)*a.get(k,d);return h}transpose(){for(var a=new this.constructor[Symbol.species](this.columns,this.rows),b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)a.set(c,
+b,this.get(b,c));return a}sortRows(b){b===void 0&&(b=a);for(var c=0;c<this.rows;c++)this.setRow(c,this.getRow(c).sort(b));return this}sortColumns(b){b===void 0&&(b=a);for(var c=0;c<this.columns;c++)this.setColumn(c,this.getColumn(c).sort(b));return this}subMatrix(a,b,c,e){P(this,a,b,c,e);for(var f=new this.constructor[Symbol.species](b-a+1,e-c+1),h=a;h<=b;h++)for(var g=c;g<=e;g++)f[h-a][g-c]=this.get(h,g);return f}subMatrixRow(a,b,c){b===void 0&&(b=0);c===void 0&&(c=this.columns-1);if(b>c||b<0||b>=
+this.columns||c<0||c>=this.columns)throw new RangeError("Argument out of range");for(var e=new this.constructor[Symbol.species](a.length,c-b+1),f=0;f<a.length;f++)for(var h=b;h<=c;h++){if(a[f]<0||a[f]>=this.rows)throw new RangeError("Row index out of range: "+a[f]);e.set(f,h-b,this.get(a[f],h))}return e}subMatrixColumn(a,b,c){b===void 0&&(b=0);c===void 0&&(c=this.rows-1);if(b>c||b<0||b>=this.rows||c<0||c>=this.rows)throw new RangeError("Argument out of range");for(var e=new this.constructor[Symbol.species](c-
+b+1,a.length),f=0;f<a.length;f++)for(var h=b;h<=c;h++){if(a[f]<0||a[f]>=this.columns)throw new RangeError("Column index out of range: "+a[f]);e.set(h-b,f,this.get(h,a[f]))}return e}setSubMatrix(a,b,c){a=this.constructor.checkMatrix(a);P(this,b,b+a.rows-1,c,c+a.columns-1);for(var e=0;e<a.rows;e++)for(var f=0;f<a.columns;f++)this[b+e][c+f]=a.get(e,f);return this}selection(a,b){var c=ka(this,a,b);a=new this.constructor[Symbol.species](a.length,b.length);for(b=0;b<c.row.length;b++)for(var e=c.row[b],
+f=0;f<c.column.length;f++)a[b][f]=this.get(e,c.column[f]);return a}trace(){for(var a=Math.min(this.rows,this.columns),b=0,c=0;c<a;c++)b+=this.get(c,c);return b}transposeView(){return new D(this)}rowView(a){da(this,a);return new l(this,a)}columnView(a){V(this,a);return new z(this,a)}flipRowView(){return new O(this)}flipColumnView(){return new ba(this)}subMatrixView(a,b,c,e){return new q(this,a,b,c,e)}selectionView(a,b){return new L(this,a,b)}rowSelectionView(a){return new A(this,a)}columnSelectionView(a){return new R(this,
+a)}det(){if(this.isSquare()){if(this.columns===2){var a=this.get(0,0);var b=this.get(0,1);var c=this.get(1,0);var e=this.get(1,1);return a*e-b*c}if(this.columns===3){e=this.selectionView([1,2],[1,2]);var f=this.selectionView([1,2],[0,2]);var h=this.selectionView([1,2],[0,1]);a=this.get(0,0);b=this.get(0,1);c=this.get(0,2);return a*e.det()-b*f.det()+c*h.det()}return(new E(this)).determinant}throw Error("Determinant can only be calculated for a square matrix.");}pseudoInverse(a){if(a===void 0)a=Number.EPSILON;
+var b=new G(this,{autoTranspose:true}),c=b.leftSingularVectors,e=b.rightSingularVectors;b=b.diagonal;for(var f=0;f<b.length;f++)b[f]=Math.abs(b[f])>a?1/b[f]:0;b=this.constructor[Symbol.species].diag(b);return e.mmul(b.mmul(c.transposeView()))}clone(){for(var a=new this.constructor[Symbol.species](this.rows,this.columns),b=0;b<this.rows;b++)for(var c=0;c<this.columns;c++)a.set(b,c,this.get(b,c));return a}}f.prototype.klass="Matrix";f.random=f.rand;f.diagonal=f.diag;f.prototype.diagonal=f.prototype.diag;
+f.identity=f.eye;f.prototype.negate=f.prototype.neg;f.prototype.tensorProduct=f.prototype.kroneckerProduct;f.prototype.determinant=f.prototype.det;var e=[["+","add"],["-","sub","subtract"],["*","mul","multiply"],["/","div","divide"],["%","mod","modulus"],["&","and"],["|","or"],["^","xor"],["<<","leftShift"],[">>","signPropagatingRightShift"],[">>>","rightShift","zeroFillRightShift"]];d=eval;for(var b of e){var h=d(c("\n(function %name%(value) {\n    if (typeof value === 'number') return this.%name%S(value);\n    return this.%name%M(value);\n})\n",
+{name:b[1],op:b[0]})),g=d(c("\n(function %name%S(value) {\n    for (var i = 0; i < this.rows; i++) {\n        for (var j = 0; j < this.columns; j++) {\n            this.set(i, j, this.get(i, j) %op% value);\n        }\n    }\n    return this;\n})\n",{name:b[1]+"S",op:b[0]})),Q=d(c("\n(function %name%M(matrix) {\n    matrix = this.constructor.checkMatrix(matrix);\n    if (this.rows !== matrix.rows ||\n        this.columns !== matrix.columns) {\n        throw new RangeError('Matrices dimensions must be equal');\n    }\n    for (var i = 0; i < this.rows; i++) {\n        for (var j = 0; j < this.columns; j++) {\n            this.set(i, j, this.get(i, j) %op% matrix.get(i, j));\n        }\n    }\n    return this;\n})\n",
+{name:b[1]+"M",op:b[0]})),m=d(c("\n(function %name%(matrix, value) {\n    var newMatrix = new this[Symbol.species](matrix);\n    return newMatrix.%name%(value);\n})\n",{name:b[1]}));for(e=1;e<b.length;e++){f.prototype[b[e]]=h;f.prototype[b[e]+"S"]=g;f.prototype[b[e]+"M"]=Q;f[b[e]]=m}}var x=[["~","not"]];["abs","acos","acosh","asin","asinh","atan","atanh","cbrt","ceil","clz32","cos","cosh","exp","expm1","floor","fround","log","log1p","log10","log2","round","sign","sin","sinh","sqrt","tan","tanh","trunc"].forEach(function(a){x.push(["Math."+
+a,a])});for(var fa of x){b=d(c("\n(function %name%() {\n    for (var i = 0; i < this.rows; i++) {\n        for (var j = 0; j < this.columns; j++) {\n            this.set(i, j, %method%(this.get(i, j)));\n        }\n    }\n    return this;\n})\n",{name:fa[1],method:fa[0]}));h=d(c("\n(function %name%(matrix) {\n    var newMatrix = new this[Symbol.species](matrix);\n    return newMatrix.%name%();\n})\n",{name:fa[1]}));for(e=1;e<fa.length;e++){f.prototype[fa[e]]=b;f[fa[e]]=h}}e=[["Math.pow",1,"pow"]];
+for(var r of e){b="arg0";for(e=1;e<r[1];e++)b+=`, arg${e}`;if(r[1]!==1){fa=d(c("\n(function %name%(%args%) {\n    for (var i = 0; i < this.rows; i++) {\n        for (var j = 0; j < this.columns; j++) {\n            this.set(i, j, %method%(this.get(i, j), %args%));\n        }\n    }\n    return this;\n})\n",{name:r[2],method:r[0],args:b}));b=d(c("\n(function %name%(matrix, %args%) {\n    var newMatrix = new this[Symbol.species](matrix);\n    return newMatrix.%name%(%args%);\n})\n",{name:r[2],args:b}));
+for(e=2;e<r.length;e++){f.prototype[r[e]]=fa;f[r[e]]=b}}else{e={name:r[2],args:b,method:r[0]};fa=d(c("\n(function %name%(value) {\n    if (typeof value === 'number') return this.%name%S(value);\n    return this.%name%M(value);\n})\n",e));b=d(c("\n(function %name%S(value) {\n    for (var i = 0; i < this.rows; i++) {\n        for (var j = 0; j < this.columns; j++) {\n            this.set(i, j, %method%(this.get(i, j), value));\n        }\n    }\n    return this;\n})\n",e));h=d(c("\n(function %name%M(matrix) {\n    matrix = this.constructor.checkMatrix(matrix);\n    if (this.rows !== matrix.rows ||\n        this.columns !== matrix.columns) {\n        throw new RangeError('Matrices dimensions must be equal');\n    }\n    for (var i = 0; i < this.rows; i++) {\n        for (var j = 0; j < this.columns; j++) {\n            this.set(i, j, %method%(this.get(i, j), matrix.get(i, j)));\n        }\n    }\n    return this;\n})\n",
+e));g=d(c("\n(function %name%(matrix, %args%) {\n    var newMatrix = new this[Symbol.species](matrix);\n    return newMatrix.%name%(%args%);\n})\n",e));for(e=2;e<r.length;e++){f.prototype[r[e]]=fa;f.prototype[r[e]+"M"]=h;f.prototype[r[e]+"S"]=b;f[r[e]]=g}}}return f}function F(d,a,c=false){d=S.checkMatrix(d);a=S.checkMatrix(a);return c?(new G(d)).solve(a):d.isSquare()?(new E(d)).solve(a):(new aa(d)).solve(a)}function C(d,a,c,f){var e,b,h,g;for(h=0;h<d;h++)c[h]=f[d-1][h];for(b=d-1;b>0;b--){for(g=e=
+h=0;g<b;g++)h+=Math.abs(c[g]);if(h===0){a[b]=c[b-1];for(h=0;h<b;h++){c[h]=f[b-1][h];f[b][h]=0;f[h][b]=0}}else{for(g=0;g<b;g++){c[g]=c[g]/h;e+=c[g]*c[g]}var Q=c[b-1];var m=Math.sqrt(e);Q>0&&(m=-m);a[b]=h*m;e-=Q*m;c[b-1]=Q-m;for(h=0;h<b;h++)a[h]=0;for(h=0;h<b;h++){Q=c[h];f[h][b]=Q;m=a[h]+f[h][h]*Q;for(g=h+1;g<=b-1;g++){m+=f[g][h]*c[g];a[g]=a[g]+f[g][h]*Q}a[h]=m}for(h=Q=0;h<b;h++){a[h]=a[h]/e;Q+=a[h]*c[h]}Q/=e+e;for(h=0;h<b;h++)a[h]=a[h]-Q*c[h];for(h=0;h<b;h++){Q=c[h];m=a[h];for(g=h;g<=b-1;g++)f[g][h]=
+f[g][h]-(Q*a[g]+m*c[g]);c[h]=f[b-1][h];f[b][h]=0}}c[b]=e}for(b=0;b<d-1;b++){f[d-1][b]=f[b][b];f[b][b]=1;e=c[b+1];if(e!==0){for(g=0;g<=b;g++)c[g]=f[g][b+1]/e;for(h=0;h<=b;h++){for(g=m=0;g<=b;g++)m+=f[g][b+1]*f[g][h];for(g=0;g<=b;g++)f[g][h]=f[g][h]-m*c[g]}}for(g=0;g<=b;g++)f[g][b+1]=0}for(h=0;h<d;h++){c[h]=f[d-1][h];f[d-1][h]=0}f[d-1][d-1]=1;a[0]=0}function la(d,a,c,f){var e,b,h,g,Q;for(e=1;e<d;e++)a[e-1]=a[e];var m=a[d-1]=0,x=0,r=Number.EPSILON;for(b=0;b<d;b++){x=Math.max(x,Math.abs(c[b])+Math.abs(a[b]));
+for(h=b;h<d;){if(Math.abs(a[h])<=r*x)break;h++}if(h>b){var q=0;do{q+=1;var p=c[b];var w=(c[b+1]-p)/(2*a[b]);var l=H(w,1);w<0&&(l=-l);c[b]=a[b]/(w+l);c[b+1]=a[b]*(w+l);var t=c[b+1];var B=p-c[b];for(e=b+2;e<d;e++)c[e]=c[e]-B;m+=B;w=c[h];var n=g=l=1;var y=a[b+1];var u=Q=0;for(e=h-1;e>=b;e--){n=g;g=l;u=Q;p=l*a[e];B=l*w;l=H(w,a[e]);a[e+1]=Q*l;Q=a[e]/l;l=w/l;w=l*c[e]-Q*p;c[e+1]=B+Q*(l*p+Q*c[e]);for(p=0;p<d;p++){B=f[p][e+1];f[p][e+1]=Q*f[p][e]+l*B;f[p][e]=l*f[p][e]-Q*B}}w=-Q*u*n*y*a[b]/t;a[b]=Q*w;c[b]=l*
+w}while(Math.abs(a[b])>r*x)}c[b]=c[b]+m;a[b]=0}for(e=0;e<d-1;e++){p=e;w=c[e];for(a=e+1;a<d;a++)if(c[a]<w){p=a;w=c[a]}if(p!==e){c[p]=c[e];c[e]=w;for(a=0;a<d;a++){w=f[a][e];f[a][e]=f[a][p];f[a][p]=w}}}}function ca(d,a,c,f){var e=d-1,b,h,g;for(g=1;g<=e-1;g++){var Q=0;for(b=g;b<=e;b++)Q+=Math.abs(a[b][g-1]);if(Q!==0){var m=0;for(b=e;b>=g;b--){c[b]=a[b][g-1]/Q;m+=c[b]*c[b]}var x=Math.sqrt(m);c[g]>0&&(x=-x);m-=c[g]*x;c[g]=c[g]-x;for(h=g;h<d;h++){var r=0;for(b=e;b>=g;b--)r+=c[b]*a[b][h];r/=m;for(b=g;b<=
+e;b++)a[b][h]=a[b][h]-r*c[b]}for(b=0;b<=e;b++){r=0;for(h=e;h>=g;h--)r+=c[h]*a[b][h];r/=m;for(h=g;h<=e;h++)a[b][h]=a[b][h]-r*c[h]}c[g]=Q*c[g];a[g][g-1]=Q*x}}for(b=0;b<d;b++)for(h=0;h<d;h++)f[b][h]=b===h?1:0;for(g=e-1;g>=1;g--)if(a[g][g-1]!==0){for(b=g+1;b<=e;b++)c[b]=a[b][g-1];for(h=g;h<=e;h++){x=0;for(b=g;b<=e;b++)x+=c[b]*f[b][h];x=x/c[g]/a[g][g-1];for(b=g;b<=e;b++)f[b][h]=f[b][h]+x*c[b]}}}function M(d,a,c,f,e){var b=d-1,h=d-1,g=Number.EPSILON,m=0,x=0,l=0,q=0,u=0,p=0,w=0,z=0,t,B,n,y,v;for(t=0;t<d;t++){if(t<
+0||t>h){c[t]=e[t][t];a[t]=0}for(B=Math.max(t-1,0);B<d;B++)x+=Math.abs(e[t][B])}for(;b>=0;){for(n=b;n>0;){p=Math.abs(e[n-1][n-1])+Math.abs(e[n][n]);p===0&&(p=x);if(Math.abs(e[n][n-1])<g*p)break;n--}if(n===b){e[b][b]=e[b][b]+m;c[b]=e[b][b];a[b]=0;b--;z=0}else if(n===b-1){var k=e[b][b-1]*e[b-1][b];l=(e[b-1][b-1]-e[b][b])/2;q=l*l+k;w=Math.sqrt(Math.abs(q));e[b][b]=e[b][b]+m;e[b-1][b-1]=e[b-1][b-1]+m;var X=e[b][b];if(q>=0){w=l>=0?l+w:l-w;c[b-1]=X+w;c[b]=c[b-1];w!==0&&(c[b]=X-k/w);a[b-1]=0;a[b]=0;X=e[b][b-
+1];p=Math.abs(X)+Math.abs(w);l=X/p;q=w/p;u=Math.sqrt(l*l+q*q);l/=u;q/=u;for(B=b-1;B<d;B++){w=e[b-1][B];e[b-1][B]=q*w+l*e[b][B];e[b][B]=q*e[b][B]-l*w}for(t=0;t<=b;t++){w=e[t][b-1];e[t][b-1]=q*w+l*e[t][b];e[t][b]=q*e[t][b]-l*w}for(t=0;t<=h;t++){w=f[t][b-1];f[t][b-1]=q*w+l*f[t][b];f[t][b]=q*f[t][b]-l*w}}else{c[b-1]=X+l;c[b]=X+l;a[b-1]=w;a[b]=-w}b-=2;z=0}else{X=e[b][b];k=v=0;if(n<b){v=e[b-1][b-1];k=e[b][b-1]*e[b-1][b]}if(z===10){m+=X;for(t=0;t<=b;t++)e[t][t]=e[t][t]-X;p=Math.abs(e[b][b-1])+Math.abs(e[b-
+1][b-2]);X=v=.75*p;k=-.4375*p*p}if(z===30){p=(v-X)/2;p=p*p+k;if(p>0){p=Math.sqrt(p);v<X&&(p=-p);p=X-k/((v-X)/2+p);for(t=0;t<=b;t++)e[t][t]=e[t][t]-p;m+=p;X=v=k=.964}}z+=1;for(y=b-2;y>=n;){w=e[y][y];u=X-w;p=v-w;l=(u*p-k)/e[y+1][y]+e[y][y+1];q=e[y+1][y+1]-w-u-p;u=e[y+2][y+1];p=Math.abs(l)+Math.abs(q)+Math.abs(u);l/=p;q/=p;u/=p;if(y===n)break;if(Math.abs(e[y][y-1])*(Math.abs(q)+Math.abs(u))<g*(Math.abs(l)*(Math.abs(e[y-1][y-1])+Math.abs(w)+Math.abs(e[y+1][y+1]))))break;y--}for(t=y+2;t<=b;t++){e[t][t-
+2]=0;t>y+2&&(e[t][t-3]=0)}for(k=y;k<=b-1;k++){var A=k!==b-1;if(k!==y){l=e[k][k-1];q=e[k+1][k-1];u=A?e[k+2][k-1]:0;X=Math.abs(l)+Math.abs(q)+Math.abs(u);if(X!==0){l/=X;q/=X;u/=X}}if(X===0)break;p=Math.sqrt(l*l+q*q+u*u);l<0&&(p=-p);if(p!==0){k!==y?e[k][k-1]=-p*X:n!==y&&(e[k][k-1]=-e[k][k-1]);l+=p;X=l/p;v=q/p;w=u/p;q/=l;u/=l;for(B=k;B<d;B++){l=e[k][B]+q*e[k+1][B];if(A){l+=u*e[k+2][B];e[k+2][B]=e[k+2][B]-l*w}e[k][B]=e[k][B]-l*X;e[k+1][B]=e[k+1][B]-l*v}for(t=0;t<=Math.min(b,k+3);t++){l=X*e[t][k]+v*e[t][k+
+1];if(A){l+=w*e[t][k+2];e[t][k+2]=e[t][k+2]-l*u}e[t][k]=e[t][k]-l;e[t][k+1]=e[t][k+1]-l*q}for(t=0;t<=h;t++){l=X*f[t][k]+v*f[t][k+1];if(A){l+=w*f[t][k+2];f[t][k+2]=f[t][k+2]-l*u}f[t][k]=f[t][k]-l;f[t][k+1]=f[t][k+1]-l*q}}}}}if(x!==0){for(b=d-1;b>=0;b--){l=c[b];q=a[b];if(q===0){n=b;e[b][b]=1;for(t=b-1;t>=0;t--){k=e[t][t]-l;u=0;for(B=n;B<=b;B++)u+=e[t][B]*e[B][b];if(a[t]<0){w=k;p=u}else{n=t;if(a[t]===0)e[t][b]=k!==0?-u/k:-u/(g*x);else{X=e[t][t+1];v=e[t+1][t];q=(c[t]-l)*(c[t]-l)+a[t]*a[t];m=(X*p-w*u)/
+q;e[t][b]=m;e[t+1][b]=Math.abs(X)>Math.abs(w)?(-u-k*m)/X:(-p-v*m)/w}m=Math.abs(e[t][b]);if(g*m*m>1)for(B=t;B<=b;B++)e[B][b]=e[B][b]/m}}}else if(q<0){n=b-1;if(Math.abs(e[b][b-1])>Math.abs(e[b-1][b])){e[b-1][b-1]=q/e[b][b-1];e[b-1][b]=-(e[b][b]-l)/e[b][b-1]}else{B=r(0,-e[b-1][b],e[b-1][b-1]-l,q);e[b-1][b-1]=B[0];e[b-1][b]=B[1]}e[b][b-1]=0;e[b][b]=1;for(t=b-2;t>=0;t--){z=m=0;for(B=n;B<=b;B++){m+=e[t][B]*e[B][b-1];z+=e[t][B]*e[B][b]}k=e[t][t]-l;if(a[t]<0){w=k;u=m;p=z}else{n=t;if(a[t]===0){B=r(-m,-z,k,
+q);e[t][b-1]=B[0];e[t][b]=B[1]}else{X=e[t][t+1];v=e[t+1][t];B=(c[t]-l)*(c[t]-l)+a[t]*a[t]-q*q;y=(c[t]-l)*2*q;B===0&&y===0&&(B=g*x*(Math.abs(k)+Math.abs(q)+Math.abs(X)+Math.abs(v)+Math.abs(w)));B=r(X*u-w*m+q*z,X*p-w*z-q*m,B,y);e[t][b-1]=B[0];e[t][b]=B[1];if(Math.abs(X)>Math.abs(w)+Math.abs(q)){e[t+1][b-1]=(-m-k*e[t][b-1]+q*e[t][b])/X;e[t+1][b]=(-z-k*e[t][b]-q*e[t][b-1])/X}else{B=r(-u-v*e[t][b-1],-p-v*e[t][b],w,q);e[t+1][b-1]=B[0];e[t+1][b]=B[1]}}m=Math.max(Math.abs(e[t][b-1]),Math.abs(e[t][b]));if(g*
+m*m>1)for(B=t;B<=b;B++){e[B][b-1]=e[B][b-1]/m;e[B][b]=e[B][b]/m}}}}}for(t=0;t<d;t++)if(t<0||t>h)for(B=t;B<d;B++)f[t][B]=e[t][B];for(B=d-1;B>=0;B--)for(t=0;t<=h;t++){for(k=w=0;k<=Math.min(B,h);k++)w+=f[t][k]*e[k][B];f[t][B]=w}}}function r(d,a,c,f){if(Math.abs(c)>Math.abs(f)){var e=f/c;c+=e*f;return[(d+e*a)/c,(a-e*d)/c]}e=c/f;c=f+e*c;return[(e*d+a)/c,(e*a-d)/c]}Object.defineProperty(d,"__esModule",{value:true});var I=function c(a){return a&&typeof a==="object"&&"default"in a?a["default"]:a}(Z("ml-array-rescale"));
+if(!Symbol.species)Symbol.species=Symbol.for("@@species");class E{constructor(a){a=S.checkMatrix(a);a=a.clone();var c=a.rows,f=a.columns,e=Array(c),b=1,h,g,d,l;for(h=0;h<c;h++)e[h]=h;var m=Array(c);for(g=0;g<f;g++){for(h=0;h<c;h++)m[h]=a.get(h,g);for(h=0;h<c;h++){var q=Math.min(h,g);for(d=l=0;d<q;d++)l+=a.get(h,d)*m[d];m[h]=m[h]-l;a.set(h,g,m[h])}l=g;for(h=g+1;h<c;h++)Math.abs(m[h])>Math.abs(m[l])&&(l=h);if(l!==g){for(d=0;d<f;d++){h=a.get(l,d);a.set(l,d,a.get(g,d));a.set(g,d,h)}d=e[l];e[l]=e[g];e[g]=
+d;b=-b}if(g<c&&a.get(g,g)!==0)for(h=g+1;h<c;h++)a.set(h,g,a.get(h,g)/a.get(g,g))}this.LU=a;this.pivotVector=e;this.pivotSign=b}isSingular(){for(var a=this.LU,c=a.columns,f=0;f<c;f++)if(a[f][f]===0)return true;return false}solve(a){a=K.checkMatrix(a);var c=this.LU;if(c.rows!==a.rows)throw Error("Invalid matrix dimensions");if(this.isSingular())throw Error("LU matrix is singular");var f=a.columns;a=a.subMatrixRow(this.pivotVector,0,f-1);var e=c.columns,b,h,g;for(g=0;g<e;g++)for(b=g+1;b<e;b++)for(h=
+0;h<f;h++)a[b][h]=a[b][h]-a[g][h]*c[b][g];for(g=e-1;g>=0;g--){for(h=0;h<f;h++)a[g][h]=a[g][h]/c[g][g];for(b=0;b<g;b++)for(h=0;h<f;h++)a[b][h]=a[b][h]-a[g][h]*c[b][g]}return a}get determinant(){var a=this.LU;if(!a.isSquare())throw Error("Matrix must be square");for(var c=this.pivotSign,f=a.columns,e=0;e<f;e++)c*=a[e][e];return c}get lowerTriangularMatrix(){for(var a=this.LU,c=a.rows,f=a.columns,e=new K(c,f),b=0;b<c;b++)for(var h=0;h<f;h++)e[b][h]=b>h?a[b][h]:b===h?1:0;return e}get upperTriangularMatrix(){for(var a=
+this.LU,c=a.rows,f=a.columns,e=new K(c,f),b=0;b<c;b++)for(var h=0;h<f;h++)e[b][h]=b<=h?a[b][h]:0;return e}get pivotPermutationVector(){return this.pivotVector.slice()}}class G{constructor(a,c={}){a=S.checkMatrix(a);c=a.rows;var f=a.columns,e=Math.min(c,f);const {computeLeftSingularVectors:b=true,computeRightSingularVectors:h=true,autoTranspose:g=false}=c;var d=!!b,l=!!h,m=false;if(c<f)if(g){var q=a.transpose();c=q.rows;f=q.columns;m=true;a=d;d=l;l=a}else{q=a.clone();console.warn("Computing SVD on a matrix with more columns than rows. Consider enabling autoTranspose")}else q=
+a.clone();a=Array(Math.min(c+1,f));var x=ia(c,e,0),p=ia(f,f,0),w=Array(f),r=Array(c),t=Math.min(c-1,f),u=Math.max(0,Math.min(f-2,c)),n,y,z;var k=0;for(z=Math.max(t,u);k<z;k++){if(k<t){a[k]=0;for(n=k;n<c;n++)a[k]=H(a[k],q[n][k]);if(a[k]!==0){q[k][k]<0&&(a[k]=-a[k]);for(n=k;n<c;n++)q[n][k]=q[n][k]/a[k];q[k][k]=q[k][k]+1}a[k]=-a[k]}for(y=k+1;y<f;y++){if(k<t&&a[k]!==0){var v=0;for(n=k;n<c;n++)v+=q[n][k]*q[n][y];v=-v/q[k][k];for(n=k;n<c;n++)q[n][y]=q[n][y]+v*q[n][k]}w[y]=q[k][y]}if(d&&k<t)for(n=k;n<c;n++)x[n][k]=
+q[n][k];if(k<u){w[k]=0;for(n=k+1;n<f;n++)w[k]=H(w[k],w[n]);if(w[k]!==0){w[k+1]<0&&(w[k]=0-w[k]);for(n=k+1;n<f;n++)w[n]=w[n]/w[k];w[k+1]=w[k+1]+1}w[k]=-w[k];if(k+1<c&&w[k]!==0){for(n=k+1;n<c;n++)r[n]=0;for(y=k+1;y<f;y++)for(n=k+1;n<c;n++)r[n]=r[n]+w[y]*q[n][y];for(y=k+1;y<f;y++){v=-w[y]/w[k+1];for(n=k+1;n<c;n++)q[n][y]=q[n][y]+v*r[n]}}if(l)for(n=k+1;n<f;n++)p[n][k]=w[n]}}r=Math.min(f,c+1);t<f&&(a[t]=q[t][t]);c<r&&(a[r-1]=0);u+1<r&&(w[u]=q[u][r-1]);w[r-1]=0;if(d){for(y=t;y<e;y++){for(n=0;n<c;n++)x[n][y]=
+0;x[y][y]=1}for(k=t-1;k>=0;k--)if(a[k]!==0){for(y=k+1;y<e;y++){v=0;for(n=k;n<c;n++)v+=x[n][k]*x[n][y];v=-v/x[k][k];for(n=k;n<c;n++)x[n][y]=x[n][y]+v*x[n][k]}for(n=k;n<c;n++)x[n][k]=-x[n][k];x[k][k]=1+x[k][k];for(n=0;n<k-1;n++)x[n][k]=0}else{for(n=0;n<c;n++)x[n][k]=0;x[k][k]=1}}if(l)for(k=f-1;k>=0;k--){if(k<u&&w[k]!==0)for(y=k+1;y<f;y++){v=0;for(n=k+1;n<f;n++)v+=p[n][k]*p[n][y];v=-v/p[k+1][k];for(n=k+1;n<f;n++)p[n][y]=p[n][y]+v*p[n][k]}for(n=0;n<f;n++)p[n][k]=0;p[k][k]=1}e=r-1;q=0;for(t=Number.EPSILON;r>
+0;){for(k=r-2;k>=-1;k--){if(k===-1)break;if(Math.abs(w[k])<=t*(Math.abs(a[k])+Math.abs(a[k+1]))){w[k]=0;break}}if(k===r-2)v=4;else{for(n=r-1;n>=k;n--){if(n===k)break;v=(n!==r?Math.abs(w[n]):0)+(n!==k+1?Math.abs(w[n-1]):0);if(Math.abs(a[n])<=t*v){a[n]=0;break}}if(n===k)v=3;else if(n===r-1)v=1;else{v=2;k=n}}k++;switch(v){case 1:u=w[r-2];w[r-2]=0;for(y=r-2;y>=k;y--){v=H(a[y],u);z=a[y]/v;var A=u/v;a[y]=v;if(y!==k){u=-A*w[y-1];w[y-1]=z*w[y-1]}if(l)for(n=0;n<f;n++){v=z*p[n][y]+A*p[n][r-1];p[n][r-1]=-A*
+p[n][y]+z*p[n][r-1];p[n][y]=v}}break;case 2:u=w[k-1];w[k-1]=0;for(y=k;y<r;y++){v=H(a[y],u);z=a[y]/v;A=u/v;a[y]=v;u=-A*w[y];w[y]=z*w[y];if(d)for(n=0;n<c;n++){v=z*x[n][y]+A*x[n][k-1];x[n][k-1]=-A*x[n][y]+z*x[n][k-1];x[n][y]=v}}break;case 3:y=Math.max(Math.abs(a[r-1]),Math.abs(a[r-2]),Math.abs(w[r-2]),Math.abs(a[k]),Math.abs(w[k]));n=a[r-1]/y;z=a[r-2]/y;u=w[r-2]/y;v=a[k]/y;y=w[k]/y;z=((z+n)*(z-n)+u*u)/2;u=n*u*(n*u);A=0;if(z!==0||u!==0){A=Math.sqrt(z*z+u);z<0&&(A=-A);A=u/(z+A)}u=(v+n)*(v-n)+A;var C=v*
+y;for(y=k;y<r-1;y++){v=H(u,C);z=u/v;A=C/v;y!==k&&(w[y-1]=v);u=z*a[y]+A*w[y];w[y]=z*w[y]-A*a[y];C=A*a[y+1];a[y+1]=z*a[y+1];if(l)for(n=0;n<f;n++){v=z*p[n][y]+A*p[n][y+1];p[n][y+1]=-A*p[n][y]+z*p[n][y+1];p[n][y]=v}v=H(u,C);z=u/v;A=C/v;a[y]=v;u=z*w[y]+A*a[y+1];a[y+1]=-A*w[y]+z*a[y+1];C=A*w[y+1];w[y+1]=z*w[y+1];if(d&&y<c-1)for(n=0;n<c;n++){v=z*x[n][y]+A*x[n][y+1];x[n][y+1]=-A*x[n][y]+z*x[n][y+1];x[n][y]=v}}w[r-2]=u;q+=1;break;case 4:if(a[k]<=0){a[k]=a[k]<0?-a[k]:0;if(l)for(n=0;n<=e;n++)p[n][k]=-p[n][k]}for(;k<
+e;){if(a[k]>=a[k+1])break;v=a[k];a[k]=a[k+1];a[k+1]=v;if(l&&k<f-1)for(n=0;n<f;n++){v=p[n][k+1];p[n][k+1]=p[n][k];p[n][k]=v}if(d&&k<c-1)for(n=0;n<c;n++){v=x[n][k+1];x[n][k+1]=x[n][k];x[n][k]=v}k++}q=0;r--}}if(m){d=p;p=x;x=d}this.m=c;this.n=f;this.s=a;this.U=x;this.V=p}solve(a){var c=this.threshold,f=this.s.length,e=K.zeros(f,f),b;for(b=0;b<f;b++)e[b][b]=Math.abs(this.s[b])<=c?0:1/this.s[b];c=this.U;b=this.rightSingularVectors;e=b.mmul(e);var h=b.rows,g=c.length,d=K.zeros(h,g),l,m,x;for(b=0;b<h;b++)for(l=
+0;l<g;l++){for(m=x=0;m<f;m++)x+=e[b][m]*c[l][m];d[b][l]=x}return d.mmul(a)}solveForDiagonal(a){return this.solve(K.diag(a))}inverse(){var a=this.V,c=this.threshold,f=a.length,e=a[0].length,b=new K(f,this.s.length),h,g;for(h=0;h<f;h++)for(g=0;g<e;g++)b[h][g]=Math.abs(this.s[g])>c?a[h][g]/this.s[g]:0;a=this.U;c=a.length;e=a[0].length;var d=new K(f,c),l,m;for(h=0;h<f;h++)for(g=0;g<c;g++){for(l=m=0;l<e;l++)m+=b[h][l]*a[g][l];d[h][g]=m}return d}get condition(){return this.s[0]/this.s[Math.min(this.m,this.n)-
+1]}get norm2(){return this.s[0]}get rank(){for(var a=Math.max(this.m,this.n)*this.s[0]*Number.EPSILON,c=0,f=this.s,e=0,b=f.length;e<b;e++)f[e]>a&&c++;return c}get diagonal(){return this.s}get threshold(){return Number.EPSILON/2*Math.max(this.m,this.n)*this.s[0]}get leftSingularVectors(){if(!K.isMatrix(this.U))this.U=new K(this.U);return this.U}get rightSingularVectors(){if(!K.isMatrix(this.V))this.V=new K(this.V);return this.V}get diagonalMatrix(){return K.diag(this.s)}}class u extends v(){constructor(a,
+c,f){super();this.matrix=a;this.rows=c;this.columns=f}static get [Symbol.species](){return K}}class D extends u{constructor(a){super(a,a.columns,a.rows)}set(a,c,f){this.matrix.set(c,a,f);return this}get(a,c){return this.matrix.get(c,a)}}class l extends u{constructor(a,c){super(a,1,a.columns);this.row=c}set(a,c,f){this.matrix.set(this.row,c,f);return this}get(a,c){return this.matrix.get(this.row,c)}}class q extends u{constructor(a,c,f,e,b){P(a,c,f,e,b);super(a,f-c+1,b-e+1);this.startRow=c;this.startColumn=
+e}set(a,c,f){this.matrix.set(this.startRow+a,this.startColumn+c,f);return this}get(a,c){return this.matrix.get(this.startRow+a,this.startColumn+c)}}class L extends u{constructor(a,c,f){c=ka(a,c,f);super(a,c.row.length,c.column.length);this.rowIndices=c.row;this.columnIndices=c.column}set(a,c,f){this.matrix.set(this.rowIndices[a],this.columnIndices[c],f);return this}get(a,c){return this.matrix.get(this.rowIndices[a],this.columnIndices[c])}}class A extends u{constructor(a,c){c=x(a,c);super(a,c.length,
+a.columns);this.rowIndices=c}set(a,c,f){this.matrix.set(this.rowIndices[a],c,f);return this}get(a,c){return this.matrix.get(this.rowIndices[a],c)}}class R extends u{constructor(a,c){c=m(a,c);super(a,a.rows,c.length);this.columnIndices=c}set(a,c,f){this.matrix.set(a,this.columnIndices[c],f);return this}get(a,c){return this.matrix.get(a,this.columnIndices[c])}}class z extends u{constructor(a,c){super(a,a.rows,1);this.column=c}set(a,c,f){this.matrix.set(a,this.column,f);return this}get(a){return this.matrix.get(a,
+this.column)}}class O extends u{constructor(a){super(a,a.rows,a.columns)}set(a,c,f){this.matrix.set(this.rows-a-1,c,f);return this}get(a,c){return this.matrix.get(this.rows-a-1,c)}}class ba extends u{constructor(a){super(a,a.rows,a.columns)}set(a,c,f){this.matrix.set(a,this.columns-c-1,f);return this}get(a,c){return this.matrix.get(a,this.columns-c-1)}}class K extends v(Array){constructor(a,c){var f;if(arguments.length===1&&typeof a==="number")return Array(a);if(K.isMatrix(a))return a.clone();if(Number.isInteger(a)&&
+a>0){super(a);if(Number.isInteger(c)&&c>0)for(f=0;f<a;f++)this[f]=Array(c);else throw new TypeError("nColumns must be a positive integer");}else if(Array.isArray(a)){const e=a;a=e.length;c=e[0].length;if(typeof c!=="number"||c===0)throw new TypeError("Data must be a 2D array with at least one element");super(a);for(f=0;f<a;f++){if(e[f].length!==c)throw new RangeError("Inconsistent array dimensions");this[f]=[].concat(e[f])}}else throw new TypeError("First argument must be a positive number or an array");
+this.rows=a;this.columns=c;return this}set(a,c,f){this[a][c]=f;return this}get(a,c){return this[a][c]}removeRow(a){da(this,a);if(this.rows===1)throw new RangeError("A matrix cannot have less than one row");this.splice(a,1);--this.rows;return this}addRow(a,c){if(c===void 0){c=a;a=this.rows}da(this,a,true);c=U(this,c,true);this.splice(a,0,c);this.rows=this.rows+1;return this}removeColumn(a){V(this,a);if(this.columns===1)throw new RangeError("A matrix cannot have less than one column");for(var c=0;c<
+this.rows;c++)this[c].splice(a,1);--this.columns;return this}addColumn(a,c){if(typeof c==="undefined"){c=a;a=this.columns}V(this,a,true);c=T(this,c);for(var f=0;f<this.rows;f++)this[f].splice(a,0,c[f]);this.columns=this.columns+1;return this}}class Y extends v(){constructor(a,c={}){var {rows:c=1}=c;if(a.length%c!==0)throw Error("the data length is not divisible by the number of rows");super();this.rows=c;this.columns=a.length/c;this.data=a}set(a,c,f){a=this._calculateIndex(a,c);this.data[a]=f;return this}get(a,
+c){a=this._calculateIndex(a,c);return this.data[a]}_calculateIndex(a,c){return a*this.columns+c}static get [Symbol.species](){return K}}class S extends v(){constructor(a){super();this.data=a;this.rows=a.length;this.columns=a[0].length}set(a,c,f){this.data[a][c]=f;return this}get(a,c){return this.data[a][c]}static get [Symbol.species](){return K}}class aa{constructor(a){a=S.checkMatrix(a);var c=a.clone(),f=a.rows;a=a.columns;var e=Array(a),b,h,g;for(g=0;g<a;g++){var d=0;for(b=g;b<f;b++)d=H(d,c.get(b,
+g));if(d!==0){c.get(g,g)<0&&(d=-d);for(b=g;b<f;b++)c.set(b,g,c.get(b,g)/d);c.set(g,g,c.get(g,g)+1);for(h=g+1;h<a;h++){var l=0;for(b=g;b<f;b++)l+=c.get(b,g)*c.get(b,h);l=-l/c.get(g,g);for(b=g;b<f;b++)c.set(b,h,c.get(b,h)+l*c.get(b,g))}}e[g]=-d}this.QR=c;this.Rdiag=e}solve(a){a=K.checkMatrix(a);var c=this.QR,f=c.rows;if(a.rows!==f)throw Error("Matrix row dimensions must agree");if(!this.isFullRank())throw Error("Matrix is rank deficient");var e=a.columns;a=a.clone();var b=c.columns,h,d,l;for(l=0;l<
+b;l++)for(d=0;d<e;d++){var m=0;for(h=l;h<f;h++)m+=c[h][l]*a[h][d];m=-m/c[l][l];for(h=l;h<f;h++)a[h][d]=a[h][d]+m*c[h][l]}for(l=b-1;l>=0;l--){for(d=0;d<e;d++)a[l][d]=a[l][d]/this.Rdiag[l];for(h=0;h<l;h++)for(d=0;d<e;d++)a[h][d]=a[h][d]-a[l][d]*c[h][l]}return a.subMatrix(0,b-1,0,e-1)}isFullRank(){for(var a=this.QR.columns,c=0;c<a;c++)if(this.Rdiag[c]===0)return false;return true}get upperTriangularMatrix(){var a=this.QR,c=a.columns,f=new K(c,c),e,b;for(e=0;e<c;e++)for(b=0;b<c;b++)f[e][b]=e<b?a[e][b]:
+e===b?this.Rdiag[e]:0;return f}get orthogonalMatrix(){var a=this.QR,c=a.rows,f=a.columns,e=new K(c,f),b,d,g;for(g=f-1;g>=0;g--){for(b=0;b<c;b++)e[b][g]=0;e[g][g]=1;for(d=g;d<f;d++)if(a[g][g]!==0){var l=0;for(b=g;b<c;b++)l+=a[b][g]*e[b][d];l=-l/a[g][g];for(b=g;b<c;b++)e[b][d]=e[b][d]+l*a[b][g]}}return e}}class pa{constructor(a,c={}){var {assumeSymmetric:f=false}=c;a=S.checkMatrix(a);if(!a.isSquare())throw Error("Matrix is not a square matrix");c=a.columns;var e=ia(c,c,0),b=Array(c),d=Array(c),g=a;
+if(f||a.isSymmetric()){for(a=0;a<c;a++)for(f=0;f<c;f++)e[a][f]=g.get(a,f);C(c,d,b,e);la(c,d,b,e)}else{var l=ia(c,c,0),m=Array(c);for(f=0;f<c;f++)for(a=0;a<c;a++)l[a][f]=g.get(a,f);ca(c,l,m,e);M(c,d,b,e,l)}this.n=c;this.e=d;this.d=b;this.V=e}get realEigenvalues(){return this.d}get imaginaryEigenvalues(){return this.e}get eigenvectorMatrix(){if(!K.isMatrix(this.V))this.V=new K(this.V);return this.V}get diagonalMatrix(){var a=this.n,c=this.e,f=this.d,e=new K(a,a),b,d;for(b=0;b<a;b++){for(d=0;d<a;d++)e[b][d]=
+0;e[b][b]=f[b];c[b]>0?e[b][b+1]=c[b]:c[b]<0&&(e[b][b-1]=c[b])}return e}}class qa{constructor(a){a=S.checkMatrix(a);if(!a.isSymmetric())throw Error("Matrix is not symmetric");var c=a.rows,f=new K(c,c),e=true,b,d,g;for(d=0;d<c;d++){var l=f[d],m=0;for(g=0;g<d;g++){var x=f[g],q=0;for(b=0;b<g;b++)q+=x[b]*l[b];l[g]=q=(a.get(d,g)-q)/f[g][g];m+=q*q}m=a.get(d,d)-m;e&=m>0;f[d][d]=Math.sqrt(Math.max(m,0));for(g=d+1;g<c;g++)f[d][g]=0}if(!e)throw Error("Matrix is not positive definite");this.L=f}solve(a){a=S.checkMatrix(a);
+var c=this.L,f=c.rows;if(a.rows!==f)throw Error("Matrix dimensions do not match");var e=a.columns;a=a.clone();var b,d,g;for(g=0;g<f;g++)for(d=0;d<e;d++){for(b=0;b<g;b++)a[g][d]=a[g][d]-a[b][d]*c[g][b];a[g][d]=a[g][d]/c[g][g]}for(g=f-1;g>=0;g--)for(d=0;d<e;d++){for(b=g+1;b<f;b++)a[g][d]=a[g][d]-a[b][d]*c[b][g];a[g][d]=a[g][d]/c[g][g]}return a}get lowerTriangularMatrix(){return this.L}}d["default"]=K;d.Matrix=K;d.abstractMatrix=v;d.wrap=function e(c,d){if(Array.isArray(c))return c[0]&&Array.isArray(c[0])?
+new S(c):new Y(c,d);throw Error("the argument is not an array");};d.WrapperMatrix2D=S;d.WrapperMatrix1D=Y;d.solve=F;d.inverse=function b(d,e=false){d=S.checkMatrix(d);return e?(new G(d)).inverse():F(d,K.eye(d.rows))};d.SingularValueDecomposition=G;d.SVD=G;d.EigenvalueDecomposition=pa;d.EVD=pa;d.CholeskyDecomposition=qa;d.CHO=qa;d.LuDecomposition=E;d.LU=E;d.QrDecomposition=aa;d.QR=aa},{"ml-array-rescale":2}],2:[function(Z,ha,d){function H(d){return d&&typeof d==="object"&&"default"in d?d["default"]:
+d}var ia=H(Z("ml-array-max")),da=H(Z("ml-array-min"));ha.exports=function ka(d,T={}){if(!Array.isArray(d))throw new TypeError("input must be an array");if(d.length===0)throw new TypeError("input must not be empty");if(T.output!==void 0){if(!Array.isArray(T.output))throw new TypeError("output option must be an array if specified");T=T.output}else T=Array(d.length);const x=da(d);var m=ia(d);if(x===m)throw new RangeError("minimum and maximum input values are equal. Cannot rescale a constant array");
+const {min:P=T.autoMinMax?x:0,max:J=T.autoMinMax?m:1}=T;if(P>=J)throw new RangeError("min option must be smaller than max option");m=(J-P)/(m-x);for(var W=0;W<d.length;W++)T[W]=(d[W]-x)*m+P;return T}},{"ml-array-max":3,"ml-array-min":4}],3:[function(Z,ha,d){ha.exports=function da(d){if(!Array.isArray(d))throw Error("input must be an array");if(d.length===0)throw Error("input must not be empty");for(var V=d[0],U=1;U<d.length;U++)d[U]>V&&(V=d[U]);return V}},{}],4:[function(Z,ha,d){ha.exports=function da(d){if(!Array.isArray(d))throw Error("input must be an array");
+if(d.length===0)throw Error("input must not be empty");for(var V=d[0],U=1;U<d.length;U++)d[U]<V&&(V=d[U]);return V}},{}],5:[function(Z,ha,d){function H(d,da){return d-da}d.sum=function V(d){for(var U=0,T=0;T<d.length;T++)U+=d[T];return U};d.max=function U(d){for(var T=d[0],V=d.length,x=1;x<V;x++)d[x]>T&&(T=d[x]);return T};d.min=function T(d){for(var U=d[0],x=d.length,m=1;m<x;m++)d[m]<U&&(U=d[m]);return U};d.minMax=function ka(d){for(var x=d[0],m=d[0],P=d.length,J=1;J<P;J++){d[J]<x&&(x=d[J]);d[J]>
+m&&(m=d[J])}return{min:x,max:m}};d.arithmeticMean=function x(d){for(var m=0,P=d.length,J=0;J<P;J++)m+=d[J];return m/P};d.mean=d.arithmeticMean;d.geometricMean=function m(d){for(var x=1,J=d.length,W=0;W<J;W++)x*=d[W];return Math.pow(x,1/J)};d.logMean=function P(d){for(var m=0,W=d.length,N=0;N<W;N++)m+=Math.log(d[N]);return m/W};d.grandMean=function W(d,J){for(var P=0,v=0,F=d.length,C=0;C<F;C++){P+=J[C]*d[C];v+=J[C]}return P/v};d.truncatedMean=function v(d,W,N){N===void 0&&(N=false);N||(d=[].concat(d).sort(H));
+N=d.length;W=Math.floor(N*W);for(var F=0,C=W;C<N-W;C++)F+=d[C];return F/(N-2*W)};d.harmonicMean=function N(d){for(var v=0,F=d.length,C=0;C<F;C++){if(d[C]===0)throw new RangeError("value at index "+C+"is zero");v+=1/d[C]}return F/v};d.contraHarmonicMean=function v(d){for(var F=0,C=0,N=d.length,ca=0;ca<N;ca++){F+=d[ca]*d[ca];C+=d[ca]}if(C<0)throw new RangeError("sum of values is negative");return F/C};d.median=function C(d,F){F===void 0&&(F=false);F||(d=[].concat(d).sort(H));F=d.length;var v=Math.floor(F/
+2);return F%2===0?(d[v-1]+d[v])*.5:d[v]};d.variance=function la(F,C){C===void 0&&(C=true);for(var ca=d.mean(F),M=0,r=F.length,I=0;I<r;I++){var E=F[I]-ca;M+=E*E}return C?M/(r-1):M/r};d.standardDeviation=function ca(C,la){return Math.sqrt(d.variance(C,la))};d.standardError=function ca(la){return d.standardDeviation(la)/Math.sqrt(la.length)};d.robustMeanAndStdev=function M(d){var r=0,I=d.length,E;for(E=0;E<I;E++)r+=d[E];r/=I;var G=Array(I);for(E=0;E<I;E++)G[E]=Math.abs(d[E]-r);G.sort(H);return{mean:r,
+stdev:I%2===1?G[(I-1)/2]/.6745:.5*(G[I/2]+G[I/2-1])/.6745}};d.quartiles=function I(M,r){typeof r==="undefined"&&(r=false);r||(M=[].concat(M).sort(H));r=M.length/4;var E=M[Math.ceil(r)-1],G=d.median(M,true);return{q1:E,q2:G,q3:M[Math.ceil(r*3)-1]}};d.pooledStandardDeviation=function E(r,I){return Math.sqrt(d.pooledVariance(r,I))};d.pooledVariance=function G(I,E){typeof E==="undefined"&&(E=true);for(var u=0,D=0,l=I.length,q=0;q<l;q++){var L=I[q],A=d.variance(L);u+=(L.length-1)*A;D=E?D+(L.length-1):
+D+L.length}return u/D};d.mode=function G(d){var u=d.length,D=Array(u),l;for(l=0;l<u;l++)D[l]=0;var q=Array(u),E=0;for(l=0;l<u;l++){var A=q.indexOf(d[l]);if(A>=0)D[A]++;else{q[E]=d[l];D[E]=1;E++}}for(l=u=d=0;l<E;l++)if(D[l]>d){d=D[l];u=l}return q[u]};d.covariance=function l(G,u,D){typeof D==="undefined"&&(D=true);var q=d.mean(G),L=d.mean(u);if(G.length!==u.length)throw"Vectors do not have the same dimensions";for(var A=0,R=G.length,z=0;z<R;z++)A+=(G[z]-q)*(u[z]-L);return D?A/(R-1):A/R};d.skewness=
+function l(u,D){typeof D==="undefined"&&(D=true);for(var q=d.mean(u),L=0,A=0,R=u.length,z=0;z<R;z++){var O=u[z]-q;L+=O*O;A+=O*O*O}u=A/R/Math.pow(L/R,1.5);return D?Math.sqrt(R*(R-1))/(R-2)*u:u};d.kurtosis=function q(D,l){typeof l==="undefined"&&(l=true);for(var L=d.mean(D),A=D.length,R=0,z=0,O=0;O<A;O++){var ba=D[O]-L;R+=ba*ba;z+=ba*ba*ba*ba}D=R/A;if(l){l=R/(A-1);return A*(A+1)/((A-1)*(A-2)*(A-3))*(z/(l*l))-3*((A-1)*(A-1)/((A-2)*(A-3)))}return z/A/(D*D)-3};d.entropy=function L(d,q){typeof q==="undefined"&&
+(q=0);for(var l=0,R=d.length,z=0;z<R;z++)l+=d[z]*Math.log(d[z]+q);return-l};d.weightedMean=function A(d,L){for(var q=0,z=d.length,O=0;O<z;O++)q+=d[O]*L[O];return q};d.weightedStandardDeviation=function R(L,A){return Math.sqrt(d.weightedVariance(L,A))};d.weightedVariance=function z(A,R){for(var O=d.weightedMean(A,R),ba=0,K=A.length,Y=0,S=0,aa=0;aa<K;aa++){var H=A[aa]-O,Z=R[aa];ba+=Z*(H*H);S+=Z;Y+=Z*Z}return ba*(S/(S*S-Y))};d.center=function O(R,z){typeof z==="undefined"&&(z=false);var ba=R;z||(ba=
+[].concat(R));R=d.mean(ba);z=ba.length;for(var K=0;K<z;K++)ba[K]=ba[K]-R};d.standardize=function K(z,O,ba){typeof O==="undefined"&&(O=d.standardDeviation(z));typeof ba==="undefined"&&(ba=false);var Y=z.length;ba=ba?z:Array(Y);for(var S=0;S<Y;S++)ba[S]=z[S]/O;return ba};d.cumulativeSum=function ba(d){var K=d.length,O=Array(K);O[0]=d[0];for(var S=1;S<K;S++)O[S]=O[S-1]+d[S];return O}},{}],6:[function(Z,ha,d){function H(d,V){return d-V}var ia=Z("./array");d.max=function U(d){for(var T=-Infinity,V=0;V<
+d.length;V++)for(var x=0;x<d[V].length;x++)d[V][x]>T&&(T=d[V][x]);return T};d.min=function T(d){for(var U=Infinity,x=0;x<d.length;x++)for(var m=0;m<d[x].length;m++)d[x][m]<U&&(U=d[x][m]);return U};d.minMax=function ka(d){for(var x=Infinity,m=-Infinity,P=0;P<d.length;P++)for(var J=0;J<d[P].length;J++){d[P][J]<x&&(x=d[P][J]);d[P][J]>m&&(m=d[P][J])}return{min:x,max:m}};d.entropy=function m(d,x){typeof x==="undefined"&&(x=0);for(var P=0,J=d.length,W=d[0].length,N=0;N<J;N++)for(var v=0;v<W;v++)P+=d[N][v]*
+Math.log(d[N][v]+x);return-P};d.mean=function P(d,m){typeof m==="undefined"&&(m=0);var x=d.length,W=d[0].length,N,v;if(m===-1){m=[0];var F=x*W;for(N=0;N<x;N++)for(v=0;v<W;v++)m[0]=m[0]+d[N][v];m[0]=m[0]/F}else if(m===0){m=Array(W);F=x;for(v=0;v<W;v++){for(N=m[v]=0;N<x;N++)m[v]=m[v]+d[N][v];m[v]=m[v]/F}}else if(m===1){m=Array(x);F=W;for(v=0;v<x;v++){for(N=m[v]=0;N<W;N++)m[v]=m[v]+d[v][N];m[v]=m[v]/F}}else throw Error("Invalid dimension");return m};d.sum=function J(d,P){typeof P==="undefined"&&(P=0);
+var m=d.length,N=d[0].length,v,F;if(P===-1){P=[0];for(v=0;v<m;v++)for(F=0;F<N;F++)P[0]=P[0]+d[v][F]}else if(P===0){P=Array(N);for(F=0;F<N;F++)for(v=P[F]=0;v<m;v++)P[F]=P[F]+d[v][F]}else if(P===1){P=Array(m);for(F=0;F<m;F++)for(v=P[F]=0;v<N;v++)P[F]=P[F]+d[F][v]}else throw Error("Invalid dimension");return P};d.product=function W(d,J){typeof J==="undefined"&&(J=0);var P=d.length,v=d[0].length,F,C;if(J===-1){J=[1];for(F=0;F<P;F++)for(C=0;C<v;C++)J[0]=J[0]*d[F][C]}else if(J===0){J=Array(v);for(C=0;C<
+v;C++){J[C]=1;for(F=0;F<P;F++)J[C]=J[C]*d[F][C]}}else if(J===1){J=Array(P);for(C=0;C<P;C++){J[C]=1;for(F=0;F<v;F++)J[C]=J[C]*d[C][F]}}else throw Error("Invalid dimension");return J};d.standardDeviation=function v(J,W,N){J=d.variance(J,W,N);W=J.length;for(N=0;N<W;N++)J[N]=Math.sqrt(J[N]);return J};d.variance=function F(W,N,v){typeof v==="undefined"&&(v=true);N=N||d.mean(W);var C=W.length;if(C===0)return[];for(var H=W[0].length,ca=Array(H),M=0;M<H;M++){for(var r=0,I=0,E,G=0;G<C;G++){E=W[G][M]-N[M];
+r+=E;I+=E*E}ca[M]=v?(I-r*r/C)/(C-1):(I-r*r/C)/C}return ca};d.median=function v(d){for(var F=d.length,C=d[0].length,N=Array(C),ca=0;ca<C;ca++){for(var M=Array(F),r=0;r<F;r++)M[r]=d[r][ca];M.sort(H);r=M.length;N[ca]=r%2===0?(M[r/2]+M[r/2-1])*.5:M[Math.floor(r/2)]}return N};d.mode=function F(d){var v=d.length,H=d[0].length,ca=Array(H),M,r;for(M=0;M<H;M++){var I=Array(v);for(r=0;r<v;r++)I[r]=0;var E=Array(v),G=0;for(r=0;r<v;r++){var u=E.indexOf(d[r][M]);if(u>=0)I[u]++;else{E[G]=d[r][M];I[G]=1;G++}}var D=
+u=0;for(r=0;r<G;r++)if(I[r]>u){u=I[r];D=r}ca[M]=E[D]}return ca};d.skewness=function la(F,C){typeof C==="undefined"&&(C=true);for(var H=d.mean(F),M=F.length,r=H.length,I=Array(r),E=0;E<r;E++){for(var G=0,u=0,D=0;D<M;D++){var l=F[D][E]-H[E];G+=l*l;u+=l*l*l}G=u/M/Math.pow(G/M,1.5);I[E]=C?Math.sqrt(M*(M-1))/(M-2)*G:G}return I};d.kurtosis=function ca(C,H){typeof H==="undefined"&&(H=true);for(var M=d.mean(C),r=C.length,I=C[0].length,E=Array(I),G=0;G<I;G++){for(var u=0,D=0,l=0;l<r;l++){var q=C[l][G]-M[G];
+u+=q*q;D+=q*q*q*q}l=u/r;q=D/r;if(H){u/=r-1;E[G]=r*(r+1)/((r-1)*(r-2)*(r-3))*(D/(u*u))-3*((r-1)*(r-1)/((r-2)*(r-3)))}else E[G]=q/(l*l)-3}return E};d.standardError=function ca(H){var M=H.length;H=d.standardDeviation(H);var r=H.length,I=Array(r);M=Math.sqrt(M);for(var E=0;E<r;E++)I[E]=H[E]/M;return I};d.covariance=function r(H,M){return d.scatter(H,void 0,M)};d.scatter=function E(M,r,I){typeof I==="undefined"&&(I=0);typeof r==="undefined"&&(I===0?r=M.length-1:I===1&&(r=M[0].length-1));var G=d.mean(M,
+I),u=M.length;if(u===0)return[[]];var D=M[0].length,l,q,L,A;if(I===0){I=Array(D);for(l=0;l<D;l++)I[l]=Array(D);for(l=0;l<D;l++)for(q=l;q<D;q++){for(A=L=0;A<u;A++)L+=(M[A][q]-G[q])*(M[A][l]-G[l]);L/=r;I[l][q]=L;I[q][l]=L}}else if(I===1){I=Array(u);for(l=0;l<u;l++)I[l]=Array(u);for(l=0;l<u;l++)for(q=l;q<u;q++){for(A=L=0;A<D;A++)L+=(M[q][A]-G[q])*(M[l][A]-G[l]);L/=r;I[l][q]=L;I[q][l]=L}}else throw Error("Invalid dimension");return I};d.correlation=function I(r){var E=d.mean(r),G=d.standardDeviation(r,
+true,E);E=d.zScores(r,E,G);G=r.length;r=r[0].length;var u,D,l=Array(r);for(u=0;u<r;u++)l[u]=Array(r);for(u=0;u<r;u++)for(D=u;D<r;D++){for(var q=0,L=0,A=E.length;L<A;L++)q+=E[L][D]*E[L][u];q/=G-1;l[u][D]=q;l[D][u]=q}return l};d.zScores=function u(I,E,G){E=E||d.mean(I);typeof G==="undefined"&&(G=d.standardDeviation(I,true,E));return d.standardize(d.center(I,E,false),G,true)};d.center=function D(E,G,u){G=G||d.mean(E);var l=E,q=E.length,L;if(!u){l=Array(q);for(u=0;u<q;u++)l[u]=Array(E[u].length)}for(u=
+0;u<q;u++){var A=l[u];var R=0;for(L=A.length;R<L;R++)A[R]=E[u][R]-G[R]}return l};d.standardize=function l(G,u,D){typeof u==="undefined"&&(u=d.standardDeviation(G));var q=G,L=G.length,A;if(!D){q=Array(L);for(D=0;D<L;D++)q[D]=Array(G[D].length)}for(D=0;D<L;D++){var R=q[D],z=G[D];var O=0;for(A=R.length;O<A;O++)u[O]===0||isNaN(u[O])||(R[O]=z[O]/u[O])}return q};d.weightedVariance=function l(u,D){var q=d.mean(u),L=u.length;if(L===0)return[];for(var A=u[0].length,R=Array(A),z=0;z<A;z++){for(var O=0,H=0,
+K=0,Y=0;Y<L;Y++){var S=u[Y][z]-q[z],aa=D[Y];O+=aa*(S*S);K+=aa;H+=aa*aa}R[z]=O*(K/(K*K-H))}return R};d.weightedMean=function L(d,l,q){typeof q==="undefined"&&(q=0);var A=d.length;if(A===0)return[];var D=d[0].length,z,O;if(q===0){q=Array(D);for(z=0;z<D;z++)q[z]=0;for(z=0;z<A;z++){var H=d[z];var K=l[z];for(O=0;O<D;O++)q[O]=q[O]+H[O]*K}}else if(q===1){q=Array(A);for(z=0;z<A;z++)q[z]=0;for(O=0;O<A;O++){H=d[O];K=l[O];for(z=0;z<D;z++)q[O]=q[O]+H[z]*K}}else throw Error("Invalid dimension");l=ia.sum(l);if(l!==
+0){z=0;for(d=q.length;z<d;z++)q[z]=q[z]/l}return q};d.weightedCovariance=function R(l,q,H,A){A=A||0;H=H||d.weightedMean(l,q,A);for(var z=0,O=0,L=0,K=q.length;L<K;L++){z+=q[L];O+=q[L]*q[L]}return d.weightedScatter(l,q,H,z/(z*z-O),A)};d.weightedScatter=function O(q,H,A,R,z){z=z||0;A=A||d.weightedMean(q,H,z);typeof R==="undefined"&&(R=1);var L=q.length;if(L===0)return[[]];var K=q[0].length,Y,S,aa,Z;if(z===0){z=Array(K);for(Y=0;Y<K;Y++)z[Y]=Array(K);for(Y=0;Y<K;Y++)for(S=Y;S<K;S++){for(aa=Z=0;aa<L;aa++)Z+=
+H[aa]*(q[aa][S]-A[S])*(q[aa][Y]-A[Y]);z[Y][S]=Z*R;z[S][Y]=Z*R}}else if(z===1){z=Array(L);for(Y=0;Y<L;Y++)z[Y]=Array(L);for(Y=0;Y<L;Y++)for(S=Y;S<L;S++){for(aa=Z=0;aa<K;aa++)Z+=H[aa]*(q[S][aa]-A[S])*(q[Y][aa]-A[Y]);z[Y][S]=Z*R;z[S][Y]=Z*R}}else throw Error("Invalid dimension");return z}},{"./array":5}],7:[function(Z,ha,d){d=Z("ml-matrix");const H=d.Matrix,ia=d.EVD,da=d.SVD;Z=Z("ml-stat/matrix");const V=Z.mean,U=Z.standardDeviation,T={isCovarianceMatrix:false,center:true,scale:false};class ka{constructor(d,
+m){if(d===true){d=m;this.center=d.center;this.scale=d.scale;this.means=d.means;this.stdevs=d.stdevs;this.U=H.checkMatrix(d.U);this.S=d.S}else{m=Object.assign({},T,m);this.scale=this.center=false;this.stdevs=this.means=null;if(m.isCovarianceMatrix)this._computeFromCovarianceMatrix(d);else if(typeof m.useCovarianceMatrix==="boolean"?m.useCovarianceMatrix:d.length>d[0].length){d=this._adjust(d,m);d=d.transposeView().mmul(d).div(d.rows-1);this._computeFromCovarianceMatrix(d)}else{d=this._adjust(d,m);
+m=new da(d,{computeLeftSingularVectors:false,computeRightSingularVectors:true,autoTranspose:true});this.U=m.rightSingularVectors;const x=m.diagonal,H=Array(x.length);for(m=0;m<x.length;m++)H[m]=x[m]*x[m]/(d.length-1);this.S=H}}}static load(d){if(d.name!=="PCA")throw new RangeError("Invalid model: "+d.name);return new ka(true,d)}predict(d,m={}){var {nComponents:m=this.U.columns}=m;d=new H(d);if(this.center){d.subRowVector(this.means);this.scale&&d.divRowVector(this.stdevs)}d=d.mmul(this.U);return d.subMatrix(0,
+d.rows-1,0,m-1)}getExplainedVariance(){for(var d=0,m=0;m<this.S.length;m++)d+=this.S[m];return this.S.map((m)=>m/d)}getCumulativeVariance(){for(var d=this.getExplainedVariance(),m=1;m<d.length;m++)d[m]=d[m]+d[m-1];return d}getEigenvectors(){return this.U}getEigenvalues(){return this.S}getStandardDeviations(){return this.S.map((d)=>Math.sqrt(d))}getLoadings(){return this.U.transpose()}toJSON(){return{name:"PCA",center:this.center,scale:this.scale,means:this.means,stdevs:this.stdevs,U:this.U,S:this.S}}_adjust(d,
+m){this.center=!!m.center;this.scale=!!m.scale;d=new H(d);if(this.center){var x=V(d);m=this.scale?U(d,x,true):null;this.means=x;d.subRowVector(x);if(this.scale){for(x=0;x<m.length;x++)if(m[x]===0)throw new RangeError("Cannot scale the dataset (standard deviation is zero at index "+x);this.stdevs=m;d.divRowVector(m)}}return d}_computeFromCovarianceMatrix(d){d=new ia(d,{assumeSymmetric:true});this.U=d.eigenvectorMatrix;for(var m=0;m<this.U.length;m++)this.U[m].reverse();this.S=d.realEigenvalues.reverse()}}
+ha.exports=ka},{"ml-matrix":1,"ml-stat/matrix":6}]},{},[7])(7)});
+
+;
+
+$node[ "../mpds/visavis/lib/pca/bundle/pca" ] = $node[ "../mpds/visavis/lib/pca/bundle/pca.js" ] = module.exports }.call( {} , {} )
+;
+"use strict";
+var $;
+(function ($) {
+    $.$mpds_visavis_lib_pca = require('../mpds/visavis/lib/pca/bundle/pca.js');
+})($ || ($ = {}));
+//mpds/visavis/lib/pca/pca.ts
+;
 "use strict";
 var $;
 (function ($) {
@@ -21363,8 +21406,7 @@ var $;
             answerto: $mol_data_string,
         });
         function discover(elementals_on, first, second) {
-            const mlPca = $mpds_visavis_lib.pca();
-            if (!mlPca)
+            if (!$mpds_visavis_lib_pca)
                 return $mol_fail(new $mol_data_error('Sorry, your web-browser is too old for this task'));
             let given_separation = 0;
             const elements_data = (element_ids) => {
@@ -21402,7 +21444,7 @@ var $;
             }
             if (to_predict.length > 21000)
                 return $mol_fail(new $mol_data_error('Error: too much data for analysis'));
-            const pca = new mlPca(to_predict);
+            const pca = new $mpds_visavis_lib_pca(to_predict);
             const predicted = pca.predict(to_predict, { nComponents: 2 });
             if (second) {
                 return [{
@@ -21435,14 +21477,15 @@ var $;
             elementals_dict() {
                 return $mpds_visavis_elements_list.prop_names();
             }
-            subscribe_events() {
-                const d3 = $mpds_visavis_lib.d3();
-                d3.select(this.dom_node_actual()).select('div.js-plotly-plot').on('click', (event) => {
+            auto() {
+                if (!this.Plotly_root())
+                    return;
+                this.Plotly_root().addEventListener('click', (event) => {
                     const node = event.target;
                     if (node.getAttribute('class') != 'point')
                         return false;
                     node.classList.add('visited');
-                    const point = d3.select(node);
+                    const point = $mpds_visavis_lib_plotly.d3.select(node);
                     const label = point.data()[0].tx;
                     this.discovery_click({ label });
                 });
@@ -21541,9 +21584,6 @@ var $;
                 return this.json_cmp() ? [this.json().answerto, this.json_cmp().answerto] : [];
             }
         }
-        __decorate([
-            $mol_action
-        ], $mpds_visavis_plot_discovery.prototype, "subscribe_events", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_discovery.prototype, "layout", null);
@@ -21687,8 +21727,6 @@ var $;
                     return null;
                 }
             }
-            subscribe_events() {
-            }
             data() {
                 const dataset = [];
                 const bands_matrix = this.bands_matrix();
@@ -21696,7 +21734,7 @@ var $;
                 if (bands_matrix) {
                     for (let i = 0; i < bands_matrix.bands.length; i++) {
                         dataset.push({
-                            x: $mpds_visavis_lib.d3().range(bands_matrix.bands[i].length),
+                            x: $mpds_visavis_lib_plotly.d3.range(bands_matrix.bands[i].length),
                             y: bands_matrix.bands[i],
                             mode: "lines",
                             type: "scatter",
@@ -21735,7 +21773,7 @@ var $;
                         zeroline: false,
                         showgrid: false,
                         tickmode: 'array',
-                        tickvals: $mpds_visavis_lib.d3().range(bands_matrix.kpoints.length),
+                        tickvals: $mpds_visavis_lib_plotly.d3.range(bands_matrix.kpoints.length),
                         ticktext: x_labels,
                         tickfont: {
                             size: 20,
@@ -21782,9 +21820,6 @@ var $;
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_eigen.prototype, "dos_matrix", null);
-        __decorate([
-            $mol_action
-        ], $mpds_visavis_plot_eigen.prototype, "subscribe_events", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_eigen.prototype, "data", null);
@@ -21860,6 +21895,7 @@ var $;
 (function ($) {
     var $$;
     (function ($$) {
+        const d3 = $mpds_visavis_lib_plotly.d3;
         const Facet_names = { props: 'properties', elements: 'elements', classes: 'classes', lattices: 'crystal systems' };
         $$.$mpds_visavis_plot_pie_json = $mol_data_record({
             payload: $mol_data_array($mol_data_record({
@@ -21897,9 +21933,11 @@ var $;
             json() {
                 return $$.$mpds_visavis_plot_pie_json(this.plot_raw().json());
             }
-            subscribe_events() {
-                const d3 = $mpds_visavis_lib.d3();
-                const slices = d3.select(this.dom_node_actual()).selectAll('g.slice path');
+            auto() {
+                if (!this.Plotly_root())
+                    return;
+                const plotly_root = this.Plotly_root();
+                const slices = d3.select(plotly_root).selectAll('g.slice path');
                 const facet_names = { props: 'properties', elements: 'elements', classes: 'classes', lattices: 'crystal systems' };
                 const that = this;
                 slices.on('click', function (event) {
@@ -22039,9 +22077,6 @@ var $;
             }
         }
         __decorate([
-            $mol_action
-        ], $mpds_visavis_plot_pie.prototype, "subscribe_events", null);
-        __decorate([
             $mol_mem
         ], $mpds_visavis_plot_pie.prototype, "layout", null);
         __decorate([
@@ -22144,8 +22179,6 @@ var $;
         class $mpds_visavis_plot_scatter extends $.$mpds_visavis_plot_scatter {
             json() {
                 return $$.$mpds_visavis_plot_scatter_json(this.plot_raw().json());
-            }
-            subscribe_events() {
             }
             p_data() {
                 return this.json().sample.measurement[0].property.matrix.map(item => item[0]);
@@ -22298,9 +22331,6 @@ var $;
             }
         }
         __decorate([
-            $mol_action
-        ], $mpds_visavis_plot_scatter.prototype, "subscribe_events", null);
-        __decorate([
             $mol_mem
         ], $mpds_visavis_plot_scatter.prototype, "p_data", null);
         __decorate([
@@ -22340,10 +22370,29 @@ var $;
             const obj = new this.$.$mpds_visavis_plot_raw();
             return obj;
         }
+        nplots_changed(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        legend_click(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        nplots() {
+            return 0;
+        }
     }
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot_customscatter.prototype, "plot_raw", null);
+    __decorate([
+        $mol_mem
+    ], $mpds_visavis_plot_customscatter.prototype, "nplots_changed", null);
+    __decorate([
+        $mol_mem
+    ], $mpds_visavis_plot_customscatter.prototype, "legend_click", null);
     $.$mpds_visavis_plot_customscatter = $mpds_visavis_plot_customscatter;
 })($ || ($ = {}));
 //mpds/visavis/plot/customscatter/-view.tree/customscatter.view.tree.ts
@@ -22366,17 +22415,39 @@ var $;
             ytitle: $mol_data_optional($mol_data_string),
             xlog: $mol_data_nullable($mol_data_boolean),
             ylog: $mol_data_nullable($mol_data_boolean),
+            xrpd: $mol_data_optional($mol_data_boolean),
         });
         class $mpds_visavis_plot_customscatter extends $.$mpds_visavis_plot_customscatter {
             json() {
                 return $$.$mpds_visavis_plot_customscatter_json(this.plot_raw().json());
             }
-            subscribe_events() {
+            auto() {
+                if (!this.Plotly_root())
+                    return;
+                const legends = $mpds_visavis_lib_plotly.d3.select(this.Plotly_root()).selectAll('.legendtoggle');
+                legends.on('click', (data) => {
+                    const trace = data[0].trace;
+                    this.legend_click({ plotindex: trace.index, name: trace.name });
+                });
+                this.nplots();
+            }
+            nplots() {
+                const n = this.json().plots.length;
+                this.nplots_changed(n);
+                return n;
             }
             layout() {
                 const json = this.json();
                 return {
-                    showlegend: true,
+                    showlegend: !json.xrpd,
+                    annotations: json.xrpd ? [{
+                            x: 3,
+                            y: 100,
+                            xref: 'x',
+                            yref: 'y',
+                            text: 'simulated Cu K-alpha',
+                            showarrow: false
+                        }] : false,
                     legend: {
                         x: 100,
                         y: 1,
@@ -22399,13 +22470,13 @@ var $;
                     yaxis: {
                         type: json.ylog ? 'log' : '-',
                         autorange: true,
-                        showgrid: true,
-                        showline: true,
-                        showticklabels: true,
+                        showgrid: !json.xrpd,
+                        showline: !json.xrpd,
+                        showticklabels: !json.xrpd,
                         zeroline: true,
                         zerolinecolor: '#999',
                         zerolinewidth: 0.5,
-                        ticklen: 4,
+                        ticklen: json.xrpd ? 0 : 4,
                         title: json.ytitle
                     },
                     font: {
@@ -22414,7 +22485,7 @@ var $;
                     },
                     margin: {
                         t: 0,
-                        r: 0
+                        r: json.xrpd ? 20 : 0,
                     }
                 };
             }
@@ -22424,8 +22495,8 @@ var $;
             }
         }
         __decorate([
-            $mol_action
-        ], $mpds_visavis_plot_customscatter.prototype, "subscribe_events", null);
+            $mol_mem
+        ], $mpds_visavis_plot_customscatter.prototype, "nplots", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_customscatter.prototype, "layout", null);
@@ -23270,6 +23341,7 @@ var $;
 (function ($) {
     var $$;
     (function ($$) {
+        const d3 = $mpds_visavis_lib_plotly.d3;
         const Link = $mol_data_record({
             source: $mol_data_string,
             type: $mol_data_string,
@@ -23336,7 +23408,6 @@ var $;
             }
             draw() {
                 const { nodes, edges, labels, radii, foci, table, circle_cls, text_cls } = this.data();
-                const d3 = $mpds_visavis_lib.d3();
                 const svg_element = this.Root().dom_node();
                 const svg = d3.select(svg_element);
                 const force = d3.layout.force()
@@ -23677,9 +23748,21 @@ var $;
             obj.notify = (next) => this.notify(next);
             return obj;
         }
+        nplots_changed(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
+        legend_click(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
         Customscatter() {
             const obj = new this.$.$mpds_visavis_plot_customscatter();
             obj.plot_raw = () => this.plot_raw();
+            obj.nplots_changed = (next) => this.nplots_changed(next);
+            obj.legend_click = (next) => this.legend_click(next);
             return obj;
         }
         Heatmap() {
@@ -23783,6 +23866,12 @@ var $;
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot.prototype, "Scatter", null);
+    __decorate([
+        $mol_mem
+    ], $mpds_visavis_plot.prototype, "nplots_changed", null);
+    __decorate([
+        $mol_mem
+    ], $mpds_visavis_plot.prototype, "legend_click", null);
     __decorate([
         $mol_mem
     ], $mpds_visavis_plot.prototype, "Customscatter", null);
