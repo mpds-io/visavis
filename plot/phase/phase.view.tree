@@ -170,8 +170,6 @@ $mpds_visavis_plot_phase $mol_book2
 		<= Label $mol_view sub /
 			<= label? \
 		<= Root $mpds_visavis_plotly
-			data <= data *
+			Plotly_root => Plotly_root
+			data <= data /
 			layout <= layout *
-			subscribe_events <= subscribe_events null
-			event *
-				mousemove <= mousemove null

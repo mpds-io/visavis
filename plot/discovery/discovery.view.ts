@@ -23,8 +23,7 @@ namespace $.$$ {
 		first: typeof Discover_item.Value, 
 		second?: typeof Discover_item.Value
 	) {
-		const mlPca: any = $mpds_visavis_lib.pca()
-		if (!mlPca) return $mol_fail( new $mol_data_error('Sorry, your web-browser is too old for this task') );
+		if (!$mpds_visavis_lib_pca) return $mol_fail( new $mol_data_error('Sorry, your web-browser is too old for this task') );
 	
 		// if (!first.points.length || (second && !second.points.length)) return urge('Error: not enough data for analysis');
 		// ^ this will be validated in Discover_item()
@@ -78,7 +77,7 @@ namespace $.$$ {
 	
 		if (to_predict.length > 21000) return $mol_fail( new $mol_data_error('Error: too much data for analysis') )
 	
-		const pca = new mlPca( to_predict )
+		const pca = new $mpds_visavis_lib_pca( to_predict )
 		const predicted = pca.predict( to_predict, {nComponents: 2} );
 	
 		if (second){
@@ -117,35 +116,20 @@ namespace $.$$ {
 			return $mpds_visavis_elements_list.prop_names()
 		}
 
-		@ $mol_action
-		subscribe_events() {
-			const d3 = $mpds_visavis_lib.d3()
+		auto() {
+			if( ! this.Plotly_root() ) return
 
-			d3.select( this.dom_node_actual() ).select('div.js-plotly-plot').on('click', (event: MouseEvent)=> {
-
+			this.Plotly_root()!.addEventListener('click', ( event: MouseEvent ) => {
+				
 				const node = event.target as HTMLElement
 				if (node.getAttribute('class') != 'point') return false;
 				
 				node.classList.add('visited')
 
-				const point = d3.select(node)
+				const point = $mpds_visavis_lib_plotly.d3.select(node)
 				const label = point.data()[0].tx
 
 				this.discovery_click( { label } )
-				
-				// 	var oflag = node.style.opacity;
-				// 	node.style.fill = '#0f0';
-				// 	while ((node = node.previousElementSibling)){
-				// 		index++;
-				// 	}
-				// 	var label = [],
-				// 		point = (oflag == 1) ? visavis.cache.ref.points[index] : visavis.cache.cmp.points[index];
-				// 	if (!point) return false;
-
-				// 	point.forEach(function(i){
-				// 		label.push(visavis.chem_els[i]);
-				// 	});
-				// 	label = label.filter(function(x){ return x }).join('-');
 			});
 		}
 

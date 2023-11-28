@@ -19,22 +19,18 @@ namespace $.$$ {
 			return $mpds_visavis_plot_bar_json( this.plot_raw().json() as any )
 		}
 
-		@ $mol_action
-		subscribe_events() {
-
-			const d3 = $mpds_visavis_lib.d3()
+		auto() {
+			if( ! this.Plotly_root() ) return
 
 			const json = this.json() as any
 
 			if (json.payload2 && json.p1ayload2.x && json.payload2.y) return
 			
-			// warn_demo();1
-			// if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
-			const paths = d3.select( this.dom_node_actual() ).selectAll( 'g.point path' )
+			const paths = $mpds_visavis_lib_plotly.d3.select( this.Plotly_root() ).selectAll( 'g.point path' )
 
 			const that = this
 			paths.on('click', function(this: any, event: MouseEvent){
-				const selection = d3.select(this)
+				const selection = $mpds_visavis_lib_plotly.d3.select(this)
 				const value = selection.data()[0].x
 				that.bar_click( { facet: "years", value } )
 			});

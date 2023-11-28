@@ -1,2 +1,5 @@
 $mpds_visavis_plot_customscatter $mpds_visavis_plotly
 	plot_raw $mpds_visavis_plot_raw
+	nplots_changed? null
+	legend_click? null
+	nplots 0

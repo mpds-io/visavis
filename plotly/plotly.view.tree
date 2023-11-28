@@ -1,7 +1,8 @@
 $mpds_visavis_plotly $mol_view
-	data *
+	sub / 
+		<= Plotly_root null
+	data /
 	layout *
-	subscribe_events null
 	plot_options *
 		displaylogo false
 		displayModeBar false

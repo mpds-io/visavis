@@ -4,7 +4,7 @@ namespace $.$$ {
 
 		flex: {
 			grow: 1
-		}
+		},
 
 	} )
 

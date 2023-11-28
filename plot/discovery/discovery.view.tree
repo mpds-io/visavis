@@ -9,9 +9,9 @@ $mpds_visavis_plot_discovery $mol_view
 		\#c00
 	sub /
 		<= Plot $mpds_visavis_plotly
-			data <= data *
+			Plotly_root => Plotly_root
+			data <= data /
 			layout <= layout *
-			subscribe_events <= subscribe_events null
 		<= Cmp_legend $mpds_visavis_plot_legend_cmp
 			labels <= cmp_labels /
 			colorset <= colorset

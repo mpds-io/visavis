@@ -15,6 +15,7 @@ namespace $.$$ {
 		ytitle: $mol_data_optional( $mol_data_string ),
 		xlog: $mol_data_nullable( $mol_data_boolean ),
 		ylog: $mol_data_nullable( $mol_data_boolean ),
+		xrpd: $mol_data_optional( $mol_data_boolean ),
 	})
 
 	export class $mpds_visavis_plot_customscatter extends $.$mpds_visavis_plot_customscatter {
@@ -23,19 +24,43 @@ namespace $.$$ {
 			return $mpds_visavis_plot_customscatter_json( this.plot_raw().json() as any )
 		}
 
-		@ $mol_action
-		subscribe_events() {
-            // // document.getElementById('visavis').on('plotly_legendclick', function(){ return false }); // requires at least v1.37
-            // // yet another iframe communication API for mpds-labs via postMessage
-            // // API CORRECT
-            // if (window.parent) window.parent.postMessage({type: 'nplots', nplots: json.plots.length}, '*');
+		auto() {
+			if( ! this.Plotly_root() ) return
+			
+			const legends = $mpds_visavis_lib_plotly.d3.select( this.Plotly_root() ).selectAll('.legendtoggle')
+			// this.Plotly_root().on('plotly_legendclick', (event: any)=> {
+			legends.on('click', (data: any) => {
+				const trace = data[0].trace
+
+				this.legend_click( { plotindex: trace.index, name: trace.name } )
+			})
+
+			this.nplots()
 		}
+
+		@ $mol_mem
+		nplots() {
+			const n = this.json().plots.length
+
+			this.nplots_changed( n )
+			
+			return n
+		}
+
 
 		@ $mol_mem
 		layout() {
 			const json = this.json()
 			return {
-				showlegend: true,
+				showlegend: !json.xrpd,
+				annotations: json.xrpd ? [{
+					x: 3,
+					y: 100,
+					xref: 'x',
+					yref: 'y',
+					text: 'simulated Cu K-alpha',
+					showarrow: false
+				}] : false,
 				legend: {
 					x: 100,
 					y: 1,
@@ -58,13 +83,13 @@ namespace $.$$ {
 				yaxis: {
 					type: json.ylog ? 'log' : '-',
 					autorange: true,
-					showgrid: true,
-					showline: true,
-					showticklabels: true,
+					showgrid: !json.xrpd,
+					showline: !json.xrpd,
+					showticklabels: !json.xrpd,
 					zeroline: true,
 					zerolinecolor: '#999',
 					zerolinewidth: 0.5,
-					ticklen: 4,
+					ticklen: json.xrpd ? 0 : 4,
 					title: json.ytitle
 				},
 				font: { 
@@ -73,7 +98,7 @@ namespace $.$$ {
 				},
 				margin: {
 					t: 0,
-					r: 0
+					r: json.xrpd ? 20 : 0,
 				}
 			}
 		}

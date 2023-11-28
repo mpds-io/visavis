@@ -77,6 +77,14 @@ Called when a cube element is clicked
 
 Called when a phase section is clicked
 
+**`nplots_changed( n: number ) : void`**
+
+Called when the number of customscatter plots changes
+
+**`legend_click( { plotindex: number, name: string } ) : void`**
+
+Called when the curve legend is clicked (customscatter)
+
 **`matrix_x_sort( next?: string ) : string`**
 
 Element property name that determines the order of matrix elements along the x-axis

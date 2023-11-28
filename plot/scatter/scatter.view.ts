@@ -49,11 +49,6 @@ namespace $.$$ {
 			return $mpds_visavis_plot_scatter_json( this.plot_raw().json() as any )
 		}
 
-		@ $mol_action
-		subscribe_events() {
-            // if (visavis.mpds_embedded) document.getElementById('cross').style.display = 'block';
-		}
-
 		@ $mol_mem
 		p_data() {
 			return this.json().sample.measurement[0].property.matrix.map( item => item[0] )

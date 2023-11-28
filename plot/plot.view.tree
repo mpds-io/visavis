@@ -67,6 +67,8 @@ $mpds_visavis_plot $mol_view
 			notify? <=> notify?
 		customscatter <= Customscatter $mpds_visavis_plot_customscatter
 			plot_raw <= plot_raw
+			nplots_changed? <=> nplots_changed? null
+			legend_click? <=> legend_click? null
 		heatmap <= Heatmap $mpds_visavis_plot_heatmap
 			plot_raw <= plot_raw
 		graph <= Graph $mpds_visavis_plot_graph

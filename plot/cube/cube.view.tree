@@ -38,9 +38,9 @@ $mpds_visavis_plot_cube $mol_view
 		<= Plot $mol_view
 			sub <= plot_body /
 				<= Root $mpds_visavis_plotly
-					data <= data_shown *
+					data <= data_shown /
 					layout <= layout *
-					subscribe_events <= subscribe_events null
+					Plotly_root => Plotly_root
 				<= Cmp_legend $mpds_visavis_plot_legend_cmp
 					labels <= cmp_labels /
 					colorset <= colorset

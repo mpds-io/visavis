@@ -84,11 +84,6 @@ namespace $.$$ {
 			}
 		}
 
-		@ $mol_action
-		subscribe_events() {
-			// if (visavis.mpds_embedded) document.getElementById('cross').style.display = 'block';
-		}
-
 		@ $mol_mem
 		data() {
 			const dataset = [];
@@ -99,7 +94,7 @@ namespace $.$$ {
 			if (bands_matrix){
 				for (let i = 0; i < bands_matrix.bands.length; i++){
 					dataset.push({
-						x: $mpds_visavis_lib.d3().range(bands_matrix.bands[i].length),
+						x: $mpds_visavis_lib_plotly.d3.range(bands_matrix.bands[i].length),
 						y: bands_matrix.bands[i],
 						mode: "lines",
 						type: "scatter",
@@ -143,7 +138,7 @@ namespace $.$$ {
 					zeroline: false,
 					showgrid: false,
 					tickmode: 'array',
-					tickvals: $mpds_visavis_lib.d3().range(bands_matrix.kpoints.length),
+					tickvals: $mpds_visavis_lib_plotly.d3.range(bands_matrix.kpoints.length),
 					ticktext: x_labels,
 					tickfont: {
 						size: 20,

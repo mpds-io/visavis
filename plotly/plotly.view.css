@@ -1,3 +1,7 @@
+.js-plotly-plot {
+	position: absolute;
+}
+
 /* default plotly styles for shadow DOM */
 .js-plotly-plot .plotly button,
 .js-plotly-plot .plotly input,

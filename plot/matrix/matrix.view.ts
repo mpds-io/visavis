@@ -1,5 +1,7 @@
 namespace $.$$ {
 
+	const d3 = $mpds_visavis_lib_plotly.d3
+
 	const $mpds_visavis_plot_matrix_json_node = $mol_data_record({
 		name: $mol_data_string,
 		num: $mol_data_number,
@@ -122,7 +124,7 @@ namespace $.$$ {
 
 		@ $mol_mem_key
 		order_by_prop( prop: Prop_name ): any[] {
-			return $mpds_visavis_lib.d3().range(95).sort( (a: number, b: any) => {
+			return d3.range(95).sort( (a: number, b: any) => {
 				return this.nodes()[ a ][ prop ] - this.nodes()[ b ][ prop ] 
 			})
 		}
@@ -134,7 +136,11 @@ namespace $.$$ {
 
 		@ $mol_mem
 		matrix() {
-			const matrix: Matrix_cell[][] = this.nodes().map( (node, i) => $mpds_visavis_lib.d3().range(95).map( (j: any) => ({ x: j, y: i, z: 0, cmt: '', cmp: 0, nonformer: false }) ) )
+			const matrix: Matrix_cell[][] = this.nodes().map( (node, i) => {
+				return d3.range(95).map( (j: any) =>
+					({ x: j, y: i, z: 0, cmt: '', cmp: 0, nonformer: false })
+				)
+			} )
 
 			for (const link of this.links()) {
 				matrix[link.source][link.target].z += link.value;
@@ -166,8 +172,8 @@ namespace $.$$ {
 
 		@ $mol_mem
 		opacity_scale() {
-			// return $mpds_visavis_lib.d3().scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true) // for new d3 version
-			return $mpds_visavis_lib.d3().scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true)
+			// return d3.scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true) // for new d3 version
+			return d3.scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true)
 		}
 
 		opacity(index: number) {
@@ -176,8 +182,8 @@ namespace $.$$ {
 
 		@ $mol_mem
 		color_heatmap() {
-			// return $mpds_visavis_lib.d3().scaleLinear().domain($mpds_visavis_lib.d3().range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors() as any) // for new d3 version
-			return $mpds_visavis_lib.d3().scale.linear().domain($mpds_visavis_lib.d3().range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors() as any)
+			// return d3.scaleLinear().domain(d3.range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors() as any) // for new d3 version
+			return d3.scale.linear().domain(d3.range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors() as any)
 		}
 
 		heatmap_color( index: number ) {
@@ -194,8 +200,8 @@ namespace $.$$ {
 
 		@ $mol_mem
 		color_heatmap_scale() {
-			// return $mpds_visavis_lib.d3().scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1]) // for new d3 version
-			return $mpds_visavis_lib.d3().scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1])
+			// return d3.scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1]) // for new d3 version
+			return d3.scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1])
 		}
 
 		color(index: number, cmp: number) {
@@ -205,8 +211,8 @@ namespace $.$$ {
 
 		@ $mol_mem
 		range() {
-			// return $mpds_visavis_lib.d3().scaleBand().domain(this.order()).range([0, this.size()]) // for new d3 version
-			return $mpds_visavis_lib.d3().scale.ordinal().rangeBands([0, this.size()]).domain(this.default_order())
+			// return d3.scaleBand().domain(this.order()).range([0, this.size()]) // for new d3 version
+			return d3.scale.ordinal().rangeBands([0, this.size()]).domain(this.default_order())
 		}
 
 		svg_title_text(cell: Matrix_cell) {
@@ -222,7 +228,6 @@ namespace $.$$ {
 
 		@ $mol_mem_key
 		draw_cells(node: SVGElement, row: Matrix_cell[]) {
-			const d3 = $mpds_visavis_lib.d3()
 			const that = this
 			d3.select(node)
 				.selectAll('.cell')
@@ -265,8 +270,6 @@ namespace $.$$ {
 		@ $mol_mem
 		draw() {
 			if (Number.isNaN( this.size() )) return
-
-			const d3 = $mpds_visavis_lib.d3()
 
 			const svg_element = $mol_wire_sync( document ).createElementNS( 'http://www.w3.org/2000/svg', 'svg' )
 			const svg = d3.select(svg_element)
@@ -337,7 +340,6 @@ namespace $.$$ {
 		get_bin_domain( args: { sort: Prop_name, op: string } ){
 
 			const { sort, op } = args
-			const d3 = $mpds_visavis_lib.d3()
 			var cond_slice = $mpds_visavis_elements_list.prop_values(sort).slice(1);
 		
 			switch (op){
@@ -371,7 +373,6 @@ namespace $.$$ {
 		@ $mol_mem_key
 		renorm( args: { sort: Prop_name, op?: string } ) {
 			const { sort, op } = args
-			const d3 = $mpds_visavis_lib.d3()
 			const svgdim = this.size()
 			return op ?
 				d3.scale.quantize().range(d3.range(0, svgdim, svgdim / 95)).domain( this.get_bin_domain( {sort, op} ) ) :
@@ -396,7 +397,6 @@ namespace $.$$ {
 			const x_op = this.x_op() as string | undefined
 			const y_op = this.y_op() as string | undefined
 
-			const d3 = $mpds_visavis_lib.d3()
 			const svg = d3.select(this.Root().dom_node_actual().firstChild)
 			
 			function bin_op( op: string, a: number, b: number ){
