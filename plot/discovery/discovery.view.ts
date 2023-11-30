@@ -14,6 +14,7 @@ namespace $.$$ {
 	type Element_prop = keyof ReturnType<typeof $mpds_visavis_elements_list.prop_names>
 
 	export const $mpds_visavis_plot_discovery_json = $mol_data_record({
+		use_visavis_type: $mol_data_const( 'discovery' ),
 		payload: Payload,
 		answerto: $mol_data_string,
 	})
@@ -211,7 +212,7 @@ namespace $.$$ {
 		data() {
 		
 			const json = this.json()
-			const json_cmp = this.json_cmp()
+			const json_cmp = this.json_cmp() ? $mpds_visavis_plot_discovery_json( this.json_cmp() ) : null
 
 			const elementals_on = this.elementals_on()
 

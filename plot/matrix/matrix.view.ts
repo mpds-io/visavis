@@ -26,6 +26,7 @@ namespace $.$$ {
 	})
 
 	const $mpds_visavis_plot_matrix_json = $mol_data_record({
+		use_visavis_type: $mol_data_const( 'matrix' ),
 		answerto: $mol_data_optional( $mol_data_string ),
 		payload: $mol_data_record({
 			nodes: $mol_data_array( $mpds_visavis_plot_matrix_json_node ),
@@ -81,10 +82,12 @@ namespace $.$$ {
 
 			const jsons = this.multi_jsons()!
 			
-			const json_master = JSON.parse( JSON.stringify( jsons[0] ) )
+			const json_master = JSON.parse( JSON.stringify(
+				$mpds_visavis_plot_matrix_json( jsons[0] ) 
+			) )
 
 			for (let i = 1; i < jsons.length; i++) {
-				const json = jsons[i]
+				const json = $mpds_visavis_plot_matrix_json( jsons[i] )
 				json.payload.links.forEach( ( item: any ) => {
 					item.cmp = i
 					json_master.payload.links.push( item )

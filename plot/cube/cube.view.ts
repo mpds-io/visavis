@@ -3,6 +3,7 @@ namespace $.$$ {
 	const d3 = $mpds_visavis_lib_plotly.d3
 
 	const $mpds_visavis_plot_cube_json = $mol_data_record({
+		use_visavis_type: $mol_data_const( 'plot3d' ),
 		payload: $mol_data_record({
 			tcube: $mol_data_optional( $mol_data_boolean ),
 			points: $mol_data_record({
@@ -143,14 +144,15 @@ namespace $.$$ {
 			this.nonformers_checked( false )
 
 			return this.multi_jsons().map( (json: any, index: number) => {
+				const json_valid = $mpds_visavis_plot_cube_json( json )
 				return {
 					...this.scatter3d_common(),
-					text: json.payload.points.labels,
+					text: json_valid.payload.points.labels,
 					marker: this.marker( index ),
 					...this.convert_to_axes(
-						json.payload.points.x, 
-						json.payload.points.y, 
-						json.payload.points.z, 
+						json_valid.payload.points.x, 
+						json_valid.payload.points.y, 
+						json_valid.payload.points.z, 
 						this.x_sort() as Prop_name, 
 						this.y_sort() as Prop_name, 
 						this.z_sort() as Prop_name,

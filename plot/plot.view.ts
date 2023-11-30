@@ -41,8 +41,11 @@ namespace $.$$ {
 
 		@ $mol_mem
 		plot_raw() {
-			return this.json() ? 
-				$mpds_visavis_plot_raw_from_json( this.json() ) : null
+			return this.multi_jsons()
+				? $mpds_visavis_plot_raw_from_json( this.multi_jsons()![0] ) 
+				: this.json()
+					? $mpds_visavis_plot_raw_from_json( this.json() ) 
+					: null
 		}
 
 		@ $mol_mem
