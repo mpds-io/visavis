@@ -1775,7 +1775,7 @@ declare namespace $ {
     export function $mpds_visavis_plot_raw_from_json(json: any, id?: string): $mpds_visavis_plot_raw;
     export class $mpds_visavis_plot_raw extends $mol_store<Plot_raw> {
         id(next?: string): string;
-        type(): "pd" | "scatter" | "bar" | "pie" | "matrix" | "plot3d" | "discovery" | "eigenplot" | "customscatter" | "heatmap" | "graph";
+        type(): "matrix" | "plot3d" | "pd" | "scatter" | "bar" | "discovery" | "pie" | "eigenplot" | "customscatter" | "heatmap" | "graph";
         json(): {};
     }
     export {};
@@ -2023,6 +2023,13 @@ declare namespace $ {
             fallback: Fallback | undefined;
         };
         Value: ReturnType<Sub> | (Fallback extends undefined ? undefined : ReturnType<Extract<Fallback, () => any>>);
+    };
+}
+
+declare namespace $ {
+    function $mol_data_const<Val>(ref: Val): ((val: Val) => Val) & {
+        config: Val;
+        Value: Val;
     };
 }
 
@@ -2295,6 +2302,7 @@ declare namespace $.$$ {
         plot_body(): ($mol_view | $mol_scroll | $mpds_visavis_plot_legend_cmp)[];
         json(): Readonly<{
             answerto?: string | undefined;
+            use_visavis_type: string;
             payload: Readonly<{
                 nodes: readonly Readonly<{
                     count?: number | undefined;
@@ -2323,6 +2331,7 @@ declare namespace $.$$ {
         cmp_labels(): any;
         json_master(): Readonly<{
             answerto?: string | undefined;
+            use_visavis_type: string;
             payload: Readonly<{
                 nodes: readonly Readonly<{
                     count?: number | undefined;
@@ -3010,6 +3019,7 @@ declare namespace $.$$ {
         plot_body(): ($mol_scroll | $mpds_visavis_plot_legend_cmp | $mpds_visavis_plotly)[];
         json(): Readonly<{
             answerto?: string | undefined;
+            use_visavis_type: string;
             payload: Readonly<{
                 tcube?: boolean | undefined;
                 xtitle?: string | undefined;
@@ -3245,13 +3255,6 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    function $mol_data_const<Val>(ref: Val): ((val: Val) => Val) & {
-        config: Val;
-        Value: Val;
-    };
-}
-
-declare namespace $ {
     function $mol_data_dict<Sub extends $mol_data_value>(sub: Sub): ((val: Readonly<Record<string, ReturnType<Sub>>>) => Readonly<Record<string, ReturnType<Sub>>>) & {
         config: Sub;
         Value: Readonly<Record<string, ReturnType<Sub>>>;
@@ -3279,6 +3282,7 @@ declare namespace $.$$ {
             range_a?: readonly number[] | undefined;
             range_b?: readonly number[] | undefined;
             range_c?: readonly number[] | undefined;
+            use_visavis_type: string;
             labels: readonly [string, number[], number | null][];
             naxes: number;
             arity: number;
@@ -3297,7 +3301,6 @@ declare namespace $.$$ {
             }>[];
             entry: string;
             object_type: string;
-            use_visavis_type: string;
         }>;
         json_title_b(): string;
         json_title_a(): string;
@@ -3609,17 +3612,23 @@ declare namespace $ {
 
 declare namespace $.$$ {
     const $mpds_visavis_plot_discovery_json: ((val: {
+        use_visavis_type: string;
         answerto: string;
         payload: {
             points: readonly (readonly number[])[];
         };
     }) => Readonly<{
+        use_visavis_type: string;
         answerto: string;
         payload: Readonly<{
             points: readonly (readonly number[])[];
         }>;
     }>) & {
         config: {
+            use_visavis_type: ((val: string) => string) & {
+                config: string;
+                Value: string;
+            };
             payload: ((val: {
                 points: readonly (readonly number[])[];
             }) => Readonly<{
@@ -3641,6 +3650,7 @@ declare namespace $.$$ {
             answerto: (val: string) => string;
         };
         Value: Readonly<{
+            use_visavis_type: string;
             answerto: string;
             payload: Readonly<{
                 points: readonly (readonly number[])[];
@@ -3650,6 +3660,7 @@ declare namespace $.$$ {
     class $mpds_visavis_plot_discovery extends $.$mpds_visavis_plot_discovery {
         sub(): ($mol_view | $mpds_visavis_plot_legend_cmp | $mpds_visavis_plotly)[];
         json(): Readonly<{
+            use_visavis_type: string;
             answerto: string;
             payload: Readonly<{
                 points: readonly (readonly number[])[];
@@ -3831,8 +3842,6 @@ declare namespace $.$$ {
                 data_type: string;
                 property: {
                     scalar?: string | number | undefined;
-                    name: string;
-                    units: string;
                     matrix: {
                         bands: readonly (readonly number[])[];
                         kpoints: readonly (readonly number[])[];
@@ -3840,6 +3849,8 @@ declare namespace $.$$ {
                         dos: readonly number[];
                         levels: readonly number[];
                     };
+                    name: string;
+                    units: string;
                     category: string;
                     domain: string;
                 };
@@ -3879,8 +3890,6 @@ declare namespace $.$$ {
                 data_type: string;
                 property: Readonly<{
                     scalar?: string | number | undefined;
-                    name: string;
-                    units: string;
                     matrix: Readonly<{
                         bands: readonly (readonly number[])[];
                         kpoints: readonly (readonly number[])[];
@@ -3888,6 +3897,8 @@ declare namespace $.$$ {
                         dos: readonly number[];
                         levels: readonly number[];
                     }>;
+                    name: string;
+                    units: string;
                     category: string;
                     domain: string;
                 }>;
@@ -3927,8 +3938,6 @@ declare namespace $.$$ {
                     data_type: string;
                     property: {
                         scalar?: string | number | undefined;
-                        name: string;
-                        units: string;
                         matrix: {
                             bands: readonly (readonly number[])[];
                             kpoints: readonly (readonly number[])[];
@@ -3936,6 +3945,8 @@ declare namespace $.$$ {
                             dos: readonly number[];
                             levels: readonly number[];
                         };
+                        name: string;
+                        units: string;
                         category: string;
                         domain: string;
                     };
@@ -3967,8 +3978,6 @@ declare namespace $.$$ {
                     data_type: string;
                     property: Readonly<{
                         scalar?: string | number | undefined;
-                        name: string;
-                        units: string;
                         matrix: Readonly<{
                             bands: readonly (readonly number[])[];
                             kpoints: readonly (readonly number[])[];
@@ -3976,6 +3985,8 @@ declare namespace $.$$ {
                             dos: readonly number[];
                             levels: readonly number[];
                         }>;
+                        name: string;
+                        units: string;
                         category: string;
                         domain: string;
                     }>;
@@ -4128,8 +4139,6 @@ declare namespace $.$$ {
                         data_type: string;
                         property: {
                             scalar?: string | number | undefined;
-                            name: string;
-                            units: string;
                             matrix: {
                                 bands: readonly (readonly number[])[];
                                 kpoints: readonly (readonly number[])[];
@@ -4137,6 +4146,8 @@ declare namespace $.$$ {
                                 dos: readonly number[];
                                 levels: readonly number[];
                             };
+                            name: string;
+                            units: string;
                             category: string;
                             domain: string;
                         };
@@ -4151,8 +4162,6 @@ declare namespace $.$$ {
                         data_type: string;
                         property: Readonly<{
                             scalar?: string | number | undefined;
-                            name: string;
-                            units: string;
                             matrix: Readonly<{
                                 bands: readonly (readonly number[])[];
                                 kpoints: readonly (readonly number[])[];
@@ -4160,6 +4169,8 @@ declare namespace $.$$ {
                                 dos: readonly number[];
                                 levels: readonly number[];
                             }>;
+                            name: string;
+                            units: string;
                             category: string;
                             domain: string;
                         }>;
@@ -4175,8 +4186,6 @@ declare namespace $.$$ {
                             data_type: string;
                             property: {
                                 scalar?: string | number | undefined;
-                                name: string;
-                                units: string;
                                 matrix: {
                                     bands: readonly (readonly number[])[];
                                     kpoints: readonly (readonly number[])[];
@@ -4184,6 +4193,8 @@ declare namespace $.$$ {
                                     dos: readonly number[];
                                     levels: readonly number[];
                                 };
+                                name: string;
+                                units: string;
                                 category: string;
                                 domain: string;
                             };
@@ -4198,8 +4209,6 @@ declare namespace $.$$ {
                             data_type: string;
                             property: Readonly<{
                                 scalar?: string | number | undefined;
-                                name: string;
-                                units: string;
                                 matrix: Readonly<{
                                     bands: readonly (readonly number[])[];
                                     kpoints: readonly (readonly number[])[];
@@ -4207,6 +4216,8 @@ declare namespace $.$$ {
                                     dos: readonly number[];
                                     levels: readonly number[];
                                 }>;
+                                name: string;
+                                units: string;
                                 category: string;
                                 domain: string;
                             }>;
@@ -4215,8 +4226,6 @@ declare namespace $.$$ {
                                 data_type: (val: string) => string;
                                 property: ((val: {
                                     scalar?: string | number | undefined;
-                                    name: string;
-                                    units: string;
                                     matrix: {
                                         bands: readonly (readonly number[])[];
                                         kpoints: readonly (readonly number[])[];
@@ -4224,12 +4233,12 @@ declare namespace $.$$ {
                                         dos: readonly number[];
                                         levels: readonly number[];
                                     };
+                                    name: string;
+                                    units: string;
                                     category: string;
                                     domain: string;
                                 }) => Readonly<{
                                     scalar?: string | number | undefined;
-                                    name: string;
-                                    units: string;
                                     matrix: Readonly<{
                                         bands: readonly (readonly number[])[];
                                         kpoints: readonly (readonly number[])[];
@@ -4237,6 +4246,8 @@ declare namespace $.$$ {
                                         dos: readonly number[];
                                         levels: readonly number[];
                                     }>;
+                                    name: string;
+                                    units: string;
                                     category: string;
                                     domain: string;
                                 }>) & {
@@ -4328,8 +4339,6 @@ declare namespace $.$$ {
                                     };
                                     Value: Readonly<{
                                         scalar?: string | number | undefined;
-                                        name: string;
-                                        units: string;
                                         matrix: Readonly<{
                                             bands: readonly (readonly number[])[];
                                             kpoints: readonly (readonly number[])[];
@@ -4337,6 +4346,8 @@ declare namespace $.$$ {
                                             dos: readonly number[];
                                             levels: readonly number[];
                                         }>;
+                                        name: string;
+                                        units: string;
                                         category: string;
                                         domain: string;
                                     }>;
@@ -4434,8 +4445,6 @@ declare namespace $.$$ {
                                 data_type: string;
                                 property: Readonly<{
                                     scalar?: string | number | undefined;
-                                    name: string;
-                                    units: string;
                                     matrix: Readonly<{
                                         bands: readonly (readonly number[])[];
                                         kpoints: readonly (readonly number[])[];
@@ -4443,6 +4452,8 @@ declare namespace $.$$ {
                                         dos: readonly number[];
                                         levels: readonly number[];
                                     }>;
+                                    name: string;
+                                    units: string;
                                     category: string;
                                     domain: string;
                                 }>;
@@ -4459,8 +4470,6 @@ declare namespace $.$$ {
                             data_type: string;
                             property: Readonly<{
                                 scalar?: string | number | undefined;
-                                name: string;
-                                units: string;
                                 matrix: Readonly<{
                                     bands: readonly (readonly number[])[];
                                     kpoints: readonly (readonly number[])[];
@@ -4468,6 +4477,8 @@ declare namespace $.$$ {
                                     dos: readonly number[];
                                     levels: readonly number[];
                                 }>;
+                                name: string;
+                                units: string;
                                 category: string;
                                 domain: string;
                             }>;
@@ -4501,8 +4512,6 @@ declare namespace $.$$ {
                         data_type: string;
                         property: Readonly<{
                             scalar?: string | number | undefined;
-                            name: string;
-                            units: string;
                             matrix: Readonly<{
                                 bands: readonly (readonly number[])[];
                                 kpoints: readonly (readonly number[])[];
@@ -4510,6 +4519,8 @@ declare namespace $.$$ {
                                 dos: readonly number[];
                                 levels: readonly number[];
                             }>;
+                            name: string;
+                            units: string;
                             category: string;
                             domain: string;
                         }>;
@@ -4570,8 +4581,6 @@ declare namespace $.$$ {
                     data_type: string;
                     property: Readonly<{
                         scalar?: string | number | undefined;
-                        name: string;
-                        units: string;
                         matrix: Readonly<{
                             bands: readonly (readonly number[])[];
                             kpoints: readonly (readonly number[])[];
@@ -4579,6 +4588,8 @@ declare namespace $.$$ {
                             dos: readonly number[];
                             levels: readonly number[];
                         }>;
+                        name: string;
+                        units: string;
                         category: string;
                         domain: string;
                     }>;
@@ -4621,8 +4632,6 @@ declare namespace $.$$ {
                     data_type: string;
                     property: Readonly<{
                         scalar?: string | number | undefined;
-                        name: string;
-                        units: string;
                         matrix: Readonly<{
                             bands: readonly (readonly number[])[];
                             kpoints: readonly (readonly number[])[];
@@ -4630,6 +4639,8 @@ declare namespace $.$$ {
                             dos: readonly number[];
                             levels: readonly number[];
                         }>;
+                        name: string;
+                        units: string;
                         category: string;
                         domain: string;
                     }>;
@@ -4874,9 +4885,9 @@ declare namespace $.$$ {
                 data_type: string;
                 property: {
                     scalar?: string | number | undefined;
+                    matrix: readonly (readonly number[])[];
                     name: string;
                     units: string;
-                    matrix: readonly (readonly number[])[];
                     category: string;
                     domain: string;
                 };
@@ -4916,9 +4927,9 @@ declare namespace $.$$ {
                 data_type: string;
                 property: Readonly<{
                     scalar?: string | number | undefined;
+                    matrix: readonly (readonly number[])[];
                     name: string;
                     units: string;
-                    matrix: readonly (readonly number[])[];
                     category: string;
                     domain: string;
                 }>;
@@ -4958,9 +4969,9 @@ declare namespace $.$$ {
                     data_type: string;
                     property: {
                         scalar?: string | number | undefined;
+                        matrix: readonly (readonly number[])[];
                         name: string;
                         units: string;
-                        matrix: readonly (readonly number[])[];
                         category: string;
                         domain: string;
                     };
@@ -4992,9 +5003,9 @@ declare namespace $.$$ {
                     data_type: string;
                     property: Readonly<{
                         scalar?: string | number | undefined;
+                        matrix: readonly (readonly number[])[];
                         name: string;
                         units: string;
-                        matrix: readonly (readonly number[])[];
                         category: string;
                         domain: string;
                     }>;
@@ -5147,9 +5158,9 @@ declare namespace $.$$ {
                         data_type: string;
                         property: {
                             scalar?: string | number | undefined;
+                            matrix: readonly (readonly number[])[];
                             name: string;
                             units: string;
-                            matrix: readonly (readonly number[])[];
                             category: string;
                             domain: string;
                         };
@@ -5164,9 +5175,9 @@ declare namespace $.$$ {
                         data_type: string;
                         property: Readonly<{
                             scalar?: string | number | undefined;
+                            matrix: readonly (readonly number[])[];
                             name: string;
                             units: string;
-                            matrix: readonly (readonly number[])[];
                             category: string;
                             domain: string;
                         }>;
@@ -5182,9 +5193,9 @@ declare namespace $.$$ {
                             data_type: string;
                             property: {
                                 scalar?: string | number | undefined;
+                                matrix: readonly (readonly number[])[];
                                 name: string;
                                 units: string;
-                                matrix: readonly (readonly number[])[];
                                 category: string;
                                 domain: string;
                             };
@@ -5199,9 +5210,9 @@ declare namespace $.$$ {
                             data_type: string;
                             property: Readonly<{
                                 scalar?: string | number | undefined;
+                                matrix: readonly (readonly number[])[];
                                 name: string;
                                 units: string;
-                                matrix: readonly (readonly number[])[];
                                 category: string;
                                 domain: string;
                             }>;
@@ -5210,16 +5221,16 @@ declare namespace $.$$ {
                                 data_type: (val: string) => string;
                                 property: ((val: {
                                     scalar?: string | number | undefined;
+                                    matrix: readonly (readonly number[])[];
                                     name: string;
                                     units: string;
-                                    matrix: readonly (readonly number[])[];
                                     category: string;
                                     domain: string;
                                 }) => Readonly<{
                                     scalar?: string | number | undefined;
+                                    matrix: readonly (readonly number[])[];
                                     name: string;
                                     units: string;
-                                    matrix: readonly (readonly number[])[];
                                     category: string;
                                     domain: string;
                                 }>) & {
@@ -5248,9 +5259,9 @@ declare namespace $.$$ {
                                     };
                                     Value: Readonly<{
                                         scalar?: string | number | undefined;
+                                        matrix: readonly (readonly number[])[];
                                         name: string;
                                         units: string;
-                                        matrix: readonly (readonly number[])[];
                                         category: string;
                                         domain: string;
                                     }>;
@@ -5348,9 +5359,9 @@ declare namespace $.$$ {
                                 data_type: string;
                                 property: Readonly<{
                                     scalar?: string | number | undefined;
+                                    matrix: readonly (readonly number[])[];
                                     name: string;
                                     units: string;
-                                    matrix: readonly (readonly number[])[];
                                     category: string;
                                     domain: string;
                                 }>;
@@ -5367,9 +5378,9 @@ declare namespace $.$$ {
                             data_type: string;
                             property: Readonly<{
                                 scalar?: string | number | undefined;
+                                matrix: readonly (readonly number[])[];
                                 name: string;
                                 units: string;
-                                matrix: readonly (readonly number[])[];
                                 category: string;
                                 domain: string;
                             }>;
@@ -5403,9 +5414,9 @@ declare namespace $.$$ {
                         data_type: string;
                         property: Readonly<{
                             scalar?: string | number | undefined;
+                            matrix: readonly (readonly number[])[];
                             name: string;
                             units: string;
-                            matrix: readonly (readonly number[])[];
                             category: string;
                             domain: string;
                         }>;
@@ -5466,9 +5477,9 @@ declare namespace $.$$ {
                     data_type: string;
                     property: Readonly<{
                         scalar?: string | number | undefined;
+                        matrix: readonly (readonly number[])[];
                         name: string;
                         units: string;
-                        matrix: readonly (readonly number[])[];
                         category: string;
                         domain: string;
                     }>;
@@ -5511,9 +5522,9 @@ declare namespace $.$$ {
                     data_type: string;
                     property: Readonly<{
                         scalar?: string | number | undefined;
+                        matrix: readonly (readonly number[])[];
                         name: string;
                         units: string;
-                        matrix: readonly (readonly number[])[];
                         category: string;
                         domain: string;
                     }>;

@@ -4791,9 +4791,9 @@ var $;
                 native.persist().then(actual => {
                     setTimeout(() => this.persisted(actual, 'cache'), 5000);
                     if (actual)
-                        this.$.$mol_log3_rise({ place: this, message: `Persist` });
+                        this.$.$mol_log3_rise({ place: `$mol_storage`, message: `Persist: Yes` });
                     else
-                        this.$.$mol_log3_fail({ place: this, message: `Non persist` });
+                        this.$.$mol_log3_fail({ place: `$mol_storage`, message: `Persist: No` });
                 });
             }
             return next ?? $mol_wire_sync(native).persisted();
@@ -9128,6 +9128,20 @@ var $;
     $.$mol_data_optional = $mol_data_optional;
 })($ || ($ = {}));
 //mol/data/optional/optional.ts
+;
+"use strict";
+var $;
+(function ($) {
+    function $mol_data_const(ref) {
+        return $mol_data_setup((val) => {
+            if ($mol_compare_deep(val, ref))
+                return ref;
+            return $mol_fail(new $mol_data_error(`${JSON.stringify(val)} is not ${JSON.stringify(ref)}`));
+        }, ref);
+    }
+    $.$mol_data_const = $mol_data_const;
+})($ || ($ = {}));
+//mol/data/const/const.ts
 ;
 "use strict";
 var $;
@@ -17159,6 +17173,7 @@ var $;
             cmp: $mol_data_optional($mol_data_number),
         });
         const $mpds_visavis_plot_matrix_json = $mol_data_record({
+            use_visavis_type: $mol_data_const('matrix'),
             answerto: $mol_data_optional($mol_data_string),
             payload: $mol_data_record({
                 nodes: $mol_data_array($mpds_visavis_plot_matrix_json_node),
@@ -17191,9 +17206,9 @@ var $;
                 if (!this.multi_jsons())
                     return this.json();
                 const jsons = this.multi_jsons();
-                const json_master = JSON.parse(JSON.stringify(jsons[0]));
+                const json_master = JSON.parse(JSON.stringify($mpds_visavis_plot_matrix_json(jsons[0])));
                 for (let i = 1; i < jsons.length; i++) {
-                    const json = jsons[i];
+                    const json = $mpds_visavis_plot_matrix_json(jsons[i]);
                     json.payload.links.forEach((item) => {
                         item.cmp = i;
                         json_master.payload.links.push(item);
@@ -19911,6 +19926,7 @@ var $;
     (function ($$) {
         const d3 = $mpds_visavis_lib_plotly.d3;
         const $mpds_visavis_plot_cube_json = $mol_data_record({
+            use_visavis_type: $mol_data_const('plot3d'),
             payload: $mol_data_record({
                 tcube: $mol_data_optional($mol_data_boolean),
                 points: $mol_data_record({
@@ -20008,11 +20024,12 @@ var $;
                     return null;
                 this.nonformers_checked(false);
                 return this.multi_jsons().map((json, index) => {
+                    const json_valid = $mpds_visavis_plot_cube_json(json);
                     return {
                         ...this.scatter3d_common(),
-                        text: json.payload.points.labels,
+                        text: json_valid.payload.points.labels,
                         marker: this.marker(index),
-                        ...this.convert_to_axes(json.payload.points.x, json.payload.points.y, json.payload.points.z, this.x_sort(), this.y_sort(), this.z_sort())
+                        ...this.convert_to_axes(json_valid.payload.points.x, json_valid.payload.points.y, json_valid.payload.points.z, this.x_sort(), this.y_sort(), this.z_sort())
                     };
                 });
             }
@@ -20601,20 +20618,6 @@ var $;
     $.$mpds_visavis_plot_phase = $mpds_visavis_plot_phase;
 })($ || ($ = {}));
 //mpds/visavis/plot/phase/-view.tree/phase.view.tree.ts
-;
-"use strict";
-var $;
-(function ($) {
-    function $mol_data_const(ref) {
-        return $mol_data_setup((val) => {
-            if ($mol_compare_deep(val, ref))
-                return ref;
-            return $mol_fail(new $mol_data_error(`${JSON.stringify(val)} is not ${JSON.stringify(ref)}`));
-        }, ref);
-    }
-    $.$mol_data_const = $mol_data_const;
-})($ || ($ = {}));
-//mol/data/const/const.ts
 ;
 "use strict";
 var $;
@@ -21402,6 +21405,7 @@ var $;
             name: $mol_data_string
         });
         $$.$mpds_visavis_plot_discovery_json = $mol_data_record({
+            use_visavis_type: $mol_data_const('discovery'),
             payload: Payload,
             answerto: $mol_data_string,
         });
@@ -21559,7 +21563,7 @@ var $;
             }
             data() {
                 const json = this.json();
-                const json_cmp = this.json_cmp();
+                const json_cmp = this.json_cmp() ? $$.$mpds_visavis_plot_discovery_json(this.json_cmp()) : null;
                 const elementals_on = this.elementals_on();
                 const first = Discover_item({ points: json.payload.points, name: json.answerto });
                 const second = json_cmp ? Discover_item({ points: json_cmp.payload.points, name: json_cmp.answerto }) : undefined;
@@ -23985,8 +23989,11 @@ var $;
                 return next ?? null;
             }
             plot_raw() {
-                return this.json() ?
-                    $mpds_visavis_plot_raw_from_json(this.json()) : null;
+                return this.multi_jsons()
+                    ? $mpds_visavis_plot_raw_from_json(this.multi_jsons()[0])
+                    : this.json()
+                        ? $mpds_visavis_plot_raw_from_json(this.json())
+                        : null;
             }
             sub() {
                 const phase_data_demo = this.plot_raw()?.type() == 'pd' ? this.phase_data_demo() : false;
@@ -24060,7 +24067,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("mpds/visavis/plot/plot.view.css", "[mpds_visavis_plot][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_plot_matrix_root][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_plot_graph_root][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_plotly][mol_view_error]:not([mol_view_error=\"Promise\"]) {\n    background-image: none;\n\tpadding-top: 6rem;\n    align-items: flex-start;\n    justify-content: center;\n}\n\n[mpds_visavis_plot],\n[mpds_visavis_plot] .js-plotly-plot .plotly,\n[mpds_visavis_plot] .js-plotly-plot .plotly div {\n\tfont-family: inherit;\n}\n\n[mpds_visavis_plot][fullscreen] {\n\tposition: fixed;\n\tz-index: 9999;\n\ttop: 0;\n\tleft: 0;\n\tright: 0;\n\tbottom: 0;\n}\n");
+    $mol_style_attach("mpds/visavis/plot/plot.view.css", "[mpds_visavis_plot][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_plot_matrix_plot][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_plot_matrix_root][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_plot_graph_root][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_plotly][mol_view_error]:not([mol_view_error=\"Promise\"]) {\n    background-image: none;\n\tpadding-top: 6rem;\n    align-items: flex-start;\n    justify-content: center;\n}\n\n[mpds_visavis_plot],\n[mpds_visavis_plot] .js-plotly-plot .plotly,\n[mpds_visavis_plot] .js-plotly-plot .plotly div {\n\tfont-family: inherit;\n}\n\n[mpds_visavis_plot][fullscreen] {\n\tposition: fixed;\n\tz-index: 9999;\n\ttop: 0;\n\tleft: 0;\n\tright: 0;\n\tbottom: 0;\n}\n");
 })($ || ($ = {}));
 //mpds/visavis/plot/-css/plot.view.css.ts
 ;
