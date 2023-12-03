@@ -7296,7 +7296,7 @@ $mpds_visavis_elements_nonformer $mol_object
 		\Tb-V-Cr
 		\Ce-Ta-Nb
 
-$mpds_visavis_plotly $mol_view
+$mpds_visavis_lib_plotly_view $mol_view
 	sub / 
 		<= Plotly_root null
 	data /
@@ -7532,7 +7532,7 @@ $mpds_visavis_plot_cube $mol_view
 	sub /
 		<= Plot $mol_view
 			sub <= plot_body /
-				<= Root $mpds_visavis_plotly
+				<= Root $mpds_visavis_lib_plotly_view
 					data <= data_shown /
 					layout <= layout *
 					Plotly_root => Plotly_root
@@ -7756,12 +7756,12 @@ $mpds_visavis_plot_phase $mol_book2
 	sub /
 		<= Label $mol_view sub /
 			<= label? \
-		<= Root $mpds_visavis_plotly
+		<= Root $mpds_visavis_lib_plotly_view
 			Plotly_root => Plotly_root
 			data <= data /
 			layout <= layout *
 
-$mpds_visavis_plot_bar $mpds_visavis_plotly
+$mpds_visavis_plot_bar $mpds_visavis_lib_plotly_view
 	plot_raw $mpds_visavis_plot_raw
 	bar_click? null
 
@@ -7775,7 +7775,7 @@ $mpds_visavis_plot_discovery $mol_view
 		\#3e3f95
 		\#c00
 	sub /
-		<= Plot $mpds_visavis_plotly
+		<= Plot $mpds_visavis_lib_plotly_view
 			Plotly_root => Plotly_root
 			data <= data /
 			layout <= layout *
@@ -7790,10 +7790,10 @@ $mpds_visavis_plot_discovery $mol_view
 						option_checked*? <=> elemental_checked*? false
 						options <= elementals_dict *
 
-$mpds_visavis_plot_eigen $mpds_visavis_plotly
+$mpds_visavis_plot_eigen $mpds_visavis_lib_plotly_view
 	plot_raw $mpds_visavis_plot_raw
 
-$mpds_visavis_plot_pie $mpds_visavis_plotly
+$mpds_visavis_plot_pie $mpds_visavis_lib_plotly_view
 	plot_raw $mpds_visavis_plot_raw
 	pie_click? null
 	colorset /
@@ -7808,17 +7808,17 @@ $mpds_visavis_plot_pie $mpds_visavis_plotly
 		\#0ff
 		\#90c
 
-$mpds_visavis_plot_scatter $mpds_visavis_plotly
+$mpds_visavis_plot_scatter $mpds_visavis_lib_plotly_view
 	plot_raw $mpds_visavis_plot_raw
 	notify? null
 
-$mpds_visavis_plot_customscatter $mpds_visavis_plotly
+$mpds_visavis_plot_customscatter $mpds_visavis_lib_plotly_view
 	plot_raw $mpds_visavis_plot_raw
 	nplots_changed? null
 	legend_click? null
 	nplots 0
 
-$mpds_visavis_plot_heatmap $mpds_visavis_plotly
+$mpds_visavis_plot_heatmap $mpds_visavis_lib_plotly_view
 	plot_raw $mpds_visavis_plot_raw
 
 $mol_touch $mol_plugin
