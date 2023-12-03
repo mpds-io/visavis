@@ -169,7 +169,7 @@ $mpds_visavis_plot_phase $mol_book2
 	sub /
 		<= Label $mol_view sub /
 			<= label? \
-		<= Root $mpds_visavis_plotly
+		<= Root $mpds_visavis_lib_plotly_view
 			Plotly_root => Plotly_root
 			data <= data /
 			layout <= layout *

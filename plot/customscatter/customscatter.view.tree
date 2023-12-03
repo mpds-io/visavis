@@ -1,4 +1,4 @@
-$mpds_visavis_plot_customscatter $mpds_visavis_plotly
+$mpds_visavis_plot_customscatter $mpds_visavis_lib_plotly_view
 	plot_raw $mpds_visavis_plot_raw
 	nplots_changed? null
 	legend_click? null

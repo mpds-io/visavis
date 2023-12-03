@@ -1,6 +1,6 @@
 namespace $.$$ {
 
-	export class $mpds_visavis_plotly extends $.$mpds_visavis_plotly {
+	export class $mpds_visavis_lib_plotly_view extends $.$mpds_visavis_lib_plotly_view {
 
 		@ $mol_mem
 		size() {

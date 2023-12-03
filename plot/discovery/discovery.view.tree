@@ -8,7 +8,7 @@ $mpds_visavis_plot_discovery $mol_view
 		\#3e3f95
 		\#c00
 	sub /
-		<= Plot $mpds_visavis_plotly
+		<= Plot $mpds_visavis_lib_plotly_view
 			Plotly_root => Plotly_root
 			data <= data /
 			layout <= layout *

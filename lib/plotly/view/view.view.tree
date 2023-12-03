@@ -1,4 +1,4 @@
-$mpds_visavis_plotly $mol_view
+$mpds_visavis_lib_plotly_view $mol_view
 	sub / 
 		<= Plotly_root null
 	data /

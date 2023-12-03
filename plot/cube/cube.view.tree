@@ -37,7 +37,7 @@ $mpds_visavis_plot_cube $mol_view
 	sub /
 		<= Plot $mol_view
 			sub <= plot_body /
-				<= Root $mpds_visavis_plotly
+				<= Root $mpds_visavis_lib_plotly_view
 					data <= data_shown /
 					layout <= layout *
 					Plotly_root => Plotly_root
