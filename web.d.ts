@@ -243,6 +243,39 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    type $mol_log3_event<Fields> = {
+        [key in string]: unknown;
+    } & {
+        time?: string;
+        place: unknown;
+        message: string;
+    } & Fields;
+    type $mol_log3_logger<Fields, Res = void> = (this: $, event: $mol_log3_event<Fields>) => Res;
+    let $mol_log3_come: $mol_log3_logger<{}>;
+    let $mol_log3_done: $mol_log3_logger<{}>;
+    let $mol_log3_fail: $mol_log3_logger<{}>;
+    let $mol_log3_warn: $mol_log3_logger<{
+        hint: string;
+    }>;
+    let $mol_log3_rise: $mol_log3_logger<{}>;
+    let $mol_log3_area: $mol_log3_logger<{}, () => void>;
+    function $mol_log3_area_lazy(this: $, event: $mol_log3_event<{}>): () => void;
+    let $mol_log3_stack: (() => void)[];
+}
+
+declare namespace $ {
+    type $mol_type_keys_extract<Input, Upper, Lower = never> = {
+        [Field in keyof Input]: unknown extends Input[Field] ? never : Input[Field] extends never ? never : Input[Field] extends Upper ? [
+            Lower
+        ] extends [Input[Field]] ? Field : never : never;
+    }[keyof Input];
+}
+
+declare namespace $ {
+    function $mol_log3_web_make(level: $mol_type_keys_extract<Console, Function>, color: string): (this: $, event: $mol_log3_event<{}>) => () => void;
+}
+
+declare namespace $ {
     class $mol_wire_task<Host, Args extends readonly unknown[], Result> extends $mol_wire_fiber<Host, Args, Result> {
         static getter<Host, Args extends readonly unknown[], Result>(task: (this: Host, ...args: Args) => Result): (host: Host, args: Args) => $mol_wire_task<Host, Args, Result>;
         get temp(): boolean;
@@ -434,14 +467,6 @@ declare namespace $ {
     };
     type ObjectOrFunctionResultPromisify<Some> = (Some extends (...args: any) => unknown ? FunctionResultPromisify<Some> : {}) & (Some extends Object ? MethodsResultPromisify<Some> : Some);
     export {};
-}
-
-declare namespace $ {
-    type $mol_type_keys_extract<Input, Upper, Lower = never> = {
-        [Field in keyof Input]: unknown extends Input[Field] ? never : Input[Field] extends never ? never : Input[Field] extends Upper ? [
-            Lower
-        ] extends [Input[Field]] ? Field : never : never;
-    }[keyof Input];
 }
 
 declare namespace $ {
@@ -853,8 +878,10 @@ declare namespace $ {
     type Keys<View extends $mol_view> = '>' | '@' | keyof $mol_style_properties | $mol_style_pseudo_element | $mol_style_pseudo_class | $mol_type_keys_extract<View, () => $mol_view> | `$${string}`;
     export type $mol_style_guard<View extends $mol_view, Config> = {
         [key in Keys<View>]?: unknown;
-    } & {
-        [key in keyof Config]: key extends keyof $mol_style_properties ? $mol_style_properties[key] : key extends '>' | $mol_style_pseudo_class | $mol_style_pseudo_element ? $mol_style_guard<View, Config[key]> : key extends '@' ? Attrs<View, Config[key]> : key extends '@media' ? Medias<View, Config[key]> : key extends `--${string}` ? any : key extends keyof $ ? $mol_style_guard<InstanceType<Extract<$[key], typeof $mol_view>>, Config[key]> : key extends keyof View ? View[key] extends (id?: any) => infer Sub ? Sub extends $mol_view ? $mol_style_guard<Sub, Config[key]> : $mol_type_error<'Property returns non $mol_view', {
+    } & $mol_style_properties & {
+        [key in keyof Config]: key extends keyof $mol_style_properties ? $mol_style_properties[key] : key extends '>' | $mol_style_pseudo_class | $mol_style_pseudo_element ? $mol_style_guard<View, Config[key]> : key extends '@' ? Attrs<View, Config[key]> : key extends '@media' ? Medias<View, Config[key]> : key extends `[${string}]` ? {
+            [val in keyof Config[key]]: $mol_style_guard<View, Config[key][val]>;
+        } : key extends `--${string}` ? any : key extends keyof $ ? $mol_style_guard<InstanceType<Extract<$[key], typeof $mol_view>>, Config[key]> : key extends keyof View ? View[key] extends (id?: any) => infer Sub ? Sub extends $mol_view ? $mol_style_guard<Sub, Config[key]> : $mol_type_error<'Property returns non $mol_view', {
             Returns: Sub;
         }> : $mol_type_error<'Field is not a Property'> : key extends `$${string}` ? $mol_type_error<'Unknown View Class'> : $mol_type_error<'Unknown CSS Property'>;
     };
@@ -910,41 +937,6 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $mol_list extends $mol_view {
-        render_visible_only(): boolean;
-        render_over(): number;
-        sub(): readonly $mol_view[];
-        Empty(): $mol_view;
-        Gap_before(): $mol_view;
-        Gap_after(): $mol_view;
-        view_window(): readonly any[];
-        rows(): readonly $mol_view[];
-        gap_before(): number;
-        gap_after(): number;
-    }
-}
-
-declare namespace $ {
-    function $mol_support_css_overflow_anchor(this: $): boolean;
-}
-
-declare namespace $.$$ {
-    class $mol_list extends $.$mol_list {
-        sub(): readonly $mol_view[];
-        render_visible_only(): boolean;
-        view_window(next?: [number, number]): [number, number];
-        gap_before(): number;
-        gap_after(): number;
-        sub_visible(): $mol_view[];
-        minimal_height(): number;
-        force_render(path: Set<$mol_view>): void;
-    }
-}
-
-declare namespace $ {
-}
-
-declare namespace $ {
     class $mol_page extends $mol_view {
         dom_name(): string;
         field(): Record<string, any>;
@@ -958,7 +950,7 @@ declare namespace $ {
         head(): readonly any[];
         Head(): $mol_view;
         body(): readonly $mol_view[];
-        Body_content(): $$.$mol_list;
+        Body_content(): $mol_view;
         body_content(): readonly any[];
         body_scroll_top(next?: any): number;
         Body(): $$.$mol_scroll;
@@ -1278,6 +1270,41 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    class $mol_list extends $mol_view {
+        render_visible_only(): boolean;
+        render_over(): number;
+        sub(): readonly $mol_view[];
+        Empty(): $mol_view;
+        Gap_before(): $mol_view;
+        Gap_after(): $mol_view;
+        view_window(): readonly any[];
+        rows(): readonly $mol_view[];
+        gap_before(): number;
+        gap_after(): number;
+    }
+}
+
+declare namespace $ {
+    function $mol_support_css_overflow_anchor(this: $): boolean;
+}
+
+declare namespace $.$$ {
+    class $mol_list extends $.$mol_list {
+        sub(): readonly $mol_view[];
+        render_visible_only(): boolean;
+        view_window(next?: [number, number]): [number, number];
+        gap_before(): number;
+        gap_after(): number;
+        sub_visible(): $mol_view[];
+        minimal_height(): number;
+        force_render(path: Set<$mol_view>): void;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
     class $mol_link extends $mol_view {
         uri(): string;
         dom_name(): string;
@@ -1294,6 +1321,7 @@ declare namespace $ {
         target(): string;
         file_name(): string;
         current(): boolean;
+        relation(): string;
         event_click(event?: any): any;
         click(event?: any): any;
     }
@@ -1401,31 +1429,6 @@ declare namespace $.$$ {
 
 declare namespace $ {
     let $mol_mem_persist: typeof $mol_wire_solid;
-}
-
-declare namespace $ {
-    type $mol_log3_event<Fields> = {
-        [key in string]: unknown;
-    } & {
-        time?: string;
-        place: unknown;
-        message: string;
-    } & Fields;
-    type $mol_log3_logger<Fields, Res = void> = (this: $, event: $mol_log3_event<Fields>) => Res;
-    let $mol_log3_come: $mol_log3_logger<{}>;
-    let $mol_log3_done: $mol_log3_logger<{}>;
-    let $mol_log3_fail: $mol_log3_logger<{}>;
-    let $mol_log3_warn: $mol_log3_logger<{
-        hint: string;
-    }>;
-    let $mol_log3_rise: $mol_log3_logger<{}>;
-    let $mol_log3_area: $mol_log3_logger<{}, () => void>;
-    function $mol_log3_area_lazy(this: $, event: $mol_log3_event<{}>): () => void;
-    let $mol_log3_stack: (() => void)[];
-}
-
-declare namespace $ {
-    function $mol_log3_web_make(level: $mol_type_keys_extract<Console, Function>, color: string): (this: $, event: $mol_log3_event<{}>) => () => void;
 }
 
 declare namespace $ {
@@ -1571,18 +1574,6 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    function $mol_huggingface_run(this: $, space: string, method: string | number, ...data: readonly any[]): readonly any[];
-    function $mol_huggingface_rest(space: string, method: string, ...data: readonly any[]): readonly any[];
-    function $mol_huggingface_ws(space: string, fn_index: number, ...data: readonly any[]): Promise<readonly any[]> & {
-        destructor: () => void;
-    };
-}
-
-declare namespace $ {
-    function $hyoo_lingua_translate(this: $, lang: string, text: string): string;
-}
-
-declare namespace $ {
     interface $mol_locale_dict {
         [key: string]: string;
     }
@@ -1597,7 +1588,13 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    class $mol_icon_github_circle extends $mol_icon {
+    class $mol_icon_script extends $mol_icon {
+        path(): string;
+    }
+}
+
+declare namespace $ {
+    class $mol_icon_script_text extends $mol_icon {
         path(): string;
     }
 }
@@ -1606,7 +1603,7 @@ declare namespace $ {
     class $mol_link_source extends $mol_link {
         hint(): string;
         sub(): readonly any[];
-        Icon(): $mol_icon_github_circle;
+        Icon(): $mol_icon_script_text;
     }
 }
 
@@ -1802,6 +1799,7 @@ declare namespace $ {
 declare namespace $ {
     class $mpds_visavis_plot_matrix extends $mol_view {
         plot_raw(): $mpds_visavis_plot_raw;
+        auto(): readonly any[];
         multi_jsons(next?: any): any;
         json_master(): any;
         show_setup(): boolean;
@@ -1821,6 +1819,7 @@ declare namespace $ {
         plot_padding(): number;
         axis_width(): number;
         sub(): readonly any[];
+        auto_reorder(): any;
         draw(): any;
         Root(): $mol_view;
         cmp_labels(): readonly any[];
@@ -2298,7 +2297,7 @@ declare namespace $.$$ {
         svg_title_text(cell: Matrix_cell): string;
         draw_cells(node: SVGElement, row: Matrix_cell[]): void;
         draw(): void;
-        auto(): void;
+        auto(): readonly any[];
         get_bin_domain(args: {
             sort: Prop_name;
             op: string;
@@ -2852,6 +2851,7 @@ declare namespace $ {
 declare namespace $ {
     class $mpds_visavis_plot_cube extends $mol_view {
         plot_raw(): $mpds_visavis_plot_raw;
+        auto(): readonly any[];
         multi_jsons(next?: any): any;
         show_setup(): boolean;
         show_fixel(next?: any): boolean;
@@ -2868,6 +2868,7 @@ declare namespace $ {
         colorset(): readonly any[];
         heatmap_colors(): readonly any[];
         sub(): readonly any[];
+        subscribe_click(): any;
         data_shown(): readonly any[];
         layout(): Record<string, any>;
         Plotly_root(): any;
@@ -3091,7 +3092,8 @@ declare namespace $.$$ {
                 };
             };
         };
-        auto(): void;
+        auto(): readonly any[];
+        subscribe_click(): void;
         layout(): {
             font: {};
             showlegend: boolean;
@@ -3124,6 +3126,7 @@ declare namespace $.$$ {
 declare namespace $ {
     class $mpds_visavis_plot_phase extends $mol_book2 {
         plot_raw(): $mpds_visavis_plot_raw;
+        auto(): readonly any[];
         phase_click(next?: any): any;
         colors_by_nphases(): Record<string, any>;
         line(): Record<string, any>;
@@ -3137,6 +3140,7 @@ declare namespace $ {
         annotation_textangle(id: any): number;
         plot_options(): Record<string, any>;
         sub(): readonly any[];
+        subscribe_events(): any;
         json_title_b(): string;
         json_title_a(): string;
         json_title_c(): string;
@@ -3223,7 +3227,8 @@ declare namespace $.$$ {
         annotation_textangle(label: ReturnType<typeof Label_json>): 0 | -65;
         triangle_annotation_text(): string;
         annotations(): any[];
-        auto(): void;
+        auto(): readonly any[];
+        subscribe_events(): void;
         data(): any;
         layout(): any;
         pd_fix_triangle(): void;
@@ -3240,7 +3245,9 @@ declare namespace $.$$ {
 declare namespace $ {
     class $mpds_visavis_plot_bar extends $mpds_visavis_lib_plotly_view {
         plot_raw(): $mpds_visavis_plot_raw;
+        auto(): readonly any[];
         bar_click(next?: any): any;
+        subscribe_click(): any;
     }
 }
 
@@ -3434,7 +3441,8 @@ declare namespace $.$$ {
                 dx: number;
             }>;
         }>;
-        auto(): void;
+        auto(): readonly any[];
+        subscribe_click(): void;
         layout(): {
             showlegend: boolean;
             legend: {
@@ -3488,12 +3496,14 @@ declare namespace $ {
 declare namespace $ {
     class $mpds_visavis_plot_discovery extends $mol_view {
         plot_raw(): $mpds_visavis_plot_raw;
+        auto(): readonly any[];
         json_cmp(next?: any): any;
         elementals_on(next?: any): readonly any[];
         show_setup(): boolean;
         discovery_click(next?: any): any;
         colorset(): readonly any[];
         sub(): readonly any[];
+        subscribe_click(): any;
         data(): readonly any[];
         layout(): Record<string, any>;
         Plotly_root(): any;
@@ -3580,7 +3590,8 @@ declare namespace $.$$ {
             tmelt: string;
             eneg: string;
         }>;
-        auto(): void;
+        auto(): readonly any[];
+        subscribe_click(): void;
         layout(): {
             font: {
                 family: string;
@@ -4591,8 +4602,10 @@ declare namespace $.$$ {
 declare namespace $ {
     class $mpds_visavis_plot_pie extends $mpds_visavis_lib_plotly_view {
         plot_raw(): $mpds_visavis_plot_raw;
+        auto(): readonly any[];
         pie_click(next?: any): any;
         colorset(): readonly any[];
+        subscribe_click(): any;
     }
 }
 
@@ -4695,7 +4708,8 @@ declare namespace $.$$ {
             }>[];
             total_count: number;
         }>;
-        auto(): void;
+        auto(): readonly any[];
+        subscribe_click(): void;
         layout(): {
             font: {
                 family: string;
@@ -5497,6 +5511,8 @@ declare namespace $ {
         plot_raw(): $mpds_visavis_plot_raw;
         nplots_changed(next?: any): any;
         legend_click(next?: any): any;
+        auto(): readonly any[];
+        subscribe_legend_click(): any;
         nplots(): number;
     }
 }
@@ -5656,7 +5672,8 @@ declare namespace $.$$ {
             xlog: boolean | null;
             ylog: boolean | null;
         }>;
-        auto(): void;
+        auto(): readonly any[];
+        subscribe_legend_click(): void;
         nplots(): number;
         layout(): {
             showlegend: boolean;
