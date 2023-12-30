@@ -24757,9 +24757,7 @@ var $;
         Plot_page(id) {
             const obj = new this.$.$mol_page();
             obj.title = () => this.plot_id(id);
-            obj.body = () => [
-                this.Plot_view(id)
-            ];
+            obj.Body_content = () => this.Plot_view(id);
             return obj;
         }
         drop_file(next) {
