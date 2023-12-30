@@ -60,12 +60,6 @@ namespace $.$$ {
 				basis: '25rem',
 				shrink: 0,
 			},
-			Body: {
-				padding: $mol_gap.block,
-			},
-			Foot: {
-				padding: $mol_gap.block,
-			},
 		},
 
 		History_upload: {
