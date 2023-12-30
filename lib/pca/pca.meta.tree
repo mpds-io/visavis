@@ -1,1 +1,1 @@
-require \/mpds/visavis/lib/pca/bundle
+require \/mpds/visavis/lib/pca/_pca.js
