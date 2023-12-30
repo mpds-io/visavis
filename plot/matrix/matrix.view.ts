@@ -80,19 +80,20 @@ namespace $.$$ {
 		json_master() {
 			if ( ! this.multi_jsons() ) return this.json()
 
-			const jsons = this.multi_jsons()!
+			const jsons: any[] = this.multi_jsons()!
 			
 			const json_master = JSON.parse( JSON.stringify(
 				$mpds_visavis_plot_matrix_json( jsons[0] ) 
 			) )
 
-			for (let i = 1; i < jsons.length; i++) {
-				const json = $mpds_visavis_plot_matrix_json( jsons[i] )
-				json.payload.links.forEach( ( item: any ) => {
-					item.cmp = i
-					json_master.payload.links.push( item )
+			jsons.slice( 1 ).forEach( ( json, i ) => {
+				const json_valid = $mpds_visavis_plot_matrix_json( json )
+				const links = json_valid.payload.links.map( link => { 
+					return { ...link, cmp: i + 1 } 
 				} )
-			}
+				
+				json_master.payload.links.push( ...links )
+			} )
 
 			this.nonformers_checked( false )
 
@@ -335,8 +336,10 @@ namespace $.$$ {
 			this.Root().dom_node_actual().replaceChildren( svg_element )
 		}
 
-		auto() {
-			this.auto_reorder()
+
+		@ $mol_mem
+		auto() { 
+			return super.auto()
 		}
 
 		@ $mol_mem_key

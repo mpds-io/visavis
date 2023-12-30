@@ -41,10 +41,15 @@ namespace $.$$ {
 			return $mpds_visavis_plot_pie_json( this.plot_raw().json() as any )
 		}
 
-		auto( ) {
-			if( ! this.Plotly_root() ) return
+		@ $mol_mem
+		auto() {
+			return super.auto()
+		}
 
+		@ $mol_mem
+		subscribe_click() {
 			const plotly_root = this.Plotly_root()
+			if (! plotly_root ) return
 
 			const slices = d3.select( plotly_root ).selectAll('g.slice path')
 

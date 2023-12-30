@@ -24,18 +24,23 @@ namespace $.$$ {
 			return $mpds_visavis_plot_customscatter_json( this.plot_raw().json() as any )
 		}
 
+		@ $mol_mem
 		auto() {
-			if( ! this.Plotly_root() ) return
+			return super.auto()
+		}
+
+		@ $mol_mem
+		subscribe_legend_click() {
+			const plotly_root = this.Plotly_root()
+			if (! plotly_root ) return
 			
-			const legends = $mpds_visavis_lib_plotly.d3.select( this.Plotly_root() ).selectAll('.legendtoggle')
-			// this.Plotly_root().on('plotly_legendclick', (event: any)=> {
+			const legends = $mpds_visavis_lib_plotly.d3.select( plotly_root ).selectAll('.legendtoggle')
+			// plotly_root.on('plotly_legendclick', (event: any)=> {
 			legends.on('click', (data: any) => {
 				const trace = data[0].trace
 
 				this.legend_click( { plotindex: trace.index, name: trace.name } )
 			})
-
-			this.nplots()
 		}
 
 		@ $mol_mem

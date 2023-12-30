@@ -117,10 +117,17 @@ namespace $.$$ {
 			return $mpds_visavis_elements_list.prop_names()
 		}
 
-		auto() {
-			if( ! this.Plotly_root() ) return
+		@ $mol_mem
+		auto() { 
+			return super.auto()
+		}
 
-			this.Plotly_root()!.addEventListener('click', ( event: MouseEvent ) => {
+		@ $mol_mem
+		subscribe_click() {
+			const plotly_root = this.Plotly_root()
+			if (! plotly_root ) return
+
+			plotly_root.addEventListener('click', ( event: MouseEvent ) => {
 				
 				const node = event.target as HTMLElement
 				if (node.getAttribute('class') != 'point') return false;

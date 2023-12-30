@@ -239,11 +239,15 @@ namespace $.$$ {
 			]
 		}
 
+		@ $mol_mem
 		auto() {
-			if (! this.Plotly_root() ) return
+			return super.auto()
+		}
 
-			const plotly_root = this.Plotly_root()!
-
+		@ $mol_mem
+		subscribe_events() {
+			const plotly_root = this.Plotly_root()
+			if (! plotly_root ) return
 
 			if ( this.is_triangle() ) this.pd_fix_triangle()
 
@@ -341,9 +345,8 @@ namespace $.$$ {
 		}
 
 		pd_fix_triangle() {
-			if (! this.Plotly_root() ) return
-
-			const plotly_root = this.Plotly_root()!
+			const plotly_root = this.Plotly_root()
+			if (! plotly_root ) return
 
 			function make_absolute_context( element: SVGGraphicsElement, root: HTMLElement ) {
 				return function( x: number, y: number ) {

@@ -1,3 +1,5 @@
 $mpds_visavis_plot_bar $mpds_visavis_lib_plotly_view
 	plot_raw $mpds_visavis_plot_raw
+	auto /
+		<= subscribe_click null
 	bar_click? null

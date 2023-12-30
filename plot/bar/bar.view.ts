@@ -19,14 +19,21 @@ namespace $.$$ {
 			return $mpds_visavis_plot_bar_json( this.plot_raw().json() as any )
 		}
 
+		@ $mol_mem
 		auto() {
-			if( ! this.Plotly_root() ) return
+			return super.auto()
+		}
+
+		@ $mol_mem
+		subscribe_click() {
+			const plotly_root = this.Plotly_root()
+			if (! plotly_root ) return
 
 			const json = this.json() as any
 
 			if (json.payload2 && json.p1ayload2.x && json.payload2.y) return
 			
-			const paths = $mpds_visavis_lib_plotly.d3.select( this.Plotly_root() ).selectAll( 'g.point path' )
+			const paths = $mpds_visavis_lib_plotly.d3.select( plotly_root ).selectAll( 'g.point path' )
 
 			const that = this
 			paths.on('click', function(this: any, event: MouseEvent){

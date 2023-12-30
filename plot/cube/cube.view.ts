@@ -221,16 +221,23 @@ namespace $.$$ {
 			}	
 		}
 
-		auto() {
-			if( ! this.Plotly_root() ) return
 
-			const that = this
-			d3.select( this.Plotly_root()! ).on( 'click', (event: MouseEvent)=> {
+		@ $mol_mem
+		auto() {
+			return super.auto()
+		}
+
+		@ $mol_mem
+		subscribe_click() {
+			const plotly_root = this.Plotly_root()
+			if (! plotly_root ) return
+
+			plotly_root.addEventListener('click', ( event: MouseEvent ) => {
 				const node = event.target as HTMLElement
 				if (node.getAttribute('class') != 'nums') return false;
 				
 				const label_data = d3.select(node).data()[0]
-				that.cube_click( { label: label_data.text } )
+				this.cube_click( { label: label_data.text } )
 			} )
 		}
 

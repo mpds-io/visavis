@@ -1,5 +1,7 @@
 $mpds_visavis_plot_phase $mol_book2
 	plot_raw $mpds_visavis_plot_raw
+	auto /
+		<= subscribe_events null
 	phase_click? null
 	colors_by_nphases *
 		1 \#d1cde6
