@@ -336,12 +336,6 @@ namespace $.$$ {
 			this.Root().dom_node_actual().replaceChildren( svg_element )
 		}
 
-
-		@ $mol_mem
-		auto() { 
-			return super.auto()
-		}
-
 		@ $mol_mem_key
 		get_bin_domain( args: { sort: Prop_name, op: string } ){
 

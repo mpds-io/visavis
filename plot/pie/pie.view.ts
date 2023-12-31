@@ -42,11 +42,6 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		auto() {
-			return super.auto()
-		}
-
-		@ $mol_mem
 		subscribe_click() {
 			const plotly_root = this.Plotly_root()
 			if (! plotly_root ) return
