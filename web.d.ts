@@ -2297,7 +2297,6 @@ declare namespace $.$$ {
         svg_title_text(cell: Matrix_cell): string;
         draw_cells(node: SVGElement, row: Matrix_cell[]): void;
         draw(): void;
-        auto(): readonly any[];
         get_bin_domain(args: {
             sort: Prop_name;
             op: string;
@@ -3092,7 +3091,6 @@ declare namespace $.$$ {
                 };
             };
         };
-        auto(): readonly any[];
         subscribe_click(): void;
         layout(): {
             font: {};
@@ -3227,7 +3225,6 @@ declare namespace $.$$ {
         annotation_textangle(label: ReturnType<typeof Label_json>): 0 | -65;
         triangle_annotation_text(): string;
         annotations(): any[];
-        auto(): readonly any[];
         subscribe_events(): void;
         data(): any;
         layout(): any;
@@ -3441,7 +3438,6 @@ declare namespace $.$$ {
                 dx: number;
             }>;
         }>;
-        auto(): readonly any[];
         subscribe_click(): void;
         layout(): {
             showlegend: boolean;
@@ -3590,7 +3586,6 @@ declare namespace $.$$ {
             tmelt: string;
             eneg: string;
         }>;
-        auto(): readonly any[];
         subscribe_click(): void;
         layout(): {
             font: {
@@ -4708,7 +4703,6 @@ declare namespace $.$$ {
             }>[];
             total_count: number;
         }>;
-        auto(): readonly any[];
         subscribe_click(): void;
         layout(): {
             font: {
@@ -5672,7 +5666,6 @@ declare namespace $.$$ {
             xlog: boolean | null;
             ylog: boolean | null;
         }>;
-        auto(): readonly any[];
         subscribe_legend_click(): void;
         nplots(): number;
         layout(): {

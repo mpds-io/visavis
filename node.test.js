@@ -4078,7 +4078,7 @@ var $;
                     this.status([null]);
                 }
                 catch (error) {
-                    this.status([error]);
+                    Promise.resolve().then(() => this.status([error]));
                     $mol_fail_hidden(error);
                 }
             }
@@ -17734,9 +17734,6 @@ var $;
                     .text((d, i) => this.nodes()[i].name);
                 this.Root().dom_node_actual().replaceChildren(svg_element);
             }
-            auto() {
-                return super.auto();
-            }
             get_bin_domain(args) {
                 const { sort, op } = args;
                 var cond_slice = $mpds_visavis_elements_list.prop_values(sort).slice(1);
@@ -17897,9 +17894,6 @@ var $;
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_matrix.prototype, "draw", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "auto", null);
         __decorate([
             $mol_mem_key
         ], $mpds_visavis_plot_matrix.prototype, "get_bin_domain", null);
@@ -20441,9 +20435,6 @@ var $;
                     camera: { projection: { type: 'perspective' } },
                 };
             }
-            auto() {
-                return super.auto();
-            }
             subscribe_click() {
                 const plotly_root = this.Plotly_root();
                 if (!plotly_root)
@@ -20574,9 +20565,6 @@ var $;
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_cube.prototype, "scene", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_cube.prototype, "auto", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_cube.prototype, "subscribe_click", null);
@@ -21224,9 +21212,6 @@ var $;
                     ...this.json().naxes === 2 ? this.rectangle_annotations() : [],
                 ];
             }
-            auto() {
-                return super.auto();
-            }
             subscribe_events() {
                 const plotly_root = this.Plotly_root();
                 if (!plotly_root)
@@ -21351,9 +21336,6 @@ var $;
         ], $mpds_visavis_plot_phase.prototype, "annotations", null);
         __decorate([
             $mol_mem
-        ], $mpds_visavis_plot_phase.prototype, "auto", null);
-        __decorate([
-            $mol_mem
         ], $mpds_visavis_plot_phase.prototype, "subscribe_events", null);
         __decorate([
             $mol_mem
@@ -21445,9 +21427,6 @@ var $;
             json() {
                 return $$.$mpds_visavis_plot_bar_json(this.plot_raw().json());
             }
-            auto() {
-                return super.auto();
-            }
             subscribe_click() {
                 const plotly_root = this.Plotly_root();
                 if (!plotly_root)
@@ -21513,9 +21492,6 @@ var $;
                 return payload;
             }
         }
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_bar.prototype, "auto", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_bar.prototype, "subscribe_click", null);
@@ -21880,9 +21856,6 @@ var $;
             elementals_dict() {
                 return $mpds_visavis_elements_list.prop_names();
             }
-            auto() {
-                return super.auto();
-            }
             subscribe_click() {
                 const plotly_root = this.Plotly_root();
                 if (!plotly_root)
@@ -21991,9 +21964,6 @@ var $;
                 return this.json_cmp() ? [this.json().answerto, this.json_cmp().answerto] : [];
             }
         }
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_discovery.prototype, "auto", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_discovery.prototype, "subscribe_click", null);
@@ -22354,9 +22324,6 @@ var $;
             json() {
                 return $$.$mpds_visavis_plot_pie_json(this.plot_raw().json());
             }
-            auto() {
-                return super.auto();
-            }
             subscribe_click() {
                 const plotly_root = this.Plotly_root();
                 if (!plotly_root)
@@ -22500,9 +22467,6 @@ var $;
                 return data;
             }
         }
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_pie.prototype, "auto", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_pie.prototype, "subscribe_click", null);
@@ -22860,9 +22824,6 @@ var $;
             json() {
                 return $$.$mpds_visavis_plot_customscatter_json(this.plot_raw().json());
             }
-            auto() {
-                return super.auto();
-            }
             subscribe_legend_click() {
                 const plotly_root = this.Plotly_root();
                 if (!plotly_root)
@@ -22936,9 +22897,6 @@ var $;
                 return json.plots;
             }
         }
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_customscatter.prototype, "auto", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_customscatter.prototype, "subscribe_legend_click", null);
@@ -25096,8 +25054,8 @@ var $;
         class $mpds_visavis_app extends $.$mpds_visavis_app {
             files_read(next) {
                 for (const file of next) {
-                    const data = $mol_wire_sync($mol_blob_json)(file);
-                    const plot_raw = $mol_wire_sync($mpds_visavis_plot_raw_from_json)(data, file.name);
+                    const data = $mol_wire_sync(this.$).$mol_blob_json(file);
+                    const plot_raw = $mol_wire_sync(this.$).$mpds_visavis_plot_raw_from_json(data, file.name);
                     this.plot_opened_id(this.history_add(plot_raw));
                 }
             }
@@ -29065,13 +29023,14 @@ var $;
                 element.dispatchEvent(event);
                 $mol_assert_not(clicked);
             },
-            'Store error'($) {
+            async 'Store error'($) {
                 const clicker = $mol_button.make({
                     $,
                     click: (event) => $.$mol_fail(new Error('Test error')),
                 });
                 const event = $mol_dom_context.document.createEvent('mouseevent');
                 $mol_assert_fail(() => clicker.event_activate(event), 'Test error');
+                await Promise.resolve();
                 $mol_assert_equal(clicker.status()[0].message, 'Test error');
             },
         });
