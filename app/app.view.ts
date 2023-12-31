@@ -6,9 +6,9 @@ namespace $.$$ {
 		files_read(next: readonly File[]) {
 			for (const file of next) {
 
-				const data = $mol_wire_sync( $mol_blob_json )( file )
+				const data = $mol_wire_sync( this.$ ).$mol_blob_json( file )
 
-				const plot_raw = $mol_wire_sync( $mpds_visavis_plot_raw_from_json )( data, file.name )
+				const plot_raw = $mol_wire_sync( this.$ ).$mpds_visavis_plot_raw_from_json( data, file.name )
 				
 				this.plot_opened_id( this.history_add( plot_raw ) )
 			}
