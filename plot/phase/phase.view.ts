@@ -1,5 +1,7 @@
 namespace $.$$ {
 
+	const d3 = $mpds_visavis_lib_plotly.d3
+
 	const Label_json = ( val: any ) => {
 		if( !Array.isArray( val ) ) return $mol_fail( new $mol_data_error( `${ val } is not a array` ) )
 		if( val.length < 2 || val.length > 3 ) return $mol_fail( new $mol_data_error( `${ val } should have 2 or 3 items` ) )
@@ -237,30 +239,10 @@ namespace $.$$ {
 			]
 		}
 
-		mouseover() {
-			const that = $mpds_visavis_lib.d3().select( this )
-			console.log( that )
-			const idx = that.attr( 'data-index' )
-
-			// if (json.naxes == 3){
-			// if (idx == 0) return false;
-			// idx--;
-			// }
-
-			that.attr( 'data-state', that.style( 'fill' ) )
-			that.style( { 'cursor': 'pointer', 'fill': '#3e3f95' } )
-		}
-
-		mouseout() {}
-
-		click() {}
-
-		mousemove() {}
-
-		@$mol_action
+		@ $mol_mem
 		subscribe_events() {
-			const d3 = $mpds_visavis_lib.d3()
-			console.log('is trinagle', this.is_triangle())
+			const plotly_root = this.Plotly_root()
+			if (! plotly_root ) return
 
 			if ( this.is_triangle() ) this.pd_fix_triangle()
 
@@ -270,11 +252,10 @@ namespace $.$$ {
 			const json = this.json()
 			const is_triangle = this.is_triangle()
 
-			const that = this
-			const figures = d3.select( this.dom_node_actual() ).selectAll('[mpds_visavis_plot_phase_root] .shapelayer path')
+			const figures = d3.select( plotly_root ).selectAll('path')
 			figures.on('mouseover', function(this: any) {
 				const figure = d3.select(this)
-				let idx = figure.attr('data-index')
+				let idx = Number( figure.attr('data-index') )
 
 				if (is_triangle){
 					if (idx == 0) return false;
@@ -287,7 +268,7 @@ namespace $.$$ {
 
 				const reflabel = json.shapes[idx]?.reflabel
 				if (reflabel !== undefined && json.labels[reflabel] !== undefined){
-					d3.select( that.dom_node_actual() ).select(`g.annotation[data-index="'${reflabel}'"]`).select('text').style('fill', '#f30');
+					d3.select( plotly_root ).select(`g.annotation[data-index="'${reflabel}'"]`).select('text').style('fill', '#f30');
 				}
 				// original
 				// if (visavis.pd_phases[idx] !== undefined && json.labels[mpds_visavis.pd_phases[idx]] !== undefined){
@@ -302,7 +283,7 @@ namespace $.$$ {
 				if (state){
 					figure.style('fill', state)
 					figure.style('cursor', 'default')
-					d3.select( that.dom_node_actual() ).selectAll('[mpds_visavis_plot_phase_root] g.annotation').select('text').style('fill', '#000');
+					d3.select( plotly_root ).selectAll('g.annotation').select('text').style('fill', '#000');
 				}
 			})
 
@@ -317,7 +298,7 @@ namespace $.$$ {
 				}
 			})
 			
-			const canvas = this.Root().dom_node().firstChild as any
+			const canvas = plotly_root
 
 			// rectangle
 			if (!this.is_triangle()) {
@@ -359,7 +340,8 @@ namespace $.$$ {
 		}
 
 		pd_fix_triangle() {
-			const d3 = $mpds_visavis_lib.d3()
+			const plotly_root = this.Plotly_root()
+			if (! plotly_root ) return
 
 			function make_absolute_context( element: SVGGraphicsElement, root: HTMLElement ) {
 				return function( x: number, y: number ) {
@@ -378,11 +360,11 @@ namespace $.$$ {
 				return fn( b.x, b.y )
 			}
 
-			const svgroot = d3.select( this.dom_node_actual() ).select( "[mpds_visavis_plot_phase_root] svg.main-svg" )[ 0 ][ 0 ] // window
-			let graph_node = d3.select( this.dom_node_actual() ).select( "[mpds_visavis_plot_phase_root] g.toplevel.plotbg" )[ 0 ][ 0 ] // graph frame
+			const svgroot = d3.select( plotly_root ).select( "svg.main-svg" ).node()
+			let graph_node = d3.select( plotly_root ).select( "[mpds_visavis_plot_phase_root] g.toplevel.plotbg" ).node() // graph frame
 			const graph_coords = get_absolute_coords( graph_node, svgroot )
-			const svg_el = d3.select( this.dom_node_actual() ).select( "[mpds_visavis_plot_phase_root] g.layer-above" ) // actual drawing
-			let svg_node = svg_el[ 0 ][ 0 ]
+			const svg_el = d3.select( plotly_root ).select( "[mpds_visavis_plot_phase_root] g.layer-above" ) // actual drawing
+			let svg_node = svg_el.node()
 
 			graph_node = graph_node.getBoundingClientRect()
 			svg_node = svg_node.getBoundingClientRect()
@@ -394,13 +376,13 @@ namespace $.$$ {
 
 			const origdims = [] as number[]
 
-			d3.select( this.dom_node_actual() ).selectAll( "[mpds_visavis_plot_phase_root] text.annotation-text" ).each( function( this: any ) {
+			d3.select( plotly_root ).selectAll( "[mpds_visavis_plot_phase_root] text.annotation-text" ).each( function( this: any ) {
 				origdims.push( parseInt( this.getBoundingClientRect().left ) )
 			} )
 
 			svg_el.attr( "transform", "translate(" + ( -centerX * ( scaleX - 1 ) ) + ", " + ( -centerY * ( scaleY - 1 ) ) + ") scale(" + scaleX + ", " + scaleY + ")" )
 
-			d3.select( this.dom_node_actual() ).selectAll( "[mpds_visavis_plot_phase_root] g.annotation" ).each( function( this: any, d: any, i: any ) {
+			d3.select( plotly_root ).selectAll( "[mpds_visavis_plot_phase_root] g.annotation" ).each( function( this: any, d: any, i: any ) {
 				d3.select( this ).attr( "transform", "translate(" + ( -centerX * ( scaleX - 1 ) ) + ", " + ( -centerY * ( scaleY - 1 ) ) + ") scale(" + scaleX + ", " + scaleY + ") translate(" + ( -origdims[ i ] / 1.25 ) + ", 0) scale(1.75, 1)" )
 			} )
 		}

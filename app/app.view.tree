@@ -93,9 +93,8 @@ $mpds_visavis_app $mol_book2
 		<= Plot_opened null
 	Plot_page* $mol_page
 		title <= plot_id* \
-		body /
-			<= Plot_view* $mpds_visavis_plot
-				plot_raw <= plot_raw* null
-				show_setup true
-				show_fixel false
-				show_demo_warn false
+		Body_content <= Plot_view* $mpds_visavis_plot
+			plot_raw <= plot_raw* null
+			show_setup true
+			show_fixel false
+			show_demo_warn false

@@ -7,6 +7,8 @@ $mpds_visavis_plot $mol_view
 	json null
 	json_cmp_request? null
 	json_cmp null
+	multi_requests? /string
+	multi_jsons null
 	plot_raw null
 	show_setup false
 	notify? null
@@ -19,7 +21,7 @@ $mpds_visavis_plot $mol_view
 	plots *
 		matrix <= Matrix $mpds_visavis_plot_matrix
 			plot_raw <= plot_raw
-			json_cmp <= json_cmp
+			multi_jsons <= multi_jsons
 			show_setup <= show_setup
 			nonformers_checked? <=> nonformers_checked? false
 			fixel_checked? <=> matrix_fixel_checked? true
@@ -30,7 +32,7 @@ $mpds_visavis_plot $mol_view
 			matrix_click? <=> matrix_click? null
 		plot3d <= Cube $mpds_visavis_plot_cube
 			plot_raw <= plot_raw
-			json_cmp <= json_cmp
+			multi_jsons <= multi_jsons
 			show_setup <= show_setup
 			show_fixel? <= show_fixel? true
 			nonformers_checked? <=> nonformers_checked?
@@ -65,6 +67,8 @@ $mpds_visavis_plot $mol_view
 			notify? <=> notify?
 		customscatter <= Customscatter $mpds_visavis_plot_customscatter
 			plot_raw <= plot_raw
+			nplots_changed? <=> nplots_changed? null
+			legend_click? <=> legend_click? null
 		heatmap <= Heatmap $mpds_visavis_plot_heatmap
 			plot_raw <= plot_raw
 		graph <= Graph $mpds_visavis_plot_graph

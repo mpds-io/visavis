@@ -25,6 +25,13 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
+		multi_jsons() {
+			return this.multi_requests().length > 0 
+				? this.multi_requests().map( req => $mpds_visavis_plot.fetch_plot_json( req ) )
+				: this.json_cmp() ? [ this.json(), this.json_cmp() ] : null
+		}
+
+		@ $mol_mem
 		json_cmp_request( next?: string | null ) {
 			if ( next === null && $mol_wire_probe( ()=> this.json_cmp_request() ) === null ) {
 				this.notify( 'Comparison was reset' )
@@ -34,8 +41,11 @@ namespace $.$$ {
 
 		@ $mol_mem
 		plot_raw() {
-			return this.json() ? 
-				$mpds_visavis_plot_raw_from_json( this.json() ) : null
+			return this.multi_jsons()
+				? $mpds_visavis_plot_raw_from_json( this.multi_jsons()![0] ) 
+				: this.json()
+					? $mpds_visavis_plot_raw_from_json( this.json() ) 
+					: null
 		}
 
 		@ $mol_mem

@@ -4,11 +4,14 @@ namespace $.$$ {
 
 		@ $mol_action
 		files_read(next: readonly File[]) {
-			const data = $mol_wire_sync( $mol_blob_json )( next[0] )
+			for (const file of next) {
 
-			const plot_raw = $mpds_visavis_plot_raw_from_json( data, next[0].name )
+				const data = $mol_wire_sync( this.$ ).$mol_blob_json( file )
 
-			this.plot_opened_id( this.history_add( plot_raw ) )
+				const plot_raw = $mol_wire_sync( this.$ ).$mpds_visavis_plot_raw_from_json( data, file.name )
+				
+				this.plot_opened_id( this.history_add( plot_raw ) )
+			}
 		}
 
 		@ $mol_action

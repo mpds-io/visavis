@@ -1,6 +1,8 @@
 $mpds_visavis_plot_matrix $mol_view
 	plot_raw $mpds_visavis_plot_raw
-	json_cmp? null
+	auto /
+		<= auto_reorder null
+	multi_jsons? null
 	json_master null
 	show_setup true
 	size 0
@@ -43,8 +45,8 @@ $mpds_visavis_plot_matrix $mol_view
 				<= Root $mol_view
 					render <= draw null
 				<= Cmp_legend $mpds_visavis_plot_legend_cmp
-					first_cmp_label? <= first_cmp_label? \
-					second_cmp_label? <= second_cmp_label? \
+					labels <= cmp_labels /
+					colorset <= colorset
 				<= Side_right $mol_scroll
 					sub /
 						<= Heatmap_legend $mol_list
@@ -62,9 +64,9 @@ $mpds_visavis_plot_matrix $mol_view
 					hint \Continuous solid solutions and complete insolubility systems
 					title \Show non-formers
 					checked? <=> nonformers_checked? false
-				<= Diffrence_on $mol_check_box
-					title \Show diffrence
-					checked? <=> diffrence_checked? false
+				<= Difference_on $mol_check_box
+					title \Show difference
+					checked? <=> difference_checked? false
 				<= Order $mol_labeler
 					title \Sort by
 					Content <= Order_switch $mol_switch

@@ -1,2 +1,2 @@
-$mpds_visavis_plot_eigen $mpds_visavis_plotly
+$mpds_visavis_plot_eigen $mpds_visavis_lib_plotly_view
 	plot_raw $mpds_visavis_plot_raw

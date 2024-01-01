@@ -1,5 +1,7 @@
 $mpds_visavis_plot_phase $mol_book2
 	plot_raw $mpds_visavis_plot_raw
+	auto /
+		<= subscribe_events null
 	phase_click? null
 	colors_by_nphases *
 		1 \#d1cde6
@@ -169,9 +171,7 @@ $mpds_visavis_plot_phase $mol_book2
 	sub /
 		<= Label $mol_view sub /
 			<= label? \
-		<= Root $mpds_visavis_plotly
-			data <= data *
+		<= Root $mpds_visavis_lib_plotly_view
+			Plotly_root => Plotly_root
+			data <= data /
 			layout <= layout *
-			subscribe_events <= subscribe_events null
-			event *
-				mousemove <= mousemove null

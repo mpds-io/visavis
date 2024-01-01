@@ -1,5 +1,7 @@
 namespace $.$$ {
 
+	const d3 = $mpds_visavis_lib_plotly.d3
+
 	const Facet_names = {props: 'properties', elements: 'elements', classes: 'classes', lattices: 'crystal systems'} as const
 
 	export const $mpds_visavis_plot_pie_json = $mol_data_record( {
@@ -39,14 +41,12 @@ namespace $.$$ {
 			return $mpds_visavis_plot_pie_json( this.plot_raw().json() as any )
 		}
 
-		@ $mol_action
-		subscribe_events() {
-			// warn_demo();
-			// if (visavis.mpds_embedded) document.getElementById('expander').style.display = 'block';
-			
-			const d3 = $mpds_visavis_lib.d3()
+		@ $mol_mem
+		subscribe_click() {
+			const plotly_root = this.Plotly_root()
+			if (! plotly_root ) return
 
-			const slices = d3.select( this.dom_node_actual() ).selectAll('g.slice path')
+			const slices = d3.select( plotly_root ).selectAll('g.slice path')
 
 			const facet_names: Record<string, string> = {props: 'properties', elements: 'elements', classes: 'classes', lattices: 'crystal systems'}; //global const?
 

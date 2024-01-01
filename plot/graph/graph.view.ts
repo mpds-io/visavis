@@ -1,5 +1,7 @@
 namespace $.$$ {
 
+	const d3 = $mpds_visavis_lib_plotly.d3
+
 	const Link = $mol_data_record({
 		source: $mol_data_string,
 		type: $mol_data_string,
@@ -107,8 +109,6 @@ namespace $.$$ {
 		
 			const { nodes, edges, labels, radii, foci, table, circle_cls, text_cls } = this.data()
 			
-			const d3 = $mpds_visavis_lib.d3()
-
 			const svg_element = this.Root().dom_node()
 			const svg = d3.select(svg_element)
 		
