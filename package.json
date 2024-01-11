@@ -1,0 +1,37 @@
+{
+	"name": "visavis",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Web-viewer for plots in materials science, chemistry, and physics",
+	"keywords": [
+		"MPDS",
+		"phase diagram",
+		"crystallography",
+		"materials science",
+		"materials design",
+		"chemical elements",
+		"periodic numbers"
+	],
+	"contributors": [
+	{
+		"name": "Stanislav Yaremenko",
+		"email": "contact@structpad.com",
+		"url": "https://github.com/stan-donarise"
+	},
+	{
+		"name": "Pavel Zubkov",
+		"url": "https://github.com/PavelZubkov"
+	},
+	{
+		"name": "Dmitry Karlovsky",
+		"email": "jin@hyoo.ru",
+		"url": "https://github.com/nin-jin"
+	}
+	],
+	"author": {
+		"name": "Evgeny Blokhin",
+		"email": "eb@tilde.pro",
+		"url": "https://orcid.org/0000-0002-5333-3947"
+	},
+	"license": "MIT"
+}
