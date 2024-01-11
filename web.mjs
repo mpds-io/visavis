@@ -222,7 +222,7 @@ var $;
         destructor() { }
         static destructor() { }
         toString() {
-            return this[Symbol.toStringTag] || this.constructor.name + '()';
+            return this[Symbol.toStringTag] || this.constructor.name + '<>';
         }
         static toJSON() {
             return this[Symbol.toStringTag] || this.$.$mol_func_name(this);
@@ -385,8 +385,6 @@ var $;
     function $mol_dev_format_native(obj) {
         if (typeof obj === 'undefined')
             return $.$mol_dev_format_shade('undefined');
-        if (typeof obj !== 'object' && typeof obj !== 'function')
-            return obj;
         return [
             'object',
             {
@@ -399,9 +397,6 @@ var $;
     function $mol_dev_format_auto(obj) {
         if (obj == null)
             return $.$mol_dev_format_shade(String(obj));
-        if (typeof obj === 'object' && $.$mol_dev_format_head in obj) {
-            return obj[$.$mol_dev_format_head]();
-        }
         return [
             'object',
             {
@@ -709,7 +704,7 @@ var $;
             return $mol_promise_like(this.cache);
         }
         field() {
-            return this.task.name + '()';
+            return this.task.name + '<>';
         }
         constructor(id, task, host, args) {
             super();
@@ -741,7 +736,12 @@ var $;
                 [$mol_wire_cursor.fresh]: '🟢',
                 [$mol_wire_cursor.final]: '🔵',
             }[this.cursor] ?? this.cursor.toString();
-            return $mol_dev_format_div({}, $mol_dev_format_native(this), $mol_dev_format_shade(cursor + ' '), $mol_dev_format_auto(this.cache));
+            return $mol_dev_format_div({}, $mol_owning_check(this, this.cache)
+                ? $mol_dev_format_auto({
+                    [$mol_dev_format_head]: () => $mol_dev_format_shade(cursor),
+                    [$mol_dev_format_body]: () => $mol_dev_format_native(this),
+                })
+                : $mol_dev_format_shade($mol_dev_format_native(this), cursor), $mol_dev_format_auto(this.cache));
         }
         get $() {
             return (this.host ?? this.task)['$'];
@@ -889,6 +889,8 @@ var $;
     function $mol_key(value) {
         if (typeof value === 'bigint')
             return value.toString() + 'n';
+        if (typeof value === 'symbol')
+            return value.description;
         if (!value)
             return JSON.stringify(value);
         if (typeof value !== 'object' && typeof value !== 'function')
@@ -896,6 +898,8 @@ var $;
         return JSON.stringify(value, (field, value) => {
             if (typeof value === 'bigint')
                 return value.toString() + 'n';
+            if (typeof value === 'symbol')
+                return value.description;
             if (!value)
                 return value;
             if (typeof value !== 'object' && typeof value !== 'function')
@@ -1004,11 +1008,11 @@ var $;
         return true;
     }
     function compare_buffer(left, right) {
-        if (left instanceof DataView)
-            return compare_buffer(new Uint8Array(left.buffer, left.byteOffset, left.byteLength), new Uint8Array(right.buffer, left.byteOffset, left.byteLength));
         const len = left.byteLength;
         if (len !== right.byteLength)
             return false;
+        if (left instanceof DataView)
+            return compare_buffer(new Uint8Array(left.buffer, left.byteOffset, left.byteLength), new Uint8Array(right.buffer, left.byteOffset, left.byteLength));
         for (let i = 0; i < len; ++i) {
             if (left[i] !== right[i])
                 return false;
@@ -1139,7 +1143,7 @@ var $;
                         break reuse;
                     return existen;
                 }
-                const next = new $mol_wire_task(`${host?.[Symbol.toStringTag] ?? host}.${task.name}(#)`, task, host, args);
+                const next = new $mol_wire_task(`${host?.[Symbol.toStringTag] ?? host}.${task.name}<#>`, task, host, args);
                 if (existen?.temp) {
                     $$.$mol_log3_warn({
                         place: '$mol_wire_task',
@@ -1251,7 +1255,7 @@ var $;
 (function ($) {
     class $mol_wire_atom extends $mol_wire_fiber {
         static solo(host, task) {
-            const field = task.name + '()';
+            const field = task.name + '<>';
             const existen = Object.getOwnPropertyDescriptor(host ?? task, field)?.value;
             if (existen)
                 return existen;
@@ -1262,20 +1266,21 @@ var $;
             return fiber;
         }
         static plex(host, task, key) {
-            const field = task.name + '()';
+            const field = task.name + '<>';
             let dict = Object.getOwnPropertyDescriptor(host ?? task, field)?.value;
             const prefix = host?.[Symbol.toStringTag] ?? (host instanceof Function ? $$.$mol_func_name(host) : host);
-            const id = `${prefix}.${task.name}(${$mol_key(key).replace(/^"|"$/g, "'")})`;
+            const key_str = $mol_key(key);
             if (dict) {
-                const existen = dict.get(id);
+                const existen = dict.get(key_str);
                 if (existen)
                     return existen;
             }
             else {
                 dict = (host ?? task)[field] = new Map();
             }
+            const id = `${prefix}.${task.name}<${key_str.replace(/^"|"$/g, "'")}>`;
             const fiber = new $mol_wire_atom(id, task, host, [key]);
-            dict.set(id, fiber);
+            dict.set(key_str, fiber);
             return fiber;
         }
         static watching = new Set();
@@ -1330,7 +1335,7 @@ var $;
             }
             else {
                 ;
-                (this.host ?? this.task)[this.field()].delete(this[Symbol.toStringTag]);
+                (this.host ?? this.task)[this.field()].delete($mol_key(this.args[0]));
             }
         }
         put(next) {
@@ -17879,6 +17884,11 @@ var $;
         trigger_enabled() {
             return true;
         }
+        clicks(next) {
+            if (next !== undefined)
+                return next;
+            return null;
+        }
         trigger_content() {
             return [
                 this.title()
@@ -17893,6 +17903,7 @@ var $;
             obj.minimal_height = () => 40;
             obj.enabled = () => this.trigger_enabled();
             obj.checked = (next) => this.showed(next);
+            obj.clicks = (next) => this.clicks(next);
             obj.sub = () => this.trigger_content();
             obj.hint = () => this.hint();
             return obj;
@@ -17901,6 +17912,9 @@ var $;
     __decorate([
         $mol_mem
     ], $mol_pick.prototype, "keydown", null);
+    __decorate([
+        $mol_mem
+    ], $mol_pick.prototype, "clicks", null);
     __decorate([
         $mol_mem
     ], $mol_pick.prototype, "Trigger", null);
