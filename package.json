@@ -12,6 +12,9 @@
 		"chemical elements",
 		"periodic numbers"
 	],
+	"engines": {
+		"node": ">=15.0.0"
+	},
 	"contributors": [
 	{
 		"name": "Stanislav Yaremenko",
@@ -23,7 +26,7 @@
 		"url": "https://github.com/PavelZubkov"
 	},
 	{
-		"name": "Dmitry Karlovsky",
+		"name": "Dmitriy Karlovskiy",
 		"email": "jin@hyoo.ru",
 		"url": "https://github.com/nin-jin"
 	}
