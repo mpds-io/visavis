@@ -64,13 +64,12 @@ declare namespace $ {
         get $(): $;
         set $(next: $);
         static create<Instance>(this: new (init?: (instance: any) => void) => Instance, init?: (instance: $mol_type_writable<Instance>) => void): Instance;
-        static [Symbol.toPrimitive](): string;
-        static toString(): string;
+        static [Symbol.toPrimitive](): any;
+        static toString(): any;
+        static toJSON(): any;
         destructor(): void;
         static destructor(): void;
         toString(): string;
-        static toJSON(): any;
-        toJSON(): any;
     }
 }
 
@@ -78,9 +77,7 @@ declare namespace $ {
     namespace $$ { }
     const $mol_object_field: unique symbol;
     class $mol_object extends $mol_object2 {
-        static make<Instance>(this: {
-            new (): Instance;
-        }, config: Partial<Instance>): Instance;
+        static make<This extends typeof $mol_object>(this: This, config: Partial<InstanceType<This>>): InstanceType<This>;
     }
 }
 
@@ -1960,15 +1957,8 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    function $mol_diff_path<Item>(...paths: Item[][]): {
-        prefix: Item[];
-        suffix: Item[][];
-    };
-}
-
-declare namespace $ {
-    class $mol_error_mix extends Error {
-        errors: Error[];
+    class $mol_error_mix extends AggregateError {
+        name: string;
         constructor(message: string, ...errors: Error[]);
         toJSON(): string;
     }
@@ -1976,6 +1966,7 @@ declare namespace $ {
 
 declare namespace $ {
     class $mol_data_error extends $mol_error_mix {
+        name: string;
     }
 }
 
