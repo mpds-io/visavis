@@ -3,6 +3,7 @@ $mpds_visavis_plot_phase $mol_book2
 	auto /
 		<= subscribe_events null
 	phase_click? null
+	data_demo false
 	colors_by_nphases *
 		1 \#d1cde6
 		alt_1 \#9cf
