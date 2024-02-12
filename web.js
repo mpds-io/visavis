@@ -11,7 +11,7 @@ var $;
 (function ($) {
 })($ || ($ = {}));
 module.exports = $;
-//mam.ts
+
 ;
 
 $node[ "../mam.ts" ] = $node[ "../mam.ts" ] = module.exports }.call( {} , {} )
@@ -38,7 +38,7 @@ var $;
     }
     $.$mol_ambient = $mol_ambient;
 })($ || ($ = {}));
-//mol/ambient/ambient.ts
+
 ;
 "use strict";
 var $;
@@ -75,7 +75,7 @@ var $;
         value: (obj) => instances.has(obj),
     });
 })($ || ($ = {}));
-//mol/delegate/delegate.ts
+
 ;
 "use strict";
 var $;
@@ -131,7 +131,7 @@ var $;
     }
     $.$mol_owning_catch = $mol_owning_catch;
 })($ || ($ = {}));
-//mol/owning/owning.ts
+
 ;
 "use strict";
 var $;
@@ -141,7 +141,7 @@ var $;
     }
     $.$mol_fail = $mol_fail;
 })($ || ($ = {}));
-//mol/fail/fail.ts
+
 ;
 "use strict";
 var $;
@@ -151,10 +151,10 @@ var $;
     }
     $.$mol_fail_hidden = $mol_fail_hidden;
 })($ || ($ = {}));
-//mol/fail/hidden/hidden.ts
+
 ;
 "use strict";
-//mol/type/writable/writable.ts
+
 ;
 "use strict";
 var $;
@@ -186,7 +186,7 @@ var $;
     }
     $.$mol_func_name_from = $mol_func_name_from;
 })($ || ($ = {}));
-//mol/func/name/name.ts
+
 ;
 "use strict";
 var $;
@@ -229,7 +229,7 @@ var $;
     }
     $.$mol_object2 = $mol_object2;
 })($ || ($ = {}));
-//mol/object2/object2.ts
+
 ;
 "use strict";
 var $;
@@ -249,7 +249,7 @@ var $;
     }
     $_1.$mol_object = $mol_object;
 })($ || ($ = {}));
-//mol/object/object.ts
+
 ;
 "use strict";
 var $;
@@ -262,7 +262,7 @@ var $;
         $mol_wire_cursor[$mol_wire_cursor["final"] = -4] = "final";
     })($mol_wire_cursor = $.$mol_wire_cursor || ($.$mol_wire_cursor = {}));
 })($ || ($ = {}));
-//mol/wire/cursor/cursor.ts
+
 ;
 "use strict";
 var $;
@@ -329,10 +329,10 @@ var $;
     }
     $.$mol_wire_pub = $mol_wire_pub;
 })($ || ($ = {}));
-//mol/wire/pub/pub.ts
+
 ;
 "use strict";
-//mol/wire/sub/sub.ts
+
 ;
 "use strict";
 var $;
@@ -344,7 +344,7 @@ var $;
     $.$mol_wire_auto = $mol_wire_auto;
     $.$mol_wire_affected = [];
 })($ || ($ = {}));
-//mol/wire/wire.ts
+
 ;
 "use strict";
 var $;
@@ -446,7 +446,7 @@ var $;
         'margin-left': '13px'
     });
 })($ || ($ = {}));
-//mol/dev/format/format.ts
+
 ;
 "use strict";
 var $;
@@ -590,7 +590,7 @@ var $;
     }
     $.$mol_wire_pub_sub = $mol_wire_pub_sub;
 })($ || ($ = {}));
-//mol/wire/pub/sub/sub.ts
+
 ;
 "use strict";
 var $;
@@ -631,7 +631,7 @@ var $;
     }
     $.$mol_after_frame = $mol_after_frame;
 })($ || ($ = {}));
-//mol/after/frame/frame.web.ts
+
 ;
 "use strict";
 var $;
@@ -641,7 +641,7 @@ var $;
     }
     $.$mol_promise_like = $mol_promise_like;
 })($ || ($ = {}));
-//mol/promise/like/like.ts
+
 ;
 "use strict";
 var $;
@@ -864,7 +864,7 @@ var $;
     }
     $.$mol_wire_fiber = $mol_wire_fiber;
 })($ || ($ = {}));
-//mol/wire/fiber/fiber.ts
+
 ;
 "use strict";
 var $;
@@ -879,7 +879,7 @@ var $;
     }
     $.$mol_guid = $mol_guid;
 })($ || ($ = {}));
-//mol/guid/guid.ts
+
 ;
 "use strict";
 var $;
@@ -926,7 +926,7 @@ var $;
     }
     $.$mol_key = $mol_key;
 })($ || ($ = {}));
-//mol/key/key.ts
+
 ;
 "use strict";
 var $;
@@ -1065,7 +1065,7 @@ var $;
         return Object.is(left[Symbol.toPrimitive]('default'), right[Symbol.toPrimitive]('default'));
     }
 })($ || ($ = {}));
-//mol/compare/deep/deep.ts
+
 ;
 "use strict";
 var $;
@@ -1089,10 +1089,10 @@ var $;
     $.$mol_log3_area_lazy = $mol_log3_area_lazy;
     $.$mol_log3_stack = [];
 })($ || ($ = {}));
-//mol/log3/log3.ts
+
 ;
 "use strict";
-//mol/type/keys/extract/extract.ts
+
 ;
 "use strict";
 var $;
@@ -1121,7 +1121,7 @@ var $;
     $.$mol_log3_rise = $mol_log3_web_make('log', 'magenta');
     $.$mol_log3_area = $mol_log3_web_make('group', 'cyan');
 })($ || ($ = {}));
-//mol/log3/log3.web.ts
+
 ;
 "use strict";
 var $;
@@ -1182,7 +1182,7 @@ var $;
     }
     $.$mol_wire_task = $mol_wire_task;
 })($ || ($ = {}));
-//mol/wire/task/task.ts
+
 ;
 "use strict";
 var $;
@@ -1208,13 +1208,13 @@ var $;
     }
     $.$mol_wire_method = $mol_wire_method;
 })($ || ($ = {}));
-//mol/wire/method/method.ts
+
 ;
 "use strict";
-//mol/type/tail/tail.ts
+
 ;
 "use strict";
-//mol/type/foot/foot.ts
+
 ;
 "use strict";
 var $;
@@ -1232,7 +1232,7 @@ var $;
     }
     $.$mol_fail_catch = $mol_fail_catch;
 })($ || ($ = {}));
-//mol/fail/catch/catch.ts
+
 ;
 "use strict";
 var $;
@@ -1247,7 +1247,7 @@ var $;
     }
     $.$mol_fail_log = $mol_fail_log;
 })($ || ($ = {}));
-//mol/fail/log/log.ts
+
 ;
 "use strict";
 var $;
@@ -1377,7 +1377,7 @@ var $;
     ], $mol_wire_atom.prototype, "once", null);
     $.$mol_wire_atom = $mol_wire_atom;
 })($ || ($ = {}));
-//mol/wire/atom/atom.ts
+
 ;
 "use strict";
 var $;
@@ -1415,7 +1415,7 @@ var $;
     }
     $.$mol_wire_solo = $mol_wire_solo;
 })($ || ($ = {}));
-//mol/wire/solo/solo.ts
+
 ;
 "use strict";
 var $;
@@ -1453,7 +1453,7 @@ var $;
     }
     $.$mol_wire_plex = $mol_wire_plex;
 })($ || ($ = {}));
-//mol/wire/plex/plex.ts
+
 ;
 "use strict";
 var $;
@@ -1461,7 +1461,7 @@ var $;
     $.$mol_mem = $mol_wire_solo;
     $.$mol_mem_key = $mol_wire_plex;
 })($ || ($ = {}));
-//mol/mem/mem.ts
+
 ;
 "use strict";
 var $;
@@ -1485,20 +1485,20 @@ var $;
     $.$mol_window = $mol_window;
     self.addEventListener('resize', event => $mol_window.resizes(event));
 })($ || ($ = {}));
-//mol/window/window.web.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
 })($ || ($ = {}));
-//mol/dom/context/context.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $.$mol_dom_context = self;
 })($ || ($ = {}));
-//mol/dom/context/context.web.ts
+
 ;
 "use strict";
 var $;
@@ -1522,7 +1522,7 @@ var $;
     }
     $.$mol_after_tick = $mol_after_tick;
 })($ || ($ = {}));
-//mol/after/tick/tick.ts
+
 ;
 "use strict";
 var $;
@@ -1552,7 +1552,7 @@ var $;
     ], $mol_view_selection, "focused", null);
     $.$mol_view_selection = $mol_view_selection;
 })($ || ($ = {}));
-//mol/view/selection/selection.ts
+
 ;
 "use strict";
 var $;
@@ -1562,7 +1562,7 @@ var $;
     }
     $.$mol_maybe = $mol_maybe;
 })($ || ($ = {}));
-//mol/maybe/maybe.ts
+
 ;
 "use strict";
 var $;
@@ -1573,7 +1573,7 @@ var $;
         }, true);
     }
 })($ || ($ = {}));
-//mol/view/selection/selection.web.ts
+
 ;
 "use strict";
 var $;
@@ -1611,7 +1611,7 @@ var $;
     }
     $.$mol_wrapper = $mol_wrapper;
 })($ || ($ = {}));
-//mol/wrapper/wrapper.ts
+
 ;
 "use strict";
 var $;
@@ -1630,7 +1630,7 @@ var $;
     }
     $.$mol_memo = $mol_memo;
 })($ || ($ = {}));
-//mol/memo/memo.ts
+
 ;
 "use strict";
 var $;
@@ -1640,7 +1640,7 @@ var $;
     }
     $.$mol_dom_qname = $mol_dom_qname;
 })($ || ($ = {}));
-//mol/dom/qname/qname.ts
+
 ;
 "use strict";
 var $;
@@ -1660,7 +1660,7 @@ var $;
     }
     $.$mol_wire_probe = $mol_wire_probe;
 })($ || ($ = {}));
-//mol/wire/probe/probe.ts
+
 ;
 "use strict";
 var $;
@@ -1676,7 +1676,7 @@ var $;
     }
     $.$mol_wire_watch = $mol_wire_watch;
 })($ || ($ = {}));
-//mol/wire/watch/watch.ts
+
 ;
 "use strict";
 var $;
@@ -1690,7 +1690,7 @@ var $;
     }
     $.$mol_const = $mol_const;
 })($ || ($ = {}));
-//mol/const/const.ts
+
 ;
 "use strict";
 var $;
@@ -1708,7 +1708,7 @@ var $;
     const nothing = () => { };
     const sub = new $mol_wire_pub_sub;
 })($ || ($ = {}));
-//mol/wire/solid/solid.ts
+
 ;
 "use strict";
 var $;
@@ -1734,7 +1734,7 @@ var $;
     }
     $.$mol_dom_render_attributes = $mol_dom_render_attributes;
 })($ || ($ = {}));
-//mol/dom/render/attributes/attributes.ts
+
 ;
 "use strict";
 var $;
@@ -1746,7 +1746,7 @@ var $;
     }
     $.$mol_dom_render_events = $mol_dom_render_events;
 })($ || ($ = {}));
-//mol/dom/render/events/events.ts
+
 ;
 "use strict";
 var $;
@@ -1766,7 +1766,7 @@ var $;
     }
     $.$mol_dom_render_styles = $mol_dom_render_styles;
 })($ || ($ = {}));
-//mol/dom/render/styles/styles.ts
+
 ;
 "use strict";
 var $;
@@ -1821,7 +1821,7 @@ var $;
     }
     $.$mol_dom_render_children = $mol_dom_render_children;
 })($ || ($ = {}));
-//mol/dom/render/children/children.ts
+
 ;
 "use strict";
 var $;
@@ -1836,7 +1836,7 @@ var $;
     }
     $.$mol_dom_render_fields = $mol_dom_render_fields;
 })($ || ($ = {}));
-//mol/dom/render/fields/fields.ts
+
 ;
 "use strict";
 var $;
@@ -1866,10 +1866,10 @@ var $;
     }
     $.$mol_wire_async = $mol_wire_async;
 })($ || ($ = {}));
-//mol/wire/async/async.ts
+
 ;
 "use strict";
-//mol/type/pick/pick.ts
+
 ;
 "use strict";
 var $;
@@ -1901,7 +1901,7 @@ var $;
     }
     $.$mol_style_attach = $mol_style_attach;
 })($ || ($ = {}));
-//mol/style/attach/attach.ts
+
 ;
 "use strict";
 var $;
@@ -1920,7 +1920,7 @@ var $;
     }
     $.$mol_decor = $mol_decor;
 })($ || ($ = {}));
-//mol/decor/decor.ts
+
 ;
 "use strict";
 var $;
@@ -1965,7 +1965,7 @@ var $;
     }
     $.$mol_style_unit = $mol_style_unit;
 })($ || ($ = {}));
-//mol/style/unit/unit.ts
+
 ;
 "use strict";
 var $;
@@ -2051,13 +2051,13 @@ var $;
     }
     $.$mol_style_func = $mol_style_func;
 })($ || ($ = {}));
-//mol/style/func/func.ts
+
 ;
 "use strict";
-//mol/type/override/override.ts
+
 ;
 "use strict";
-//mol/style/properties/properties.ts
+
 ;
 "use strict";
 var $;
@@ -2071,7 +2071,7 @@ var $;
     }
     $.$mol_style_prop = $mol_style_prop;
 })($ || ($ = {}));
-//mol/style/prop/prop.ts
+
 ;
 "use strict";
 var $;
@@ -2091,14 +2091,14 @@ var $;
         'image',
     ]);
 })($ || ($ = {}));
-//mol/theme/theme.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/theme/theme.css", ":root {\n\t--mol_theme_hue: 210deg;\n\t--mol_theme_hue_spread: 90deg;\n}\n\n:where([mol_theme]) {\n\tcolor: var(--mol_theme_text);\n\tfill: var(--mol_theme_text);\n\tbackground-color: var(--mol_theme_back);\n}\n\t\n:root, [mol_theme=\"$mol_theme_dark\"], :where([mol_theme=\"$mol_theme_dark\"]) [mol_theme]  {\n\n\t--mol_theme_luma: -1;\n\t--mol_theme_image: invert(1) hue-rotate( 180deg );\n\n\t--mol_theme_back: hsl( var(--mol_theme_hue), 20%, 10% );\n\t--mol_theme_card: hsl( var(--mol_theme_hue), 50%, 20%, .25 );\n\t--mol_theme_field: hsl( var(--mol_theme_hue), 50%, 8%, .25 );\n\t--mol_theme_hover: hsl( var(--mol_theme_hue), 0%, 50%, .1 );\n\t\n\t--mol_theme_text: hsl( var(--mol_theme_hue), 0%, 80% );\n\t--mol_theme_shade: hsl( var(--mol_theme_hue), 0%, 60%, 1 );\n\t--mol_theme_line: hsl( var(--mol_theme_hue), 0%, 50%, .2 );\n\t--mol_theme_focus: hsl( calc( var(--mol_theme_hue) + 180deg ), 100%, 65% );\n\t\n\t--mol_theme_control: hsl( var(--mol_theme_hue), 60%, 65% );\n\t--mol_theme_current: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 60%, 65% );\n\t--mol_theme_special: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 60%, 65% );\n\n\t/* --mol_theme_back: oklch( 20% .03 var(--mol_theme_hue) );\n\t--mol_theme_card: oklch( 35% .05 var(--mol_theme_hue) / .25 );\n\t--mol_theme_field: oklch( 0% 0 var(--mol_theme_hue) / .25 );\n\t--mol_theme_hover: oklch( 70% 0 var(--mol_theme_hue) / .1 );\n\t\n\t--mol_theme_text: oklch( 80% 0 var(--mol_theme_hue) );\n\t--mol_theme_shade: oklch( 60% 0 var(--mol_theme_hue) );\n\t--mol_theme_line: oklch( 50% 0 var(--mol_theme_hue) / .2 );\n\t--mol_theme_focus: oklch( 80% .2 calc( var(--mol_theme_hue) + 120deg ) );\n\t\n\t--mol_theme_control: oklch( 70% .1 var(--mol_theme_hue) );\n\t--mol_theme_current: oklch( 80% .2 calc( var(--mol_theme_hue) - 60deg ) );\n\t--mol_theme_special: oklch( 80% .3 calc( var(--mol_theme_hue) + 60deg ) ); */\n\n}\n\n[mol_theme=\"$mol_theme_light\"], :where([mol_theme=\"$mol_theme_light\"]) [mol_theme] {\n\t\n\t--mol_theme_luma: 1;\n\t--mol_theme_image: none;\n\t\n\t--mol_theme_back: hsl( var(--mol_theme_hue), 20%, 85% );\n\t--mol_theme_card: hsl( var(--mol_theme_hue), 50%, 100%, .25 );\n\t--mol_theme_field: hsl( var(--mol_theme_hue), 50%, 100%, .25 );\n\t--mol_theme_hover: hsl( var(--mol_theme_hue), 0%, 50%, .1 );\n\t\n\t--mol_theme_text: hsl( var(--mol_theme_hue), 0%, 0% );\n\t--mol_theme_shade: hsl( var(--mol_theme_hue), 0%, 40%, 1 );\n\t--mol_theme_line: hsl( var(--mol_theme_hue), 0%, 50%, .2 );\n\t--mol_theme_focus: hsl( calc( var(--mol_theme_hue) + 180deg ), 100%, 40% );\n\t\n\t--mol_theme_control: hsl( var(--mol_theme_hue), 80%, 30% );\n\t--mol_theme_current: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 80%, 30% );\n\t--mol_theme_special: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 80%, 30% );\n\t\n\t/* --mol_theme_back: oklch( 93% .01 var(--mol_theme_hue) );\n\t--mol_theme_card: oklch( 100% .02 var(--mol_theme_hue) / .25 );\n\t--mol_theme_field: oklch( 100% 0 var(--mol_theme_hue) / .5 );\n\t--mol_theme_hover: oklch( 70% 0 var(--mol_theme_hue) / .1 );\n\t\n\t--mol_theme_text: oklch( 20% 0 var(--mol_theme_hue) );\n\t--mol_theme_shade: oklch( 60% 0 var(--mol_theme_hue) );\n\t--mol_theme_line: oklch( 70% 0 var(--mol_theme_hue) / .2 );\n\t--mol_theme_focus: oklch( 20% .8 calc( var(--mol_theme_hue) + 120deg ) );\n\t\n\t--mol_theme_control: oklch( 45% .25 var(--mol_theme_hue) );\n\t--mol_theme_current: oklch( 45% .5 calc( var(--mol_theme_hue) - 60deg ) );\n\t--mol_theme_special: oklch( 45% .5 calc( var(--mol_theme_hue) + 60deg ) ); */\n\n}\n\n:where( :root, [mol_theme=\"$mol_theme_dark\"] ) [mol_theme=\"$mol_theme_base\"] {\n\t--mol_theme_back: hsl( var(--mol_theme_hue), 50%, 30% );\n\t--mol_theme_card: hsl( var(--mol_theme_hue), 40%, 20%, .25 );\n\t/* --mol_theme_back: oklch( 25% .05 var(--mol_theme_hue) );\n\t--mol_theme_card: oklch( 35% .1 var(--mol_theme_hue) / .25 ); */\n}\n:where( [mol_theme=\"$mol_theme_light\"] ) [mol_theme=\"$mol_theme_base\"] {\n\t--mol_theme_back: hsl( var(--mol_theme_hue), 50%, 80% );\n\t--mol_theme_card: hsl( var(--mol_theme_hue), 80%, 95%, .25 );\n\t/* --mol_theme_back: oklch( 95% .02 var(--mol_theme_hue) );\n\t--mol_theme_card: oklch( 80% .05 var(--mol_theme_hue) / .25 ); */\n}\n\n:where( :root, [mol_theme=\"$mol_theme_dark\"] ) [mol_theme=\"$mol_theme_accent\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) + 180deg ), 90%, 30% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) + 180deg ), 80%, 20%, .25 );\n\t/* --mol_theme_back: oklch( 40% .2 calc( var(--mol_theme_hue) + 120deg ) );\n\t--mol_theme_card: oklch( 50% .3 calc( var(--mol_theme_hue) + 120deg ) / .25 ); */\n}\n:where( [mol_theme=\"$mol_theme_light\"] ) [mol_theme=\"$mol_theme_accent\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) + 180deg ), 90%, 75% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) + 180deg ), 80%, 90%, .25 );\n\t/* --mol_theme_back: oklch( 90% .03 calc( var(--mol_theme_hue) + 120deg ) );\n\t--mol_theme_card: oklch( 80% .05 calc( var(--mol_theme_hue) + 120deg ) / .25 ); */\n}\n\n:where( :root, [mol_theme=\"$mol_theme_dark\"] ) [mol_theme=\"$mol_theme_current\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 50%, 30% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 40%, 20%, .25 );\n\t/* --mol_theme_back: oklch( 25% .05 calc( var(--mol_theme_hue) - 60deg ) );\n\t--mol_theme_card: oklch( 35% .1 calc( var(--mol_theme_hue) - 60deg ) / .25 ); */\n}\n:where( [mol_theme=\"$mol_theme_light\"] ) [mol_theme=\"$mol_theme_current\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 50%, 80% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) - var(--mol_theme_hue_spread) ), 80%, 95%, .25 );\n\t/* --mol_theme_back: oklch( 95% .02 calc( var(--mol_theme_hue) - 60deg ) );\n\t--mol_theme_card: oklch( 80% .05 calc( var(--mol_theme_hue) - 60deg ) / .25 ); */\n}\n\n:where( :root, [mol_theme=\"$mol_theme_dark\"] ) [mol_theme=\"$mol_theme_special\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 50%, 30% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 40%, 20%, .25 );\n\t/* --mol_theme_back: oklch( 25% .05 calc( var(--mol_theme_hue) + 60deg ) );\n\t--mol_theme_card: oklch( 35% .1 calc( var(--mol_theme_hue) + 60deg ) / .25 ); */\n}\n:where( [mol_theme=\"$mol_theme_light\"] ) [mol_theme=\"$mol_theme_special\"] {\n\t--mol_theme_back: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 50%, 80% );\n\t--mol_theme_card: hsl( calc( var(--mol_theme_hue) + var(--mol_theme_hue_spread) ), 80%, 95%, .25 );\n\t/* --mol_theme_back: oklch( 95% .02 calc( var(--mol_theme_hue) + 60deg ) );\n\t--mol_theme_card: oklch( 80% .05 calc( var(--mol_theme_hue) + 60deg ) / .25 ); */\n}\n");
 })($ || ($ = {}));
-//mol/theme/-css/theme.css.ts
+
 ;
 "use strict";
 var $;
@@ -2111,14 +2111,14 @@ var $;
         'blur',
     ]);
 })($ || ($ = {}));
-//mol/gap/gap.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/gap/gap.css", ":root {\n\t--mol_gap_block: .75rem;\n\t--mol_gap_text: .5rem .75rem;\n\t--mol_gap_round: .25rem;\n\t--mol_gap_space: .25rem;\n\t--mol_gap_blur: .5rem;\n}\n");
 })($ || ($ = {}));
-//mol/gap/-css/gap.css.ts
+
 ;
 "use strict";
 var $;
@@ -2550,21 +2550,21 @@ var $;
     ], $mol_view, "view_classes", null);
     $.$mol_view = $mol_view;
 })($ || ($ = {}));
-//mol/view/view/view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/view/view/view.css", "[mol_view] {\n\ttransition-property: height, width, min-height, min-width, max-width, max-height, transform;\n\ttransition-duration: .2s;\n\ttransition-timing-function: ease-out;\n\t-webkit-appearance: none;\n\tbox-sizing: border-box;\n\tdisplay: flex;\n\tflex-shrink: 0;\n\tcontain: style;\n\tscrollbar-color: var(--mol_theme_line) transparent;\n\tscrollbar-width: thin;\n}\t\n\n[mol_view]::selection {\n\tbackground: var(--mol_theme_line);\n}\t\n\n[mol_view]::-webkit-scrollbar {\n\twidth: .25rem;\n\theight: .25rem;\n}\n\n[mol_view]::-webkit-scrollbar-corner {\n\tbackground-color: var(--mol_theme_line);\n}\n\n[mol_view]::-webkit-scrollbar-track {\n\tbackground-color: transparent;\n}\n\n[mol_view]::-webkit-scrollbar-thumb {\n\tbackground-color: var(--mol_theme_line);\n\tborder-radius: var(--mol_gap_round);\n}\n\n[mol_view] > * {\n\tword-break: inherit;\n}\n\n[mol_view_root] {\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 100%;\n\theight: 100%;\n\tbox-sizing: border-box;\n\tfont-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n\tfont-size: 1rem;\n\tline-height: 1.5rem;\n\tbackground: var(--mol_theme_back);\n\tcolor: var(--mol_theme_text);\n\tcontain: unset; /** Fixes bg ignoring when applied to body on Chrome */\n\ttab-size: 4;\n\toverscroll-behavior: contain; /** Disable navigation gestures **/\n}\n\n@media print {\n\t[mol_view_root] {\n\t\theight: auto;\n\t}\n}\n\n[mol_view][mol_view_error]:not([mol_view_error=\"Promise\"]) {\n\tbackground-image: repeating-linear-gradient(\n\t\t-45deg,\n\t\t#f92323,\n\t\t#f92323 .5rem,\n\t\t#ff3d3d .5rem,\n\t\t#ff3d3d 1.5rem\n\t);\n\tcolor: black;\n\talign-items: center;\n\tjustify-content: center;\n}\n\n@keyframes mol_view_wait {\n\tfrom {\n\t\topacity: .25;\n\t}\n\t20% {\n\t\topacity: .75;\n\t}\n\tto {\n\t\topacity: .25;\n\t}\n}\n\n:where([mol_view][mol_view_error=\"Promise\"]) {\n\tbackground: var(--mol_theme_hover);\n}\n\n[mol_view][mol_view_error=\"Promise\"] {\n\tanimation: mol_view_wait 1s steps( 20, end ) infinite;\n}\n");
 })($ || ($ = {}));
-//mol/view/view/-css/view.css.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_dom_context.document?.addEventListener('DOMContentLoaded', () => $mol_view.autobind(), { once: true });
 })($ || ($ = {}));
-//mol/view/view/view.web.ts
+
 ;
 "use strict";
 var $;
@@ -2579,55 +2579,36 @@ var $;
     }
     $.$mol_plugin = $mol_plugin;
 })($ || ($ = {}));
-//mol/plugin/plugin.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mol_scroll extends $mol_view {
-        scroll_top(next) {
-            if (next !== undefined)
-                return next;
-            return 0;
-        }
-        scroll_left(next) {
-            if (next !== undefined)
-                return next;
-            return 0;
-        }
-        field() {
-            return {
-                ...super.field(),
-                tabIndex: this.tabindex()
-            };
-        }
-        event() {
-            return {
-                ...super.event(),
-                scroll: (event) => this.event_scroll(event)
-            };
-        }
-        tabindex() {
-            return -1;
-        }
-        event_scroll(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_scroll.prototype, "scroll_top", null);
-    __decorate([
-        $mol_mem
-    ], $mol_scroll.prototype, "scroll_left", null);
-    __decorate([
-        $mol_mem
-    ], $mol_scroll.prototype, "event_scroll", null);
-    $.$mol_scroll = $mol_scroll;
-})($ || ($ = {}));
-//mol/scroll/-view.tree/scroll.view.tree.ts
+	($.$mol_scroll) = class $mol_scroll extends ($.$mol_view) {
+		scroll_top(next){
+			if(next !== undefined) return next;
+			return 0;
+		}
+		scroll_left(next){
+			if(next !== undefined) return next;
+			return 0;
+		}
+		field(){
+			return {...(super.field()), "tabIndex": (this.tabindex())};
+		}
+		event(){
+			return {...(super.event()), "scroll": (next) => (this.event_scroll(next))};
+		}
+		tabindex(){
+			return -1;
+		}
+		event_scroll(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+	};
+	($mol_mem(($.$mol_scroll.prototype), "scroll_top"));
+	($mol_mem(($.$mol_scroll.prototype), "scroll_left"));
+	($mol_mem(($.$mol_scroll.prototype), "event_scroll"));
+
+
 ;
 "use strict";
 var $;
@@ -2652,7 +2633,7 @@ var $;
     }
     $.$mol_dom_listener = $mol_dom_listener;
 })($ || ($ = {}));
-//mol/dom/listener/listener.ts
+
 ;
 "use strict";
 var $;
@@ -2685,19 +2666,19 @@ var $;
     ], $mol_print, "active", null);
     $.$mol_print = $mol_print;
 })($ || ($ = {}));
-//mol/print/print.ts
+
 ;
 "use strict";
-//mol/style/pseudo/class.ts
+
 ;
 "use strict";
-//mol/style/pseudo/element.ts
+
 ;
 "use strict";
-//mol/type/error/error.ts
+
 ;
 "use strict";
-//mol/style/guard/guard.ts
+
 ;
 "use strict";
 var $;
@@ -2795,7 +2776,7 @@ var $;
     }
     $.$mol_style_sheet = $mol_style_sheet;
 })($ || ($ = {}));
-//mol/style/sheet/sheet.ts
+
 ;
 "use strict";
 var $;
@@ -2805,7 +2786,10 @@ var $;
     }
     $.$mol_style_define = $mol_style_define;
 })($ || ($ = {}));
-//mol/style/define/define.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -2846,7 +2830,7 @@ var $;
         $$.$mol_scroll = $mol_scroll;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/scroll/scroll.view.ts
+
 ;
 "use strict";
 var $;
@@ -2899,50 +2883,48 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/scroll/scroll.view.css.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mol_book2 extends $mol_scroll {
-        menu_title() {
-            return "";
-        }
-        sub() {
-            return this.pages();
-        }
-        minimal_width() {
-            return 0;
-        }
-        Placeholder() {
-            const obj = new this.$.$mol_view();
-            return obj;
-        }
-        Gap(id) {
-            const obj = new this.$.$mol_view();
-            obj.title = () => "";
-            return obj;
-        }
-        pages() {
-            return [];
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_book2.prototype, "Placeholder", null);
-    __decorate([
-        $mol_mem_key
-    ], $mol_book2.prototype, "Gap", null);
-    $.$mol_book2 = $mol_book2;
-})($ || ($ = {}));
-//mol/book2/-view.tree/book2.view.tree.ts
+	($.$mol_book2) = class $mol_book2 extends ($.$mol_scroll) {
+		menu_title(){
+			return "";
+		}
+		sub(){
+			return (this.pages());
+		}
+		minimal_width(){
+			return 0;
+		}
+		Placeholder(){
+			const obj = new this.$.$mol_view();
+			return obj;
+		}
+		Gap(id){
+			const obj = new this.$.$mol_view();
+			(obj.title) = () => ("");
+			return obj;
+		}
+		pages(){
+			return [];
+		}
+	};
+	($mol_mem(($.$mol_book2.prototype), "Placeholder"));
+	($mol_mem_key(($.$mol_book2.prototype), "Gap"));
+
+
 ;
 "use strict";
 var $;
 (function ($) {
     $.$mol_mem_cached = $mol_wire_probe;
 })($ || ($ = {}));
-//mol/mem/cached/cached.ts
+
+;
+"use strict";
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -2992,126 +2974,102 @@ var $;
         $$.$mol_book2 = $mol_book2;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/book2/book2.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/book2/book2.view.css", "[mol_book2] {\n\tdisplay: flex;\n\tflex-flow: row nowrap;\n\talign-items: stretch;\n\tflex: 1 1 auto;\n\talign-self: stretch;\n\tmargin: 0;\n\t/* box-shadow: 0 0 0 1px var(--mol_theme_line); */\n\t/* transform: translateZ(0); */\n\ttransition: none;\n\toverflow: overlay;\n\tscroll-snap-type: x mandatory;\n\tpadding: 0 1px;\n\tscroll-padding: 0 1px;\n\tgap: 1px;\n}\n\n[mol_book2] > * {\n/* \tflex: none; */\n\tscroll-snap-stop: always;\n\tscroll-snap-align: end;\n\tposition: relative;\n\tmin-height: 100%;\n\tmax-height: 100%;\n\tmax-width: 100%;\n\tflex-shrink: 0;\n}\n\n[mol_book2] > *:not(:first-of-type):before,\n[mol_book2] > *:not(:last-of-type)::after {\n\tcontent: '';\n\tposition: absolute;\n\ttop: 1.5rem;\n\twidth: 3px;\n\theight: 1rem;\n\tbackground: linear-gradient(\n\t\tto bottom,\n\t\tvar(--mol_theme_focus) 0%,\n\t\tvar(--mol_theme_focus) 15%,\n\t\ttransparent 15%,\n\t\ttransparent 42%,\n\t\tvar(--mol_theme_focus) 42%,\n\t\tvar(--mol_theme_focus) 58%,\n\t\ttransparent 58%,\n\t\ttransparent 85%,\n\t\tvar(--mol_theme_focus) 85%,\n\t\tvar(--mol_theme_focus) 100%\n\t);\n\topacity: .5;\n}\n[mol_book2] > *:not(:first-of-type):before {\n\tleft: -2px;\n}\n[mol_book2] > *:not(:last-of-type)::after {\n\tright: -2px;\n}\n\n:where([mol_book2]) > * {\n\tbackground-color: var(--mol_theme_card);\n\t/* box-shadow: 0 0 0 1px var(--mol_theme_back); */\n}\n\n[mol_book2] > [mol_book2] {\n\tdisplay: contents;\n}\n\n[mol_book2] > *:first-child {\n\tscroll-snap-align: start;\n}\n\n[mol_book2] > [mol_view] {\n\ttransform: none; /* prevent content clipping */\n}\n\n[mol_book2_placeholder] {\n\tflex: 1 1 0;\n\tbackground: none;\n}\n\n[mol_book2_gap] {\n\tbackground: none;\n\tflex-grow: 1;\n\tscroll-snap-align: none;\n\tmargin-right: -1px;\n\tbox-shadow: none;\n}\n\n[mol_book2_gap]::before,\n[mol_book2_gap]::after {\n\tdisplay: none;\n}\n");
 })($ || ($ = {}));
-//mol/book2/-css/book2.view.css.ts
+
+;
+	($.$mol_page) = class $mol_page extends ($.$mol_view) {
+		dom_name(){
+			return "article";
+		}
+		field(){
+			return {...(super.field()), "tabIndex": (this.tabindex())};
+		}
+		sub(){
+			return [
+				(this.Head()), 
+				(this.Body()), 
+				(this.Foot())
+			];
+		}
+		tabindex(){
+			return -1;
+		}
+		Logo(){
+			return null;
+		}
+		title_content(){
+			return [(this.Logo()), (this.title())];
+		}
+		Title(){
+			const obj = new this.$.$mol_view();
+			(obj.dom_name) = () => ("h1");
+			(obj.sub) = () => ((this.title_content()));
+			return obj;
+		}
+		tools(){
+			return [];
+		}
+		Tools(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ((this.tools()));
+			return obj;
+		}
+		head(){
+			return [(this.Title()), (this.Tools())];
+		}
+		Head(){
+			const obj = new this.$.$mol_view();
+			(obj.minimal_height) = () => (64);
+			(obj.dom_name) = () => ("header");
+			(obj.sub) = () => ((this.head()));
+			return obj;
+		}
+		body_scroll_top(next){
+			return (this.Body().scroll_top(next));
+		}
+		body(){
+			return [];
+		}
+		Body_content(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ((this.body()));
+			return obj;
+		}
+		body_content(){
+			return [(this.Body_content())];
+		}
+		Body(){
+			const obj = new this.$.$mol_scroll();
+			(obj.sub) = () => ((this.body_content()));
+			return obj;
+		}
+		foot(){
+			return [];
+		}
+		Foot(){
+			const obj = new this.$.$mol_view();
+			(obj.dom_name) = () => ("footer");
+			(obj.sub) = () => ((this.foot()));
+			return obj;
+		}
+	};
+	($mol_mem(($.$mol_page.prototype), "Title"));
+	($mol_mem(($.$mol_page.prototype), "Tools"));
+	($mol_mem(($.$mol_page.prototype), "Head"));
+	($mol_mem(($.$mol_page.prototype), "Body_content"));
+	($mol_mem(($.$mol_page.prototype), "Body"));
+	($mol_mem(($.$mol_page.prototype), "Foot"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_page extends $mol_view {
-        dom_name() {
-            return "article";
-        }
-        field() {
-            return {
-                ...super.field(),
-                tabIndex: this.tabindex()
-            };
-        }
-        sub() {
-            return [
-                this.Head(),
-                this.Body(),
-                this.Foot()
-            ];
-        }
-        tabindex() {
-            return -1;
-        }
-        Logo() {
-            return null;
-        }
-        title_content() {
-            return [
-                this.Logo(),
-                this.title()
-            ];
-        }
-        Title() {
-            const obj = new this.$.$mol_view();
-            obj.dom_name = () => "h1";
-            obj.sub = () => this.title_content();
-            return obj;
-        }
-        tools() {
-            return [];
-        }
-        Tools() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => this.tools();
-            return obj;
-        }
-        head() {
-            return [
-                this.Title(),
-                this.Tools()
-            ];
-        }
-        Head() {
-            const obj = new this.$.$mol_view();
-            obj.minimal_height = () => 64;
-            obj.dom_name = () => "header";
-            obj.sub = () => this.head();
-            return obj;
-        }
-        body() {
-            return [];
-        }
-        Body_content() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => this.body();
-            return obj;
-        }
-        body_content() {
-            return [
-                this.Body_content()
-            ];
-        }
-        body_scroll_top(next) {
-            return this.Body().scroll_top(next);
-        }
-        Body() {
-            const obj = new this.$.$mol_scroll();
-            obj.sub = () => this.body_content();
-            return obj;
-        }
-        foot() {
-            return [];
-        }
-        Foot() {
-            const obj = new this.$.$mol_view();
-            obj.dom_name = () => "footer";
-            obj.sub = () => this.foot();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_page.prototype, "Title", null);
-    __decorate([
-        $mol_mem
-    ], $mol_page.prototype, "Tools", null);
-    __decorate([
-        $mol_mem
-    ], $mol_page.prototype, "Head", null);
-    __decorate([
-        $mol_mem
-    ], $mol_page.prototype, "Body_content", null);
-    __decorate([
-        $mol_mem
-    ], $mol_page.prototype, "Body", null);
-    __decorate([
-        $mol_mem
-    ], $mol_page.prototype, "Foot", null);
-    $.$mol_page = $mol_page;
-})($ || ($ = {}));
-//mol/page/-view.tree/page.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -3220,33 +3178,30 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/page/page.view.css.ts
+
+;
+	($.$mol_paragraph) = class $mol_paragraph extends ($.$mol_view) {
+		line_height(){
+			return 24;
+		}
+		letter_width(){
+			return 7;
+		}
+		width_limit(){
+			return +Infinity;
+		}
+		row_width(){
+			return 0;
+		}
+		sub(){
+			return [(this.title())];
+		}
+	};
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_paragraph extends $mol_view {
-        line_height() {
-            return 24;
-        }
-        letter_width() {
-            return 7;
-        }
-        width_limit() {
-            return +Infinity;
-        }
-        row_width() {
-            return 0;
-        }
-        sub() {
-            return [
-                this.title()
-            ];
-        }
-    }
-    $.$mol_paragraph = $mol_paragraph;
-})($ || ($ = {}));
-//mol/paragraph/-view.tree/paragraph.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -3294,46 +3249,34 @@ var $;
         $$.$mol_paragraph = $mol_paragraph;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/paragraph/paragraph.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/paragraph/paragraph.view.css", ":where([mol_paragraph]) {\n\tmargin: 0;\n\tmax-width: 100%;\n}\n");
 })($ || ($ = {}));
-//mol/paragraph/-css/paragraph.view.css.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mol_speck extends $mol_view {
-        attr() {
-            return {
-                ...super.attr(),
-                mol_theme: this.theme()
-            };
-        }
-        style() {
-            return {
-                ...super.style(),
-                minHeight: "1em"
-            };
-        }
-        sub() {
-            return [
-                this.value()
-            ];
-        }
-        theme() {
-            return "$mol_theme_accent";
-        }
-        value() {
-            return null;
-        }
-    }
-    $.$mol_speck = $mol_speck;
-})($ || ($ = {}));
-//mol/speck/-view.tree/speck.view.tree.ts
+	($.$mol_speck) = class $mol_speck extends ($.$mol_view) {
+		attr(){
+			return {...(super.attr()), "mol_theme": (this.theme())};
+		}
+		style(){
+			return {...(super.style()), "minHeight": "1em"};
+		}
+		sub(){
+			return [(this.value())];
+		}
+		theme(){
+			return "$mol_theme_accent";
+		}
+		value(){
+			return null;
+		}
+	};
+
+
 ;
 "use strict";
 var $;
@@ -3346,118 +3289,98 @@ var $;
         'popup',
     ]);
 })($ || ($ = {}));
-//mol/layer/layer.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/layer/layer.css", ":root {\n\t--mol_layer_hover: 1;\n\t--mol_layer_focus: 2;\n\t--mol_layer_speck: 3;\n\t--mol_layer_float: 4;\n\t--mol_layer_popup: 5;\n}\n");
 })($ || ($ = {}));
-//mol/layer/-css/layer.css.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/speck/speck.view.css", "[mol_speck] {\n\tfont-size: .625rem;\n\tborder-radius: 1rem;\n\tmargin: -0.5rem -0.25rem;\n\talign-self: flex-start;\n\tmin-height: 1em;\n\tmin-width: .5em;\n\tvertical-align: sub;\n\tpadding: .25em .5em;\n\tposition: absolute;\n\tz-index: var(--mol_layer_speck);\n\ttext-align: center;\n\tline-height: 1;\n\tdisplay: inline-block;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis;\n\tuser-select: none;\n}\n");
 })($ || ($ = {}));
-//mol/speck/-css/speck.view.css.ts
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_button extends $mol_view {
-        enabled() {
-            return true;
-        }
-        click(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        event_click(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        event() {
-            return {
-                ...super.event(),
-                click: (event) => this.event_activate(event),
-                dblclick: (event) => this.clicks(event),
-                keydown: (event) => this.event_key_press(event)
-            };
-        }
-        attr() {
-            return {
-                ...super.attr(),
-                disabled: this.disabled(),
-                role: "button",
-                tabindex: this.tab_index(),
-                title: this.hint_safe()
-            };
-        }
-        sub() {
-            return [
-                this.title()
-            ];
-        }
-        Speck() {
-            const obj = new this.$.$mol_speck();
-            obj.value = () => this.error();
-            return obj;
-        }
-        event_activate(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        clicks(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        event_key_press(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        disabled() {
-            return false;
-        }
-        tab_index() {
-            return 0;
-        }
-        hint() {
-            return "";
-        }
-        hint_safe() {
-            return this.hint();
-        }
-        error() {
-            return "";
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_button.prototype, "click", null);
-    __decorate([
-        $mol_mem
-    ], $mol_button.prototype, "event_click", null);
-    __decorate([
-        $mol_mem
-    ], $mol_button.prototype, "Speck", null);
-    __decorate([
-        $mol_mem
-    ], $mol_button.prototype, "event_activate", null);
-    __decorate([
-        $mol_mem
-    ], $mol_button.prototype, "clicks", null);
-    __decorate([
-        $mol_mem
-    ], $mol_button.prototype, "event_key_press", null);
-    $.$mol_button = $mol_button;
-})($ || ($ = {}));
-//mol/button/-view.tree/button.view.tree.ts
+
+;
+	($.$mol_button) = class $mol_button extends ($.$mol_view) {
+		enabled(){
+			return true;
+		}
+		click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		event_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		event(){
+			return {
+				...(super.event()), 
+				"click": (next) => (this.event_activate(next)), 
+				"dblclick": (next) => (this.clicks(next)), 
+				"keydown": (next) => (this.event_key_press(next))
+			};
+		}
+		attr(){
+			return {
+				...(super.attr()), 
+				"disabled": (this.disabled()), 
+				"role": "button", 
+				"tabindex": (this.tab_index()), 
+				"title": (this.hint_safe())
+			};
+		}
+		sub(){
+			return [(this.title())];
+		}
+		Speck(){
+			const obj = new this.$.$mol_speck();
+			(obj.value) = () => ((this.error()));
+			return obj;
+		}
+		event_activate(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		clicks(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		event_key_press(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		disabled(){
+			return false;
+		}
+		tab_index(){
+			return 0;
+		}
+		hint(){
+			return "";
+		}
+		hint_safe(){
+			return (this.hint());
+		}
+		error(){
+			return "";
+		}
+	};
+	($mol_mem(($.$mol_button.prototype), "click"));
+	($mol_mem(($.$mol_button.prototype), "event_click"));
+	($mol_mem(($.$mol_button.prototype), "Speck"));
+	($mol_mem(($.$mol_button.prototype), "event_activate"));
+	($mol_mem(($.$mol_button.prototype), "clicks"));
+	($mol_mem(($.$mol_button.prototype), "event_key_press"));
+
+
 ;
 "use strict";
 var $;
@@ -3566,7 +3489,10 @@ var $;
         $mol_keyboard_code[$mol_keyboard_code["quoteSingle"] = 222] = "quoteSingle";
     })($mol_keyboard_code = $.$mol_keyboard_code || ($.$mol_keyboard_code = {}));
 })($ || ($ = {}));
-//mol/keyboard/code/code.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -3632,76 +3558,69 @@ var $;
         $$.$mol_button = $mol_button;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/button/button.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/button/button.view.css", "[mol_button] {\n\tborder: none;\n\tfont: inherit;\n\tdisplay: inline-flex;\n\tflex-shrink: 0;\n\ttext-decoration: inherit;\n\tcursor: inherit;\n\tposition: relative;\n\tbox-sizing: border-box;\n\tword-break: normal;\n\tcursor: default;\n\tuser-select: none;\n\tborder-radius: var(--mol_gap_round);\n}\n\n[mol_button]:where(:not(:disabled)):hover {\n\tz-index: var(--mol_layer_hover);\n}\n\n[mol_button]:focus-visible {\n\toutline: none;\n\tz-index: var(--mol_layer_focus);\n}\n");
 })($ || ($ = {}));
-//mol/button/-css/button.view.css.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mol_button_typed extends $mol_button {
-        minimal_height() {
-            return 40;
-        }
-        minimal_width() {
-            return 40;
-        }
-    }
-    $.$mol_button_typed = $mol_button_typed;
-})($ || ($ = {}));
-//mol/button/typed/-view.tree/typed.view.tree.ts
+	($.$mol_button_typed) = class $mol_button_typed extends ($.$mol_button) {
+		minimal_height(){
+			return 40;
+		}
+		minimal_width(){
+			return 40;
+		}
+	};
+
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/button/typed/typed.view.css", "[mol_button_typed] {\n\talign-content: center;\n\talign-items: center;\n\tpadding: var(--mol_gap_text);\n\tborder-radius: var(--mol_gap_round);\n\tgap: var(--mol_gap_space);\n\tuser-select: none;\n\tcursor: pointer;\n}\n\n[mol_button_typed][disabled] {\n\tpointer-events: none;\n}\n\n[mol_button_typed]:hover ,\n[mol_button_typed]:focus-visible {\n\tbackground-color: var(--mol_theme_hover);\n}\n\n[mol_button_typed]:active {\n\tcolor: var(--mol_theme_focus);\n}\n\n");
 })($ || ($ = {}));
-//mol/button/typed/-css/typed.view.css.ts
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_button_minor extends $mol_button_typed {
-    }
-    $.$mol_button_minor = $mol_button_minor;
-})($ || ($ = {}));
-//mol/button/minor/-view.tree/minor.view.tree.ts
+
+;
+	($.$mol_button_minor) = class $mol_button_minor extends ($.$mol_button_typed) {};
+
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/button/minor/minor.view.css", "[mol_button_minor] {\n\tcolor: var(--mol_theme_control);\n}\n\n[mol_button_minor][disabled] {\n\tcolor: var(--mol_theme_shade);\n}\n");
 })($ || ($ = {}));
-//mol/button/minor/-css/minor.view.css.ts
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_svg extends $mol_view {
-        dom_name() {
-            return "svg";
-        }
-        dom_name_space() {
-            return "http://www.w3.org/2000/svg";
-        }
-        font_size() {
-            return 16;
-        }
-        font_family() {
-            return "";
-        }
-        style_size() {
-            return {};
-        }
-    }
-    $.$mol_svg = $mol_svg;
-})($ || ($ = {}));
-//mol/svg/-view.tree/svg.view.tree.ts
+
+;
+	($.$mol_svg) = class $mol_svg extends ($.$mol_view) {
+		dom_name(){
+			return "svg";
+		}
+		dom_name_space(){
+			return "http://www.w3.org/2000/svg";
+		}
+		font_size(){
+			return 16;
+		}
+		font_family(){
+			return "";
+		}
+		style_size(){
+			return {};
+		}
+	};
+
+
 ;
 "use strict";
 var $;
@@ -3722,7 +3641,7 @@ var $;
     }
     $.$mol_after_timeout = $mol_after_timeout;
 })($ || ($ = {}));
-//mol/after/timeout/timeout.ts
+
 ;
 "use strict";
 var $;
@@ -3749,7 +3668,10 @@ var $;
     ], $mol_state_time, "now", null);
     $.$mol_state_time = $mol_state_time;
 })($ || ($ = {}));
-//mol/state/time/time.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -3783,199 +3705,168 @@ var $;
         $$.$mol_svg = $mol_svg;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/svg/svg.view.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mol_svg_root extends $mol_svg {
-        dom_name() {
-            return "svg";
-        }
-        attr() {
-            return {
-                ...super.attr(),
-                viewBox: this.view_box(),
-                preserveAspectRatio: this.aspect()
-            };
-        }
-        view_box() {
-            return "0 0 100 100";
-        }
-        aspect() {
-            return "xMidYMid";
-        }
-    }
-    $.$mol_svg_root = $mol_svg_root;
-})($ || ($ = {}));
-//mol/svg/root/-view.tree/root.view.tree.ts
+	($.$mol_svg_root) = class $mol_svg_root extends ($.$mol_svg) {
+		dom_name(){
+			return "svg";
+		}
+		attr(){
+			return {
+				...(super.attr()), 
+				"viewBox": (this.view_box()), 
+				"preserveAspectRatio": (this.aspect())
+			};
+		}
+		view_box(){
+			return "0 0 100 100";
+		}
+		aspect(){
+			return "xMidYMid";
+		}
+	};
+
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/svg/root/root.view.css", "[mol_svg_root] {\n\toverflow: hidden;\n}\n");
 })($ || ($ = {}));
-//mol/svg/root/-css/root.view.css.ts
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_svg_path extends $mol_svg {
-        dom_name() {
-            return "path";
-        }
-        attr() {
-            return {
-                ...super.attr(),
-                d: this.geometry()
-            };
-        }
-        geometry() {
-            return "";
-        }
-    }
-    $.$mol_svg_path = $mol_svg_path;
-})($ || ($ = {}));
-//mol/svg/path/-view.tree/path.view.tree.ts
+
+;
+	($.$mol_svg_path) = class $mol_svg_path extends ($.$mol_svg) {
+		dom_name(){
+			return "path";
+		}
+		attr(){
+			return {...(super.attr()), "d": (this.geometry())};
+		}
+		geometry(){
+			return "";
+		}
+	};
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_icon extends $mol_svg_root {
-        view_box() {
-            return "0 0 24 24";
-        }
-        minimal_width() {
-            return 16;
-        }
-        minimal_height() {
-            return 16;
-        }
-        sub() {
-            return [
-                this.Path()
-            ];
-        }
-        path() {
-            return "";
-        }
-        Path() {
-            const obj = new this.$.$mol_svg_path();
-            obj.geometry = () => this.path();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_icon.prototype, "Path", null);
-    $.$mol_icon = $mol_icon;
-})($ || ($ = {}));
-//mol/icon/-view.tree/icon.view.tree.ts
+
+;
+	($.$mol_icon) = class $mol_icon extends ($.$mol_svg_root) {
+		view_box(){
+			return "0 0 24 24";
+		}
+		minimal_width(){
+			return 16;
+		}
+		minimal_height(){
+			return 16;
+		}
+		sub(){
+			return [(this.Path())];
+		}
+		path(){
+			return "";
+		}
+		Path(){
+			const obj = new this.$.$mol_svg_path();
+			(obj.geometry) = () => ((this.path()));
+			return obj;
+		}
+	};
+	($mol_mem(($.$mol_icon.prototype), "Path"));
+
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/icon/icon.view.css", "[mol_icon] {\n\tfill: currentColor;\n\tstroke: none;\n\twidth: 1em;\n\theight: 1.5em;\n\tflex: 0 0 auto;\n\tvertical-align: top;\n\tdisplay: inline-block;\n\tfilter: drop-shadow(0px 1px 1px var(--mol_theme_back));\n\ttransform-origin: center;\n}\n\n[mol_icon_path] {\n\ttransform-origin: center;\n}\n");
 })($ || ($ = {}));
-//mol/icon/-css/icon.view.css.ts
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_icon_upload extends $mol_icon {
-        path() {
-            return "M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z";
-        }
-    }
-    $.$mol_icon_upload = $mol_icon_upload;
-})($ || ($ = {}));
-//mol/icon/upload/-view.tree/upload.view.tree.ts
+
+;
+	($.$mol_icon_upload) = class $mol_icon_upload extends ($.$mol_icon) {
+		path(){
+			return "M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z";
+		}
+	};
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_button_open extends $mol_button_minor {
-        sub() {
-            return [
-                this.Icon(),
-                this.Native()
-            ];
-        }
-        Icon() {
-            const obj = new this.$.$mol_icon_upload();
-            return obj;
-        }
-        files(next) {
-            if (next !== undefined)
-                return next;
-            return [];
-        }
-        accept() {
-            return "";
-        }
-        multiple() {
-            return true;
-        }
-        Native() {
-            const obj = new this.$.$mol_button_open_native();
-            obj.files = (next) => this.files(next);
-            obj.accept = () => this.accept();
-            obj.multiple = () => this.multiple();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_button_open.prototype, "Icon", null);
-    __decorate([
-        $mol_mem
-    ], $mol_button_open.prototype, "files", null);
-    __decorate([
-        $mol_mem
-    ], $mol_button_open.prototype, "Native", null);
-    $.$mol_button_open = $mol_button_open;
-    class $mol_button_open_native extends $mol_view {
-        dom_name() {
-            return "input";
-        }
-        files(next) {
-            if (next !== undefined)
-                return next;
-            return [];
-        }
-        attr() {
-            return {
-                type: "file",
-                accept: this.accept(),
-                multiple: this.multiple()
-            };
-        }
-        event() {
-            return {
-                change: (next) => this.picked(next)
-            };
-        }
-        accept() {
-            return "";
-        }
-        multiple() {
-            return true;
-        }
-        picked(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_button_open_native.prototype, "files", null);
-    __decorate([
-        $mol_mem
-    ], $mol_button_open_native.prototype, "picked", null);
-    $.$mol_button_open_native = $mol_button_open_native;
-})($ || ($ = {}));
-//mol/button/open/-view.tree/open.view.tree.ts
+
+;
+	($.$mol_button_open) = class $mol_button_open extends ($.$mol_button_minor) {
+		sub(){
+			return [(this.Icon()), (this.Native())];
+		}
+		Icon(){
+			const obj = new this.$.$mol_icon_upload();
+			return obj;
+		}
+		files(next){
+			if(next !== undefined) return next;
+			return [];
+		}
+		accept(){
+			return "";
+		}
+		multiple(){
+			return true;
+		}
+		Native(){
+			const obj = new this.$.$mol_button_open_native();
+			(obj.files) = (next) => ((this.files(next)));
+			(obj.accept) = () => ((this.accept()));
+			(obj.multiple) = () => ((this.multiple()));
+			return obj;
+		}
+	};
+	($mol_mem(($.$mol_button_open.prototype), "Icon"));
+	($mol_mem(($.$mol_button_open.prototype), "files"));
+	($mol_mem(($.$mol_button_open.prototype), "Native"));
+	($.$mol_button_open_native) = class $mol_button_open_native extends ($.$mol_view) {
+		dom_name(){
+			return "input";
+		}
+		files(next){
+			if(next !== undefined) return next;
+			return [];
+		}
+		attr(){
+			return {
+				"type": "file", 
+				"accept": (this.accept()), 
+				"multiple": (this.multiple())
+			};
+		}
+		event(){
+			return {"change": (next) => (this.picked(next))};
+		}
+		accept(){
+			return "";
+		}
+		multiple(){
+			return true;
+		}
+		picked(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+	};
+	($mol_mem(($.$mol_button_open_native.prototype), "files"));
+	($mol_mem(($.$mol_button_open_native.prototype), "picked"));
+
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -3996,74 +3887,57 @@ var $;
         $$.$mol_button_open_native = $mol_button_open_native;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/button/open/open.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/button/open/open.view.css", "[mol_button_open_native] {\n\tposition: absolute;\n\tleft: 0;\n\ttop: -100%;\n\twidth: 100%;\n\theight: 200%;\n\tcursor: pointer;\n\topacity: 0;\n}\n");
 })($ || ($ = {}));
-//mol/button/open/-css/open.view.css.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mol_list extends $mol_view {
-        render_visible_only() {
-            return true;
-        }
-        render_over() {
-            return 0;
-        }
-        sub() {
-            return this.rows();
-        }
-        Empty() {
-            const obj = new this.$.$mol_view();
-            return obj;
-        }
-        Gap_before() {
-            const obj = new this.$.$mol_view();
-            obj.style = () => ({
-                paddingTop: this.gap_before()
-            });
-            return obj;
-        }
-        Gap_after() {
-            const obj = new this.$.$mol_view();
-            obj.style = () => ({
-                paddingTop: this.gap_after()
-            });
-            return obj;
-        }
-        view_window() {
-            return [
-                0,
-                0
-            ];
-        }
-        rows() {
-            return [];
-        }
-        gap_before() {
-            return 0;
-        }
-        gap_after() {
-            return 0;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_list.prototype, "Empty", null);
-    __decorate([
-        $mol_mem
-    ], $mol_list.prototype, "Gap_before", null);
-    __decorate([
-        $mol_mem
-    ], $mol_list.prototype, "Gap_after", null);
-    $.$mol_list = $mol_list;
-})($ || ($ = {}));
-//mol/list/-view.tree/list.view.tree.ts
+	($.$mol_list) = class $mol_list extends ($.$mol_view) {
+		render_visible_only(){
+			return true;
+		}
+		render_over(){
+			return 0;
+		}
+		sub(){
+			return (this.rows());
+		}
+		Empty(){
+			const obj = new this.$.$mol_view();
+			return obj;
+		}
+		Gap_before(){
+			const obj = new this.$.$mol_view();
+			(obj.style) = () => ({"paddingTop": (this.gap_before())});
+			return obj;
+		}
+		Gap_after(){
+			const obj = new this.$.$mol_view();
+			(obj.style) = () => ({"paddingTop": (this.gap_after())});
+			return obj;
+		}
+		view_window(){
+			return [0, 0];
+		}
+		rows(){
+			return [];
+		}
+		gap_before(){
+			return 0;
+		}
+		gap_after(){
+			return 0;
+		}
+	};
+	($mol_mem(($.$mol_list.prototype), "Empty"));
+	($mol_mem(($.$mol_list.prototype), "Gap_before"));
+	($mol_mem(($.$mol_list.prototype), "Gap_after"));
+
+
 ;
 "use strict";
 var $;
@@ -4075,7 +3949,10 @@ var $;
     }
     $.$mol_support_css_overflow_anchor = $mol_support_css_overflow_anchor;
 })($ || ($ = {}));
-//mol/support/css/css.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -4207,105 +4084,93 @@ var $;
         $$.$mol_list = $mol_list;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/list/list.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/list/list.view.css", "[mol_list] {\n\twill-change: contents;\n\tdisplay: flex;\n\tflex-direction: column;\n\tflex-shrink: 0;\n\tmax-width: 100%;\n\t/* display: flex;\n\talign-items: stretch;\n\talign-content: stretch; */\n\ttransition: none;\n\tmin-height: 1.5rem;\n}\n\n[mol_list_gap_before] ,\n[mol_list_gap_after] {\n\tdisplay: block !important;\n\tflex: none;\n\ttransition: none;\n\toverflow-anchor: none;\n}\n");
 })($ || ($ = {}));
-//mol/list/-css/list.view.css.ts
+
+;
+	($.$mol_link) = class $mol_link extends ($.$mol_view) {
+		uri(){
+			return "";
+		}
+		dom_name(){
+			return "a";
+		}
+		uri_off(){
+			return "";
+		}
+		uri_native(){
+			return null;
+		}
+		external(){
+			return false;
+		}
+		attr(){
+			return {
+				...(super.attr()), 
+				"href": (this.uri_toggle()), 
+				"title": (this.hint_safe()), 
+				"target": (this.target()), 
+				"download": (this.file_name()), 
+				"mol_link_current": (this.current()), 
+				"rel": (this.relation())
+			};
+		}
+		sub(){
+			return [(this.title())];
+		}
+		arg(){
+			return {};
+		}
+		event(){
+			return {...(super.event()), "click": (next) => (this.click(next))};
+		}
+		uri_toggle(){
+			return "";
+		}
+		hint(){
+			return "";
+		}
+		hint_safe(){
+			return (this.hint());
+		}
+		target(){
+			return "_self";
+		}
+		file_name(){
+			return "";
+		}
+		current(){
+			return false;
+		}
+		relation(){
+			return "";
+		}
+		event_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		click(next){
+			return (this.event_click(next));
+		}
+	};
+	($mol_mem(($.$mol_link.prototype), "event_click"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_link extends $mol_view {
-        uri() {
-            return "";
-        }
-        dom_name() {
-            return "a";
-        }
-        uri_off() {
-            return "";
-        }
-        uri_native() {
-            return null;
-        }
-        external() {
-            return false;
-        }
-        attr() {
-            return {
-                ...super.attr(),
-                href: this.uri_toggle(),
-                title: this.hint_safe(),
-                target: this.target(),
-                download: this.file_name(),
-                mol_link_current: this.current(),
-                rel: this.relation()
-            };
-        }
-        sub() {
-            return [
-                this.title()
-            ];
-        }
-        arg() {
-            return {};
-        }
-        event() {
-            return {
-                ...super.event(),
-                click: (event) => this.click(event)
-            };
-        }
-        uri_toggle() {
-            return "";
-        }
-        hint() {
-            return "";
-        }
-        hint_safe() {
-            return this.hint();
-        }
-        target() {
-            return "_self";
-        }
-        file_name() {
-            return "";
-        }
-        current() {
-            return false;
-        }
-        relation() {
-            return "";
-        }
-        event_click(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        click(event) {
-            return this.event_click(event);
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_link.prototype, "event_click", null);
-    $.$mol_link = $mol_link;
-})($ || ($ = {}));
-//mol/link/-view.tree/link.view.tree.ts
-;
-"use strict";
-//mol/state/arg/arg.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $.$mol_action = $mol_wire_method;
 })($ || ($ = {}));
-//mol/action/action.ts
+
 ;
 "use strict";
 var $;
@@ -4437,7 +4302,10 @@ var $;
     }
     self.addEventListener('hashchange', $mol_state_arg_change);
 })($ || ($ = {}));
-//mol/state/arg/arg.web.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -4516,7 +4384,7 @@ var $;
         $$.$mol_link = $mol_link;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/link/link.view.ts
+
 ;
 "use strict";
 var $;
@@ -4559,23 +4427,20 @@ var $;
         },
     });
 })($ || ($ = {}));
-//mol/link/link.view.css.ts
+
+;
+	($.$mol_ghost) = class $mol_ghost extends ($.$mol_view) {
+		Sub(){
+			const obj = new this.$.$mol_view();
+			return obj;
+		}
+	};
+	($mol_mem(($.$mol_ghost.prototype), "Sub"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_ghost extends $mol_view {
-        Sub() {
-            const obj = new this.$.$mol_view();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_ghost.prototype, "Sub", null);
-    $.$mol_ghost = $mol_ghost;
-})($ || ($ = {}));
-//mol/ghost/-view.tree/ghost.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -4625,100 +4490,73 @@ var $;
         $$.$mol_ghost = $mol_ghost;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/ghost/ghost.view.ts
+
+;
+	($.$mol_drop) = class $mol_drop extends ($.$mol_ghost) {
+		enabled(next){
+			if(next !== undefined) return next;
+			return true;
+		}
+		event(){
+			return {
+				"dragenter": (next) => (this.enter(next)), 
+				"dragover": (next) => (this.move(next)), 
+				"dragleave": (next) => (this.leave(next)), 
+				"drop": (next) => (this.drop(next))
+			};
+		}
+		attr(){
+			return {"mol_drop_status": (this.status())};
+		}
+		adopt(next){
+			if(next !== undefined) return next;
+			return {};
+		}
+		receive(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		allow(){
+			return [
+				"copy", 
+				"move", 
+				"link"
+			];
+		}
+		enter(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		move(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		leave(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		drop(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		status(next){
+			if(next !== undefined) return next;
+			return "ready";
+		}
+	};
+	($mol_mem(($.$mol_drop.prototype), "enabled"));
+	($mol_mem(($.$mol_drop.prototype), "adopt"));
+	($mol_mem(($.$mol_drop.prototype), "receive"));
+	($mol_mem(($.$mol_drop.prototype), "enter"));
+	($mol_mem(($.$mol_drop.prototype), "move"));
+	($mol_mem(($.$mol_drop.prototype), "leave"));
+	($mol_mem(($.$mol_drop.prototype), "drop"));
+	($mol_mem(($.$mol_drop.prototype), "status"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_drop extends $mol_ghost {
-        enabled(next) {
-            if (next !== undefined)
-                return next;
-            return true;
-        }
-        event() {
-            return {
-                dragenter: (event) => this.enter(event),
-                dragover: (event) => this.move(event),
-                dragleave: (event) => this.leave(event),
-                drop: (event) => this.drop(event)
-            };
-        }
-        attr() {
-            return {
-                mol_drop_status: this.status()
-            };
-        }
-        adopt(transfer) {
-            if (transfer !== undefined)
-                return transfer;
-            return {};
-        }
-        receive(transfer) {
-            if (transfer !== undefined)
-                return transfer;
-            return null;
-        }
-        allow() {
-            return [
-                "copy",
-                "move",
-                "link"
-            ];
-        }
-        enter(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        move(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        leave(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        drop(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        status(next) {
-            if (next !== undefined)
-                return next;
-            return "ready";
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_drop.prototype, "enabled", null);
-    __decorate([
-        $mol_mem
-    ], $mol_drop.prototype, "adopt", null);
-    __decorate([
-        $mol_mem
-    ], $mol_drop.prototype, "receive", null);
-    __decorate([
-        $mol_mem
-    ], $mol_drop.prototype, "enter", null);
-    __decorate([
-        $mol_mem
-    ], $mol_drop.prototype, "move", null);
-    __decorate([
-        $mol_mem
-    ], $mol_drop.prototype, "leave", null);
-    __decorate([
-        $mol_mem
-    ], $mol_drop.prototype, "drop", null);
-    __decorate([
-        $mol_mem
-    ], $mol_drop.prototype, "status", null);
-    $.$mol_drop = $mol_drop;
-})($ || ($ = {}));
-//mol/drop/-view.tree/drop.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -4784,14 +4622,14 @@ var $;
         $$.$mol_drop = $mol_drop;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/drop/drop.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $.$mol_mem_persist = $mol_wire_solid;
 })($ || ($ = {}));
-//mol/mem/persist/persist.ts
+
 ;
 "use strict";
 var $;
@@ -4817,7 +4655,7 @@ var $;
     }
     $.$mol_wire_sync = $mol_wire_sync;
 })($ || ($ = {}));
-//mol/wire/sync/sync.ts
+
 ;
 "use strict";
 var $;
@@ -4862,7 +4700,7 @@ var $;
     ], $mol_storage, "persisted", null);
     $.$mol_storage = $mol_storage;
 })($ || ($ = {}));
-//mol/storage/storage.ts
+
 ;
 "use strict";
 var $;
@@ -4922,17 +4760,17 @@ var $;
     ], $mol_state_local, "value", null);
     $.$mol_state_local = $mol_state_local;
 })($ || ($ = {}));
-//mol/state/local/local.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     self.addEventListener('storage', event => $.$mol_state_local.changes(event));
 })($ || ($ = {}));
-//mol/state/local/local.web.ts
+
 ;
 "use strict";
-//mol/charset/encoding/encoding.ts
+
 ;
 "use strict";
 var $;
@@ -4946,14 +4784,14 @@ var $;
     }
     $.$mol_charset_decode = $mol_charset_decode;
 })($ || ($ = {}));
-//mol/charset/decode/decode.ts
+
 ;
 "use strict";
-//node/node.ts
+
 ;
 "use strict";
 var $node = $node || {};
-//node/node.web.ts
+
 ;
 "use strict";
 var $;
@@ -4965,7 +4803,7 @@ var $;
     }
     $.$mol_charset_encode = $mol_charset_encode;
 })($ || ($ = {}));
-//mol/charset/encode/encode.ts
+
 ;
 "use strict";
 var $;
@@ -5084,7 +4922,7 @@ var $;
     ], $mol_file, "absolute", null);
     $.$mol_file = $mol_file;
 })($ || ($ = {}));
-//mol/file/file.ts
+
 ;
 "use strict";
 var $;
@@ -5099,7 +4937,7 @@ var $;
     }
     $.$mol_dom_parse = $mol_dom_parse;
 })($ || ($ = {}));
-//mol/dom/parse/parse.ts
+
 ;
 "use strict";
 var $;
@@ -5250,7 +5088,7 @@ var $;
     ], $mol_fetch, "html", null);
     $.$mol_fetch = $mol_fetch;
 })($ || ($ = {}));
-//mol/fetch/fetch.ts
+
 ;
 "use strict";
 var $;
@@ -5329,7 +5167,7 @@ var $;
     $.$mol_file_web = $mol_file_web;
     $.$mol_file = $mol_file_web;
 })($ || ($ = {}));
-//mol/file/file.web.ts
+
 ;
 "use strict";
 var $;
@@ -5395,132 +5233,111 @@ var $;
     ], $mol_locale, "warn", null);
     $.$mol_locale = $mol_locale;
 })($ || ($ = {}));
-//mol/locale/locale.ts
+
+;
+	($.$mol_icon_script) = class $mol_icon_script extends ($.$mol_icon) {
+		path(){
+			return "M17.8,20C17.4,21.2 16.3,22 15,22H5C3.3,22 2,20.7 2,19V18H5L14.2,18C14.6,19.2 15.7,20 17,20H17.8M19,2H8C6.3,2 5,3.3 5,5V16H16V17C16,17.6 16.4,18 17,18H18V5C18,4.4 18.4,4 19,4C19.6,4 20,4.4 20,5V6H22V5C22,3.3 20.7,2 19,2Z";
+		}
+	};
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_icon_script extends $mol_icon {
-        path() {
-            return "M17.8,20C17.4,21.2 16.3,22 15,22H5C3.3,22 2,20.7 2,19V18H5L14.2,18C14.6,19.2 15.7,20 17,20H17.8M19,2H8C6.3,2 5,3.3 5,5V16H16V17C16,17.6 16.4,18 17,18H18V5C18,4.4 18.4,4 19,4C19.6,4 20,4.4 20,5V6H22V5C22,3.3 20.7,2 19,2Z";
-        }
-    }
-    $.$mol_icon_script = $mol_icon_script;
-})($ || ($ = {}));
-//mol/icon/script/-view.tree/script.view.tree.ts
+
+;
+	($.$mol_icon_script_text) = class $mol_icon_script_text extends ($.$mol_icon) {
+		path(){
+			return "M17.8,20C17.4,21.2 16.3,22 15,22H5C3.3,22 2,20.7 2,19V18H5L14.2,18C14.6,19.2 15.7,20 17,20H17.8M19,2C20.7,2 22,3.3 22,5V6H20V5C20,4.4 19.6,4 19,4C18.4,4 18,4.4 18,5V18H17C16.4,18 16,17.6 16,17V16H5V5C5,3.3 6.3,2 8,2H19M8,6V8H15V6H8M8,10V12H14V10H8Z";
+		}
+	};
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_icon_script_text extends $mol_icon {
-        path() {
-            return "M17.8,20C17.4,21.2 16.3,22 15,22H5C3.3,22 2,20.7 2,19V18H5L14.2,18C14.6,19.2 15.7,20 17,20H17.8M19,2C20.7,2 22,3.3 22,5V6H20V5C20,4.4 19.6,4 19,4C18.4,4 18,4.4 18,5V18H17C16.4,18 16,17.6 16,17V16H5V5C5,3.3 6.3,2 8,2H19M8,6V8H15V6H8M8,10V12H14V10H8Z";
-        }
-    }
-    $.$mol_icon_script_text = $mol_icon_script_text;
-})($ || ($ = {}));
-//mol/icon/script/text/-view.tree/text.view.tree.ts
+
+;
+	($.$mol_link_source) = class $mol_link_source extends ($.$mol_link) {
+		hint(){
+			return (this.$.$mol_locale.text("$mol_link_source_hint"));
+		}
+		sub(){
+			return [(this.Icon())];
+		}
+		Icon(){
+			const obj = new this.$.$mol_icon_script_text();
+			return obj;
+		}
+	};
+	($mol_mem(($.$mol_link_source.prototype), "Icon"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_link_source extends $mol_link {
-        hint() {
-            return this.$.$mol_locale.text('$mol_link_source_hint');
-        }
-        sub() {
-            return [
-                this.Icon()
-            ];
-        }
-        Icon() {
-            const obj = new this.$.$mol_icon_script_text();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_link_source.prototype, "Icon", null);
-    $.$mol_link_source = $mol_link_source;
-})($ || ($ = {}));
-//mol/link/source/-view.tree/source.view.tree.ts
+
+;
+	($.$mol_icon_delete) = class $mol_icon_delete extends ($.$mol_icon) {
+		path(){
+			return "M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19C6,20.1 6.9,21 8,21H16C17.1,21 18,20.1 18,19V7H6V19Z";
+		}
+	};
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_icon_delete extends $mol_icon {
-        path() {
-            return "M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19C6,20.1 6.9,21 8,21H16C17.1,21 18,20.1 18,19V7H6V19Z";
-        }
-    }
-    $.$mol_icon_delete = $mol_icon_delete;
-})($ || ($ = {}));
-//mol/icon/delete/-view.tree/delete.view.tree.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mol_check extends $mol_button_minor {
-        attr() {
-            return {
-                ...super.attr(),
-                mol_check_checked: this.checked(),
-                "aria-checked": this.aria_checked(),
-                role: this.aria_role()
-            };
-        }
-        sub() {
-            return [
-                this.Icon(),
-                this.label()
-            ];
-        }
-        checked(next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        aria_checked() {
-            return "false";
-        }
-        aria_role() {
-            return "checkbox";
-        }
-        Icon() {
-            return null;
-        }
-        title() {
-            return "";
-        }
-        Title() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.title()
-            ];
-            return obj;
-        }
-        label() {
-            return [
-                this.Title()
-            ];
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_check.prototype, "checked", null);
-    __decorate([
-        $mol_mem
-    ], $mol_check.prototype, "Title", null);
-    $.$mol_check = $mol_check;
-})($ || ($ = {}));
-//mol/check/-view.tree/check.view.tree.ts
+	($.$mol_check) = class $mol_check extends ($.$mol_button_minor) {
+		attr(){
+			return {
+				...(super.attr()), 
+				"mol_check_checked": (this.checked()), 
+				"aria-checked": (this.aria_checked()), 
+				"role": (this.aria_role())
+			};
+		}
+		sub(){
+			return [(this.Icon()), (this.label())];
+		}
+		checked(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		aria_checked(){
+			return "false";
+		}
+		aria_role(){
+			return "checkbox";
+		}
+		Icon(){
+			return null;
+		}
+		title(){
+			return "";
+		}
+		Title(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ([(this.title())]);
+			return obj;
+		}
+		label(){
+			return [(this.Title())];
+		}
+	};
+	($mol_mem(($.$mol_check.prototype), "checked"));
+	($mol_mem(($.$mol_check.prototype), "Title"));
+
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/check/check.css", "[mol_check] {\n\tflex: 0 0 auto;\n\tjustify-content: flex-start;\n\talign-content: center;\n\t/* align-items: flex-start; */\n\tborder: none;\n\tfont-weight: inherit;\n\tbox-shadow: none;\n\ttext-align: left;\n\tdisplay: inline-flex;\n\tflex-wrap: nowrap;\n}\n\n[mol_check_title] {\n\tflex-shrink: 1;\n}\n");
 })($ || ($ = {}));
-//mol/check/-css/check.css.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -5551,31 +5368,29 @@ var $;
         $$.$mol_check = $mol_check;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/check/check.view.ts
+
+;
+	($.$mol_icon_arrow_expand) = class $mol_icon_arrow_expand extends ($.$mol_icon) {
+		path(){
+			return "M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z";
+		}
+	};
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_icon_arrow_expand extends $mol_icon {
-        path() {
-            return "M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z";
-        }
-    }
-    $.$mol_icon_arrow_expand = $mol_icon_arrow_expand;
-})($ || ($ = {}));
-//mol/icon/arrow/expand/-view.tree/expand.view.tree.ts
+
+;
+	($.$mol_icon_arrow_expand_all) = class $mol_icon_arrow_expand_all extends ($.$mol_icon) {
+		path(){
+			return "M9.5,13.09L10.91,14.5L6.41,19H10V21H3V14H5V17.59L9.5,13.09M10.91,9.5L9.5,10.91L5,6.41V10H3V3H10V5H6.41L10.91,9.5M14.5,13.09L19,17.59V14H21V21H14V19H17.59L13.09,14.5L14.5,13.09M13.09,9.5L17.59,5H14V3H21V10H19V6.41L14.5,10.91L13.09,9.5Z";
+		}
+	};
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_icon_arrow_expand_all extends $mol_icon {
-        path() {
-            return "M9.5,13.09L10.91,14.5L6.41,19H10V21H3V14H5V17.59L9.5,13.09M10.91,9.5L9.5,10.91L5,6.41V10H3V3H10V5H6.41L10.91,9.5M14.5,13.09L19,17.59V14H21V21H14V19H17.59L13.09,14.5L14.5,13.09M13.09,9.5L17.59,5H14V3H21V10H19V6.41L14.5,10.91L13.09,9.5Z";
-        }
-    }
-    $.$mol_icon_arrow_expand_all = $mol_icon_arrow_expand_all;
-})($ || ($ = {}));
-//mol/icon/arrow/expand/all/-view.tree/all.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -5630,7 +5445,7 @@ var $;
     ], $mol_store.prototype, "selection", null);
     $.$mol_store = $mol_store;
 })($ || ($ = {}));
-//mol/store/store.ts
+
 ;
 "use strict";
 var $;
@@ -5656,64 +5471,55 @@ var $;
     }
     $.$mpds_visavis_plot_raw = $mpds_visavis_plot_raw;
 })($ || ($ = {}));
-//mpds/visavis/plot/raw/raw.ts
+
+;
+	($.$mpds_visavis_plot_legend_cmp) = class $mpds_visavis_plot_legend_cmp extends ($.$mol_view) {
+		sub(){
+			return [
+				(this.Label("0")), 
+				"vs.", 
+				(this.Label("1"))
+			];
+		}
+		labels(){
+			return [];
+		}
+		colorset(){
+			return [];
+		}
+		label(id){
+			return "";
+		}
+		background(id){
+			return "";
+		}
+		Label(id){
+			const obj = new this.$.$mpds_visavis_plot_legend_cmp_label();
+			(obj.label) = () => ((this.label(id)));
+			(obj.background) = () => ((this.background(id)));
+			return obj;
+		}
+	};
+	($mol_mem_key(($.$mpds_visavis_plot_legend_cmp.prototype), "Label"));
+	($.$mpds_visavis_plot_legend_cmp_label) = class $mpds_visavis_plot_legend_cmp_label extends ($.$mol_view) {
+		sub(){
+			return [(this.label())];
+		}
+		style(){
+			return {...(super.style()), "background": (this.background())};
+		}
+		label(){
+			return "";
+		}
+		background(){
+			return "";
+		}
+	};
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_plot_legend_cmp extends $mol_view {
-        sub() {
-            return [
-                this.Label("0"),
-                "vs.",
-                this.Label("1")
-            ];
-        }
-        labels() {
-            return [];
-        }
-        colorset() {
-            return [];
-        }
-        label(id) {
-            return "";
-        }
-        background(id) {
-            return "";
-        }
-        Label(id) {
-            const obj = new this.$.$mpds_visavis_plot_legend_cmp_label();
-            obj.label = () => this.label(id);
-            obj.background = () => this.background(id);
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem_key
-    ], $mpds_visavis_plot_legend_cmp.prototype, "Label", null);
-    $.$mpds_visavis_plot_legend_cmp = $mpds_visavis_plot_legend_cmp;
-    class $mpds_visavis_plot_legend_cmp_label extends $mol_view {
-        sub() {
-            return [
-                this.label()
-            ];
-        }
-        style() {
-            return {
-                ...super.style(),
-                background: this.background()
-            };
-        }
-        label() {
-            return "";
-        }
-        background() {
-            return "";
-        }
-    }
-    $.$mpds_visavis_plot_legend_cmp_label = $mpds_visavis_plot_legend_cmp_label;
-})($ || ($ = {}));
-//mpds/visavis/plot/legend/cmp/-view.tree/cmp.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -5736,7 +5542,7 @@ var $;
         $$.$mpds_visavis_plot_legend_cmp = $mpds_visavis_plot_legend_cmp;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/legend/cmp/cmp.view.ts
+
 ;
 "use strict";
 var $;
@@ -5769,103 +5575,91 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/legend/cmp/cmp.view.css.ts
+
+;
+	($.$mol_icon_tick) = class $mol_icon_tick extends ($.$mol_icon) {
+		path(){
+			return "M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z";
+		}
+	};
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_icon_tick extends $mol_icon {
-        path() {
-            return "M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z";
-        }
-    }
-    $.$mol_icon_tick = $mol_icon_tick;
-})($ || ($ = {}));
-//mol/icon/tick/-view.tree/tick.view.tree.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mol_check_box extends $mol_check {
-        Icon() {
-            const obj = new this.$.$mol_icon_tick();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_check_box.prototype, "Icon", null);
-    $.$mol_check_box = $mol_check_box;
-})($ || ($ = {}));
-//mol/check/box/-view.tree/box.view.tree.ts
+	($.$mol_check_box) = class $mol_check_box extends ($.$mol_check) {
+		Icon(){
+			const obj = new this.$.$mol_icon_tick();
+			return obj;
+		}
+	};
+	($mol_mem(($.$mol_check_box.prototype), "Icon"));
+
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/check/box/box.view.css", "[mol_check_box_icon] {\n\tborder-radius: var(--mol_gap_round);\n\tbox-shadow: inset 0 0 0 1px var(--mol_theme_line);\n\tcolor: var(--mol_theme_shade);\n\theight: 1rem;\n\talign-self: center;\n}\n\n[mol_check]:not([mol_check_checked]) > [mol_check_box_icon] {\n\tfill: transparent;\n}\n\n[mol_check]:not([disabled]) > [mol_check_box_icon] {\n\tbackground: var(--mol_theme_field);\n\tcolor: var(--mol_theme_text);\n}\n");
 })($ || ($ = {}));
-//mol/check/box/-css/box.view.css.ts
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_check_list extends $mol_view {
-        dictionary() {
-            return {};
-        }
-        Option(id) {
-            const obj = new this.$.$mol_check();
-            obj.checked = (next) => this.option_checked(id, next);
-            obj.label = () => this.option_label(id);
-            obj.enabled = () => this.option_enabled(id);
-            obj.hint = () => this.option_hint(id);
-            obj.minimal_height = () => 24;
-            return obj;
-        }
-        options() {
-            return {};
-        }
-        keys() {
-            return [];
-        }
-        sub() {
-            return this.items();
-        }
-        option_checked(id, next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        option_title(id) {
-            return "";
-        }
-        option_label(id) {
-            return [
-                this.option_title(id)
-            ];
-        }
-        enabled() {
-            return true;
-        }
-        option_enabled(id) {
-            return this.enabled();
-        }
-        option_hint(id) {
-            return "";
-        }
-        items() {
-            return [];
-        }
-    }
-    __decorate([
-        $mol_mem_key
-    ], $mol_check_list.prototype, "Option", null);
-    __decorate([
-        $mol_mem_key
-    ], $mol_check_list.prototype, "option_checked", null);
-    $.$mol_check_list = $mol_check_list;
-})($ || ($ = {}));
-//mol/check/list/-view.tree/list.view.tree.ts
+
+;
+	($.$mol_check_list) = class $mol_check_list extends ($.$mol_view) {
+		dictionary(){
+			return {};
+		}
+		Option(id){
+			const obj = new this.$.$mol_check();
+			(obj.checked) = (next) => ((this.option_checked(id, next)));
+			(obj.label) = () => ((this.option_label(id)));
+			(obj.enabled) = () => ((this.option_enabled(id)));
+			(obj.hint) = () => ((this.option_hint(id)));
+			(obj.minimal_height) = () => (24);
+			return obj;
+		}
+		options(){
+			return {};
+		}
+		keys(){
+			return [];
+		}
+		sub(){
+			return (this.items());
+		}
+		option_checked(id, next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		option_title(id){
+			return "";
+		}
+		option_label(id){
+			return [(this.option_title(id))];
+		}
+		enabled(){
+			return true;
+		}
+		option_enabled(id){
+			return (this.enabled());
+		}
+		option_hint(id){
+			return "";
+		}
+		items(){
+			return [];
+		}
+	};
+	($mol_mem_key(($.$mol_check_list.prototype), "Option"));
+	($mol_mem_key(($.$mol_check_list.prototype), "option_checked"));
+
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -5907,31 +5701,24 @@ var $;
         $$.$mol_check_list = $mol_check_list;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/check/list/list.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/check/list/list.view.css", "[mol_check_list] {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\tflex: 1 1 auto;\n\tborder-radius: var(--mol_gap_round);\n\tgap: 1px;\n}\n\n[mol_check_list_option] {\n\tflex: 0 1 auto;\n}\n\n[mol_check_list_option]:where([mol_check_checked=\"true\"]) {\n\ttext-shadow: 0 0;\n\tcolor: var(--mol_theme_current);\n}\n\n[mol_check_list_option]:where([mol_check_checked=\"true\"][disabled]) {\n\tcolor: var(--mol_theme_text);\n}\n");
 })($ || ($ = {}));
-//mol/check/list/-css/list.view.css.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mol_switch extends $mol_check_list {
-        value(next) {
-            if (next !== undefined)
-                return next;
-            return "";
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_switch.prototype, "value", null);
-    $.$mol_switch = $mol_switch;
-})($ || ($ = {}));
-//mol/switch/-view.tree/switch.view.tree.ts
+	($.$mol_switch) = class $mol_switch extends ($.$mol_check_list) {
+		value(next){
+			if(next !== undefined) return next;
+			return "";
+		}
+	};
+	($mol_mem(($.$mol_switch.prototype), "value"));
+
+
 ;
 "use strict";
 var $;
@@ -5983,7 +5770,10 @@ var $;
     ], $mol_state_session, "value", null);
     $.$mol_state_session = $mol_state_session;
 })($ || ($ = {}));
-//mol/state/session/session.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -6004,409 +5794,313 @@ var $;
         $$.$mol_switch = $mol_switch;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/switch/switch.view.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mol_labeler extends $mol_list {
-        rows() {
-            return [
-                this.Label(),
-                this.Content()
-            ];
-        }
-        label() {
-            return [
-                this.title()
-            ];
-        }
-        Label() {
-            const obj = new this.$.$mol_view();
-            obj.minimal_height = () => 32;
-            obj.sub = () => this.label();
-            return obj;
-        }
-        content() {
-            return [];
-        }
-        Content() {
-            const obj = new this.$.$mol_view();
-            obj.minimal_height = () => 24;
-            obj.sub = () => this.content();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_labeler.prototype, "Label", null);
-    __decorate([
-        $mol_mem
-    ], $mol_labeler.prototype, "Content", null);
-    $.$mol_labeler = $mol_labeler;
-})($ || ($ = {}));
-//mol/labeler/-view.tree/labeler.view.tree.ts
+	($.$mol_labeler) = class $mol_labeler extends ($.$mol_list) {
+		rows(){
+			return [(this.Label()), (this.Content())];
+		}
+		label(){
+			return [(this.title())];
+		}
+		Label(){
+			const obj = new this.$.$mol_view();
+			(obj.minimal_height) = () => (32);
+			(obj.sub) = () => ((this.label()));
+			return obj;
+		}
+		content(){
+			return [];
+		}
+		Content(){
+			const obj = new this.$.$mol_view();
+			(obj.minimal_height) = () => (24);
+			(obj.sub) = () => ((this.content()));
+			return obj;
+		}
+	};
+	($mol_mem(($.$mol_labeler.prototype), "Label"));
+	($mol_mem(($.$mol_labeler.prototype), "Content"));
+
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/labeler/labeler.view.css", "[mol_labeler] {\n\tdisplay: flex;\n\tflex-direction: column;\n\talign-items: stretch;\n\tcursor: inherit;\n}\n\n[mol_labeler_label] {\n\tmin-height: 2rem;\n\tcolor: var(--mol_theme_shade);\n\tpadding: .5rem .75rem 0;\n\tgap: 0 var(--mol_gap_block);\n\tflex-wrap: wrap;\n}\n\n[mol_labeler_content] {\n\tdisplay: flex;\n\tpadding: var(--mol_gap_text);\n}\n");
 })($ || ($ = {}));
-//mol/labeler/-css/labeler.view.css.ts
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_plot_matrix extends $mol_view {
-        plot_raw() {
-            const obj = new this.$.$mpds_visavis_plot_raw();
-            return obj;
-        }
-        auto() {
-            return [
-                this.auto_reorder()
-            ];
-        }
-        multi_jsons(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        json_master() {
-            return null;
-        }
-        show_setup() {
-            return true;
-        }
-        size() {
-            return 0;
-        }
-        links_value_min(next) {
-            if (next !== undefined)
-                return next;
-            return 0;
-        }
-        links_value_max(next) {
-            if (next !== undefined)
-                return next;
-            return 0;
-        }
-        heatmap(next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        matrix() {
-            return [];
-        }
-        order() {
-            return [];
-        }
-        x_sort(next) {
-            if (next !== undefined)
-                return next;
-            return "nump";
-        }
-        y_sort(next) {
-            if (next !== undefined)
-                return next;
-            return "nump";
-        }
-        x_op(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        y_op(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        matrix_click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        heatmap_colors() {
-            return [
-                "rgb(150,0,90)",
-                "rgb(0,0,200)",
-                "rgb(0,25,255)",
-                "rgb(0,152,255)",
-                "rgb(44,255,150)",
-                "rgb(151,255,0)",
-                "rgb(255,234,0)",
-                "rgb(255,111,0)",
-                "rgb(255,0,0)"
-            ];
-        }
-        colorset() {
-            return [
-                "#3e3f95",
-                "#c00",
-                "#FE9A2E",
-                "#090",
-                "#f0f",
-                "#09f",
-                "#666",
-                "#0f3",
-                "#0ff",
-                "#90c"
-            ];
-        }
-        plot_padding() {
-            return 32;
-        }
-        axis_width() {
-            return 24;
-        }
-        sub() {
-            return [
-                this.Plot(),
-                this.Setup()
-            ];
-        }
-        auto_reorder() {
-            return null;
-        }
-        draw() {
-            return null;
-        }
-        Root() {
-            const obj = new this.$.$mol_view();
-            obj.render = () => this.draw();
-            return obj;
-        }
-        cmp_labels() {
-            return [];
-        }
-        Cmp_legend() {
-            const obj = new this.$.$mpds_visavis_plot_legend_cmp();
-            obj.labels = () => this.cmp_labels();
-            obj.colorset = () => this.colorset();
-            return obj;
-        }
-        Heatmap_min() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.links_value_min()
-            ];
-            return obj;
-        }
-        heatmap_color(id) {
-            return "";
-        }
-        Heatmap_color(id) {
-            const obj = new this.$.$mol_view();
-            obj.style = () => ({
-                background: this.heatmap_color(id)
-            });
-            return obj;
-        }
-        Heatmap_max() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.links_value_max()
-            ];
-            return obj;
-        }
-        heatmap_color_list() {
-            return [
-                this.Heatmap_min(),
-                this.Heatmap_color("0"),
-                this.Heatmap_max()
-            ];
-        }
-        Heatmap_legend() {
-            const obj = new this.$.$mol_list();
-            obj.rows = () => this.heatmap_color_list();
-            return obj;
-        }
-        Side_right() {
-            const obj = new this.$.$mol_scroll();
-            obj.sub = () => [
-                this.Heatmap_legend()
-            ];
-            return obj;
-        }
-        plot_body() {
-            return [
-                this.Root(),
-                this.Cmp_legend(),
-                this.Side_right()
-            ];
-        }
-        Plot() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => this.plot_body();
-            return obj;
-        }
-        fixel_checked(next) {
-            if (next !== undefined)
-                return next;
-            return true;
-        }
-        Fixel() {
-            const obj = new this.$.$mol_check_box();
-            obj.title = () => "Project on 2d";
-            obj.checked = (next) => this.fixel_checked(next);
-            return obj;
-        }
-        nonformers_checked(next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        Nonformers() {
-            const obj = new this.$.$mol_check_box();
-            obj.hint = () => "Continuous solid solutions and complete insolubility systems";
-            obj.title = () => "Show non-formers";
-            obj.checked = (next) => this.nonformers_checked(next);
-            return obj;
-        }
-        difference_checked(next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        Difference_on() {
-            const obj = new this.$.$mol_check_box();
-            obj.title = () => "Show difference";
-            obj.checked = (next) => this.difference_checked(next);
-            return obj;
-        }
-        sort_control(next) {
-            if (next !== undefined)
-                return next;
-            return "nump";
-        }
-        order_dict() {
-            return {
-                nump: "Periodic number",
-                num: "Atomic number",
-                size: "Atomic size",
-                rea: "Atomic reactivity",
-                rpp: "Pseudopotential radii",
-                rion: "Ionic radii",
-                rcov: "Covalent radii",
-                rmet: "Metallic radii",
-                tmelt: "Melting temperature",
-                eneg: "Electronegativity"
-            };
-        }
-        Order_switch() {
-            const obj = new this.$.$mol_switch();
-            obj.value = (next) => this.sort_control(next);
-            obj.options = () => this.order_dict();
-            return obj;
-        }
-        Order() {
-            const obj = new this.$.$mol_labeler();
-            obj.title = () => "Sort by";
-            obj.Content = () => this.Order_switch();
-            return obj;
-        }
-        setup() {
-            return [
-                this.Fixel(),
-                this.Nonformers(),
-                this.Difference_on(),
-                this.Order()
-            ];
-        }
-        Setup() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => this.setup();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "plot_raw", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "multi_jsons", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "links_value_min", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "links_value_max", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "heatmap", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "x_sort", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "y_sort", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "x_op", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "y_op", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "matrix_click", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "Root", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "Cmp_legend", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "Heatmap_min", null);
-    __decorate([
-        $mol_mem_key
-    ], $mpds_visavis_plot_matrix.prototype, "Heatmap_color", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "Heatmap_max", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "Heatmap_legend", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "Side_right", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "Plot", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "fixel_checked", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "Fixel", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "nonformers_checked", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "Nonformers", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "difference_checked", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "Difference_on", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "sort_control", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "Order_switch", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "Order", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_matrix.prototype, "Setup", null);
-    $.$mpds_visavis_plot_matrix = $mpds_visavis_plot_matrix;
-})($ || ($ = {}));
-//mpds/visavis/plot/matrix/-view.tree/matrix.view.tree.ts
+
+;
+	($.$mpds_visavis_plot_matrix) = class $mpds_visavis_plot_matrix extends ($.$mol_view) {
+		plot_raw(){
+			const obj = new this.$.$mpds_visavis_plot_raw();
+			return obj;
+		}
+		auto(){
+			return [(this.auto_reorder())];
+		}
+		multi_jsons(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		json_master(){
+			return null;
+		}
+		show_setup(){
+			return true;
+		}
+		size(){
+			return 0;
+		}
+		links_value_min(next){
+			if(next !== undefined) return next;
+			return 0;
+		}
+		links_value_max(next){
+			if(next !== undefined) return next;
+			return 0;
+		}
+		heatmap(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		matrix(){
+			return [];
+		}
+		order(){
+			return [];
+		}
+		x_sort(next){
+			if(next !== undefined) return next;
+			return "nump";
+		}
+		y_sort(next){
+			if(next !== undefined) return next;
+			return "nump";
+		}
+		x_op(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		y_op(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		matrix_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		heatmap_colors(){
+			return [
+				"rgb(150,0,90)", 
+				"rgb(0,0,200)", 
+				"rgb(0,25,255)", 
+				"rgb(0,152,255)", 
+				"rgb(44,255,150)", 
+				"rgb(151,255,0)", 
+				"rgb(255,234,0)", 
+				"rgb(255,111,0)", 
+				"rgb(255,0,0)"
+			];
+		}
+		colorset(){
+			return [
+				"#3e3f95", 
+				"#c00", 
+				"#FE9A2E", 
+				"#090", 
+				"#f0f", 
+				"#09f", 
+				"#666", 
+				"#0f3", 
+				"#0ff", 
+				"#90c"
+			];
+		}
+		plot_padding(){
+			return 32;
+		}
+		axis_width(){
+			return 24;
+		}
+		sub(){
+			return [(this.Plot()), (this.Setup())];
+		}
+		auto_reorder(){
+			return null;
+		}
+		draw(){
+			return null;
+		}
+		Root(){
+			const obj = new this.$.$mol_view();
+			(obj.render) = () => ((this.draw()));
+			return obj;
+		}
+		cmp_labels(){
+			return [];
+		}
+		Cmp_legend(){
+			const obj = new this.$.$mpds_visavis_plot_legend_cmp();
+			(obj.labels) = () => ((this.cmp_labels()));
+			(obj.colorset) = () => ((this.colorset()));
+			return obj;
+		}
+		Heatmap_min(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ([(this.links_value_min())]);
+			return obj;
+		}
+		heatmap_color(id){
+			return "";
+		}
+		Heatmap_color(id){
+			const obj = new this.$.$mol_view();
+			(obj.style) = () => ({"background": (this.heatmap_color(id))});
+			return obj;
+		}
+		Heatmap_max(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ([(this.links_value_max())]);
+			return obj;
+		}
+		heatmap_color_list(){
+			return [
+				(this.Heatmap_min()), 
+				(this.Heatmap_color("0")), 
+				(this.Heatmap_max())
+			];
+		}
+		Heatmap_legend(){
+			const obj = new this.$.$mol_list();
+			(obj.rows) = () => ((this.heatmap_color_list()));
+			return obj;
+		}
+		Side_right(){
+			const obj = new this.$.$mol_scroll();
+			(obj.sub) = () => ([(this.Heatmap_legend())]);
+			return obj;
+		}
+		plot_body(){
+			return [
+				(this.Root()), 
+				(this.Cmp_legend()), 
+				(this.Side_right())
+			];
+		}
+		Plot(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ((this.plot_body()));
+			return obj;
+		}
+		fixel_checked(next){
+			if(next !== undefined) return next;
+			return true;
+		}
+		Fixel(){
+			const obj = new this.$.$mol_check_box();
+			(obj.title) = () => ("Project on 2d");
+			(obj.checked) = (next) => ((this.fixel_checked(next)));
+			return obj;
+		}
+		nonformers_checked(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		Nonformers(){
+			const obj = new this.$.$mol_check_box();
+			(obj.hint) = () => ("Continuous solid solutions and complete insolubility systems");
+			(obj.title) = () => ("Show non-formers");
+			(obj.checked) = (next) => ((this.nonformers_checked(next)));
+			return obj;
+		}
+		difference_checked(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		Difference_on(){
+			const obj = new this.$.$mol_check_box();
+			(obj.title) = () => ("Show difference");
+			(obj.checked) = (next) => ((this.difference_checked(next)));
+			return obj;
+		}
+		sort_control(next){
+			if(next !== undefined) return next;
+			return "nump";
+		}
+		order_dict(){
+			return {
+				"nump": "Periodic number", 
+				"num": "Atomic number", 
+				"size": "Atomic size", 
+				"rea": "Atomic reactivity", 
+				"rpp": "Pseudopotential radii", 
+				"rion": "Ionic radii", 
+				"rcov": "Covalent radii", 
+				"rmet": "Metallic radii", 
+				"tmelt": "Melting temperature", 
+				"eneg": "Electronegativity"
+			};
+		}
+		Order_switch(){
+			const obj = new this.$.$mol_switch();
+			(obj.value) = (next) => ((this.sort_control(next)));
+			(obj.options) = () => ((this.order_dict()));
+			return obj;
+		}
+		Order(){
+			const obj = new this.$.$mol_labeler();
+			(obj.title) = () => ("Sort by");
+			(obj.Content) = () => ((this.Order_switch()));
+			return obj;
+		}
+		setup(){
+			return [
+				(this.Fixel()), 
+				(this.Nonformers()), 
+				(this.Difference_on()), 
+				(this.Order())
+			];
+		}
+		Setup(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ((this.setup()));
+			return obj;
+		}
+	};
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "plot_raw"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "multi_jsons"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "links_value_min"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "links_value_max"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "heatmap"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "x_sort"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "y_sort"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "x_op"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "y_op"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "matrix_click"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Root"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Cmp_legend"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Heatmap_min"));
+	($mol_mem_key(($.$mpds_visavis_plot_matrix.prototype), "Heatmap_color"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Heatmap_max"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Heatmap_legend"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Side_right"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Plot"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "fixel_checked"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Fixel"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "nonformers_checked"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Nonformers"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "difference_checked"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Difference_on"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "sort_control"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Order_switch"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Order"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Setup"));
+
+
 ;
 
 var $node = $node || {}
@@ -8944,19 +8638,19 @@ var $;
 (function ($) {
     $.$mpds_visavis_lib_plotly = require('../mpds/visavis/lib/plotly/_plotly.custom.min.js');
 })($ || ($ = {}));
-//mpds/visavis/lib/plotly/plotly.ts
+
 ;
 "use strict";
-//mol/data/value/value.ts
+
 ;
 "use strict";
-//mol/type/equals/equals.ts
+
 ;
 "use strict";
-//mol/type/merge/merge.ts
+
 ;
 "use strict";
-//mol/type/partial/undefined/undefined.ts
+
 ;
 "use strict";
 var $;
@@ -8969,7 +8663,7 @@ var $;
     }
     $.$mol_data_setup = $mol_data_setup;
 })($ || ($ = {}));
-//mol/data/setup/setup.ts
+
 ;
 "use strict";
 var $;
@@ -8994,7 +8688,7 @@ var $;
     }
     $.$mol_data_record = $mol_data_record;
 })($ || ($ = {}));
-//mol/data/record/record.ts
+
 ;
 "use strict";
 var $;
@@ -9010,7 +8704,7 @@ var $;
     }
     $.$mol_error_mix = $mol_error_mix;
 })($ || ($ = {}));
-//mol/error/mix/mix.ts
+
 ;
 "use strict";
 var $;
@@ -9020,7 +8714,7 @@ var $;
     }
     $.$mol_data_error = $mol_data_error;
 })($ || ($ = {}));
-//mol/data/error/error.ts
+
 ;
 "use strict";
 var $;
@@ -9031,7 +8725,7 @@ var $;
         return $mol_fail(new $mol_data_error(`${val} is not a string`));
     };
 })($ || ($ = {}));
-//mol/data/string/string.ts
+
 ;
 "use strict";
 var $;
@@ -9042,7 +8736,7 @@ var $;
         return $mol_fail(new $mol_data_error(`${val} is not a number`));
     };
 })($ || ($ = {}));
-//mol/data/number/number.ts
+
 ;
 "use strict";
 var $;
@@ -9057,7 +8751,7 @@ var $;
     }
     $.$mol_data_optional = $mol_data_optional;
 })($ || ($ = {}));
-//mol/data/optional/optional.ts
+
 ;
 "use strict";
 var $;
@@ -9071,7 +8765,7 @@ var $;
     }
     $.$mol_data_const = $mol_data_const;
 })($ || ($ = {}));
-//mol/data/const/const.ts
+
 ;
 "use strict";
 var $;
@@ -9095,7 +8789,7 @@ var $;
     }
     $.$mol_data_array = $mol_data_array;
 })($ || ($ = {}));
-//mol/data/array/array.ts
+
 ;
 "use strict";
 var $;
@@ -9109,1282 +8803,1281 @@ var $;
     }
     $.$mol_data_nullable = $mol_data_nullable;
 })($ || ($ = {}));
-//mol/data/nullable/nullable.ts
+
+;
+	($.$mpds_visavis_elements_list) = class $mpds_visavis_elements_list extends ($.$mol_object) {
+		prop_names(){
+			return {
+				"num": "atomic number", 
+				"nump": "periodic number", 
+				"size": "atomic size", 
+				"rea": "atomic reactivity", 
+				"rpp": "pseudopotential radii", 
+				"rion": "ionic radii", 
+				"rcov": "covalent radii", 
+				"rmet": "metallic radii", 
+				"tmelt": "melting temperature", 
+				"eneg": "electronegativit"
+			};
+		}
+		list(){
+			return [
+				{
+					"name": "null", 
+					"num": 0, 
+					"nump": 0, 
+					"size": 0, 
+					"rea": 0, 
+					"rpp": 0, 
+					"rion": 0, 
+					"rcov": 0, 
+					"rmet": 0, 
+					"tmelt": 0, 
+					"eneg": 0
+				}, 
+				{
+					"name": "H", 
+					"num": 1, 
+					"nump": 1, 
+					"size": 0.040000098, 
+					"rea": 2.953092434, 
+					"rpp": 1.25, 
+					"rion": 0, 
+					"rcov": 30, 
+					"rmet": 0.78, 
+					"tmelt": 0.003664921, 
+					"eneg": 3.69
+				}, 
+				{
+					"name": "He", 
+					"num": 2, 
+					"nump": 112, 
+					"size": 0.05525814, 
+					"rea": 2.137675759, 
+					"rpp": 0, 
+					"rion": 0, 
+					"rcov": 0, 
+					"rmet": 0, 
+					"tmelt": 0.00026178, 
+					"eneg": 6.29
+				}, 
+				{
+					"name": "Li", 
+					"num": 3, 
+					"nump": 2, 
+					"size": 0.32352134, 
+					"rea": 0.365119614, 
+					"rpp": 1.61, 
+					"rion": 0.6, 
+					"rcov": 123, 
+					"rmet": 1.562, 
+					"tmelt": 0.118586387, 
+					"eneg": 2.32
+				}, 
+				{
+					"name": "Be", 
+					"num": 4, 
+					"nump": 8, 
+					"size": 0.149871021, 
+					"rea": 0.788170962, 
+					"rpp": 1.08, 
+					"rion": 0.3, 
+					"rcov": 89, 
+					"rmet": 1.128, 
+					"tmelt": 0.405759162, 
+					"eneg": 3.71
+				}, 
+				{
+					"name": "B", 
+					"num": 5, 
+					"nump": 82, 
+					"size": 0.15316946, 
+					"rea": 0.771198036, 
+					"rpp": 0.795, 
+					"rion": 0.2, 
+					"rcov": 88, 
+					"rmet": 0.98, 
+					"tmelt": 0.673560209, 
+					"eneg": 4.88
+				}, 
+				{
+					"name": "C", 
+					"num": 6, 
+					"nump": 88, 
+					"size": 0.152079019, 
+					"rea": 0.776727701, 
+					"rpp": 0.64, 
+					"rion": 0.15, 
+					"rcov": 77, 
+					"rmet": 0.916, 
+					"tmelt": 1, 
+					"eneg": 6.08
+				}, 
+				{
+					"name": "N", 
+					"num": 7, 
+					"nump": 94, 
+					"size": 0.147837836, 
+					"rea": 0.799010527, 
+					"rpp": 0.54, 
+					"rion": 0.12, 
+					"rcov": 70, 
+					"rmet": 0.88, 
+					"tmelt": 0.016492147, 
+					"eneg": 7.31
+				}, 
+				{
+					"name": "O", 
+					"num": 8, 
+					"nump": 100, 
+					"size": 0.141252647, 
+					"rea": 0.836260342, 
+					"rpp": 0.465, 
+					"rion": 0.1, 
+					"rcov": 66, 
+					"rmet": 0.89, 
+					"tmelt": 0.014397906, 
+					"eneg": 8.5
+				}, 
+				{
+					"name": "F", 
+					"num": 9, 
+					"nump": 106, 
+					"size": 0.130400994, 
+					"rea": 0.905851889, 
+					"rpp": 0.405, 
+					"rion": 0.09, 
+					"rcov": 58, 
+					"rmet": 0, 
+					"tmelt": 0.014136126, 
+					"eneg": 9.7
+				}, 
+				{
+					"name": "Ne", 
+					"num": 10, 
+					"nump": 113, 
+					"size": 0.118123987, 
+					"rea": 0.999999998, 
+					"rpp": 0, 
+					"rion": 0, 
+					"rcov": 0, 
+					"rmet": 0, 
+					"tmelt": 0.006544503, 
+					"eneg": 10.92
+				}, 
+				{
+					"name": "Na", 
+					"num": 11, 
+					"nump": 3, 
+					"size": 0.578463822, 
+					"rea": 0.204202895, 
+					"rpp": 2.65, 
+					"rion": 0.96, 
+					"rcov": 0, 
+					"rmet": 1.911, 
+					"tmelt": 0.097120419, 
+					"eneg": 2.27
+				}, 
+				{
+					"name": "Mg", 
+					"num": 12, 
+					"nump": 9, 
+					"size": 0.235527361, 
+					"rea": 0.501529786, 
+					"rpp": 2.03, 
+					"rion": 0.63, 
+					"rcov": 136, 
+					"rmet": 1.602, 
+					"tmelt": 0.241361257, 
+					"eneg": 3.37
+				}, 
+				{
+					"name": "Al", 
+					"num": 13, 
+					"nump": 83, 
+					"size": 0.222322819, 
+					"rea": 0.531317421, 
+					"rpp": 1.675, 
+					"rion": 0.5, 
+					"rcov": 125, 
+					"rmet": 1.432, 
+					"tmelt": 0.244240838, 
+					"eneg": 4.21
+				}, 
+				{
+					"name": "Si", 
+					"num": 14, 
+					"nump": 89, 
+					"size": 0.208407341, 
+					"rea": 0.56679379, 
+					"rpp": 1.42, 
+					"rion": 0.42, 
+					"rcov": 117, 
+					"rmet": 1.319, 
+					"tmelt": 0.440575916, 
+					"eneg": 5.08
+				}, 
+				{
+					"name": "P", 
+					"num": 15, 
+					"nump": 95, 
+					"size": 0.19392461, 
+					"rea": 0.609123241, 
+					"rpp": 1.24, 
+					"rion": 0.36, 
+					"rcov": 110, 
+					"rmet": 1.28, 
+					"tmelt": 0.082984293, 
+					"eneg": 5.95
+				}, 
+				{
+					"name": "S", 
+					"num": 16, 
+					"nump": 101, 
+					"size": 0.178988166, 
+					"rea": 0.659954172, 
+					"rpp": 1.1, 
+					"rion": 0.32, 
+					"rcov": 104, 
+					"rmet": 1.27, 
+					"tmelt": 0.10104712, 
+					"eneg": 6.79
+				}, 
+				{
+					"name": "Cl", 
+					"num": 17, 
+					"nump": 107, 
+					"size": 0.160596861, 
+					"rea": 0.735531107, 
+					"rpp": 1.01, 
+					"rion": 0.28, 
+					"rcov": 99, 
+					"rmet": 0, 
+					"tmelt": 0.045026178, 
+					"eneg": 7.64
+				}, 
+				{
+					"name": "Ar", 
+					"num": 18, 
+					"nump": 114, 
+					"size": 0.14201091, 
+					"rea": 0.831795156, 
+					"rpp": 0, 
+					"rion": 0, 
+					"rcov": 0, 
+					"rmet": 0, 
+					"tmelt": 0.021989529, 
+					"eneg": 8.5
+				}, 
+				{
+					"name": "K", 
+					"num": 19, 
+					"nump": 4, 
+					"size": 0.692195698, 
+					"rea": 0.170651143, 
+					"rpp": 3.69, 
+					"rion": 1.33, 
+					"rcov": 203, 
+					"rmet": 2.376, 
+					"tmelt": 0.088219895, 
+					"eneg": 2.08
+				}, 
+				{
+					"name": "Ca", 
+					"num": 20, 
+					"nump": 10, 
+					"size": 0.671411055, 
+					"rea": 0.175933932, 
+					"rpp": 3, 
+					"rion": 0.96, 
+					"rcov": 174, 
+					"rmet": 1.974, 
+					"tmelt": 0.290837696, 
+					"eneg": 3
+				}, 
+				{
+					"name": "Sc", 
+					"num": 21, 
+					"nump": 14, 
+					"size": 0.64709144, 
+					"rea": 0.182546051, 
+					"rpp": 2.75, 
+					"rion": 0.8, 
+					"rcov": 144, 
+					"rmet": 1.941, 
+					"tmelt": 0.47434555, 
+					"eneg": 3.11
+				}, 
+				{
+					"name": "Ti", 
+					"num": 22, 
+					"nump": 46, 
+					"size": 0.440998616, 
+					"rea": 0.267855686, 
+					"rpp": 2.58, 
+					"rion": 0.68, 
+					"rcov": 132, 
+					"rmet": 1.462, 
+					"tmelt": 0.506020942, 
+					"eneg": 3.19
+				}, 
+				{
+					"name": "V", 
+					"num": 23, 
+					"nump": 50, 
+					"size": 0.425579654, 
+					"rea": 0.27756023, 
+					"rpp": 2.43, 
+					"rion": 0.65, 
+					"rcov": 0, 
+					"rmet": 1.346, 
+					"tmelt": 0.566230366, 
+					"eneg": 3.27
+				}, 
+				{
+					"name": "Cr", 
+					"num": 24, 
+					"nump": 54, 
+					"size": 0.410235863, 
+					"rea": 0.28794164, 
+					"rpp": 2.44, 
+					"rion": 0.62, 
+					"rcov": 0, 
+					"rmet": 1.36, 
+					"tmelt": 0.557591623, 
+					"eneg": 3.41
+				}, 
+				{
+					"name": "Mn", 
+					"num": 25, 
+					"nump": 58, 
+					"size": 0.394967358, 
+					"rea": 0.299072783, 
+					"rpp": 2.22, 
+					"rion": 0.6, 
+					"rcov": 117, 
+					"rmet": 1.304, 
+					"tmelt": 0.397382199, 
+					"eneg": 3.4
+				}, 
+				{
+					"name": "Fe", 
+					"num": 26, 
+					"nump": 62, 
+					"size": 0.379774576, 
+					"rea": 0.311037111, 
+					"rpp": 2.11, 
+					"rion": 0.59, 
+					"rcov": 116, 
+					"rmet": 1.274, 
+					"tmelt": 0.473298429, 
+					"eneg": 3.47
+				}, 
+				{
+					"name": "Co", 
+					"num": 27, 
+					"nump": 66, 
+					"size": 0.364658122, 
+					"rea": 0.323930772, 
+					"rpp": 2.02, 
+					"rion": 0.62, 
+					"rcov": 116, 
+					"rmet": 1.252, 
+					"tmelt": 0.462827225, 
+					"eneg": 3.53
+				}, 
+				{
+					"name": "Ni", 
+					"num": 28, 
+					"nump": 70, 
+					"size": 0.349618659, 
+					"rea": 0.337865225, 
+					"rpp": 2.18, 
+					"rion": 0.59, 
+					"rcov": 115, 
+					"rmet": 1.246, 
+					"tmelt": 0.451832461, 
+					"eneg": 3.59
+				}, 
+				{
+					"name": "Cu", 
+					"num": 29, 
+					"nump": 74, 
+					"size": 0.334656835, 
+					"rea": 0.352970489, 
+					"rpp": 2.04, 
+					"rion": 0.96, 
+					"rcov": 117, 
+					"rmet": 1.278, 
+					"tmelt": 0.354973822, 
+					"eneg": 3.74
+				}, 
+				{
+					"name": "Zn", 
+					"num": 30, 
+					"nump": 78, 
+					"size": 0.310912262, 
+					"rea": 0.379927077, 
+					"rpp": 1.88, 
+					"rion": 0.78, 
+					"rcov": 125, 
+					"rmet": 1.394, 
+					"tmelt": 0.181413613, 
+					"eneg": 3.7
+				}, 
+				{
+					"name": "Ga", 
+					"num": 31, 
+					"nump": 84, 
+					"size": 0.287688252, 
+					"rea": 0.410597187, 
+					"rpp": 1.695, 
+					"rion": 0.63, 
+					"rcov": 125, 
+					"rmet": 1.411, 
+					"tmelt": 0.079319372, 
+					"eneg": 4.37
+				}, 
+				{
+					"name": "Ge", 
+					"num": 32, 
+					"nump": 90, 
+					"size": 0.264934676, 
+					"rea": 0.445860802, 
+					"rpp": 1.56, 
+					"rion": 0.53, 
+					"rcov": 122, 
+					"rmet": 1.369, 
+					"tmelt": 0.317015707, 
+					"eneg": 5.09
+				}, 
+				{
+					"name": "As", 
+					"num": 33, 
+					"nump": 96, 
+					"size": 0.242609734, 
+					"rea": 0.486888901, 
+					"rpp": 1.415, 
+					"rion": 0.46, 
+					"rcov": 121, 
+					"rmet": 1.39, 
+					"tmelt": 0.285340314, 
+					"eneg": 5.82
+				}, 
+				{
+					"name": "Se", 
+					"num": 34, 
+					"nump": 102, 
+					"size": 0.220678182, 
+					"rea": 0.535277144, 
+					"rpp": 1.285, 
+					"rion": 0.41, 
+					"rcov": 117, 
+					"rmet": 1.4, 
+					"tmelt": 0.128272251, 
+					"eneg": 6.53
+				}, 
+				{
+					"name": "Br", 
+					"num": 35, 
+					"nump": 108, 
+					"size": 0.195297025, 
+					"rea": 0.604842736, 
+					"rpp": 1.2, 
+					"rion": 0.37, 
+					"rcov": 114, 
+					"rmet": 0, 
+					"tmelt": 0.069633508, 
+					"eneg": 7.21
+				}, 
+				{
+					"name": "Kr", 
+					"num": 36, 
+					"nump": 115, 
+					"size": 0.170450145, 
+					"rea": 0.693011946, 
+					"rpp": 0, 
+					"rion": 0, 
+					"rcov": 0, 
+					"rmet": 0, 
+					"tmelt": 0.030628272, 
+					"eneg": 7.93
+				}, 
+				{
+					"name": "Rb", 
+					"num": 37, 
+					"nump": 5, 
+					"size": 0.832019702, 
+					"rea": 0.141972584, 
+					"rpp": 4.1, 
+					"rion": 1.49, 
+					"rcov": 217, 
+					"rmet": 2.546, 
+					"tmelt": 0.081675393, 
+					"eneg": 2.04
+				}, 
+				{
+					"name": "Sr", 
+					"num": 38, 
+					"nump": 11, 
+					"size": 0.797564264, 
+					"rea": 0.148105917, 
+					"rpp": 3.21, 
+					"rion": 1.11, 
+					"rcov": 192, 
+					"rmet": 2.151, 
+					"tmelt": 0.273036649, 
+					"eneg": 2.89
+				}, 
+				{
+					"name": "Y", 
+					"num": 39, 
+					"nump": 15, 
+					"size": 0.762242103, 
+					"rea": 0.154969119, 
+					"rpp": 2.94, 
+					"rion": 0.93, 
+					"rcov": 162, 
+					"rmet": 1.801, 
+					"tmelt": 0.470157068, 
+					"eneg": 3.04
+				}, 
+				{
+					"name": "Zr", 
+					"num": 40, 
+					"nump": 47, 
+					"size": 0.515950935, 
+					"rea": 0.228944225, 
+					"rpp": 2.825, 
+					"rion": 0.8, 
+					"rcov": 145, 
+					"rmet": 1.602, 
+					"tmelt": 0.556282723, 
+					"eneg": 3.14
+				}, 
+				{
+					"name": "Nb", 
+					"num": 41, 
+					"nump": 51, 
+					"size": 0.494387183, 
+					"rea": 0.238930116, 
+					"rpp": 2.76, 
+					"rion": 0.77, 
+					"rcov": 134, 
+					"rmet": 1.468, 
+					"tmelt": 0.717539267, 
+					"eneg": 3.25
+				}, 
+				{
+					"name": "Mo", 
+					"num": 42, 
+					"nump": 55, 
+					"size": 0.473421463, 
+					"rea": 0.249511262, 
+					"rpp": 2.72, 
+					"rion": 0.75, 
+					"rcov": 129, 
+					"rmet": 1.4, 
+					"tmelt": 0.756544503, 
+					"eneg": 3.41
+				}, 
+				{
+					"name": "Tc", 
+					"num": 43, 
+					"nump": 59, 
+					"size": 0.452993466, 
+					"rea": 0.260763114, 
+					"rpp": 2.65, 
+					"rion": 0.72, 
+					"rcov": 0, 
+					"rmet": 1.36, 
+					"tmelt": 0.640052356, 
+					"eneg": 3.35
+				}, 
+				{
+					"name": "Ru", 
+					"num": 44, 
+					"nump": 63, 
+					"size": 0.433052136, 
+					"rea": 0.272770822, 
+					"rpp": 2.605, 
+					"rion": 0.69, 
+					"rcov": 124, 
+					"rmet": 1.339, 
+					"tmelt": 0.67617801, 
+					"eneg": 3.47
+				}, 
+				{
+					"name": "Rh", 
+					"num": 45, 
+					"nump": 67, 
+					"size": 0.413553912, 
+					"rea": 0.28563141, 
+					"rpp": 2.52, 
+					"rion": 0.75, 
+					"rcov": 125, 
+					"rmet": 1.345, 
+					"tmelt": 0.586125654, 
+					"eneg": 3.57
+				}, 
+				{
+					"name": "Pd", 
+					"num": 46, 
+					"nump": 71, 
+					"size": 0.394461351, 
+					"rea": 0.299456427, 
+					"rpp": 2.45, 
+					"rion": 0.85, 
+					"rcov": 128, 
+					"rmet": 1.376, 
+					"tmelt": 0.477748691, 
+					"eneg": 3.73
+				}, 
+				{
+					"name": "Ag", 
+					"num": 47, 
+					"nump": 75, 
+					"size": 0.375742041, 
+					"rea": 0.31437522, 
+					"rpp": 2.375, 
+					"rion": 1.12, 
+					"rcov": 134, 
+					"rmet": 1.445, 
+					"tmelt": 0.323036649, 
+					"eneg": 3.81
+				}, 
+				{
+					"name": "Cd", 
+					"num": 48, 
+					"nump": 79, 
+					"size": 0.347395886, 
+					"rea": 0.340027017, 
+					"rpp": 2.215, 
+					"rion": 0.93, 
+					"rcov": 141, 
+					"rmet": 1.568, 
+					"tmelt": 0.155497382, 
+					"eneg": 3.6
+				}, 
+				{
+					"name": "In", 
+					"num": 49, 
+					"nump": 85, 
+					"size": 0.319938571, 
+					"rea": 0.369208334, 
+					"rpp": 2.05, 
+					"rion": 0.76, 
+					"rcov": 150, 
+					"rmet": 1.663, 
+					"tmelt": 0.112565445, 
+					"eneg": 4.19
+				}, 
+				{
+					"name": "Sn", 
+					"num": 50, 
+					"nump": 91, 
+					"size": 0.293280312, 
+					"rea": 0.402768213, 
+					"rpp": 1.88, 
+					"rion": 0.65, 
+					"rcov": 140, 
+					"rmet": 1.623, 
+					"tmelt": 0.132198953, 
+					"eneg": 4.83
+				}, 
+				{
+					"name": "Sb", 
+					"num": 51, 
+					"nump": 97, 
+					"size": 0.267345197, 
+					"rea": 0.441840692, 
+					"rpp": 1.765, 
+					"rion": 0.57, 
+					"rcov": 141, 
+					"rmet": 1.59, 
+					"tmelt": 0.236649215, 
+					"eneg": 5.47
+				}, 
+				{
+					"name": "Te", 
+					"num": 52, 
+					"nump": 103, 
+					"size": 0.242068451, 
+					"rea": 0.487977621, 
+					"rpp": 1.67, 
+					"rion": 0.51, 
+					"rcov": 137, 
+					"rmet": 1.6, 
+					"tmelt": 0.189267016, 
+					"eneg": 6.08
+				}, 
+				{
+					"name": "I", 
+					"num": 53, 
+					"nump": 109, 
+					"size": 0.213172397, 
+					"rea": 0.554124213, 
+					"rpp": 1.585, 
+					"rion": 0.46, 
+					"rcov": 133, 
+					"rmet": 0, 
+					"tmelt": 0.101308901, 
+					"eneg": 6.69
+				}, 
+				{
+					"name": "Xe", 
+					"num": 54, 
+					"nump": 116, 
+					"size": 0.185071259, 
+					"rea": 0.63826219, 
+					"rpp": 0, 
+					"rion": 0, 
+					"rcov": 0, 
+					"rmet": 0, 
+					"tmelt": 0.042146597, 
+					"eneg": 7.29
+				}, 
+				{
+					"name": "Cs", 
+					"num": 55, 
+					"nump": 6, 
+					"size": 0.910157427, 
+					"rea": 0.129784127, 
+					"rpp": 4.31, 
+					"rion": 1.65, 
+					"rcov": 235, 
+					"rmet": 2.731, 
+					"tmelt": 0.079057592, 
+					"eneg": 1.97
+				}, 
+				{
+					"name": "Ba", 
+					"num": 56, 
+					"nump": 12, 
+					"size": 0.868793456, 
+					"rea": 0.135963256, 
+					"rpp": 3.402, 
+					"rion": 1.26, 
+					"rcov": 198, 
+					"rmet": 2.243, 
+					"tmelt": 0.261256545, 
+					"eneg": 2.76
+				}, 
+				{
+					"name": "La", 
+					"num": 57, 
+					"nump": 16, 
+					"size": 0.828185801, 
+					"rea": 0.142629814, 
+					"rpp": 0, 
+					"rion": 1.06, 
+					"rcov": 169, 
+					"rmet": 1.877, 
+					"tmelt": 0.312303665, 
+					"eneg": 2.89
+				}, 
+				{
+					"name": "Ce", 
+					"num": 58, 
+					"nump": 18, 
+					"size": 0.810462652, 
+					"rea": 0.145748835, 
+					"rpp": 0, 
+					"rion": 1.05, 
+					"rcov": 165, 
+					"rmet": 1.715, 
+					"tmelt": 0.280366492, 
+					"eneg": 2.86
+				}, 
+				{
+					"name": "Pr", 
+					"num": 59, 
+					"nump": 20, 
+					"size": 0.793233638, 
+					"rea": 0.148914495, 
+					"rpp": 0, 
+					"rion": 1.04, 
+					"rcov": 165, 
+					"rmet": 1.828, 
+					"tmelt": 0.315183246, 
+					"eneg": 2.83
+				}, 
+				{
+					"name": "Nd", 
+					"num": 60, 
+					"nump": 22, 
+					"size": 0.776484764, 
+					"rea": 0.1521266, 
+					"rpp": 0, 
+					"rion": 1.03, 
+					"rcov": 164, 
+					"rmet": 1.821, 
+					"tmelt": 0.338743455, 
+					"eneg": 2.85
+				}, 
+				{
+					"name": "Pm", 
+					"num": 61, 
+					"nump": 24, 
+					"size": 0.760190637, 
+					"rea": 0.155387322, 
+					"rpp": 0, 
+					"rion": 1.02, 
+					"rcov": 0, 
+					"rmet": 1.81, 
+					"tmelt": 0.377225131, 
+					"eneg": 2.87
+				}, 
+				{
+					"name": "Sm", 
+					"num": 62, 
+					"nump": 26, 
+					"size": 0.744322073, 
+					"rea": 0.158700099, 
+					"rpp": 0, 
+					"rion": 1.01, 
+					"rcov": 166, 
+					"rmet": 1.802, 
+					"tmelt": 0.352094241, 
+					"eneg": 2.89
+				}, 
+				{
+					"name": "Eu", 
+					"num": 63, 
+					"nump": 28, 
+					"size": 0.728849599, 
+					"rea": 0.162069084, 
+					"rpp": 0, 
+					"rion": 1.01, 
+					"rcov": 185, 
+					"rmet": 1.799, 
+					"tmelt": 0.286649215, 
+					"eneg": 2.91
+				}, 
+				{
+					"name": "Gd", 
+					"num": 64, 
+					"nump": 30, 
+					"size": 0.713745039, 
+					"rea": 0.165498855, 
+					"rpp": 0, 
+					"rion": 1, 
+					"rcov": 161, 
+					"rmet": 1.802, 
+					"tmelt": 0.414921466, 
+					"eneg": 3.02
+				}, 
+				{
+					"name": "Tb", 
+					"num": 65, 
+					"nump": 32, 
+					"size": 0.698982175, 
+					"rea": 0.168994276, 
+					"rpp": 0, 
+					"rion": 0.99, 
+					"rcov": 159, 
+					"rmet": 1.782, 
+					"tmelt": 0.427486911, 
+					"eneg": 2.95
+				}, 
+				{
+					"name": "Dy", 
+					"num": 66, 
+					"nump": 34, 
+					"size": 0.684536953, 
+					"rea": 0.172560424, 
+					"rpp": 0, 
+					"rion": 0.98, 
+					"rcov": 159, 
+					"rmet": 1.773, 
+					"tmelt": 0.439790576, 
+					"eneg": 2.97
+				}, 
+				{
+					"name": "Ho", 
+					"num": 67, 
+					"nump": 36, 
+					"size": 0.670387461, 
+					"rea": 0.17620256, 
+					"rpp": 0, 
+					"rion": 0.97, 
+					"rcov": 158, 
+					"rmet": 1.766, 
+					"tmelt": 0.456282723, 
+					"eneg": 2.99
+				}, 
+				{
+					"name": "Er", 
+					"num": 68, 
+					"nump": 38, 
+					"size": 0.65651381, 
+					"rea": 0.179926127, 
+					"rpp": 0, 
+					"rion": 0.96, 
+					"rcov": 157, 
+					"rmet": 1.757, 
+					"tmelt": 0.469895288, 
+					"eneg": 3
+				}, 
+				{
+					"name": "Tm", 
+					"num": 69, 
+					"nump": 40, 
+					"size": 0.642897972, 
+					"rea": 0.183736755, 
+					"rpp": 0, 
+					"rion": 0.95, 
+					"rcov": 156, 
+					"rmet": 1.746, 
+					"tmelt": 0.47591623, 
+					"eneg": 3.02
+				}, 
+				{
+					"name": "Yb", 
+					"num": 70, 
+					"nump": 42, 
+					"size": 0.629523601, 
+					"rea": 0.187640284, 
+					"rpp": 0, 
+					"rion": 0.94, 
+					"rcov": 170, 
+					"rmet": 1.74, 
+					"tmelt": 0.287172775, 
+					"eneg": 3.04
+				}, 
+				{
+					"name": "Lu", 
+					"num": 71, 
+					"nump": 44, 
+					"size": 0.616375866, 
+					"rea": 0.191642784, 
+					"rpp": 0, 
+					"rion": 0.93, 
+					"rcov": 156, 
+					"rmet": 1.734, 
+					"tmelt": 0.504973822, 
+					"eneg": 3.11
+				}, 
+				{
+					"name": "Hf", 
+					"num": 72, 
+					"nump": 48, 
+					"size": 0.588840308, 
+					"rea": 0.200604451, 
+					"rpp": 2.91, 
+					"rion": 0.8, 
+					"rcov": 144, 
+					"rmet": 1.58, 
+					"tmelt": 0.653141361, 
+					"eneg": 3.3
+				}, 
+				{
+					"name": "Ta", 
+					"num": 73, 
+					"nump": 52, 
+					"size": 0.562314966, 
+					"rea": 0.210067301, 
+					"rpp": 2.79, 
+					"rion": 0.77, 
+					"rcov": 134, 
+					"rmet": 1.467, 
+					"tmelt": 0.856806283, 
+					"eneg": 3.45
+				}, 
+				{
+					"name": "W", 
+					"num": 74, 
+					"nump": 56, 
+					"size": 0.536696361, 
+					"rea": 0.22009463, 
+					"rpp": 2.735, 
+					"rion": 0.75, 
+					"rcov": 130, 
+					"rmet": 1.408, 
+					"tmelt": 0.964136126, 
+					"eneg": 3.48
+				}, 
+				{
+					"name": "Re", 
+					"num": 75, 
+					"nump": 60, 
+					"size": 0.51189659, 
+					"rea": 0.230757519, 
+					"rpp": 2.68, 
+					"rion": 0.72, 
+					"rcov": 128, 
+					"rmet": 1.375, 
+					"tmelt": 0.903926702, 
+					"eneg": 3.5
+				}, 
+				{
+					"name": "Os", 
+					"num": 76, 
+					"nump": 64, 
+					"size": 0.487840384, 
+					"rea": 0.242136549, 
+					"rpp": 2.65, 
+					"rion": 0.69, 
+					"rcov": 126, 
+					"rmet": 1.353, 
+					"tmelt": 0.868586387, 
+					"eneg": 3.57
+				}, 
+				{
+					"name": "Ir", 
+					"num": 77, 
+					"nump": 68, 
+					"size": 0.464462811, 
+					"rea": 0.254323886, 
+					"rpp": 2.628, 
+					"rion": 0.81, 
+					"rcov": 126, 
+					"rmet": 1.357, 
+					"tmelt": 0.702356021, 
+					"eneg": 3.6
+				}, 
+				{
+					"name": "Pt", 
+					"num": 78, 
+					"nump": 72, 
+					"size": 0.441707474, 
+					"rea": 0.267425828, 
+					"rpp": 2.7, 
+					"rion": 0.9, 
+					"rcov": 129, 
+					"rmet": 1.387, 
+					"tmelt": 0.535340314, 
+					"eneg": 3.71
+				}, 
+				{
+					"name": "Au", 
+					"num": 79, 
+					"nump": 76, 
+					"size": 0.419525064, 
+					"rea": 0.281565982, 
+					"rpp": 2.66, 
+					"rion": 1.11, 
+					"rcov": 134, 
+					"rmet": 1.442, 
+					"tmelt": 0.35, 
+					"eneg": 3.84
+				}, 
+				{
+					"name": "Hg", 
+					"num": 80, 
+					"nump": 80, 
+					"size": 0.386690726, 
+					"rea": 0.305474062, 
+					"rpp": 2.41, 
+					"rion": 0.97, 
+					"rcov": 144, 
+					"rmet": 1.573, 
+					"tmelt": 0.061256545, 
+					"eneg": 3.82
+				}, 
+				{
+					"name": "Tl", 
+					"num": 81, 
+					"nump": 86, 
+					"size": 0.355029594, 
+					"rea": 0.332715889, 
+					"rpp": 2.235, 
+					"rion": 0.9, 
+					"rcov": 155, 
+					"rmet": 1.716, 
+					"tmelt": 0.15104712, 
+					"eneg": 4.34
+				}, 
+				{
+					"name": "Pb", 
+					"num": 82, 
+					"nump": 92, 
+					"size": 0.324425963, 
+					"rea": 0.364101522, 
+					"rpp": 2.09, 
+					"rion": 0.83, 
+					"rcov": 154, 
+					"rmet": 1.75, 
+					"tmelt": 0.157329843, 
+					"eneg": 4.92
+				}, 
+				{
+					"name": "Bi", 
+					"num": 83, 
+					"nump": 98, 
+					"size": 0.294781292, 
+					"rea": 0.400717379, 
+					"rpp": 1.997, 
+					"rion": 0.77, 
+					"rcov": 152, 
+					"rmet": 1.7, 
+					"tmelt": 0.142408377, 
+					"eneg": 5.47
+				}, 
+				{
+					"name": "Po", 
+					"num": 84, 
+					"nump": 104, 
+					"size": 0.266010922, 
+					"rea": 0.444056906, 
+					"rpp": 1.9, 
+					"rion": 0.56, 
+					"rcov": 153, 
+					"rmet": 1.76, 
+					"tmelt": 0.137958115, 
+					"eneg": 6.01
+				}, 
+				{
+					"name": "At", 
+					"num": 85, 
+					"nump": 110, 
+					"size": 0.233351806, 
+					"rea": 0.506205582, 
+					"rpp": 1.83, 
+					"rion": 0.51, 
+					"rcov": 0, 
+					"rmet": 0, 
+					"tmelt": 0.15052356, 
+					"eneg": 6.56
+				}, 
+				{
+					"name": "Rn", 
+					"num": 86, 
+					"nump": 117, 
+					"size": 0.201712905, 
+					"rea": 0.58560451, 
+					"rpp": 0, 
+					"rion": 0, 
+					"rcov": 0, 
+					"rmet": 0, 
+					"tmelt": 0.052879581, 
+					"eneg": 7.12
+				}, 
+				{
+					"name": "Fr", 
+					"num": 87, 
+					"nump": 7, 
+					"size": 1, 
+					"rea": 0.118123987, 
+					"rpp": 4.37, 
+					"rion": 1.74, 
+					"rcov": 0, 
+					"rmet": 2.8, 
+					"tmelt": 0.078534031, 
+					"eneg": 2.02
+				}, 
+				{
+					"name": "Ra", 
+					"num": 88, 
+					"nump": 13, 
+					"size": 0.952025289, 
+					"rea": 0.124076522, 
+					"rpp": 3.53, 
+					"rion": 1.34, 
+					"rcov": 0, 
+					"rmet": 2.26, 
+					"tmelt": 0.254712042, 
+					"eneg": 2.78
+				}, 
+				{
+					"name": "Ac", 
+					"num": 89, 
+					"nump": 17, 
+					"size": 0.905996701, 
+					"rea": 0.130380151, 
+					"rpp": 0, 
+					"rion": 1.14, 
+					"rcov": 0, 
+					"rmet": 1.878, 
+					"tmelt": 0.346335079, 
+					"eneg": 2.93
+				}, 
+				{
+					"name": "Th", 
+					"num": 90, 
+					"nump": 19, 
+					"size": 0.885161237, 
+					"rea": 0.133449119, 
+					"rpp": 0, 
+					"rion": 1.11, 
+					"rcov": 0, 
+					"rmet": 1.798, 
+					"tmelt": 0.528795812, 
+					"eneg": 3.02
+				}, 
+				{
+					"name": "Pa", 
+					"num": 91, 
+					"nump": 21, 
+					"size": 0.864979518, 
+					"rea": 0.136562756, 
+					"rpp": 0, 
+					"rion": 1.08, 
+					"rcov": 0, 
+					"rmet": 1.63, 
+					"tmelt": 0.553141361, 
+					"eneg": 2.98
+				}, 
+				{
+					"name": "U", 
+					"num": 92, 
+					"nump": 23, 
+					"size": 0.845420273, 
+					"rea": 0.139722208, 
+					"rpp": 0, 
+					"rion": 1.05, 
+					"rcov": 0, 
+					"rmet": 1.56, 
+					"tmelt": 0.368062827, 
+					"eneg": 2.98
+				}, 
+				{
+					"name": "Np", 
+					"num": 93, 
+					"nump": 25, 
+					"size": 0.826445343, 
+					"rea": 0.142930186, 
+					"rpp": 0, 
+					"rion": 1.04, 
+					"rcov": 0, 
+					"rmet": 1.555, 
+					"tmelt": 0.239005236, 
+					"eneg": 2.98
+				}, 
+				{
+					"name": "Pu", 
+					"num": 94, 
+					"nump": 27, 
+					"size": 0.808015348, 
+					"rea": 0.146190276, 
+					"rpp": 0, 
+					"rion": 1.03, 
+					"rcov": 0, 
+					"rmet": 1.58, 
+					"tmelt": 0.239267016, 
+					"eneg": 2.96
+				}, 
+				{
+					"name": "Am", 
+					"num": 95, 
+					"nump": 29, 
+					"size": 0.790092251, 
+					"rea": 0.149506576, 
+					"rpp": 0, 
+					"rion": 1.02, 
+					"rcov": 0, 
+					"rmet": 1.81, 
+					"tmelt": 0.331675393, 
+					"eneg": 2.97
+				}
+			];
+		}
+	};
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_elements_list extends $mol_object {
-        prop_names() {
-            return {
-                num: "atomic number",
-                nump: "periodic number",
-                size: "atomic size",
-                rea: "atomic reactivity",
-                rpp: "pseudopotential radii",
-                rion: "ionic radii",
-                rcov: "covalent radii",
-                rmet: "metallic radii",
-                tmelt: "melting temperature",
-                eneg: "electronegativit"
-            };
-        }
-        list() {
-            return [
-                {
-                    name: "null",
-                    num: 0,
-                    nump: 0,
-                    size: 0,
-                    rea: 0,
-                    rpp: 0,
-                    rion: 0,
-                    rcov: 0,
-                    rmet: 0,
-                    tmelt: 0,
-                    eneg: 0
-                },
-                {
-                    name: "H",
-                    num: 1,
-                    nump: 1,
-                    size: 0.040000098,
-                    rea: 2.953092434,
-                    rpp: 1.25,
-                    rion: 0,
-                    rcov: 30,
-                    rmet: 0.78,
-                    tmelt: 0.003664921,
-                    eneg: 3.69
-                },
-                {
-                    name: "He",
-                    num: 2,
-                    nump: 112,
-                    size: 0.05525814,
-                    rea: 2.137675759,
-                    rpp: 0,
-                    rion: 0,
-                    rcov: 0,
-                    rmet: 0,
-                    tmelt: 0.00026178,
-                    eneg: 6.29
-                },
-                {
-                    name: "Li",
-                    num: 3,
-                    nump: 2,
-                    size: 0.32352134,
-                    rea: 0.365119614,
-                    rpp: 1.61,
-                    rion: 0.6,
-                    rcov: 123,
-                    rmet: 1.562,
-                    tmelt: 0.118586387,
-                    eneg: 2.32
-                },
-                {
-                    name: "Be",
-                    num: 4,
-                    nump: 8,
-                    size: 0.149871021,
-                    rea: 0.788170962,
-                    rpp: 1.08,
-                    rion: 0.3,
-                    rcov: 89,
-                    rmet: 1.128,
-                    tmelt: 0.405759162,
-                    eneg: 3.71
-                },
-                {
-                    name: "B",
-                    num: 5,
-                    nump: 82,
-                    size: 0.15316946,
-                    rea: 0.771198036,
-                    rpp: 0.795,
-                    rion: 0.2,
-                    rcov: 88,
-                    rmet: 0.98,
-                    tmelt: 0.673560209,
-                    eneg: 4.88
-                },
-                {
-                    name: "C",
-                    num: 6,
-                    nump: 88,
-                    size: 0.152079019,
-                    rea: 0.776727701,
-                    rpp: 0.64,
-                    rion: 0.15,
-                    rcov: 77,
-                    rmet: 0.916,
-                    tmelt: 1,
-                    eneg: 6.08
-                },
-                {
-                    name: "N",
-                    num: 7,
-                    nump: 94,
-                    size: 0.147837836,
-                    rea: 0.799010527,
-                    rpp: 0.54,
-                    rion: 0.12,
-                    rcov: 70,
-                    rmet: 0.88,
-                    tmelt: 0.016492147,
-                    eneg: 7.31
-                },
-                {
-                    name: "O",
-                    num: 8,
-                    nump: 100,
-                    size: 0.141252647,
-                    rea: 0.836260342,
-                    rpp: 0.465,
-                    rion: 0.1,
-                    rcov: 66,
-                    rmet: 0.89,
-                    tmelt: 0.014397906,
-                    eneg: 8.5
-                },
-                {
-                    name: "F",
-                    num: 9,
-                    nump: 106,
-                    size: 0.130400994,
-                    rea: 0.905851889,
-                    rpp: 0.405,
-                    rion: 0.09,
-                    rcov: 58,
-                    rmet: 0,
-                    tmelt: 0.014136126,
-                    eneg: 9.7
-                },
-                {
-                    name: "Ne",
-                    num: 10,
-                    nump: 113,
-                    size: 0.118123987,
-                    rea: 0.999999998,
-                    rpp: 0,
-                    rion: 0,
-                    rcov: 0,
-                    rmet: 0,
-                    tmelt: 0.006544503,
-                    eneg: 10.92
-                },
-                {
-                    name: "Na",
-                    num: 11,
-                    nump: 3,
-                    size: 0.578463822,
-                    rea: 0.204202895,
-                    rpp: 2.65,
-                    rion: 0.96,
-                    rcov: 0,
-                    rmet: 1.911,
-                    tmelt: 0.097120419,
-                    eneg: 2.27
-                },
-                {
-                    name: "Mg",
-                    num: 12,
-                    nump: 9,
-                    size: 0.235527361,
-                    rea: 0.501529786,
-                    rpp: 2.03,
-                    rion: 0.63,
-                    rcov: 136,
-                    rmet: 1.602,
-                    tmelt: 0.241361257,
-                    eneg: 3.37
-                },
-                {
-                    name: "Al",
-                    num: 13,
-                    nump: 83,
-                    size: 0.222322819,
-                    rea: 0.531317421,
-                    rpp: 1.675,
-                    rion: 0.5,
-                    rcov: 125,
-                    rmet: 1.432,
-                    tmelt: 0.244240838,
-                    eneg: 4.21
-                },
-                {
-                    name: "Si",
-                    num: 14,
-                    nump: 89,
-                    size: 0.208407341,
-                    rea: 0.56679379,
-                    rpp: 1.42,
-                    rion: 0.42,
-                    rcov: 117,
-                    rmet: 1.319,
-                    tmelt: 0.440575916,
-                    eneg: 5.08
-                },
-                {
-                    name: "P",
-                    num: 15,
-                    nump: 95,
-                    size: 0.19392461,
-                    rea: 0.609123241,
-                    rpp: 1.24,
-                    rion: 0.36,
-                    rcov: 110,
-                    rmet: 1.28,
-                    tmelt: 0.082984293,
-                    eneg: 5.95
-                },
-                {
-                    name: "S",
-                    num: 16,
-                    nump: 101,
-                    size: 0.178988166,
-                    rea: 0.659954172,
-                    rpp: 1.1,
-                    rion: 0.32,
-                    rcov: 104,
-                    rmet: 1.27,
-                    tmelt: 0.10104712,
-                    eneg: 6.79
-                },
-                {
-                    name: "Cl",
-                    num: 17,
-                    nump: 107,
-                    size: 0.160596861,
-                    rea: 0.735531107,
-                    rpp: 1.01,
-                    rion: 0.28,
-                    rcov: 99,
-                    rmet: 0,
-                    tmelt: 0.045026178,
-                    eneg: 7.64
-                },
-                {
-                    name: "Ar",
-                    num: 18,
-                    nump: 114,
-                    size: 0.14201091,
-                    rea: 0.831795156,
-                    rpp: 0,
-                    rion: 0,
-                    rcov: 0,
-                    rmet: 0,
-                    tmelt: 0.021989529,
-                    eneg: 8.5
-                },
-                {
-                    name: "K",
-                    num: 19,
-                    nump: 4,
-                    size: 0.692195698,
-                    rea: 0.170651143,
-                    rpp: 3.69,
-                    rion: 1.33,
-                    rcov: 203,
-                    rmet: 2.376,
-                    tmelt: 0.088219895,
-                    eneg: 2.08
-                },
-                {
-                    name: "Ca",
-                    num: 20,
-                    nump: 10,
-                    size: 0.671411055,
-                    rea: 0.175933932,
-                    rpp: 3,
-                    rion: 0.96,
-                    rcov: 174,
-                    rmet: 1.974,
-                    tmelt: 0.290837696,
-                    eneg: 3
-                },
-                {
-                    name: "Sc",
-                    num: 21,
-                    nump: 14,
-                    size: 0.64709144,
-                    rea: 0.182546051,
-                    rpp: 2.75,
-                    rion: 0.8,
-                    rcov: 144,
-                    rmet: 1.941,
-                    tmelt: 0.47434555,
-                    eneg: 3.11
-                },
-                {
-                    name: "Ti",
-                    num: 22,
-                    nump: 46,
-                    size: 0.440998616,
-                    rea: 0.267855686,
-                    rpp: 2.58,
-                    rion: 0.68,
-                    rcov: 132,
-                    rmet: 1.462,
-                    tmelt: 0.506020942,
-                    eneg: 3.19
-                },
-                {
-                    name: "V",
-                    num: 23,
-                    nump: 50,
-                    size: 0.425579654,
-                    rea: 0.27756023,
-                    rpp: 2.43,
-                    rion: 0.65,
-                    rcov: 0,
-                    rmet: 1.346,
-                    tmelt: 0.566230366,
-                    eneg: 3.27
-                },
-                {
-                    name: "Cr",
-                    num: 24,
-                    nump: 54,
-                    size: 0.410235863,
-                    rea: 0.28794164,
-                    rpp: 2.44,
-                    rion: 0.62,
-                    rcov: 0,
-                    rmet: 1.36,
-                    tmelt: 0.557591623,
-                    eneg: 3.41
-                },
-                {
-                    name: "Mn",
-                    num: 25,
-                    nump: 58,
-                    size: 0.394967358,
-                    rea: 0.299072783,
-                    rpp: 2.22,
-                    rion: 0.6,
-                    rcov: 117,
-                    rmet: 1.304,
-                    tmelt: 0.397382199,
-                    eneg: 3.4
-                },
-                {
-                    name: "Fe",
-                    num: 26,
-                    nump: 62,
-                    size: 0.379774576,
-                    rea: 0.311037111,
-                    rpp: 2.11,
-                    rion: 0.59,
-                    rcov: 116,
-                    rmet: 1.274,
-                    tmelt: 0.473298429,
-                    eneg: 3.47
-                },
-                {
-                    name: "Co",
-                    num: 27,
-                    nump: 66,
-                    size: 0.364658122,
-                    rea: 0.323930772,
-                    rpp: 2.02,
-                    rion: 0.62,
-                    rcov: 116,
-                    rmet: 1.252,
-                    tmelt: 0.462827225,
-                    eneg: 3.53
-                },
-                {
-                    name: "Ni",
-                    num: 28,
-                    nump: 70,
-                    size: 0.349618659,
-                    rea: 0.337865225,
-                    rpp: 2.18,
-                    rion: 0.59,
-                    rcov: 115,
-                    rmet: 1.246,
-                    tmelt: 0.451832461,
-                    eneg: 3.59
-                },
-                {
-                    name: "Cu",
-                    num: 29,
-                    nump: 74,
-                    size: 0.334656835,
-                    rea: 0.352970489,
-                    rpp: 2.04,
-                    rion: 0.96,
-                    rcov: 117,
-                    rmet: 1.278,
-                    tmelt: 0.354973822,
-                    eneg: 3.74
-                },
-                {
-                    name: "Zn",
-                    num: 30,
-                    nump: 78,
-                    size: 0.310912262,
-                    rea: 0.379927077,
-                    rpp: 1.88,
-                    rion: 0.78,
-                    rcov: 125,
-                    rmet: 1.394,
-                    tmelt: 0.181413613,
-                    eneg: 3.7
-                },
-                {
-                    name: "Ga",
-                    num: 31,
-                    nump: 84,
-                    size: 0.287688252,
-                    rea: 0.410597187,
-                    rpp: 1.695,
-                    rion: 0.63,
-                    rcov: 125,
-                    rmet: 1.411,
-                    tmelt: 0.079319372,
-                    eneg: 4.37
-                },
-                {
-                    name: "Ge",
-                    num: 32,
-                    nump: 90,
-                    size: 0.264934676,
-                    rea: 0.445860802,
-                    rpp: 1.56,
-                    rion: 0.53,
-                    rcov: 122,
-                    rmet: 1.369,
-                    tmelt: 0.317015707,
-                    eneg: 5.09
-                },
-                {
-                    name: "As",
-                    num: 33,
-                    nump: 96,
-                    size: 0.242609734,
-                    rea: 0.486888901,
-                    rpp: 1.415,
-                    rion: 0.46,
-                    rcov: 121,
-                    rmet: 1.39,
-                    tmelt: 0.285340314,
-                    eneg: 5.82
-                },
-                {
-                    name: "Se",
-                    num: 34,
-                    nump: 102,
-                    size: 0.220678182,
-                    rea: 0.535277144,
-                    rpp: 1.285,
-                    rion: 0.41,
-                    rcov: 117,
-                    rmet: 1.4,
-                    tmelt: 0.128272251,
-                    eneg: 6.53
-                },
-                {
-                    name: "Br",
-                    num: 35,
-                    nump: 108,
-                    size: 0.195297025,
-                    rea: 0.604842736,
-                    rpp: 1.2,
-                    rion: 0.37,
-                    rcov: 114,
-                    rmet: 0,
-                    tmelt: 0.069633508,
-                    eneg: 7.21
-                },
-                {
-                    name: "Kr",
-                    num: 36,
-                    nump: 115,
-                    size: 0.170450145,
-                    rea: 0.693011946,
-                    rpp: 0,
-                    rion: 0,
-                    rcov: 0,
-                    rmet: 0,
-                    tmelt: 0.030628272,
-                    eneg: 7.93
-                },
-                {
-                    name: "Rb",
-                    num: 37,
-                    nump: 5,
-                    size: 0.832019702,
-                    rea: 0.141972584,
-                    rpp: 4.1,
-                    rion: 1.49,
-                    rcov: 217,
-                    rmet: 2.546,
-                    tmelt: 0.081675393,
-                    eneg: 2.04
-                },
-                {
-                    name: "Sr",
-                    num: 38,
-                    nump: 11,
-                    size: 0.797564264,
-                    rea: 0.148105917,
-                    rpp: 3.21,
-                    rion: 1.11,
-                    rcov: 192,
-                    rmet: 2.151,
-                    tmelt: 0.273036649,
-                    eneg: 2.89
-                },
-                {
-                    name: "Y",
-                    num: 39,
-                    nump: 15,
-                    size: 0.762242103,
-                    rea: 0.154969119,
-                    rpp: 2.94,
-                    rion: 0.93,
-                    rcov: 162,
-                    rmet: 1.801,
-                    tmelt: 0.470157068,
-                    eneg: 3.04
-                },
-                {
-                    name: "Zr",
-                    num: 40,
-                    nump: 47,
-                    size: 0.515950935,
-                    rea: 0.228944225,
-                    rpp: 2.825,
-                    rion: 0.8,
-                    rcov: 145,
-                    rmet: 1.602,
-                    tmelt: 0.556282723,
-                    eneg: 3.14
-                },
-                {
-                    name: "Nb",
-                    num: 41,
-                    nump: 51,
-                    size: 0.494387183,
-                    rea: 0.238930116,
-                    rpp: 2.76,
-                    rion: 0.77,
-                    rcov: 134,
-                    rmet: 1.468,
-                    tmelt: 0.717539267,
-                    eneg: 3.25
-                },
-                {
-                    name: "Mo",
-                    num: 42,
-                    nump: 55,
-                    size: 0.473421463,
-                    rea: 0.249511262,
-                    rpp: 2.72,
-                    rion: 0.75,
-                    rcov: 129,
-                    rmet: 1.4,
-                    tmelt: 0.756544503,
-                    eneg: 3.41
-                },
-                {
-                    name: "Tc",
-                    num: 43,
-                    nump: 59,
-                    size: 0.452993466,
-                    rea: 0.260763114,
-                    rpp: 2.65,
-                    rion: 0.72,
-                    rcov: 0,
-                    rmet: 1.36,
-                    tmelt: 0.640052356,
-                    eneg: 3.35
-                },
-                {
-                    name: "Ru",
-                    num: 44,
-                    nump: 63,
-                    size: 0.433052136,
-                    rea: 0.272770822,
-                    rpp: 2.605,
-                    rion: 0.69,
-                    rcov: 124,
-                    rmet: 1.339,
-                    tmelt: 0.67617801,
-                    eneg: 3.47
-                },
-                {
-                    name: "Rh",
-                    num: 45,
-                    nump: 67,
-                    size: 0.413553912,
-                    rea: 0.28563141,
-                    rpp: 2.52,
-                    rion: 0.75,
-                    rcov: 125,
-                    rmet: 1.345,
-                    tmelt: 0.586125654,
-                    eneg: 3.57
-                },
-                {
-                    name: "Pd",
-                    num: 46,
-                    nump: 71,
-                    size: 0.394461351,
-                    rea: 0.299456427,
-                    rpp: 2.45,
-                    rion: 0.85,
-                    rcov: 128,
-                    rmet: 1.376,
-                    tmelt: 0.477748691,
-                    eneg: 3.73
-                },
-                {
-                    name: "Ag",
-                    num: 47,
-                    nump: 75,
-                    size: 0.375742041,
-                    rea: 0.31437522,
-                    rpp: 2.375,
-                    rion: 1.12,
-                    rcov: 134,
-                    rmet: 1.445,
-                    tmelt: 0.323036649,
-                    eneg: 3.81
-                },
-                {
-                    name: "Cd",
-                    num: 48,
-                    nump: 79,
-                    size: 0.347395886,
-                    rea: 0.340027017,
-                    rpp: 2.215,
-                    rion: 0.93,
-                    rcov: 141,
-                    rmet: 1.568,
-                    tmelt: 0.155497382,
-                    eneg: 3.6
-                },
-                {
-                    name: "In",
-                    num: 49,
-                    nump: 85,
-                    size: 0.319938571,
-                    rea: 0.369208334,
-                    rpp: 2.05,
-                    rion: 0.76,
-                    rcov: 150,
-                    rmet: 1.663,
-                    tmelt: 0.112565445,
-                    eneg: 4.19
-                },
-                {
-                    name: "Sn",
-                    num: 50,
-                    nump: 91,
-                    size: 0.293280312,
-                    rea: 0.402768213,
-                    rpp: 1.88,
-                    rion: 0.65,
-                    rcov: 140,
-                    rmet: 1.623,
-                    tmelt: 0.132198953,
-                    eneg: 4.83
-                },
-                {
-                    name: "Sb",
-                    num: 51,
-                    nump: 97,
-                    size: 0.267345197,
-                    rea: 0.441840692,
-                    rpp: 1.765,
-                    rion: 0.57,
-                    rcov: 141,
-                    rmet: 1.59,
-                    tmelt: 0.236649215,
-                    eneg: 5.47
-                },
-                {
-                    name: "Te",
-                    num: 52,
-                    nump: 103,
-                    size: 0.242068451,
-                    rea: 0.487977621,
-                    rpp: 1.67,
-                    rion: 0.51,
-                    rcov: 137,
-                    rmet: 1.6,
-                    tmelt: 0.189267016,
-                    eneg: 6.08
-                },
-                {
-                    name: "I",
-                    num: 53,
-                    nump: 109,
-                    size: 0.213172397,
-                    rea: 0.554124213,
-                    rpp: 1.585,
-                    rion: 0.46,
-                    rcov: 133,
-                    rmet: 0,
-                    tmelt: 0.101308901,
-                    eneg: 6.69
-                },
-                {
-                    name: "Xe",
-                    num: 54,
-                    nump: 116,
-                    size: 0.185071259,
-                    rea: 0.63826219,
-                    rpp: 0,
-                    rion: 0,
-                    rcov: 0,
-                    rmet: 0,
-                    tmelt: 0.042146597,
-                    eneg: 7.29
-                },
-                {
-                    name: "Cs",
-                    num: 55,
-                    nump: 6,
-                    size: 0.910157427,
-                    rea: 0.129784127,
-                    rpp: 4.31,
-                    rion: 1.65,
-                    rcov: 235,
-                    rmet: 2.731,
-                    tmelt: 0.079057592,
-                    eneg: 1.97
-                },
-                {
-                    name: "Ba",
-                    num: 56,
-                    nump: 12,
-                    size: 0.868793456,
-                    rea: 0.135963256,
-                    rpp: 3.402,
-                    rion: 1.26,
-                    rcov: 198,
-                    rmet: 2.243,
-                    tmelt: 0.261256545,
-                    eneg: 2.76
-                },
-                {
-                    name: "La",
-                    num: 57,
-                    nump: 16,
-                    size: 0.828185801,
-                    rea: 0.142629814,
-                    rpp: 0,
-                    rion: 1.06,
-                    rcov: 169,
-                    rmet: 1.877,
-                    tmelt: 0.312303665,
-                    eneg: 2.89
-                },
-                {
-                    name: "Ce",
-                    num: 58,
-                    nump: 18,
-                    size: 0.810462652,
-                    rea: 0.145748835,
-                    rpp: 0,
-                    rion: 1.05,
-                    rcov: 165,
-                    rmet: 1.715,
-                    tmelt: 0.280366492,
-                    eneg: 2.86
-                },
-                {
-                    name: "Pr",
-                    num: 59,
-                    nump: 20,
-                    size: 0.793233638,
-                    rea: 0.148914495,
-                    rpp: 0,
-                    rion: 1.04,
-                    rcov: 165,
-                    rmet: 1.828,
-                    tmelt: 0.315183246,
-                    eneg: 2.83
-                },
-                {
-                    name: "Nd",
-                    num: 60,
-                    nump: 22,
-                    size: 0.776484764,
-                    rea: 0.1521266,
-                    rpp: 0,
-                    rion: 1.03,
-                    rcov: 164,
-                    rmet: 1.821,
-                    tmelt: 0.338743455,
-                    eneg: 2.85
-                },
-                {
-                    name: "Pm",
-                    num: 61,
-                    nump: 24,
-                    size: 0.760190637,
-                    rea: 0.155387322,
-                    rpp: 0,
-                    rion: 1.02,
-                    rcov: 0,
-                    rmet: 1.81,
-                    tmelt: 0.377225131,
-                    eneg: 2.87
-                },
-                {
-                    name: "Sm",
-                    num: 62,
-                    nump: 26,
-                    size: 0.744322073,
-                    rea: 0.158700099,
-                    rpp: 0,
-                    rion: 1.01,
-                    rcov: 166,
-                    rmet: 1.802,
-                    tmelt: 0.352094241,
-                    eneg: 2.89
-                },
-                {
-                    name: "Eu",
-                    num: 63,
-                    nump: 28,
-                    size: 0.728849599,
-                    rea: 0.162069084,
-                    rpp: 0,
-                    rion: 1.01,
-                    rcov: 185,
-                    rmet: 1.799,
-                    tmelt: 0.286649215,
-                    eneg: 2.91
-                },
-                {
-                    name: "Gd",
-                    num: 64,
-                    nump: 30,
-                    size: 0.713745039,
-                    rea: 0.165498855,
-                    rpp: 0,
-                    rion: 1,
-                    rcov: 161,
-                    rmet: 1.802,
-                    tmelt: 0.414921466,
-                    eneg: 3.02
-                },
-                {
-                    name: "Tb",
-                    num: 65,
-                    nump: 32,
-                    size: 0.698982175,
-                    rea: 0.168994276,
-                    rpp: 0,
-                    rion: 0.99,
-                    rcov: 159,
-                    rmet: 1.782,
-                    tmelt: 0.427486911,
-                    eneg: 2.95
-                },
-                {
-                    name: "Dy",
-                    num: 66,
-                    nump: 34,
-                    size: 0.684536953,
-                    rea: 0.172560424,
-                    rpp: 0,
-                    rion: 0.98,
-                    rcov: 159,
-                    rmet: 1.773,
-                    tmelt: 0.439790576,
-                    eneg: 2.97
-                },
-                {
-                    name: "Ho",
-                    num: 67,
-                    nump: 36,
-                    size: 0.670387461,
-                    rea: 0.17620256,
-                    rpp: 0,
-                    rion: 0.97,
-                    rcov: 158,
-                    rmet: 1.766,
-                    tmelt: 0.456282723,
-                    eneg: 2.99
-                },
-                {
-                    name: "Er",
-                    num: 68,
-                    nump: 38,
-                    size: 0.65651381,
-                    rea: 0.179926127,
-                    rpp: 0,
-                    rion: 0.96,
-                    rcov: 157,
-                    rmet: 1.757,
-                    tmelt: 0.469895288,
-                    eneg: 3
-                },
-                {
-                    name: "Tm",
-                    num: 69,
-                    nump: 40,
-                    size: 0.642897972,
-                    rea: 0.183736755,
-                    rpp: 0,
-                    rion: 0.95,
-                    rcov: 156,
-                    rmet: 1.746,
-                    tmelt: 0.47591623,
-                    eneg: 3.02
-                },
-                {
-                    name: "Yb",
-                    num: 70,
-                    nump: 42,
-                    size: 0.629523601,
-                    rea: 0.187640284,
-                    rpp: 0,
-                    rion: 0.94,
-                    rcov: 170,
-                    rmet: 1.74,
-                    tmelt: 0.287172775,
-                    eneg: 3.04
-                },
-                {
-                    name: "Lu",
-                    num: 71,
-                    nump: 44,
-                    size: 0.616375866,
-                    rea: 0.191642784,
-                    rpp: 0,
-                    rion: 0.93,
-                    rcov: 156,
-                    rmet: 1.734,
-                    tmelt: 0.504973822,
-                    eneg: 3.11
-                },
-                {
-                    name: "Hf",
-                    num: 72,
-                    nump: 48,
-                    size: 0.588840308,
-                    rea: 0.200604451,
-                    rpp: 2.91,
-                    rion: 0.8,
-                    rcov: 144,
-                    rmet: 1.58,
-                    tmelt: 0.653141361,
-                    eneg: 3.3
-                },
-                {
-                    name: "Ta",
-                    num: 73,
-                    nump: 52,
-                    size: 0.562314966,
-                    rea: 0.210067301,
-                    rpp: 2.79,
-                    rion: 0.77,
-                    rcov: 134,
-                    rmet: 1.467,
-                    tmelt: 0.856806283,
-                    eneg: 3.45
-                },
-                {
-                    name: "W",
-                    num: 74,
-                    nump: 56,
-                    size: 0.536696361,
-                    rea: 0.22009463,
-                    rpp: 2.735,
-                    rion: 0.75,
-                    rcov: 130,
-                    rmet: 1.408,
-                    tmelt: 0.964136126,
-                    eneg: 3.48
-                },
-                {
-                    name: "Re",
-                    num: 75,
-                    nump: 60,
-                    size: 0.51189659,
-                    rea: 0.230757519,
-                    rpp: 2.68,
-                    rion: 0.72,
-                    rcov: 128,
-                    rmet: 1.375,
-                    tmelt: 0.903926702,
-                    eneg: 3.5
-                },
-                {
-                    name: "Os",
-                    num: 76,
-                    nump: 64,
-                    size: 0.487840384,
-                    rea: 0.242136549,
-                    rpp: 2.65,
-                    rion: 0.69,
-                    rcov: 126,
-                    rmet: 1.353,
-                    tmelt: 0.868586387,
-                    eneg: 3.57
-                },
-                {
-                    name: "Ir",
-                    num: 77,
-                    nump: 68,
-                    size: 0.464462811,
-                    rea: 0.254323886,
-                    rpp: 2.628,
-                    rion: 0.81,
-                    rcov: 126,
-                    rmet: 1.357,
-                    tmelt: 0.702356021,
-                    eneg: 3.6
-                },
-                {
-                    name: "Pt",
-                    num: 78,
-                    nump: 72,
-                    size: 0.441707474,
-                    rea: 0.267425828,
-                    rpp: 2.7,
-                    rion: 0.9,
-                    rcov: 129,
-                    rmet: 1.387,
-                    tmelt: 0.535340314,
-                    eneg: 3.71
-                },
-                {
-                    name: "Au",
-                    num: 79,
-                    nump: 76,
-                    size: 0.419525064,
-                    rea: 0.281565982,
-                    rpp: 2.66,
-                    rion: 1.11,
-                    rcov: 134,
-                    rmet: 1.442,
-                    tmelt: 0.35,
-                    eneg: 3.84
-                },
-                {
-                    name: "Hg",
-                    num: 80,
-                    nump: 80,
-                    size: 0.386690726,
-                    rea: 0.305474062,
-                    rpp: 2.41,
-                    rion: 0.97,
-                    rcov: 144,
-                    rmet: 1.573,
-                    tmelt: 0.061256545,
-                    eneg: 3.82
-                },
-                {
-                    name: "Tl",
-                    num: 81,
-                    nump: 86,
-                    size: 0.355029594,
-                    rea: 0.332715889,
-                    rpp: 2.235,
-                    rion: 0.9,
-                    rcov: 155,
-                    rmet: 1.716,
-                    tmelt: 0.15104712,
-                    eneg: 4.34
-                },
-                {
-                    name: "Pb",
-                    num: 82,
-                    nump: 92,
-                    size: 0.324425963,
-                    rea: 0.364101522,
-                    rpp: 2.09,
-                    rion: 0.83,
-                    rcov: 154,
-                    rmet: 1.75,
-                    tmelt: 0.157329843,
-                    eneg: 4.92
-                },
-                {
-                    name: "Bi",
-                    num: 83,
-                    nump: 98,
-                    size: 0.294781292,
-                    rea: 0.400717379,
-                    rpp: 1.997,
-                    rion: 0.77,
-                    rcov: 152,
-                    rmet: 1.7,
-                    tmelt: 0.142408377,
-                    eneg: 5.47
-                },
-                {
-                    name: "Po",
-                    num: 84,
-                    nump: 104,
-                    size: 0.266010922,
-                    rea: 0.444056906,
-                    rpp: 1.9,
-                    rion: 0.56,
-                    rcov: 153,
-                    rmet: 1.76,
-                    tmelt: 0.137958115,
-                    eneg: 6.01
-                },
-                {
-                    name: "At",
-                    num: 85,
-                    nump: 110,
-                    size: 0.233351806,
-                    rea: 0.506205582,
-                    rpp: 1.83,
-                    rion: 0.51,
-                    rcov: 0,
-                    rmet: 0,
-                    tmelt: 0.15052356,
-                    eneg: 6.56
-                },
-                {
-                    name: "Rn",
-                    num: 86,
-                    nump: 117,
-                    size: 0.201712905,
-                    rea: 0.58560451,
-                    rpp: 0,
-                    rion: 0,
-                    rcov: 0,
-                    rmet: 0,
-                    tmelt: 0.052879581,
-                    eneg: 7.12
-                },
-                {
-                    name: "Fr",
-                    num: 87,
-                    nump: 7,
-                    size: 1,
-                    rea: 0.118123987,
-                    rpp: 4.37,
-                    rion: 1.74,
-                    rcov: 0,
-                    rmet: 2.8,
-                    tmelt: 0.078534031,
-                    eneg: 2.02
-                },
-                {
-                    name: "Ra",
-                    num: 88,
-                    nump: 13,
-                    size: 0.952025289,
-                    rea: 0.124076522,
-                    rpp: 3.53,
-                    rion: 1.34,
-                    rcov: 0,
-                    rmet: 2.26,
-                    tmelt: 0.254712042,
-                    eneg: 2.78
-                },
-                {
-                    name: "Ac",
-                    num: 89,
-                    nump: 17,
-                    size: 0.905996701,
-                    rea: 0.130380151,
-                    rpp: 0,
-                    rion: 1.14,
-                    rcov: 0,
-                    rmet: 1.878,
-                    tmelt: 0.346335079,
-                    eneg: 2.93
-                },
-                {
-                    name: "Th",
-                    num: 90,
-                    nump: 19,
-                    size: 0.885161237,
-                    rea: 0.133449119,
-                    rpp: 0,
-                    rion: 1.11,
-                    rcov: 0,
-                    rmet: 1.798,
-                    tmelt: 0.528795812,
-                    eneg: 3.02
-                },
-                {
-                    name: "Pa",
-                    num: 91,
-                    nump: 21,
-                    size: 0.864979518,
-                    rea: 0.136562756,
-                    rpp: 0,
-                    rion: 1.08,
-                    rcov: 0,
-                    rmet: 1.63,
-                    tmelt: 0.553141361,
-                    eneg: 2.98
-                },
-                {
-                    name: "U",
-                    num: 92,
-                    nump: 23,
-                    size: 0.845420273,
-                    rea: 0.139722208,
-                    rpp: 0,
-                    rion: 1.05,
-                    rcov: 0,
-                    rmet: 1.56,
-                    tmelt: 0.368062827,
-                    eneg: 2.98
-                },
-                {
-                    name: "Np",
-                    num: 93,
-                    nump: 25,
-                    size: 0.826445343,
-                    rea: 0.142930186,
-                    rpp: 0,
-                    rion: 1.04,
-                    rcov: 0,
-                    rmet: 1.555,
-                    tmelt: 0.239005236,
-                    eneg: 2.98
-                },
-                {
-                    name: "Pu",
-                    num: 94,
-                    nump: 27,
-                    size: 0.808015348,
-                    rea: 0.146190276,
-                    rpp: 0,
-                    rion: 1.03,
-                    rcov: 0,
-                    rmet: 1.58,
-                    tmelt: 0.239267016,
-                    eneg: 2.96
-                },
-                {
-                    name: "Am",
-                    num: 95,
-                    nump: 29,
-                    size: 0.790092251,
-                    rea: 0.149506576,
-                    rpp: 0,
-                    rion: 1.02,
-                    rcov: 0,
-                    rmet: 1.81,
-                    tmelt: 0.331675393,
-                    eneg: 2.97
-                }
-            ];
-        }
-    }
-    $.$mpds_visavis_elements_list = $mpds_visavis_elements_list;
-})($ || ($ = {}));
-//mpds/visavis/elements/list/-view.tree/list.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -10463,6571 +10156,4293 @@ var $;
         $$.$mpds_visavis_elements_list = $mpds_visavis_elements_list;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/elements/list/list.view.ts
+
+;
+	($.$mpds_visavis_elements_nonformer) = class $mpds_visavis_elements_nonformer extends ($.$mol_object) {
+		pd_bin(){
+			return [
+				[88, 23], 
+				[88, 41], 
+				[46, 78], 
+				[46, 82], 
+				[46, 5], 
+				[46, 26], 
+				[46, 23], 
+				[46, 28], 
+				[46, 25], 
+				[46, 31], 
+				[46, 76], 
+				[46, 24], 
+				[46, 41], 
+				[46, 27], 
+				[46, 75], 
+				[46, 81], 
+				[46, 74], 
+				[46, 44], 
+				[46, 43], 
+				[46, 13], 
+				[46, 80], 
+				[46, 91], 
+				[46, 22], 
+				[12, 3], 
+				[12, 82], 
+				[12, 47], 
+				[12, 54], 
+				[12, 30], 
+				[12, 31], 
+				[12, 79], 
+				[12, 48], 
+				[12, 18], 
+				[12, 10], 
+				[12, 81], 
+				[12, 13], 
+				[12, 49], 
+				[12, 80], 
+				[12, 29], 
+				[94, 23], 
+				[94, 41], 
+				[94, 92], 
+				[94, 93], 
+				[94, 91], 
+				[17, 6], 
+				[32, 78], 
+				[32, 82], 
+				[32, 81], 
+				[32, 80], 
+				[78, 5], 
+				[78, 26], 
+				[78, 25], 
+				[78, 31], 
+				[78, 41], 
+				[78, 27], 
+				[78, 14], 
+				[78, 77], 
+				[78, 44], 
+				[78, 43], 
+				[78, 13], 
+				[78, 73], 
+				[55, 19], 
+				[55, 62], 
+				[55, 25], 
+				[55, 63], 
+				[55, 56], 
+				[55, 24], 
+				[55, 41], 
+				[55, 59], 
+				[55, 27], 
+				[55, 60], 
+				[55, 58], 
+				[55, 20], 
+				[55, 61], 
+				[55, 37], 
+				[55, 21], 
+				[55, 22], 
+				[55, 38], 
+				[55, 69], 
+				[4, 82], 
+				[4, 47], 
+				[4, 28], 
+				[3, 82], 
+				[3, 30], 
+				[3, 31], 
+				[3, 48], 
+				[3, 2], 
+				[3, 10], 
+				[3, 13], 
+				[3, 49], 
+				[3, 29], 
+				[4, 30], 
+				[4, 31], 
+				[4, 79], 
+				[82, 47], 
+				[82, 26], 
+				[82, 23], 
+				[82, 28], 
+				[82, 25], 
+				[82, 30], 
+				[82, 31], 
+				[82, 79], 
+				[82, 41], 
+				[82, 40], 
+				[82, 75], 
+				[82, 14], 
+				[82, 74], 
+				[82, 50], 
+				[82, 13], 
+				[82, 49], 
+				[82, 72], 
+				[82, 22], 
+				[82, 29], 
+				[4, 81], 
+				[4, 50], 
+				[4, 49], 
+				[4, 51], 
+				[4, 80], 
+				[4, 29], 
+				[19, 57], 
+				[19, 26], 
+				[19, 62], 
+				[19, 25], 
+				[19, 56], 
+				[19, 70], 
+				[19, 24], 
+				[19, 41], 
+				[19, 10], 
+				[19, 59], 
+				[19, 60], 
+				[19, 93], 
+				[19, 20], 
+				[19, 37], 
+				[19, 64], 
+				[19, 21], 
+				[19, 68], 
+				[19, 22], 
+				[19, 38], 
+				[19, 69], 
+				[47, 23], 
+				[47, 25], 
+				[47, 30], 
+				[47, 31], 
+				[47, 24], 
+				[47, 41], 
+				[47, 81], 
+				[47, 13], 
+				[47, 80], 
+				[47, 29], 
+				[57, 23], 
+				[57, 62], 
+				[57, 71], 
+				[57, 56], 
+				[57, 2], 
+				[57, 24], 
+				[57, 41], 
+				[57, 40], 
+				[57, 59], 
+				[57, 60], 
+				[57, 58], 
+				[57, 93], 
+				[57, 20], 
+				[57, 61], 
+				[57, 72], 
+				[57, 89], 
+				[57, 21], 
+				[57, 91], 
+				[57, 22], 
+				[57, 73], 
+				[57, 39], 
+				[5, 25], 
+				[5, 26], 
+				[5, 28], 
+				[5, 31], 
+				[5, 76], 
+				[5, 27], 
+				[5, 7], 
+				[5, 43], 
+				[26, 28], 
+				[26, 25], 
+				[26, 79], 
+				[26, 24], 
+				[26, 27], 
+				[26, 75], 
+				[26, 81], 
+				[26, 45], 
+				[26, 77], 
+				[26, 74], 
+				[26, 44], 
+				[26, 43], 
+				[5, 45], 
+				[5, 77], 
+				[23, 54], 
+				[23, 28], 
+				[23, 65], 
+				[23, 67], 
+				[23, 62], 
+				[23, 63], 
+				[5, 44], 
+				[23, 79], 
+				[23, 66], 
+				[23, 18], 
+				[23, 56], 
+				[23, 2], 
+				[23, 70], 
+				[23, 11], 
+				[23, 41], 
+				[23, 10], 
+				[23, 59], 
+				[23, 92], 
+				[23, 81], 
+				[23, 60], 
+				[23, 58], 
+				[23, 93], 
+				[23, 36], 
+				[23, 20], 
+				[23, 61], 
+				[23, 64], 
+				[23, 89], 
+				[23, 68], 
+				[23, 91], 
+				[23, 22], 
+				[23, 73], 
+				[23, 38], 
+				[23, 69], 
+				[54, 71], 
+				[54, 2], 
+				[54, 11], 
+				[54, 41], 
+				[54, 40], 
+				[54, 58], 
+				[54, 36], 
+				[54, 72], 
+				[54, 21], 
+				[54, 22], 
+				[54, 39], 
+				[5, 42], 
+				[28, 25], 
+				[28, 76], 
+				[28, 2], 
+				[28, 41], 
+				[28, 10], 
+				[28, 40], 
+				[28, 27], 
+				[28, 75], 
+				[28, 81], 
+				[28, 74], 
+				[28, 44], 
+				[28, 43], 
+				[28, 72], 
+				[28, 42], 
+				[28, 80], 
+				[28, 22], 
+				[28, 73], 
+				[65, 67], 
+				[65, 63], 
+				[65, 66], 
+				[65, 70], 
+				[65, 41], 
+				[65, 93], 
+				[65, 61], 
+				[65, 72], 
+				[65, 64], 
+				[65, 89], 
+				[65, 21], 
+				[65, 68], 
+				[65, 22], 
+				[65, 73], 
+				[65, 38], 
+				[65, 69], 
+				[65, 39], 
+				[67, 63], 
+				[67, 71], 
+				[67, 66], 
+				[67, 2], 
+				[67, 70], 
+				[67, 41], 
+				[67, 40], 
+				[67, 93], 
+				[67, 20], 
+				[67, 61], 
+				[67, 72], 
+				[67, 64], 
+				[67, 89], 
+				[67, 21], 
+				[67, 68], 
+				[67, 22], 
+				[67, 73], 
+				[67, 38], 
+				[67, 69], 
+				[67, 39], 
+				[62, 71], 
+				[62, 56], 
+				[62, 24], 
+				[62, 41], 
+				[62, 40], 
+				[62, 93], 
+				[62, 20], 
+				[62, 72], 
+				[62, 89], 
+				[62, 91], 
+				[62, 22], 
+				[62, 73], 
+				[62, 38], 
+				[62, 69], 
+				[62, 39], 
+				[25, 0], 
+				[25, 48], 
+				[25, 18], 
+				[25, 56], 
+				[25, 2], 
+				[25, 11], 
+				[25, 10], 
+				[25, 75], 
+				[25, 81], 
+				[25, 43], 
+				[25, 37], 
+				[86, 41], 
+				[30, 31], 
+				[30, 79], 
+				[30, 48], 
+				[30, 81], 
+				[30, 74], 
+				[30, 13], 
+				[30, 49], 
+				[30, 80], 
+				[30, 29], 
+				[63, 66], 
+				[63, 2], 
+				[63, 70], 
+				[63, 41], 
+				[63, 93], 
+				[63, 20], 
+				[63, 61], 
+				[63, 72], 
+				[63, 64], 
+				[63, 89], 
+				[63, 21], 
+				[63, 68], 
+				[63, 22], 
+				[63, 73], 
+				[63, 38], 
+				[63, 69], 
+				[63, 39], 
+				[31, 79], 
+				[31, 48], 
+				[31, 81], 
+				[31, 13], 
+				[31, 49], 
+				[31, 80], 
+				[31, 29], 
+				[71, 18], 
+				[71, 2], 
+				[71, 11], 
+				[71, 10], 
+				[71, 40], 
+				[71, 58], 
+				[71, 36], 
+				[71, 20], 
+				[71, 72], 
+				[71, 89], 
+				[71, 21], 
+				[71, 91], 
+				[71, 38], 
+				[71, 69], 
+				[71, 39], 
+				[0, 41], 
+				[79, 76], 
+				[79, 41], 
+				[79, 40], 
+				[79, 75], 
+				[79, 81], 
+				[79, 74], 
+				[79, 43], 
+				[79, 50], 
+				[79, 22], 
+				[66, 2], 
+				[66, 70], 
+				[66, 41], 
+				[66, 93], 
+				[66, 20], 
+				[66, 61], 
+				[66, 72], 
+				[66, 64], 
+				[66, 89], 
+				[66, 68], 
+				[66, 22], 
+				[66, 73], 
+				[66, 38], 
+				[66, 69], 
+				[66, 39], 
+				[0, 29], 
+				[48, 41], 
+				[48, 13], 
+				[48, 72], 
+				[48, 22], 
+				[48, 29], 
+				[76, 75], 
+				[76, 45], 
+				[76, 77], 
+				[76, 74], 
+				[76, 44], 
+				[76, 43], 
+				[76, 42], 
+				[52, 15], 
+				[52, 33], 
+				[18, 2], 
+				[18, 11], 
+				[18, 41], 
+				[18, 40], 
+				[18, 36], 
+				[18, 72], 
+				[18, 21], 
+				[18, 22], 
+				[18, 39], 
+				[56, 2], 
+				[56, 70], 
+				[56, 24], 
+				[56, 41], 
+				[56, 40], 
+				[56, 59], 
+				[56, 60], 
+				[56, 58], 
+				[56, 93], 
+				[56, 74], 
+				[56, 20], 
+				[56, 61], 
+				[56, 72], 
+				[56, 89], 
+				[56, 21], 
+				[56, 91], 
+				[56, 22], 
+				[56, 73], 
+				[56, 69], 
+				[56, 39], 
+				[2, 70], 
+				[2, 11], 
+				[2, 24], 
+				[2, 41], 
+				[2, 10], 
+				[2, 40], 
+				[2, 59], 
+				[2, 27], 
+				[2, 60], 
+				[2, 58], 
+				[2, 93], 
+				[2, 36], 
+				[2, 20], 
+				[2, 61], 
+				[2, 72], 
+				[2, 64], 
+				[2, 21], 
+				[2, 68], 
+				[2, 22], 
+				[2, 38], 
+				[2, 39], 
+				[70, 41], 
+				[70, 40], 
+				[70, 59], 
+				[70, 93], 
+				[70, 61], 
+				[70, 72], 
+				[70, 64], 
+				[70, 89], 
+				[70, 21], 
+				[70, 68], 
+				[70, 22], 
+				[70, 73], 
+				[70, 38], 
+				[70, 69], 
+				[70, 39], 
+				[11, 24], 
+				[11, 41], 
+				[11, 10], 
+				[11, 40], 
+				[11, 36], 
+				[11, 21], 
+				[11, 91], 
+				[11, 22], 
+				[11, 39], 
+				[24, 81], 
+				[24, 43], 
+				[24, 37], 
+				[24, 80], 
+				[24, 69], 
+				[41, 10], 
+				[41, 40], 
+				[41, 59], 
+				[41, 92], 
+				[41, 90], 
+				[41, 81], 
+				[41, 60], 
+				[41, 58], 
+				[41, 93], 
+				[41, 87], 
+				[41, 36], 
+				[41, 20], 
+				[41, 61], 
+				[41, 37], 
+				[41, 72], 
+				[41, 64], 
+				[41, 42], 
+				[41, 89], 
+				[41, 21], 
+				[41, 80], 
+				[41, 68], 
+				[41, 22], 
+				[41, 73], 
+				[41, 38], 
+				[41, 69], 
+				[10, 40], 
+				[10, 36], 
+				[10, 37], 
+				[10, 72], 
+				[10, 21], 
+				[10, 22], 
+				[10, 39], 
+				[40, 93], 
+				[40, 36], 
+				[40, 20], 
+				[40, 61], 
+				[40, 72], 
+				[40, 89], 
+				[40, 21], 
+				[40, 80], 
+				[40, 91], 
+				[40, 22], 
+				[40, 73], 
+				[40, 38], 
+				[40, 69], 
+				[40, 39], 
+				[59, 60], 
+				[59, 58], 
+				[59, 93], 
+				[59, 20], 
+				[59, 61], 
+				[59, 37], 
+				[59, 72], 
+				[59, 89], 
+				[59, 21], 
+				[59, 91], 
+				[59, 22], 
+				[59, 73], 
+				[59, 69], 
+				[59, 39], 
+				[92, 93], 
+				[27, 75], 
+				[27, 81], 
+				[27, 45], 
+				[27, 74], 
+				[27, 44], 
+				[27, 43], 
+				[27, 42], 
+				[27, 80], 
+				[75, 45], 
+				[75, 77], 
+				[75, 74], 
+				[75, 44], 
+				[75, 43], 
+				[81, 50], 
+				[81, 13], 
+				[81, 49], 
+				[81, 80], 
+				[81, 73], 
+				[81, 29], 
+				[45, 77], 
+				[45, 74], 
+				[45, 44], 
+				[45, 43], 
+				[45, 42], 
+				[45, 73], 
+				[60, 58], 
+				[60, 93], 
+				[60, 61], 
+				[60, 89], 
+				[60, 22], 
+				[58, 93], 
+				[58, 61], 
+				[58, 72], 
+				[58, 89], 
+				[58, 21], 
+				[58, 91], 
+				[58, 22], 
+				[58, 73], 
+				[58, 69], 
+				[14, 50], 
+				[77, 43], 
+				[77, 42], 
+				[93, 61], 
+				[93, 72], 
+				[93, 64], 
+				[93, 21], 
+				[93, 68], 
+				[93, 22], 
+				[93, 73], 
+				[93, 38], 
+				[93, 69], 
+				[36, 72], 
+				[36, 21], 
+				[36, 22], 
+				[36, 39], 
+				[74, 44], 
+				[74, 43], 
+				[74, 50], 
+				[74, 49], 
+				[74, 42], 
+				[44, 43], 
+				[44, 42], 
+				[50, 13], 
+				[50, 73], 
+				[20, 37], 
+				[20, 72], 
+				[20, 64], 
+				[20, 89], 
+				[20, 21], 
+				[20, 91], 
+				[20, 22], 
+				[20, 73], 
+				[20, 38], 
+				[20, 69], 
+				[20, 39], 
+				[33, 51], 
+				[13, 49], 
+				[13, 80], 
+				[13, 29], 
+				[61, 72], 
+				[61, 64], 
+				[61, 89], 
+				[61, 68], 
+				[61, 91], 
+				[61, 22], 
+				[61, 73], 
+				[61, 38], 
+				[49, 29], 
+				[37, 21], 
+				[37, 22], 
+				[37, 38], 
+				[15, 51], 
+				[72, 64], 
+				[72, 89], 
+				[72, 21], 
+				[72, 80], 
+				[72, 68], 
+				[72, 91], 
+				[72, 38], 
+				[72, 69], 
+				[72, 39], 
+				[64, 89], 
+				[64, 21], 
+				[64, 68], 
+				[64, 22], 
+				[64, 73], 
+				[64, 38], 
+				[64, 69], 
+				[64, 39], 
+				[89, 21], 
+				[89, 68], 
+				[89, 91], 
+				[89, 22], 
+				[89, 73], 
+				[89, 38], 
+				[89, 69], 
+				[89, 39], 
+				[21, 68], 
+				[21, 22], 
+				[21, 73], 
+				[21, 38], 
+				[21, 69], 
+				[21, 39], 
+				[80, 22], 
+				[80, 29], 
+				[68, 22], 
+				[68, 73], 
+				[68, 38], 
+				[68, 69], 
+				[91, 22], 
+				[91, 73], 
+				[91, 38], 
+				[91, 69], 
+				[22, 73], 
+				[22, 38], 
+				[22, 69], 
+				[73, 38], 
+				[73, 69], 
+				[38, 69], 
+				[38, 39], 
+				[69, 39], 
+				[46, 45], 
+				[78, 23], 
+				[78, 28], 
+				[78, 24], 
+				[78, 45], 
+				[47, 11], 
+				[57, 67], 
+				[57, 63], 
+				[57, 66], 
+				[57, 70], 
+				[57, 64], 
+				[57, 68], 
+				[57, 38], 
+				[26, 25], 
+				[26, 76], 
+				[26, 77], 
+				[23, 25], 
+				[23, 27], 
+				[23, 21], 
+				[54, 18], 
+				[28, 24], 
+				[28, 45], 
+				[28, 77], 
+				[65, 56], 
+				[65, 59], 
+				[65, 60], 
+				[65, 58], 
+				[67, 56], 
+				[67, 59], 
+				[67, 60], 
+				[67, 58], 
+				[25, 76], 
+				[25, 24], 
+				[25, 27], 
+				[25, 45], 
+				[25, 44], 
+				[25, 22], 
+				[63, 56], 
+				[63, 59], 
+				[63, 60], 
+				[63, 58], 
+				[66, 56], 
+				[66, 59], 
+				[66, 60], 
+				[66, 58], 
+				[48, 80], 
+				[76, 27], 
+				[56, 64], 
+				[56, 68], 
+				[56, 38], 
+				[70, 60], 
+				[70, 58], 
+				[24, 27], 
+				[24, 22], 
+				[59, 64], 
+				[59, 68], 
+				[59, 38], 
+				[27, 77], 
+				[45, 22], 
+				[60, 64], 
+				[60, 68], 
+				[60, 38], 
+				[58, 64], 
+				[58, 68], 
+				[58, 38], 
+				[77, 74], 
+				[77, 44], 
+				[77, 73], 
+				[93, 39], 
+				[43, 22], 
+				[72, 22], 
+				[72, 73], 
+				[21, 91]
+			];
+		}
+		pd_tri(){
+			return [
+				"Pm-Dy-Y", 
+				"Yb-Gd-V", 
+				"Cr-Ni-Pb", 
+				"Pu-V-Mo", 
+				"Pm-Er-V", 
+				"Tm-Lu-W", 
+				"Nd-Pu-V", 
+				"Al-Zn-In", 
+				"Eu-U-Ta", 
+				"Ni-Ru-Au", 
+				"Ce-Pm-Nd", 
+				"Cu-Tc-Pd", 
+				"La-Sm-Ho", 
+				"La-Yb-Ta", 
+				"Gd-Lu-Zr", 
+				"Li-Hf-Ti", 
+				"La-Dy-Ho", 
+				"Ba-Yb-Sc", 
+				"K-Zr-Nb", 
+				"Y-Zr-Nb", 
+				"Li-Ce-Tm", 
+				"Sc-U-Cr", 
+				"Ho-Er-Mo", 
+				"Tm-V-Mo", 
+				"La-Pu-Zr", 
+				"Ir-Pd-Rh", 
+				"Gd-Ho-Zr", 
+				"Ca-Y-Tm", 
+				"Rb-Hf-Zr", 
+				"La-Yb-Sc", 
+				"Nd-Pu-Zr", 
+				"Yb-Y-Lu", 
+				"La-V-Mo", 
+				"Ba-La-Y", 
+				"Cs-Li-Ta", 
+				"Ba-Sr-Fe", 
+				"Yb-Y-W", 
+				"Cs-Pr-Ti", 
+				"Zn-Bi-B", 
+				"Tb-Pm-Y", 
+				"Gd-Ta-V", 
+				"Ce-Eu-Zr", 
+				"Fe-Os-Rh", 
+				"Nb-V-Mo", 
+				"Eu-Hf-Zr", 
+				"Be-Al-In", 
+				"Pr-V-W", 
+				"Li-Er-Lu", 
+				"Pu-Ti-Cr", 
+				"Rb-Na-V", 
+				"Mg-V-Mo", 
+				"Pr-Nd-Ho", 
+				"Pr-Sm-Cr", 
+				"Pd-Ru-C", 
+				"Er-Pu-Mo", 
+				"Ce-Zr-Ti", 
+				"Li-Tm-Ta", 
+				"Nd-Gd-Sc", 
+				"Fe-Rh-Au", 
+				"Cs-V-Cr", 
+				"Ru-Pt-Au", 
+				"Ca-Lu-Pu", 
+				"Cs-K-Ta", 
+				"Lu-Ta-Ti", 
+				"Nd-U-W", 
+				"Ga-Si-Ge", 
+				"K-Mg-V", 
+				"Ce-Th-Ta", 
+				"Yb-Dy-Zr", 
+				"Ba-Nd-Ti", 
+				"Y-Pu-V", 
+				"Pr-Gd-Lu", 
+				"La-Y-Zr", 
+				"Er-Nb-V", 
+				"Cs-Zr-Ta", 
+				"Li-Y-Mo", 
+				"Pr-Th-Mo", 
+				"Fe-Cu-Pd", 
+				"Ce-Sm-Y", 
+				"Dy-Y-Ho", 
+				"Cu-Ir-Rh", 
+				"Si-Sb-Pb", 
+				"Pr-Ho-Pu", 
+				"K-Li-Cr", 
+				"La-Tb-Dy", 
+				"Li-Nd-Mo", 
+				"Sm-Th-Cr", 
+				"Cs-Zr-Nb", 
+				"Pr-Y-Pu", 
+				"Tb-Yb-Tm", 
+				"Y-Hf-Nb", 
+				"Na-Cr-Mo", 
+				"K-Mg-Nb", 
+				"Li-Er-Tm", 
+				"Ce-Hf-Th", 
+				"Dy-Ho-Lu", 
+				"Ce-Mn-V", 
+				"Mn-Fe-Pb", 
+				"Rb-Hf-Mg", 
+				"La-Tb-V", 
+				"Sr-Nd-Sc", 
+				"Tb-Sm-Cr", 
+				"Ce-Sc-U", 
+				"Y-Ho-V", 
+				"Rb-Li-V", 
+				"Nd-Th-Sc", 
+				"Al-Si-Ge", 
+				"Ca-La-Tm", 
+				"La-Sc-Nb", 
+				"Sm-Gd-Mo", 
+				"Y-Sc-Ti", 
+				"Na-Sr-Fe", 
+				"K-Li-Nb", 
+				"Cs-Rb-Hf", 
+				"Zn-Ga-Bi", 
+				"La-Pm-Mo", 
+				"Mn-Fe-Co", 
+				"Gd-Tm-Cr", 
+				"Sm-Gd-Ho", 
+				"U-Ti-W", 
+				"La-Ce-Nb", 
+				"Re-Hg-Sb", 
+				"Gd-Dy-Pu", 
+				"Dy-Ho-V", 
+				"La-Nd-U", 
+				"Ce-Ta-Mo", 
+				"Ce-Lu-Ti", 
+				"Ce-Nd-Ta", 
+				"Pm-Tm-Cr", 
+				"Ce-Tm-Pu", 
+				"Pr-Sm-Th", 
+				"Ca-La-Lu", 
+				"Yb-Lu-Nb", 
+				"Sm-Lu-V", 
+				"Gd-Tm-Mo", 
+				"Li-Pr-Pu", 
+				"Al-Ga-Hg", 
+				"Na-Ti-V", 
+				"Yb-Nd-Gd", 
+				"Nd-Gd-Mo", 
+				"La-Tb-Pm", 
+				"Ir-Pd-C", 
+				"Tm-Pu-Mo", 
+				"Tm-Th-V", 
+				"La-Er-Zr", 
+				"Cu-Ni-Ir", 
+				"Tb-Sc-W", 
+				"Ba-Sr-Mo", 
+				"Th-Sc-V", 
+				"Mn-Co-Ni", 
+				"Cu-Ni-Ru", 
+				"Tb-Ce-Ho", 
+				"Nd-Lu-Mo", 
+				"Li-Pm-Er", 
+				"La-Tm-Lu", 
+				"La-Pu-Mo", 
+				"Pm-Pr-Lu", 
+				"Ce-Ho-Pu", 
+				"Cu-Tc-Pt", 
+				"Nd-Dy-Tm", 
+				"Ca-Pm-Mo", 
+				"Fe-Cu-Au", 
+				"Li-Sm-Gd", 
+				"Mn-Ag-Pb", 
+				"Li-Er-Ta", 
+				"La-Tb-Ti", 
+				"Gd-Ti-Cr", 
+				"Ce-Gd-Th", 
+				"Er-Sc-Cr", 
+				"Sm-Er-Ta", 
+				"Cr-Ni-Au", 
+				"Nd-U-Ti", 
+				"Co-Au-C", 
+				"Nd-Pu-W", 
+				"La-Yb-Th", 
+				"Sc-Cr-Mo", 
+				"Zr-Sc-Nb", 
+				"Pr-Tm-Ti", 
+				"Cs-Hf-Ti", 
+				"Ce-Ho-Th", 
+				"Yb-Gd-Tm", 
+				"Li-Ce-Ta", 
+				"Y-V-W", 
+				"La-Sc-Ti", 
+				"Tb-Sc-Ti", 
+				"Tb-Pr-Ta", 
+				"Sb-Pb-W", 
+				"Ba-Yb-Gd", 
+				"Dy-Pu-Cr", 
+				"Tb-Gd-Tm", 
+				"Tb-Lu-W", 
+				"Gd-Er-V", 
+				"Yb-Ti-W", 
+				"Tm-V-W", 
+				"Pd-Pt-Rh", 
+				"Eu-Pu-Nb", 
+				"Ba-Sm-Y", 
+				"La-Sm-Y", 
+				"U-V-Cr", 
+				"Ba-Pm-Sm", 
+				"Sm-Ho-Mo", 
+				"Gd-Th-Ta", 
+				"Ce-Pr-Cr", 
+				"Lu-Ti-Mo", 
+				"Dy-Lu-Th", 
+				"La-Sc-Mo", 
+				"Y-U-Cr", 
+				"Pm-Nd-Sm", 
+				"Tb-Gd-Mo", 
+				"Yb-Er-Th", 
+				"Li-Pr-Lu", 
+				"Mg-Mn-Cd", 
+				"Ce-Pm-Gd", 
+				"Pu-Ti-Nb", 
+				"Tl-Cd-Mo", 
+				"Sc-V-Mo", 
+				"Pu-V-Cr", 
+				"Mn-Fe-Ni", 
+				"Eu-Zr-Nb", 
+				"Tb-Y-W", 
+				"Tb-Pr-Y", 
+				"Ca-Nd-Sc", 
+				"Ba-Nd-Y", 
+				"Ca-Tb-Sc", 
+				"Pu-Ta-Ti", 
+				"Ca-Yb-Eu", 
+				"Th-Mo-W", 
+				"Si-Sn-Bi", 
+				"Tb-Sc-Mo", 
+				"Na-Cr-Cu", 
+				"Y-Er-W", 
+				"Y-Ho-Mo", 
+				"Ni-Pd-Rh", 
+				"Y-Ti-Nb", 
+				"Co-Pd-C", 
+				"Li-Gd-Ti", 
+				"Tb-Y-Er", 
+				"Pr-Y-Cr", 
+				"La-Yb-V", 
+				"Ca-Yb-Mo", 
+				"Dy-Er-Ti", 
+				"Nd-Sm-Gd", 
+				"Tb-Y-Ti", 
+				"Gd-Er-Tm", 
+				"Ca-Pm-Tm", 
+				"Tl-Zn-Ge", 
+				"Yb-Sc-Ta", 
+				"Fe-Co-Au", 
+				"La-Sm-Nb", 
+				"Nb-V-Cu", 
+				"La-Sm-V", 
+				"Li-Pr-Mo", 
+				"Tb-Gd-Ho", 
+				"Eu-Th-Ta", 
+				"Yb-U-Nb", 
+				"Yb-Er-Hf", 
+				"La-Ho-Zr", 
+				"Dy-Y-Er", 
+				"La-Ce-Tm", 
+				"Pr-Lu-Mo", 
+				"Eu-Y-Mo", 
+				"Dy-Er-Cr", 
+				"La-Yb-Ti", 
+				"Ce-Pm-Mo", 
+				"Tb-Pm-Pu", 
+				"Pr-Dy-Y", 
+				"La-Pu-Ti", 
+				"Li-Ce-Sm", 
+				"Li-Pr-Tm", 
+				"Tb-Pm-Ho", 
+				"Dy-Er-Lu", 
+				"Al-In-Ga", 
+				"Nd-Er-Ta", 
+				"Pr-Nd-Y", 
+				"Ba-Pm-V", 
+				"Pr-Dy-V", 
+				"Rb-Na-Ti", 
+				"Tb-Pm-Gd", 
+				"Gd-Er-Mo", 
+				"Y-Th-Mo", 
+				"Gd-Y-Mo", 
+				"Ba-Pm-Mo", 
+				"Pu-Nb-V", 
+				"Er-Th-Mo", 
+				"Co-Ni-Pb", 
+				"Ho-Th-Zr", 
+				"Pm-Pr-Gd", 
+				"Sm-Lu-Mo", 
+				"Yb-Pr-V", 
+				"Cu-Ag-Pb", 
+				"Pm-Ho-V", 
+				"Re-Ir-Pd", 
+				"Er-Lu-Nb", 
+				"La-Eu-U", 
+				"Cu-Ag-Mo", 
+				"Dy-V-Cr", 
+				"Dy-Th-Ti", 
+				"Re-Bi-Sb", 
+				"Pm-Pr-Y", 
+				"Th-Sc-Ta", 
+				"Y-V-Cr", 
+				"Fe-Ag-Ir", 
+				"Co-Os-Pd", 
+				"Rb-Li-Zr", 
+				"Gd-Dy-V", 
+				"Tb-Er-Pu", 
+				"Ce-Ti-Cr", 
+				"Ba-Ti-V", 
+				"Nd-Dy-Mo", 
+				"Ca-Tm-Ti", 
+				"Li-Hf-Mg", 
+				"Tb-Sc-V", 
+				"Tl-Zn-Pb", 
+				"Pr-Tm-Cr", 
+				"Er-Ti-Cr", 
+				"Er-Sc-V", 
+				"K-Li-Ta", 
+				"Yb-Sc-U", 
+				"La-Ce-Pu", 
+				"Cs-Mg-Zr", 
+				"Ga-B-Pb", 
+				"Re-Ir-Ru", 
+				"Pr-Gd-Er", 
+				"Re-Ni-Pt", 
+				"Tb-Nd-Tm", 
+				"Tb-Ta-V", 
+				"Nd-Y-Sc", 
+				"Tb-Dy-Y", 
+				"Tb-Pr-Cr", 
+				"La-Zr-Ta", 
+				"Eu-Th-U", 
+				"Li-Tb-Ta", 
+				"Na-V-Fe", 
+				"Cu-Re-Pt", 
+				"Cd-Ge-Bi", 
+				"Sm-Gd-Ta", 
+				"Al-In-Ge", 
+				"Al-Cd-Ga", 
+				"Ce-Eu-Y", 
+				"La-Tb-Tm", 
+				"Li-Tb-Zr", 
+				"Pr-V-Cr", 
+				"La-Pm-Ho", 
+				"Gd-Er-Th", 
+				"Li-La-V", 
+				"Al-Ga-Sn", 
+				"Tl-As-Pb", 
+				"Re-Pd-Ru", 
+				"Eu-Y-W", 
+				"Tm-Ta-V", 
+				"Eu-V-W", 
+				"Be-Zn-Ge", 
+				"Li-Pm-Gd", 
+				"Na-Mg-Zr", 
+				"Fe-Ag-Rh", 
+				"Tl-Zn-Cd", 
+				"Nd-Sm-Ho", 
+				"Y-Ta-Mo", 
+				"Gd-Lu-Ta", 
+				"Li-Tb-Gd", 
+				"Be-Ga-Si", 
+				"Mn-Cu-Ru", 
+				"Pr-Cr-W", 
+				"Ho-Cr-W", 
+				"Na-Li-Mg", 
+				"Re-Ru-Pt", 
+				"La-Tb-Ce", 
+				"Cr-Pb-W", 
+				"Pr-Er-Lu", 
+				"Ag-Pd-Ru", 
+				"Ca-Nd-Lu", 
+				"Mg-Cr-Cd", 
+				"Mn-Ni-Ag", 
+				"Cu-B-Pb", 
+				"Li-Er-V", 
+				"Ni-Os-Rh", 
+				"Fe-Ag-Pd", 
+				"Li-Er-Pu", 
+				"Sm-Y-U", 
+				"Dy-Tm-Cr", 
+				"Na-Nb-Mo", 
+				"Tb-Zr-Ta", 
+				"Rb-Na-Ta", 
+				"Gd-Y-Er", 
+				"Pr-Er-Tm", 
+				"Pr-Sm-Ho", 
+				"Gd-Tm-V", 
+				"Zr-Ta-Nb", 
+				"Cr-Hg-Bi", 
+				"Yb-Er-Sc", 
+				"Ca-Pm-Pu", 
+				"Co-Cu-Ni", 
+				"Gd-Ho-Lu", 
+				"Sc-Ti-Cr", 
+				"Ga-Si-Bi", 
+				"Li-Lu-Mo", 
+				"Ba-Sr-Mn", 
+				"Li-Pm-Sm", 
+				"Na-Li-Zr", 
+				"Gd-Sc-V", 
+				"Yb-Er-Mo", 
+				"Ho-Lu-Zr", 
+				"Nd-Sc-Cr", 
+				"Ca-Ce-Ti", 
+				"Pm-Gd-Ho", 
+				"La-Y-Cr", 
+				"Ca-Yb-Y", 
+				"Pr-Th-U", 
+				"Tm-Cr-Mo", 
+				"Rb-Li-Ta", 
+				"Gd-Y-Tm", 
+				"Yb-Pr-U", 
+				"Ce-Hf-Ta", 
+				"Nd-Y-Ho", 
+				"Er-Ti-Mo", 
+				"Dy-Th-Mo", 
+				"La-Pr-W", 
+				"Yb-Ho-Lu", 
+				"La-Yb-Nb", 
+				"Co-Rh-C", 
+				"La-Eu-Ta", 
+				"Y-Cr-W", 
+				"K-Zr-Ti", 
+				"Pr-Sm-U", 
+				"Eu-Sc-Cr", 
+				"Ga-Sn-B", 
+				"Cu-Ag-Rh", 
+				"Ce-Gd-Zr", 
+				"Tl-Ga-B", 
+				"Gd-Er-Zr", 
+				"Ti-Nb-Mo", 
+				"Ga-Sn-Pb", 
+				"La-Eu-Mn", 
+				"Tm-Lu-Mo", 
+				"Pm-Tm-Pu", 
+				"Be-Al-Sn", 
+				"Dy-Lu-Ti", 
+				"Yb-Tm-Cr", 
+				"Na-Ta-Nb", 
+				"Li-Gd-Y", 
+				"Na-Sr-Mo", 
+				"Ba-La-Ti", 
+				"Sm-Mo-W", 
+				"La-Tm-Th", 
+				"K-Cr-Fe", 
+				"Y-Ta-Nb", 
+				"Ce-Pm-Y", 
+				"Sm-Tm-Lu", 
+				"Er-Th-Nb", 
+				"Co-Os-Rh", 
+				"Sm-Dy-Lu", 
+				"Sr-Ca-Y", 
+				"Pm-Er-Th", 
+				"Yb-V-W", 
+				"La-Gd-W", 
+				"Tb-Ta-Ti", 
+				"Cs-Mg-Cr", 
+				"Ca-Nd-Y", 
+				"Pr-Ta-Mo", 
+				"Pm-Sm-Th", 
+				"La-Sm-Th", 
+				"Zr-Ti-Nb", 
+				"Cr-Cu-W", 
+				"Cu-Ni-Pb", 
+				"Sm-Pu-Cr", 
+				"Ce-Pr-Er", 
+				"Ce-Lu-Pu", 
+				"La-V-Fe", 
+				"Sm-Y-Ho", 
+				"Ce-Er-Pu", 
+				"Ce-Y-Hf", 
+				"Ca-Pm-Nd", 
+				"Ce-Pr-Ho", 
+				"Ce-Lu-W", 
+				"Re-Ru-Rh", 
+				"Cu-Os-Pt", 
+				"Co-Ni-Ir", 
+				"La-Ta-Ti", 
+				"Ba-V-Fe", 
+				"Gd-Th-W", 
+				"Li-Er-Nb", 
+				"La-Yb-Er", 
+				"Ce-Y-Ta", 
+				"Y-Lu-Ti", 
+				"Tm-Th-Mo", 
+				"La-Eu-Zr", 
+				"Pr-Dy-Mo", 
+				"Ca-Yb-Mn", 
+				"La-U-Ta", 
+				"Pr-U-W", 
+				"Nd-Lu-Ti", 
+				"Pu-V-W", 
+				"Li-Nd-Gd", 
+				"Li-Ce-Hf", 
+				"Tl-Cu-Mo", 
+				"Al-Zn-Bi", 
+				"Er-Sc-Ti", 
+				"K-Mg-Ti", 
+				"Li-Ce-Pu", 
+				"Na-Nb-V", 
+				"Ba-La-Pm", 
+				"Tb-Th-Ta", 
+				"Pr-Ho-Lu", 
+				"Tb-Yb-Ti", 
+				"Sm-Y-W", 
+				"Tb-Dy-Zr", 
+				"Ag-Ge-Au", 
+				"Nd-Er-Cr", 
+				"Yb-Y-Zr", 
+				"Dy-Ho-Cr", 
+				"Gd-Ta-W", 
+				"Nd-Sm-Mo", 
+				"Tb-Sm-Ta", 
+				"Li-Lu-Cr", 
+				"Y-Hf-Zr", 
+				"Eu-Sc-U", 
+				"Ti-Cr-W", 
+				"Re-Ag-Bi", 
+				"Pm-Er-Mo", 
+				"Ca-Tb-Tm", 
+				"Ta-Mo-W", 
+				"Tb-Er-Cr", 
+				"Li-La-Tb", 
+				"Tl-Ag-Mo", 
+				"Tb-Y-Mo", 
+				"Er-Zr-Sc", 
+				"Fe-Ni-Ag", 
+				"La-Er-Tm", 
+				"Co-Re-Ir", 
+				"Li-Cr-Ni", 
+				"V-Ag-Pd", 
+				"Zn-Sn-Pb", 
+				"Ce-Nd-W", 
+				"La-Cr-W", 
+				"Ca-Eu-Sc", 
+				"Ho-Er-Cr", 
+				"Yb-Zr-Nb", 
+				"Eu-V-Mo", 
+				"Ni-Ir-C", 
+				"Y-Tm-Cr", 
+				"Pr-Pu-Cr", 
+				"Ho-Th-Ta", 
+				"Pr-Tm-Lu", 
+				"Pr-Er-Ti", 
+				"Pr-Pu-Ta", 
+				"Tb-Ce-Pm", 
+				"Ce-Mo-W", 
+				"Li-Tb-Pu", 
+				"Mn-Tl-Ag", 
+				"Ba-La-Sc", 
+				"Th-Cr-W", 
+				"Li-La-Cr", 
+				"Mn-Fe-Cu", 
+				"Ho-Tm-Pu", 
+				"K-Rb-V", 
+				"La-Gd-Tm", 
+				"Cu-Ag-Ru", 
+				"Ce-Y-Sc", 
+				"Ho-Zr-Sc", 
+				"Ce-Tm-Lu", 
+				"Co-Ru-C", 
+				"Ce-Ti-V", 
+				"Yb-Hf-Sc", 
+				"Tl-Si-Pb", 
+				"Tb-Yb-Nd", 
+				"Rb-Li-Cr", 
+				"Co-Ni-C", 
+				"Co-Ir-Ru", 
+				"Gd-Lu-Pu", 
+				"Gd-Dy-Zr", 
+				"Mn-Cu-Ni", 
+				"Cu-Mo-Au", 
+				"Tb-Pr-Tm", 
+				"Li-Mg-V", 
+				"Yb-Pr-Y", 
+				"Li-Sm-Mo", 
+				"Li-Tb-Y", 
+				"Sm-Nb-Mo", 
+				"Ba-La-Yb", 
+				"La-Dy-W", 
+				"Zn-Si-Sn", 
+				"Ca-Y-Pu", 
+				"U-Ta-Ti", 
+				"Pr-Lu-V", 
+				"Si-Bi-Sb", 
+				"Li-Ce-V", 
+				"Cu-Re-Bi", 
+				"Ba-Ca-Sc", 
+				"La-Lu-Nb", 
+				"Zn-Cd-B", 
+				"In-Ga-Si", 
+				"Dy-Er-Th", 
+				"Cr-Hg-Pb", 
+				"Yb-Dy-Y", 
+				"Eu-Y-Nb", 
+				"Mn-Co-Au", 
+				"Yb-Er-V", 
+				"Nb-V-W", 
+				"Yb-Nd-V", 
+				"Yb-Th-Ti", 
+				"K-Rb-Mg", 
+				"Ce-Gd-Sc", 
+				"Dy-Lu-W", 
+				"V-Fe-Cu", 
+				"Yb-Zr-Sc", 
+				"La-Ce-Y", 
+				"Ni-Pd-Ru", 
+				"La-Pr-Gd", 
+				"La-Ce-Pr", 
+				"Eu-Th-Mo", 
+				"Nd-Ho-Sc", 
+				"Hf-Ti-Nb", 
+				"Tb-Yb-Th", 
+				"Tb-Pr-Ti", 
+				"Er-Pu-Nb", 
+				"Re-Hg-Ru", 
+				"Ba-Yb-Mn", 
+				"Lu-Zr-Nb", 
+				"Nd-Y-Zr", 
+				"Rb-Na-Li", 
+				"Sm-Dy-Er", 
+				"U-Nb-W", 
+				"Ce-Lu-Zr", 
+				"Pd-Rh-C", 
+				"Tb-Ce-Sm", 
+				"Eu-Cr-Mo", 
+				"Y-Ti-Mo", 
+				"Li-Ce-Lu", 
+				"Yb-Gd-Pu", 
+				"Cd-B-Pb", 
+				"Th-Ti-Mo", 
+				"Ba-La-Nd", 
+				"Er-Lu-V", 
+				"K-Rb-Cr", 
+				"Cd-Fe-Bi", 
+				"Al-Tl-Cd", 
+				"Pr-Nd-Gd", 
+				"Nd-Ho-Lu", 
+				"Ce-Ho-Tm", 
+				"La-Pu-Nb", 
+				"Ge-Au-C", 
+				"Ca-Y-Lu", 
+				"Yb-Gd-Y", 
+				"Na-V-Mo", 
+				"Y-Ho-Th", 
+				"Ba-Sr-Y", 
+				"Tb-Dy-Lu", 
+				"La-Gd-Dy", 
+				"Y-Er-Mo", 
+				"Ce-Sm-Pu", 
+				"V-Pd-Ru", 
+				"Li-Tb-Er", 
+				"Yb-Pr-Ta", 
+				"Yb-Gd-Er", 
+				"Y-Ho-Cr", 
+				"Pm-Cr-Mo", 
+				"Eu-Th-Sc", 
+				"La-Er-Ta", 
+				"Ba-Y-Mo", 
+				"Co-Hg-Ir", 
+				"Lu-Pu-Ti", 
+				"Y-Tm-Lu", 
+				"Ba-Ca-Nd", 
+				"K-Li-Mo", 
+				"V-Hg-Bi", 
+				"Tb-Gd-Ta", 
+				"La-Pm-Lu", 
+				"Ir-Ru-C", 
+				"Ca-Y-Ti", 
+				"Tb-Yb-Cr", 
+				"Li-Sc-Mo", 
+				"Er-Hf-Ti", 
+				"La-Ta-W", 
+				"La-Dy-Ti", 
+				"Ce-Nd-Sc", 
+				"Co-Pt-C", 
+				"Tm-Lu-Ta", 
+				"Na-Mg-V", 
+				"Ce-Eu-Cr", 
+				"Cs-Li-Mg", 
+				"Gd-Pu-Mo", 
+				"Re-Pd-Rh", 
+				"Yb-Nd-Tm", 
+				"Mg-U-V", 
+				"Fe-Pd-Ru", 
+				"K-Rb-Hf", 
+				"Ba-Ca-V", 
+				"Rb-Mg-V", 
+				"La-Sm-Cr", 
+				"Y-Cr-Mo", 
+				"Cs-Ti-V", 
+				"Tb-Th-Ti", 
+				"Pm-Gd-Er", 
+				"La-Er-Th", 
+				"Tb-Gd-Sc", 
+				"Ce-Pm-Lu", 
+				"Pm-Sm-Pu", 
+				"Hf-Sc-Ti", 
+				"Y-Pu-Cr", 
+				"Be-Zn-In", 
+				"Yb-U-Ta", 
+				"Nd-Y-Ta", 
+				"Ce-Hf-Zr", 
+				"Cs-K-Mo", 
+				"Ag-Pd-C", 
+				"Sm-Tm-Mo", 
+				"Ho-Cr-Mo", 
+				"Yb-U-Cr", 
+				"Tb-Lu-Th", 
+				"Yb-Th-Mo", 
+				"Ca-Tb-Ce", 
+				"Tb-Dy-Mo", 
+				"Zn-Cd-Si", 
+				"Pm-Pu-V", 
+				"Yb-Nb-Mo", 
+				"Hf-U-Ta", 
+				"Li-Sm-Er", 
+				"Li-Zr-Ti", 
+				"Na-Ta-Cu", 
+				"Pr-Er-Th", 
+				"V-In-Mo", 
+				"Er-Th-W", 
+				"Pm-Dy-Th", 
+				"Tb-Gd-Cr", 
+				"Nd-Zr-Sc", 
+				"Sr-Ca-Ti", 
+				"Tm-Th-Cr", 
+				"Gd-Sc-Cr", 
+				"Li-Gd-Lu", 
+				"Ag-Os-Rh", 
+				"La-U-V", 
+				"Th-Ta-V", 
+				"Co-Pd-Pt", 
+				"Ce-Ho-Sc", 
+				"Cu-Re-Rh", 
+				"Yb-Sc-Ti", 
+				"Li-La-Nb", 
+				"Cu-Ag-Au", 
+				"Eu-Sc-Nb", 
+				"Rb-Na-Hf", 
+				"Co-Rh-Au", 
+				"Tb-Ho-V", 
+				"Ce-Gd-Er", 
+				"Tb-Ce-Ti", 
+				"Gd-Dy-Er", 
+				"Zn-In-Ge", 
+				"Ce-Nb-Mo", 
+				"Y-Ho-Sc", 
+				"Pm-Pr-Er", 
+				"Li-Pr-Hf", 
+				"Er-Lu-Cr", 
+				"Li-Gd-Cr", 
+				"Li-Gd-Mo", 
+				"Yb-Lu-Th", 
+				"Pu-Nb-W", 
+				"La-Tb-Lu", 
+				"Li-La-Tm", 
+				"Cu-Ni-Ag", 
+				"Yb-Pr-Th", 
+				"La-Sc-W", 
+				"Fe-Ag-C", 
+				"Mg-Mn-Fe", 
+				"Fe-Ag-Ru", 
+				"Nd-Cr-Mo", 
+				"La-Pr-Ti", 
+				"Cr-Cu-Mo", 
+				"Tb-Er-Sc", 
+				"Li-Lu-Nb", 
+				"Y-Lu-V", 
+				"Lu-Ti-V", 
+				"Sn-B-Pb", 
+				"Li-Pr-Er", 
+				"Re-Hg-Ir", 
+				"Yb-Dy-Tm", 
+				"Tb-Pm-V", 
+				"Cs-K-Mg", 
+				"Ni-Ir-Pt", 
+				"Ca-Sc-Mo", 
+				"Eu-Y-Th", 
+				"Zr-Sc-Ti", 
+				"Yb-Pu-W", 
+				"K-Li-Zr", 
+				"Yb-Pr-Gd", 
+				"Y-Pu-Nb", 
+				"Ce-Th-W", 
+				"Ce-Y-Er", 
+				"Nb-V-Bi", 
+				"V-Cu-Bi", 
+				"Y-U-Nb", 
+				"Fe-Cu-Rh", 
+				"Re-Pt-Rh", 
+				"Pu-Ti-Mo", 
+				"Re-Ir-Pt", 
+				"Ca-Yb-Pu", 
+				"Nd-Sm-V", 
+				"Na-Sr-Ca", 
+				"Ho-Pu-Ta", 
+				"Ce-Ho-Cr", 
+				"Ce-Zr-Nb", 
+				"Pm-Th-V", 
+				"La-Gd-Lu", 
+				"Dy-Lu-Zr", 
+				"Ta-Ti-W", 
+				"Nd-Dy-Ho", 
+				"Y-Ho-Ta", 
+				"Sr-Y-Mo", 
+				"La-Pr-Th", 
+				"Cr-Cu-Bi", 
+				"Pm-Lu-Mo", 
+				"La-Pm-V", 
+				"Sm-Er-Pu", 
+				"Y-Pu-Mo", 
+				"Ba-Sr-Ti", 
+				"Ta-V-Cu", 
+				"Ga-Hg-B", 
+				"La-Pu-Cr", 
+				"Nd-Pu-Ta", 
+				"Li-Sc-Ta", 
+				"Ca-Eu-Mn", 
+				"Pr-Y-Er", 
+				"Lu-Pu-W", 
+				"Dy-Ti-Cr", 
+				"Ce-Y-Tm", 
+				"Na-Zr-Nb", 
+				"La-Lu-Th", 
+				"Tb-Nd-Er", 
+				"Eu-Sc-Mo", 
+				"Ca-Ce-Sc", 
+				"Pr-Lu-W", 
+				"Pm-Ho-Pu", 
+				"Nd-Ta-Ti", 
+				"La-Lu-V", 
+				"Co-Pd-Au", 
+				"Pr-Sm-Tm", 
+				"Li-Mg-Mn", 
+				"Lu-Cr-W", 
+				"Eu-Hf-Th", 
+				"Li-Gd-Pu", 
+				"Er-Pu-Ta", 
+				"Yb-Nd-Y", 
+				"La-Eu-Mo", 
+				"Gd-Ho-Pu", 
+				"Cs-Li-Nb", 
+				"La-Ho-Th", 
+				"Rb-Zr-Nb", 
+				"La-Pr-Mo", 
+				"Nd-Gd-Ta", 
+				"Th-U-Nb", 
+				"Na-Mg-Cr", 
+				"Ce-Sc-Nb", 
+				"Eu-U-V", 
+				"Na-Be-Al", 
+				"Yb-Lu-Cr", 
+				"Gd-Dy-Th", 
+				"Pm-Sm-Mo", 
+				"Cs-V-Mo", 
+				"Pm-Pu-Cr", 
+				"Gd-Y-Th", 
+				"Cs-K-V", 
+				"Tb-Yb-V", 
+				"K-Ta-Mo", 
+				"La-Yb-Mn", 
+				"Rb-Li-Hf", 
+				"Li-Gd-Er", 
+				"La-Zr-Ti", 
+				"Ce-U-Ti", 
+				"Ba-Gd-Y", 
+				"Ba-Y-Ti", 
+				"Cu-Ni-C", 
+				"Nd-Ti-V", 
+				"Cd-Si-Pb", 
+				"Nd-Tm-Pu", 
+				"Tb-Er-Zr", 
+				"Pr-Ho-Er", 
+				"U-Cr-W", 
+				"Nd-U-Cr", 
+				"Fe-Pd-C", 
+				"Na-Li-Fe", 
+				"Ba-Ca-Yb", 
+				"Sm-Er-Tm", 
+				"Ca-La-Eu", 
+				"Ca-La-Sc", 
+				"Mn-Co-Pb", 
+				"Nd-Sm-Tm", 
+				"Tc-Pd-Pt", 
+				"Cs-Ta-Ti", 
+				"Ca-Eu-Mo", 
+				"Li-La-Er", 
+				"Ni-Ir-Ru", 
+				"Fe-Ni-Rh", 
+				"Pu-Nb-Mo", 
+				"Yb-Y-Nb", 
+				"Eu-Y-Hf", 
+				"Re-Ni-Pd", 
+				"Pm-Sm-Dy", 
+				"Cu-Re-Ni", 
+				"Lu-Nb-V", 
+				"Tm-Lu-Cr", 
+				"Ce-V-W", 
+				"Ca-Ce-Lu", 
+				"Ce-Sm-Gd", 
+				"Re-Tc-Ni", 
+				"Ag-Ru-Au", 
+				"Mg-Cr-Fe", 
+				"Ba-Ca-La", 
+				"Ca-Yb-Tm", 
+				"Ni-Os-Pt", 
+				"Tl-Cd-Ge", 
+				"Mg-Zr-Ti", 
+				"Ba-Sc-V", 
+				"Fe-Ru-Rh", 
+				"Pr-Hf-Ta", 
+				"Nd-Y-Er", 
+				"Ho-Tm-Cr", 
+				"Ce-Pu-V", 
+				"Ce-Y-Ho", 
+				"Eu-U-Cr", 
+				"Tb-Sm-Dy", 
+				"Ce-Pr-Ta", 
+				"Sc-Ti-W", 
+				"Sm-Dy-Y", 
+				"Pm-Dy-Mo", 
+				"Er-Lu-Ti", 
+				"La-Gd-Th", 
+				"La-Mn-V", 
+				"Ba-Ti-Mo", 
+				"Tb-Ce-Pr", 
+				"Ag-Ru-Rh", 
+				"Ba-Pr-Y", 
+				"Yb-Dy-V", 
+				"La-Pr-Sm", 
+				"Li-Ta-Cu", 
+				"La-Ho-Er", 
+				"Tl-V-In", 
+				"Tb-Ho-Tm", 
+				"La-Y-W", 
+				"Ru-Pt-Rh", 
+				"Sm-Y-Lu", 
+				"Tm-Lu-V", 
+				"Ce-Er-Nb", 
+				"Cr-W-Au", 
+				"Yb-U-Ti", 
+				"La-Eu-V", 
+				"Pr-Nd-U", 
+				"Li-Nb-Cu", 
+				"Cu-Pt-W", 
+				"Ni-Ag-Os", 
+				"Yb-Hf-Zr", 
+				"Li-Pm-Pr", 
+				"Cs-Nb-V", 
+				"Y-Ti-W", 
+				"Fe-Ag-Os", 
+				"Hf-Ta-Ti", 
+				"La-Sm-Er", 
+				"Er-Hf-Zr", 
+				"Ir-Os-Rh", 
+				"Dy-Ho-Er", 
+				"Ba-Nd-V", 
+				"Ag-Pd-Au", 
+				"K-Rb-Nb", 
+				"Pr-Sm-Lu", 
+				"Nd-Dy-Th", 
+				"Li-Pm-Tm", 
+				"Ba-Yb-Nd", 
+				"Tb-Pm-Er", 
+				"La-Pm-Pu", 
+				"Sm-Dy-Th", 
+				"V-Cr-Fe", 
+				"Tb-Pm-Pr", 
+				"Ho-Pu-Mo", 
+				"Ba-Yb-Eu", 
+				"La-Sm-Mo", 
+				"Li-Tb-Cr", 
+				"Tb-Er-Ti", 
+				"Na-Mg-Nb", 
+				"Pr-Mo-W", 
+				"Ce-Tm-Ta", 
+				"Er-Ta-Nb", 
+				"Gd-Ho-Th", 
+				"Tb-Ho-Mo", 
+				"Nd-Gd-Ho", 
+				"Li-Pr-Sm", 
+				"Cr-Ag-Au", 
+				"Lu-Pu-Cr", 
+				"Nb-Hg-Mo", 
+				"Tb-Gd-Er", 
+				"La-Yb-Pu", 
+				"Fe-Ir-Ru", 
+				"Sm-Tm-Pu", 
+				"Th-Sc-W", 
+				"Tb-Gd-Lu", 
+				"Tb-Pm-Sm", 
+				"Pr-Y-Ti", 
+				"Er-Cr-W", 
+				"Th-Sc-Ti", 
+				"Y-Tm-Ta", 
+				"La-Lu-Ta", 
+				"Ga-Hg-Ge", 
+				"U-Ti-V", 
+				"Ce-Pr-Th", 
+				"Ho-Th-W", 
+				"Pm-Gd-Y", 
+				"Li-Ho-Er", 
+				"Cr-Fe-Ni", 
+				"Rb-Ta-Mo", 
+				"Ce-Pr-Tm", 
+				"Li-Pr-Ho", 
+				"Yb-Ta-Ti", 
+				"La-Lu-Zr", 
+				"Pm-V-Cr", 
+				"Hg-Bi-Sb", 
+				"Ce-Nb-V", 
+				"K-V-Cr", 
+				"Ca-Eu-Y", 
+				"Y-Sc-V", 
+				"Nd-Y-V", 
+				"Ag-Ir-C", 
+				"Ni-Ru-Rh", 
+				"Li-Nd-Pu", 
+				"Cs-Rb-Li", 
+				"Na-Li-V", 
+				"Gd-V-Cr", 
+				"Co-Ag-Ir", 
+				"B-Sb-Pb", 
+				"Pr-Y-Tm", 
+				"La-Zr-Nb", 
+				"Tb-Pu-V", 
+				"Re-Ni-Ir", 
+				"Yb-Nb-W", 
+				"Pm-Er-Pu", 
+				"La-Y-Tm", 
+				"Be-Si-Sn", 
+				"Cr-Mo-W", 
+				"Ce-Lu-Ta", 
+				"Ce-Lu-Th", 
+				"Li-Y-Ti", 
+				"Tb-Ho-Lu", 
+				"Tb-Sm-Th", 
+				"Pm-Nd-Ho", 
+				"Sc-U-V", 
+				"Li-Nd-Ho", 
+				"La-Nd-W", 
+				"La-Yb-Pr", 
+				"Ce-Er-Ta", 
+				"Rb-Ti-Nb", 
+				"La-Cr-Fe", 
+				"Ce-Nd-V", 
+				"Zr-Ta-Ti", 
+				"Lu-V-W", 
+				"Sm-Dy-Ho", 
+				"Nd-U-V", 
+				"Nd-Dy-Ta", 
+				"Pm-Ho-Lu", 
+				"Na-Ti-Mo", 
+				"Pr-Er-V", 
+				"La-Ti-Cr", 
+				"Al-Ga-Pb", 
+				"La-Pm-Dy", 
+				"Sm-Lu-Pu", 
+				"Gd-Er-Ta", 
+				"Nd-Sm-Y", 
+				"Tb-Pm-Nd", 
+				"Al-Hg-Bi", 
+				"V-Hg-Ru", 
+				"Pm-Pr-Pu", 
+				"Ce-Th-Nb", 
+				"K-Hf-Ta", 
+				"Pr-Dy-Ta", 
+				"Li-Y-Cr", 
+				"La-Er-Ti", 
+				"Dy-Y-V", 
+				"Lu-Pu-Ta", 
+				"Nd-Tm-V", 
+				"Pr-Lu-Ta", 
+				"La-Pm-Gd", 
+				"Tl-Cd-B", 
+				"Yb-Y-Ta", 
+				"Os-Pd-Ru", 
+				"Sm-Dy-V", 
+				"Pu-Np-Mo", 
+				"Nb-V-Hg", 
+				"Pr-Dy-Er", 
+				"Nd-Tm-Th", 
+				"Ho-Sc-Cr", 
+				"Zr-Sc-Ta", 
+				"Pm-Tm-Lu", 
+				"V-Ag-Mo", 
+				"Pr-Dy-Lu", 
+				"Zn-Cd-Pb", 
+				"Li-Sm-Pu", 
+				"La-Tb-Pr", 
+				"Cr-Ni-Ag", 
+				"La-U-W", 
+				"La-Ce-Nd", 
+				"Yb-Lu-Ti", 
+				"Yb-Tm-Lu", 
+				"Na-Ca-Ti", 
+				"Co-Hg-Pb", 
+				"Pm-Pr-V", 
+				"Be-Si-Ge", 
+				"Sr-Y-Ti", 
+				"Yb-Gd-Sc", 
+				"V-Pd-W", 
+				"Re-Ir-Os", 
+				"Ce-Gd-Lu", 
+				"Li-Ho-Pu", 
+				"Be-Zn-Ga", 
+				"Y-U-W", 
+				"Ga-Hg-Bi", 
+				"Ba-Pr-Gd", 
+				"La-Tm-W", 
+				"Li-Tb-Ce", 
+				"Yb-Eu-Hf", 
+				"Si-Ag-Pb", 
+				"Ce-Cr-W", 
+				"Gd-Mo-W", 
+				"Th-Sc-Mo", 
+				"Ag-Ir-Os", 
+				"Cu-Re-Tc", 
+				"Ce-Pm-Th", 
+				"Ba-Fe-Ni", 
+				"Ir-Os-Pd", 
+				"Cr-Cu-Pb", 
+				"La-Ce-Pm", 
+				"Li-La-Y", 
+				"Ca-Yb-Ti", 
+				"Fe-Pd-Rh", 
+				"Ce-Eu-W", 
+				"Cs-Pr-Cr", 
+				"Nb-Cu-W", 
+				"Fe-Cu-Bi", 
+				"Tb-Er-Mo", 
+				"La-Th-Nb", 
+				"Sm-Er-Lu", 
+				"Yb-Ti-Nb", 
+				"Al-Zn-Si", 
+				"Yb-Ho-Zr", 
+				"Cs-K-Li", 
+				"Pr-Hf-Ti", 
+				"Fe-Co-Bi", 
+				"Tb-Pm-Cr", 
+				"Lu-Th-Ti", 
+				"Y-Ho-W", 
+				"Li-Ce-Pr", 
+				"Sm-Y-V", 
+				"Ni-Pd-C", 
+				"Sc-Ta-Ti", 
+				"Zn-In-Si", 
+				"Y-Lu-Th", 
+				"Ce-Eu-Mo", 
+				"Yb-Gd-Cr", 
+				"Tb-Tm-Cr", 
+				"Yb-Th-Ta", 
+				"Tb-V-W", 
+				"Ta-Tl-Cu", 
+				"Hg-Mo-Pb", 
+				"Sm-Er-Th", 
+				"Co-Re-Rh", 
+				"Co-Ag-Rh", 
+				"La-Tm-Cr", 
+				"Hf-Zr-Sc", 
+				"Fe-Ni-Ru", 
+				"Nb-Mo-W", 
+				"Gd-Th-Sc", 
+				"Pd-Pt-C", 
+				"Pm-Dy-Er", 
+				"Co-Ni-Ag", 
+				"Gd-Dy-Tm", 
+				"Tm-Pu-V", 
+				"Nd-Dy-Lu", 
+				"Dy-Er-Zr", 
+				"Tb-Er-V", 
+				"Nd-Tm-Ta", 
+				"Sm-Er-Mo", 
+				"Li-La-Zr", 
+				"Th-Nb-W", 
+				"Tb-Ce-Sc", 
+				"Gd-Ho-Sc", 
+				"Pr-Dy-Cr", 
+				"Hf-Zr-Nb", 
+				"Ca-Pu-Mo", 
+				"Ti-Nb-W", 
+				"Co-Ir-C", 
+				"Ba-Sr-Nd", 
+				"Ba-Yb-Mo", 
+				"Yb-Th-Nb", 
+				"Li-Nd-Ta", 
+				"Ce-Er-V", 
+				"Co-Re-Ag", 
+				"Yb-Er-Lu", 
+				"Re-Pd-Pt", 
+				"Ni-Pd-Au", 
+				"Ho-Sc-Ta", 
+				"Cr-Fe-Au", 
+				"Tb-Sm-Er", 
+				"Ce-Gd-Pu", 
+				"Li-Ce-Pm", 
+				"Nd-Y-Ti", 
+				"Li-Nd-Y", 
+				"Nd-Y-Tm", 
+				"La-Ho-Pu", 
+				"La-Ce-Zr", 
+				"La-Ti-W", 
+				"Ag-Os-Ru", 
+				"Pt-W-Au", 
+				"Cu-Bi-Os", 
+				"Pr-Nd-Ti", 
+				"Fe-Co-Os", 
+				"Li-Nb-V", 
+				"Y-Sc-Cr", 
+				"Be-Si-Bi", 
+				"Li-Hf-Ta", 
+				"Th-V-Cr", 
+				"Ho-Mo-W", 
+				"Pm-Y-Cr", 
+				"Th-Zr-Ti", 
+				"Gd-Ho-V", 
+				"Yb-Pu-V", 
+				"Tm-Ti-W", 
+				"Cs-Mg-Ti", 
+				"La-Gd-Mo", 
+				"Li-Nd-Sc", 
+				"Co-Ag-Pd", 
+				"Ba-V-Mo", 
+				"Pr-Gd-W", 
+				"Ce-U-V", 
+				"Tb-Dy-Ho", 
+				"Sr-Ca-Sc", 
+				"Nd-Sc-U", 
+				"Li-Y-Ta", 
+				"Y-Th-Cr", 
+				"Cr-Cu-Ag", 
+				"Fe-Os-Pd", 
+				"Pm-Sm-Cr", 
+				"Cu-Pb-W", 
+				"Nd-Ho-Th", 
+				"Pm-Nd-V", 
+				"Ce-Nd-Lu", 
+				"Fe-Ni-Pb", 
+				"U-V-W", 
+				"Nd-Ta-V", 
+				"Dy-Pu-Zr", 
+				"Ce-Pu-Nb", 
+				"La-Ce-Ta", 
+				"Tm-Lu-Th", 
+				"La-Ho-Cr", 
+				"Ba-La-Fe", 
+				"Tm-Ti-Cr", 
+				"Eu-Y-Pu", 
+				"Yb-Y-Hf", 
+				"La-Yb-Mo", 
+				"Hf-Th-Nb", 
+				"Nd-Sm-Pu", 
+				"Na-Hf-Mg", 
+				"Fe-Ag-Au", 
+				"Li-Pu-Nb", 
+				"Pr-Sm-Pu", 
+				"Tb-Er-Lu", 
+				"Sm-Gd-Er", 
+				"Co-Cu-Au", 
+				"Re-Ag-Os", 
+				"Ru-Rh-Au", 
+				"Mn-Tl-Ni", 
+				"Pr-Er-Ta", 
+				"La-Cr-Mo", 
+				"Dy-Pu-Ta", 
+				"Ta-In-Mo", 
+				"Be-In-Ge", 
+				"Y-Lu-Cr", 
+				"Cd-Bi-Mo", 
+				"Yb-Dy-Mo", 
+				"Na-Hf-Ti", 
+				"Ba-Nd-Gd", 
+				"Ca-Mn-Co", 
+				"Li-Nd-Zr", 
+				"Co-Os-Pt", 
+				"Co-Ru-Pt", 
+				"Yb-Pu-Ta", 
+				"K-Ta-Nb", 
+				"Tb-Yb-Ta", 
+				"Tb-Yb-Pr", 
+				"Sc-Ti-Mo", 
+				"Fe-Co-Ir", 
+				"Fe-Cu-Ag", 
+				"Hf-Th-Ti", 
+				"Tb-Y-Sc", 
+				"Hg-Ge-Pb", 
+				"K-Nb-V", 
+				"Li-La-Ta", 
+				"Er-Th-Zr", 
+				"K-Zr-Ta", 
+				"Ce-Y-U", 
+				"Gd-Lu-Mo", 
+				"Li-Tb-Tm", 
+				"Fe-Cu-Ni", 
+				"Cu-Os-Pd", 
+				"Tb-Tm-Th", 
+				"Pr-Tm-V", 
+				"Li-Y-Nb", 
+				"Dy-Ho-Th", 
+				"Na-Cu-Mo", 
+				"Yb-Eu-Cr", 
+				"Li-Ti-Cr", 
+				"Cs-Hf-Ta", 
+				"Co-Cu-Pt", 
+				"Rb-Ti-Mo", 
+				"Al-Ga-Bi", 
+				"V-Cr-W", 
+				"Pm-Gd-Lu", 
+				"Li-La-Pu", 
+				"Ce-Ho-Er", 
+				"Ce-Hf-Nb", 
+				"Ag-Rh-Au", 
+				"Ce-Pu-Mo", 
+				"Bi-B-Sb", 
+				"Ho-Er-Zr", 
+				"La-Ta-V", 
+				"Tb-Dy-Tm", 
+				"Pm-Lu-V", 
+				"Tb-Tm-Mo", 
+				"Zn-Cd-Bi", 
+				"Ce-Nb-W", 
+				"Sm-Tm-V", 
+				"Th-U-W", 
+				"Tb-Nd-V", 
+				"Pr-Sm-Y", 
+				"La-Pr-Lu", 
+				"Ho-Sc-V", 
+				"Ag-Bi-Os", 
+				"Li-Tb-Nd", 
+				"Sr-Y-Sc", 
+				"Co-Re-Ni", 
+				"Y-Tm-V", 
+				"Ce-V-Mo", 
+				"Pm-Tm-Th", 
+				"Sm-Dy-Mo", 
+				"Pd-Ru-Rh", 
+				"Hg-Bi-Os", 
+				"Sc-U-Nb", 
+				"Yb-Pr-Pu", 
+				"Al-Tl-In", 
+				"Ho-Pu-V", 
+				"Rb-Zr-Ti", 
+				"Tm-Ti-Mo", 
+				"Pr-Sm-Gd", 
+				"Gd-Tm-Ta", 
+				"Mn-V-Ag", 
+				"Cr-Cd-Bi", 
+				"Tb-Ta-W", 
+				"V-Ag-Bi", 
+				"La-Ho-Lu", 
+				"La-Dy-Er", 
+				"Li-Gd-Tm", 
+				"Y-Er-V", 
+				"Li-Sc-Ti", 
+				"Np-Cr-Mo", 
+				"Ag-Mo-Pb", 
+				"Co-Hg-Bi", 
+				"Mn-Tl-V", 
+				"Eu-Y-Zr", 
+				"Cu-Ir-Os", 
+				"Tb-Gd-Ti", 
+				"Pr-Hf-Th", 
+				"Tb-Ce-Cr", 
+				"Ag-Ir-Rh", 
+				"Tl-Zn-In", 
+				"Li-Sm-Cr", 
+				"Nd-Sm-Lu", 
+				"Re-Ni-Rh", 
+				"Yb-Zr-Ti", 
+				"La-Dy-V", 
+				"Mn-Ru-Au", 
+				"Dy-Tm-Th", 
+				"Pr-Nd-V", 
+				"Sm-Ho-Th", 
+				"Eu-Nb-Mo", 
+				"Y-Er-Ta", 
+				"Ce-U-W", 
+				"Sn-Ge-B", 
+				"Nd-Ti-Mo", 
+				"Hf-Sc-U", 
+				"Tl-Ga-Ge", 
+				"Tm-Ta-Mo", 
+				"Fe-Ru-Au", 
+				"Ho-Er-Sc", 
+				"Yb-Th-W", 
+				"Nd-Er-Mo", 
+				"Cs-Rb-Ta", 
+				"Lu-Zr-Ti", 
+				"Zn-Ga-Ge", 
+				"Pr-Pu-Mo", 
+				"La-Eu-Pu", 
+				"Yb-U-W", 
+				"Yb-Gd-Th", 
+				"Tl-Ge-Pb", 
+				"Tb-Ce-Tm", 
+				"Gd-Lu-W", 
+				"La-Dy-Mo", 
+				"Co-Re-Pt", 
+				"Yb-Sc-Cr", 
+				"Al-Zn-Ge", 
+				"Tl-Ni-Pb", 
+				"K-Rb-Ti", 
+				"Y-Th-U", 
+				"Pm-Y-Er", 
+				"Ce-Sm-W", 
+				"La-Ho-V", 
+				"Ce-Y-W", 
+				"Na-Ta-Mo", 
+				"Tb-Ce-Er", 
+				"Sm-Gd-V", 
+				"Cs-Li-Cr", 
+				"Pr-Pu-Ti", 
+				"Dy-Zr-Ta", 
+				"Ca-Fe-Co", 
+				"Lu-Ta-W", 
+				"Al-Ga-Si", 
+				"Pr-Th-Ta", 
+				"Na-Li-Hf", 
+				"Ir-Ru-Rh", 
+				"Fe-Ru-C", 
+				"Ho-V-Mo", 
+				"Lu-Th-Mo", 
+				"Pu-Ta-V", 
+				"Lu-Th-Cr", 
+				"Ca-Tm-V", 
+				"La-Dy-Cr", 
+				"Ce-Sc-Cr", 
+				"Li-La-Sm", 
+				"Mn-V-Cu", 
+				"Ni-Ag-C", 
+				"Li-Tb-Sm", 
+				"Cs-Ta-Mo", 
+				"Li-Ho-Mo", 
+				"Cs-Pr-Hf", 
+				"Hf-Zr-Ti", 
+				"Sm-Th-U", 
+				"Pr-Er-Mo", 
+				"Yb-Dy-Ta", 
+				"Tb-Gd-Dy", 
+				"La-Yb-U", 
+				"Mn-Tl-Cu", 
+				"Yb-Pr-Ho", 
+				"La-Y-Ho", 
+				"Ce-Pr-Ti", 
+				"La-Nd-Th", 
+				"Ce-Y-Nb", 
+				"Ca-Lu-V", 
+				"Tb-Pr-V", 
+				"Dy-Er-Pu", 
+				"Ni-Pt-Rh", 
+				"Ni-Rh-C", 
+				"Hf-Mg-U", 
+				"Ca-Tm-Pu", 
+				"Al-Hg-Ge", 
+				"Nd-Ho-Mo", 
+				"Li-Sm-Ta", 
+				"Pm-Ho-Tm", 
+				"Ca-Yb-Sc", 
+				"Co-Cu-Pb", 
+				"Li-Tm-Lu", 
+				"Er-Sc-Mo", 
+				"Sr-Mn-V", 
+				"Pr-Gd-Cr", 
+				"Na-Li-Cr", 
+				"Na-V-Cu", 
+				"Na-Zr-Ti", 
+				"Pd-W-Au", 
+				"Li-Gd-Ta", 
+				"Li-Lu-Zr", 
+				"Rb-Li-Mg", 
+				"Co-Hg-Ru", 
+				"Dy-Y-Ta", 
+				"La-Nd-Tm", 
+				"Al-Sn-Pb", 
+				"Na-Zr-Ta", 
+				"Er-Tm-Ti", 
+				"Sr-Ca-Nd", 
+				"Rb-Ti-V", 
+				"Y-Nb-V", 
+				"Tb-Nd-Sc", 
+				"Rb-Na-Zr", 
+				"Cd-Ga-Si", 
+				"Ca-Tb-Yb", 
+				"Sn-Ge-Pb", 
+				"Yb-Gd-Zr", 
+				"Y-Ho-Lu", 
+				"Yb-Y-Cr", 
+				"Ce-Gd-Ho", 
+				"Ba-Sm-Gd", 
+				"Cr-Cd-Fe", 
+				"La-Y-Mo", 
+				"Ba-Mn-Ni", 
+				"Gd-Pu-Cr", 
+				"Tb-Th-W", 
+				"Ba-Mn-V", 
+				"Cu-Ni-Pt", 
+				"Lu-Ti-Cr", 
+				"Pr-Gd-Pu", 
+				"Er-Ti-Nb", 
+				"La-Nd-V", 
+				"Mn-Co-Ru", 
+				"Yb-Eu-Pu", 
+				"Li-Pm-Ho", 
+				"La-Sm-Lu", 
+				"La-Eu-Nb", 
+				"Sn-Ge-Bi", 
+				"La-Er-V", 
+				"Yb-Pr-Cr", 
+				"Ce-Lu-V", 
+				"Rb-Nb-Mo", 
+				"Tl-Ag-Ge", 
+				"Gd-Lu-Th", 
+				"Y-Er-Lu", 
+				"Tb-Lu-V", 
+				"Fe-Ir-Os", 
+				"Hg-Os-Ru", 
+				"Ba-Yb-Y", 
+				"Nd-Y-Mo", 
+				"Ce-Sm-Tm", 
+				"Ba-Pr-V", 
+				"La-Pr-Dy", 
+				"Rb-V-Mo", 
+				"Ba-Ca-Pm", 
+				"La-Tm-Pu", 
+				"Lu-Th-Nb", 
+				"Al-Ge-Bi", 
+				"Li-Y-Lu", 
+				"K-Mg-Zr", 
+				"Hg-Ir-Ru", 
+				"Nd-Th-Mo", 
+				"Cs-Ta-Nb", 
+				"Cu-Pd-W", 
+				"Yb-Dy-Cr", 
+				"Dy-Th-Cr", 
+				"Hg-Ge-Bi", 
+				"Cu-Ni-Pd", 
+				"Y-Ti-V", 
+				"Sm-Ho-V", 
+				"Dy-Y-W", 
+				"Tb-Nd-Ho", 
+				"Ta-Ti-Mo", 
+				"Tm-Lu-Ti", 
+				"Li-Tm-V", 
+				"Nd-Gd-Tm", 
+				"Na-Cr-Fe", 
+				"Li-Cr-Mo", 
+				"Tb-Pm-Mo", 
+				"Lu-Mo-W", 
+				"Th-Ta-Ti", 
+				"Cd-Ge-B", 
+				"Th-Ti-Nb", 
+				"Yb-Mo-W", 
+				"Nd-Lu-W", 
+				"Al-Cd-Pb", 
+				"Tb-Nd-Th", 
+				"Ag-Os-Pd", 
+				"Yb-Cr-W", 
+				"Ce-Zr-Sc", 
+				"Co-Hg-Os", 
+				"Ba-Sr-V", 
+				"Nd-Y-Cr", 
+				"Tb-Tm-Ta", 
+				"Tb-Er-Th", 
+				"Re-Ni-Ru", 
+				"Y-U-Ti", 
+				"Yb-Gd-Lu", 
+				"Sc-Ti-Nb", 
+				"Ce-Sm-Th", 
+				"Pr-Gd-Ti", 
+				"Nd-Y-Lu", 
+				"Dy-Y-Cr", 
+				"Ca-La-Pu", 
+				"Ce-Lu-Nb", 
+				"Cu-Ru-Rh", 
+				"Si-Sn-Pb", 
+				"Cu-Re-Ag", 
+				"Ga-Ge-Bi", 
+				"La-Eu-Th", 
+				"Tb-Ce-Nd", 
+				"Yb-Pr-Lu", 
+				"K-Ti-Nb", 
+				"K-V-Fe", 
+				"Lu-Pu-Mo", 
+				"Pm-Er-Cr", 
+				"Pr-Sm-V", 
+				"Al-Si-Pb", 
+				"Sm-Gd-Th", 
+				"Ni-Ir-Os", 
+				"Cu-Re-Ir", 
+				"Tl-Ge-B", 
+				"Ba-Pm-Gd", 
+				"Yb-Er-Pu", 
+				"Fe-Bi-Os", 
+				"Yb-Lu-W", 
+				"Cs-Pr-V", 
+				"Ca-Tb-Nd", 
+				"Li-Ho-Lu", 
+				"Tb-Er-Ta", 
+				"Ca-La-Mo", 
+				"Gd-Zr-Ti", 
+				"Gd-Ho-Tm", 
+				"Nd-Lu-Pu", 
+				"Tb-Yb-Zr", 
+				"La-U-Cr", 
+				"Pm-Th-Cr", 
+				"Ba-Ca-Eu", 
+				"La-Ce-V", 
+				"U-Nb-V", 
+				"Ca-Ce-Pm", 
+				"Ho-Er-Lu", 
+				"Y-Er-Th", 
+				"Gd-Tm-Pu", 
+				"Yb-Tm-Ta", 
+				"La-Eu-W", 
+				"Rb-Hf-Ti", 
+				"Li-Er-Ti", 
+				"Pm-Er-Lu", 
+				"Li-Hf-Sc", 
+				"Sr-V-Fe", 
+				"Pm-Tm-Mo", 
+				"Er-Th-Cr", 
+				"Ca-Lu-Ti", 
+				"Li-Y-Tm", 
+				"Ba-Ca-Ti", 
+				"Tb-Pm-Dy", 
+				"Sm-U-Cr", 
+				"Ce-Eu-Ta", 
+				"Nd-Y-Th", 
+				"Fe-Co-Ru", 
+				"Gd-Y-Ho", 
+				"Cs-Mg-Nb", 
+				"Ho-Th-V", 
+				"Y-Th-Ti", 
+				"Li-La-Lu", 
+				"Li-Ta-Ti", 
+				"Ce-Th-Sc", 
+				"Li-Ti-Nb", 
+				"Yb-Ho-Tm", 
+				"K-Rb-Li", 
+				"Er-Hf-Th", 
+				"Cu-Tc-Mo", 
+				"Ni-Rh-Au", 
+				"Ni-Ag-Pd", 
+				"Cr-Fe-Bi", 
+				"Y-Sc-Ta", 
+				"Tb-Nd-Lu", 
+				"Dy-Er-Tm", 
+				"Rb-Hf-Ta", 
+				"Li-Tb-Lu", 
+				"Sm-Gd-Y", 
+				"Ir-Pd-Ru", 
+				"Pm-Nd-Pu", 
+				"Ba-Pm-Y", 
+				"Y-Hf-Ti", 
+				"Nd-Gd-Zr", 
+				"Th-U-Ti", 
+				"K-Mg-Fe", 
+				"Ni-Pt-C", 
+				"Cu-Pd-Ru", 
+				"Gd-V-Mo", 
+				"Co-Ag-Bi", 
+				"Li-Ce-Cr", 
+				"Tm-Th-Ta", 
+				"Pm-Dy-V", 
+				"Er-Sc-Ta", 
+				"Sm-Th-Nb", 
+				"Yb-Mn-V", 
+				"K-V-Mo", 
+				"Dy-Tm-Lu", 
+				"La-Tb-W", 
+				"Yb-Nd-Th", 
+				"Y-Ho-Zr", 
+				"Yb-Pu-Nb", 
+				"Ce-Pr-Sm", 
+				"Co-Re-Pd", 
+				"Ce-Pu-Cr", 
+				"Ag-Mo-Au", 
+				"Ca-V-Mo", 
+				"Tl-Cu-Ag", 
+				"Tb-Lu-Cr", 
+				"Be-Sn-Ge", 
+				"Y-Er-Tm", 
+				"Nd-Dy-Pu", 
+				"Nd-Ho-Er", 
+				"Be-Zn-Si", 
+				"La-Pr-Cr", 
+				"In-Ga-Ge", 
+				"Li-Fe-Ni", 
+				"Ni-Ru-C", 
+				"Gd-Sc-W", 
+				"Gd-Cr-Mo", 
+				"Er-Tm-Ta", 
+				"Cu-Mo-W", 
+				"Pm-Ho-Mo", 
+				"Hf-Th-Ta", 
+				"Sc-Mo-W", 
+				"Cr-Cd-Mo", 
+				"U-Ta-Nb", 
+				"Tb-Th-Cr", 
+				"Co-Cu-Ag", 
+				"Zn-Sn-B", 
+				"Pm-Lu-Cr", 
+				"Ba-Eu-Mo", 
+				"Er-Lu-Pu", 
+				"Ni-Ir-Rh", 
+				"Li-Mn-Cu", 
+				"Mg-U-Ti", 
+				"Gd-Ti-W", 
+				"Co-Ni-Pd", 
+				"Yb-Er-Zr", 
+				"Yb-Ho-Mo", 
+				"Cu-Ir-C", 
+				"Nd-Er-Th", 
+				"U-Ti-Nb", 
+				"Sm-Lu-Ta", 
+				"Mn-Ag-Au", 
+				"Pm-Th-Mo", 
+				"Er-Lu-Zr", 
+				"Nd-Tm-Lu", 
+				"Sc-Ta-W", 
+				"Dy-Er-Ta", 
+				"Eu-Pu-V", 
+				"Y-Th-Nb", 
+				"Eu-Mo-W", 
+				"Nd-Gd-Dy", 
+				"Cs-Ti-Nb", 
+				"La-Nd-Er", 
+				"Nd-V-Cr", 
+				"Zn-Si-Pb", 
+				"Mg-Cd-Fe", 
+				"Re-Ag-Pd", 
+				"Sr-V-Mo", 
+				"Fe-Ag-Bi", 
+				"V-Cu-Ru", 
+				"Sm-U-Ta", 
+				"Ce-Pu-Ti", 
+				"Na-Fe-Cu", 
+				"Li-Sm-Ho", 
+				"Yb-Ho-V", 
+				"La-Yb-Zr", 
+				"Li-Pu-V", 
+				"Tm-V-Cr", 
+				"Ta-Cu-W", 
+				"Tb-Pm-Lu", 
+				"Ni-Ag-Rh", 
+				"Pm-Y-Pu", 
+				"Pu-Zr-Ta", 
+				"Eu-Pu-Zr", 
+				"Th-Zr-Nb", 
+				"K-Rb-Zr", 
+				"Sm-Lu-Cr", 
+				"Mg-Cd-Mo", 
+				"Tb-Pr-Ho", 
+				"Ce-Eu-U", 
+				"La-Nd-Pu", 
+				"Ru-Pt-C", 
+				"La-Lu-Pu", 
+				"Pm-Tm-V", 
+				"Yb-Th-U", 
+				"Ce-Pm-Ho", 
+				"Co-Ni-Au", 
+				"Si-Sn-Ge", 
+				"Er-Th-Ti", 
+				"Os-Pd-Rh", 
+				"Hf-Mg-Zr", 
+				"Mo-W-Au", 
+				"Sm-Gd-Lu", 
+				"Ca-Tb-Lu", 
+				"Ho-Lu-W", 
+				"Fe-Co-Rh", 
+				"La-Sm-Dy", 
+				"Be-Al-Bi", 
+				"Er-Tm-Pu", 
+				"Sn-Bi-B", 
+				"Nd-Ta-Mo", 
+				"Eu-Th-Cr", 
+				"La-Nd-Sm", 
+				"Pm-Nd-Cr", 
+				"Dy-Th-Zr", 
+				"Pm-Er-Tm", 
+				"Tl-Zn-Ga", 
+				"Y-Pu-W", 
+				"Ba-Pm-Nd", 
+				"Ce-Pr-Y", 
+				"V-Cr-Mo", 
+				"Ce-Th-Cr", 
+				"Yb-Dy-Er", 
+				"La-Er-Sc", 
+				"Li-Mg-Cr", 
+				"Y-Lu-Mo", 
+				"Sm-Y-Nb", 
+				"Ce-Eu-Hf", 
+				"Ag-Ge-C", 
+				"Sm-Ho-Cr", 
+				"Na-Li-Cu", 
+				"Tb-Yb-Sc", 
+				"Pr-Gd-Ho", 
+				"Dy-Y-Mo", 
+				"Er-Pu-Cr", 
+				"Na-Li-Nb", 
+				"Pm-Nd-Er", 
+				"La-Ce-Sm", 
+				"Dy-Y-Ti", 
+				"Ca-Nd-Mo", 
+				"Nd-Sm-Er", 
+				"Yb-Nd-Er", 
+				"Li-Nb-Mo", 
+				"Ca-Ce-Mo", 
+				"Cs-Li-Pr", 
+				"Y-Zr-Ta", 
+				"Sm-Dy-Cr", 
+				"Ho-Tm-Th", 
+				"Dy-Y-Tm", 
+				"Pu-Cr-Mo", 
+				"Ce-Sc-V", 
+				"Sm-U-V", 
+				"La-Sm-Gd", 
+				"Yb-Nd-U", 
+				"Pr-Dy-Ho", 
+				"Ho-Er-V", 
+				"Lu-Th-Zr", 
+				"Yb-Nd-Sc", 
+				"Rb-Ta-Nb", 
+				"Gd-Er-Lu", 
+				"Ho-Sc-Mo", 
+				"Tc-Pd-Rh", 
+				"Ce-Tm-Th", 
+				"Cu-Pt-Rh", 
+				"La-Ho-Tm", 
+				"Sm-Ho-Er", 
+				"La-Gd-Cr", 
+				"Al-Zn-Cd", 
+				"Cs-Pr-Ta", 
+				"Pm-Pr-Nd", 
+				"Os-Pt-Rh", 
+				"Er-Mo-W", 
+				"Gd-Dy-Ho", 
+				"Tb-Er-Tm", 
+				"Ce-Nd-Sm", 
+				"Be-Al-Ga", 
+				"Cu-Tc-Ni", 
+				"Nd-Pu-Mo", 
+				"Ca-La-Tb", 
+				"Be-Zn-Bi", 
+				"Cu-Rh-Au", 
+				"Lu-Pu-Nb", 
+				"Pr-Nd-Th", 
+				"Rb-Na-Mo", 
+				"Yb-Pr-Nd", 
+				"Ce-Pr-V", 
+				"Hf-Mg-Nb", 
+				"Tb-Th-Mo", 
+				"Co-Ag-Os", 
+				"Li-Tb-Ti", 
+				"Yb-Tm-Ti", 
+				"Yb-Y-Th", 
+				"Yb-Ta-V", 
+				"Sc-Ta-V", 
+				"La-Lu-Ti", 
+				"Ca-Ce-Pu", 
+				"Ce-Ho-Ta", 
+				"La-U-Ti", 
+				"Pu-Ta-Mo", 
+				"Yb-Y-Tm", 
+				"Er-Zr-Ti", 
+				"U-Cr-Ag", 
+				"Dy-Tm-V", 
+				"Si-Ag-Bi", 
+				"Tb-Y-V", 
+				"Pr-Gd-Tm", 
+				"Ce-Er-Th", 
+				"Tl-Cu-B", 
+				"Ho-Sc-W", 
+				"Li-Mg-Nb", 
+				"Y-Lu-W", 
+				"Sc-V-Cr", 
+				"Cu-Bi-B", 
+				"Tl-Zn-B", 
+				"Nd-Ho-V", 
+				"Ni-Pt-Au", 
+				"Sm-Er-Cr", 
+				"Li-Lu-Pu", 
+				"Yb-Y-Mo", 
+				"Ce-Th-Zr", 
+				"Pr-Lu-Cr", 
+				"Ir-Os-Ru", 
+				"Er-Cr-Mo", 
+				"Tb-Sm-V", 
+				"Dy-Ti-W", 
+				"Nb-Tl-Mo", 
+				"La-Lu-Mo", 
+				"Ag-Pd-Rh", 
+				"Hf-Sc-Ta", 
+				"Re-Os-Pt", 
+				"La-Th-W", 
+				"Pm-Y-Th", 
+				"Y-Hf-Ta", 
+				"Pr-Y-Ta", 
+				"Na-Hf-Zr", 
+				"Tl-V-Cu", 
+				"Gd-Y-Pu", 
+				"Li-Pu-Cr", 
+				"Pr-Sm-Dy", 
+				"Ce-Gd-Ti", 
+				"Mn-Fe-Ag", 
+				"Y-Th-W", 
+				"Ba-Eu-V", 
+				"Ce-Ho-Zr", 
+				"Gd-Zr-Sc", 
+				"Ce-Y-Zr", 
+				"Mn-Ni-Pb", 
+				"Tb-Pr-Er", 
+				"Nd-Lu-Cr", 
+				"Nb-Cu-Bi", 
+				"Li-Ho-V", 
+				"Li-Sm-Tm", 
+				"Al-Ge-Pb", 
+				"Tb-Pu-Ti", 
+				"Tb-Ta-Mo", 
+				"Nd-Sc-Ta", 
+				"Sr-Sc-V", 
+				"Er-Pu-Ti", 
+				"Mg-Nb-Mo", 
+				"Dy-Pu-V", 
+				"Gd-Tm-Ti", 
+				"Na-Li-Be", 
+				"Sm-Ta-V", 
+				"La-Pr-Y", 
+				"Ce-Ti-Nb", 
+				"Ce-Er-Lu", 
+				"Er-Lu-W", 
+				"Lu-Pu-V", 
+				"Fe-Ir-C", 
+				"Li-Y-V", 
+				"Pm-Pr-Ho", 
+				"Th-Sc-Cr", 
+				"Tl-In-Ge", 
+				"Tm-Pu-Ta", 
+				"Tc-Ni-Rh", 
+				"La-Yb-Y", 
+				"Li-Pr-Ti", 
+				"Sr-Nd-Ti", 
+				"Ce-Sc-W", 
+				"La-Th-V", 
+				"Li-Ce-Zr", 
+				"Ba-La-V", 
+				"La-Y-Lu", 
+				"Ce-Pr-Hf", 
+				"Cs-K-Hf", 
+				"Sm-Gd-Pu", 
+				"Li-Ta-V", 
+				"La-Yb-Lu", 
+				"La-Dy-Zr", 
+				"Y-Pu-Ta", 
+				"Th-Zr-Ta", 
+				"Ho-Tm-Lu", 
+				"Ce-Lu-Cr", 
+				"Tb-Mo-W", 
+				"La-Pu-Ta", 
+				"La-Pr-Tm", 
+				"Cs-Ti-Mo", 
+				"Bi-Sb-P", 
+				"Mn-Cu-Au", 
+				"Mg-Ti-Cr", 
+				"Er-Th-Ta", 
+				"Th-Ti-Cr", 
+				"Cr-Cu-Ni", 
+				"Er-Nb-W", 
+				"Tb-Tm-Lu", 
+				"Li-La-Pr", 
+				"Ce-U-Ta", 
+				"Tc-Ni-Ir", 
+				"Pr-Ho-W", 
+				"Li-Cr-Fe", 
+				"La-Sm-W", 
+				"Fe-Cu-Ir", 
+				"Co-Cu-C", 
+				"Nb-Tl-V", 
+				"Co-Pt-Rh", 
+				"Ce-Er-Zr", 
+				"Re-Ir-Rh", 
+				"Lu-Pu-Zr", 
+				"Eu-Nb-V", 
+				"Ce-Sc-Ta", 
+				"Ir-Pd-Pt", 
+				"Hg-Ir-Os", 
+				"Y-Sc-Mo", 
+				"La-Th-Zr", 
+				"Tl-V-Mo", 
+				"Co-Cu-Os", 
+				"Pm-Y-Mo", 
+				"Ce-Pr-Pu", 
+				"Tb-Pr-Mo", 
+				"Yb-Th-V", 
+				"Pm-Dy-Ho", 
+				"Co-Ru-Au", 
+				"Tb-Yb-Y", 
+				"Gd-Y-Sc", 
+				"Dy-Ho-Zr", 
+				"La-Ta-Nb", 
+				"La-Tm-Ta", 
+				"U-Ti-Cr", 
+				"La-Pm-Y", 
+				"Cs-K-Nb", 
+				"Tb-Nd-Zr", 
+				"Nd-Th-Ta", 
+				"Li-Lu-V", 
+				"Sm-V-Mo", 
+				"La-Nd-Mo", 
+				"Gd-Zr-Ta", 
+				"Ce-Nd-Tm", 
+				"Tb-Yb-Gd", 
+				"Ce-Th-V", 
+				"Pr-U-Ti", 
+				"La-Er-Cr", 
+				"Dy-Y-Pu", 
+				"Li-Pr-Y", 
+				"Ce-Er-Mo", 
+				"Dy-Y-Th", 
+				"Er-Sc-Nb", 
+				"La-Nb-Mo", 
+				"Ca-Ce-Tm", 
+				"Eu-U-Nb", 
+				"La-Sc-U", 
+				"Li-Ce-Er", 
+				"La-Dy-Tm", 
+				"Lu-Ta-Mo", 
+				"Gd-Y-Zr", 
+				"Li-Ce-Mn", 
+				"Cr-Cd-Pb", 
+				"La-Tm-Ti", 
+				"Rb-Mg-Cr", 
+				"Tb-Gd-Pu", 
+				"Eu-Sc-V", 
+				"Co-Ag-Au", 
+				"La-Tb-Ta", 
+				"Rb-Mg-Ti", 
+				"Cu-Ir-Pt", 
+				"Rb-Hf-Nb", 
+				"Gd-Ta-Ti", 
+				"Er-Pu-W", 
+				"V-Cu-Pd", 
+				"Dy-Pu-W", 
+				"Sc-Ti-V", 
+				"Tb-Gd-Zr", 
+				"Li-Tb-V", 
+				"Er-Ta-Mo", 
+				"V-Cr-Hg", 
+				"La-Y-Ti", 
+				"Ta-Cu-Mo", 
+				"Ta-Nb-Bi", 
+				"Nd-Sm-Ta", 
+				"V-Fe-Ag", 
+				"Yb-Eu-Nb", 
+				"La-Nb-V", 
+				"Pd-Au-C", 
+				"Sc-Cr-W", 
+				"Mn-Co-Cu", 
+				"Yb-Nd-Mo", 
+				"Sm-Er-V", 
+				"Ce-Pr-U", 
+				"Ag-Ir-Pd", 
+				"Nd-Ti-Cr", 
+				"Li-Y-Zr", 
+				"La-Ce-U", 
+				"Al-Si-Sn", 
+				"La-Eu-Cr", 
+				"In-Si-Ge", 
+				"V-Cr-Cu", 
+				"Al-Sn-Ge", 
+				"Ba-Mn-Fe", 
+				"Th-Ti-V", 
+				"Cs-Li-Mo", 
+				"Ca-Pu-Ti", 
+				"Al-Si-Bi", 
+				"Li-Mg-Fe", 
+				"Yb-U-V", 
+				"Mn-Tl-Cd", 
+				"Fe-Ir-Rh", 
+				"Tb-Nd-Pu", 
+				"Nd-Er-Zr", 
+				"Ba-Sr-Ca", 
+				"La-Eu-Y", 
+				"Sm-Ho-Lu", 
+				"Y-Ho-Tm", 
+				"Tc-Ir-Pd", 
+				"Cs-Hf-Nb", 
+				"Gd-Ti-Mo", 
+				"Dy-Tm-Mo", 
+				"La-Pm-Th", 
+				"Yb-Pu-Zr", 
+				"Ce-U-Nb", 
+				"Ir-Os-Pt", 
+				"Ce-Sm-Ho", 
+				"Tb-Y-Ta", 
+				"Pm-Y-V", 
+				"Pr-Th-Cr", 
+				"Tb-Ce-W", 
+				"Hg-Bi-B", 
+				"Tb-Ce-V", 
+				"Pr-Y-Ho", 
+				"Cu-Ni-Rh", 
+				"Fe-Co-Pb", 
+				"Pr-Tm-Pu", 
+				"Zn-Sn-Ge", 
+				"Yb-Eu-Y", 
+				"Cd-Fe-Pb", 
+				"La-Gd-Sc", 
+				"Ga-Bi-B", 
+				"Sm-Gd-Tm", 
+				"Co-Pt-Au", 
+				"Ce-Er-Hf", 
+				"Tb-Ce-Y", 
+				"Sr-Ti-Mo", 
+				"Cr-Fe-Cu", 
+				"Yb-Hf-U", 
+				"Eu-Hf-Ta", 
+				"Zn-Ge-B", 
+				"Ca-Sc-V", 
+				"Nd-Sm-Cr", 
+				"Ce-Tm-Ti", 
+				"Na-Ca-Mo", 
+				"Tl-Cd-Si", 
+				"Nd-Lu-V", 
+				"Li-Sc-V", 
+				"Pr-Dy-Th", 
+				"Pr-Th-W", 
+				"Co-Cu-Pd", 
+				"Tb-Pu-W", 
+				"Li-Ti-Mo", 
+				"Pm-Y-Lu", 
+				"La-Y-Th", 
+				"Pr-Sm-Er", 
+				"Pr-Ho-Mo", 
+				"Yb-Gd-Ta", 
+				"Gd-Er-Pu", 
+				"Ho-V-W", 
+				"Yb-Dy-Th", 
+				"Li-Mg-Ti", 
+				"Yb-Er-Tm", 
+				"Lu-Ti-Nb", 
+				"Ca-Nd-Tm", 
+				"Tb-Ce-Th", 
+				"Dy-Ta-Mo", 
+				"Sr-Ca-Mo", 
+				"Tb-Ti-Mo", 
+				"Pr-Y-V", 
+				"Yb-Pr-Ti", 
+				"Cd-Ga-Pb", 
+				"Tb-Th-Zr", 
+				"La-Ce-Lu", 
+				"Sm-Pu-Mo", 
+				"Li-Sm-V", 
+				"Ba-Yb-Pr", 
+				"Gd-Ho-Ta", 
+				"Eu-Pu-Cr", 
+				"La-Er-Pu", 
+				"Pm-Lu-Pu", 
+				"Ce-Pr-W", 
+				"U-V-Ag", 
+				"Cs-Li-V", 
+				"Yb-Y-Ho", 
+				"La-Th-Cr", 
+				"Tb-Sc-Cr", 
+				"Eu-Ta-W", 
+				"Cs-Rb-Zr", 
+				"Pm-Gd-Mo", 
+				"Sr-Ti-V", 
+				"Cu-Ru-Au", 
+				"La-Sm-Pu", 
+				"La-U-Nb", 
+				"Pr-Gd-Th", 
+				"Er-V-Mo", 
+				"Ho-Lu-Cr", 
+				"Yb-Er-Ta", 
+				"Y-Lu-Zr", 
+				"Cr-Ag-Bi", 
+				"Sm-V-W", 
+				"Li-Y-Er", 
+				"Gd-Ho-Cr", 
+				"Sc-U-Ti", 
+				"Rb-Mg-Nb", 
+				"Th-Ta-W", 
+				"K-Hf-Zr", 
+				"Ho-Lu-Ta", 
+				"Ba-Nd-Sm", 
+				"Rb-Na-Nb", 
+				"Ce-Sm-Nb", 
+				"Pr-Cr-Mo", 
+				"Ba-Pr-Mo", 
+				"Li-Nd-Tm", 
+				"Re-Os-Ru", 
+				"Eu-Cr-W", 
+				"Nd-Er-Ti", 
+				"Cs-Rb-Mo", 
+				"Tb-Pm-Tm", 
+				"Cs-K-Ti", 
+				"Na-Sr-V", 
+				"La-Ce-Eu", 
+				"La-Gd-Pu", 
+				"Tb-Lu-Pu", 
+				"Th-U-V", 
+				"Li-Zr-Ta", 
+				"Lu-Th-W", 
+				"Tb-Nd-Sm", 
+				"Nb-Bi-Mo", 
+				"Cd-Si-Bi", 
+				"Sm-Ho-Tm", 
+				"Be-In-Si", 
+				"Sr-Ca-Fe", 
+				"Pd-Pt-Au", 
+				"Pm-Pr-Mo", 
+				"La-V-Cr", 
+				"Ce-Gd-Tm", 
+				"La-Ce-Mn", 
+				"La-Th-U", 
+				"K-Li-Hf", 
+				"Ho-Er-Tm", 
+				"Nd-Gd-Lu", 
+				"Ce-Sm-Cr", 
+				"Nd-Dy-Cr", 
+				"Tb-Lu-Zr", 
+				"Er-Pu-Zr", 
+				"Sm-Cr-Mo", 
+				"Pm-Sm-Tm", 
+				"Sc-U-Ta", 
+				"Cs-Cr-Mo", 
+				"Yb-Hf-Ta", 
+				"Pr-Th-V", 
+				"Zn-Ga-Pb", 
+				"Yb-Nd-Ta", 
+				"Er-Zr-Nb", 
+				"Pm-Sm-Lu", 
+				"Mn-Cd-Fe", 
+				"Ba-La-Gd", 
+				"La-Tb-Gd", 
+				"Yb-Nd-Ho", 
+				"Pr-Y-W", 
+				"Er-Ta-Ti", 
+				"Co-Re-Os", 
+				"Co-Ni-Os", 
+				"La-Ce-Ti", 
+				"Sm-Y-Er", 
+				"Pm-Sm-V", 
+				"Yb-Y-Pu", 
+				"Hf-Mg-Ti", 
+				"Pr-Ho-Th", 
+				"Pm-Pr-Dy", 
+				"Pm-Sm-Gd", 
+				"K-Mg-Mo", 
+				"V-In-Fe", 
+				"Yb-Ta-Nb", 
+				"Li-Tb-Sc", 
+				"Y-Th-V", 
+				"Th-Cr-Mo", 
+				"Ba-Eu-Y", 
+				"Ce-Sm-V", 
+				"Pr-Lu-Th", 
+				"Ba-Ca-Fe", 
+				"Ge-Bi-B", 
+				"Ce-Th-Ti", 
+				"Rb-Zr-Ta", 
+				"Yb-Pr-Hf", 
+				"Si-Ge-Au", 
+				"Li-Er-Sc", 
+				"Ba-La-Sm", 
+				"Er-Zr-Ta", 
+				"Ce-Pr-Gd", 
+				"Y-Ta-Ti", 
+				"Na-Ta-Ti", 
+				"Yb-Tm-V", 
+				"Tb-Pm-Th", 
+				"Sm-Pu-W", 
+				"Pr-Tm-Th", 
+				"Ba-Sc-Mo", 
+				"Ag-Bi-Mo", 
+				"Nb-Cu-Mo", 
+				"Tb-Ho-Zr", 
+				"Pm-Sm-Ho", 
+				"Zn-Ge-Bi", 
+				"Tb-Pr-W", 
+				"Ca-Ce-Mn", 
+				"Tm-Ti-V", 
+				"Tc-Ni-C", 
+				"Eu-Pu-W", 
+				"La-Tb-Sm", 
+				"Yb-Lu-Ta", 
+				"Yb-V-Mo", 
+				"Ce-Y-Th", 
+				"Tb-Nd-Ti", 
+				"Cu-Ir-Pd", 
+				"Ba-La-Mo", 
+				"La-Gd-Er", 
+				"Ga-Sn-Ge", 
+				"Tb-Ho-Ta", 
+				"Er-Th-V", 
+				"Pr-Y-Hf", 
+				"Dy-Zr-Ti", 
+				"Lu-V-Cr", 
+				"Pr-Gd-V", 
+				"La-Ti-Mo", 
+				"Tb-Pu-Zr", 
+				"Lu-Nb-Mo", 
+				"Cs-Rb-Mg", 
+				"Fe-Co-Ni", 
+				"K-Ti-Mo", 
+				"Tb-Yb-Mo", 
+				"Fe-Au-C", 
+				"Dy-Ho-Pu", 
+				"Y-Pu-Zr", 
+				"Tb-Pr-Th", 
+				"Sc-Ta-Mo", 
+				"Gd-Ho-Mo", 
+				"Li-Y-Hf", 
+				"Mn-V-Ru", 
+				"Yb-Ti-Mo", 
+				"Sm-Y-Pu", 
+				"La-Nd-Lu", 
+				"Ga-Si-Sn", 
+				"Ba-Y-Sc", 
+				"Nd-Y-U", 
+				"Gd-Lu-Cr", 
+				"Eu-Ta-Mo", 
+				"Er-Tm-Th", 
+				"Be-Ga-Bi", 
+				"K-Li-Fe", 
+				"Tl-V-Ag", 
+				"Co-Os-Ru", 
+				"V-Hg-Mo", 
+				"Fe-Co-C", 
+				"La-Tb-Th", 
+				"Pr-Dy-Pu", 
+				"Ta-Nb-W", 
+				"Li-Pu-Ti", 
+				"Zn-In-Ga", 
+				"Tb-Ce-Zr", 
+				"Ca-Yb-Lu", 
+				"La-Y-Er", 
+				"Yb-Ho-Er", 
+				"La-Lu-Cr", 
+				"Li-Ho-Cr", 
+				"Yb-Pr-Tm", 
+				"Li-Pr-Cr", 
+				"Ho-Th-Sc", 
+				"Pr-Sm-W", 
+				"Tb-Lu-Mo", 
+				"Yb-Eu-Mn", 
+				"Nd-V-Mo", 
+				"Ga-Hg-Pb", 
+				"Pm-Nd-Y", 
+				"Ba-Gd-Mo", 
+				"Ni-Ru-Pt", 
+				"Y-Er-Sc", 
+				"Ca-Lu-Mo", 
+				"Al-Zn-Sn", 
+				"Th-V-Mo", 
+				"Fe-Ni-Pd", 
+				"Tb-Sm-Mo", 
+				"Li-Pu-Ta", 
+				"Pm-Dy-Tm", 
+				"Fe-Co-Cu", 
+				"Gd-Th-V", 
+				"Dy-Ti-V", 
+				"La-Ce-Gd", 
+				"Yb-Th-Sc", 
+				"Tb-Ho-Sc", 
+				"Tb-Y-Zr", 
+				"Tc-Ir-Rh", 
+				"Ce-Nd-Ti", 
+				"Yb-Y-U", 
+				"Na-V-Cr", 
+				"Nd-Lu-Th", 
+				"Ho-Pu-Zr", 
+				"Ba-Ca-Y", 
+				"Fe-Os-Ru", 
+				"Pm-Ho-Th", 
+				"Gd-Th-Cr", 
+				"Tb-Dy-Ti", 
+				"La-Sc-V", 
+				"Sr-Mn-Fe", 
+				"La-Mo-W", 
+				"Dy-Lu-Ta", 
+				"Tl-Zn-Si", 
+				"Nb-Tl-Cu", 
+				"Pu-Np-Cr", 
+				"Ir-Pt-C", 
+				"Yb-Dy-Ti", 
+				"Li-Pu-Mo", 
+				"Pr-Tm-Mo", 
+				"Nd-Dy-Er", 
+				"Ce-Tm-V", 
+				"Be-Al-Si", 
+				"Dy-Th-V", 
+				"Al-Cd-Si", 
+				"La-Er-Nb", 
+				"Tb-Nd-Ta", 
+				"Eu-Hf-Nb", 
+				"Re-Os-Pd", 
+				"Nd-Tm-Cr", 
+				"Sm-Tm-Th", 
+				"Cs-Ta-V", 
+				"Tb-Pu-Mo", 
+				"Mg-Mn-V", 
+				"Cu-Pd-Pt", 
+				"Li-Er-Hf", 
+				"Li-Lu-Ta", 
+				"Y-Lu-Pu", 
+				"Yb-Ho-Pu", 
+				"Li-Sm-Y", 
+				"Dy-Ti-Mo", 
+				"Ca-Ti-V", 
+				"Pr-Hf-U", 
+				"La-Yb-Gd", 
+				"Eu-Mn-V", 
+				"Tb-Ti-Cr", 
+				"Yb-Nd-Cr", 
+				"Ti-Cr-Mo", 
+				"Mg-Zr-Nb", 
+				"Ta-Ti-Nb", 
+				"Li-Nd-Sm", 
+				"Tl-Ag-Pb", 
+				"Tb-Gd-V", 
+				"Gd-Pu-W", 
+				"Cu-Pd-Rh", 
+				"Li-Zr-Sc", 
+				"Gd-Cr-W", 
+				"Cu-Ru-Pt", 
+				"Li-Er-Cr", 
+				"Yb-Sc-Mo", 
+				"Gd-Er-Cr", 
+				"Pr-Lu-Pu", 
+				"V-Fe-Bi", 
+				"La-Gd-Ta", 
+				"Ta-V-Bi", 
+				"Tb-Cr-Mo", 
+				"Cr-Mo-Au", 
+				"Tb-Ce-Lu", 
+				"Ca-La-Fe", 
+				"Gd-Y-Cr", 
+				"Cr-Fe-Pb", 
+				"Cr-Bi-Mo", 
+				"Ce-Pr-Mo", 
+				"Sr-Sc-Ti", 
+				"Ag-Ge-Bi", 
+				"Y-Ta-V", 
+				"Er-V-Cr", 
+				"Sm-U-Nb", 
+				"Cr-Hg-Mo", 
+				"La-Pr-Pu", 
+				"Ca-Ce-V", 
+				"Th-V-W", 
+				"Ba-Nd-Sc", 
+				"Ce-Eu-Sc", 
+				"Y-Ta-W", 
+				"Cs-Li-Hf", 
+				"Tb-Nd-Gd", 
+				"K-Rb-Mo", 
+				"Ca-Tm-Lu", 
+				"Tb-Dy-Th", 
+				"Ce-Pu-Ta", 
+				"Yb-Hf-Nb", 
+				"Y-Sc-W", 
+				"Gd-Dy-Cr", 
+				"Yb-Pu-Mo", 
+				"Ce-Pr-Nd", 
+				"Dy-Er-Mo", 
+				"Y-Er-Zr", 
+				"Hf-Th-Sc", 
+				"Cu-Mo-Pb", 
+				"Ho-Pu-Cr", 
+				"Na-Mg-Mo", 
+				"Cu-Re-Ru", 
+				"Si-Ag-Ge", 
+				"Ba-La-Eu", 
+				"Pm-Lu-Th", 
+				"Mn-V-Fe", 
+				"Ca-La-Pm", 
+				"Pr-U-V", 
+				"Nd-Er-Tm", 
+				"Re-Ni-Os", 
+				"Gd-Y-Ti", 
+				"Ce-Hf-Sc", 
+				"La-Nd-Ti", 
+				"Yb-Ho-Sc", 
+				"Al-Cd-Bi", 
+				"Al-Tl-Si", 
+				"Tb-Sm-Lu", 
+				"Pm-Sm-Er", 
+				"Ce-Ti-W", 
+				"Pr-Gd-Y", 
+				"Dy-Cr-W", 
+				"Zn-Sn-Bi", 
+				"Rb-Mg-Mo", 
+				"Tl-In-Mo", 
+				"Ca-V-Fe", 
+				"Th-Ta-Nb", 
+				"Gd-Er-Ti", 
+				"La-Er-W", 
+				"Nd-Th-U", 
+				"Ce-Pm-V", 
+				"Tb-Y-Pu", 
+				"Gd-Th-Mo", 
+				"Yb-Pr-Mo", 
+				"Yb-Hf-Ti", 
+				"Rb-Ta-Ti", 
+				"Dy-Pu-Ti", 
+				"Be-Ga-Sn", 
+				"Y-Ho-Pu", 
+				"Ba-Yb-V", 
+				"Yb-Y-Sc", 
+				"Tb-Nd-Y", 
+				"Ho-Zr-Ta", 
+				"Pm-Gd-Tm", 
+				"Li-Mn-V", 
+				"Ce-Eu-Mn", 
+				"Be-Al-Zn", 
+				"Zn-Ge-Pb", 
+				"Pr-Ho-Ta", 
+				"Tb-Y-Ho", 
+				"Li-Sm-Lu", 
+				"Dy-Pu-Mo", 
+				"Ba-Ca-Mn", 
+				"Ho-Th-Cr", 
+				"Er-Hf-Nb", 
+				"Ca-Pu-V", 
+				"Os-Pd-Pt", 
+				"Pr-Pu-W", 
+				"Cr-Ag-Pb", 
+				"La-Ce-Sc", 
+				"Mn-Cu-Pb", 
+				"Yb-Sc-Nb", 
+				"La-Nd-Ta", 
+				"Ce-Ho-W", 
+				"Re-Ag-Rh", 
+				"Tl-Mo-Pb", 
+				"Sm-V-Cr", 
+				"Co-Ir-Rh", 
+				"Pm-Gd-Pu", 
+				"Ce-Er-Ti", 
+				"Ce-Sm-Ta", 
+				"La-Tb-Cr", 
+				"Yb-Gd-Ti", 
+				"Cu-Ni-Os", 
+				"Rb-V-Cr", 
+				"Yb-Zr-Ta", 
+				"Nd-Sc-V", 
+				"Tl-Cd-Pb", 
+				"Tb-Sm-Gd", 
+				"Sm-Gd-Dy", 
+				"Tb-Yb-Dy", 
+				"Li-Er-Mo", 
+				"Pr-Er-Cr", 
+				"Mg-U-Cr", 
+				"La-Ce-Ho", 
+				"Th-Sc-Nb", 
+				"Nd-Gd-Y", 
+				"Eu-Hf-Sc", 
+				"Ce-Sc-Ti", 
+				"Gd-Pu-V", 
+				"Er-Ti-W", 
+				"Ca-Pm-Lu", 
+				"Co-Cu-Ru", 
+				"Yb-Eu-Zr", 
+				"Sm-Lu-W", 
+				"Y-U-Ta", 
+				"Y-Th-Sc", 
+				"V-Mo-W", 
+				"Ce-Tm-Mo", 
+				"Cs-Ti-Cr", 
+				"Nd-Dy-Ti", 
+				"Li-Ho-Sc", 
+				"Si-Ag-Au", 
+				"Yb-Sc-W", 
+				"Tl-Cd-Ga", 
+				"Tb-Th-Sc", 
+				"Ce-Cr-Mo", 
+				"Yb-Pr-Er", 
+				"Nd-Th-Zr", 
+				"Pr-Nd-Sm", 
+				"Li-Sc-Cr", 
+				"Yb-Ho-Th", 
+				"Tb-Ho-Cr", 
+				"La-Pu-W", 
+				"Nd-Dy-Y", 
+				"Pm-Nd-Tm", 
+				"Li-Tb-Pr", 
+				"Gd-Ta-Mo", 
+				"Li-La-Ti", 
+				"Pu-Ti-W", 
+				"Na-Ca-V", 
+				"Y-Nb-W", 
+				"Ce-Y-Mo", 
+				"Hf-Sc-Nb", 
+				"La-Tm-V", 
+				"Ho-Lu-V", 
+				"Ca-Sc-Ti", 
+				"Nd-Sc-W", 
+				"La-Tb-Sc", 
+				"Yb-Gd-Dy", 
+				"Tc-Pd-C", 
+				"Li-V-Cr", 
+				"Li-Sm-Nb", 
+				"Be-Ge-Bi", 
+				"Ca-Tb-V", 
+				"K-Nb-Mo", 
+				"Pm-Gd-Cr", 
+				"La-Sm-U", 
+				"Ca-Yb-V", 
+				"Nd-Gd-Th", 
+				"Pm-Pu-Mo", 
+				"Yb-Th-Cr", 
+				"Ce-Hf-Ti", 
+				"Dy-Tm-Ti", 
+				"Yb-Ta-W", 
+				"Cu-Pd-Au", 
+				"La-Tb-Ho", 
+				"Tm-Pu-Cr", 
+				"Tb-Ho-Th", 
+				"La-Sc-Ta", 
+				"Sm-Ta-Nb", 
+				"Li-Mn-Fe", 
+				"Ce-Gd-W", 
+				"Sc-Nb-W", 
+				"Ta-V-W", 
+				"Nd-Sm-Dy", 
+				"Nd-Ho-Pu", 
+				"La-Er-Mo", 
+				"La-Y-Ta", 
+				"Ca-Nd-V", 
+				"Re-Hg-Os", 
+				"Tb-Dy-V", 
+				"La-Tb-Nd", 
+				"La-Zr-Sc", 
+				"Cu-Tc-Rh", 
+				"Li-Tm-Cr", 
+				"Si-Ge-Pb", 
+				"Gd-Y-Ta", 
+				"Sm-Ta-Mo", 
+				"Na-Mg-Fe", 
+				"La-Ce-W", 
+				"Th-Nb-V", 
+				"Y-Nb-Mo", 
+				"La-Ta-Mo", 
+				"Dy-Tm-Pu", 
+				"La-Pr-V", 
+				"Ca-La-Ti", 
+				"Pr-Dy-W", 
+				"Ce-Nd-Cr", 
+				"Lu-Zr-Ta", 
+				"Y-Pu-Ti", 
+				"Li-Ce-Mo", 
+				"La-Eu-Sc", 
+				"Nd-Sm-U", 
+				"La-Tb-Zr", 
+				"Li-Ce-Nb", 
+				"Dy-Y-Lu", 
+				"Zn-Ga-B", 
+				"Y-Zr-Sc", 
+				"Li-Pm-Y", 
+				"Pm-Nd-Gd", 
+				"Pr-Ti-W", 
+				"Ba-La-Pr", 
+				"Fe-Co-Pd", 
+				"Pr-Nd-Ta", 
+				"Tl-In-Ga", 
+				"Li-Pm-V", 
+				"Nd-Lu-Ta", 
+				"Pr-Nd-Tm", 
+				"Pr-Th-Ti", 
+				"Ce-Y-Cr", 
+				"Tb-Ce-Ta", 
+				"V-Cr-Ag", 
+				"Fe-Rh-C", 
+				"Cs-K-Zr", 
+				"Er-Tm-Cr", 
+				"Tb-Y-Lu", 
+				"K-Cr-Mo", 
+				"Gd-Ti-V", 
+				"La-Th-Ta", 
+				"Yb-Ta-Mo", 
+				"Ho-Th-Mo", 
+				"Pr-Ho-Cr", 
+				"Mg-V-Fe", 
+				"Ta-Nb-V", 
+				"Li-Mg-Mo", 
+				"Nd-Lu-Zr", 
+				"Tm-Th-Ti", 
+				"K-Hf-Mg", 
+				"Cs-Mg-Mo", 
+				"Pr-Ta-W", 
+				"Ba-Gd-Ti", 
+				"Sm-Er-Nb", 
+				"Yb-Eu-Mo", 
+				"Pr-Ti-Cr", 
+				"La-Pm-Sm", 
+				"Li-Nd-Ti", 
+				"Yb-Dy-Pu", 
+				"Li-Gd-Zr", 
+				"Ta-Nb-Tl", 
+				"Fe-Cu-Ru", 
+				"Pm-Pr-Sm", 
+				"Fe-Cu-Pb", 
+				"Dy-Th-Ta", 
+				"Nb-Hg-Bi", 
+				"Er-V-W", 
+				"Sr-Y-V", 
+				"Dy-Th-W", 
+				"Tb-Yb-Ho", 
+				"Nd-Y-W", 
+				"Be-Zn-Sn", 
+				"Eu-Y-Ta", 
+				"Yb-Y-Ti", 
+				"Ce-Gd-Mo", 
+				"Gd-Th-Zr", 
+				"Tl-Si-Ge", 
+				"Sm-Dy-Pu", 
+				"La-Ho-W", 
+				"Cs-Li-Ti", 
+				"Cu-Bi-Mo", 
+				"Yb-Y-Er", 
+				"Ce-U-Cr", 
+				"Li-V-Cu", 
+				"Gd-Er-Sc", 
+				"Yb-Dy-Ho", 
+				"Re-Ni-Ag", 
+				"Ca-Nd-Ti", 
+				"Yb-Pu-Ti", 
+				"La-Tb-Mo", 
+				"Ir-Rh-C", 
+				"Al-Tl-Ga", 
+				"La-Ti-Nb", 
+				"Nd-Gd-Pu", 
+				"Al-Cd-Ge", 
+				"Li-Ho-Ta", 
+				"Ho-V-Cr", 
+				"Li-Gd-Sc", 
+				"Ga-Re-Bi", 
+				"Yb-Lu-Zr", 
+				"Li-Pr-V", 
+				"U-Ta-W", 
+				"Yb-Tm-Pu", 
+				"Ce-Ho-Lu", 
+				"Fe-Ir-Pd", 
+				"Gd-Pu-Ti", 
+				"Tb-Gd-Th", 
+				"Ca-La-V", 
+				"Ce-Nd-Pu", 
+				"Yb-Eu-U", 
+				"Ta-V-Mo", 
+				"Th-Nb-Mo", 
+				"Ca-Tm-Mo", 
+				"Er-Sc-W", 
+				"Sm-Cr-W", 
+				"Ce-Pm-Cr", 
+				"Pr-Sm-Ta", 
+				"Ta-Tl-In", 
+				"Li-Tb-Pm", 
+				"Ba-Pm-Pr", 
+				"Li-Gd-Ho", 
+				"Hg-B-Sb", 
+				"Gd-Tm-Lu", 
+				"Tb-Pr-Dy", 
+				"Ce-Gd-Cr", 
+				"Ho-Tm-Mo", 
+				"Y-U-V", 
+				"Ir-Pt-Rh", 
+				"La-Tb-Yb", 
+				"Li-Ti-V", 
+				"Tm-Lu-Pu", 
+				"Tb-Pr-Nd", 
+				"Pr-Ta-V", 
+				"Re-Bi-Os", 
+				"Co-Cu-Bi", 
+				"Nd-Ho-Cr", 
+				"La-Pm-Tm", 
+				"Ca-Eu-V", 
+				"Ba-Sc-Ti", 
+				"Na-Nb-Cu", 
+				"Cs-Li-Zr", 
+				"Gd-Dy-Lu", 
+				"La-Ce-Cr", 
+				"Cu-Re-Os", 
+				"Li-Mg-Zr", 
+				"Ce-Pu-Zr", 
+				"Ca-La-Yb", 
+				"Ce-Y-Pu", 
+				"Zn-Cd-Ga", 
+				"Nd-V-W", 
+				"V-Fe-Ru", 
+				"Tb-Dy-Er", 
+				"Hf-Th-U", 
+				"Sc-V-W", 
+				"La-Y-Pu", 
+				"Al-In-Si", 
+				"Be-Ga-Ge", 
+				"Os-Ru-Pt", 
+				"Ag-Ge-Pb", 
+				"Pm-Y-Tm", 
+				"Li-La-Ho", 
+				"Cs-Zr-Ti", 
+				"Ce-Sc-Mo", 
+				"Pr-Nd-Mo", 
+				"Li-Tm-Ti", 
+				"La-Ho-Sc", 
+				"Nd-Tm-Mo", 
+				"Th-Ta-Mo", 
+				"Er-Tm-Mo", 
+				"Gd-Y-W", 
+				"Lu-Ta-V", 
+				"Lu-Th-Ta", 
+				"Ce-Er-Cr", 
+				"Ce-Ti-Mo", 
+				"Li-Ce-Gd", 
+				"Ce-Th-U", 
+				"Li-Hf-Nb", 
+				"Yb-Ho-Ta", 
+				"Li-Pm-Cr", 
+				"Ce-Gd-V", 
+				"Cs-K-Cr", 
+				"Tb-Ti-W", 
+				"Ce-Tm-Cr", 
+				"Ho-Lu-Pu", 
+				"Y-Er-Ti", 
+				"Gd-Dy-Ti", 
+				"Gd-Pu-Zr", 
+				"Li-Cr-Cu", 
+				"Co-Bi-Os", 
+				"Gd-Pu-Ta", 
+				"Co-Ru-Rh", 
+				"Gd-Lu-Ti", 
+				"Li-La-Ce", 
+				"Be-Al-Ge", 
+				"Gd-Y-Lu", 
+				"Pr-Dy-Tm", 
+				"Yb-Cr-Mo", 
+				"La-Gd-Zr", 
+				"Tl-Cu-Pb", 
+				"Cr-Ag-Mo", 
+				"Tb-Tm-Ti", 
+				"Nd-Y-Pu", 
+				"Eu-Th-V", 
+				"Ga-Ge-Pb", 
+				"Li-Pm-Lu", 
+				"Li-Nd-Lu", 
+				"Ba-Pr-Ti", 
+				"Li-V-Mo", 
+				"Pr-Y-Mo", 
+				"Ce-V-Cr", 
+				"Dy-Er-V", 
+				"Ca-Eu-Pu", 
+				"Ni-Pd-Pt", 
+				"Er-Lu-Ta", 
+				"Ba-Y-V", 
+				"Pr-Nd-Lu", 
+				"Ce-Nd-Y", 
+				"Na-Mg-Ti", 
+				"Cu-Ag-Ir", 
+				"La-Ce-Mo", 
+				"La-Er-Lu", 
+				"Tc-Ni-Pd", 
+				"Ti-Nb-V", 
+				"Tb-Ce-Gd", 
+				"Hf-U-Ti", 
+				"Lu-V-Mo", 
+				"Ta-V-In", 
+				"Co-Ir-Pt", 
+				"Na-Ti-Nb", 
+				"Yb-Hf-Th", 
+				"Mn-Cu-Ag", 
+				"Ce-Nd-U", 
+				"Pr-Gd-Ta", 
+				"Ca-Pm-V", 
+				"Nd-Gd-Cr", 
+				"Yb-Eu-V", 
+				"Al-Hg-Pb", 
+				"V-Cr-Bi", 
+				"Ce-Nd-Ho", 
+				"Ho-Er-Th", 
+				"Tb-Nd-Mo", 
+				"Ca-Tb-Pm", 
+				"Nd-Ho-Ta", 
+				"Pu-Ta-W", 
+				"V-Cu-Mo", 
+				"Tb-Cr-W", 
+				"V-Cu-Ag", 
+				"Fe-Ni-Os", 
+				"Lu-Th-V", 
+				"Fe-Ni-C", 
+				"Ca-Y-Sc", 
+				"Ca-Ce-Eu", 
+				"Rb-Ti-Cr", 
+				"Nd-Sm-Th", 
+				"Co-Re-Bi", 
+				"Gd-Lu-V", 
+				"Eu-Pu-Ta", 
+				"Pu-Zr-Ti", 
+				"Pm-Sm-Y", 
+				"La-Ce-Er", 
+				"Ga-Sn-Bi", 
+				"Ba-Sr-Sc", 
+				"Co-Re-Hg", 
+				"La-Lu-W", 
+				"Cs-Nb-Mo", 
+				"La-Y-V", 
+				"Ce-Sm-Er", 
+				"Co-Ni-Ru", 
+				"Mg-Cr-Mo", 
+				"Sc-Nb-Mo", 
+				"Sm-U-W", 
+				"Ce-Ta-Ti", 
+				"Li-Y-Pu", 
+				"Tb-Dy-Pu", 
+				"Cs-Rb-Cr", 
+				"Cs-Rb-V", 
+				"Ce-Gd-Ta", 
+				"Mg-Ti-Mo", 
+				"K-Ta-V", 
+				"Rb-Na-Mg", 
+				"Ba-Gd-V", 
+				"Ca-Tb-Mo", 
+				"Pr-Er-Hf", 
+				"Si-Ge-Bi", 
+				"Y-Er-Hf", 
+				"Zn-Si-Bi", 
+				"Li-Pm-Mo", 
+				"Yb-Lu-Pu", 
+				"La-Dy-Lu", 
+				"La-Pm-Er", 
+				"Hf-Zr-Ta", 
+				"K-Hf-Nb", 
+				"Lu-Ti-W", 
+				"Li-Pu-Zr", 
+				"Cd-Ga-Ge", 
+				"Cd-Ga-B", 
+				"Gd-Y-V", 
+				"Cu-W-Au", 
+				"Yb-Nd-Lu", 
+				"Er-Tm-V", 
+				"Tb-Gd-Y", 
+				"Er-Lu-Mo", 
+				"Tc-Pt-Rh", 
+				"Dy-Ta-Ti", 
+				"Cu-Pd-C", 
+				"Y-V-Mo", 
+				"La-Yb-Dy", 
+				"Lu-Nb-W", 
+				"Cr-Cu-Au", 
+				"Y-Sc-Nb", 
+				"Li-La-Nd", 
+				"Tb-Sm-Pu", 
+				"Tb-Y-Tm", 
+				"Ce-Er-Sc", 
+				"Gd-Dy-Mo", 
+				"Ca-Ce-Nd", 
+				"Ta-Tl-Mo", 
+				"Pr-Nd-Er", 
+				"Li-Pr-Nd", 
+				"La-Pr-Ta", 
+				"Tm-Cr-W", 
+				"Ce-Ho-V", 
+				"Ba-Yb-Ti", 
+				"Na-Ti-Cr", 
+				"Er-Th-Sc", 
+				"Er-Ti-V", 
+				"Cd-Ge-Pb", 
+				"Ba-Eu-Mn", 
+				"Re-Ag-Ir", 
+				"Pr-Ti-V", 
+				"Lu-Ta-Nb", 
+				"Fe-Co-Ag", 
+				"Li-Mn-Ni", 
+				"Nd-Ho-Zr", 
+				"La-Pm-Cr", 
+				"Mg-Nb-V", 
+				"Ce-Pm-Tm", 
+				"Pd-Ru-Pt", 
+				"Gd-Sc-Mo", 
+				"Nd-Pu-Ti", 
+				"Pr-Gd-Mo", 
+				"Sc-U-W", 
+				"Co-Cu-Rh", 
+				"Eu-V-Cr", 
+				"Y-Tm-Th", 
+				"Tb-Lu-Ti", 
+				"La-Nd-Y", 
+				"Th-Ti-W", 
+				"Li-Nd-Cr", 
+				"Pm-Gd-Th", 
+				"Tl-Cu-Ni", 
+				"Pr-U-Cr", 
+				"Ca-Tb-Y", 
+				"Co-Pd-Rh", 
+				"Li-Pm-Nd", 
+				"Cu-Os-Rh", 
+				"Tb-Pu-Cr", 
+				"Ni-Ag-Ru", 
+				"Li-Gd-V", 
+				"Na-Hf-Ta", 
+				"La-Sm-Ta", 
+				"Ca-La-Nd", 
+				"Sr-Ca-Mn", 
+				"La-Mn-Fe", 
+				"La-Th-Sc", 
+				"Tb-Ce-Mo", 
+				"Mo-Pb-W", 
+				"Tb-Y-Cr", 
+				"Al-Ga-Ge", 
+				"V-Fe-Pd", 
+				"Nd-Cr-W", 
+				"Tl-Si-Ag", 
+				"Tb-Ce-Pu", 
+				"Cs-Pr-Mo", 
+				"Nd-U-Ta", 
+				"Eu-Ta-Nb", 
+				"La-Dy-Th", 
+				"Mg-Ti-V", 
+				"Li-Fe-Cu", 
+				"Na-Li-Ti", 
+				"La-Tb-Pu", 
+				"Th-Zr-Sc", 
+				"Ce-Gd-Y", 
+				"Dy-Lu-Cr", 
+				"Nd-Sc-Ti", 
+				"Yb-Nb-V", 
+				"Ga-Si-Pb", 
+				"Pr-Lu-Ti", 
+				"Eu-Y-Cr", 
+				"Hf-U-Nb", 
+				"Pu-Ti-V", 
+				"Li-Nd-Er", 
+				"Cu-Ag-Bi", 
+				"Sm-Nb-V", 
+				"Gd-Dy-Y", 
+				"Ho-Ta-Mo", 
+				"Cu-Ag-Pd", 
+				"Tc-Ni-Pt", 
+				"Y-Lu-Nb", 
+				"Ni-Os-Ru", 
+				"Dy-Lu-Pu", 
+				"Fe-Cu-Os", 
+				"Ta-Tl-V", 
+				"Eu-Y-U", 
+				"Co-Pd-Ru", 
+				"Re-Hg-Bi", 
+				"La-Yb-Ho", 
+				"Nd-Er-Lu", 
+				"Tb-Yb-Er", 
+				"Yb-Th-Zr", 
+				"K-Li-Ti", 
+				"Re-Tc-Rh", 
+				"Cs-K-Al", 
+				"Pr-Ti-Mo", 
+				"Yb-Eu-Sc", 
+				"Y-Th-Ta", 
+				"Yb-Ti-V", 
+				"Nd-Gd-V", 
+				"Sm-Dy-Tm", 
+				"Y-Mo-W", 
+				"Ce-Er-W", 
+				"Re-Tc-Pd", 
+				"Ce-Nd-Zr", 
+				"Li-Ho-Tm", 
+				"Y-Tm-W", 
+				"Al-Tl-Zn", 
+				"Li-La-Mo", 
+				"Pr-Ho-Tm", 
+				"Eu-Th-Nb", 
+				"Pr-Nd-Cr", 
+				"Pm-Gd-Dy", 
+				"Na-Ta-V", 
+				"Al-Zn-Ga", 
+				"Ba-Sm-Mo", 
+				"Y-Ti-Cr", 
+				"Nd-Th-Cr", 
+				"Co-Ir-Pd", 
+				"Yb-Gd-Ho", 
+				"Hg-Ge-B", 
+				"Ho-Tm-V", 
+				"Pr-Tm-Ta", 
+				"Tb-Dy-Cr", 
+				"Ir-Ru-Pt", 
+				"Ce-Pm-Pu", 
+				"Tm-Pu-W", 
+				"Pm-Nd-Th", 
+				"Yb-Gd-Mo", 
+				"La-Ti-V", 
+				"Sm-Pu-Nb", 
+				"Hf-Th-Zr", 
+				"Ta-Ti-V", 
+				"Be-Sn-Bi", 
+				"Pm-Ho-Cr", 
+				"Yb-Eu-Th", 
+				"Ho-Lu-Mo", 
+				"Tb-Dy-Ta", 
+				"Ce-Y-Ti", 
+				"Al-Zn-Pb", 
+				"Ca-La-Mn", 
+				"Yb-Eu-Ta", 
+				"Cs-Hf-Zr", 
+				"Na-Ca-Fe", 
+				"Tb-Pu-Ta", 
+				"Sr-Sc-Mo", 
+				"Tc-Ir-C", 
+				"Y-Hf-Sc", 
+				"Ti-Mo-W", 
+				"Pr-Gd-Dy", 
+				"Co-Cu-Re", 
+				"La-Y-U", 
+				"Re-Sn-Bi", 
+				"Yb-Ti-Cr", 
+				"Nd-Mo-W", 
+				"Fe-Ni-Ir", 
+				"Pr-Nd-W", 
+				"Yb-Lu-V", 
+				"Ce-Pu-W", 
+				"Ac-Cr-Mo", 
+				"Zn-B-Pb", 
+				"La-Yb-Tm", 
+				"Ba-Nd-Mo", 
+				"Mn-Co-Ag", 
+				"Dy-Cr-Mo", 
+				"Er-Tm-Lu", 
+				"La-Y-Nb", 
+				"Tc-Ir-Pt", 
+				"Pr-Er-W", 
+				"Yb-Ho-Cr", 
+				"Mn-Fe-Au", 
+				"Ca-Y-V", 
+				"Pd-Ru-Au", 
+				"Ce-Hf-U", 
+				"La-Pm-Pr", 
+				"Tb-V-Mo", 
+				"Ba-Eu-Sc", 
+				"Ta-Bi-Mo", 
+				"Nd-Dy-V", 
+				"Tl-B-Pb", 
+				"Li-Hf-Zr", 
+				"Li-La-Fe", 
+				"Al-Sn-Bi", 
+				"Ce-Pm-Er", 
+				"Ni-Au-C", 
+				"Er-Ta-W", 
+				"Pr-Er-Pu", 
+				"La-Nd-Sc", 
+				"Ni-Ag-Ir", 
+				"La-Ce-Th", 
+				"La-Yb-Nd", 
+				"Pm-Nd-Dy", 
+				"Ce-Th-Mo", 
+				"Eu-U-W", 
+				"Pm-Ho-Er", 
+				"Ce-Lu-Mo", 
+				"Li-Cu-Mo", 
+				"Sm-Y-Th", 
+				"Tb-Nd-Dy", 
+				"Nd-Er-Pu", 
+				"Rb-Nb-V", 
+				"Pr-Y-U", 
+				"Y-Er-Pu", 
+				"Cd-Mo-Pb", 
+				"Li-Er-Zr", 
+				"V-Cu-W", 
+				"Pm-Nd-Mo", 
+				"Yb-Er-Ti", 
+				"Tb-Sc-Ta", 
+				"Ca-Ti-Mo", 
+				"Tb-Tm-Pu", 
+				"Y-Lu-Ta", 
+				"Rb-Li-Ti", 
+				"Hg-Sb-Pb", 
+				"La-Dy-Pu", 
+				"Pd-Rh-Au", 
+				"K-Ta-Ti", 
+				"Li-La-Sc", 
+				"Pr-Dy-Ti", 
+				"Yb-Pr-W", 
+				"La-Nd-Ho", 
+				"Sm-Nb-W", 
+				"Ce-Eu-Pu", 
+				"Nd-Sc-Mo", 
+				"Ag-Ir-Ru", 
+				"Pm-Y-Ho", 
+				"Yb-Dy-Lu", 
+				"U-Ta-V", 
+				"Ca-Tb-Ti", 
+				"Tb-Yb-Lu", 
+				"Ce-Pm-Sm", 
+				"Sr-Nd-V", 
+				"Co-Ni-Pt", 
+				"Rb-Mg-Zr", 
+				"Ti-V-Cr", 
+				"Th-U-Cr", 
+				"Yb-Pu-Cr", 
+				"Ta-Cu-Bi", 
+				"La-Yb-Cr", 
+				"Pr-Ho-V", 
+				"Rb-Na-Cr", 
+				"Ce-Ta-V", 
+				"Ce-Ta-W", 
+				"Eu-Y-Sc", 
+				"La-Ho-Ta", 
+				"Cd-Ga-Bi", 
+				"Eu-Pu-Mo", 
+				"Nd-Gd-Er", 
+				"Na-Li-Mo", 
+				"Tb-Tm-V", 
+				"Th-Sc-U", 
+				"Lu-Cr-Mo", 
+				"Tb-Ti-V", 
+				"Tb-Sm-Ho", 
+				"Dy-Ta-V", 
+				"Rb-Li-Nb", 
+				"Li-Ta-Mo", 
+				"Re-Tc-Pt", 
+				"Pm-Gd-V", 
+				"La-Gd-Y", 
+				"La-Dy-Ta", 
+				"Mg-Ti-Nb", 
+				"Nd-Th-W", 
+				"Dy-Y-Zr", 
+				"Tb-Zr-Ti", 
+				"Pd-Pt-W", 
+				"Cs-Rb-Ti", 
+				"Ca-Nd-Pu", 
+				"La-Pm-Nd", 
+				"Sm-Ho-Pu", 
+				"Hg-Bi-Mo", 
+				"Co-Ag-Pb", 
+				"Ce-Pm-Pr", 
+				"Cu-Re-Pd", 
+				"La-Th-Mo", 
+				"Ba-Pr-Nd", 
+				"La-Yb-W", 
+				"Li-Y-Sc", 
+				"Th-U-Ta", 
+				"Li-Tm-Mo", 
+				"Zn-Si-Ge", 
+				"Sc-Nb-V", 
+				"Sm-Th-V", 
+				"Li-La-Pm", 
+				"Li-Y-Ho", 
+				"Y-Hf-U", 
+				"Ti-V-W", 
+				"Sm-Lu-Th", 
+				"Li-Cu-Ni", 
+				"Ce-Y-Lu", 
+				"Tm-Th-W", 
+				"Yb-Tm-Mo", 
+				"Ca-Yb-Nd", 
+				"Ce-Eu-V", 
+				"Nd-Er-Sc", 
+				"Hf-Ta-Nb", 
+				"Co-Ag-C", 
+				"Co-Ir-Os", 
+				"Ca-Mn-V", 
+				"Pu-Ta-Nb", 
+				"V-Bi-Mo", 
+				"Y-Hf-Th", 
+				"Dy-Mo-W", 
+				"Ce-Sm-Lu", 
+				"Ni-Ir-Pd", 
+				"Re-Os-Rh", 
+				"Ce-Nd-Mo", 
+				"Er-Hf-Sc", 
+				"Cr-Fe-Ag", 
+				"Li-Nd-V", 
+				"Eu-Sc-Ta", 
+				"Yb-Tm-Th", 
+				"Ga-Ge-B", 
+				"Eu-Sc-W", 
+				"Li-Pr-Gd", 
+				"Yb-Pr-Dy", 
+				"Sm-Pu-V", 
+				"La-Nd-Cr", 
+				"Ce-Ho-Mo", 
+				"Li-Pm-Pu", 
+				"Y-Sc-U", 
+				"Pr-Sm-Mo", 
+				"Pr-U-Ta", 
+				"Re-Tc-Ir", 
+				"Nd-Zr-Ta", 
+				"Tl-In-Si", 
+				"Yb-V-Cr", 
+				"Tb-Pr-Sm", 
+				"Mn-Fe-Ru", 
+				"Ce-Zr-Ta", 
+				"K-Ti-Cr", 
+				"Ce-Sm-Mo", 
+				"Ni-Ag-Pb", 
+				"K-Mg-Cr", 
+				"Tb-Nd-Cr", 
+				"Pu-Cr-W", 
+				"La-Gd-Ho", 
+				"Pm-Nd-Lu", 
+				"La-Dy-Y", 
+				"Tb-Th-V", 
+				"Cu-Tc-Ir", 
+				"Li-Tb-Ho", 
+				"Tb-Sm-Tm", 
+				"Sr-Nd-Y", 
+				"Pm-V-Mo", 
+				"K-Rb-Ta", 
+				"Gd-Sc-Ti", 
+				"Y-Er-Cr", 
+				"Ce-Eu-Th", 
+				"Yb-Nd-Dy", 
+				"Er-Hf-Ta", 
+				"Pr-Y-Th", 
+				"Eu-Zr-Sc", 
+				"Gd-Sc-Ta", 
+				"Li-Ce-Ti", 
+				"Na-Hf-Nb", 
+				"Sm-Gd-Cr", 
+				"La-Pr-Nd", 
+				"Ga-Re-Hg", 
+				"Li-La-Gd", 
+				"Co-Ni-Rh", 
+				"La-Tb-Er", 
+				"Yb-Lu-Mo", 
+				"Er-Pu-V", 
+				"Tl-Ga-Pb", 
+				"Yb-Sc-V", 
+				"Co-Ag-Ru", 
+				"Li-Zr-Nb", 
+				"Rb-Ta-V", 
+				"K-Li-Mg", 
+				"Dy-V-W", 
+				"Pu-Mo-W", 
+				"Li-La-Mn", 
+				"Tb-Zr-Sc", 
+				"La-Pr-Er", 
+				"Tb-Lu-Ta", 
+				"Tb-Ho-Pu", 
+				"Ba-Ca-Mo", 
+				"Gd-Th-Ti", 
+				"Ta-Nb-Mo", 
+				"La-Y-Sc", 
+				"La-Tm-Mo", 
+				"Ge-B-Pb", 
+				"Li-Pr-Ta", 
+				"Cu-Pt-Au", 
+				"La-Pu-V", 
+				"Tb-Pr-Gd", 
+				"Eu-Ta-V", 
+				"Ce-Tm-W", 
+				"Pr-Tm-W", 
+				"La-Gd-Ti", 
+				"Pm-Pr-Th", 
+				"Sm-Tm-Cr", 
+				"Mn-Ni-Au", 
+				"Ce-Y-V", 
+				"Rb-Cr-Mo", 
+				"La-Nb-W", 
+				"Ca-Y-Mo", 
+				"Sm-Lu-Nb", 
+				"Li-V-Fe", 
+				"Y-Er-Nb", 
+				"Nd-Dy-Zr", 
+				"Pm-Pr-Tm", 
+				"Mg-U-Nb", 
+				"La-Yb-Eu", 
+				"Gd-V-W", 
+				"Eu-Zr-Ta", 
+				"Tb-Ho-Er", 
+				"Cs-Rb-Nb", 
+				"Tb-Pr-Lu", 
+				"Cd-Bi-B", 
+				"Cu-Ir-Ru", 
+				"Gd-Ho-Er", 
+				"Pr-V-Mo", 
+				"La-Nd-Gd", 
+				"Y-Tm-Ti", 
+				"Ni-Ag-Au", 
+				"K-Hf-Ti", 
+				"Nd-Ho-Tm", 
+				"Pr-Nd-Pu", 
+				"La-Gd-V", 
+				"Yb-Er-Cr", 
+				"Dy-V-Mo", 
+				"La-Nd-Dy", 
+				"Ce-Pr-Lu", 
+				"Ce-Nd-Gd", 
+				"Y-Th-Zr", 
+				"Tl-Ni-Ag", 
+				"Nd-Gd-Ti", 
+				"K-Li-V", 
+				"Li-Ce-Y", 
+				"Mn-Ni-Ru", 
+				"Ho-Pu-W", 
+				"Pm-Dy-Lu", 
+				"Ce-Sm-U", 
+				"Ni-Os-Pd", 
+				"Cr-Mo-Pb", 
+				"Er-Ta-V", 
+				"Ce-Nd-Er", 
+				"Zn-Ga-Si", 
+				"Sm-Y-Ta", 
+				"Eu-Nb-W", 
+				"Fe-Pd-Au", 
+				"Co-Re-Ru", 
+				"Sm-Y-Tm", 
+				"Fe-Cu-C", 
+				"Tm-Pu-Ti", 
+				"Ta-Nb-Cu", 
+				"Ho-Ta-V", 
+				"Li-Lu-Ti", 
+				"Yb-Er-Nb", 
+				"Fe-Ni-Au", 
+				"Nd-Ta-W", 
+				"La-Pr-Ho", 
+				"Mg-V-Cr", 
+				"La-Pr-U", 
+				"Y-Zr-Ti", 
+				"Cu-Ni-Au", 
+				"Rb-Li-Mo", 
+				"Li-Ho-Zr", 
+				"Fe-Ag-Pb", 
+				"Eu-Y-V", 
+				"Nd-Th-Ti", 
+				"Pm-Pr-Cr", 
+				"Sm-Y-Mo", 
+				"Zn-Ga-Sn", 
+				"Tl-Ga-Si", 
+				"La-Tb-Y", 
+				"Tm-Ta-Ti", 
+				"Sr-Nd-Mo", 
+				"Y-Tm-Mo", 
+				"Tb-Yb-Pu", 
+				"La-Ho-Mo", 
+				"Dy-Ho-Mo", 
+				"Cs-Hf-Mg", 
+				"Ba-Sm-V", 
+				"Pr-Y-Lu", 
+				"Nd-Er-V", 
+				"Tm-Mo-W", 
+				"Li-Ta-Nb", 
+				"Gd-Tm-Th", 
+				"Ti-V-Mo", 
+				"Sc-Ta-Nb", 
+				"La-Sm-Tm", 
+				"Ce-Er-Tm", 
+				"Y-Ho-Er", 
+				"Sm-Th-Mo", 
+				"Tb-Sm-Y", 
+				"Li-Tb-Mo", 
+				"Ho-Lu-Th", 
+				"Sm-Pu-Ta", 
+				"Nd-Tm-Ti", 
+				"Na-Li-Ta", 
+				"K-Ti-V", 
+				"Mn-Tl-Pb", 
+				"Hg-B-Pb", 
+				"Er-Lu-Th", 
+				"Pu-Zr-Nb", 
+				"Ca-La-Ce", 
+				"Eu-Hf-U", 
+				"Os-Ru-Rh", 
+				"La-Sc-Cr", 
+				"V-Ag-Ru", 
+				"Ba-Pr-Sm", 
+				"Nd-Th-V", 
+				"Pr-Ta-Ti", 
+				"Y-Tm-Pu", 
+				"Tb-Y-Th", 
+				"Ce-Nd-Th", 
+				"Pt-Rh-Au", 
+				"Er-Nb-Mo", 
+				"Ba-La-Mn", 
+				"Pr-Pu-V", 
+				"Sm-Y-Cr", 
+				"Ga-Re-Sn", 
+				"Ho-Er-Pu", 
+				"Al-Tl-Ge", 
+				"Dy-Lu-Mo", 
+				"Na-Sr-Ti", 
+				"Cd-Si-Ge", 
+				"Tb-Pr-Pu", 
+				"Ba-Gd-Sc", 
+				"Ca-Tb-Pu", 
+				"Cu-Ag-Os", 
+				"Co-Cu-Ir", 
+				"Pm-Dy-Pu", 
+				"Zn-Cd-Ge", 
+				"La-V-W", 
+				"Sr-Ca-V", 
+				"Dy-Ho-Tm", 
+				"Eu-Th-W", 
+				"Ca-Pm-Y", 
+				"Eu-Th-Zr", 
+				"Cu-Os-Ru", 
+				"Be-In-Ga", 
+				"La-Th-Ti", 
+				"Nd-Pu-Cr", 
+				"Ca-Ce-Y", 
+				"Yb-Y-V", 
+				"Ca-La-Y", 
+				"Li-Tm-Pu", 
+				"Al-Tl-Pb", 
+				"Li-Ce-Ho", 
+				"Li-Sc-Nb", 
+				"Pr-Nd-Dy", 
+				"Yb-Nd-Pu", 
+				"Li-Ce-Nd", 
+				"Pm-Dy-Cr", 
+				"Dy-Lu-V", 
+				"Ca-Mn-Fe", 
+				"Cs-Mg-V", 
+				"Ce-Eu-Nb", 
+				"Tb-V-Cr", 
+				"Ce-Ta-Nb"
+			];
+		}
+	};
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_elements_nonformer extends $mol_object {
-        pd_bin() {
-            return [
-                [
-                    88,
-                    23
-                ],
-                [
-                    88,
-                    41
-                ],
-                [
-                    46,
-                    78
-                ],
-                [
-                    46,
-                    82
-                ],
-                [
-                    46,
-                    5
-                ],
-                [
-                    46,
-                    26
-                ],
-                [
-                    46,
-                    23
-                ],
-                [
-                    46,
-                    28
-                ],
-                [
-                    46,
-                    25
-                ],
-                [
-                    46,
-                    31
-                ],
-                [
-                    46,
-                    76
-                ],
-                [
-                    46,
-                    24
-                ],
-                [
-                    46,
-                    41
-                ],
-                [
-                    46,
-                    27
-                ],
-                [
-                    46,
-                    75
-                ],
-                [
-                    46,
-                    81
-                ],
-                [
-                    46,
-                    74
-                ],
-                [
-                    46,
-                    44
-                ],
-                [
-                    46,
-                    43
-                ],
-                [
-                    46,
-                    13
-                ],
-                [
-                    46,
-                    80
-                ],
-                [
-                    46,
-                    91
-                ],
-                [
-                    46,
-                    22
-                ],
-                [
-                    12,
-                    3
-                ],
-                [
-                    12,
-                    82
-                ],
-                [
-                    12,
-                    47
-                ],
-                [
-                    12,
-                    54
-                ],
-                [
-                    12,
-                    30
-                ],
-                [
-                    12,
-                    31
-                ],
-                [
-                    12,
-                    79
-                ],
-                [
-                    12,
-                    48
-                ],
-                [
-                    12,
-                    18
-                ],
-                [
-                    12,
-                    10
-                ],
-                [
-                    12,
-                    81
-                ],
-                [
-                    12,
-                    13
-                ],
-                [
-                    12,
-                    49
-                ],
-                [
-                    12,
-                    80
-                ],
-                [
-                    12,
-                    29
-                ],
-                [
-                    94,
-                    23
-                ],
-                [
-                    94,
-                    41
-                ],
-                [
-                    94,
-                    92
-                ],
-                [
-                    94,
-                    93
-                ],
-                [
-                    94,
-                    91
-                ],
-                [
-                    17,
-                    6
-                ],
-                [
-                    32,
-                    78
-                ],
-                [
-                    32,
-                    82
-                ],
-                [
-                    32,
-                    81
-                ],
-                [
-                    32,
-                    80
-                ],
-                [
-                    78,
-                    5
-                ],
-                [
-                    78,
-                    26
-                ],
-                [
-                    78,
-                    25
-                ],
-                [
-                    78,
-                    31
-                ],
-                [
-                    78,
-                    41
-                ],
-                [
-                    78,
-                    27
-                ],
-                [
-                    78,
-                    14
-                ],
-                [
-                    78,
-                    77
-                ],
-                [
-                    78,
-                    44
-                ],
-                [
-                    78,
-                    43
-                ],
-                [
-                    78,
-                    13
-                ],
-                [
-                    78,
-                    73
-                ],
-                [
-                    55,
-                    19
-                ],
-                [
-                    55,
-                    62
-                ],
-                [
-                    55,
-                    25
-                ],
-                [
-                    55,
-                    63
-                ],
-                [
-                    55,
-                    56
-                ],
-                [
-                    55,
-                    24
-                ],
-                [
-                    55,
-                    41
-                ],
-                [
-                    55,
-                    59
-                ],
-                [
-                    55,
-                    27
-                ],
-                [
-                    55,
-                    60
-                ],
-                [
-                    55,
-                    58
-                ],
-                [
-                    55,
-                    20
-                ],
-                [
-                    55,
-                    61
-                ],
-                [
-                    55,
-                    37
-                ],
-                [
-                    55,
-                    21
-                ],
-                [
-                    55,
-                    22
-                ],
-                [
-                    55,
-                    38
-                ],
-                [
-                    55,
-                    69
-                ],
-                [
-                    4,
-                    82
-                ],
-                [
-                    4,
-                    47
-                ],
-                [
-                    4,
-                    28
-                ],
-                [
-                    3,
-                    82
-                ],
-                [
-                    3,
-                    30
-                ],
-                [
-                    3,
-                    31
-                ],
-                [
-                    3,
-                    48
-                ],
-                [
-                    3,
-                    2
-                ],
-                [
-                    3,
-                    10
-                ],
-                [
-                    3,
-                    13
-                ],
-                [
-                    3,
-                    49
-                ],
-                [
-                    3,
-                    29
-                ],
-                [
-                    4,
-                    30
-                ],
-                [
-                    4,
-                    31
-                ],
-                [
-                    4,
-                    79
-                ],
-                [
-                    82,
-                    47
-                ],
-                [
-                    82,
-                    26
-                ],
-                [
-                    82,
-                    23
-                ],
-                [
-                    82,
-                    28
-                ],
-                [
-                    82,
-                    25
-                ],
-                [
-                    82,
-                    30
-                ],
-                [
-                    82,
-                    31
-                ],
-                [
-                    82,
-                    79
-                ],
-                [
-                    82,
-                    41
-                ],
-                [
-                    82,
-                    40
-                ],
-                [
-                    82,
-                    75
-                ],
-                [
-                    82,
-                    14
-                ],
-                [
-                    82,
-                    74
-                ],
-                [
-                    82,
-                    50
-                ],
-                [
-                    82,
-                    13
-                ],
-                [
-                    82,
-                    49
-                ],
-                [
-                    82,
-                    72
-                ],
-                [
-                    82,
-                    22
-                ],
-                [
-                    82,
-                    29
-                ],
-                [
-                    4,
-                    81
-                ],
-                [
-                    4,
-                    50
-                ],
-                [
-                    4,
-                    49
-                ],
-                [
-                    4,
-                    51
-                ],
-                [
-                    4,
-                    80
-                ],
-                [
-                    4,
-                    29
-                ],
-                [
-                    19,
-                    57
-                ],
-                [
-                    19,
-                    26
-                ],
-                [
-                    19,
-                    62
-                ],
-                [
-                    19,
-                    25
-                ],
-                [
-                    19,
-                    56
-                ],
-                [
-                    19,
-                    70
-                ],
-                [
-                    19,
-                    24
-                ],
-                [
-                    19,
-                    41
-                ],
-                [
-                    19,
-                    10
-                ],
-                [
-                    19,
-                    59
-                ],
-                [
-                    19,
-                    60
-                ],
-                [
-                    19,
-                    93
-                ],
-                [
-                    19,
-                    20
-                ],
-                [
-                    19,
-                    37
-                ],
-                [
-                    19,
-                    64
-                ],
-                [
-                    19,
-                    21
-                ],
-                [
-                    19,
-                    68
-                ],
-                [
-                    19,
-                    22
-                ],
-                [
-                    19,
-                    38
-                ],
-                [
-                    19,
-                    69
-                ],
-                [
-                    47,
-                    23
-                ],
-                [
-                    47,
-                    25
-                ],
-                [
-                    47,
-                    30
-                ],
-                [
-                    47,
-                    31
-                ],
-                [
-                    47,
-                    24
-                ],
-                [
-                    47,
-                    41
-                ],
-                [
-                    47,
-                    81
-                ],
-                [
-                    47,
-                    13
-                ],
-                [
-                    47,
-                    80
-                ],
-                [
-                    47,
-                    29
-                ],
-                [
-                    57,
-                    23
-                ],
-                [
-                    57,
-                    62
-                ],
-                [
-                    57,
-                    71
-                ],
-                [
-                    57,
-                    56
-                ],
-                [
-                    57,
-                    2
-                ],
-                [
-                    57,
-                    24
-                ],
-                [
-                    57,
-                    41
-                ],
-                [
-                    57,
-                    40
-                ],
-                [
-                    57,
-                    59
-                ],
-                [
-                    57,
-                    60
-                ],
-                [
-                    57,
-                    58
-                ],
-                [
-                    57,
-                    93
-                ],
-                [
-                    57,
-                    20
-                ],
-                [
-                    57,
-                    61
-                ],
-                [
-                    57,
-                    72
-                ],
-                [
-                    57,
-                    89
-                ],
-                [
-                    57,
-                    21
-                ],
-                [
-                    57,
-                    91
-                ],
-                [
-                    57,
-                    22
-                ],
-                [
-                    57,
-                    73
-                ],
-                [
-                    57,
-                    39
-                ],
-                [
-                    5,
-                    25
-                ],
-                [
-                    5,
-                    26
-                ],
-                [
-                    5,
-                    28
-                ],
-                [
-                    5,
-                    31
-                ],
-                [
-                    5,
-                    76
-                ],
-                [
-                    5,
-                    27
-                ],
-                [
-                    5,
-                    7
-                ],
-                [
-                    5,
-                    43
-                ],
-                [
-                    26,
-                    28
-                ],
-                [
-                    26,
-                    25
-                ],
-                [
-                    26,
-                    79
-                ],
-                [
-                    26,
-                    24
-                ],
-                [
-                    26,
-                    27
-                ],
-                [
-                    26,
-                    75
-                ],
-                [
-                    26,
-                    81
-                ],
-                [
-                    26,
-                    45
-                ],
-                [
-                    26,
-                    77
-                ],
-                [
-                    26,
-                    74
-                ],
-                [
-                    26,
-                    44
-                ],
-                [
-                    26,
-                    43
-                ],
-                [
-                    5,
-                    45
-                ],
-                [
-                    5,
-                    77
-                ],
-                [
-                    23,
-                    54
-                ],
-                [
-                    23,
-                    28
-                ],
-                [
-                    23,
-                    65
-                ],
-                [
-                    23,
-                    67
-                ],
-                [
-                    23,
-                    62
-                ],
-                [
-                    23,
-                    63
-                ],
-                [
-                    5,
-                    44
-                ],
-                [
-                    23,
-                    79
-                ],
-                [
-                    23,
-                    66
-                ],
-                [
-                    23,
-                    18
-                ],
-                [
-                    23,
-                    56
-                ],
-                [
-                    23,
-                    2
-                ],
-                [
-                    23,
-                    70
-                ],
-                [
-                    23,
-                    11
-                ],
-                [
-                    23,
-                    41
-                ],
-                [
-                    23,
-                    10
-                ],
-                [
-                    23,
-                    59
-                ],
-                [
-                    23,
-                    92
-                ],
-                [
-                    23,
-                    81
-                ],
-                [
-                    23,
-                    60
-                ],
-                [
-                    23,
-                    58
-                ],
-                [
-                    23,
-                    93
-                ],
-                [
-                    23,
-                    36
-                ],
-                [
-                    23,
-                    20
-                ],
-                [
-                    23,
-                    61
-                ],
-                [
-                    23,
-                    64
-                ],
-                [
-                    23,
-                    89
-                ],
-                [
-                    23,
-                    68
-                ],
-                [
-                    23,
-                    91
-                ],
-                [
-                    23,
-                    22
-                ],
-                [
-                    23,
-                    73
-                ],
-                [
-                    23,
-                    38
-                ],
-                [
-                    23,
-                    69
-                ],
-                [
-                    54,
-                    71
-                ],
-                [
-                    54,
-                    2
-                ],
-                [
-                    54,
-                    11
-                ],
-                [
-                    54,
-                    41
-                ],
-                [
-                    54,
-                    40
-                ],
-                [
-                    54,
-                    58
-                ],
-                [
-                    54,
-                    36
-                ],
-                [
-                    54,
-                    72
-                ],
-                [
-                    54,
-                    21
-                ],
-                [
-                    54,
-                    22
-                ],
-                [
-                    54,
-                    39
-                ],
-                [
-                    5,
-                    42
-                ],
-                [
-                    28,
-                    25
-                ],
-                [
-                    28,
-                    76
-                ],
-                [
-                    28,
-                    2
-                ],
-                [
-                    28,
-                    41
-                ],
-                [
-                    28,
-                    10
-                ],
-                [
-                    28,
-                    40
-                ],
-                [
-                    28,
-                    27
-                ],
-                [
-                    28,
-                    75
-                ],
-                [
-                    28,
-                    81
-                ],
-                [
-                    28,
-                    74
-                ],
-                [
-                    28,
-                    44
-                ],
-                [
-                    28,
-                    43
-                ],
-                [
-                    28,
-                    72
-                ],
-                [
-                    28,
-                    42
-                ],
-                [
-                    28,
-                    80
-                ],
-                [
-                    28,
-                    22
-                ],
-                [
-                    28,
-                    73
-                ],
-                [
-                    65,
-                    67
-                ],
-                [
-                    65,
-                    63
-                ],
-                [
-                    65,
-                    66
-                ],
-                [
-                    65,
-                    70
-                ],
-                [
-                    65,
-                    41
-                ],
-                [
-                    65,
-                    93
-                ],
-                [
-                    65,
-                    61
-                ],
-                [
-                    65,
-                    72
-                ],
-                [
-                    65,
-                    64
-                ],
-                [
-                    65,
-                    89
-                ],
-                [
-                    65,
-                    21
-                ],
-                [
-                    65,
-                    68
-                ],
-                [
-                    65,
-                    22
-                ],
-                [
-                    65,
-                    73
-                ],
-                [
-                    65,
-                    38
-                ],
-                [
-                    65,
-                    69
-                ],
-                [
-                    65,
-                    39
-                ],
-                [
-                    67,
-                    63
-                ],
-                [
-                    67,
-                    71
-                ],
-                [
-                    67,
-                    66
-                ],
-                [
-                    67,
-                    2
-                ],
-                [
-                    67,
-                    70
-                ],
-                [
-                    67,
-                    41
-                ],
-                [
-                    67,
-                    40
-                ],
-                [
-                    67,
-                    93
-                ],
-                [
-                    67,
-                    20
-                ],
-                [
-                    67,
-                    61
-                ],
-                [
-                    67,
-                    72
-                ],
-                [
-                    67,
-                    64
-                ],
-                [
-                    67,
-                    89
-                ],
-                [
-                    67,
-                    21
-                ],
-                [
-                    67,
-                    68
-                ],
-                [
-                    67,
-                    22
-                ],
-                [
-                    67,
-                    73
-                ],
-                [
-                    67,
-                    38
-                ],
-                [
-                    67,
-                    69
-                ],
-                [
-                    67,
-                    39
-                ],
-                [
-                    62,
-                    71
-                ],
-                [
-                    62,
-                    56
-                ],
-                [
-                    62,
-                    24
-                ],
-                [
-                    62,
-                    41
-                ],
-                [
-                    62,
-                    40
-                ],
-                [
-                    62,
-                    93
-                ],
-                [
-                    62,
-                    20
-                ],
-                [
-                    62,
-                    72
-                ],
-                [
-                    62,
-                    89
-                ],
-                [
-                    62,
-                    91
-                ],
-                [
-                    62,
-                    22
-                ],
-                [
-                    62,
-                    73
-                ],
-                [
-                    62,
-                    38
-                ],
-                [
-                    62,
-                    69
-                ],
-                [
-                    62,
-                    39
-                ],
-                [
-                    25,
-                    0
-                ],
-                [
-                    25,
-                    48
-                ],
-                [
-                    25,
-                    18
-                ],
-                [
-                    25,
-                    56
-                ],
-                [
-                    25,
-                    2
-                ],
-                [
-                    25,
-                    11
-                ],
-                [
-                    25,
-                    10
-                ],
-                [
-                    25,
-                    75
-                ],
-                [
-                    25,
-                    81
-                ],
-                [
-                    25,
-                    43
-                ],
-                [
-                    25,
-                    37
-                ],
-                [
-                    86,
-                    41
-                ],
-                [
-                    30,
-                    31
-                ],
-                [
-                    30,
-                    79
-                ],
-                [
-                    30,
-                    48
-                ],
-                [
-                    30,
-                    81
-                ],
-                [
-                    30,
-                    74
-                ],
-                [
-                    30,
-                    13
-                ],
-                [
-                    30,
-                    49
-                ],
-                [
-                    30,
-                    80
-                ],
-                [
-                    30,
-                    29
-                ],
-                [
-                    63,
-                    66
-                ],
-                [
-                    63,
-                    2
-                ],
-                [
-                    63,
-                    70
-                ],
-                [
-                    63,
-                    41
-                ],
-                [
-                    63,
-                    93
-                ],
-                [
-                    63,
-                    20
-                ],
-                [
-                    63,
-                    61
-                ],
-                [
-                    63,
-                    72
-                ],
-                [
-                    63,
-                    64
-                ],
-                [
-                    63,
-                    89
-                ],
-                [
-                    63,
-                    21
-                ],
-                [
-                    63,
-                    68
-                ],
-                [
-                    63,
-                    22
-                ],
-                [
-                    63,
-                    73
-                ],
-                [
-                    63,
-                    38
-                ],
-                [
-                    63,
-                    69
-                ],
-                [
-                    63,
-                    39
-                ],
-                [
-                    31,
-                    79
-                ],
-                [
-                    31,
-                    48
-                ],
-                [
-                    31,
-                    81
-                ],
-                [
-                    31,
-                    13
-                ],
-                [
-                    31,
-                    49
-                ],
-                [
-                    31,
-                    80
-                ],
-                [
-                    31,
-                    29
-                ],
-                [
-                    71,
-                    18
-                ],
-                [
-                    71,
-                    2
-                ],
-                [
-                    71,
-                    11
-                ],
-                [
-                    71,
-                    10
-                ],
-                [
-                    71,
-                    40
-                ],
-                [
-                    71,
-                    58
-                ],
-                [
-                    71,
-                    36
-                ],
-                [
-                    71,
-                    20
-                ],
-                [
-                    71,
-                    72
-                ],
-                [
-                    71,
-                    89
-                ],
-                [
-                    71,
-                    21
-                ],
-                [
-                    71,
-                    91
-                ],
-                [
-                    71,
-                    38
-                ],
-                [
-                    71,
-                    69
-                ],
-                [
-                    71,
-                    39
-                ],
-                [
-                    0,
-                    41
-                ],
-                [
-                    79,
-                    76
-                ],
-                [
-                    79,
-                    41
-                ],
-                [
-                    79,
-                    40
-                ],
-                [
-                    79,
-                    75
-                ],
-                [
-                    79,
-                    81
-                ],
-                [
-                    79,
-                    74
-                ],
-                [
-                    79,
-                    43
-                ],
-                [
-                    79,
-                    50
-                ],
-                [
-                    79,
-                    22
-                ],
-                [
-                    66,
-                    2
-                ],
-                [
-                    66,
-                    70
-                ],
-                [
-                    66,
-                    41
-                ],
-                [
-                    66,
-                    93
-                ],
-                [
-                    66,
-                    20
-                ],
-                [
-                    66,
-                    61
-                ],
-                [
-                    66,
-                    72
-                ],
-                [
-                    66,
-                    64
-                ],
-                [
-                    66,
-                    89
-                ],
-                [
-                    66,
-                    68
-                ],
-                [
-                    66,
-                    22
-                ],
-                [
-                    66,
-                    73
-                ],
-                [
-                    66,
-                    38
-                ],
-                [
-                    66,
-                    69
-                ],
-                [
-                    66,
-                    39
-                ],
-                [
-                    0,
-                    29
-                ],
-                [
-                    48,
-                    41
-                ],
-                [
-                    48,
-                    13
-                ],
-                [
-                    48,
-                    72
-                ],
-                [
-                    48,
-                    22
-                ],
-                [
-                    48,
-                    29
-                ],
-                [
-                    76,
-                    75
-                ],
-                [
-                    76,
-                    45
-                ],
-                [
-                    76,
-                    77
-                ],
-                [
-                    76,
-                    74
-                ],
-                [
-                    76,
-                    44
-                ],
-                [
-                    76,
-                    43
-                ],
-                [
-                    76,
-                    42
-                ],
-                [
-                    52,
-                    15
-                ],
-                [
-                    52,
-                    33
-                ],
-                [
-                    18,
-                    2
-                ],
-                [
-                    18,
-                    11
-                ],
-                [
-                    18,
-                    41
-                ],
-                [
-                    18,
-                    40
-                ],
-                [
-                    18,
-                    36
-                ],
-                [
-                    18,
-                    72
-                ],
-                [
-                    18,
-                    21
-                ],
-                [
-                    18,
-                    22
-                ],
-                [
-                    18,
-                    39
-                ],
-                [
-                    56,
-                    2
-                ],
-                [
-                    56,
-                    70
-                ],
-                [
-                    56,
-                    24
-                ],
-                [
-                    56,
-                    41
-                ],
-                [
-                    56,
-                    40
-                ],
-                [
-                    56,
-                    59
-                ],
-                [
-                    56,
-                    60
-                ],
-                [
-                    56,
-                    58
-                ],
-                [
-                    56,
-                    93
-                ],
-                [
-                    56,
-                    74
-                ],
-                [
-                    56,
-                    20
-                ],
-                [
-                    56,
-                    61
-                ],
-                [
-                    56,
-                    72
-                ],
-                [
-                    56,
-                    89
-                ],
-                [
-                    56,
-                    21
-                ],
-                [
-                    56,
-                    91
-                ],
-                [
-                    56,
-                    22
-                ],
-                [
-                    56,
-                    73
-                ],
-                [
-                    56,
-                    69
-                ],
-                [
-                    56,
-                    39
-                ],
-                [
-                    2,
-                    70
-                ],
-                [
-                    2,
-                    11
-                ],
-                [
-                    2,
-                    24
-                ],
-                [
-                    2,
-                    41
-                ],
-                [
-                    2,
-                    10
-                ],
-                [
-                    2,
-                    40
-                ],
-                [
-                    2,
-                    59
-                ],
-                [
-                    2,
-                    27
-                ],
-                [
-                    2,
-                    60
-                ],
-                [
-                    2,
-                    58
-                ],
-                [
-                    2,
-                    93
-                ],
-                [
-                    2,
-                    36
-                ],
-                [
-                    2,
-                    20
-                ],
-                [
-                    2,
-                    61
-                ],
-                [
-                    2,
-                    72
-                ],
-                [
-                    2,
-                    64
-                ],
-                [
-                    2,
-                    21
-                ],
-                [
-                    2,
-                    68
-                ],
-                [
-                    2,
-                    22
-                ],
-                [
-                    2,
-                    38
-                ],
-                [
-                    2,
-                    39
-                ],
-                [
-                    70,
-                    41
-                ],
-                [
-                    70,
-                    40
-                ],
-                [
-                    70,
-                    59
-                ],
-                [
-                    70,
-                    93
-                ],
-                [
-                    70,
-                    61
-                ],
-                [
-                    70,
-                    72
-                ],
-                [
-                    70,
-                    64
-                ],
-                [
-                    70,
-                    89
-                ],
-                [
-                    70,
-                    21
-                ],
-                [
-                    70,
-                    68
-                ],
-                [
-                    70,
-                    22
-                ],
-                [
-                    70,
-                    73
-                ],
-                [
-                    70,
-                    38
-                ],
-                [
-                    70,
-                    69
-                ],
-                [
-                    70,
-                    39
-                ],
-                [
-                    11,
-                    24
-                ],
-                [
-                    11,
-                    41
-                ],
-                [
-                    11,
-                    10
-                ],
-                [
-                    11,
-                    40
-                ],
-                [
-                    11,
-                    36
-                ],
-                [
-                    11,
-                    21
-                ],
-                [
-                    11,
-                    91
-                ],
-                [
-                    11,
-                    22
-                ],
-                [
-                    11,
-                    39
-                ],
-                [
-                    24,
-                    81
-                ],
-                [
-                    24,
-                    43
-                ],
-                [
-                    24,
-                    37
-                ],
-                [
-                    24,
-                    80
-                ],
-                [
-                    24,
-                    69
-                ],
-                [
-                    41,
-                    10
-                ],
-                [
-                    41,
-                    40
-                ],
-                [
-                    41,
-                    59
-                ],
-                [
-                    41,
-                    92
-                ],
-                [
-                    41,
-                    90
-                ],
-                [
-                    41,
-                    81
-                ],
-                [
-                    41,
-                    60
-                ],
-                [
-                    41,
-                    58
-                ],
-                [
-                    41,
-                    93
-                ],
-                [
-                    41,
-                    87
-                ],
-                [
-                    41,
-                    36
-                ],
-                [
-                    41,
-                    20
-                ],
-                [
-                    41,
-                    61
-                ],
-                [
-                    41,
-                    37
-                ],
-                [
-                    41,
-                    72
-                ],
-                [
-                    41,
-                    64
-                ],
-                [
-                    41,
-                    42
-                ],
-                [
-                    41,
-                    89
-                ],
-                [
-                    41,
-                    21
-                ],
-                [
-                    41,
-                    80
-                ],
-                [
-                    41,
-                    68
-                ],
-                [
-                    41,
-                    22
-                ],
-                [
-                    41,
-                    73
-                ],
-                [
-                    41,
-                    38
-                ],
-                [
-                    41,
-                    69
-                ],
-                [
-                    10,
-                    40
-                ],
-                [
-                    10,
-                    36
-                ],
-                [
-                    10,
-                    37
-                ],
-                [
-                    10,
-                    72
-                ],
-                [
-                    10,
-                    21
-                ],
-                [
-                    10,
-                    22
-                ],
-                [
-                    10,
-                    39
-                ],
-                [
-                    40,
-                    93
-                ],
-                [
-                    40,
-                    36
-                ],
-                [
-                    40,
-                    20
-                ],
-                [
-                    40,
-                    61
-                ],
-                [
-                    40,
-                    72
-                ],
-                [
-                    40,
-                    89
-                ],
-                [
-                    40,
-                    21
-                ],
-                [
-                    40,
-                    80
-                ],
-                [
-                    40,
-                    91
-                ],
-                [
-                    40,
-                    22
-                ],
-                [
-                    40,
-                    73
-                ],
-                [
-                    40,
-                    38
-                ],
-                [
-                    40,
-                    69
-                ],
-                [
-                    40,
-                    39
-                ],
-                [
-                    59,
-                    60
-                ],
-                [
-                    59,
-                    58
-                ],
-                [
-                    59,
-                    93
-                ],
-                [
-                    59,
-                    20
-                ],
-                [
-                    59,
-                    61
-                ],
-                [
-                    59,
-                    37
-                ],
-                [
-                    59,
-                    72
-                ],
-                [
-                    59,
-                    89
-                ],
-                [
-                    59,
-                    21
-                ],
-                [
-                    59,
-                    91
-                ],
-                [
-                    59,
-                    22
-                ],
-                [
-                    59,
-                    73
-                ],
-                [
-                    59,
-                    69
-                ],
-                [
-                    59,
-                    39
-                ],
-                [
-                    92,
-                    93
-                ],
-                [
-                    27,
-                    75
-                ],
-                [
-                    27,
-                    81
-                ],
-                [
-                    27,
-                    45
-                ],
-                [
-                    27,
-                    74
-                ],
-                [
-                    27,
-                    44
-                ],
-                [
-                    27,
-                    43
-                ],
-                [
-                    27,
-                    42
-                ],
-                [
-                    27,
-                    80
-                ],
-                [
-                    75,
-                    45
-                ],
-                [
-                    75,
-                    77
-                ],
-                [
-                    75,
-                    74
-                ],
-                [
-                    75,
-                    44
-                ],
-                [
-                    75,
-                    43
-                ],
-                [
-                    81,
-                    50
-                ],
-                [
-                    81,
-                    13
-                ],
-                [
-                    81,
-                    49
-                ],
-                [
-                    81,
-                    80
-                ],
-                [
-                    81,
-                    73
-                ],
-                [
-                    81,
-                    29
-                ],
-                [
-                    45,
-                    77
-                ],
-                [
-                    45,
-                    74
-                ],
-                [
-                    45,
-                    44
-                ],
-                [
-                    45,
-                    43
-                ],
-                [
-                    45,
-                    42
-                ],
-                [
-                    45,
-                    73
-                ],
-                [
-                    60,
-                    58
-                ],
-                [
-                    60,
-                    93
-                ],
-                [
-                    60,
-                    61
-                ],
-                [
-                    60,
-                    89
-                ],
-                [
-                    60,
-                    22
-                ],
-                [
-                    58,
-                    93
-                ],
-                [
-                    58,
-                    61
-                ],
-                [
-                    58,
-                    72
-                ],
-                [
-                    58,
-                    89
-                ],
-                [
-                    58,
-                    21
-                ],
-                [
-                    58,
-                    91
-                ],
-                [
-                    58,
-                    22
-                ],
-                [
-                    58,
-                    73
-                ],
-                [
-                    58,
-                    69
-                ],
-                [
-                    14,
-                    50
-                ],
-                [
-                    77,
-                    43
-                ],
-                [
-                    77,
-                    42
-                ],
-                [
-                    93,
-                    61
-                ],
-                [
-                    93,
-                    72
-                ],
-                [
-                    93,
-                    64
-                ],
-                [
-                    93,
-                    21
-                ],
-                [
-                    93,
-                    68
-                ],
-                [
-                    93,
-                    22
-                ],
-                [
-                    93,
-                    73
-                ],
-                [
-                    93,
-                    38
-                ],
-                [
-                    93,
-                    69
-                ],
-                [
-                    36,
-                    72
-                ],
-                [
-                    36,
-                    21
-                ],
-                [
-                    36,
-                    22
-                ],
-                [
-                    36,
-                    39
-                ],
-                [
-                    74,
-                    44
-                ],
-                [
-                    74,
-                    43
-                ],
-                [
-                    74,
-                    50
-                ],
-                [
-                    74,
-                    49
-                ],
-                [
-                    74,
-                    42
-                ],
-                [
-                    44,
-                    43
-                ],
-                [
-                    44,
-                    42
-                ],
-                [
-                    50,
-                    13
-                ],
-                [
-                    50,
-                    73
-                ],
-                [
-                    20,
-                    37
-                ],
-                [
-                    20,
-                    72
-                ],
-                [
-                    20,
-                    64
-                ],
-                [
-                    20,
-                    89
-                ],
-                [
-                    20,
-                    21
-                ],
-                [
-                    20,
-                    91
-                ],
-                [
-                    20,
-                    22
-                ],
-                [
-                    20,
-                    73
-                ],
-                [
-                    20,
-                    38
-                ],
-                [
-                    20,
-                    69
-                ],
-                [
-                    20,
-                    39
-                ],
-                [
-                    33,
-                    51
-                ],
-                [
-                    13,
-                    49
-                ],
-                [
-                    13,
-                    80
-                ],
-                [
-                    13,
-                    29
-                ],
-                [
-                    61,
-                    72
-                ],
-                [
-                    61,
-                    64
-                ],
-                [
-                    61,
-                    89
-                ],
-                [
-                    61,
-                    68
-                ],
-                [
-                    61,
-                    91
-                ],
-                [
-                    61,
-                    22
-                ],
-                [
-                    61,
-                    73
-                ],
-                [
-                    61,
-                    38
-                ],
-                [
-                    49,
-                    29
-                ],
-                [
-                    37,
-                    21
-                ],
-                [
-                    37,
-                    22
-                ],
-                [
-                    37,
-                    38
-                ],
-                [
-                    15,
-                    51
-                ],
-                [
-                    72,
-                    64
-                ],
-                [
-                    72,
-                    89
-                ],
-                [
-                    72,
-                    21
-                ],
-                [
-                    72,
-                    80
-                ],
-                [
-                    72,
-                    68
-                ],
-                [
-                    72,
-                    91
-                ],
-                [
-                    72,
-                    38
-                ],
-                [
-                    72,
-                    69
-                ],
-                [
-                    72,
-                    39
-                ],
-                [
-                    64,
-                    89
-                ],
-                [
-                    64,
-                    21
-                ],
-                [
-                    64,
-                    68
-                ],
-                [
-                    64,
-                    22
-                ],
-                [
-                    64,
-                    73
-                ],
-                [
-                    64,
-                    38
-                ],
-                [
-                    64,
-                    69
-                ],
-                [
-                    64,
-                    39
-                ],
-                [
-                    89,
-                    21
-                ],
-                [
-                    89,
-                    68
-                ],
-                [
-                    89,
-                    91
-                ],
-                [
-                    89,
-                    22
-                ],
-                [
-                    89,
-                    73
-                ],
-                [
-                    89,
-                    38
-                ],
-                [
-                    89,
-                    69
-                ],
-                [
-                    89,
-                    39
-                ],
-                [
-                    21,
-                    68
-                ],
-                [
-                    21,
-                    22
-                ],
-                [
-                    21,
-                    73
-                ],
-                [
-                    21,
-                    38
-                ],
-                [
-                    21,
-                    69
-                ],
-                [
-                    21,
-                    39
-                ],
-                [
-                    80,
-                    22
-                ],
-                [
-                    80,
-                    29
-                ],
-                [
-                    68,
-                    22
-                ],
-                [
-                    68,
-                    73
-                ],
-                [
-                    68,
-                    38
-                ],
-                [
-                    68,
-                    69
-                ],
-                [
-                    91,
-                    22
-                ],
-                [
-                    91,
-                    73
-                ],
-                [
-                    91,
-                    38
-                ],
-                [
-                    91,
-                    69
-                ],
-                [
-                    22,
-                    73
-                ],
-                [
-                    22,
-                    38
-                ],
-                [
-                    22,
-                    69
-                ],
-                [
-                    73,
-                    38
-                ],
-                [
-                    73,
-                    69
-                ],
-                [
-                    38,
-                    69
-                ],
-                [
-                    38,
-                    39
-                ],
-                [
-                    69,
-                    39
-                ],
-                [
-                    46,
-                    45
-                ],
-                [
-                    78,
-                    23
-                ],
-                [
-                    78,
-                    28
-                ],
-                [
-                    78,
-                    24
-                ],
-                [
-                    78,
-                    45
-                ],
-                [
-                    47,
-                    11
-                ],
-                [
-                    57,
-                    67
-                ],
-                [
-                    57,
-                    63
-                ],
-                [
-                    57,
-                    66
-                ],
-                [
-                    57,
-                    70
-                ],
-                [
-                    57,
-                    64
-                ],
-                [
-                    57,
-                    68
-                ],
-                [
-                    57,
-                    38
-                ],
-                [
-                    26,
-                    25
-                ],
-                [
-                    26,
-                    76
-                ],
-                [
-                    26,
-                    77
-                ],
-                [
-                    23,
-                    25
-                ],
-                [
-                    23,
-                    27
-                ],
-                [
-                    23,
-                    21
-                ],
-                [
-                    54,
-                    18
-                ],
-                [
-                    28,
-                    24
-                ],
-                [
-                    28,
-                    45
-                ],
-                [
-                    28,
-                    77
-                ],
-                [
-                    65,
-                    56
-                ],
-                [
-                    65,
-                    59
-                ],
-                [
-                    65,
-                    60
-                ],
-                [
-                    65,
-                    58
-                ],
-                [
-                    67,
-                    56
-                ],
-                [
-                    67,
-                    59
-                ],
-                [
-                    67,
-                    60
-                ],
-                [
-                    67,
-                    58
-                ],
-                [
-                    25,
-                    76
-                ],
-                [
-                    25,
-                    24
-                ],
-                [
-                    25,
-                    27
-                ],
-                [
-                    25,
-                    45
-                ],
-                [
-                    25,
-                    44
-                ],
-                [
-                    25,
-                    22
-                ],
-                [
-                    63,
-                    56
-                ],
-                [
-                    63,
-                    59
-                ],
-                [
-                    63,
-                    60
-                ],
-                [
-                    63,
-                    58
-                ],
-                [
-                    66,
-                    56
-                ],
-                [
-                    66,
-                    59
-                ],
-                [
-                    66,
-                    60
-                ],
-                [
-                    66,
-                    58
-                ],
-                [
-                    48,
-                    80
-                ],
-                [
-                    76,
-                    27
-                ],
-                [
-                    56,
-                    64
-                ],
-                [
-                    56,
-                    68
-                ],
-                [
-                    56,
-                    38
-                ],
-                [
-                    70,
-                    60
-                ],
-                [
-                    70,
-                    58
-                ],
-                [
-                    24,
-                    27
-                ],
-                [
-                    24,
-                    22
-                ],
-                [
-                    59,
-                    64
-                ],
-                [
-                    59,
-                    68
-                ],
-                [
-                    59,
-                    38
-                ],
-                [
-                    27,
-                    77
-                ],
-                [
-                    45,
-                    22
-                ],
-                [
-                    60,
-                    64
-                ],
-                [
-                    60,
-                    68
-                ],
-                [
-                    60,
-                    38
-                ],
-                [
-                    58,
-                    64
-                ],
-                [
-                    58,
-                    68
-                ],
-                [
-                    58,
-                    38
-                ],
-                [
-                    77,
-                    74
-                ],
-                [
-                    77,
-                    44
-                ],
-                [
-                    77,
-                    73
-                ],
-                [
-                    93,
-                    39
-                ],
-                [
-                    43,
-                    22
-                ],
-                [
-                    72,
-                    22
-                ],
-                [
-                    72,
-                    73
-                ],
-                [
-                    21,
-                    91
-                ]
-            ];
-        }
-        pd_tri() {
-            return [
-                "Pm-Dy-Y",
-                "Yb-Gd-V",
-                "Cr-Ni-Pb",
-                "Pu-V-Mo",
-                "Pm-Er-V",
-                "Tm-Lu-W",
-                "Nd-Pu-V",
-                "Al-Zn-In",
-                "Eu-U-Ta",
-                "Ni-Ru-Au",
-                "Ce-Pm-Nd",
-                "Cu-Tc-Pd",
-                "La-Sm-Ho",
-                "La-Yb-Ta",
-                "Gd-Lu-Zr",
-                "Li-Hf-Ti",
-                "La-Dy-Ho",
-                "Ba-Yb-Sc",
-                "K-Zr-Nb",
-                "Y-Zr-Nb",
-                "Li-Ce-Tm",
-                "Sc-U-Cr",
-                "Ho-Er-Mo",
-                "Tm-V-Mo",
-                "La-Pu-Zr",
-                "Ir-Pd-Rh",
-                "Gd-Ho-Zr",
-                "Ca-Y-Tm",
-                "Rb-Hf-Zr",
-                "La-Yb-Sc",
-                "Nd-Pu-Zr",
-                "Yb-Y-Lu",
-                "La-V-Mo",
-                "Ba-La-Y",
-                "Cs-Li-Ta",
-                "Ba-Sr-Fe",
-                "Yb-Y-W",
-                "Cs-Pr-Ti",
-                "Zn-Bi-B",
-                "Tb-Pm-Y",
-                "Gd-Ta-V",
-                "Ce-Eu-Zr",
-                "Fe-Os-Rh",
-                "Nb-V-Mo",
-                "Eu-Hf-Zr",
-                "Be-Al-In",
-                "Pr-V-W",
-                "Li-Er-Lu",
-                "Pu-Ti-Cr",
-                "Rb-Na-V",
-                "Mg-V-Mo",
-                "Pr-Nd-Ho",
-                "Pr-Sm-Cr",
-                "Pd-Ru-C",
-                "Er-Pu-Mo",
-                "Ce-Zr-Ti",
-                "Li-Tm-Ta",
-                "Nd-Gd-Sc",
-                "Fe-Rh-Au",
-                "Cs-V-Cr",
-                "Ru-Pt-Au",
-                "Ca-Lu-Pu",
-                "Cs-K-Ta",
-                "Lu-Ta-Ti",
-                "Nd-U-W",
-                "Ga-Si-Ge",
-                "K-Mg-V",
-                "Ce-Th-Ta",
-                "Yb-Dy-Zr",
-                "Ba-Nd-Ti",
-                "Y-Pu-V",
-                "Pr-Gd-Lu",
-                "La-Y-Zr",
-                "Er-Nb-V",
-                "Cs-Zr-Ta",
-                "Li-Y-Mo",
-                "Pr-Th-Mo",
-                "Fe-Cu-Pd",
-                "Ce-Sm-Y",
-                "Dy-Y-Ho",
-                "Cu-Ir-Rh",
-                "Si-Sb-Pb",
-                "Pr-Ho-Pu",
-                "K-Li-Cr",
-                "La-Tb-Dy",
-                "Li-Nd-Mo",
-                "Sm-Th-Cr",
-                "Cs-Zr-Nb",
-                "Pr-Y-Pu",
-                "Tb-Yb-Tm",
-                "Y-Hf-Nb",
-                "Na-Cr-Mo",
-                "K-Mg-Nb",
-                "Li-Er-Tm",
-                "Ce-Hf-Th",
-                "Dy-Ho-Lu",
-                "Ce-Mn-V",
-                "Mn-Fe-Pb",
-                "Rb-Hf-Mg",
-                "La-Tb-V",
-                "Sr-Nd-Sc",
-                "Tb-Sm-Cr",
-                "Ce-Sc-U",
-                "Y-Ho-V",
-                "Rb-Li-V",
-                "Nd-Th-Sc",
-                "Al-Si-Ge",
-                "Ca-La-Tm",
-                "La-Sc-Nb",
-                "Sm-Gd-Mo",
-                "Y-Sc-Ti",
-                "Na-Sr-Fe",
-                "K-Li-Nb",
-                "Cs-Rb-Hf",
-                "Zn-Ga-Bi",
-                "La-Pm-Mo",
-                "Mn-Fe-Co",
-                "Gd-Tm-Cr",
-                "Sm-Gd-Ho",
-                "U-Ti-W",
-                "La-Ce-Nb",
-                "Re-Hg-Sb",
-                "Gd-Dy-Pu",
-                "Dy-Ho-V",
-                "La-Nd-U",
-                "Ce-Ta-Mo",
-                "Ce-Lu-Ti",
-                "Ce-Nd-Ta",
-                "Pm-Tm-Cr",
-                "Ce-Tm-Pu",
-                "Pr-Sm-Th",
-                "Ca-La-Lu",
-                "Yb-Lu-Nb",
-                "Sm-Lu-V",
-                "Gd-Tm-Mo",
-                "Li-Pr-Pu",
-                "Al-Ga-Hg",
-                "Na-Ti-V",
-                "Yb-Nd-Gd",
-                "Nd-Gd-Mo",
-                "La-Tb-Pm",
-                "Ir-Pd-C",
-                "Tm-Pu-Mo",
-                "Tm-Th-V",
-                "La-Er-Zr",
-                "Cu-Ni-Ir",
-                "Tb-Sc-W",
-                "Ba-Sr-Mo",
-                "Th-Sc-V",
-                "Mn-Co-Ni",
-                "Cu-Ni-Ru",
-                "Tb-Ce-Ho",
-                "Nd-Lu-Mo",
-                "Li-Pm-Er",
-                "La-Tm-Lu",
-                "La-Pu-Mo",
-                "Pm-Pr-Lu",
-                "Ce-Ho-Pu",
-                "Cu-Tc-Pt",
-                "Nd-Dy-Tm",
-                "Ca-Pm-Mo",
-                "Fe-Cu-Au",
-                "Li-Sm-Gd",
-                "Mn-Ag-Pb",
-                "Li-Er-Ta",
-                "La-Tb-Ti",
-                "Gd-Ti-Cr",
-                "Ce-Gd-Th",
-                "Er-Sc-Cr",
-                "Sm-Er-Ta",
-                "Cr-Ni-Au",
-                "Nd-U-Ti",
-                "Co-Au-C",
-                "Nd-Pu-W",
-                "La-Yb-Th",
-                "Sc-Cr-Mo",
-                "Zr-Sc-Nb",
-                "Pr-Tm-Ti",
-                "Cs-Hf-Ti",
-                "Ce-Ho-Th",
-                "Yb-Gd-Tm",
-                "Li-Ce-Ta",
-                "Y-V-W",
-                "La-Sc-Ti",
-                "Tb-Sc-Ti",
-                "Tb-Pr-Ta",
-                "Sb-Pb-W",
-                "Ba-Yb-Gd",
-                "Dy-Pu-Cr",
-                "Tb-Gd-Tm",
-                "Tb-Lu-W",
-                "Gd-Er-V",
-                "Yb-Ti-W",
-                "Tm-V-W",
-                "Pd-Pt-Rh",
-                "Eu-Pu-Nb",
-                "Ba-Sm-Y",
-                "La-Sm-Y",
-                "U-V-Cr",
-                "Ba-Pm-Sm",
-                "Sm-Ho-Mo",
-                "Gd-Th-Ta",
-                "Ce-Pr-Cr",
-                "Lu-Ti-Mo",
-                "Dy-Lu-Th",
-                "La-Sc-Mo",
-                "Y-U-Cr",
-                "Pm-Nd-Sm",
-                "Tb-Gd-Mo",
-                "Yb-Er-Th",
-                "Li-Pr-Lu",
-                "Mg-Mn-Cd",
-                "Ce-Pm-Gd",
-                "Pu-Ti-Nb",
-                "Tl-Cd-Mo",
-                "Sc-V-Mo",
-                "Pu-V-Cr",
-                "Mn-Fe-Ni",
-                "Eu-Zr-Nb",
-                "Tb-Y-W",
-                "Tb-Pr-Y",
-                "Ca-Nd-Sc",
-                "Ba-Nd-Y",
-                "Ca-Tb-Sc",
-                "Pu-Ta-Ti",
-                "Ca-Yb-Eu",
-                "Th-Mo-W",
-                "Si-Sn-Bi",
-                "Tb-Sc-Mo",
-                "Na-Cr-Cu",
-                "Y-Er-W",
-                "Y-Ho-Mo",
-                "Ni-Pd-Rh",
-                "Y-Ti-Nb",
-                "Co-Pd-C",
-                "Li-Gd-Ti",
-                "Tb-Y-Er",
-                "Pr-Y-Cr",
-                "La-Yb-V",
-                "Ca-Yb-Mo",
-                "Dy-Er-Ti",
-                "Nd-Sm-Gd",
-                "Tb-Y-Ti",
-                "Gd-Er-Tm",
-                "Ca-Pm-Tm",
-                "Tl-Zn-Ge",
-                "Yb-Sc-Ta",
-                "Fe-Co-Au",
-                "La-Sm-Nb",
-                "Nb-V-Cu",
-                "La-Sm-V",
-                "Li-Pr-Mo",
-                "Tb-Gd-Ho",
-                "Eu-Th-Ta",
-                "Yb-U-Nb",
-                "Yb-Er-Hf",
-                "La-Ho-Zr",
-                "Dy-Y-Er",
-                "La-Ce-Tm",
-                "Pr-Lu-Mo",
-                "Eu-Y-Mo",
-                "Dy-Er-Cr",
-                "La-Yb-Ti",
-                "Ce-Pm-Mo",
-                "Tb-Pm-Pu",
-                "Pr-Dy-Y",
-                "La-Pu-Ti",
-                "Li-Ce-Sm",
-                "Li-Pr-Tm",
-                "Tb-Pm-Ho",
-                "Dy-Er-Lu",
-                "Al-In-Ga",
-                "Nd-Er-Ta",
-                "Pr-Nd-Y",
-                "Ba-Pm-V",
-                "Pr-Dy-V",
-                "Rb-Na-Ti",
-                "Tb-Pm-Gd",
-                "Gd-Er-Mo",
-                "Y-Th-Mo",
-                "Gd-Y-Mo",
-                "Ba-Pm-Mo",
-                "Pu-Nb-V",
-                "Er-Th-Mo",
-                "Co-Ni-Pb",
-                "Ho-Th-Zr",
-                "Pm-Pr-Gd",
-                "Sm-Lu-Mo",
-                "Yb-Pr-V",
-                "Cu-Ag-Pb",
-                "Pm-Ho-V",
-                "Re-Ir-Pd",
-                "Er-Lu-Nb",
-                "La-Eu-U",
-                "Cu-Ag-Mo",
-                "Dy-V-Cr",
-                "Dy-Th-Ti",
-                "Re-Bi-Sb",
-                "Pm-Pr-Y",
-                "Th-Sc-Ta",
-                "Y-V-Cr",
-                "Fe-Ag-Ir",
-                "Co-Os-Pd",
-                "Rb-Li-Zr",
-                "Gd-Dy-V",
-                "Tb-Er-Pu",
-                "Ce-Ti-Cr",
-                "Ba-Ti-V",
-                "Nd-Dy-Mo",
-                "Ca-Tm-Ti",
-                "Li-Hf-Mg",
-                "Tb-Sc-V",
-                "Tl-Zn-Pb",
-                "Pr-Tm-Cr",
-                "Er-Ti-Cr",
-                "Er-Sc-V",
-                "K-Li-Ta",
-                "Yb-Sc-U",
-                "La-Ce-Pu",
-                "Cs-Mg-Zr",
-                "Ga-B-Pb",
-                "Re-Ir-Ru",
-                "Pr-Gd-Er",
-                "Re-Ni-Pt",
-                "Tb-Nd-Tm",
-                "Tb-Ta-V",
-                "Nd-Y-Sc",
-                "Tb-Dy-Y",
-                "Tb-Pr-Cr",
-                "La-Zr-Ta",
-                "Eu-Th-U",
-                "Li-Tb-Ta",
-                "Na-V-Fe",
-                "Cu-Re-Pt",
-                "Cd-Ge-Bi",
-                "Sm-Gd-Ta",
-                "Al-In-Ge",
-                "Al-Cd-Ga",
-                "Ce-Eu-Y",
-                "La-Tb-Tm",
-                "Li-Tb-Zr",
-                "Pr-V-Cr",
-                "La-Pm-Ho",
-                "Gd-Er-Th",
-                "Li-La-V",
-                "Al-Ga-Sn",
-                "Tl-As-Pb",
-                "Re-Pd-Ru",
-                "Eu-Y-W",
-                "Tm-Ta-V",
-                "Eu-V-W",
-                "Be-Zn-Ge",
-                "Li-Pm-Gd",
-                "Na-Mg-Zr",
-                "Fe-Ag-Rh",
-                "Tl-Zn-Cd",
-                "Nd-Sm-Ho",
-                "Y-Ta-Mo",
-                "Gd-Lu-Ta",
-                "Li-Tb-Gd",
-                "Be-Ga-Si",
-                "Mn-Cu-Ru",
-                "Pr-Cr-W",
-                "Ho-Cr-W",
-                "Na-Li-Mg",
-                "Re-Ru-Pt",
-                "La-Tb-Ce",
-                "Cr-Pb-W",
-                "Pr-Er-Lu",
-                "Ag-Pd-Ru",
-                "Ca-Nd-Lu",
-                "Mg-Cr-Cd",
-                "Mn-Ni-Ag",
-                "Cu-B-Pb",
-                "Li-Er-V",
-                "Ni-Os-Rh",
-                "Fe-Ag-Pd",
-                "Li-Er-Pu",
-                "Sm-Y-U",
-                "Dy-Tm-Cr",
-                "Na-Nb-Mo",
-                "Tb-Zr-Ta",
-                "Rb-Na-Ta",
-                "Gd-Y-Er",
-                "Pr-Er-Tm",
-                "Pr-Sm-Ho",
-                "Gd-Tm-V",
-                "Zr-Ta-Nb",
-                "Cr-Hg-Bi",
-                "Yb-Er-Sc",
-                "Ca-Pm-Pu",
-                "Co-Cu-Ni",
-                "Gd-Ho-Lu",
-                "Sc-Ti-Cr",
-                "Ga-Si-Bi",
-                "Li-Lu-Mo",
-                "Ba-Sr-Mn",
-                "Li-Pm-Sm",
-                "Na-Li-Zr",
-                "Gd-Sc-V",
-                "Yb-Er-Mo",
-                "Ho-Lu-Zr",
-                "Nd-Sc-Cr",
-                "Ca-Ce-Ti",
-                "Pm-Gd-Ho",
-                "La-Y-Cr",
-                "Ca-Yb-Y",
-                "Pr-Th-U",
-                "Tm-Cr-Mo",
-                "Rb-Li-Ta",
-                "Gd-Y-Tm",
-                "Yb-Pr-U",
-                "Ce-Hf-Ta",
-                "Nd-Y-Ho",
-                "Er-Ti-Mo",
-                "Dy-Th-Mo",
-                "La-Pr-W",
-                "Yb-Ho-Lu",
-                "La-Yb-Nb",
-                "Co-Rh-C",
-                "La-Eu-Ta",
-                "Y-Cr-W",
-                "K-Zr-Ti",
-                "Pr-Sm-U",
-                "Eu-Sc-Cr",
-                "Ga-Sn-B",
-                "Cu-Ag-Rh",
-                "Ce-Gd-Zr",
-                "Tl-Ga-B",
-                "Gd-Er-Zr",
-                "Ti-Nb-Mo",
-                "Ga-Sn-Pb",
-                "La-Eu-Mn",
-                "Tm-Lu-Mo",
-                "Pm-Tm-Pu",
-                "Be-Al-Sn",
-                "Dy-Lu-Ti",
-                "Yb-Tm-Cr",
-                "Na-Ta-Nb",
-                "Li-Gd-Y",
-                "Na-Sr-Mo",
-                "Ba-La-Ti",
-                "Sm-Mo-W",
-                "La-Tm-Th",
-                "K-Cr-Fe",
-                "Y-Ta-Nb",
-                "Ce-Pm-Y",
-                "Sm-Tm-Lu",
-                "Er-Th-Nb",
-                "Co-Os-Rh",
-                "Sm-Dy-Lu",
-                "Sr-Ca-Y",
-                "Pm-Er-Th",
-                "Yb-V-W",
-                "La-Gd-W",
-                "Tb-Ta-Ti",
-                "Cs-Mg-Cr",
-                "Ca-Nd-Y",
-                "Pr-Ta-Mo",
-                "Pm-Sm-Th",
-                "La-Sm-Th",
-                "Zr-Ti-Nb",
-                "Cr-Cu-W",
-                "Cu-Ni-Pb",
-                "Sm-Pu-Cr",
-                "Ce-Pr-Er",
-                "Ce-Lu-Pu",
-                "La-V-Fe",
-                "Sm-Y-Ho",
-                "Ce-Er-Pu",
-                "Ce-Y-Hf",
-                "Ca-Pm-Nd",
-                "Ce-Pr-Ho",
-                "Ce-Lu-W",
-                "Re-Ru-Rh",
-                "Cu-Os-Pt",
-                "Co-Ni-Ir",
-                "La-Ta-Ti",
-                "Ba-V-Fe",
-                "Gd-Th-W",
-                "Li-Er-Nb",
-                "La-Yb-Er",
-                "Ce-Y-Ta",
-                "Y-Lu-Ti",
-                "Tm-Th-Mo",
-                "La-Eu-Zr",
-                "Pr-Dy-Mo",
-                "Ca-Yb-Mn",
-                "La-U-Ta",
-                "Pr-U-W",
-                "Nd-Lu-Ti",
-                "Pu-V-W",
-                "Li-Nd-Gd",
-                "Li-Ce-Hf",
-                "Tl-Cu-Mo",
-                "Al-Zn-Bi",
-                "Er-Sc-Ti",
-                "K-Mg-Ti",
-                "Li-Ce-Pu",
-                "Na-Nb-V",
-                "Ba-La-Pm",
-                "Tb-Th-Ta",
-                "Pr-Ho-Lu",
-                "Tb-Yb-Ti",
-                "Sm-Y-W",
-                "Tb-Dy-Zr",
-                "Ag-Ge-Au",
-                "Nd-Er-Cr",
-                "Yb-Y-Zr",
-                "Dy-Ho-Cr",
-                "Gd-Ta-W",
-                "Nd-Sm-Mo",
-                "Tb-Sm-Ta",
-                "Li-Lu-Cr",
-                "Y-Hf-Zr",
-                "Eu-Sc-U",
-                "Ti-Cr-W",
-                "Re-Ag-Bi",
-                "Pm-Er-Mo",
-                "Ca-Tb-Tm",
-                "Ta-Mo-W",
-                "Tb-Er-Cr",
-                "Li-La-Tb",
-                "Tl-Ag-Mo",
-                "Tb-Y-Mo",
-                "Er-Zr-Sc",
-                "Fe-Ni-Ag",
-                "La-Er-Tm",
-                "Co-Re-Ir",
-                "Li-Cr-Ni",
-                "V-Ag-Pd",
-                "Zn-Sn-Pb",
-                "Ce-Nd-W",
-                "La-Cr-W",
-                "Ca-Eu-Sc",
-                "Ho-Er-Cr",
-                "Yb-Zr-Nb",
-                "Eu-V-Mo",
-                "Ni-Ir-C",
-                "Y-Tm-Cr",
-                "Pr-Pu-Cr",
-                "Ho-Th-Ta",
-                "Pr-Tm-Lu",
-                "Pr-Er-Ti",
-                "Pr-Pu-Ta",
-                "Tb-Ce-Pm",
-                "Ce-Mo-W",
-                "Li-Tb-Pu",
-                "Mn-Tl-Ag",
-                "Ba-La-Sc",
-                "Th-Cr-W",
-                "Li-La-Cr",
-                "Mn-Fe-Cu",
-                "Ho-Tm-Pu",
-                "K-Rb-V",
-                "La-Gd-Tm",
-                "Cu-Ag-Ru",
-                "Ce-Y-Sc",
-                "Ho-Zr-Sc",
-                "Ce-Tm-Lu",
-                "Co-Ru-C",
-                "Ce-Ti-V",
-                "Yb-Hf-Sc",
-                "Tl-Si-Pb",
-                "Tb-Yb-Nd",
-                "Rb-Li-Cr",
-                "Co-Ni-C",
-                "Co-Ir-Ru",
-                "Gd-Lu-Pu",
-                "Gd-Dy-Zr",
-                "Mn-Cu-Ni",
-                "Cu-Mo-Au",
-                "Tb-Pr-Tm",
-                "Li-Mg-V",
-                "Yb-Pr-Y",
-                "Li-Sm-Mo",
-                "Li-Tb-Y",
-                "Sm-Nb-Mo",
-                "Ba-La-Yb",
-                "La-Dy-W",
-                "Zn-Si-Sn",
-                "Ca-Y-Pu",
-                "U-Ta-Ti",
-                "Pr-Lu-V",
-                "Si-Bi-Sb",
-                "Li-Ce-V",
-                "Cu-Re-Bi",
-                "Ba-Ca-Sc",
-                "La-Lu-Nb",
-                "Zn-Cd-B",
-                "In-Ga-Si",
-                "Dy-Er-Th",
-                "Cr-Hg-Pb",
-                "Yb-Dy-Y",
-                "Eu-Y-Nb",
-                "Mn-Co-Au",
-                "Yb-Er-V",
-                "Nb-V-W",
-                "Yb-Nd-V",
-                "Yb-Th-Ti",
-                "K-Rb-Mg",
-                "Ce-Gd-Sc",
-                "Dy-Lu-W",
-                "V-Fe-Cu",
-                "Yb-Zr-Sc",
-                "La-Ce-Y",
-                "Ni-Pd-Ru",
-                "La-Pr-Gd",
-                "La-Ce-Pr",
-                "Eu-Th-Mo",
-                "Nd-Ho-Sc",
-                "Hf-Ti-Nb",
-                "Tb-Yb-Th",
-                "Tb-Pr-Ti",
-                "Er-Pu-Nb",
-                "Re-Hg-Ru",
-                "Ba-Yb-Mn",
-                "Lu-Zr-Nb",
-                "Nd-Y-Zr",
-                "Rb-Na-Li",
-                "Sm-Dy-Er",
-                "U-Nb-W",
-                "Ce-Lu-Zr",
-                "Pd-Rh-C",
-                "Tb-Ce-Sm",
-                "Eu-Cr-Mo",
-                "Y-Ti-Mo",
-                "Li-Ce-Lu",
-                "Yb-Gd-Pu",
-                "Cd-B-Pb",
-                "Th-Ti-Mo",
-                "Ba-La-Nd",
-                "Er-Lu-V",
-                "K-Rb-Cr",
-                "Cd-Fe-Bi",
-                "Al-Tl-Cd",
-                "Pr-Nd-Gd",
-                "Nd-Ho-Lu",
-                "Ce-Ho-Tm",
-                "La-Pu-Nb",
-                "Ge-Au-C",
-                "Ca-Y-Lu",
-                "Yb-Gd-Y",
-                "Na-V-Mo",
-                "Y-Ho-Th",
-                "Ba-Sr-Y",
-                "Tb-Dy-Lu",
-                "La-Gd-Dy",
-                "Y-Er-Mo",
-                "Ce-Sm-Pu",
-                "V-Pd-Ru",
-                "Li-Tb-Er",
-                "Yb-Pr-Ta",
-                "Yb-Gd-Er",
-                "Y-Ho-Cr",
-                "Pm-Cr-Mo",
-                "Eu-Th-Sc",
-                "La-Er-Ta",
-                "Ba-Y-Mo",
-                "Co-Hg-Ir",
-                "Lu-Pu-Ti",
-                "Y-Tm-Lu",
-                "Ba-Ca-Nd",
-                "K-Li-Mo",
-                "V-Hg-Bi",
-                "Tb-Gd-Ta",
-                "La-Pm-Lu",
-                "Ir-Ru-C",
-                "Ca-Y-Ti",
-                "Tb-Yb-Cr",
-                "Li-Sc-Mo",
-                "Er-Hf-Ti",
-                "La-Ta-W",
-                "La-Dy-Ti",
-                "Ce-Nd-Sc",
-                "Co-Pt-C",
-                "Tm-Lu-Ta",
-                "Na-Mg-V",
-                "Ce-Eu-Cr",
-                "Cs-Li-Mg",
-                "Gd-Pu-Mo",
-                "Re-Pd-Rh",
-                "Yb-Nd-Tm",
-                "Mg-U-V",
-                "Fe-Pd-Ru",
-                "K-Rb-Hf",
-                "Ba-Ca-V",
-                "Rb-Mg-V",
-                "La-Sm-Cr",
-                "Y-Cr-Mo",
-                "Cs-Ti-V",
-                "Tb-Th-Ti",
-                "Pm-Gd-Er",
-                "La-Er-Th",
-                "Tb-Gd-Sc",
-                "Ce-Pm-Lu",
-                "Pm-Sm-Pu",
-                "Hf-Sc-Ti",
-                "Y-Pu-Cr",
-                "Be-Zn-In",
-                "Yb-U-Ta",
-                "Nd-Y-Ta",
-                "Ce-Hf-Zr",
-                "Cs-K-Mo",
-                "Ag-Pd-C",
-                "Sm-Tm-Mo",
-                "Ho-Cr-Mo",
-                "Yb-U-Cr",
-                "Tb-Lu-Th",
-                "Yb-Th-Mo",
-                "Ca-Tb-Ce",
-                "Tb-Dy-Mo",
-                "Zn-Cd-Si",
-                "Pm-Pu-V",
-                "Yb-Nb-Mo",
-                "Hf-U-Ta",
-                "Li-Sm-Er",
-                "Li-Zr-Ti",
-                "Na-Ta-Cu",
-                "Pr-Er-Th",
-                "V-In-Mo",
-                "Er-Th-W",
-                "Pm-Dy-Th",
-                "Tb-Gd-Cr",
-                "Nd-Zr-Sc",
-                "Sr-Ca-Ti",
-                "Tm-Th-Cr",
-                "Gd-Sc-Cr",
-                "Li-Gd-Lu",
-                "Ag-Os-Rh",
-                "La-U-V",
-                "Th-Ta-V",
-                "Co-Pd-Pt",
-                "Ce-Ho-Sc",
-                "Cu-Re-Rh",
-                "Yb-Sc-Ti",
-                "Li-La-Nb",
-                "Cu-Ag-Au",
-                "Eu-Sc-Nb",
-                "Rb-Na-Hf",
-                "Co-Rh-Au",
-                "Tb-Ho-V",
-                "Ce-Gd-Er",
-                "Tb-Ce-Ti",
-                "Gd-Dy-Er",
-                "Zn-In-Ge",
-                "Ce-Nb-Mo",
-                "Y-Ho-Sc",
-                "Pm-Pr-Er",
-                "Li-Pr-Hf",
-                "Er-Lu-Cr",
-                "Li-Gd-Cr",
-                "Li-Gd-Mo",
-                "Yb-Lu-Th",
-                "Pu-Nb-W",
-                "La-Tb-Lu",
-                "Li-La-Tm",
-                "Cu-Ni-Ag",
-                "Yb-Pr-Th",
-                "La-Sc-W",
-                "Fe-Ag-C",
-                "Mg-Mn-Fe",
-                "Fe-Ag-Ru",
-                "Nd-Cr-Mo",
-                "La-Pr-Ti",
-                "Cr-Cu-Mo",
-                "Tb-Er-Sc",
-                "Li-Lu-Nb",
-                "Y-Lu-V",
-                "Lu-Ti-V",
-                "Sn-B-Pb",
-                "Li-Pr-Er",
-                "Re-Hg-Ir",
-                "Yb-Dy-Tm",
-                "Tb-Pm-V",
-                "Cs-K-Mg",
-                "Ni-Ir-Pt",
-                "Ca-Sc-Mo",
-                "Eu-Y-Th",
-                "Zr-Sc-Ti",
-                "Yb-Pu-W",
-                "K-Li-Zr",
-                "Yb-Pr-Gd",
-                "Y-Pu-Nb",
-                "Ce-Th-W",
-                "Ce-Y-Er",
-                "Nb-V-Bi",
-                "V-Cu-Bi",
-                "Y-U-Nb",
-                "Fe-Cu-Rh",
-                "Re-Pt-Rh",
-                "Pu-Ti-Mo",
-                "Re-Ir-Pt",
-                "Ca-Yb-Pu",
-                "Nd-Sm-V",
-                "Na-Sr-Ca",
-                "Ho-Pu-Ta",
-                "Ce-Ho-Cr",
-                "Ce-Zr-Nb",
-                "Pm-Th-V",
-                "La-Gd-Lu",
-                "Dy-Lu-Zr",
-                "Ta-Ti-W",
-                "Nd-Dy-Ho",
-                "Y-Ho-Ta",
-                "Sr-Y-Mo",
-                "La-Pr-Th",
-                "Cr-Cu-Bi",
-                "Pm-Lu-Mo",
-                "La-Pm-V",
-                "Sm-Er-Pu",
-                "Y-Pu-Mo",
-                "Ba-Sr-Ti",
-                "Ta-V-Cu",
-                "Ga-Hg-B",
-                "La-Pu-Cr",
-                "Nd-Pu-Ta",
-                "Li-Sc-Ta",
-                "Ca-Eu-Mn",
-                "Pr-Y-Er",
-                "Lu-Pu-W",
-                "Dy-Ti-Cr",
-                "Ce-Y-Tm",
-                "Na-Zr-Nb",
-                "La-Lu-Th",
-                "Tb-Nd-Er",
-                "Eu-Sc-Mo",
-                "Ca-Ce-Sc",
-                "Pr-Lu-W",
-                "Pm-Ho-Pu",
-                "Nd-Ta-Ti",
-                "La-Lu-V",
-                "Co-Pd-Au",
-                "Pr-Sm-Tm",
-                "Li-Mg-Mn",
-                "Lu-Cr-W",
-                "Eu-Hf-Th",
-                "Li-Gd-Pu",
-                "Er-Pu-Ta",
-                "Yb-Nd-Y",
-                "La-Eu-Mo",
-                "Gd-Ho-Pu",
-                "Cs-Li-Nb",
-                "La-Ho-Th",
-                "Rb-Zr-Nb",
-                "La-Pr-Mo",
-                "Nd-Gd-Ta",
-                "Th-U-Nb",
-                "Na-Mg-Cr",
-                "Ce-Sc-Nb",
-                "Eu-U-V",
-                "Na-Be-Al",
-                "Yb-Lu-Cr",
-                "Gd-Dy-Th",
-                "Pm-Sm-Mo",
-                "Cs-V-Mo",
-                "Pm-Pu-Cr",
-                "Gd-Y-Th",
-                "Cs-K-V",
-                "Tb-Yb-V",
-                "K-Ta-Mo",
-                "La-Yb-Mn",
-                "Rb-Li-Hf",
-                "Li-Gd-Er",
-                "La-Zr-Ti",
-                "Ce-U-Ti",
-                "Ba-Gd-Y",
-                "Ba-Y-Ti",
-                "Cu-Ni-C",
-                "Nd-Ti-V",
-                "Cd-Si-Pb",
-                "Nd-Tm-Pu",
-                "Tb-Er-Zr",
-                "Pr-Ho-Er",
-                "U-Cr-W",
-                "Nd-U-Cr",
-                "Fe-Pd-C",
-                "Na-Li-Fe",
-                "Ba-Ca-Yb",
-                "Sm-Er-Tm",
-                "Ca-La-Eu",
-                "Ca-La-Sc",
-                "Mn-Co-Pb",
-                "Nd-Sm-Tm",
-                "Tc-Pd-Pt",
-                "Cs-Ta-Ti",
-                "Ca-Eu-Mo",
-                "Li-La-Er",
-                "Ni-Ir-Ru",
-                "Fe-Ni-Rh",
-                "Pu-Nb-Mo",
-                "Yb-Y-Nb",
-                "Eu-Y-Hf",
-                "Re-Ni-Pd",
-                "Pm-Sm-Dy",
-                "Cu-Re-Ni",
-                "Lu-Nb-V",
-                "Tm-Lu-Cr",
-                "Ce-V-W",
-                "Ca-Ce-Lu",
-                "Ce-Sm-Gd",
-                "Re-Tc-Ni",
-                "Ag-Ru-Au",
-                "Mg-Cr-Fe",
-                "Ba-Ca-La",
-                "Ca-Yb-Tm",
-                "Ni-Os-Pt",
-                "Tl-Cd-Ge",
-                "Mg-Zr-Ti",
-                "Ba-Sc-V",
-                "Fe-Ru-Rh",
-                "Pr-Hf-Ta",
-                "Nd-Y-Er",
-                "Ho-Tm-Cr",
-                "Ce-Pu-V",
-                "Ce-Y-Ho",
-                "Eu-U-Cr",
-                "Tb-Sm-Dy",
-                "Ce-Pr-Ta",
-                "Sc-Ti-W",
-                "Sm-Dy-Y",
-                "Pm-Dy-Mo",
-                "Er-Lu-Ti",
-                "La-Gd-Th",
-                "La-Mn-V",
-                "Ba-Ti-Mo",
-                "Tb-Ce-Pr",
-                "Ag-Ru-Rh",
-                "Ba-Pr-Y",
-                "Yb-Dy-V",
-                "La-Pr-Sm",
-                "Li-Ta-Cu",
-                "La-Ho-Er",
-                "Tl-V-In",
-                "Tb-Ho-Tm",
-                "La-Y-W",
-                "Ru-Pt-Rh",
-                "Sm-Y-Lu",
-                "Tm-Lu-V",
-                "Ce-Er-Nb",
-                "Cr-W-Au",
-                "Yb-U-Ti",
-                "La-Eu-V",
-                "Pr-Nd-U",
-                "Li-Nb-Cu",
-                "Cu-Pt-W",
-                "Ni-Ag-Os",
-                "Yb-Hf-Zr",
-                "Li-Pm-Pr",
-                "Cs-Nb-V",
-                "Y-Ti-W",
-                "Fe-Ag-Os",
-                "Hf-Ta-Ti",
-                "La-Sm-Er",
-                "Er-Hf-Zr",
-                "Ir-Os-Rh",
-                "Dy-Ho-Er",
-                "Ba-Nd-V",
-                "Ag-Pd-Au",
-                "K-Rb-Nb",
-                "Pr-Sm-Lu",
-                "Nd-Dy-Th",
-                "Li-Pm-Tm",
-                "Ba-Yb-Nd",
-                "Tb-Pm-Er",
-                "La-Pm-Pu",
-                "Sm-Dy-Th",
-                "V-Cr-Fe",
-                "Tb-Pm-Pr",
-                "Ho-Pu-Mo",
-                "Ba-Yb-Eu",
-                "La-Sm-Mo",
-                "Li-Tb-Cr",
-                "Tb-Er-Ti",
-                "Na-Mg-Nb",
-                "Pr-Mo-W",
-                "Ce-Tm-Ta",
-                "Er-Ta-Nb",
-                "Gd-Ho-Th",
-                "Tb-Ho-Mo",
-                "Nd-Gd-Ho",
-                "Li-Pr-Sm",
-                "Cr-Ag-Au",
-                "Lu-Pu-Cr",
-                "Nb-Hg-Mo",
-                "Tb-Gd-Er",
-                "La-Yb-Pu",
-                "Fe-Ir-Ru",
-                "Sm-Tm-Pu",
-                "Th-Sc-W",
-                "Tb-Gd-Lu",
-                "Tb-Pm-Sm",
-                "Pr-Y-Ti",
-                "Er-Cr-W",
-                "Th-Sc-Ti",
-                "Y-Tm-Ta",
-                "La-Lu-Ta",
-                "Ga-Hg-Ge",
-                "U-Ti-V",
-                "Ce-Pr-Th",
-                "Ho-Th-W",
-                "Pm-Gd-Y",
-                "Li-Ho-Er",
-                "Cr-Fe-Ni",
-                "Rb-Ta-Mo",
-                "Ce-Pr-Tm",
-                "Li-Pr-Ho",
-                "Yb-Ta-Ti",
-                "La-Lu-Zr",
-                "Pm-V-Cr",
-                "Hg-Bi-Sb",
-                "Ce-Nb-V",
-                "K-V-Cr",
-                "Ca-Eu-Y",
-                "Y-Sc-V",
-                "Nd-Y-V",
-                "Ag-Ir-C",
-                "Ni-Ru-Rh",
-                "Li-Nd-Pu",
-                "Cs-Rb-Li",
-                "Na-Li-V",
-                "Gd-V-Cr",
-                "Co-Ag-Ir",
-                "B-Sb-Pb",
-                "Pr-Y-Tm",
-                "La-Zr-Nb",
-                "Tb-Pu-V",
-                "Re-Ni-Ir",
-                "Yb-Nb-W",
-                "Pm-Er-Pu",
-                "La-Y-Tm",
-                "Be-Si-Sn",
-                "Cr-Mo-W",
-                "Ce-Lu-Ta",
-                "Ce-Lu-Th",
-                "Li-Y-Ti",
-                "Tb-Ho-Lu",
-                "Tb-Sm-Th",
-                "Pm-Nd-Ho",
-                "Sc-U-V",
-                "Li-Nd-Ho",
-                "La-Nd-W",
-                "La-Yb-Pr",
-                "Ce-Er-Ta",
-                "Rb-Ti-Nb",
-                "La-Cr-Fe",
-                "Ce-Nd-V",
-                "Zr-Ta-Ti",
-                "Lu-V-W",
-                "Sm-Dy-Ho",
-                "Nd-U-V",
-                "Nd-Dy-Ta",
-                "Pm-Ho-Lu",
-                "Na-Ti-Mo",
-                "Pr-Er-V",
-                "La-Ti-Cr",
-                "Al-Ga-Pb",
-                "La-Pm-Dy",
-                "Sm-Lu-Pu",
-                "Gd-Er-Ta",
-                "Nd-Sm-Y",
-                "Tb-Pm-Nd",
-                "Al-Hg-Bi",
-                "V-Hg-Ru",
-                "Pm-Pr-Pu",
-                "Ce-Th-Nb",
-                "K-Hf-Ta",
-                "Pr-Dy-Ta",
-                "Li-Y-Cr",
-                "La-Er-Ti",
-                "Dy-Y-V",
-                "Lu-Pu-Ta",
-                "Nd-Tm-V",
-                "Pr-Lu-Ta",
-                "La-Pm-Gd",
-                "Tl-Cd-B",
-                "Yb-Y-Ta",
-                "Os-Pd-Ru",
-                "Sm-Dy-V",
-                "Pu-Np-Mo",
-                "Nb-V-Hg",
-                "Pr-Dy-Er",
-                "Nd-Tm-Th",
-                "Ho-Sc-Cr",
-                "Zr-Sc-Ta",
-                "Pm-Tm-Lu",
-                "V-Ag-Mo",
-                "Pr-Dy-Lu",
-                "Zn-Cd-Pb",
-                "Li-Sm-Pu",
-                "La-Tb-Pr",
-                "Cr-Ni-Ag",
-                "La-U-W",
-                "La-Ce-Nd",
-                "Yb-Lu-Ti",
-                "Yb-Tm-Lu",
-                "Na-Ca-Ti",
-                "Co-Hg-Pb",
-                "Pm-Pr-V",
-                "Be-Si-Ge",
-                "Sr-Y-Ti",
-                "Yb-Gd-Sc",
-                "V-Pd-W",
-                "Re-Ir-Os",
-                "Ce-Gd-Lu",
-                "Li-Ho-Pu",
-                "Be-Zn-Ga",
-                "Y-U-W",
-                "Ga-Hg-Bi",
-                "Ba-Pr-Gd",
-                "La-Tm-W",
-                "Li-Tb-Ce",
-                "Yb-Eu-Hf",
-                "Si-Ag-Pb",
-                "Ce-Cr-W",
-                "Gd-Mo-W",
-                "Th-Sc-Mo",
-                "Ag-Ir-Os",
-                "Cu-Re-Tc",
-                "Ce-Pm-Th",
-                "Ba-Fe-Ni",
-                "Ir-Os-Pd",
-                "Cr-Cu-Pb",
-                "La-Ce-Pm",
-                "Li-La-Y",
-                "Ca-Yb-Ti",
-                "Fe-Pd-Rh",
-                "Ce-Eu-W",
-                "Cs-Pr-Cr",
-                "Nb-Cu-W",
-                "Fe-Cu-Bi",
-                "Tb-Er-Mo",
-                "La-Th-Nb",
-                "Sm-Er-Lu",
-                "Yb-Ti-Nb",
-                "Al-Zn-Si",
-                "Yb-Ho-Zr",
-                "Cs-K-Li",
-                "Pr-Hf-Ti",
-                "Fe-Co-Bi",
-                "Tb-Pm-Cr",
-                "Lu-Th-Ti",
-                "Y-Ho-W",
-                "Li-Ce-Pr",
-                "Sm-Y-V",
-                "Ni-Pd-C",
-                "Sc-Ta-Ti",
-                "Zn-In-Si",
-                "Y-Lu-Th",
-                "Ce-Eu-Mo",
-                "Yb-Gd-Cr",
-                "Tb-Tm-Cr",
-                "Yb-Th-Ta",
-                "Tb-V-W",
-                "Ta-Tl-Cu",
-                "Hg-Mo-Pb",
-                "Sm-Er-Th",
-                "Co-Re-Rh",
-                "Co-Ag-Rh",
-                "La-Tm-Cr",
-                "Hf-Zr-Sc",
-                "Fe-Ni-Ru",
-                "Nb-Mo-W",
-                "Gd-Th-Sc",
-                "Pd-Pt-C",
-                "Pm-Dy-Er",
-                "Co-Ni-Ag",
-                "Gd-Dy-Tm",
-                "Tm-Pu-V",
-                "Nd-Dy-Lu",
-                "Dy-Er-Zr",
-                "Tb-Er-V",
-                "Nd-Tm-Ta",
-                "Sm-Er-Mo",
-                "Li-La-Zr",
-                "Th-Nb-W",
-                "Tb-Ce-Sc",
-                "Gd-Ho-Sc",
-                "Pr-Dy-Cr",
-                "Hf-Zr-Nb",
-                "Ca-Pu-Mo",
-                "Ti-Nb-W",
-                "Co-Ir-C",
-                "Ba-Sr-Nd",
-                "Ba-Yb-Mo",
-                "Yb-Th-Nb",
-                "Li-Nd-Ta",
-                "Ce-Er-V",
-                "Co-Re-Ag",
-                "Yb-Er-Lu",
-                "Re-Pd-Pt",
-                "Ni-Pd-Au",
-                "Ho-Sc-Ta",
-                "Cr-Fe-Au",
-                "Tb-Sm-Er",
-                "Ce-Gd-Pu",
-                "Li-Ce-Pm",
-                "Nd-Y-Ti",
-                "Li-Nd-Y",
-                "Nd-Y-Tm",
-                "La-Ho-Pu",
-                "La-Ce-Zr",
-                "La-Ti-W",
-                "Ag-Os-Ru",
-                "Pt-W-Au",
-                "Cu-Bi-Os",
-                "Pr-Nd-Ti",
-                "Fe-Co-Os",
-                "Li-Nb-V",
-                "Y-Sc-Cr",
-                "Be-Si-Bi",
-                "Li-Hf-Ta",
-                "Th-V-Cr",
-                "Ho-Mo-W",
-                "Pm-Y-Cr",
-                "Th-Zr-Ti",
-                "Gd-Ho-V",
-                "Yb-Pu-V",
-                "Tm-Ti-W",
-                "Cs-Mg-Ti",
-                "La-Gd-Mo",
-                "Li-Nd-Sc",
-                "Co-Ag-Pd",
-                "Ba-V-Mo",
-                "Pr-Gd-W",
-                "Ce-U-V",
-                "Tb-Dy-Ho",
-                "Sr-Ca-Sc",
-                "Nd-Sc-U",
-                "Li-Y-Ta",
-                "Y-Th-Cr",
-                "Cr-Cu-Ag",
-                "Fe-Os-Pd",
-                "Pm-Sm-Cr",
-                "Cu-Pb-W",
-                "Nd-Ho-Th",
-                "Pm-Nd-V",
-                "Ce-Nd-Lu",
-                "Fe-Ni-Pb",
-                "U-V-W",
-                "Nd-Ta-V",
-                "Dy-Pu-Zr",
-                "Ce-Pu-Nb",
-                "La-Ce-Ta",
-                "Tm-Lu-Th",
-                "La-Ho-Cr",
-                "Ba-La-Fe",
-                "Tm-Ti-Cr",
-                "Eu-Y-Pu",
-                "Yb-Y-Hf",
-                "La-Yb-Mo",
-                "Hf-Th-Nb",
-                "Nd-Sm-Pu",
-                "Na-Hf-Mg",
-                "Fe-Ag-Au",
-                "Li-Pu-Nb",
-                "Pr-Sm-Pu",
-                "Tb-Er-Lu",
-                "Sm-Gd-Er",
-                "Co-Cu-Au",
-                "Re-Ag-Os",
-                "Ru-Rh-Au",
-                "Mn-Tl-Ni",
-                "Pr-Er-Ta",
-                "La-Cr-Mo",
-                "Dy-Pu-Ta",
-                "Ta-In-Mo",
-                "Be-In-Ge",
-                "Y-Lu-Cr",
-                "Cd-Bi-Mo",
-                "Yb-Dy-Mo",
-                "Na-Hf-Ti",
-                "Ba-Nd-Gd",
-                "Ca-Mn-Co",
-                "Li-Nd-Zr",
-                "Co-Os-Pt",
-                "Co-Ru-Pt",
-                "Yb-Pu-Ta",
-                "K-Ta-Nb",
-                "Tb-Yb-Ta",
-                "Tb-Yb-Pr",
-                "Sc-Ti-Mo",
-                "Fe-Co-Ir",
-                "Fe-Cu-Ag",
-                "Hf-Th-Ti",
-                "Tb-Y-Sc",
-                "Hg-Ge-Pb",
-                "K-Nb-V",
-                "Li-La-Ta",
-                "Er-Th-Zr",
-                "K-Zr-Ta",
-                "Ce-Y-U",
-                "Gd-Lu-Mo",
-                "Li-Tb-Tm",
-                "Fe-Cu-Ni",
-                "Cu-Os-Pd",
-                "Tb-Tm-Th",
-                "Pr-Tm-V",
-                "Li-Y-Nb",
-                "Dy-Ho-Th",
-                "Na-Cu-Mo",
-                "Yb-Eu-Cr",
-                "Li-Ti-Cr",
-                "Cs-Hf-Ta",
-                "Co-Cu-Pt",
-                "Rb-Ti-Mo",
-                "Al-Ga-Bi",
-                "V-Cr-W",
-                "Pm-Gd-Lu",
-                "Li-La-Pu",
-                "Ce-Ho-Er",
-                "Ce-Hf-Nb",
-                "Ag-Rh-Au",
-                "Ce-Pu-Mo",
-                "Bi-B-Sb",
-                "Ho-Er-Zr",
-                "La-Ta-V",
-                "Tb-Dy-Tm",
-                "Pm-Lu-V",
-                "Tb-Tm-Mo",
-                "Zn-Cd-Bi",
-                "Ce-Nb-W",
-                "Sm-Tm-V",
-                "Th-U-W",
-                "Tb-Nd-V",
-                "Pr-Sm-Y",
-                "La-Pr-Lu",
-                "Ho-Sc-V",
-                "Ag-Bi-Os",
-                "Li-Tb-Nd",
-                "Sr-Y-Sc",
-                "Co-Re-Ni",
-                "Y-Tm-V",
-                "Ce-V-Mo",
-                "Pm-Tm-Th",
-                "Sm-Dy-Mo",
-                "Pd-Ru-Rh",
-                "Hg-Bi-Os",
-                "Sc-U-Nb",
-                "Yb-Pr-Pu",
-                "Al-Tl-In",
-                "Ho-Pu-V",
-                "Rb-Zr-Ti",
-                "Tm-Ti-Mo",
-                "Pr-Sm-Gd",
-                "Gd-Tm-Ta",
-                "Mn-V-Ag",
-                "Cr-Cd-Bi",
-                "Tb-Ta-W",
-                "V-Ag-Bi",
-                "La-Ho-Lu",
-                "La-Dy-Er",
-                "Li-Gd-Tm",
-                "Y-Er-V",
-                "Li-Sc-Ti",
-                "Np-Cr-Mo",
-                "Ag-Mo-Pb",
-                "Co-Hg-Bi",
-                "Mn-Tl-V",
-                "Eu-Y-Zr",
-                "Cu-Ir-Os",
-                "Tb-Gd-Ti",
-                "Pr-Hf-Th",
-                "Tb-Ce-Cr",
-                "Ag-Ir-Rh",
-                "Tl-Zn-In",
-                "Li-Sm-Cr",
-                "Nd-Sm-Lu",
-                "Re-Ni-Rh",
-                "Yb-Zr-Ti",
-                "La-Dy-V",
-                "Mn-Ru-Au",
-                "Dy-Tm-Th",
-                "Pr-Nd-V",
-                "Sm-Ho-Th",
-                "Eu-Nb-Mo",
-                "Y-Er-Ta",
-                "Ce-U-W",
-                "Sn-Ge-B",
-                "Nd-Ti-Mo",
-                "Hf-Sc-U",
-                "Tl-Ga-Ge",
-                "Tm-Ta-Mo",
-                "Fe-Ru-Au",
-                "Ho-Er-Sc",
-                "Yb-Th-W",
-                "Nd-Er-Mo",
-                "Cs-Rb-Ta",
-                "Lu-Zr-Ti",
-                "Zn-Ga-Ge",
-                "Pr-Pu-Mo",
-                "La-Eu-Pu",
-                "Yb-U-W",
-                "Yb-Gd-Th",
-                "Tl-Ge-Pb",
-                "Tb-Ce-Tm",
-                "Gd-Lu-W",
-                "La-Dy-Mo",
-                "Co-Re-Pt",
-                "Yb-Sc-Cr",
-                "Al-Zn-Ge",
-                "Tl-Ni-Pb",
-                "K-Rb-Ti",
-                "Y-Th-U",
-                "Pm-Y-Er",
-                "Ce-Sm-W",
-                "La-Ho-V",
-                "Ce-Y-W",
-                "Na-Ta-Mo",
-                "Tb-Ce-Er",
-                "Sm-Gd-V",
-                "Cs-Li-Cr",
-                "Pr-Pu-Ti",
-                "Dy-Zr-Ta",
-                "Ca-Fe-Co",
-                "Lu-Ta-W",
-                "Al-Ga-Si",
-                "Pr-Th-Ta",
-                "Na-Li-Hf",
-                "Ir-Ru-Rh",
-                "Fe-Ru-C",
-                "Ho-V-Mo",
-                "Lu-Th-Mo",
-                "Pu-Ta-V",
-                "Lu-Th-Cr",
-                "Ca-Tm-V",
-                "La-Dy-Cr",
-                "Ce-Sc-Cr",
-                "Li-La-Sm",
-                "Mn-V-Cu",
-                "Ni-Ag-C",
-                "Li-Tb-Sm",
-                "Cs-Ta-Mo",
-                "Li-Ho-Mo",
-                "Cs-Pr-Hf",
-                "Hf-Zr-Ti",
-                "Sm-Th-U",
-                "Pr-Er-Mo",
-                "Yb-Dy-Ta",
-                "Tb-Gd-Dy",
-                "La-Yb-U",
-                "Mn-Tl-Cu",
-                "Yb-Pr-Ho",
-                "La-Y-Ho",
-                "Ce-Pr-Ti",
-                "La-Nd-Th",
-                "Ce-Y-Nb",
-                "Ca-Lu-V",
-                "Tb-Pr-V",
-                "Dy-Er-Pu",
-                "Ni-Pt-Rh",
-                "Ni-Rh-C",
-                "Hf-Mg-U",
-                "Ca-Tm-Pu",
-                "Al-Hg-Ge",
-                "Nd-Ho-Mo",
-                "Li-Sm-Ta",
-                "Pm-Ho-Tm",
-                "Ca-Yb-Sc",
-                "Co-Cu-Pb",
-                "Li-Tm-Lu",
-                "Er-Sc-Mo",
-                "Sr-Mn-V",
-                "Pr-Gd-Cr",
-                "Na-Li-Cr",
-                "Na-V-Cu",
-                "Na-Zr-Ti",
-                "Pd-W-Au",
-                "Li-Gd-Ta",
-                "Li-Lu-Zr",
-                "Rb-Li-Mg",
-                "Co-Hg-Ru",
-                "Dy-Y-Ta",
-                "La-Nd-Tm",
-                "Al-Sn-Pb",
-                "Na-Zr-Ta",
-                "Er-Tm-Ti",
-                "Sr-Ca-Nd",
-                "Rb-Ti-V",
-                "Y-Nb-V",
-                "Tb-Nd-Sc",
-                "Rb-Na-Zr",
-                "Cd-Ga-Si",
-                "Ca-Tb-Yb",
-                "Sn-Ge-Pb",
-                "Yb-Gd-Zr",
-                "Y-Ho-Lu",
-                "Yb-Y-Cr",
-                "Ce-Gd-Ho",
-                "Ba-Sm-Gd",
-                "Cr-Cd-Fe",
-                "La-Y-Mo",
-                "Ba-Mn-Ni",
-                "Gd-Pu-Cr",
-                "Tb-Th-W",
-                "Ba-Mn-V",
-                "Cu-Ni-Pt",
-                "Lu-Ti-Cr",
-                "Pr-Gd-Pu",
-                "Er-Ti-Nb",
-                "La-Nd-V",
-                "Mn-Co-Ru",
-                "Yb-Eu-Pu",
-                "Li-Pm-Ho",
-                "La-Sm-Lu",
-                "La-Eu-Nb",
-                "Sn-Ge-Bi",
-                "La-Er-V",
-                "Yb-Pr-Cr",
-                "Ce-Lu-V",
-                "Rb-Nb-Mo",
-                "Tl-Ag-Ge",
-                "Gd-Lu-Th",
-                "Y-Er-Lu",
-                "Tb-Lu-V",
-                "Fe-Ir-Os",
-                "Hg-Os-Ru",
-                "Ba-Yb-Y",
-                "Nd-Y-Mo",
-                "Ce-Sm-Tm",
-                "Ba-Pr-V",
-                "La-Pr-Dy",
-                "Rb-V-Mo",
-                "Ba-Ca-Pm",
-                "La-Tm-Pu",
-                "Lu-Th-Nb",
-                "Al-Ge-Bi",
-                "Li-Y-Lu",
-                "K-Mg-Zr",
-                "Hg-Ir-Ru",
-                "Nd-Th-Mo",
-                "Cs-Ta-Nb",
-                "Cu-Pd-W",
-                "Yb-Dy-Cr",
-                "Dy-Th-Cr",
-                "Hg-Ge-Bi",
-                "Cu-Ni-Pd",
-                "Y-Ti-V",
-                "Sm-Ho-V",
-                "Dy-Y-W",
-                "Tb-Nd-Ho",
-                "Ta-Ti-Mo",
-                "Tm-Lu-Ti",
-                "Li-Tm-V",
-                "Nd-Gd-Tm",
-                "Na-Cr-Fe",
-                "Li-Cr-Mo",
-                "Tb-Pm-Mo",
-                "Lu-Mo-W",
-                "Th-Ta-Ti",
-                "Cd-Ge-B",
-                "Th-Ti-Nb",
-                "Yb-Mo-W",
-                "Nd-Lu-W",
-                "Al-Cd-Pb",
-                "Tb-Nd-Th",
-                "Ag-Os-Pd",
-                "Yb-Cr-W",
-                "Ce-Zr-Sc",
-                "Co-Hg-Os",
-                "Ba-Sr-V",
-                "Nd-Y-Cr",
-                "Tb-Tm-Ta",
-                "Tb-Er-Th",
-                "Re-Ni-Ru",
-                "Y-U-Ti",
-                "Yb-Gd-Lu",
-                "Sc-Ti-Nb",
-                "Ce-Sm-Th",
-                "Pr-Gd-Ti",
-                "Nd-Y-Lu",
-                "Dy-Y-Cr",
-                "Ca-La-Pu",
-                "Ce-Lu-Nb",
-                "Cu-Ru-Rh",
-                "Si-Sn-Pb",
-                "Cu-Re-Ag",
-                "Ga-Ge-Bi",
-                "La-Eu-Th",
-                "Tb-Ce-Nd",
-                "Yb-Pr-Lu",
-                "K-Ti-Nb",
-                "K-V-Fe",
-                "Lu-Pu-Mo",
-                "Pm-Er-Cr",
-                "Pr-Sm-V",
-                "Al-Si-Pb",
-                "Sm-Gd-Th",
-                "Ni-Ir-Os",
-                "Cu-Re-Ir",
-                "Tl-Ge-B",
-                "Ba-Pm-Gd",
-                "Yb-Er-Pu",
-                "Fe-Bi-Os",
-                "Yb-Lu-W",
-                "Cs-Pr-V",
-                "Ca-Tb-Nd",
-                "Li-Ho-Lu",
-                "Tb-Er-Ta",
-                "Ca-La-Mo",
-                "Gd-Zr-Ti",
-                "Gd-Ho-Tm",
-                "Nd-Lu-Pu",
-                "Tb-Yb-Zr",
-                "La-U-Cr",
-                "Pm-Th-Cr",
-                "Ba-Ca-Eu",
-                "La-Ce-V",
-                "U-Nb-V",
-                "Ca-Ce-Pm",
-                "Ho-Er-Lu",
-                "Y-Er-Th",
-                "Gd-Tm-Pu",
-                "Yb-Tm-Ta",
-                "La-Eu-W",
-                "Rb-Hf-Ti",
-                "Li-Er-Ti",
-                "Pm-Er-Lu",
-                "Li-Hf-Sc",
-                "Sr-V-Fe",
-                "Pm-Tm-Mo",
-                "Er-Th-Cr",
-                "Ca-Lu-Ti",
-                "Li-Y-Tm",
-                "Ba-Ca-Ti",
-                "Tb-Pm-Dy",
-                "Sm-U-Cr",
-                "Ce-Eu-Ta",
-                "Nd-Y-Th",
-                "Fe-Co-Ru",
-                "Gd-Y-Ho",
-                "Cs-Mg-Nb",
-                "Ho-Th-V",
-                "Y-Th-Ti",
-                "Li-La-Lu",
-                "Li-Ta-Ti",
-                "Ce-Th-Sc",
-                "Li-Ti-Nb",
-                "Yb-Ho-Tm",
-                "K-Rb-Li",
-                "Er-Hf-Th",
-                "Cu-Tc-Mo",
-                "Ni-Rh-Au",
-                "Ni-Ag-Pd",
-                "Cr-Fe-Bi",
-                "Y-Sc-Ta",
-                "Tb-Nd-Lu",
-                "Dy-Er-Tm",
-                "Rb-Hf-Ta",
-                "Li-Tb-Lu",
-                "Sm-Gd-Y",
-                "Ir-Pd-Ru",
-                "Pm-Nd-Pu",
-                "Ba-Pm-Y",
-                "Y-Hf-Ti",
-                "Nd-Gd-Zr",
-                "Th-U-Ti",
-                "K-Mg-Fe",
-                "Ni-Pt-C",
-                "Cu-Pd-Ru",
-                "Gd-V-Mo",
-                "Co-Ag-Bi",
-                "Li-Ce-Cr",
-                "Tm-Th-Ta",
-                "Pm-Dy-V",
-                "Er-Sc-Ta",
-                "Sm-Th-Nb",
-                "Yb-Mn-V",
-                "K-V-Mo",
-                "Dy-Tm-Lu",
-                "La-Tb-W",
-                "Yb-Nd-Th",
-                "Y-Ho-Zr",
-                "Yb-Pu-Nb",
-                "Ce-Pr-Sm",
-                "Co-Re-Pd",
-                "Ce-Pu-Cr",
-                "Ag-Mo-Au",
-                "Ca-V-Mo",
-                "Tl-Cu-Ag",
-                "Tb-Lu-Cr",
-                "Be-Sn-Ge",
-                "Y-Er-Tm",
-                "Nd-Dy-Pu",
-                "Nd-Ho-Er",
-                "Be-Zn-Si",
-                "La-Pr-Cr",
-                "In-Ga-Ge",
-                "Li-Fe-Ni",
-                "Ni-Ru-C",
-                "Gd-Sc-W",
-                "Gd-Cr-Mo",
-                "Er-Tm-Ta",
-                "Cu-Mo-W",
-                "Pm-Ho-Mo",
-                "Hf-Th-Ta",
-                "Sc-Mo-W",
-                "Cr-Cd-Mo",
-                "U-Ta-Nb",
-                "Tb-Th-Cr",
-                "Co-Cu-Ag",
-                "Zn-Sn-B",
-                "Pm-Lu-Cr",
-                "Ba-Eu-Mo",
-                "Er-Lu-Pu",
-                "Ni-Ir-Rh",
-                "Li-Mn-Cu",
-                "Mg-U-Ti",
-                "Gd-Ti-W",
-                "Co-Ni-Pd",
-                "Yb-Er-Zr",
-                "Yb-Ho-Mo",
-                "Cu-Ir-C",
-                "Nd-Er-Th",
-                "U-Ti-Nb",
-                "Sm-Lu-Ta",
-                "Mn-Ag-Au",
-                "Pm-Th-Mo",
-                "Er-Lu-Zr",
-                "Nd-Tm-Lu",
-                "Sc-Ta-W",
-                "Dy-Er-Ta",
-                "Eu-Pu-V",
-                "Y-Th-Nb",
-                "Eu-Mo-W",
-                "Nd-Gd-Dy",
-                "Cs-Ti-Nb",
-                "La-Nd-Er",
-                "Nd-V-Cr",
-                "Zn-Si-Pb",
-                "Mg-Cd-Fe",
-                "Re-Ag-Pd",
-                "Sr-V-Mo",
-                "Fe-Ag-Bi",
-                "V-Cu-Ru",
-                "Sm-U-Ta",
-                "Ce-Pu-Ti",
-                "Na-Fe-Cu",
-                "Li-Sm-Ho",
-                "Yb-Ho-V",
-                "La-Yb-Zr",
-                "Li-Pu-V",
-                "Tm-V-Cr",
-                "Ta-Cu-W",
-                "Tb-Pm-Lu",
-                "Ni-Ag-Rh",
-                "Pm-Y-Pu",
-                "Pu-Zr-Ta",
-                "Eu-Pu-Zr",
-                "Th-Zr-Nb",
-                "K-Rb-Zr",
-                "Sm-Lu-Cr",
-                "Mg-Cd-Mo",
-                "Tb-Pr-Ho",
-                "Ce-Eu-U",
-                "La-Nd-Pu",
-                "Ru-Pt-C",
-                "La-Lu-Pu",
-                "Pm-Tm-V",
-                "Yb-Th-U",
-                "Ce-Pm-Ho",
-                "Co-Ni-Au",
-                "Si-Sn-Ge",
-                "Er-Th-Ti",
-                "Os-Pd-Rh",
-                "Hf-Mg-Zr",
-                "Mo-W-Au",
-                "Sm-Gd-Lu",
-                "Ca-Tb-Lu",
-                "Ho-Lu-W",
-                "Fe-Co-Rh",
-                "La-Sm-Dy",
-                "Be-Al-Bi",
-                "Er-Tm-Pu",
-                "Sn-Bi-B",
-                "Nd-Ta-Mo",
-                "Eu-Th-Cr",
-                "La-Nd-Sm",
-                "Pm-Nd-Cr",
-                "Dy-Th-Zr",
-                "Pm-Er-Tm",
-                "Tl-Zn-Ga",
-                "Y-Pu-W",
-                "Ba-Pm-Nd",
-                "Ce-Pr-Y",
-                "V-Cr-Mo",
-                "Ce-Th-Cr",
-                "Yb-Dy-Er",
-                "La-Er-Sc",
-                "Li-Mg-Cr",
-                "Y-Lu-Mo",
-                "Sm-Y-Nb",
-                "Ce-Eu-Hf",
-                "Ag-Ge-C",
-                "Sm-Ho-Cr",
-                "Na-Li-Cu",
-                "Tb-Yb-Sc",
-                "Pr-Gd-Ho",
-                "Dy-Y-Mo",
-                "Er-Pu-Cr",
-                "Na-Li-Nb",
-                "Pm-Nd-Er",
-                "La-Ce-Sm",
-                "Dy-Y-Ti",
-                "Ca-Nd-Mo",
-                "Nd-Sm-Er",
-                "Yb-Nd-Er",
-                "Li-Nb-Mo",
-                "Ca-Ce-Mo",
-                "Cs-Li-Pr",
-                "Y-Zr-Ta",
-                "Sm-Dy-Cr",
-                "Ho-Tm-Th",
-                "Dy-Y-Tm",
-                "Pu-Cr-Mo",
-                "Ce-Sc-V",
-                "Sm-U-V",
-                "La-Sm-Gd",
-                "Yb-Nd-U",
-                "Pr-Dy-Ho",
-                "Ho-Er-V",
-                "Lu-Th-Zr",
-                "Yb-Nd-Sc",
-                "Rb-Ta-Nb",
-                "Gd-Er-Lu",
-                "Ho-Sc-Mo",
-                "Tc-Pd-Rh",
-                "Ce-Tm-Th",
-                "Cu-Pt-Rh",
-                "La-Ho-Tm",
-                "Sm-Ho-Er",
-                "La-Gd-Cr",
-                "Al-Zn-Cd",
-                "Cs-Pr-Ta",
-                "Pm-Pr-Nd",
-                "Os-Pt-Rh",
-                "Er-Mo-W",
-                "Gd-Dy-Ho",
-                "Tb-Er-Tm",
-                "Ce-Nd-Sm",
-                "Be-Al-Ga",
-                "Cu-Tc-Ni",
-                "Nd-Pu-Mo",
-                "Ca-La-Tb",
-                "Be-Zn-Bi",
-                "Cu-Rh-Au",
-                "Lu-Pu-Nb",
-                "Pr-Nd-Th",
-                "Rb-Na-Mo",
-                "Yb-Pr-Nd",
-                "Ce-Pr-V",
-                "Hf-Mg-Nb",
-                "Tb-Th-Mo",
-                "Co-Ag-Os",
-                "Li-Tb-Ti",
-                "Yb-Tm-Ti",
-                "Yb-Y-Th",
-                "Yb-Ta-V",
-                "Sc-Ta-V",
-                "La-Lu-Ti",
-                "Ca-Ce-Pu",
-                "Ce-Ho-Ta",
-                "La-U-Ti",
-                "Pu-Ta-Mo",
-                "Yb-Y-Tm",
-                "Er-Zr-Ti",
-                "U-Cr-Ag",
-                "Dy-Tm-V",
-                "Si-Ag-Bi",
-                "Tb-Y-V",
-                "Pr-Gd-Tm",
-                "Ce-Er-Th",
-                "Tl-Cu-B",
-                "Ho-Sc-W",
-                "Li-Mg-Nb",
-                "Y-Lu-W",
-                "Sc-V-Cr",
-                "Cu-Bi-B",
-                "Tl-Zn-B",
-                "Nd-Ho-V",
-                "Ni-Pt-Au",
-                "Sm-Er-Cr",
-                "Li-Lu-Pu",
-                "Yb-Y-Mo",
-                "Ce-Th-Zr",
-                "Pr-Lu-Cr",
-                "Ir-Os-Ru",
-                "Er-Cr-Mo",
-                "Tb-Sm-V",
-                "Dy-Ti-W",
-                "Nb-Tl-Mo",
-                "La-Lu-Mo",
-                "Ag-Pd-Rh",
-                "Hf-Sc-Ta",
-                "Re-Os-Pt",
-                "La-Th-W",
-                "Pm-Y-Th",
-                "Y-Hf-Ta",
-                "Pr-Y-Ta",
-                "Na-Hf-Zr",
-                "Tl-V-Cu",
-                "Gd-Y-Pu",
-                "Li-Pu-Cr",
-                "Pr-Sm-Dy",
-                "Ce-Gd-Ti",
-                "Mn-Fe-Ag",
-                "Y-Th-W",
-                "Ba-Eu-V",
-                "Ce-Ho-Zr",
-                "Gd-Zr-Sc",
-                "Ce-Y-Zr",
-                "Mn-Ni-Pb",
-                "Tb-Pr-Er",
-                "Nd-Lu-Cr",
-                "Nb-Cu-Bi",
-                "Li-Ho-V",
-                "Li-Sm-Tm",
-                "Al-Ge-Pb",
-                "Tb-Pu-Ti",
-                "Tb-Ta-Mo",
-                "Nd-Sc-Ta",
-                "Sr-Sc-V",
-                "Er-Pu-Ti",
-                "Mg-Nb-Mo",
-                "Dy-Pu-V",
-                "Gd-Tm-Ti",
-                "Na-Li-Be",
-                "Sm-Ta-V",
-                "La-Pr-Y",
-                "Ce-Ti-Nb",
-                "Ce-Er-Lu",
-                "Er-Lu-W",
-                "Lu-Pu-V",
-                "Fe-Ir-C",
-                "Li-Y-V",
-                "Pm-Pr-Ho",
-                "Th-Sc-Cr",
-                "Tl-In-Ge",
-                "Tm-Pu-Ta",
-                "Tc-Ni-Rh",
-                "La-Yb-Y",
-                "Li-Pr-Ti",
-                "Sr-Nd-Ti",
-                "Ce-Sc-W",
-                "La-Th-V",
-                "Li-Ce-Zr",
-                "Ba-La-V",
-                "La-Y-Lu",
-                "Ce-Pr-Hf",
-                "Cs-K-Hf",
-                "Sm-Gd-Pu",
-                "Li-Ta-V",
-                "La-Yb-Lu",
-                "La-Dy-Zr",
-                "Y-Pu-Ta",
-                "Th-Zr-Ta",
-                "Ho-Tm-Lu",
-                "Ce-Lu-Cr",
-                "Tb-Mo-W",
-                "La-Pu-Ta",
-                "La-Pr-Tm",
-                "Cs-Ti-Mo",
-                "Bi-Sb-P",
-                "Mn-Cu-Au",
-                "Mg-Ti-Cr",
-                "Er-Th-Ta",
-                "Th-Ti-Cr",
-                "Cr-Cu-Ni",
-                "Er-Nb-W",
-                "Tb-Tm-Lu",
-                "Li-La-Pr",
-                "Ce-U-Ta",
-                "Tc-Ni-Ir",
-                "Pr-Ho-W",
-                "Li-Cr-Fe",
-                "La-Sm-W",
-                "Fe-Cu-Ir",
-                "Co-Cu-C",
-                "Nb-Tl-V",
-                "Co-Pt-Rh",
-                "Ce-Er-Zr",
-                "Re-Ir-Rh",
-                "Lu-Pu-Zr",
-                "Eu-Nb-V",
-                "Ce-Sc-Ta",
-                "Ir-Pd-Pt",
-                "Hg-Ir-Os",
-                "Y-Sc-Mo",
-                "La-Th-Zr",
-                "Tl-V-Mo",
-                "Co-Cu-Os",
-                "Pm-Y-Mo",
-                "Ce-Pr-Pu",
-                "Tb-Pr-Mo",
-                "Yb-Th-V",
-                "Pm-Dy-Ho",
-                "Co-Ru-Au",
-                "Tb-Yb-Y",
-                "Gd-Y-Sc",
-                "Dy-Ho-Zr",
-                "La-Ta-Nb",
-                "La-Tm-Ta",
-                "U-Ti-Cr",
-                "La-Pm-Y",
-                "Cs-K-Nb",
-                "Tb-Nd-Zr",
-                "Nd-Th-Ta",
-                "Li-Lu-V",
-                "Sm-V-Mo",
-                "La-Nd-Mo",
-                "Gd-Zr-Ta",
-                "Ce-Nd-Tm",
-                "Tb-Yb-Gd",
-                "Ce-Th-V",
-                "Pr-U-Ti",
-                "La-Er-Cr",
-                "Dy-Y-Pu",
-                "Li-Pr-Y",
-                "Ce-Er-Mo",
-                "Dy-Y-Th",
-                "Er-Sc-Nb",
-                "La-Nb-Mo",
-                "Ca-Ce-Tm",
-                "Eu-U-Nb",
-                "La-Sc-U",
-                "Li-Ce-Er",
-                "La-Dy-Tm",
-                "Lu-Ta-Mo",
-                "Gd-Y-Zr",
-                "Li-Ce-Mn",
-                "Cr-Cd-Pb",
-                "La-Tm-Ti",
-                "Rb-Mg-Cr",
-                "Tb-Gd-Pu",
-                "Eu-Sc-V",
-                "Co-Ag-Au",
-                "La-Tb-Ta",
-                "Rb-Mg-Ti",
-                "Cu-Ir-Pt",
-                "Rb-Hf-Nb",
-                "Gd-Ta-Ti",
-                "Er-Pu-W",
-                "V-Cu-Pd",
-                "Dy-Pu-W",
-                "Sc-Ti-V",
-                "Tb-Gd-Zr",
-                "Li-Tb-V",
-                "Er-Ta-Mo",
-                "V-Cr-Hg",
-                "La-Y-Ti",
-                "Ta-Cu-Mo",
-                "Ta-Nb-Bi",
-                "Nd-Sm-Ta",
-                "V-Fe-Ag",
-                "Yb-Eu-Nb",
-                "La-Nb-V",
-                "Pd-Au-C",
-                "Sc-Cr-W",
-                "Mn-Co-Cu",
-                "Yb-Nd-Mo",
-                "Sm-Er-V",
-                "Ce-Pr-U",
-                "Ag-Ir-Pd",
-                "Nd-Ti-Cr",
-                "Li-Y-Zr",
-                "La-Ce-U",
-                "Al-Si-Sn",
-                "La-Eu-Cr",
-                "In-Si-Ge",
-                "V-Cr-Cu",
-                "Al-Sn-Ge",
-                "Ba-Mn-Fe",
-                "Th-Ti-V",
-                "Cs-Li-Mo",
-                "Ca-Pu-Ti",
-                "Al-Si-Bi",
-                "Li-Mg-Fe",
-                "Yb-U-V",
-                "Mn-Tl-Cd",
-                "Fe-Ir-Rh",
-                "Tb-Nd-Pu",
-                "Nd-Er-Zr",
-                "Ba-Sr-Ca",
-                "La-Eu-Y",
-                "Sm-Ho-Lu",
-                "Y-Ho-Tm",
-                "Tc-Ir-Pd",
-                "Cs-Hf-Nb",
-                "Gd-Ti-Mo",
-                "Dy-Tm-Mo",
-                "La-Pm-Th",
-                "Yb-Pu-Zr",
-                "Ce-U-Nb",
-                "Ir-Os-Pt",
-                "Ce-Sm-Ho",
-                "Tb-Y-Ta",
-                "Pm-Y-V",
-                "Pr-Th-Cr",
-                "Tb-Ce-W",
-                "Hg-Bi-B",
-                "Tb-Ce-V",
-                "Pr-Y-Ho",
-                "Cu-Ni-Rh",
-                "Fe-Co-Pb",
-                "Pr-Tm-Pu",
-                "Zn-Sn-Ge",
-                "Yb-Eu-Y",
-                "Cd-Fe-Pb",
-                "La-Gd-Sc",
-                "Ga-Bi-B",
-                "Sm-Gd-Tm",
-                "Co-Pt-Au",
-                "Ce-Er-Hf",
-                "Tb-Ce-Y",
-                "Sr-Ti-Mo",
-                "Cr-Fe-Cu",
-                "Yb-Hf-U",
-                "Eu-Hf-Ta",
-                "Zn-Ge-B",
-                "Ca-Sc-V",
-                "Nd-Sm-Cr",
-                "Ce-Tm-Ti",
-                "Na-Ca-Mo",
-                "Tl-Cd-Si",
-                "Nd-Lu-V",
-                "Li-Sc-V",
-                "Pr-Dy-Th",
-                "Pr-Th-W",
-                "Co-Cu-Pd",
-                "Tb-Pu-W",
-                "Li-Ti-Mo",
-                "Pm-Y-Lu",
-                "La-Y-Th",
-                "Pr-Sm-Er",
-                "Pr-Ho-Mo",
-                "Yb-Gd-Ta",
-                "Gd-Er-Pu",
-                "Ho-V-W",
-                "Yb-Dy-Th",
-                "Li-Mg-Ti",
-                "Yb-Er-Tm",
-                "Lu-Ti-Nb",
-                "Ca-Nd-Tm",
-                "Tb-Ce-Th",
-                "Dy-Ta-Mo",
-                "Sr-Ca-Mo",
-                "Tb-Ti-Mo",
-                "Pr-Y-V",
-                "Yb-Pr-Ti",
-                "Cd-Ga-Pb",
-                "Tb-Th-Zr",
-                "La-Ce-Lu",
-                "Sm-Pu-Mo",
-                "Li-Sm-V",
-                "Ba-Yb-Pr",
-                "Gd-Ho-Ta",
-                "Eu-Pu-Cr",
-                "La-Er-Pu",
-                "Pm-Lu-Pu",
-                "Ce-Pr-W",
-                "U-V-Ag",
-                "Cs-Li-V",
-                "Yb-Y-Ho",
-                "La-Th-Cr",
-                "Tb-Sc-Cr",
-                "Eu-Ta-W",
-                "Cs-Rb-Zr",
-                "Pm-Gd-Mo",
-                "Sr-Ti-V",
-                "Cu-Ru-Au",
-                "La-Sm-Pu",
-                "La-U-Nb",
-                "Pr-Gd-Th",
-                "Er-V-Mo",
-                "Ho-Lu-Cr",
-                "Yb-Er-Ta",
-                "Y-Lu-Zr",
-                "Cr-Ag-Bi",
-                "Sm-V-W",
-                "Li-Y-Er",
-                "Gd-Ho-Cr",
-                "Sc-U-Ti",
-                "Rb-Mg-Nb",
-                "Th-Ta-W",
-                "K-Hf-Zr",
-                "Ho-Lu-Ta",
-                "Ba-Nd-Sm",
-                "Rb-Na-Nb",
-                "Ce-Sm-Nb",
-                "Pr-Cr-Mo",
-                "Ba-Pr-Mo",
-                "Li-Nd-Tm",
-                "Re-Os-Ru",
-                "Eu-Cr-W",
-                "Nd-Er-Ti",
-                "Cs-Rb-Mo",
-                "Tb-Pm-Tm",
-                "Cs-K-Ti",
-                "Na-Sr-V",
-                "La-Ce-Eu",
-                "La-Gd-Pu",
-                "Tb-Lu-Pu",
-                "Th-U-V",
-                "Li-Zr-Ta",
-                "Lu-Th-W",
-                "Tb-Nd-Sm",
-                "Nb-Bi-Mo",
-                "Cd-Si-Bi",
-                "Sm-Ho-Tm",
-                "Be-In-Si",
-                "Sr-Ca-Fe",
-                "Pd-Pt-Au",
-                "Pm-Pr-Mo",
-                "La-V-Cr",
-                "Ce-Gd-Tm",
-                "La-Ce-Mn",
-                "La-Th-U",
-                "K-Li-Hf",
-                "Ho-Er-Tm",
-                "Nd-Gd-Lu",
-                "Ce-Sm-Cr",
-                "Nd-Dy-Cr",
-                "Tb-Lu-Zr",
-                "Er-Pu-Zr",
-                "Sm-Cr-Mo",
-                "Pm-Sm-Tm",
-                "Sc-U-Ta",
-                "Cs-Cr-Mo",
-                "Yb-Hf-Ta",
-                "Pr-Th-V",
-                "Zn-Ga-Pb",
-                "Yb-Nd-Ta",
-                "Er-Zr-Nb",
-                "Pm-Sm-Lu",
-                "Mn-Cd-Fe",
-                "Ba-La-Gd",
-                "La-Tb-Gd",
-                "Yb-Nd-Ho",
-                "Pr-Y-W",
-                "Er-Ta-Ti",
-                "Co-Re-Os",
-                "Co-Ni-Os",
-                "La-Ce-Ti",
-                "Sm-Y-Er",
-                "Pm-Sm-V",
-                "Yb-Y-Pu",
-                "Hf-Mg-Ti",
-                "Pr-Ho-Th",
-                "Pm-Pr-Dy",
-                "Pm-Sm-Gd",
-                "K-Mg-Mo",
-                "V-In-Fe",
-                "Yb-Ta-Nb",
-                "Li-Tb-Sc",
-                "Y-Th-V",
-                "Th-Cr-Mo",
-                "Ba-Eu-Y",
-                "Ce-Sm-V",
-                "Pr-Lu-Th",
-                "Ba-Ca-Fe",
-                "Ge-Bi-B",
-                "Ce-Th-Ti",
-                "Rb-Zr-Ta",
-                "Yb-Pr-Hf",
-                "Si-Ge-Au",
-                "Li-Er-Sc",
-                "Ba-La-Sm",
-                "Er-Zr-Ta",
-                "Ce-Pr-Gd",
-                "Y-Ta-Ti",
-                "Na-Ta-Ti",
-                "Yb-Tm-V",
-                "Tb-Pm-Th",
-                "Sm-Pu-W",
-                "Pr-Tm-Th",
-                "Ba-Sc-Mo",
-                "Ag-Bi-Mo",
-                "Nb-Cu-Mo",
-                "Tb-Ho-Zr",
-                "Pm-Sm-Ho",
-                "Zn-Ge-Bi",
-                "Tb-Pr-W",
-                "Ca-Ce-Mn",
-                "Tm-Ti-V",
-                "Tc-Ni-C",
-                "Eu-Pu-W",
-                "La-Tb-Sm",
-                "Yb-Lu-Ta",
-                "Yb-V-Mo",
-                "Ce-Y-Th",
-                "Tb-Nd-Ti",
-                "Cu-Ir-Pd",
-                "Ba-La-Mo",
-                "La-Gd-Er",
-                "Ga-Sn-Ge",
-                "Tb-Ho-Ta",
-                "Er-Th-V",
-                "Pr-Y-Hf",
-                "Dy-Zr-Ti",
-                "Lu-V-Cr",
-                "Pr-Gd-V",
-                "La-Ti-Mo",
-                "Tb-Pu-Zr",
-                "Lu-Nb-Mo",
-                "Cs-Rb-Mg",
-                "Fe-Co-Ni",
-                "K-Ti-Mo",
-                "Tb-Yb-Mo",
-                "Fe-Au-C",
-                "Dy-Ho-Pu",
-                "Y-Pu-Zr",
-                "Tb-Pr-Th",
-                "Sc-Ta-Mo",
-                "Gd-Ho-Mo",
-                "Li-Y-Hf",
-                "Mn-V-Ru",
-                "Yb-Ti-Mo",
-                "Sm-Y-Pu",
-                "La-Nd-Lu",
-                "Ga-Si-Sn",
-                "Ba-Y-Sc",
-                "Nd-Y-U",
-                "Gd-Lu-Cr",
-                "Eu-Ta-Mo",
-                "Er-Tm-Th",
-                "Be-Ga-Bi",
-                "K-Li-Fe",
-                "Tl-V-Ag",
-                "Co-Os-Ru",
-                "V-Hg-Mo",
-                "Fe-Co-C",
-                "La-Tb-Th",
-                "Pr-Dy-Pu",
-                "Ta-Nb-W",
-                "Li-Pu-Ti",
-                "Zn-In-Ga",
-                "Tb-Ce-Zr",
-                "Ca-Yb-Lu",
-                "La-Y-Er",
-                "Yb-Ho-Er",
-                "La-Lu-Cr",
-                "Li-Ho-Cr",
-                "Yb-Pr-Tm",
-                "Li-Pr-Cr",
-                "Ho-Th-Sc",
-                "Pr-Sm-W",
-                "Tb-Lu-Mo",
-                "Yb-Eu-Mn",
-                "Nd-V-Mo",
-                "Ga-Hg-Pb",
-                "Pm-Nd-Y",
-                "Ba-Gd-Mo",
-                "Ni-Ru-Pt",
-                "Y-Er-Sc",
-                "Ca-Lu-Mo",
-                "Al-Zn-Sn",
-                "Th-V-Mo",
-                "Fe-Ni-Pd",
-                "Tb-Sm-Mo",
-                "Li-Pu-Ta",
-                "Pm-Dy-Tm",
-                "Fe-Co-Cu",
-                "Gd-Th-V",
-                "Dy-Ti-V",
-                "La-Ce-Gd",
-                "Yb-Th-Sc",
-                "Tb-Ho-Sc",
-                "Tb-Y-Zr",
-                "Tc-Ir-Rh",
-                "Ce-Nd-Ti",
-                "Yb-Y-U",
-                "Na-V-Cr",
-                "Nd-Lu-Th",
-                "Ho-Pu-Zr",
-                "Ba-Ca-Y",
-                "Fe-Os-Ru",
-                "Pm-Ho-Th",
-                "Gd-Th-Cr",
-                "Tb-Dy-Ti",
-                "La-Sc-V",
-                "Sr-Mn-Fe",
-                "La-Mo-W",
-                "Dy-Lu-Ta",
-                "Tl-Zn-Si",
-                "Nb-Tl-Cu",
-                "Pu-Np-Cr",
-                "Ir-Pt-C",
-                "Yb-Dy-Ti",
-                "Li-Pu-Mo",
-                "Pr-Tm-Mo",
-                "Nd-Dy-Er",
-                "Ce-Tm-V",
-                "Be-Al-Si",
-                "Dy-Th-V",
-                "Al-Cd-Si",
-                "La-Er-Nb",
-                "Tb-Nd-Ta",
-                "Eu-Hf-Nb",
-                "Re-Os-Pd",
-                "Nd-Tm-Cr",
-                "Sm-Tm-Th",
-                "Cs-Ta-V",
-                "Tb-Pu-Mo",
-                "Mg-Mn-V",
-                "Cu-Pd-Pt",
-                "Li-Er-Hf",
-                "Li-Lu-Ta",
-                "Y-Lu-Pu",
-                "Yb-Ho-Pu",
-                "Li-Sm-Y",
-                "Dy-Ti-Mo",
-                "Ca-Ti-V",
-                "Pr-Hf-U",
-                "La-Yb-Gd",
-                "Eu-Mn-V",
-                "Tb-Ti-Cr",
-                "Yb-Nd-Cr",
-                "Ti-Cr-Mo",
-                "Mg-Zr-Nb",
-                "Ta-Ti-Nb",
-                "Li-Nd-Sm",
-                "Tl-Ag-Pb",
-                "Tb-Gd-V",
-                "Gd-Pu-W",
-                "Cu-Pd-Rh",
-                "Li-Zr-Sc",
-                "Gd-Cr-W",
-                "Cu-Ru-Pt",
-                "Li-Er-Cr",
-                "Yb-Sc-Mo",
-                "Gd-Er-Cr",
-                "Pr-Lu-Pu",
-                "V-Fe-Bi",
-                "La-Gd-Ta",
-                "Ta-V-Bi",
-                "Tb-Cr-Mo",
-                "Cr-Mo-Au",
-                "Tb-Ce-Lu",
-                "Ca-La-Fe",
-                "Gd-Y-Cr",
-                "Cr-Fe-Pb",
-                "Cr-Bi-Mo",
-                "Ce-Pr-Mo",
-                "Sr-Sc-Ti",
-                "Ag-Ge-Bi",
-                "Y-Ta-V",
-                "Er-V-Cr",
-                "Sm-U-Nb",
-                "Cr-Hg-Mo",
-                "La-Pr-Pu",
-                "Ca-Ce-V",
-                "Th-V-W",
-                "Ba-Nd-Sc",
-                "Ce-Eu-Sc",
-                "Y-Ta-W",
-                "Cs-Li-Hf",
-                "Tb-Nd-Gd",
-                "K-Rb-Mo",
-                "Ca-Tm-Lu",
-                "Tb-Dy-Th",
-                "Ce-Pu-Ta",
-                "Yb-Hf-Nb",
-                "Y-Sc-W",
-                "Gd-Dy-Cr",
-                "Yb-Pu-Mo",
-                "Ce-Pr-Nd",
-                "Dy-Er-Mo",
-                "Y-Er-Zr",
-                "Hf-Th-Sc",
-                "Cu-Mo-Pb",
-                "Ho-Pu-Cr",
-                "Na-Mg-Mo",
-                "Cu-Re-Ru",
-                "Si-Ag-Ge",
-                "Ba-La-Eu",
-                "Pm-Lu-Th",
-                "Mn-V-Fe",
-                "Ca-La-Pm",
-                "Pr-U-V",
-                "Nd-Er-Tm",
-                "Re-Ni-Os",
-                "Gd-Y-Ti",
-                "Ce-Hf-Sc",
-                "La-Nd-Ti",
-                "Yb-Ho-Sc",
-                "Al-Cd-Bi",
-                "Al-Tl-Si",
-                "Tb-Sm-Lu",
-                "Pm-Sm-Er",
-                "Ce-Ti-W",
-                "Pr-Gd-Y",
-                "Dy-Cr-W",
-                "Zn-Sn-Bi",
-                "Rb-Mg-Mo",
-                "Tl-In-Mo",
-                "Ca-V-Fe",
-                "Th-Ta-Nb",
-                "Gd-Er-Ti",
-                "La-Er-W",
-                "Nd-Th-U",
-                "Ce-Pm-V",
-                "Tb-Y-Pu",
-                "Gd-Th-Mo",
-                "Yb-Pr-Mo",
-                "Yb-Hf-Ti",
-                "Rb-Ta-Ti",
-                "Dy-Pu-Ti",
-                "Be-Ga-Sn",
-                "Y-Ho-Pu",
-                "Ba-Yb-V",
-                "Yb-Y-Sc",
-                "Tb-Nd-Y",
-                "Ho-Zr-Ta",
-                "Pm-Gd-Tm",
-                "Li-Mn-V",
-                "Ce-Eu-Mn",
-                "Be-Al-Zn",
-                "Zn-Ge-Pb",
-                "Pr-Ho-Ta",
-                "Tb-Y-Ho",
-                "Li-Sm-Lu",
-                "Dy-Pu-Mo",
-                "Ba-Ca-Mn",
-                "Ho-Th-Cr",
-                "Er-Hf-Nb",
-                "Ca-Pu-V",
-                "Os-Pd-Pt",
-                "Pr-Pu-W",
-                "Cr-Ag-Pb",
-                "La-Ce-Sc",
-                "Mn-Cu-Pb",
-                "Yb-Sc-Nb",
-                "La-Nd-Ta",
-                "Ce-Ho-W",
-                "Re-Ag-Rh",
-                "Tl-Mo-Pb",
-                "Sm-V-Cr",
-                "Co-Ir-Rh",
-                "Pm-Gd-Pu",
-                "Ce-Er-Ti",
-                "Ce-Sm-Ta",
-                "La-Tb-Cr",
-                "Yb-Gd-Ti",
-                "Cu-Ni-Os",
-                "Rb-V-Cr",
-                "Yb-Zr-Ta",
-                "Nd-Sc-V",
-                "Tl-Cd-Pb",
-                "Tb-Sm-Gd",
-                "Sm-Gd-Dy",
-                "Tb-Yb-Dy",
-                "Li-Er-Mo",
-                "Pr-Er-Cr",
-                "Mg-U-Cr",
-                "La-Ce-Ho",
-                "Th-Sc-Nb",
-                "Nd-Gd-Y",
-                "Eu-Hf-Sc",
-                "Ce-Sc-Ti",
-                "Gd-Pu-V",
-                "Er-Ti-W",
-                "Ca-Pm-Lu",
-                "Co-Cu-Ru",
-                "Yb-Eu-Zr",
-                "Sm-Lu-W",
-                "Y-U-Ta",
-                "Y-Th-Sc",
-                "V-Mo-W",
-                "Ce-Tm-Mo",
-                "Cs-Ti-Cr",
-                "Nd-Dy-Ti",
-                "Li-Ho-Sc",
-                "Si-Ag-Au",
-                "Yb-Sc-W",
-                "Tl-Cd-Ga",
-                "Tb-Th-Sc",
-                "Ce-Cr-Mo",
-                "Yb-Pr-Er",
-                "Nd-Th-Zr",
-                "Pr-Nd-Sm",
-                "Li-Sc-Cr",
-                "Yb-Ho-Th",
-                "Tb-Ho-Cr",
-                "La-Pu-W",
-                "Nd-Dy-Y",
-                "Pm-Nd-Tm",
-                "Li-Tb-Pr",
-                "Gd-Ta-Mo",
-                "Li-La-Ti",
-                "Pu-Ti-W",
-                "Na-Ca-V",
-                "Y-Nb-W",
-                "Ce-Y-Mo",
-                "Hf-Sc-Nb",
-                "La-Tm-V",
-                "Ho-Lu-V",
-                "Ca-Sc-Ti",
-                "Nd-Sc-W",
-                "La-Tb-Sc",
-                "Yb-Gd-Dy",
-                "Tc-Pd-C",
-                "Li-V-Cr",
-                "Li-Sm-Nb",
-                "Be-Ge-Bi",
-                "Ca-Tb-V",
-                "K-Nb-Mo",
-                "Pm-Gd-Cr",
-                "La-Sm-U",
-                "Ca-Yb-V",
-                "Nd-Gd-Th",
-                "Pm-Pu-Mo",
-                "Yb-Th-Cr",
-                "Ce-Hf-Ti",
-                "Dy-Tm-Ti",
-                "Yb-Ta-W",
-                "Cu-Pd-Au",
-                "La-Tb-Ho",
-                "Tm-Pu-Cr",
-                "Tb-Ho-Th",
-                "La-Sc-Ta",
-                "Sm-Ta-Nb",
-                "Li-Mn-Fe",
-                "Ce-Gd-W",
-                "Sc-Nb-W",
-                "Ta-V-W",
-                "Nd-Sm-Dy",
-                "Nd-Ho-Pu",
-                "La-Er-Mo",
-                "La-Y-Ta",
-                "Ca-Nd-V",
-                "Re-Hg-Os",
-                "Tb-Dy-V",
-                "La-Tb-Nd",
-                "La-Zr-Sc",
-                "Cu-Tc-Rh",
-                "Li-Tm-Cr",
-                "Si-Ge-Pb",
-                "Gd-Y-Ta",
-                "Sm-Ta-Mo",
-                "Na-Mg-Fe",
-                "La-Ce-W",
-                "Th-Nb-V",
-                "Y-Nb-Mo",
-                "La-Ta-Mo",
-                "Dy-Tm-Pu",
-                "La-Pr-V",
-                "Ca-La-Ti",
-                "Pr-Dy-W",
-                "Ce-Nd-Cr",
-                "Lu-Zr-Ta",
-                "Y-Pu-Ti",
-                "Li-Ce-Mo",
-                "La-Eu-Sc",
-                "Nd-Sm-U",
-                "La-Tb-Zr",
-                "Li-Ce-Nb",
-                "Dy-Y-Lu",
-                "Zn-Ga-B",
-                "Y-Zr-Sc",
-                "Li-Pm-Y",
-                "Pm-Nd-Gd",
-                "Pr-Ti-W",
-                "Ba-La-Pr",
-                "Fe-Co-Pd",
-                "Pr-Nd-Ta",
-                "Tl-In-Ga",
-                "Li-Pm-V",
-                "Nd-Lu-Ta",
-                "Pr-Nd-Tm",
-                "Pr-Th-Ti",
-                "Ce-Y-Cr",
-                "Tb-Ce-Ta",
-                "V-Cr-Ag",
-                "Fe-Rh-C",
-                "Cs-K-Zr",
-                "Er-Tm-Cr",
-                "Tb-Y-Lu",
-                "K-Cr-Mo",
-                "Gd-Ti-V",
-                "La-Th-Ta",
-                "Yb-Ta-Mo",
-                "Ho-Th-Mo",
-                "Pr-Ho-Cr",
-                "Mg-V-Fe",
-                "Ta-Nb-V",
-                "Li-Mg-Mo",
-                "Nd-Lu-Zr",
-                "Tm-Th-Ti",
-                "K-Hf-Mg",
-                "Cs-Mg-Mo",
-                "Pr-Ta-W",
-                "Ba-Gd-Ti",
-                "Sm-Er-Nb",
-                "Yb-Eu-Mo",
-                "Pr-Ti-Cr",
-                "La-Pm-Sm",
-                "Li-Nd-Ti",
-                "Yb-Dy-Pu",
-                "Li-Gd-Zr",
-                "Ta-Nb-Tl",
-                "Fe-Cu-Ru",
-                "Pm-Pr-Sm",
-                "Fe-Cu-Pb",
-                "Dy-Th-Ta",
-                "Nb-Hg-Bi",
-                "Er-V-W",
-                "Sr-Y-V",
-                "Dy-Th-W",
-                "Tb-Yb-Ho",
-                "Nd-Y-W",
-                "Be-Zn-Sn",
-                "Eu-Y-Ta",
-                "Yb-Y-Ti",
-                "Ce-Gd-Mo",
-                "Gd-Th-Zr",
-                "Tl-Si-Ge",
-                "Sm-Dy-Pu",
-                "La-Ho-W",
-                "Cs-Li-Ti",
-                "Cu-Bi-Mo",
-                "Yb-Y-Er",
-                "Ce-U-Cr",
-                "Li-V-Cu",
-                "Gd-Er-Sc",
-                "Yb-Dy-Ho",
-                "Re-Ni-Ag",
-                "Ca-Nd-Ti",
-                "Yb-Pu-Ti",
-                "La-Tb-Mo",
-                "Ir-Rh-C",
-                "Al-Tl-Ga",
-                "La-Ti-Nb",
-                "Nd-Gd-Pu",
-                "Al-Cd-Ge",
-                "Li-Ho-Ta",
-                "Ho-V-Cr",
-                "Li-Gd-Sc",
-                "Ga-Re-Bi",
-                "Yb-Lu-Zr",
-                "Li-Pr-V",
-                "U-Ta-W",
-                "Yb-Tm-Pu",
-                "Ce-Ho-Lu",
-                "Fe-Ir-Pd",
-                "Gd-Pu-Ti",
-                "Tb-Gd-Th",
-                "Ca-La-V",
-                "Ce-Nd-Pu",
-                "Yb-Eu-U",
-                "Ta-V-Mo",
-                "Th-Nb-Mo",
-                "Ca-Tm-Mo",
-                "Er-Sc-W",
-                "Sm-Cr-W",
-                "Ce-Pm-Cr",
-                "Pr-Sm-Ta",
-                "Ta-Tl-In",
-                "Li-Tb-Pm",
-                "Ba-Pm-Pr",
-                "Li-Gd-Ho",
-                "Hg-B-Sb",
-                "Gd-Tm-Lu",
-                "Tb-Pr-Dy",
-                "Ce-Gd-Cr",
-                "Ho-Tm-Mo",
-                "Y-U-V",
-                "Ir-Pt-Rh",
-                "La-Tb-Yb",
-                "Li-Ti-V",
-                "Tm-Lu-Pu",
-                "Tb-Pr-Nd",
-                "Pr-Ta-V",
-                "Re-Bi-Os",
-                "Co-Cu-Bi",
-                "Nd-Ho-Cr",
-                "La-Pm-Tm",
-                "Ca-Eu-V",
-                "Ba-Sc-Ti",
-                "Na-Nb-Cu",
-                "Cs-Li-Zr",
-                "Gd-Dy-Lu",
-                "La-Ce-Cr",
-                "Cu-Re-Os",
-                "Li-Mg-Zr",
-                "Ce-Pu-Zr",
-                "Ca-La-Yb",
-                "Ce-Y-Pu",
-                "Zn-Cd-Ga",
-                "Nd-V-W",
-                "V-Fe-Ru",
-                "Tb-Dy-Er",
-                "Hf-Th-U",
-                "Sc-V-W",
-                "La-Y-Pu",
-                "Al-In-Si",
-                "Be-Ga-Ge",
-                "Os-Ru-Pt",
-                "Ag-Ge-Pb",
-                "Pm-Y-Tm",
-                "Li-La-Ho",
-                "Cs-Zr-Ti",
-                "Ce-Sc-Mo",
-                "Pr-Nd-Mo",
-                "Li-Tm-Ti",
-                "La-Ho-Sc",
-                "Nd-Tm-Mo",
-                "Th-Ta-Mo",
-                "Er-Tm-Mo",
-                "Gd-Y-W",
-                "Lu-Ta-V",
-                "Lu-Th-Ta",
-                "Ce-Er-Cr",
-                "Ce-Ti-Mo",
-                "Li-Ce-Gd",
-                "Ce-Th-U",
-                "Li-Hf-Nb",
-                "Yb-Ho-Ta",
-                "Li-Pm-Cr",
-                "Ce-Gd-V",
-                "Cs-K-Cr",
-                "Tb-Ti-W",
-                "Ce-Tm-Cr",
-                "Ho-Lu-Pu",
-                "Y-Er-Ti",
-                "Gd-Dy-Ti",
-                "Gd-Pu-Zr",
-                "Li-Cr-Cu",
-                "Co-Bi-Os",
-                "Gd-Pu-Ta",
-                "Co-Ru-Rh",
-                "Gd-Lu-Ti",
-                "Li-La-Ce",
-                "Be-Al-Ge",
-                "Gd-Y-Lu",
-                "Pr-Dy-Tm",
-                "Yb-Cr-Mo",
-                "La-Gd-Zr",
-                "Tl-Cu-Pb",
-                "Cr-Ag-Mo",
-                "Tb-Tm-Ti",
-                "Nd-Y-Pu",
-                "Eu-Th-V",
-                "Ga-Ge-Pb",
-                "Li-Pm-Lu",
-                "Li-Nd-Lu",
-                "Ba-Pr-Ti",
-                "Li-V-Mo",
-                "Pr-Y-Mo",
-                "Ce-V-Cr",
-                "Dy-Er-V",
-                "Ca-Eu-Pu",
-                "Ni-Pd-Pt",
-                "Er-Lu-Ta",
-                "Ba-Y-V",
-                "Pr-Nd-Lu",
-                "Ce-Nd-Y",
-                "Na-Mg-Ti",
-                "Cu-Ag-Ir",
-                "La-Ce-Mo",
-                "La-Er-Lu",
-                "Tc-Ni-Pd",
-                "Ti-Nb-V",
-                "Tb-Ce-Gd",
-                "Hf-U-Ti",
-                "Lu-V-Mo",
-                "Ta-V-In",
-                "Co-Ir-Pt",
-                "Na-Ti-Nb",
-                "Yb-Hf-Th",
-                "Mn-Cu-Ag",
-                "Ce-Nd-U",
-                "Pr-Gd-Ta",
-                "Ca-Pm-V",
-                "Nd-Gd-Cr",
-                "Yb-Eu-V",
-                "Al-Hg-Pb",
-                "V-Cr-Bi",
-                "Ce-Nd-Ho",
-                "Ho-Er-Th",
-                "Tb-Nd-Mo",
-                "Ca-Tb-Pm",
-                "Nd-Ho-Ta",
-                "Pu-Ta-W",
-                "V-Cu-Mo",
-                "Tb-Cr-W",
-                "V-Cu-Ag",
-                "Fe-Ni-Os",
-                "Lu-Th-V",
-                "Fe-Ni-C",
-                "Ca-Y-Sc",
-                "Ca-Ce-Eu",
-                "Rb-Ti-Cr",
-                "Nd-Sm-Th",
-                "Co-Re-Bi",
-                "Gd-Lu-V",
-                "Eu-Pu-Ta",
-                "Pu-Zr-Ti",
-                "Pm-Sm-Y",
-                "La-Ce-Er",
-                "Ga-Sn-Bi",
-                "Ba-Sr-Sc",
-                "Co-Re-Hg",
-                "La-Lu-W",
-                "Cs-Nb-Mo",
-                "La-Y-V",
-                "Ce-Sm-Er",
-                "Co-Ni-Ru",
-                "Mg-Cr-Mo",
-                "Sc-Nb-Mo",
-                "Sm-U-W",
-                "Ce-Ta-Ti",
-                "Li-Y-Pu",
-                "Tb-Dy-Pu",
-                "Cs-Rb-Cr",
-                "Cs-Rb-V",
-                "Ce-Gd-Ta",
-                "Mg-Ti-Mo",
-                "K-Ta-V",
-                "Rb-Na-Mg",
-                "Ba-Gd-V",
-                "Ca-Tb-Mo",
-                "Pr-Er-Hf",
-                "Si-Ge-Bi",
-                "Y-Er-Hf",
-                "Zn-Si-Bi",
-                "Li-Pm-Mo",
-                "Yb-Lu-Pu",
-                "La-Dy-Lu",
-                "La-Pm-Er",
-                "Hf-Zr-Ta",
-                "K-Hf-Nb",
-                "Lu-Ti-W",
-                "Li-Pu-Zr",
-                "Cd-Ga-Ge",
-                "Cd-Ga-B",
-                "Gd-Y-V",
-                "Cu-W-Au",
-                "Yb-Nd-Lu",
-                "Er-Tm-V",
-                "Tb-Gd-Y",
-                "Er-Lu-Mo",
-                "Tc-Pt-Rh",
-                "Dy-Ta-Ti",
-                "Cu-Pd-C",
-                "Y-V-Mo",
-                "La-Yb-Dy",
-                "Lu-Nb-W",
-                "Cr-Cu-Au",
-                "Y-Sc-Nb",
-                "Li-La-Nd",
-                "Tb-Sm-Pu",
-                "Tb-Y-Tm",
-                "Ce-Er-Sc",
-                "Gd-Dy-Mo",
-                "Ca-Ce-Nd",
-                "Ta-Tl-Mo",
-                "Pr-Nd-Er",
-                "Li-Pr-Nd",
-                "La-Pr-Ta",
-                "Tm-Cr-W",
-                "Ce-Ho-V",
-                "Ba-Yb-Ti",
-                "Na-Ti-Cr",
-                "Er-Th-Sc",
-                "Er-Ti-V",
-                "Cd-Ge-Pb",
-                "Ba-Eu-Mn",
-                "Re-Ag-Ir",
-                "Pr-Ti-V",
-                "Lu-Ta-Nb",
-                "Fe-Co-Ag",
-                "Li-Mn-Ni",
-                "Nd-Ho-Zr",
-                "La-Pm-Cr",
-                "Mg-Nb-V",
-                "Ce-Pm-Tm",
-                "Pd-Ru-Pt",
-                "Gd-Sc-Mo",
-                "Nd-Pu-Ti",
-                "Pr-Gd-Mo",
-                "Sc-U-W",
-                "Co-Cu-Rh",
-                "Eu-V-Cr",
-                "Y-Tm-Th",
-                "Tb-Lu-Ti",
-                "La-Nd-Y",
-                "Th-Ti-W",
-                "Li-Nd-Cr",
-                "Pm-Gd-Th",
-                "Tl-Cu-Ni",
-                "Pr-U-Cr",
-                "Ca-Tb-Y",
-                "Co-Pd-Rh",
-                "Li-Pm-Nd",
-                "Cu-Os-Rh",
-                "Tb-Pu-Cr",
-                "Ni-Ag-Ru",
-                "Li-Gd-V",
-                "Na-Hf-Ta",
-                "La-Sm-Ta",
-                "Ca-La-Nd",
-                "Sr-Ca-Mn",
-                "La-Mn-Fe",
-                "La-Th-Sc",
-                "Tb-Ce-Mo",
-                "Mo-Pb-W",
-                "Tb-Y-Cr",
-                "Al-Ga-Ge",
-                "V-Fe-Pd",
-                "Nd-Cr-W",
-                "Tl-Si-Ag",
-                "Tb-Ce-Pu",
-                "Cs-Pr-Mo",
-                "Nd-U-Ta",
-                "Eu-Ta-Nb",
-                "La-Dy-Th",
-                "Mg-Ti-V",
-                "Li-Fe-Cu",
-                "Na-Li-Ti",
-                "La-Tb-Pu",
-                "Th-Zr-Sc",
-                "Ce-Gd-Y",
-                "Dy-Lu-Cr",
-                "Nd-Sc-Ti",
-                "Yb-Nb-V",
-                "Ga-Si-Pb",
-                "Pr-Lu-Ti",
-                "Eu-Y-Cr",
-                "Hf-U-Nb",
-                "Pu-Ti-V",
-                "Li-Nd-Er",
-                "Cu-Ag-Bi",
-                "Sm-Nb-V",
-                "Gd-Dy-Y",
-                "Ho-Ta-Mo",
-                "Cu-Ag-Pd",
-                "Tc-Ni-Pt",
-                "Y-Lu-Nb",
-                "Ni-Os-Ru",
-                "Dy-Lu-Pu",
-                "Fe-Cu-Os",
-                "Ta-Tl-V",
-                "Eu-Y-U",
-                "Co-Pd-Ru",
-                "Re-Hg-Bi",
-                "La-Yb-Ho",
-                "Nd-Er-Lu",
-                "Tb-Yb-Er",
-                "Yb-Th-Zr",
-                "K-Li-Ti",
-                "Re-Tc-Rh",
-                "Cs-K-Al",
-                "Pr-Ti-Mo",
-                "Yb-Eu-Sc",
-                "Y-Th-Ta",
-                "Yb-Ti-V",
-                "Nd-Gd-V",
-                "Sm-Dy-Tm",
-                "Y-Mo-W",
-                "Ce-Er-W",
-                "Re-Tc-Pd",
-                "Ce-Nd-Zr",
-                "Li-Ho-Tm",
-                "Y-Tm-W",
-                "Al-Tl-Zn",
-                "Li-La-Mo",
-                "Pr-Ho-Tm",
-                "Eu-Th-Nb",
-                "Pr-Nd-Cr",
-                "Pm-Gd-Dy",
-                "Na-Ta-V",
-                "Al-Zn-Ga",
-                "Ba-Sm-Mo",
-                "Y-Ti-Cr",
-                "Nd-Th-Cr",
-                "Co-Ir-Pd",
-                "Yb-Gd-Ho",
-                "Hg-Ge-B",
-                "Ho-Tm-V",
-                "Pr-Tm-Ta",
-                "Tb-Dy-Cr",
-                "Ir-Ru-Pt",
-                "Ce-Pm-Pu",
-                "Tm-Pu-W",
-                "Pm-Nd-Th",
-                "Yb-Gd-Mo",
-                "La-Ti-V",
-                "Sm-Pu-Nb",
-                "Hf-Th-Zr",
-                "Ta-Ti-V",
-                "Be-Sn-Bi",
-                "Pm-Ho-Cr",
-                "Yb-Eu-Th",
-                "Ho-Lu-Mo",
-                "Tb-Dy-Ta",
-                "Ce-Y-Ti",
-                "Al-Zn-Pb",
-                "Ca-La-Mn",
-                "Yb-Eu-Ta",
-                "Cs-Hf-Zr",
-                "Na-Ca-Fe",
-                "Tb-Pu-Ta",
-                "Sr-Sc-Mo",
-                "Tc-Ir-C",
-                "Y-Hf-Sc",
-                "Ti-Mo-W",
-                "Pr-Gd-Dy",
-                "Co-Cu-Re",
-                "La-Y-U",
-                "Re-Sn-Bi",
-                "Yb-Ti-Cr",
-                "Nd-Mo-W",
-                "Fe-Ni-Ir",
-                "Pr-Nd-W",
-                "Yb-Lu-V",
-                "Ce-Pu-W",
-                "Ac-Cr-Mo",
-                "Zn-B-Pb",
-                "La-Yb-Tm",
-                "Ba-Nd-Mo",
-                "Mn-Co-Ag",
-                "Dy-Cr-Mo",
-                "Er-Tm-Lu",
-                "La-Y-Nb",
-                "Tc-Ir-Pt",
-                "Pr-Er-W",
-                "Yb-Ho-Cr",
-                "Mn-Fe-Au",
-                "Ca-Y-V",
-                "Pd-Ru-Au",
-                "Ce-Hf-U",
-                "La-Pm-Pr",
-                "Tb-V-Mo",
-                "Ba-Eu-Sc",
-                "Ta-Bi-Mo",
-                "Nd-Dy-V",
-                "Tl-B-Pb",
-                "Li-Hf-Zr",
-                "Li-La-Fe",
-                "Al-Sn-Bi",
-                "Ce-Pm-Er",
-                "Ni-Au-C",
-                "Er-Ta-W",
-                "Pr-Er-Pu",
-                "La-Nd-Sc",
-                "Ni-Ag-Ir",
-                "La-Ce-Th",
-                "La-Yb-Nd",
-                "Pm-Nd-Dy",
-                "Ce-Th-Mo",
-                "Eu-U-W",
-                "Pm-Ho-Er",
-                "Ce-Lu-Mo",
-                "Li-Cu-Mo",
-                "Sm-Y-Th",
-                "Tb-Nd-Dy",
-                "Nd-Er-Pu",
-                "Rb-Nb-V",
-                "Pr-Y-U",
-                "Y-Er-Pu",
-                "Cd-Mo-Pb",
-                "Li-Er-Zr",
-                "V-Cu-W",
-                "Pm-Nd-Mo",
-                "Yb-Er-Ti",
-                "Tb-Sc-Ta",
-                "Ca-Ti-Mo",
-                "Tb-Tm-Pu",
-                "Y-Lu-Ta",
-                "Rb-Li-Ti",
-                "Hg-Sb-Pb",
-                "La-Dy-Pu",
-                "Pd-Rh-Au",
-                "K-Ta-Ti",
-                "Li-La-Sc",
-                "Pr-Dy-Ti",
-                "Yb-Pr-W",
-                "La-Nd-Ho",
-                "Sm-Nb-W",
-                "Ce-Eu-Pu",
-                "Nd-Sc-Mo",
-                "Ag-Ir-Ru",
-                "Pm-Y-Ho",
-                "Yb-Dy-Lu",
-                "U-Ta-V",
-                "Ca-Tb-Ti",
-                "Tb-Yb-Lu",
-                "Ce-Pm-Sm",
-                "Sr-Nd-V",
-                "Co-Ni-Pt",
-                "Rb-Mg-Zr",
-                "Ti-V-Cr",
-                "Th-U-Cr",
-                "Yb-Pu-Cr",
-                "Ta-Cu-Bi",
-                "La-Yb-Cr",
-                "Pr-Ho-V",
-                "Rb-Na-Cr",
-                "Ce-Ta-V",
-                "Ce-Ta-W",
-                "Eu-Y-Sc",
-                "La-Ho-Ta",
-                "Cd-Ga-Bi",
-                "Eu-Pu-Mo",
-                "Nd-Gd-Er",
-                "Na-Li-Mo",
-                "Tb-Tm-V",
-                "Th-Sc-U",
-                "Lu-Cr-Mo",
-                "Tb-Ti-V",
-                "Tb-Sm-Ho",
-                "Dy-Ta-V",
-                "Rb-Li-Nb",
-                "Li-Ta-Mo",
-                "Re-Tc-Pt",
-                "Pm-Gd-V",
-                "La-Gd-Y",
-                "La-Dy-Ta",
-                "Mg-Ti-Nb",
-                "Nd-Th-W",
-                "Dy-Y-Zr",
-                "Tb-Zr-Ti",
-                "Pd-Pt-W",
-                "Cs-Rb-Ti",
-                "Ca-Nd-Pu",
-                "La-Pm-Nd",
-                "Sm-Ho-Pu",
-                "Hg-Bi-Mo",
-                "Co-Ag-Pb",
-                "Ce-Pm-Pr",
-                "Cu-Re-Pd",
-                "La-Th-Mo",
-                "Ba-Pr-Nd",
-                "La-Yb-W",
-                "Li-Y-Sc",
-                "Th-U-Ta",
-                "Li-Tm-Mo",
-                "Zn-Si-Ge",
-                "Sc-Nb-V",
-                "Sm-Th-V",
-                "Li-La-Pm",
-                "Li-Y-Ho",
-                "Y-Hf-U",
-                "Ti-V-W",
-                "Sm-Lu-Th",
-                "Li-Cu-Ni",
-                "Ce-Y-Lu",
-                "Tm-Th-W",
-                "Yb-Tm-Mo",
-                "Ca-Yb-Nd",
-                "Ce-Eu-V",
-                "Nd-Er-Sc",
-                "Hf-Ta-Nb",
-                "Co-Ag-C",
-                "Co-Ir-Os",
-                "Ca-Mn-V",
-                "Pu-Ta-Nb",
-                "V-Bi-Mo",
-                "Y-Hf-Th",
-                "Dy-Mo-W",
-                "Ce-Sm-Lu",
-                "Ni-Ir-Pd",
-                "Re-Os-Rh",
-                "Ce-Nd-Mo",
-                "Er-Hf-Sc",
-                "Cr-Fe-Ag",
-                "Li-Nd-V",
-                "Eu-Sc-Ta",
-                "Yb-Tm-Th",
-                "Ga-Ge-B",
-                "Eu-Sc-W",
-                "Li-Pr-Gd",
-                "Yb-Pr-Dy",
-                "Sm-Pu-V",
-                "La-Nd-Cr",
-                "Ce-Ho-Mo",
-                "Li-Pm-Pu",
-                "Y-Sc-U",
-                "Pr-Sm-Mo",
-                "Pr-U-Ta",
-                "Re-Tc-Ir",
-                "Nd-Zr-Ta",
-                "Tl-In-Si",
-                "Yb-V-Cr",
-                "Tb-Pr-Sm",
-                "Mn-Fe-Ru",
-                "Ce-Zr-Ta",
-                "K-Ti-Cr",
-                "Ce-Sm-Mo",
-                "Ni-Ag-Pb",
-                "K-Mg-Cr",
-                "Tb-Nd-Cr",
-                "Pu-Cr-W",
-                "La-Gd-Ho",
-                "Pm-Nd-Lu",
-                "La-Dy-Y",
-                "Tb-Th-V",
-                "Cu-Tc-Ir",
-                "Li-Tb-Ho",
-                "Tb-Sm-Tm",
-                "Sr-Nd-Y",
-                "Pm-V-Mo",
-                "K-Rb-Ta",
-                "Gd-Sc-Ti",
-                "Y-Er-Cr",
-                "Ce-Eu-Th",
-                "Yb-Nd-Dy",
-                "Er-Hf-Ta",
-                "Pr-Y-Th",
-                "Eu-Zr-Sc",
-                "Gd-Sc-Ta",
-                "Li-Ce-Ti",
-                "Na-Hf-Nb",
-                "Sm-Gd-Cr",
-                "La-Pr-Nd",
-                "Ga-Re-Hg",
-                "Li-La-Gd",
-                "Co-Ni-Rh",
-                "La-Tb-Er",
-                "Yb-Lu-Mo",
-                "Er-Pu-V",
-                "Tl-Ga-Pb",
-                "Yb-Sc-V",
-                "Co-Ag-Ru",
-                "Li-Zr-Nb",
-                "Rb-Ta-V",
-                "K-Li-Mg",
-                "Dy-V-W",
-                "Pu-Mo-W",
-                "Li-La-Mn",
-                "Tb-Zr-Sc",
-                "La-Pr-Er",
-                "Tb-Lu-Ta",
-                "Tb-Ho-Pu",
-                "Ba-Ca-Mo",
-                "Gd-Th-Ti",
-                "Ta-Nb-Mo",
-                "La-Y-Sc",
-                "La-Tm-Mo",
-                "Ge-B-Pb",
-                "Li-Pr-Ta",
-                "Cu-Pt-Au",
-                "La-Pu-V",
-                "Tb-Pr-Gd",
-                "Eu-Ta-V",
-                "Ce-Tm-W",
-                "Pr-Tm-W",
-                "La-Gd-Ti",
-                "Pm-Pr-Th",
-                "Sm-Tm-Cr",
-                "Mn-Ni-Au",
-                "Ce-Y-V",
-                "Rb-Cr-Mo",
-                "La-Nb-W",
-                "Ca-Y-Mo",
-                "Sm-Lu-Nb",
-                "Li-V-Fe",
-                "Y-Er-Nb",
-                "Nd-Dy-Zr",
-                "Pm-Pr-Tm",
-                "Mg-U-Nb",
-                "La-Yb-Eu",
-                "Gd-V-W",
-                "Eu-Zr-Ta",
-                "Tb-Ho-Er",
-                "Cs-Rb-Nb",
-                "Tb-Pr-Lu",
-                "Cd-Bi-B",
-                "Cu-Ir-Ru",
-                "Gd-Ho-Er",
-                "Pr-V-Mo",
-                "La-Nd-Gd",
-                "Y-Tm-Ti",
-                "Ni-Ag-Au",
-                "K-Hf-Ti",
-                "Nd-Ho-Tm",
-                "Pr-Nd-Pu",
-                "La-Gd-V",
-                "Yb-Er-Cr",
-                "Dy-V-Mo",
-                "La-Nd-Dy",
-                "Ce-Pr-Lu",
-                "Ce-Nd-Gd",
-                "Y-Th-Zr",
-                "Tl-Ni-Ag",
-                "Nd-Gd-Ti",
-                "K-Li-V",
-                "Li-Ce-Y",
-                "Mn-Ni-Ru",
-                "Ho-Pu-W",
-                "Pm-Dy-Lu",
-                "Ce-Sm-U",
-                "Ni-Os-Pd",
-                "Cr-Mo-Pb",
-                "Er-Ta-V",
-                "Ce-Nd-Er",
-                "Zn-Ga-Si",
-                "Sm-Y-Ta",
-                "Eu-Nb-W",
-                "Fe-Pd-Au",
-                "Co-Re-Ru",
-                "Sm-Y-Tm",
-                "Fe-Cu-C",
-                "Tm-Pu-Ti",
-                "Ta-Nb-Cu",
-                "Ho-Ta-V",
-                "Li-Lu-Ti",
-                "Yb-Er-Nb",
-                "Fe-Ni-Au",
-                "Nd-Ta-W",
-                "La-Pr-Ho",
-                "Mg-V-Cr",
-                "La-Pr-U",
-                "Y-Zr-Ti",
-                "Cu-Ni-Au",
-                "Rb-Li-Mo",
-                "Li-Ho-Zr",
-                "Fe-Ag-Pb",
-                "Eu-Y-V",
-                "Nd-Th-Ti",
-                "Pm-Pr-Cr",
-                "Sm-Y-Mo",
-                "Zn-Ga-Sn",
-                "Tl-Ga-Si",
-                "La-Tb-Y",
-                "Tm-Ta-Ti",
-                "Sr-Nd-Mo",
-                "Y-Tm-Mo",
-                "Tb-Yb-Pu",
-                "La-Ho-Mo",
-                "Dy-Ho-Mo",
-                "Cs-Hf-Mg",
-                "Ba-Sm-V",
-                "Pr-Y-Lu",
-                "Nd-Er-V",
-                "Tm-Mo-W",
-                "Li-Ta-Nb",
-                "Gd-Tm-Th",
-                "Ti-V-Mo",
-                "Sc-Ta-Nb",
-                "La-Sm-Tm",
-                "Ce-Er-Tm",
-                "Y-Ho-Er",
-                "Sm-Th-Mo",
-                "Tb-Sm-Y",
-                "Li-Tb-Mo",
-                "Ho-Lu-Th",
-                "Sm-Pu-Ta",
-                "Nd-Tm-Ti",
-                "Na-Li-Ta",
-                "K-Ti-V",
-                "Mn-Tl-Pb",
-                "Hg-B-Pb",
-                "Er-Lu-Th",
-                "Pu-Zr-Nb",
-                "Ca-La-Ce",
-                "Eu-Hf-U",
-                "Os-Ru-Rh",
-                "La-Sc-Cr",
-                "V-Ag-Ru",
-                "Ba-Pr-Sm",
-                "Nd-Th-V",
-                "Pr-Ta-Ti",
-                "Y-Tm-Pu",
-                "Tb-Y-Th",
-                "Ce-Nd-Th",
-                "Pt-Rh-Au",
-                "Er-Nb-Mo",
-                "Ba-La-Mn",
-                "Pr-Pu-V",
-                "Sm-Y-Cr",
-                "Ga-Re-Sn",
-                "Ho-Er-Pu",
-                "Al-Tl-Ge",
-                "Dy-Lu-Mo",
-                "Na-Sr-Ti",
-                "Cd-Si-Ge",
-                "Tb-Pr-Pu",
-                "Ba-Gd-Sc",
-                "Ca-Tb-Pu",
-                "Cu-Ag-Os",
-                "Co-Cu-Ir",
-                "Pm-Dy-Pu",
-                "Zn-Cd-Ge",
-                "La-V-W",
-                "Sr-Ca-V",
-                "Dy-Ho-Tm",
-                "Eu-Th-W",
-                "Ca-Pm-Y",
-                "Eu-Th-Zr",
-                "Cu-Os-Ru",
-                "Be-In-Ga",
-                "La-Th-Ti",
-                "Nd-Pu-Cr",
-                "Ca-Ce-Y",
-                "Yb-Y-V",
-                "Ca-La-Y",
-                "Li-Tm-Pu",
-                "Al-Tl-Pb",
-                "Li-Ce-Ho",
-                "Li-Sc-Nb",
-                "Pr-Nd-Dy",
-                "Yb-Nd-Pu",
-                "Li-Ce-Nd",
-                "Pm-Dy-Cr",
-                "Dy-Lu-V",
-                "Ca-Mn-Fe",
-                "Cs-Mg-V",
-                "Ce-Eu-Nb",
-                "Tb-V-Cr",
-                "Ce-Ta-Nb"
-            ];
-        }
-    }
-    $.$mpds_visavis_elements_nonformer = $mpds_visavis_elements_nonformer;
-})($ || ($ = {}));
-//mpds/visavis/elements/nonformer/-view.tree/nonformer.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -17073,7 +14488,10 @@ var $;
         $$.$mpds_visavis_elements_nonformer = $mpds_visavis_elements_nonformer;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/elements/nonformer/nonformer.view.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -17496,14 +14914,14 @@ var $;
         $$.$mpds_visavis_plot_matrix = $mpds_visavis_plot_matrix;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/matrix/matrix.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mpds/visavis/plot/matrix/matrix.view.css", "[mpds_visavis_plot_matrix_plot] rect.nonformer {\n\tfill:url(#nonformer) !important;\n\tfill-opacity:1.0 !important;\n}\n\n[mpds_visavis_plot_matrix_plot] rect.visited{\n\tfill:#0f0 !important;\n\tfill-opacity:1.0 !important;\n}\n\n[mpds_visavis_plot_matrix_plot] rect.bgmatrix {\n\tfill:#f6f6f6;\n}\n\n[mpds_visavis_plot_matrix_plot] rect.bgmatrix.hidden {\n\tfill:#fff;\n}\n\n[mpds_visavis_plot_matrix_plot] line {\n\tstroke:#fff;\n}\n\n[mpds_visavis_plot_matrix_plot] text.active {\n\tfill:#f00;\n\tfont-weight:bold;\n}\n");
 })($ || ($ = {}));
-//mpds/visavis/plot/matrix/-css/matrix.view.css.ts
+
 ;
 "use strict";
 var $;
@@ -17561,37 +14979,34 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/matrix/matrix.view.css.ts
+
+;
+	($.$mpds_visavis_lib_plotly_view) = class $mpds_visavis_lib_plotly_view extends ($.$mol_view) {
+		sub(){
+			return [(this.Plotly_root())];
+		}
+		data(){
+			return [];
+		}
+		layout(){
+			return {};
+		}
+		plot_options(){
+			return {
+				"displaylogo": false, 
+				"displayModeBar": false, 
+				"staticPlot": false
+			};
+		}
+		Plotly_root(){
+			return null;
+		}
+	};
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_lib_plotly_view extends $mol_view {
-        sub() {
-            return [
-                this.Plotly_root()
-            ];
-        }
-        data() {
-            return [];
-        }
-        layout() {
-            return {};
-        }
-        plot_options() {
-            return {
-                displaylogo: false,
-                displayModeBar: false,
-                staticPlot: false
-            };
-        }
-        Plotly_root() {
-            return null;
-        }
-    }
-    $.$mpds_visavis_lib_plotly_view = $mpds_visavis_lib_plotly_view;
-})($ || ($ = {}));
-//mpds/visavis/lib/plotly/view/-view.tree/view.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -17623,14 +15038,14 @@ var $;
         $$.$mpds_visavis_lib_plotly_view = $mpds_visavis_lib_plotly_view;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/lib/plotly/view/view.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mpds/visavis/lib/plotly/view/view.view.css", ".js-plotly-plot {\n\tposition: absolute;\n}\n\n/* default plotly styles for shadow DOM */\n.js-plotly-plot .plotly button,\n.js-plotly-plot .plotly input,\n.plotly-notifier {\n\tfont-family: \"Open Sans\", verdana, arial, sans-serif\n}\n\n.js-plotly-plot .plotly,\n.js-plotly-plot .plotly div {\n\tdirection: ltr;\n\tfont-family: \"Open Sans\", verdana, arial, sans-serif;\n\tmargin: 0;\n\tpadding: 0\n}\n\n.js-plotly-plot .plotly button:focus,\n.js-plotly-plot .plotly input:focus {\n\toutline: 0\n}\n\n.js-plotly-plot .plotly a,\n.js-plotly-plot .plotly a:hover {\n\ttext-decoration: none\n}\n\n.js-plotly-plot .plotly .crisp {\n\tshape-rendering: crispEdges\n}\n\n.js-plotly-plot .plotly .user-select-none {\n\t-webkit-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\t-o-user-select: none;\n\tuser-select: none\n}\n\n.js-plotly-plot .plotly svg {\n\toverflow: hidden\n}\n\n.js-plotly-plot .plotly svg a {\n\tfill: #447adb\n}\n\n.js-plotly-plot .plotly svg a:hover {\n\tfill: #3c6dc5\n}\n\n.js-plotly-plot .plotly .main-svg {\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n\tpointer-events: none\n}\n\n.js-plotly-plot .plotly .main-svg .draglayer {\n\tpointer-events: all\n}\n\n.js-plotly-plot .plotly .cursor-default {\n\tcursor: default\n}\n\n.js-plotly-plot .plotly .cursor-pointer {\n\tcursor: pointer\n}\n\n.js-plotly-plot .plotly .cursor-crosshair {\n\tcursor: crosshair\n}\n\n.js-plotly-plot .plotly .cursor-move {\n\tcursor: move\n}\n\n.js-plotly-plot .plotly .cursor-col-resize {\n\tcursor: col-resize\n}\n\n.js-plotly-plot .plotly .cursor-row-resize {\n\tcursor: row-resize\n}\n\n.js-plotly-plot .plotly .cursor-ns-resize {\n\tcursor: ns-resize\n}\n\n.js-plotly-plot .plotly .cursor-ew-resize {\n\tcursor: ew-resize\n}\n\n.js-plotly-plot .plotly .cursor-sw-resize {\n\tcursor: sw-resize\n}\n\n.js-plotly-plot .plotly .cursor-s-resize {\n\tcursor: s-resize\n}\n\n.js-plotly-plot .plotly .cursor-se-resize {\n\tcursor: se-resize\n}\n\n.js-plotly-plot .plotly .cursor-w-resize {\n\tcursor: w-resize\n}\n\n.js-plotly-plot .plotly .cursor-e-resize {\n\tcursor: e-resize\n}\n\n.js-plotly-plot .plotly .cursor-nw-resize {\n\tcursor: nw-resize\n}\n\n.js-plotly-plot .plotly .cursor-n-resize {\n\tcursor: n-resize\n}\n\n.js-plotly-plot .plotly .cursor-ne-resize {\n\tcursor: ne-resize\n}\n\n.js-plotly-plot .plotly .cursor-grab {\n\tcursor: -webkit-grab;\n\tcursor: grab\n}\n\n.js-plotly-plot .plotly .modebar {\n\tposition: absolute;\n\ttop: 2px;\n\tright: 2px\n}\n\n.js-plotly-plot .plotly .ease-bg {\n\t-webkit-transition: background-color .3s;\n\t-moz-transition: background-color .3s;\n\t-ms-transition: background-color .3s;\n\t-o-transition: background-color .3s;\n\ttransition: background-color .3s\n}\n\n.js-plotly-plot .plotly .modebar--hover>:not(.watermark) {\n\topacity: 0;\n\t-webkit-transition: opacity .3s;\n\t-moz-transition: opacity .3s;\n\t-ms-transition: opacity .3s;\n\t-o-transition: opacity .3s;\n\ttransition: opacity .3s\n}\n\n.js-plotly-plot .plotly:hover .modebar--hover .modebar-group {\n\topacity: 1\n}\n\n.js-plotly-plot .plotly .modebar-group {\n\tfloat: left;\n\tdisplay: inline-block;\n\tbox-sizing: border-box;\n\tpadding-left: 8px;\n\tposition: relative;\n\tvertical-align: middle;\n\twhite-space: nowrap\n}\n\n.js-plotly-plot .plotly .modebar-btn {\n\tposition: relative;\n\tfont-size: 16px;\n\tpadding: 3px 4px;\n\theight: 22px;\n\tcursor: pointer;\n\tline-height: normal;\n\tbox-sizing: border-box\n}\n\n.js-plotly-plot .plotly .modebar-btn svg {\n\tposition: relative;\n\ttop: 2px\n}\n\n.js-plotly-plot .plotly .modebar.vertical {\n\tdisplay: flex;\n\tflex-direction: column;\n\tflex-wrap: wrap;\n\talign-content: flex-end;\n\tmax-height: 100%\n}\n\n.js-plotly-plot .plotly .modebar.vertical svg {\n\ttop: -1px\n}\n\n.js-plotly-plot .plotly .modebar.vertical .modebar-group {\n\tdisplay: block;\n\tfloat: none;\n\tpadding-left: 0;\n\tpadding-bottom: 8px\n}\n\n.js-plotly-plot .plotly .modebar.vertical .modebar-group .modebar-btn {\n\tdisplay: block;\n\ttext-align: center\n}\n\n.js-plotly-plot .plotly [data-title]:after,\n.js-plotly-plot .plotly [data-title]:before {\n\tposition: absolute;\n\t-webkit-transform: translate3d(0, 0, 0);\n\t-moz-transform: translate3d(0, 0, 0);\n\t-ms-transform: translate3d(0, 0, 0);\n\t-o-transform: translate3d(0, 0, 0);\n\ttransform: translate3d(0, 0, 0);\n\tdisplay: none;\n\topacity: 0;\n\tz-index: 1001;\n\tpointer-events: none;\n\ttop: 110%;\n\tright: 50%\n}\n\n.js-plotly-plot .plotly [data-title]:hover:after,\n.js-plotly-plot .plotly [data-title]:hover:before {\n\tdisplay: block;\n\topacity: 1\n}\n\n.js-plotly-plot .plotly [data-title]:before {\n\tcontent: \"\";\n\tposition: absolute;\n\tbackground: 0 0;\n\tborder: 6px solid transparent;\n\tz-index: 1002;\n\tmargin-top: -12px;\n\tborder-bottom-color: #69738a;\n\tmargin-right: -6px\n}\n\n.js-plotly-plot .plotly [data-title]:after {\n\tcontent: attr(data-title);\n\tbackground: #69738a;\n\tcolor: #fff;\n\tpadding: 8px 10px;\n\tfont-size: 12px;\n\tline-height: 12px;\n\twhite-space: nowrap;\n\tmargin-right: -18px;\n\tborder-radius: 2px\n}\n\n.js-plotly-plot .plotly .vertical [data-title]:after,\n.js-plotly-plot .plotly .vertical [data-title]:before {\n\ttop: 0;\n\tright: 200%\n}\n\n.js-plotly-plot .plotly .vertical [data-title]:before {\n\tborder: 6px solid transparent;\n\tborder-left-color: #69738a;\n\tmargin-top: 8px;\n\tmargin-right: -30px\n}\n\n.plotly-notifier {\n\tposition: fixed;\n\ttop: 50px;\n\tright: 20px;\n\tz-index: 10000;\n\tfont-size: 10pt;\n\tmax-width: 180px\n}\n\n.plotly-notifier p {\n\tmargin: 0\n}\n\n.plotly-notifier .notifier-note {\n\tmin-width: 180px;\n\tmax-width: 250px;\n\tborder: 1px solid #fff;\n\tz-index: 3000;\n\tmargin: 0;\n\tbackground-color: rgba(140, 151, 175, .9);\n\tcolor: #fff;\n\tpadding: 10px;\n\toverflow-wrap: break-word;\n\tword-wrap: break-word;\n\t-ms-hyphens: auto;\n\t-webkit-hyphens: auto;\n\thyphens: auto\n}\n\n.plotly-notifier .notifier-close {\n\tcolor: #fff;\n\topacity: .8;\n\tfloat: right;\n\tpadding: 0 5px;\n\tbackground: 0 0;\n\tborder: none;\n\tfont-size: 20px;\n\tfont-weight: 700;\n\tline-height: 20px\n}\n\n.plotly-notifier .notifier-close:hover {\n\tcolor: #444;\n\ttext-decoration: none;\n\tcursor: pointer\n}\n");
 })($ || ($ = {}));
-//mpds/visavis/lib/plotly/view/-css/view.view.css.ts
+
 ;
 "use strict";
 var $;
@@ -17644,94 +15059,79 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/lib/plotly/view/view.view.css.ts
+
+;
+	($.$mol_pop) = class $mol_pop extends ($.$mol_view) {
+		showed(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		align_vert(){
+			return "";
+		}
+		align_hor(){
+			return "";
+		}
+		prefer(){
+			return "vert";
+		}
+		sub(){
+			return [(this.Anchor())];
+		}
+		sub_visible(){
+			return [(this.Anchor()), (this.Bubble())];
+		}
+		Anchor(){
+			return null;
+		}
+		align(){
+			return "bottom_center";
+		}
+		bubble_content(){
+			return [];
+		}
+		height_max(){
+			return 9999;
+		}
+		Bubble(){
+			const obj = new this.$.$mol_pop_bubble();
+			(obj.align) = () => ((this.align()));
+			(obj.content) = () => ((this.bubble_content()));
+			(obj.height_max) = () => ((this.height_max()));
+			return obj;
+		}
+	};
+	($mol_mem(($.$mol_pop.prototype), "showed"));
+	($mol_mem(($.$mol_pop.prototype), "Bubble"));
+	($.$mol_pop_bubble) = class $mol_pop_bubble extends ($.$mol_view) {
+		sub(){
+			return (this.content());
+		}
+		style(){
+			return {...(super.style()), "maxHeight": (this.height_max())};
+		}
+		attr(){
+			return {
+				...(super.attr()), 
+				"mol_pop_align": (this.align()), 
+				"tabindex": 0
+			};
+		}
+		content(){
+			return [];
+		}
+		height_max(){
+			return 9999;
+		}
+		align(){
+			return "";
+		}
+	};
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_pop extends $mol_view {
-        showed(next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        align_vert() {
-            return "";
-        }
-        align_hor() {
-            return "";
-        }
-        prefer() {
-            return "vert";
-        }
-        sub() {
-            return [
-                this.Anchor()
-            ];
-        }
-        sub_visible() {
-            return [
-                this.Anchor(),
-                this.Bubble()
-            ];
-        }
-        Anchor() {
-            return null;
-        }
-        align() {
-            return "bottom_center";
-        }
-        bubble_content() {
-            return [];
-        }
-        height_max() {
-            return 9999;
-        }
-        Bubble() {
-            const obj = new this.$.$mol_pop_bubble();
-            obj.align = () => this.align();
-            obj.content = () => this.bubble_content();
-            obj.height_max = () => this.height_max();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_pop.prototype, "showed", null);
-    __decorate([
-        $mol_mem
-    ], $mol_pop.prototype, "Bubble", null);
-    $.$mol_pop = $mol_pop;
-    class $mol_pop_bubble extends $mol_view {
-        sub() {
-            return this.content();
-        }
-        style() {
-            return {
-                ...super.style(),
-                maxHeight: this.height_max()
-            };
-        }
-        attr() {
-            return {
-                ...super.attr(),
-                mol_pop_align: this.align(),
-                tabindex: 0
-            };
-        }
-        content() {
-            return [];
-        }
-        height_max() {
-            return 9999;
-        }
-        align() {
-            return "";
-        }
-    }
-    $.$mol_pop_bubble = $mol_pop_bubble;
-})($ || ($ = {}));
-//mol/pop/-view.tree/pop.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -17823,73 +15223,59 @@ var $;
         $$.$mol_pop = $mol_pop;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/pop/pop.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/pop/pop.view.css", "[mol_pop] {\n\tposition: relative;\n\tdisplay: inline-flex;\n}\n\n[mol_pop_bubble] {\n\tbox-shadow: 0 0 1rem hsla(0,0%,0%,.5);\n\tborder-radius: var(--mol_gap_round);\n\tposition: absolute;\n\tz-index: var(--mol_layer_popup);\n\tbackground: var(--mol_theme_back);\n\tmax-width: none;\n\tmax-height: none;\n\t/* overflow: hidden;\n\toverflow-y: scroll;\n\toverflow-y: overlay; */\n\tword-break: normal;\n\twidth: max-content;\n\theight: max-content;\n\tflex-direction: column;\n\tmax-width: 80vw;\n\tmax-height: 80vw;\n\tcontain: paint;\n}\n\n:where( [mol_pop_bubble] > * ) {\n\tbackground: var(--mol_theme_card);\n}\n\n[mol_pop_bubble][mol_scroll] {\n\tbackground: var(--mol_theme_back);\n}\n\n[mol_pop_bubble]:focus {\n\toutline: none;\n}\n\n[mol_pop_align=\"suspense_suspense\"] {\n\topacity: 0;\n}\n\n[mol_pop_align=\"left_top\"] {\n\ttransform: translate(-100%);\n\tleft: 0;\n\tbottom: 0;\n}\n\n[mol_pop_align=\"left_center\"] {\n\ttransform: translate(-100%, -50%);\n\tleft: 0;\n\ttop: 50%;\n}\n\n[mol_pop_align=\"left_bottom\"] {\n\ttransform: translate(-100%);\n\tleft: 0;\n\ttop: 0;\n}\n\n[mol_pop_align=\"right_top\"] {\n\ttransform: translate(100%);\n\tright: 0;\n\tbottom: 0;\n}\n\n[mol_pop_align=\"right_center\"] {\n\ttransform: translate(100%, -50%);\n\tright: 0;\n\ttop: 50%;\n}\n\n[mol_pop_align=\"right_bottom\"] {\n\ttransform: translate(100%);\n\tright: 0;\n\ttop: 0;\n}\n\n[mol_pop_align=\"center\"] {\n\tleft: 50%;\n\ttop: 50%;\n\ttransform: translate(-50%, -50%);\n}\n\n[mol_pop_align=\"top_left\"] {\n\tright: 0;\n\tbottom: 100%;\n}\n\n[mol_pop_align=\"top_center\"] {\n\ttransform: translate(-50%);\n\tleft: 50%;\n\tbottom: 100%;\n}\n\n[mol_pop_align=\"top_right\"] {\n\tleft: 0;\n\tbottom: 100%;\n}\n\n[mol_pop_align=\"bottom_left\"] {\n\tright: 0;\n\ttop: 100%;\n}\n\n[mol_pop_align=\"bottom_center\"] {\n\ttransform: translate(-50%);\n\tleft: 50%;\n\ttop: 100%;\n}\n\n[mol_pop_align=\"bottom_right\"] {\n\tleft: 0;\n\ttop: 100%;\n}\n");
 })($ || ($ = {}));
-//mol/pop/-css/pop.view.css.ts
+
+;
+	($.$mol_pick) = class $mol_pick extends ($.$mol_pop) {
+		event(){
+			return {...(super.event()), "keydown": (next) => (this.keydown(next))};
+		}
+		Anchor(){
+			return (this.Trigger());
+		}
+		keydown(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		trigger_enabled(){
+			return true;
+		}
+		clicks(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		trigger_content(){
+			return [(this.title())];
+		}
+		hint(){
+			return "";
+		}
+		Trigger(){
+			const obj = new this.$.$mol_check();
+			(obj.minimal_width) = () => (40);
+			(obj.minimal_height) = () => (40);
+			(obj.enabled) = () => ((this.trigger_enabled()));
+			(obj.checked) = (next) => ((this.showed(next)));
+			(obj.clicks) = (next) => ((this.clicks(next)));
+			(obj.sub) = () => ((this.trigger_content()));
+			(obj.hint) = () => ((this.hint()));
+			return obj;
+		}
+	};
+	($mol_mem(($.$mol_pick.prototype), "keydown"));
+	($mol_mem(($.$mol_pick.prototype), "clicks"));
+	($mol_mem(($.$mol_pick.prototype), "Trigger"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_pick extends $mol_pop {
-        event() {
-            return {
-                ...super.event(),
-                keydown: (event) => this.keydown(event)
-            };
-        }
-        Anchor() {
-            return this.Trigger();
-        }
-        keydown(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        trigger_enabled() {
-            return true;
-        }
-        clicks(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        trigger_content() {
-            return [
-                this.title()
-            ];
-        }
-        hint() {
-            return "";
-        }
-        Trigger() {
-            const obj = new this.$.$mol_check();
-            obj.minimal_width = () => 40;
-            obj.minimal_height = () => 40;
-            obj.enabled = () => this.trigger_enabled();
-            obj.checked = (next) => this.showed(next);
-            obj.clicks = (next) => this.clicks(next);
-            obj.sub = () => this.trigger_content();
-            obj.hint = () => this.hint();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_pick.prototype, "keydown", null);
-    __decorate([
-        $mol_mem
-    ], $mol_pick.prototype, "clicks", null);
-    __decorate([
-        $mol_mem
-    ], $mol_pick.prototype, "Trigger", null);
-    $.$mol_pick = $mol_pick;
-})($ || ($ = {}));
-//mol/pick/-view.tree/pick.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -17913,49 +15299,42 @@ var $;
         $$.$mol_pick = $mol_pick;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/pick/pick.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/pick/pick.view.css", "[mol_pick_trigger] {\n\talign-items: center;\n\tflex-grow: 1;\n}\n");
 })($ || ($ = {}));
-//mol/pick/-css/pick.view.css.ts
+
+;
+	($.$mol_hotkey) = class $mol_hotkey extends ($.$mol_plugin) {
+		event(){
+			return {...(super.event()), "keydown": (next) => (this.keydown(next))};
+		}
+		key(){
+			return {};
+		}
+		mod_ctrl(){
+			return false;
+		}
+		mod_alt(){
+			return false;
+		}
+		mod_shift(){
+			return false;
+		}
+		keydown(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+	};
+	($mol_mem(($.$mol_hotkey.prototype), "keydown"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_hotkey extends $mol_plugin {
-        event() {
-            return {
-                ...super.event(),
-                keydown: (event) => this.keydown(event)
-            };
-        }
-        key() {
-            return {};
-        }
-        mod_ctrl() {
-            return false;
-        }
-        mod_alt() {
-            return false;
-        }
-        mod_shift() {
-            return false;
-        }
-        keydown(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_hotkey.prototype, "keydown", null);
-    $.$mol_hotkey = $mol_hotkey;
-})($ || ($ = {}));
-//mol/hotkey/-view.tree/hotkey.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -17986,111 +15365,77 @@ var $;
         $$.$mol_hotkey = $mol_hotkey;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/hotkey/hotkey.view.ts
+
+;
+	($.$mol_nav) = class $mol_nav extends ($.$mol_plugin) {
+		cycle(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		mod_ctrl(){
+			return false;
+		}
+		mod_shift(){
+			return false;
+		}
+		mod_alt(){
+			return false;
+		}
+		keys_x(next){
+			if(next !== undefined) return next;
+			return [];
+		}
+		keys_y(next){
+			if(next !== undefined) return next;
+			return [];
+		}
+		current_x(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		current_y(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		event_up(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		event_down(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		event_left(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		event_right(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		event(){
+			return {...(super.event()), "keydown": (next) => (this.event_key(next))};
+		}
+		event_key(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+	};
+	($mol_mem(($.$mol_nav.prototype), "cycle"));
+	($mol_mem(($.$mol_nav.prototype), "keys_x"));
+	($mol_mem(($.$mol_nav.prototype), "keys_y"));
+	($mol_mem(($.$mol_nav.prototype), "current_x"));
+	($mol_mem(($.$mol_nav.prototype), "current_y"));
+	($mol_mem(($.$mol_nav.prototype), "event_up"));
+	($mol_mem(($.$mol_nav.prototype), "event_down"));
+	($mol_mem(($.$mol_nav.prototype), "event_left"));
+	($mol_mem(($.$mol_nav.prototype), "event_right"));
+	($mol_mem(($.$mol_nav.prototype), "event_key"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_nav extends $mol_plugin {
-        cycle(next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        mod_ctrl() {
-            return false;
-        }
-        mod_shift() {
-            return false;
-        }
-        mod_alt() {
-            return false;
-        }
-        keys_x(next) {
-            if (next !== undefined)
-                return next;
-            return [];
-        }
-        keys_y(next) {
-            if (next !== undefined)
-                return next;
-            return [];
-        }
-        current_x(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        current_y(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        event_up(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        event_down(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        event_left(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        event_right(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        event() {
-            return {
-                ...super.event(),
-                keydown: (event) => this.event_key(event)
-            };
-        }
-        event_key(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_nav.prototype, "cycle", null);
-    __decorate([
-        $mol_mem
-    ], $mol_nav.prototype, "keys_x", null);
-    __decorate([
-        $mol_mem
-    ], $mol_nav.prototype, "keys_y", null);
-    __decorate([
-        $mol_mem
-    ], $mol_nav.prototype, "current_x", null);
-    __decorate([
-        $mol_mem
-    ], $mol_nav.prototype, "current_y", null);
-    __decorate([
-        $mol_mem
-    ], $mol_nav.prototype, "event_up", null);
-    __decorate([
-        $mol_mem
-    ], $mol_nav.prototype, "event_down", null);
-    __decorate([
-        $mol_mem
-    ], $mol_nav.prototype, "event_left", null);
-    __decorate([
-        $mol_mem
-    ], $mol_nav.prototype, "event_right", null);
-    __decorate([
-        $mol_mem
-    ], $mol_nav.prototype, "event_key", null);
-    $.$mol_nav = $mol_nav;
-})($ || ($ = {}));
-//mol/nav/-view.tree/nav.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -18190,162 +15535,131 @@ var $;
         $$.$mol_nav = $mol_nav;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/nav/nav.view.ts
+
+;
+	($.$mol_string) = class $mol_string extends ($.$mol_view) {
+		dom_name(){
+			return "input";
+		}
+		enabled(){
+			return true;
+		}
+		minimal_height(){
+			return 40;
+		}
+		autocomplete(){
+			return false;
+		}
+		selection(next){
+			if(next !== undefined) return next;
+			return [0, 0];
+		}
+		auto(){
+			return [(this.selection_watcher()), (this.error_report())];
+		}
+		field(){
+			return {
+				...(super.field()), 
+				"disabled": (this.disabled()), 
+				"value": (this.value_changed()), 
+				"placeholder": (this.hint_visible()), 
+				"spellcheck": (this.spellcheck()), 
+				"autocomplete": (this.autocomplete_native()), 
+				"selectionEnd": (this.selection_end()), 
+				"selectionStart": (this.selection_start()), 
+				"inputMode": (this.keyboard()), 
+				"enterkeyhint": (this.enter())
+			};
+		}
+		attr(){
+			return {
+				...(super.attr()), 
+				"maxlength": (this.length_max()), 
+				"type": (this.type())
+			};
+		}
+		event(){
+			return {...(super.event()), "input": (next) => (this.event_change(next))};
+		}
+		plugins(){
+			return [(this.Submit())];
+		}
+		selection_watcher(){
+			return null;
+		}
+		error_report(){
+			return null;
+		}
+		disabled(){
+			return false;
+		}
+		value(next){
+			if(next !== undefined) return next;
+			return "";
+		}
+		value_changed(next){
+			return (this.value(next));
+		}
+		hint(){
+			return "";
+		}
+		hint_visible(){
+			return (this.hint());
+		}
+		spellcheck(){
+			return true;
+		}
+		autocomplete_native(){
+			return "";
+		}
+		selection_end(){
+			return 0;
+		}
+		selection_start(){
+			return 0;
+		}
+		keyboard(){
+			return "text";
+		}
+		enter(){
+			return "go";
+		}
+		length_max(){
+			return +Infinity;
+		}
+		type(next){
+			if(next !== undefined) return next;
+			return "text";
+		}
+		event_change(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		submit_with_ctrl(){
+			return false;
+		}
+		submit(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		Submit(){
+			const obj = new this.$.$mol_hotkey();
+			(obj.mod_ctrl) = () => ((this.submit_with_ctrl()));
+			(obj.key) = () => ({"enter": (next) => (this.submit(next))});
+			return obj;
+		}
+	};
+	($mol_mem(($.$mol_string.prototype), "selection"));
+	($mol_mem(($.$mol_string.prototype), "value"));
+	($mol_mem(($.$mol_string.prototype), "type"));
+	($mol_mem(($.$mol_string.prototype), "event_change"));
+	($mol_mem(($.$mol_string.prototype), "submit"));
+	($mol_mem(($.$mol_string.prototype), "Submit"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_string extends $mol_view {
-        dom_name() {
-            return "input";
-        }
-        enabled() {
-            return true;
-        }
-        minimal_height() {
-            return 40;
-        }
-        autocomplete() {
-            return false;
-        }
-        selection(next) {
-            if (next !== undefined)
-                return next;
-            return [
-                0,
-                0
-            ];
-        }
-        auto() {
-            return [
-                this.selection_watcher(),
-                this.error_report()
-            ];
-        }
-        field() {
-            return {
-                ...super.field(),
-                disabled: this.disabled(),
-                value: this.value_changed(),
-                placeholder: this.hint_visible(),
-                spellcheck: this.spellcheck(),
-                autocomplete: this.autocomplete_native(),
-                selectionEnd: this.selection_end(),
-                selectionStart: this.selection_start(),
-                inputMode: this.keyboard(),
-                enterkeyhint: this.enter()
-            };
-        }
-        attr() {
-            return {
-                ...super.attr(),
-                maxlength: this.length_max(),
-                type: this.type()
-            };
-        }
-        event() {
-            return {
-                ...super.event(),
-                input: (event) => this.event_change(event)
-            };
-        }
-        plugins() {
-            return [
-                this.Submit()
-            ];
-        }
-        selection_watcher() {
-            return null;
-        }
-        error_report() {
-            return null;
-        }
-        disabled() {
-            return false;
-        }
-        value(next) {
-            if (next !== undefined)
-                return next;
-            return "";
-        }
-        value_changed(next) {
-            return this.value(next);
-        }
-        hint() {
-            return "";
-        }
-        hint_visible() {
-            return this.hint();
-        }
-        spellcheck() {
-            return true;
-        }
-        autocomplete_native() {
-            return "";
-        }
-        selection_end() {
-            return 0;
-        }
-        selection_start() {
-            return 0;
-        }
-        keyboard() {
-            return "text";
-        }
-        enter() {
-            return "go";
-        }
-        length_max() {
-            return +Infinity;
-        }
-        type(next) {
-            if (next !== undefined)
-                return next;
-            return "text";
-        }
-        event_change(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        submit_with_ctrl() {
-            return false;
-        }
-        submit(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        Submit() {
-            const obj = new this.$.$mol_hotkey();
-            obj.mod_ctrl = () => this.submit_with_ctrl();
-            obj.key = () => ({
-                enter: (event) => this.submit(event)
-            });
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_string.prototype, "selection", null);
-    __decorate([
-        $mol_mem
-    ], $mol_string.prototype, "value", null);
-    __decorate([
-        $mol_mem
-    ], $mol_string.prototype, "type", null);
-    __decorate([
-        $mol_mem
-    ], $mol_string.prototype, "event_change", null);
-    __decorate([
-        $mol_mem
-    ], $mol_string.prototype, "submit", null);
-    __decorate([
-        $mol_mem
-    ], $mol_string.prototype, "Submit", null);
-    $.$mol_string = $mol_string;
-})($ || ($ = {}));
-//mol/string/-view.tree/string.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -18440,76 +15754,63 @@ var $;
         $$.$mol_string = $mol_string;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/string/string.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/string/string.view.css", "[mol_string] {\n\tbox-sizing: border-box;\n\toutline-offset: 0;\n\tborder: none;\n\tborder-radius: var(--mol_gap_round);\n\twhite-space: pre-line;\n\toverflow: hidden;\n\ttext-overflow: ellipsis;\n\tpadding: var(--mol_gap_text);\n\ttext-align: left;\n\tposition: relative;\n\tfont: inherit;\n\tflex: 1 1 auto;\n\tbackground: transparent;\n\tmin-width: 0;\n\tcolor: inherit;\n\tbackground: var(--mol_theme_field);\n}\n\n[mol_string]:disabled:not(:placeholder-shown) {\n\tbackground-color: transparent;\n\tcolor: var(--mol_theme_text);\n}\n\n[mol_string]:where(:not(:disabled)) {\n\tbox-shadow: inset 0 0 0 1px var(--mol_theme_line);\n}\n\n[mol_string]:where(:not(:disabled)):hover {\n\tbox-shadow: inset 0 0 0 2px var(--mol_theme_line);\n\tz-index: var(--mol_layer_hover);\n}\n\n[mol_string]:focus {\n\toutline: none;\n\tz-index: var(--mol_layer_focus);\n\tcolor: var(--mol_theme_text);\n\tbox-shadow: inset 0 0 0 1px var(--mol_theme_focus);\n}\n\n[mol_string]::placeholder {\n\tcolor: var(--mol_theme_shade);\n}\n\n[mol_string]::-ms-clear {\n\tdisplay: none;\n}\n");
 })($ || ($ = {}));
-//mol/string/-css/string.view.css.ts
+
+;
+	($.$mol_icon_cross) = class $mol_icon_cross extends ($.$mol_icon) {
+		path(){
+			return "M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z";
+		}
+	};
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_icon_cross extends $mol_icon {
-        path() {
-            return "M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z";
-        }
-    }
-    $.$mol_icon_cross = $mol_icon_cross;
-})($ || ($ = {}));
-//mol/icon/cross/-view.tree/cross.view.tree.ts
+
+;
+	($.$mol_dimmer) = class $mol_dimmer extends ($.$mol_paragraph) {
+		haystack(){
+			return "";
+		}
+		needle(){
+			return "";
+		}
+		sub(){
+			return (this.parts());
+		}
+		Low(id){
+			const obj = new this.$.$mol_paragraph();
+			(obj.sub) = () => ([(this.string(id))]);
+			return obj;
+		}
+		High(id){
+			const obj = new this.$.$mol_paragraph();
+			(obj.sub) = () => ([(this.string(id))]);
+			return obj;
+		}
+		parts(){
+			return [];
+		}
+		string(id){
+			return "";
+		}
+	};
+	($mol_mem_key(($.$mol_dimmer.prototype), "Low"));
+	($mol_mem_key(($.$mol_dimmer.prototype), "High"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_dimmer extends $mol_paragraph {
-        haystack() {
-            return "";
-        }
-        needle() {
-            return "";
-        }
-        sub() {
-            return this.parts();
-        }
-        Low(id) {
-            const obj = new this.$.$mol_paragraph();
-            obj.sub = () => [
-                this.string(id)
-            ];
-            return obj;
-        }
-        High(id) {
-            const obj = new this.$.$mol_paragraph();
-            obj.sub = () => [
-                this.string(id)
-            ];
-            return obj;
-        }
-        parts() {
-            return [];
-        }
-        string(id) {
-            return "";
-        }
-    }
-    __decorate([
-        $mol_mem_key
-    ], $mol_dimmer.prototype, "Low", null);
-    __decorate([
-        $mol_mem_key
-    ], $mol_dimmer.prototype, "High", null);
-    $.$mol_dimmer = $mol_dimmer;
-})($ || ($ = {}));
-//mol/dimmer/-view.tree/dimmer.view.tree.ts
+
 ;
 "use strict";
-//mol/type/intersect/intersect.ts
-;
-"use strict";
-//mol/unicode/unicode.ts
+
 ;
 "use strict";
 var $;
@@ -18784,7 +16085,10 @@ var $;
     }
     $.$mol_regexp = $mol_regexp;
 })($ || ($ = {}));
-//mol/regexp/regexp.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -18828,212 +16132,174 @@ var $;
         $$.$mol_dimmer = $mol_dimmer;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/dimmer/dimmer.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/dimmer/dimmer.view.css", "[mol_dimmer] {\n\tdisplay: block;\n\tmax-width: 100%;\n}\n\n[mol_dimmer_low] {\n\tdisplay: inline;\n\topacity: 0.8;\n}\n\n[mol_dimmer_high] {\n\tdisplay: inline;\n\tcolor: var(--mol_theme_focus);\n\ttext-shadow: 0 0;\n}\n");
 })($ || ($ = {}));
-//mol/dimmer/-css/dimmer.view.css.ts
+
+;
+	($.$mol_search) = class $mol_search extends ($.$mol_pop) {
+		query(next){
+			if(next !== undefined) return next;
+			return "";
+		}
+		suggests(){
+			return [];
+		}
+		plugins(){
+			return [
+				...(super.plugins()), 
+				(this.Hotkey()), 
+				(this.Nav())
+			];
+		}
+		showed(next){
+			return (this.suggests_showed(next));
+		}
+		align_hor(){
+			return "right";
+		}
+		Anchor(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ((this.anchor_content()));
+			return obj;
+		}
+		bubble_content(){
+			return [(this.Menu())];
+		}
+		Suggest(id){
+			const obj = new this.$.$mol_button_minor();
+			(obj.click) = (next) => ((this.suggest_select(id, next)));
+			(obj.sub) = () => ((this.suggest_content(id)));
+			return obj;
+		}
+		clear(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		Hotkey(){
+			const obj = new this.$.$mol_hotkey();
+			(obj.key) = () => ({"escape": (next) => (this.clear(next))});
+			return obj;
+		}
+		nav_components(){
+			return [];
+		}
+		nav_focused(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		Nav(){
+			const obj = new this.$.$mol_nav();
+			(obj.keys_y) = () => ((this.nav_components()));
+			(obj.current_y) = (next) => ((this.nav_focused(next)));
+			return obj;
+		}
+		suggests_showed(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		query(next){
+			if(next !== undefined) return next;
+			return "";
+		}
+		hint(){
+			return (this.$.$mol_locale.text("$mol_search_hint"));
+		}
+		submit(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		enabled(){
+			return true;
+		}
+		keyboard(){
+			return "search";
+		}
+		enter(){
+			return "search";
+		}
+		bring(){
+			return (this.Query().bring());
+		}
+		Query(){
+			const obj = new this.$.$mol_string();
+			(obj.value) = (next) => ((this.query(next)));
+			(obj.hint) = () => ((this.hint()));
+			(obj.submit) = (next) => ((this.submit(next)));
+			(obj.enabled) = () => ((this.enabled()));
+			(obj.keyboard) = () => ((this.keyboard()));
+			(obj.enter) = () => ((this.enter()));
+			return obj;
+		}
+		clear(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		Clear_icon(){
+			const obj = new this.$.$mol_icon_cross();
+			return obj;
+		}
+		Clear(){
+			const obj = new this.$.$mol_button_minor();
+			(obj.hint) = () => (this.$.$mol_locale.text("$mol_search_Clear_hint"));
+			(obj.click) = (next) => ((this.clear(next)));
+			(obj.sub) = () => ([(this.Clear_icon())]);
+			return obj;
+		}
+		anchor_content(){
+			return [(this.Query()), (this.Clear())];
+		}
+		menu_items(){
+			return [];
+		}
+		Menu(){
+			const obj = new this.$.$mol_list();
+			(obj.rows) = () => ((this.menu_items()));
+			return obj;
+		}
+		suggest_select(id, next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		suggest_label(id){
+			return "";
+		}
+		Suggest_label(id){
+			const obj = new this.$.$mol_dimmer();
+			(obj.haystack) = () => ((this.suggest_label(id)));
+			(obj.needle) = () => ((this.query()));
+			return obj;
+		}
+		suggest_content(id){
+			return [(this.Suggest_label(id))];
+		}
+	};
+	($mol_mem(($.$mol_search.prototype), "query"));
+	($mol_mem(($.$mol_search.prototype), "Anchor"));
+	($mol_mem_key(($.$mol_search.prototype), "Suggest"));
+	($mol_mem(($.$mol_search.prototype), "clear"));
+	($mol_mem(($.$mol_search.prototype), "Hotkey"));
+	($mol_mem(($.$mol_search.prototype), "nav_focused"));
+	($mol_mem(($.$mol_search.prototype), "Nav"));
+	($mol_mem(($.$mol_search.prototype), "suggests_showed"));
+	($mol_mem(($.$mol_search.prototype), "query"));
+	($mol_mem(($.$mol_search.prototype), "submit"));
+	($mol_mem(($.$mol_search.prototype), "Query"));
+	($mol_mem(($.$mol_search.prototype), "clear"));
+	($mol_mem(($.$mol_search.prototype), "Clear_icon"));
+	($mol_mem(($.$mol_search.prototype), "Clear"));
+	($mol_mem(($.$mol_search.prototype), "Menu"));
+	($mol_mem_key(($.$mol_search.prototype), "suggest_select"));
+	($mol_mem_key(($.$mol_search.prototype), "Suggest_label"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_search extends $mol_pop {
-        query(next) {
-            if (next !== undefined)
-                return next;
-            return "";
-        }
-        suggests() {
-            return [];
-        }
-        plugins() {
-            return [
-                ...super.plugins(),
-                this.Hotkey(),
-                this.Nav()
-            ];
-        }
-        showed(next) {
-            return this.suggests_showed(next);
-        }
-        align_hor() {
-            return "right";
-        }
-        Anchor() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => this.anchor_content();
-            return obj;
-        }
-        bubble_content() {
-            return [
-                this.Menu()
-            ];
-        }
-        Suggest(id) {
-            const obj = new this.$.$mol_button_minor();
-            obj.click = (event) => this.suggest_select(id, event);
-            obj.sub = () => this.suggest_content(id);
-            return obj;
-        }
-        clear(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        Hotkey() {
-            const obj = new this.$.$mol_hotkey();
-            obj.key = () => ({
-                escape: (next) => this.clear(next)
-            });
-            return obj;
-        }
-        nav_components() {
-            return [];
-        }
-        nav_focused(component) {
-            if (component !== undefined)
-                return component;
-            return null;
-        }
-        Nav() {
-            const obj = new this.$.$mol_nav();
-            obj.keys_y = () => this.nav_components();
-            obj.current_y = (component) => this.nav_focused(component);
-            return obj;
-        }
-        suggests_showed(next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        hint() {
-            return this.$.$mol_locale.text('$mol_search_hint');
-        }
-        submit(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        enabled() {
-            return true;
-        }
-        keyboard() {
-            return "search";
-        }
-        enter() {
-            return "search";
-        }
-        bring() {
-            return this.Query().bring();
-        }
-        Query() {
-            const obj = new this.$.$mol_string();
-            obj.value = (next) => this.query(next);
-            obj.hint = () => this.hint();
-            obj.submit = (event) => this.submit(event);
-            obj.enabled = () => this.enabled();
-            obj.keyboard = () => this.keyboard();
-            obj.enter = () => this.enter();
-            return obj;
-        }
-        Clear_icon() {
-            const obj = new this.$.$mol_icon_cross();
-            return obj;
-        }
-        Clear() {
-            const obj = new this.$.$mol_button_minor();
-            obj.hint = () => this.$.$mol_locale.text('$mol_search_Clear_hint');
-            obj.click = (event) => this.clear(event);
-            obj.sub = () => [
-                this.Clear_icon()
-            ];
-            return obj;
-        }
-        anchor_content() {
-            return [
-                this.Query(),
-                this.Clear()
-            ];
-        }
-        menu_items() {
-            return [];
-        }
-        Menu() {
-            const obj = new this.$.$mol_list();
-            obj.rows = () => this.menu_items();
-            return obj;
-        }
-        suggest_select(id, event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        suggest_label(id) {
-            return "";
-        }
-        Suggest_label(id) {
-            const obj = new this.$.$mol_dimmer();
-            obj.haystack = () => this.suggest_label(id);
-            obj.needle = () => this.query();
-            return obj;
-        }
-        suggest_content(id) {
-            return [
-                this.Suggest_label(id)
-            ];
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_search.prototype, "query", null);
-    __decorate([
-        $mol_mem
-    ], $mol_search.prototype, "Anchor", null);
-    __decorate([
-        $mol_mem_key
-    ], $mol_search.prototype, "Suggest", null);
-    __decorate([
-        $mol_mem
-    ], $mol_search.prototype, "clear", null);
-    __decorate([
-        $mol_mem
-    ], $mol_search.prototype, "Hotkey", null);
-    __decorate([
-        $mol_mem
-    ], $mol_search.prototype, "nav_focused", null);
-    __decorate([
-        $mol_mem
-    ], $mol_search.prototype, "Nav", null);
-    __decorate([
-        $mol_mem
-    ], $mol_search.prototype, "suggests_showed", null);
-    __decorate([
-        $mol_mem
-    ], $mol_search.prototype, "submit", null);
-    __decorate([
-        $mol_mem
-    ], $mol_search.prototype, "Query", null);
-    __decorate([
-        $mol_mem
-    ], $mol_search.prototype, "Clear_icon", null);
-    __decorate([
-        $mol_mem
-    ], $mol_search.prototype, "Clear", null);
-    __decorate([
-        $mol_mem
-    ], $mol_search.prototype, "Menu", null);
-    __decorate([
-        $mol_mem_key
-    ], $mol_search.prototype, "suggest_select", null);
-    __decorate([
-        $mol_mem_key
-    ], $mol_search.prototype, "Suggest_label", null);
-    $.$mol_search = $mol_search;
-})($ || ($ = {}));
-//mol/search/-view.tree/search.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -19111,209 +16377,155 @@ var $;
         $$.$mol_search = $mol_search;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/search/search.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/search/search.view.css", "[mol_search] {\n\talign-self: flex-start;\n\tflex: auto;\n}\n\n[mol_search_anchor] {\n\tflex: 1 1 auto;\n}\n\n[mol_search_query] {\n\tflex-grow: 1;\n}\n\n[mol_search_menu] {\n\tmin-height: .75rem;\n\tdisplay: flex;\n}\n\n[mol_search_suggest] {\n\ttext-align: left;\n}\n\n[mol_search_suggest_label_high] {\n\tcolor: var(--mol_theme_shade);\n\ttext-shadow: none;\n}\n");
 })($ || ($ = {}));
-//mol/search/-css/search.view.css.ts
+
+;
+	($.$mol_icon_dots_vertical) = class $mol_icon_dots_vertical extends ($.$mol_icon) {
+		path(){
+			return "M12,16C13.1,16 14,16.9 14,18C14,19.1 13.1,20 12,20C10.9,20 10,19.1 10,18C10,16.9 10.9,16 12,16M12,10C13.1,10 14,10.9 14,12C14,13.1 13.1,14 12,14C10.9,14 10,13.1 10,12C10,10.9 10.9,10 12,10M12,4C13.1,4 14,4.9 14,6C14,7.1 13.1,8 12,8C10.9,8 10,7.1 10,6C10,4.9 10.9,4 12,4Z";
+		}
+	};
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_icon_dots_vertical extends $mol_icon {
-        path() {
-            return "M12,16C13.1,16 14,16.9 14,18C14,19.1 13.1,20 12,20C10.9,20 10,19.1 10,18C10,16.9 10.9,16 12,16M12,10C13.1,10 14,10.9 14,12C14,13.1 13.1,14 12,14C10.9,14 10,13.1 10,12C10,10.9 10.9,10 12,10M12,4C13.1,4 14,4.9 14,6C14,7.1 13.1,8 12,8C10.9,8 10,7.1 10,6C10,4.9 10.9,4 12,4Z";
-        }
-    }
-    $.$mol_icon_dots_vertical = $mol_icon_dots_vertical;
-})($ || ($ = {}));
-//mol/icon/dots/vertical/-view.tree/vertical.view.tree.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mol_select extends $mol_pick {
-        dictionary(next) {
-            if (next !== undefined)
-                return next;
-            return {};
-        }
-        options() {
-            return [];
-        }
-        value(next) {
-            if (next !== undefined)
-                return next;
-            return "";
-        }
-        option_label_default() {
-            return "";
-        }
-        Option_row(id) {
-            const obj = new this.$.$mol_button_minor();
-            obj.event_click = (event) => this.event_select(id, event);
-            obj.sub = () => this.option_content(id);
-            return obj;
-        }
-        No_options() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.no_options_message()
-            ];
-            return obj;
-        }
-        plugins() {
-            return [
-                ...super.plugins(),
-                this.Nav()
-            ];
-        }
-        hint() {
-            return this.$.$mol_locale.text('$mol_select_hint');
-        }
-        bubble_content() {
-            return [
-                this.Filter(),
-                this.Bubble_pane()
-            ];
-        }
-        Filter() {
-            const obj = new this.$.$mol_search();
-            obj.query = (next) => this.filter_pattern(next);
-            obj.hint = () => this.filter_hint();
-            obj.submit = (event) => this.submit(event);
-            obj.enabled = () => this.enabled();
-            return obj;
-        }
-        Trigger_icon() {
-            const obj = new this.$.$mol_icon_dots_vertical();
-            return obj;
-        }
-        event_select(id, event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        option_label(id) {
-            return "";
-        }
-        filter_pattern(next) {
-            if (next !== undefined)
-                return next;
-            return "";
-        }
-        Option_label(id) {
-            const obj = new this.$.$mol_dimmer();
-            obj.haystack = () => this.option_label(id);
-            obj.needle = () => this.filter_pattern();
-            return obj;
-        }
-        option_content(id) {
-            return [
-                this.Option_label(id)
-            ];
-        }
-        no_options_message() {
-            return this.$.$mol_locale.text('$mol_select_no_options_message');
-        }
-        nav_components() {
-            return [];
-        }
-        option_focused(component) {
-            if (component !== undefined)
-                return component;
-            return null;
-        }
-        nav_cycle(next) {
-            if (next !== undefined)
-                return next;
-            return true;
-        }
-        Nav() {
-            const obj = new this.$.$mol_nav();
-            obj.keys_y = () => this.nav_components();
-            obj.current_y = (component) => this.option_focused(component);
-            obj.cycle = (next) => this.nav_cycle(next);
-            return obj;
-        }
-        menu_content() {
-            return [];
-        }
-        Menu() {
-            const obj = new this.$.$mol_list();
-            obj.rows = () => this.menu_content();
-            return obj;
-        }
-        Bubble_pane() {
-            const obj = new this.$.$mol_scroll();
-            obj.sub = () => [
-                this.Menu()
-            ];
-            return obj;
-        }
-        filter_hint() {
-            return this.$.$mol_locale.text('$mol_select_filter_hint');
-        }
-        submit(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        enabled() {
-            return true;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_select.prototype, "dictionary", null);
-    __decorate([
-        $mol_mem
-    ], $mol_select.prototype, "value", null);
-    __decorate([
-        $mol_mem_key
-    ], $mol_select.prototype, "Option_row", null);
-    __decorate([
-        $mol_mem
-    ], $mol_select.prototype, "No_options", null);
-    __decorate([
-        $mol_mem
-    ], $mol_select.prototype, "Filter", null);
-    __decorate([
-        $mol_mem
-    ], $mol_select.prototype, "Trigger_icon", null);
-    __decorate([
-        $mol_mem_key
-    ], $mol_select.prototype, "event_select", null);
-    __decorate([
-        $mol_mem
-    ], $mol_select.prototype, "filter_pattern", null);
-    __decorate([
-        $mol_mem_key
-    ], $mol_select.prototype, "Option_label", null);
-    __decorate([
-        $mol_mem
-    ], $mol_select.prototype, "option_focused", null);
-    __decorate([
-        $mol_mem
-    ], $mol_select.prototype, "nav_cycle", null);
-    __decorate([
-        $mol_mem
-    ], $mol_select.prototype, "Nav", null);
-    __decorate([
-        $mol_mem
-    ], $mol_select.prototype, "Menu", null);
-    __decorate([
-        $mol_mem
-    ], $mol_select.prototype, "Bubble_pane", null);
-    __decorate([
-        $mol_mem
-    ], $mol_select.prototype, "submit", null);
-    $.$mol_select = $mol_select;
-})($ || ($ = {}));
-//mol/select/-view.tree/select.view.tree.ts
+	($.$mol_select) = class $mol_select extends ($.$mol_pick) {
+		dictionary(next){
+			if(next !== undefined) return next;
+			return {};
+		}
+		options(){
+			return [];
+		}
+		value(next){
+			if(next !== undefined) return next;
+			return "";
+		}
+		option_label_default(){
+			return "";
+		}
+		Option_row(id){
+			const obj = new this.$.$mol_button_minor();
+			(obj.event_click) = (next) => ((this.event_select(id, next)));
+			(obj.sub) = () => ((this.option_content(id)));
+			return obj;
+		}
+		No_options(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ([(this.no_options_message())]);
+			return obj;
+		}
+		plugins(){
+			return [...(super.plugins()), (this.Nav())];
+		}
+		hint(){
+			return (this.$.$mol_locale.text("$mol_select_hint"));
+		}
+		bubble_content(){
+			return [(this.Filter()), (this.Bubble_pane())];
+		}
+		Filter(){
+			const obj = new this.$.$mol_search();
+			(obj.query) = (next) => ((this.filter_pattern(next)));
+			(obj.hint) = () => ((this.filter_hint()));
+			(obj.submit) = (next) => ((this.submit(next)));
+			(obj.enabled) = () => ((this.enabled()));
+			return obj;
+		}
+		Trigger_icon(){
+			const obj = new this.$.$mol_icon_dots_vertical();
+			return obj;
+		}
+		event_select(id, next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		option_label(id){
+			return "";
+		}
+		filter_pattern(next){
+			if(next !== undefined) return next;
+			return "";
+		}
+		Option_label(id){
+			const obj = new this.$.$mol_dimmer();
+			(obj.haystack) = () => ((this.option_label(id)));
+			(obj.needle) = () => ((this.filter_pattern()));
+			return obj;
+		}
+		option_content(id){
+			return [(this.Option_label(id))];
+		}
+		no_options_message(){
+			return (this.$.$mol_locale.text("$mol_select_no_options_message"));
+		}
+		nav_components(){
+			return [];
+		}
+		option_focused(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		nav_cycle(next){
+			if(next !== undefined) return next;
+			return true;
+		}
+		Nav(){
+			const obj = new this.$.$mol_nav();
+			(obj.keys_y) = () => ((this.nav_components()));
+			(obj.current_y) = (next) => ((this.option_focused(next)));
+			(obj.cycle) = (next) => ((this.nav_cycle(next)));
+			return obj;
+		}
+		menu_content(){
+			return [];
+		}
+		Menu(){
+			const obj = new this.$.$mol_list();
+			(obj.rows) = () => ((this.menu_content()));
+			return obj;
+		}
+		Bubble_pane(){
+			const obj = new this.$.$mol_scroll();
+			(obj.sub) = () => ([(this.Menu())]);
+			return obj;
+		}
+		filter_hint(){
+			return (this.$.$mol_locale.text("$mol_select_filter_hint"));
+		}
+		submit(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		enabled(){
+			return true;
+		}
+	};
+	($mol_mem(($.$mol_select.prototype), "dictionary"));
+	($mol_mem(($.$mol_select.prototype), "value"));
+	($mol_mem_key(($.$mol_select.prototype), "Option_row"));
+	($mol_mem(($.$mol_select.prototype), "No_options"));
+	($mol_mem(($.$mol_select.prototype), "Filter"));
+	($mol_mem(($.$mol_select.prototype), "Trigger_icon"));
+	($mol_mem_key(($.$mol_select.prototype), "event_select"));
+	($mol_mem(($.$mol_select.prototype), "filter_pattern"));
+	($mol_mem_key(($.$mol_select.prototype), "Option_label"));
+	($mol_mem(($.$mol_select.prototype), "option_focused"));
+	($mol_mem(($.$mol_select.prototype), "nav_cycle"));
+	($mol_mem(($.$mol_select.prototype), "Nav"));
+	($mol_mem(($.$mol_select.prototype), "Menu"));
+	($mol_mem(($.$mol_select.prototype), "Bubble_pane"));
+	($mol_mem(($.$mol_select.prototype), "submit"));
+
+
 ;
 "use strict";
 var $;
@@ -19329,7 +16541,10 @@ var $;
     }
     $.$mol_match_text = $mol_match_text;
 })($ || ($ = {}));
-//mol/match/text.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -19416,412 +16631,315 @@ var $;
         $$.$mol_select = $mol_select;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/select/select.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mol/select/select.view.css", "[mol_select] {\n\tdisplay: flex;\n\tword-break: normal;\n\talign-self: flex-start;\n}\n\n[mol_select_option_row] {\n\tmin-width: 100%;\n\tpadding: 0;\n\tjustify-content: flex-start;\n}\n\n[mol_select_bubble] {\n\tmin-width: 100%;\n}\n\n[mol_select_filter] {\n\tflex: 1 0 auto;\n\talign-self: stretch;\n}\n\n[mol_select_option_label] {\n\tpadding: var(--mol_gap_text);\n\ttext-align: left;\n\tmin-height: 1.5em;\n\tdisplay: block;\n\twhite-space: nowrap;\n}\n\n[mol_select_clear_option_content] {\n\tpadding: .5em 1rem .5rem 0;\n\ttext-align: left;\n\tbox-shadow: var(--mol_theme_line);\n\tflex: 1 0 auto;\n}\n\n[mol_select_no_options] {\n\tpadding: var(--mol_gap_text);\n\ttext-align: left;\n\tdisplay: block;\n\tcolor: var(--mol_theme_shade);\n}\n\n[mol_select_trigger] {\n\tpadding: 0;\n\tflex: 1 1 auto;\n\tdisplay: flex;\n}\n\n[mol_select_trigger] > * {\n\tmargin-right: -1rem;\n}\n\n[mol_select_trigger] > *:last-child {\n\tmargin-right: 0;\n}\n\n[mol_select_menu] {\n\tdisplay: flex;\n\tflex-direction: column;\n}\n\n");
 })($ || ($ = {}));
-//mol/select/-css/select.view.css.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_plot_cube extends $mol_view {
-        plot_raw() {
-            const obj = new this.$.$mpds_visavis_plot_raw();
-            return obj;
-        }
-        auto() {
-            return [
-                this.subscribe_click()
-            ];
-        }
-        multi_jsons(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        show_setup() {
-            return true;
-        }
-        show_fixel(next) {
-            if (next !== undefined)
-                return next;
-            return true;
-        }
-        heatmap(next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        order(id) {
-            return [];
-        }
-        order_current(next) {
-            if (next !== undefined)
-                return next;
-            return "nump";
-        }
-        x_op(next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        y_op(next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        z_op(next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        x_sort(next) {
-            if (next !== undefined)
-                return next;
-            return "nump";
-        }
-        y_sort(next) {
-            if (next !== undefined)
-                return next;
-            return "nump";
-        }
-        z_sort(next) {
-            if (next !== undefined)
-                return next;
-            return "nump";
-        }
-        cube_click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        colorset() {
-            return [
-                "#3e3f95",
-                "#c00",
-                "#FE9A2E",
-                "#090",
-                "#f0f",
-                "#09f",
-                "#666",
-                "#0f3",
-                "#0ff",
-                "#90c"
-            ];
-        }
-        heatmap_colors() {
-            return [
-                "rgb(150,0,90)",
-                "rgb(0,0,200)",
-                "rgb(0,25,255)",
-                "rgb(0,152,255)",
-                "rgb(44,255,150)",
-                "rgb(151,255,0)",
-                "rgb(255,234,0)",
-                "rgb(255,111,0)",
-                "rgb(255,0,0)"
-            ];
-        }
-        sub() {
-            return [
-                this.Plot(),
-                this.Setup()
-            ];
-        }
-        subscribe_click() {
-            return null;
-        }
-        data_shown() {
-            return [];
-        }
-        layout() {
-            return {};
-        }
-        Plotly_root() {
-            return this.Root().Plotly_root();
-        }
-        Root() {
-            const obj = new this.$.$mpds_visavis_lib_plotly_view();
-            obj.data = () => this.data_shown();
-            obj.layout = () => this.layout();
-            return obj;
-        }
-        cmp_labels() {
-            return [];
-        }
-        Cmp_legend() {
-            const obj = new this.$.$mpds_visavis_plot_legend_cmp();
-            obj.labels = () => this.cmp_labels();
-            obj.colorset = () => this.colorset();
-            return obj;
-        }
-        value_min() {
-            return 0;
-        }
-        Heatmap_min() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.value_min()
-            ];
-            return obj;
-        }
-        heatmap_color(id) {
-            return "";
-        }
-        Heatmap_color(id) {
-            const obj = new this.$.$mol_view();
-            obj.style = () => ({
-                background: this.heatmap_color(id)
-            });
-            return obj;
-        }
-        value_max() {
-            return 0;
-        }
-        Heatmap_max() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.value_max()
-            ];
-            return obj;
-        }
-        heatmap_color_list() {
-            return [
-                this.Heatmap_min(),
-                this.Heatmap_color("0"),
-                this.Heatmap_max()
-            ];
-        }
-        Heatmap_legend() {
-            const obj = new this.$.$mol_list();
-            obj.rows = () => this.heatmap_color_list();
-            return obj;
-        }
-        Side_right() {
-            const obj = new this.$.$mol_scroll();
-            obj.sub = () => [
-                this.Heatmap_legend()
-            ];
-            return obj;
-        }
-        plot_body() {
-            return [
-                this.Root(),
-                this.Cmp_legend(),
-                this.Side_right()
-            ];
-        }
-        Plot() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => this.plot_body();
-            return obj;
-        }
-        fixel_checked(next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        Fixel() {
-            const obj = new this.$.$mol_check_box();
-            obj.title = () => "Project on 2d";
-            obj.checked = (next) => this.fixel_checked(next);
-            return obj;
-        }
-        nonformers_checked(next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        Nonformers() {
-            const obj = new this.$.$mol_check_box();
-            obj.hint = () => "Continuous solid solutions and complete insolubility systems";
-            obj.title = () => "Show non-formers";
-            obj.checked = (next) => this.nonformers_checked(next);
-            return obj;
-        }
-        difference_checked(next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        Difference_on() {
-            const obj = new this.$.$mol_check_box();
-            obj.title = () => "Show difference";
-            obj.checked = (next) => this.difference_checked(next);
-            return obj;
-        }
-        order_dict() {
-            return {
-                nump: "Periodic number",
-                num: "Atomic number",
-                size: "Atomic size",
-                rea: "Atomic reactivity",
-                rpp: "Pseudopotential radii",
-                rion: "Ionic radii",
-                rcov: "Covalent radii",
-                rmet: "Metallic radii",
-                tmelt: "Melting temperature",
-                eneg: "Electronegativity"
-            };
-        }
-        X_order_select() {
-            const obj = new this.$.$mol_select();
-            obj.value = (next) => this.x_sort(next);
-            obj.dictionary = () => this.order_dict();
-            return obj;
-        }
-        X_order() {
-            const obj = new this.$.$mol_labeler();
-            obj.title = () => "X sort by";
-            obj.Content = () => this.X_order_select();
-            return obj;
-        }
-        Y_order_select() {
-            const obj = new this.$.$mol_select();
-            obj.value = (next) => this.y_sort(next);
-            obj.dictionary = () => this.order_dict();
-            return obj;
-        }
-        Y_order() {
-            const obj = new this.$.$mol_labeler();
-            obj.title = () => "Y sort by";
-            obj.Content = () => this.Y_order_select();
-            return obj;
-        }
-        Z_order_select() {
-            const obj = new this.$.$mol_select();
-            obj.value = (next) => this.z_sort(next);
-            obj.dictionary = () => this.order_dict();
-            return obj;
-        }
-        Z_order() {
-            const obj = new this.$.$mol_labeler();
-            obj.title = () => "Z sort by";
-            obj.Content = () => this.Z_order_select();
-            return obj;
-        }
-        setup() {
-            return [
-                this.Fixel(),
-                this.Nonformers(),
-                this.Difference_on(),
-                this.X_order(),
-                this.Y_order(),
-                this.Z_order()
-            ];
-        }
-        Setup() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => this.setup();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "plot_raw", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "multi_jsons", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "show_fixel", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "heatmap", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "order_current", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "x_op", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "y_op", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "z_op", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "x_sort", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "y_sort", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "z_sort", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "cube_click", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "Root", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "Cmp_legend", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "Heatmap_min", null);
-    __decorate([
-        $mol_mem_key
-    ], $mpds_visavis_plot_cube.prototype, "Heatmap_color", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "Heatmap_max", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "Heatmap_legend", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "Side_right", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "Plot", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "fixel_checked", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "Fixel", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "nonformers_checked", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "Nonformers", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "difference_checked", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "Difference_on", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "X_order_select", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "X_order", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "Y_order_select", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "Y_order", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "Z_order_select", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "Z_order", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_cube.prototype, "Setup", null);
-    $.$mpds_visavis_plot_cube = $mpds_visavis_plot_cube;
-})($ || ($ = {}));
-//mpds/visavis/plot/cube/-view.tree/cube.view.tree.ts
+	($.$mpds_visavis_plot_cube) = class $mpds_visavis_plot_cube extends ($.$mol_view) {
+		plot_raw(){
+			const obj = new this.$.$mpds_visavis_plot_raw();
+			return obj;
+		}
+		auto(){
+			return [(this.subscribe_click())];
+		}
+		multi_jsons(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		show_setup(){
+			return true;
+		}
+		show_fixel(next){
+			if(next !== undefined) return next;
+			return true;
+		}
+		heatmap(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		order(id){
+			return [];
+		}
+		order_current(next){
+			if(next !== undefined) return next;
+			return "nump";
+		}
+		x_op(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		y_op(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		z_op(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		x_sort(next){
+			if(next !== undefined) return next;
+			return "nump";
+		}
+		y_sort(next){
+			if(next !== undefined) return next;
+			return "nump";
+		}
+		z_sort(next){
+			if(next !== undefined) return next;
+			return "nump";
+		}
+		cube_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		colorset(){
+			return [
+				"#3e3f95", 
+				"#c00", 
+				"#FE9A2E", 
+				"#090", 
+				"#f0f", 
+				"#09f", 
+				"#666", 
+				"#0f3", 
+				"#0ff", 
+				"#90c"
+			];
+		}
+		heatmap_colors(){
+			return [
+				"rgb(150,0,90)", 
+				"rgb(0,0,200)", 
+				"rgb(0,25,255)", 
+				"rgb(0,152,255)", 
+				"rgb(44,255,150)", 
+				"rgb(151,255,0)", 
+				"rgb(255,234,0)", 
+				"rgb(255,111,0)", 
+				"rgb(255,0,0)"
+			];
+		}
+		sub(){
+			return [(this.Plot()), (this.Setup())];
+		}
+		subscribe_click(){
+			return null;
+		}
+		data_shown(){
+			return [];
+		}
+		layout(){
+			return {};
+		}
+		Plotly_root(){
+			return (this.Root().Plotly_root());
+		}
+		Root(){
+			const obj = new this.$.$mpds_visavis_lib_plotly_view();
+			(obj.data) = () => ((this.data_shown()));
+			(obj.layout) = () => ((this.layout()));
+			return obj;
+		}
+		cmp_labels(){
+			return [];
+		}
+		Cmp_legend(){
+			const obj = new this.$.$mpds_visavis_plot_legend_cmp();
+			(obj.labels) = () => ((this.cmp_labels()));
+			(obj.colorset) = () => ((this.colorset()));
+			return obj;
+		}
+		value_min(){
+			return 0;
+		}
+		Heatmap_min(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ([(this.value_min())]);
+			return obj;
+		}
+		heatmap_color(id){
+			return "";
+		}
+		Heatmap_color(id){
+			const obj = new this.$.$mol_view();
+			(obj.style) = () => ({"background": (this.heatmap_color(id))});
+			return obj;
+		}
+		value_max(){
+			return 0;
+		}
+		Heatmap_max(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ([(this.value_max())]);
+			return obj;
+		}
+		heatmap_color_list(){
+			return [
+				(this.Heatmap_min()), 
+				(this.Heatmap_color("0")), 
+				(this.Heatmap_max())
+			];
+		}
+		Heatmap_legend(){
+			const obj = new this.$.$mol_list();
+			(obj.rows) = () => ((this.heatmap_color_list()));
+			return obj;
+		}
+		Side_right(){
+			const obj = new this.$.$mol_scroll();
+			(obj.sub) = () => ([(this.Heatmap_legend())]);
+			return obj;
+		}
+		plot_body(){
+			return [
+				(this.Root()), 
+				(this.Cmp_legend()), 
+				(this.Side_right())
+			];
+		}
+		Plot(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ((this.plot_body()));
+			return obj;
+		}
+		fixel_checked(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		Fixel(){
+			const obj = new this.$.$mol_check_box();
+			(obj.title) = () => ("Project on 2d");
+			(obj.checked) = (next) => ((this.fixel_checked(next)));
+			return obj;
+		}
+		nonformers_checked(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		Nonformers(){
+			const obj = new this.$.$mol_check_box();
+			(obj.hint) = () => ("Continuous solid solutions and complete insolubility systems");
+			(obj.title) = () => ("Show non-formers");
+			(obj.checked) = (next) => ((this.nonformers_checked(next)));
+			return obj;
+		}
+		difference_checked(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		Difference_on(){
+			const obj = new this.$.$mol_check_box();
+			(obj.title) = () => ("Show difference");
+			(obj.checked) = (next) => ((this.difference_checked(next)));
+			return obj;
+		}
+		order_dict(){
+			return {
+				"nump": "Periodic number", 
+				"num": "Atomic number", 
+				"size": "Atomic size", 
+				"rea": "Atomic reactivity", 
+				"rpp": "Pseudopotential radii", 
+				"rion": "Ionic radii", 
+				"rcov": "Covalent radii", 
+				"rmet": "Metallic radii", 
+				"tmelt": "Melting temperature", 
+				"eneg": "Electronegativity"
+			};
+		}
+		X_order_select(){
+			const obj = new this.$.$mol_select();
+			(obj.value) = (next) => ((this.x_sort(next)));
+			(obj.dictionary) = () => ((this.order_dict()));
+			return obj;
+		}
+		X_order(){
+			const obj = new this.$.$mol_labeler();
+			(obj.title) = () => ("X sort by");
+			(obj.Content) = () => ((this.X_order_select()));
+			return obj;
+		}
+		Y_order_select(){
+			const obj = new this.$.$mol_select();
+			(obj.value) = (next) => ((this.y_sort(next)));
+			(obj.dictionary) = () => ((this.order_dict()));
+			return obj;
+		}
+		Y_order(){
+			const obj = new this.$.$mol_labeler();
+			(obj.title) = () => ("Y sort by");
+			(obj.Content) = () => ((this.Y_order_select()));
+			return obj;
+		}
+		Z_order_select(){
+			const obj = new this.$.$mol_select();
+			(obj.value) = (next) => ((this.z_sort(next)));
+			(obj.dictionary) = () => ((this.order_dict()));
+			return obj;
+		}
+		Z_order(){
+			const obj = new this.$.$mol_labeler();
+			(obj.title) = () => ("Z sort by");
+			(obj.Content) = () => ((this.Z_order_select()));
+			return obj;
+		}
+		setup(){
+			return [
+				(this.Fixel()), 
+				(this.Nonformers()), 
+				(this.Difference_on()), 
+				(this.X_order()), 
+				(this.Y_order()), 
+				(this.Z_order())
+			];
+		}
+		Setup(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ((this.setup()));
+			return obj;
+		}
+	};
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "plot_raw"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "multi_jsons"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "show_fixel"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "heatmap"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "order_current"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "x_op"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "y_op"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "z_op"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "x_sort"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "y_sort"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "z_sort"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "cube_click"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Root"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Cmp_legend"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Heatmap_min"));
+	($mol_mem_key(($.$mpds_visavis_plot_cube.prototype), "Heatmap_color"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Heatmap_max"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Heatmap_legend"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Side_right"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Plot"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "fixel_checked"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Fixel"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "nonformers_checked"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Nonformers"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "difference_checked"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Difference_on"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "X_order_select"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "X_order"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Y_order_select"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Y_order"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Z_order_select"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Z_order"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Setup"));
+
+
 ;
 "use strict";
 var $;
@@ -19832,7 +16950,7 @@ var $;
         return $mol_fail(new $mol_data_error(`${val} is not a boolean`));
     };
 })($ || ($ = {}));
-//mol/data/boolean/boolean.ts
+
 ;
 "use strict";
 var $;
@@ -19861,7 +16979,10 @@ var $;
     }
     $.$mol_data_variant = $mol_data_variant;
 })($ || ($ = {}));
-//mol/data/variant/variant.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -20173,14 +17294,14 @@ var $;
         $$.$mpds_visavis_plot_cube = $mpds_visavis_plot_cube;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/cube/cube.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mpds/visavis/plot/cube/cube.view.css", "[mpds_visavis_plot_cube_plot] g.hovertext text {\n\tcursor: pointer;\n}\n");
 })($ || ($ = {}));
-//mpds/visavis/plot/cube/-css/cube.view.css.ts
+
 ;
 "use strict";
 var $;
@@ -20236,343 +17357,278 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/cube/cube.view.css.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_plot_phase extends $mol_book2 {
-        plot_raw() {
-            const obj = new this.$.$mpds_visavis_plot_raw();
-            return obj;
-        }
-        auto() {
-            return [
-                this.subscribe_events()
-            ];
-        }
-        phase_click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        colors_by_nphases() {
-            return {
-                1: "#d1cde6",
-                alt_1: "#9cf",
-                3: "#fc6",
-                4: "#FCD3C2",
-                5: "#CCE7D4",
-                default: "#eee"
-            };
-        }
-        line() {
-            return {
-                phase: {
-                    width: 0.2
-                },
-                compound: {
-                    width: 5,
-                    color: "#d1cde6"
-                },
-                default: {
-                    width: 0.5,
-                    color: "#666"
-                }
-            };
-        }
-        is_triangle() {
-            return false;
-        }
-        triangle() {
-            return {
-                datamock: [
-                    {
-                        a: [],
-                        b: [],
-                        c: [],
-                        type: "scatterternary"
-                    }
-                ],
-                layout: {
-                    hovermode: "closest",
-                    font: {
-                        size: 20,
-                        color: "#333",
-                        family: "inherit"
-                    },
-                    ternary: {
-                        aaxis: {
-                            title: this.json_title_b(),
-                            ticks: "",
-                            showline: true,
-                            showgrid: false,
-                            fixedrange: true,
-                            linewidth: 1
-                        },
-                        baxis: {
-                            title: this.json_title_a(),
-                            ticks: "",
-                            showline: true,
-                            showgrid: false,
-                            fixedrange: true,
-                            linewidth: 1
-                        },
-                        caxis: {
-                            title: this.json_title_c(),
-                            ticks: "",
-                            showline: true,
-                            showgrid: false,
-                            fixedrange: true,
-                            linewidth: 1
-                        }
-                    },
-                    shapes: this.layout_shapes(),
-                    annotations: this.annotations()
-                }
-            };
-        }
-        triangle_shape_fix() {
-            return {
-                type: "path",
-                path: "M 0,0 L 0.5,0.866 L 1,0",
-                line: {
-                    width: 0
-                }
-            };
-        }
-        triangle_annotations() {
-            return [
-                {
-                    text: this.triangle_annotation_text(),
-                    x: -0.25,
-                    y: 0.96,
-                    showarrow: false,
-                    xref: "paper",
-                    yref: "paper",
-                    font: {
-                        size: 15
-                    }
-                }
-            ];
-        }
-        rectangle() {
-            return {
-                datamock: [
-                    {
-                        x: [],
-                        y: [],
-                        type: "scatter",
-                        xaxis: "x",
-                        yaxis: "y"
-                    },
-                    {
-                        x: [],
-                        y: [],
-                        type: "scatter",
-                        xaxis: "x2",
-                        yaxis: "y2"
-                    }
-                ],
-                layout: {
-                    hovermode: "closest",
-                    font: {
-                        size: 16,
-                        color: "#333",
-                        family: "inherit"
-                    },
-                    xaxis: {
-                        title: "at. %",
-                        range: this.json_comp_range(),
-                        fixedrange: true,
-                        showticks: this.show_ticks(),
-                        showline: true,
-                        zeroline: false,
-                        showgrid: false,
-                        ticklen: 4,
-                        tickfont: {
-                            size: 12
-                        },
-                        hoverformat: ".2r"
-                    },
-                    xaxis2: {
-                        range: this.json_comp_range(),
-                        fixedrange: true,
-                        showticks: this.show_ticks(),
-                        showline: true,
-                        zeroline: false,
-                        showgrid: false,
-                        ticklen: 4,
-                        tickfont: {
-                            size: 12
-                        },
-                        side: "top",
-                        overlaying: "x"
-                    },
-                    yaxis: {
-                        title: "T, &deg;C",
-                        range: this.json_temp(),
-                        fixedrange: true,
-                        showticks: this.show_ticks(),
-                        showticklabels: this.not_demo(),
-                        showline: true,
-                        zeroline: false,
-                        showgrid: false,
-                        ticklen: 4,
-                        tickfont: {
-                            size: 12
-                        },
-                        hoverformat: ".2r"
-                    },
-                    yaxis2: {
-                        range: this.json_temp(),
-                        fixedrange: true,
-                        showticks: this.show_ticks(),
-                        showticklabels: this.not_demo(),
-                        showline: true,
-                        zeroline: false,
-                        showgrid: false,
-                        ticklen: 4,
-                        tickfont: {
-                            size: 12
-                        },
-                        side: "right",
-                        overlaying: "y"
-                    },
-                    shapes: this.layout_shapes(),
-                    annotations: this.annotations()
-                }
-            };
-        }
-        rectangle_annotations() {
-            return [
-                {
-                    text: this.json_title_a(),
-                    x: -0.03,
-                    y: -0.11,
-                    showarrow: false,
-                    xref: "paper",
-                    yref: "paper",
-                    font: {
-                        size: 20
-                    }
-                },
-                {
-                    text: this.json_title_b(),
-                    x: 1.03,
-                    y: -0.11,
-                    showarrow: false,
-                    xref: "paper",
-                    yref: "paper",
-                    font: {
-                        size: 20
-                    }
-                }
-            ];
-        }
-        annotation() {
-            return {
-                show_arrow: false,
-                font: {
-                    size: 13
-                }
-            };
-        }
-        annotation_textangle(id) {
-            return 0;
-        }
-        plot_options() {
-            return {
-                displaylogo: false,
-                displayModeBar: false,
-                staticPlot: false
-            };
-        }
-        sub() {
-            return [
-                this.Label(),
-                this.Root()
-            ];
-        }
-        subscribe_events() {
-            return null;
-        }
-        json_title_b() {
-            return "";
-        }
-        json_title_a() {
-            return "";
-        }
-        json_title_c() {
-            return "";
-        }
-        layout_shapes() {
-            return [];
-        }
-        annotations() {
-            return [];
-        }
-        triangle_annotation_text() {
-            return "";
-        }
-        json_comp_range() {
-            return [];
-        }
-        show_ticks() {
-            return false;
-        }
-        json_temp() {
-            return [];
-        }
-        not_demo() {
-            return false;
-        }
-        label(next) {
-            if (next !== undefined)
-                return next;
-            return "";
-        }
-        Label() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.label()
-            ];
-            return obj;
-        }
-        data() {
-            return [];
-        }
-        layout() {
-            return {};
-        }
-        Plotly_root() {
-            return this.Root().Plotly_root();
-        }
-        Root() {
-            const obj = new this.$.$mpds_visavis_lib_plotly_view();
-            obj.data = () => this.data();
-            obj.layout = () => this.layout();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_phase.prototype, "plot_raw", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_phase.prototype, "phase_click", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_phase.prototype, "label", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_phase.prototype, "Label", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_phase.prototype, "Root", null);
-    $.$mpds_visavis_plot_phase = $mpds_visavis_plot_phase;
-})($ || ($ = {}));
-//mpds/visavis/plot/phase/-view.tree/phase.view.tree.ts
+	($.$mpds_visavis_plot_phase) = class $mpds_visavis_plot_phase extends ($.$mol_book2) {
+		plot_raw(){
+			const obj = new this.$.$mpds_visavis_plot_raw();
+			return obj;
+		}
+		auto(){
+			return [(this.subscribe_events())];
+		}
+		phase_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		data_demo(){
+			return false;
+		}
+		colors_by_nphases(){
+			return {
+				"1": "#d1cde6", 
+				"alt_1": "#9cf", 
+				"3": "#fc6", 
+				"4": "#FCD3C2", 
+				"5": "#CCE7D4", 
+				"default": "#eee"
+			};
+		}
+		line(){
+			return {
+				"phase": {"width": 0.2}, 
+				"compound": {"width": 5, "color": "#d1cde6"}, 
+				"default": {"width": 0.5, "color": "#666"}
+			};
+		}
+		is_triangle(){
+			return false;
+		}
+		triangle(){
+			return {"datamock": [{
+				"a": [], 
+				"b": [], 
+				"c": [], 
+				"type": "scatterternary"
+			}], "layout": {
+				"hovermode": "closest", 
+				"font": {
+					"size": 20, 
+					"color": "#333", 
+					"family": "inherit"
+				}, 
+				"ternary": {
+					"aaxis": {
+						"title": (this.json_title_b()), 
+						"ticks": "", 
+						"showline": true, 
+						"showgrid": false, 
+						"fixedrange": true, 
+						"linewidth": 1
+					}, 
+					"baxis": {
+						"title": (this.json_title_a()), 
+						"ticks": "", 
+						"showline": true, 
+						"showgrid": false, 
+						"fixedrange": true, 
+						"linewidth": 1
+					}, 
+					"caxis": {
+						"title": (this.json_title_c()), 
+						"ticks": "", 
+						"showline": true, 
+						"showgrid": false, 
+						"fixedrange": true, 
+						"linewidth": 1
+					}
+				}, 
+				"shapes": (this.layout_shapes()), 
+				"annotations": (this.annotations())
+			}};
+		}
+		triangle_shape_fix(){
+			return {
+				"type": "path", 
+				"path": "M 0,0 L 0.5,0.866 L 1,0", 
+				"line": {"width": 0}
+			};
+		}
+		triangle_annotations(){
+			return [{
+				"text": (this.triangle_annotation_text()), 
+				"x": -0.25, 
+				"y": 0.96, 
+				"showarrow": false, 
+				"xref": "paper", 
+				"yref": "paper", 
+				"font": {"size": 15}
+			}];
+		}
+		rectangle(){
+			return {"datamock": [{
+				"x": [], 
+				"y": [], 
+				"type": "scatter", 
+				"xaxis": "x", 
+				"yaxis": "y"
+			}, {
+				"x": [], 
+				"y": [], 
+				"type": "scatter", 
+				"xaxis": "x2", 
+				"yaxis": "y2"
+			}], "layout": {
+				"hovermode": "closest", 
+				"font": {
+					"size": 16, 
+					"color": "#333", 
+					"family": "inherit"
+				}, 
+				"xaxis": {
+					"title": "at. %", 
+					"range": (this.json_comp_range()), 
+					"fixedrange": true, 
+					"showticks": (this.show_ticks()), 
+					"showline": true, 
+					"zeroline": false, 
+					"showgrid": false, 
+					"ticklen": 4, 
+					"tickfont": {"size": 12}, 
+					"hoverformat": ".2r"
+				}, 
+				"xaxis2": {
+					"range": (this.json_comp_range()), 
+					"fixedrange": true, 
+					"showticks": (this.show_ticks()), 
+					"showline": true, 
+					"zeroline": false, 
+					"showgrid": false, 
+					"ticklen": 4, 
+					"tickfont": {"size": 12}, 
+					"side": "top", 
+					"overlaying": "x"
+				}, 
+				"yaxis": {
+					"title": "T, &deg;C", 
+					"range": (this.json_temp()), 
+					"fixedrange": true, 
+					"showticks": (this.show_ticks()), 
+					"showticklabels": (this.not_demo()), 
+					"showline": true, 
+					"zeroline": false, 
+					"showgrid": false, 
+					"ticklen": 4, 
+					"tickfont": {"size": 12}, 
+					"hoverformat": ".2r"
+				}, 
+				"yaxis2": {
+					"range": (this.json_temp()), 
+					"fixedrange": true, 
+					"showticks": (this.show_ticks()), 
+					"showticklabels": (this.not_demo()), 
+					"showline": true, 
+					"zeroline": false, 
+					"showgrid": false, 
+					"ticklen": 4, 
+					"tickfont": {"size": 12}, 
+					"side": "right", 
+					"overlaying": "y"
+				}, 
+				"shapes": (this.layout_shapes()), 
+				"annotations": (this.annotations())
+			}};
+		}
+		rectangle_annotations(){
+			return [{
+				"text": (this.json_title_a()), 
+				"x": -0.03, 
+				"y": -0.11, 
+				"showarrow": false, 
+				"xref": "paper", 
+				"yref": "paper", 
+				"font": {"size": 20}
+			}, {
+				"text": (this.json_title_b()), 
+				"x": 1.03, 
+				"y": -0.11, 
+				"showarrow": false, 
+				"xref": "paper", 
+				"yref": "paper", 
+				"font": {"size": 20}
+			}];
+		}
+		annotation(){
+			return {"show_arrow": false, "font": {"size": 13}};
+		}
+		annotation_textangle(id){
+			return 0;
+		}
+		plot_options(){
+			return {
+				"displaylogo": false, 
+				"displayModeBar": false, 
+				"staticPlot": false
+			};
+		}
+		sub(){
+			return [(this.Label()), (this.Root())];
+		}
+		subscribe_events(){
+			return null;
+		}
+		json_title_b(){
+			return "";
+		}
+		json_title_a(){
+			return "";
+		}
+		json_title_c(){
+			return "";
+		}
+		layout_shapes(){
+			return [];
+		}
+		annotations(){
+			return [];
+		}
+		triangle_annotation_text(){
+			return "";
+		}
+		json_comp_range(){
+			return [];
+		}
+		show_ticks(){
+			return false;
+		}
+		json_temp(){
+			return [];
+		}
+		not_demo(){
+			return false;
+		}
+		label(next){
+			if(next !== undefined) return next;
+			return "";
+		}
+		Label(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ([(this.label())]);
+			return obj;
+		}
+		Plotly_root(){
+			return (this.Root().Plotly_root());
+		}
+		data(){
+			return [];
+		}
+		layout(){
+			return {};
+		}
+		Root(){
+			const obj = new this.$.$mpds_visavis_lib_plotly_view();
+			(obj.data) = () => ((this.data()));
+			(obj.layout) = () => ((this.layout()));
+			return obj;
+		}
+	};
+	($mol_mem(($.$mpds_visavis_plot_phase.prototype), "plot_raw"));
+	($mol_mem(($.$mpds_visavis_plot_phase.prototype), "phase_click"));
+	($mol_mem(($.$mpds_visavis_plot_phase.prototype), "label"));
+	($mol_mem(($.$mpds_visavis_plot_phase.prototype), "Label"));
+	($mol_mem(($.$mpds_visavis_plot_phase.prototype), "Root"));
+
+
 ;
 "use strict";
 var $;
@@ -20599,7 +17655,10 @@ var $;
     }
     $.$mol_data_dict = $mol_data_dict;
 })($ || ($ = {}));
-//mol/data/dict/dict.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -20942,14 +18001,14 @@ var $;
         $$.$mpds_visavis_plot_phase = $mpds_visavis_plot_phase;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/phase/phase.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mpds/visavis/plot/phase/phase.view.css", "path{pointer-events:painted;}\ng{pointer-events:painted;}\n\n/* PLOTLY SVG HACKS */\n@media all and (max-aspect-ratio:10/9){g.toplevel.aline, g.toplevel.bline, g.toplevel.cline{display:none;}}\n@media all and (max-aspect-ratio:5/6){\n    g.g-atitle, g.g-btitle, g.g-ctitle{transform:translateY(75px);}\n    g.annotation{display:none;}\n}\ng.aaxis, g.baxis, g.caxis{display:none;}\n");
 })($ || ($ = {}));
-//mpds/visavis/plot/phase/-css/phase.view.css.ts
+
 ;
 "use strict";
 var $;
@@ -20969,39 +18028,31 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/phase/phase.view.css.ts
+
+;
+	($.$mpds_visavis_plot_bar) = class $mpds_visavis_plot_bar extends ($.$mpds_visavis_lib_plotly_view) {
+		plot_raw(){
+			const obj = new this.$.$mpds_visavis_plot_raw();
+			return obj;
+		}
+		auto(){
+			return [(this.subscribe_click())];
+		}
+		bar_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		subscribe_click(){
+			return null;
+		}
+	};
+	($mol_mem(($.$mpds_visavis_plot_bar.prototype), "plot_raw"));
+	($mol_mem(($.$mpds_visavis_plot_bar.prototype), "bar_click"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_plot_bar extends $mpds_visavis_lib_plotly_view {
-        plot_raw() {
-            const obj = new this.$.$mpds_visavis_plot_raw();
-            return obj;
-        }
-        auto() {
-            return [
-                this.subscribe_click()
-            ];
-        }
-        bar_click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        subscribe_click() {
-            return null;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_bar.prototype, "plot_raw", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_bar.prototype, "bar_click", null);
-    $.$mpds_visavis_plot_bar = $mpds_visavis_plot_bar;
-})($ || ($ = {}));
-//mpds/visavis/plot/bar/-view.tree/bar.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -21100,147 +18151,112 @@ var $;
         $$.$mpds_visavis_plot_bar = $mpds_visavis_plot_bar;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/bar/bar.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mpds/visavis/plot/bar/bar.view.css", "[mpds_visavis_plot_bar] g.bars g.point path {\n\tcursor: pointer;\n\tfill: #3E3F95 !important;\n}\n\n[mpds_visavis_plot_bar] g.bars:nth-child(even) g.point path {\n\tfill: #E36868 !important;\n}\n\n[mpds_visavis_plot_bar] g.bars g.point path:hover {\n\tfill: #E36868 !important;\n}\n");
 })($ || ($ = {}));
-//mpds/visavis/plot/bar/-css/bar.view.css.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_plot_discovery extends $mol_view {
-        plot_raw() {
-            const obj = new this.$.$mpds_visavis_plot_raw();
-            return obj;
-        }
-        auto() {
-            return [
-                this.subscribe_click()
-            ];
-        }
-        json_cmp(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        elementals_on(next) {
-            if (next !== undefined)
-                return next;
-            return [];
-        }
-        show_setup() {
-            return true;
-        }
-        discovery_click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        colorset() {
-            return [
-                "#3e3f95",
-                "#c00"
-            ];
-        }
-        sub() {
-            return [
-                this.Plot(),
-                this.Cmp_legend(),
-                this.Setup()
-            ];
-        }
-        subscribe_click() {
-            return null;
-        }
-        data() {
-            return [];
-        }
-        layout() {
-            return {};
-        }
-        Plotly_root() {
-            return this.Plot().Plotly_root();
-        }
-        Plot() {
-            const obj = new this.$.$mpds_visavis_lib_plotly_view();
-            obj.data = () => this.data();
-            obj.layout = () => this.layout();
-            return obj;
-        }
-        cmp_labels() {
-            return [];
-        }
-        Cmp_legend() {
-            const obj = new this.$.$mpds_visavis_plot_legend_cmp();
-            obj.labels = () => this.cmp_labels();
-            obj.colorset = () => this.colorset();
-            return obj;
-        }
-        elemental_checked(id, next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        elementals_dict() {
-            return {};
-        }
-        Elementals_check() {
-            const obj = new this.$.$mol_check_list();
-            obj.option_checked = (id, next) => this.elemental_checked(id, next);
-            obj.options = () => this.elementals_dict();
-            return obj;
-        }
-        Elementals() {
-            const obj = new this.$.$mol_labeler();
-            obj.title = () => "Elementals on";
-            obj.Content = () => this.Elementals_check();
-            return obj;
-        }
-        Setup() {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.Elementals()
-            ];
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_discovery.prototype, "plot_raw", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_discovery.prototype, "json_cmp", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_discovery.prototype, "elementals_on", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_discovery.prototype, "discovery_click", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_discovery.prototype, "Plot", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_discovery.prototype, "Cmp_legend", null);
-    __decorate([
-        $mol_mem_key
-    ], $mpds_visavis_plot_discovery.prototype, "elemental_checked", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_discovery.prototype, "Elementals_check", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_discovery.prototype, "Elementals", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_discovery.prototype, "Setup", null);
-    $.$mpds_visavis_plot_discovery = $mpds_visavis_plot_discovery;
-})($ || ($ = {}));
-//mpds/visavis/plot/discovery/-view.tree/discovery.view.tree.ts
+	($.$mpds_visavis_plot_discovery) = class $mpds_visavis_plot_discovery extends ($.$mol_view) {
+		plot_raw(){
+			const obj = new this.$.$mpds_visavis_plot_raw();
+			return obj;
+		}
+		auto(){
+			return [(this.subscribe_click())];
+		}
+		json_cmp(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		elementals_on(next){
+			if(next !== undefined) return next;
+			return [];
+		}
+		show_setup(){
+			return true;
+		}
+		discovery_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		colorset(){
+			return ["#3e3f95", "#c00"];
+		}
+		sub(){
+			return [
+				(this.Plot()), 
+				(this.Cmp_legend()), 
+				(this.Setup())
+			];
+		}
+		subscribe_click(){
+			return null;
+		}
+		Plotly_root(){
+			return (this.Plot().Plotly_root());
+		}
+		data(){
+			return [];
+		}
+		layout(){
+			return {};
+		}
+		Plot(){
+			const obj = new this.$.$mpds_visavis_lib_plotly_view();
+			(obj.data) = () => ((this.data()));
+			(obj.layout) = () => ((this.layout()));
+			return obj;
+		}
+		cmp_labels(){
+			return [];
+		}
+		Cmp_legend(){
+			const obj = new this.$.$mpds_visavis_plot_legend_cmp();
+			(obj.labels) = () => ((this.cmp_labels()));
+			(obj.colorset) = () => ((this.colorset()));
+			return obj;
+		}
+		elemental_checked(id, next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		elementals_dict(){
+			return {};
+		}
+		Elementals_check(){
+			const obj = new this.$.$mol_check_list();
+			(obj.option_checked) = (id, next) => ((this.elemental_checked(id, next)));
+			(obj.options) = () => ((this.elementals_dict()));
+			return obj;
+		}
+		Elementals(){
+			const obj = new this.$.$mol_labeler();
+			(obj.title) = () => ("Elementals on");
+			(obj.Content) = () => ((this.Elementals_check()));
+			return obj;
+		}
+		Setup(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ([(this.Elementals())]);
+			return obj;
+		}
+	};
+	($mol_mem(($.$mpds_visavis_plot_discovery.prototype), "plot_raw"));
+	($mol_mem(($.$mpds_visavis_plot_discovery.prototype), "json_cmp"));
+	($mol_mem(($.$mpds_visavis_plot_discovery.prototype), "elementals_on"));
+	($mol_mem(($.$mpds_visavis_plot_discovery.prototype), "discovery_click"));
+	($mol_mem(($.$mpds_visavis_plot_discovery.prototype), "Plot"));
+	($mol_mem(($.$mpds_visavis_plot_discovery.prototype), "Cmp_legend"));
+	($mol_mem_key(($.$mpds_visavis_plot_discovery.prototype), "elemental_checked"));
+	($mol_mem(($.$mpds_visavis_plot_discovery.prototype), "Elementals_check"));
+	($mol_mem(($.$mpds_visavis_plot_discovery.prototype), "Elementals"));
+	($mol_mem(($.$mpds_visavis_plot_discovery.prototype), "Setup"));
+
+
 ;
 
 var $node = $node || {}
@@ -21367,7 +18383,10 @@ var $;
 (function ($) {
     $.$mpds_visavis_lib_pca = require('../mpds/visavis/lib/pca/_pca.js');
 })($ || ($ = {}));
-//mpds/visavis/lib/pca/pca.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -21588,14 +18607,14 @@ var $;
         $$.$mpds_visavis_plot_discovery = $mpds_visavis_plot_discovery;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/discovery/discovery.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mpds/visavis/plot/discovery/discovery.view.css", "[mpds_visavis_plot_discovery] .point.visited {\n\tfill: lime !important;\n}\n\n[mpds_visavis_plot_discovery] path.point {\n\tcursor: pointer;\n}\n");
 })($ || ($ = {}));
-//mpds/visavis/plot/discovery/-css/discovery.view.css.ts
+
 ;
 "use strict";
 var $;
@@ -21619,23 +18638,20 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/discovery/discovery.view.css.ts
+
+;
+	($.$mpds_visavis_plot_eigen) = class $mpds_visavis_plot_eigen extends ($.$mpds_visavis_lib_plotly_view) {
+		plot_raw(){
+			const obj = new this.$.$mpds_visavis_plot_raw();
+			return obj;
+		}
+	};
+	($mol_mem(($.$mpds_visavis_plot_eigen.prototype), "plot_raw"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_plot_eigen extends $mpds_visavis_lib_plotly_view {
-        plot_raw() {
-            const obj = new this.$.$mpds_visavis_plot_raw();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_eigen.prototype, "plot_raw", null);
-    $.$mpds_visavis_plot_eigen = $mpds_visavis_plot_eigen;
-})($ || ($ = {}));
-//mpds/visavis/plot/eigen/-view.tree/eigen.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -21815,53 +18831,42 @@ var $;
         $$.$mpds_visavis_plot_eigen = $mpds_visavis_plot_eigen;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/eigen/eigen.view.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_plot_pie extends $mpds_visavis_lib_plotly_view {
-        plot_raw() {
-            const obj = new this.$.$mpds_visavis_plot_raw();
-            return obj;
-        }
-        auto() {
-            return [
-                this.subscribe_click()
-            ];
-        }
-        pie_click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        colorset() {
-            return [
-                "#3e3f95",
-                "#c00",
-                "#FE9A2E",
-                "#090",
-                "#f0f",
-                "#09f",
-                "#666",
-                "#0f3",
-                "#0ff",
-                "#90c"
-            ];
-        }
-        subscribe_click() {
-            return null;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_pie.prototype, "plot_raw", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_pie.prototype, "pie_click", null);
-    $.$mpds_visavis_plot_pie = $mpds_visavis_plot_pie;
-})($ || ($ = {}));
-//mpds/visavis/plot/pie/-view.tree/pie.view.tree.ts
+	($.$mpds_visavis_plot_pie) = class $mpds_visavis_plot_pie extends ($.$mpds_visavis_lib_plotly_view) {
+		plot_raw(){
+			const obj = new this.$.$mpds_visavis_plot_raw();
+			return obj;
+		}
+		auto(){
+			return [(this.subscribe_click())];
+		}
+		pie_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		colorset(){
+			return [
+				"#3e3f95", 
+				"#c00", 
+				"#FE9A2E", 
+				"#090", 
+				"#f0f", 
+				"#09f", 
+				"#666", 
+				"#0f3", 
+				"#0ff", 
+				"#90c"
+			];
+		}
+		subscribe_click(){
+			return null;
+		}
+	};
+	($mol_mem(($.$mpds_visavis_plot_pie.prototype), "plot_raw"));
+	($mol_mem(($.$mpds_visavis_plot_pie.prototype), "pie_click"));
+
+
 ;
 "use strict";
 var $;
@@ -21882,7 +18887,10 @@ var $;
     }
     $.$mol_data_enum = $mol_data_enum;
 })($ || ($ = {}));
-//mol/data/enum/enum.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -22094,38 +19102,32 @@ var $;
         $$.$mpds_visavis_plot_pie = $mpds_visavis_plot_pie;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/pie/pie.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mpds/visavis/plot/pie/pie.view.css", "[mpds_visavis_plot_pie] g.slice {\n\tcursor: pointer;\n}\n\n[mpds_visavis_plot_pie] g.slicetext {\n\tpointer-events: none;\n}\n");
 })($ || ($ = {}));
-//mpds/visavis/plot/pie/-css/pie.view.css.ts
+
+;
+	($.$mpds_visavis_plot_scatter) = class $mpds_visavis_plot_scatter extends ($.$mpds_visavis_lib_plotly_view) {
+		plot_raw(){
+			const obj = new this.$.$mpds_visavis_plot_raw();
+			return obj;
+		}
+		notify(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+	};
+	($mol_mem(($.$mpds_visavis_plot_scatter.prototype), "plot_raw"));
+	($mol_mem(($.$mpds_visavis_plot_scatter.prototype), "notify"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_plot_scatter extends $mpds_visavis_lib_plotly_view {
-        plot_raw() {
-            const obj = new this.$.$mpds_visavis_plot_raw();
-            return obj;
-        }
-        notify(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_scatter.prototype, "plot_raw", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_scatter.prototype, "notify", null);
-    $.$mpds_visavis_plot_scatter = $mpds_visavis_plot_scatter;
-})($ || ($ = {}));
-//mpds/visavis/plot/scatter/-view.tree/scatter.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -22357,51 +19359,39 @@ var $;
         $$.$mpds_visavis_plot_scatter = $mpds_visavis_plot_scatter;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/scatter/scatter.view.ts
+
+;
+	($.$mpds_visavis_plot_customscatter) = class $mpds_visavis_plot_customscatter extends ($.$mpds_visavis_lib_plotly_view) {
+		plot_raw(){
+			const obj = new this.$.$mpds_visavis_plot_raw();
+			return obj;
+		}
+		nplots_changed(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		legend_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		auto(){
+			return [(this.subscribe_legend_click()), (this.nplots())];
+		}
+		subscribe_legend_click(){
+			return null;
+		}
+		nplots(){
+			return 0;
+		}
+	};
+	($mol_mem(($.$mpds_visavis_plot_customscatter.prototype), "plot_raw"));
+	($mol_mem(($.$mpds_visavis_plot_customscatter.prototype), "nplots_changed"));
+	($mol_mem(($.$mpds_visavis_plot_customscatter.prototype), "legend_click"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_plot_customscatter extends $mpds_visavis_lib_plotly_view {
-        plot_raw() {
-            const obj = new this.$.$mpds_visavis_plot_raw();
-            return obj;
-        }
-        nplots_changed(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        legend_click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        auto() {
-            return [
-                this.subscribe_legend_click(),
-                this.nplots()
-            ];
-        }
-        subscribe_legend_click() {
-            return null;
-        }
-        nplots() {
-            return 0;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_customscatter.prototype, "plot_raw", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_customscatter.prototype, "nplots_changed", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_customscatter.prototype, "legend_click", null);
-    $.$mpds_visavis_plot_customscatter = $mpds_visavis_plot_customscatter;
-})($ || ($ = {}));
-//mpds/visavis/plot/customscatter/-view.tree/customscatter.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -22515,23 +19505,20 @@ var $;
         $$.$mpds_visavis_plot_customscatter = $mpds_visavis_plot_customscatter;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/customscatter/customscatter.view.ts
+
+;
+	($.$mpds_visavis_plot_heatmap) = class $mpds_visavis_plot_heatmap extends ($.$mpds_visavis_lib_plotly_view) {
+		plot_raw(){
+			const obj = new this.$.$mpds_visavis_plot_raw();
+			return obj;
+		}
+	};
+	($mol_mem(($.$mpds_visavis_plot_heatmap.prototype), "plot_raw"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_plot_heatmap extends $mpds_visavis_lib_plotly_view {
-        plot_raw() {
-            const obj = new this.$.$mpds_visavis_plot_raw();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_heatmap.prototype, "plot_raw", null);
-    $.$mpds_visavis_plot_heatmap = $mpds_visavis_plot_heatmap;
-})($ || ($ = {}));
-//mpds/visavis/plot/heatmap/-view.tree/heatmap.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -22630,7 +19617,7 @@ var $;
         $$.$mpds_visavis_plot_heatmap = $mpds_visavis_plot_heatmap;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/heatmap/heatmap.view.ts
+
 ;
 "use strict";
 var $;
@@ -22746,281 +19733,191 @@ var $;
     }
     $.$mol_vector_matrix = $mol_vector_matrix;
 })($ || ($ = {}));
-//mol/vector/vector.ts
+
+;
+	($.$mol_touch) = class $mol_touch extends ($.$mol_plugin) {
+		start_zoom(next){
+			if(next !== undefined) return next;
+			return 0;
+		}
+		start_distance(next){
+			if(next !== undefined) return next;
+			return 0;
+		}
+		zoom(next){
+			if(next !== undefined) return next;
+			return 1;
+		}
+		allow_draw(){
+			return true;
+		}
+		allow_pan(){
+			return true;
+		}
+		allow_zoom(){
+			return true;
+		}
+		action_type(next){
+			if(next !== undefined) return next;
+			return "";
+		}
+		action_point(next){
+			if(next !== undefined) return next;
+			const obj = new this.$.$mol_vector_2d(NaN, NaN);
+			return obj;
+		}
+		start_pan(next){
+			if(next !== undefined) return next;
+			return [0, 0];
+		}
+		pan(next){
+			if(next !== undefined) return next;
+			const obj = new this.$.$mol_vector_2d(0, 0);
+			return obj;
+		}
+		pointer_center(){
+			const obj = new this.$.$mol_vector_2d(NaN, NaN);
+			return obj;
+		}
+		start_pos(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		swipe_precision(){
+			return 16;
+		}
+		swipe_right(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		swipe_bottom(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		swipe_left(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		swipe_top(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		swipe_from_right(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		swipe_from_bottom(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		swipe_from_left(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		swipe_from_top(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		swipe_to_right(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		swipe_to_bottom(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		swipe_to_left(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		swipe_to_top(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		draw_start(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		draw(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		draw_end(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		style(){
+			return {
+				...(super.style()), 
+				"touch-action": "none", 
+				"overscroll-behavior": "none"
+			};
+		}
+		event(){
+			return {
+				...(super.event()), 
+				"pointerdown": (next) => (this.event_start(next)), 
+				"pointermove": (next) => (this.event_move(next)), 
+				"pointerup": (next) => (this.event_end(next)), 
+				"pointerleave": (next) => (this.event_leave(next)), 
+				"wheel": (next) => (this.event_wheel(next))
+			};
+		}
+		event_start(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		event_move(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		event_end(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		event_leave(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		event_wheel(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+	};
+	($mol_mem(($.$mol_touch.prototype), "start_zoom"));
+	($mol_mem(($.$mol_touch.prototype), "start_distance"));
+	($mol_mem(($.$mol_touch.prototype), "zoom"));
+	($mol_mem(($.$mol_touch.prototype), "action_type"));
+	($mol_mem(($.$mol_touch.prototype), "action_point"));
+	($mol_mem(($.$mol_touch.prototype), "start_pan"));
+	($mol_mem(($.$mol_touch.prototype), "pan"));
+	($mol_mem(($.$mol_touch.prototype), "pointer_center"));
+	($mol_mem(($.$mol_touch.prototype), "start_pos"));
+	($mol_mem(($.$mol_touch.prototype), "swipe_right"));
+	($mol_mem(($.$mol_touch.prototype), "swipe_bottom"));
+	($mol_mem(($.$mol_touch.prototype), "swipe_left"));
+	($mol_mem(($.$mol_touch.prototype), "swipe_top"));
+	($mol_mem(($.$mol_touch.prototype), "swipe_from_right"));
+	($mol_mem(($.$mol_touch.prototype), "swipe_from_bottom"));
+	($mol_mem(($.$mol_touch.prototype), "swipe_from_left"));
+	($mol_mem(($.$mol_touch.prototype), "swipe_from_top"));
+	($mol_mem(($.$mol_touch.prototype), "swipe_to_right"));
+	($mol_mem(($.$mol_touch.prototype), "swipe_to_bottom"));
+	($mol_mem(($.$mol_touch.prototype), "swipe_to_left"));
+	($mol_mem(($.$mol_touch.prototype), "swipe_to_top"));
+	($mol_mem(($.$mol_touch.prototype), "draw_start"));
+	($mol_mem(($.$mol_touch.prototype), "draw"));
+	($mol_mem(($.$mol_touch.prototype), "draw_end"));
+	($mol_mem(($.$mol_touch.prototype), "event_start"));
+	($mol_mem(($.$mol_touch.prototype), "event_move"));
+	($mol_mem(($.$mol_touch.prototype), "event_end"));
+	($mol_mem(($.$mol_touch.prototype), "event_leave"));
+	($mol_mem(($.$mol_touch.prototype), "event_wheel"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mol_touch extends $mol_plugin {
-        start_zoom(next) {
-            if (next !== undefined)
-                return next;
-            return 0;
-        }
-        start_distance(next) {
-            if (next !== undefined)
-                return next;
-            return 0;
-        }
-        zoom(next) {
-            if (next !== undefined)
-                return next;
-            return 1;
-        }
-        allow_draw() {
-            return true;
-        }
-        allow_pan() {
-            return true;
-        }
-        allow_zoom() {
-            return true;
-        }
-        action_type(next) {
-            if (next !== undefined)
-                return next;
-            return "";
-        }
-        action_point(next) {
-            if (next !== undefined)
-                return next;
-            const obj = new this.$.$mol_vector_2d(NaN, NaN);
-            return obj;
-        }
-        start_pan(next) {
-            if (next !== undefined)
-                return next;
-            return [
-                0,
-                0
-            ];
-        }
-        pan(next) {
-            if (next !== undefined)
-                return next;
-            const obj = new this.$.$mol_vector_2d(0, 0);
-            return obj;
-        }
-        pointer_center() {
-            const obj = new this.$.$mol_vector_2d(NaN, NaN);
-            return obj;
-        }
-        start_pos(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        swipe_precision() {
-            return 16;
-        }
-        swipe_right(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        swipe_bottom(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        swipe_left(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        swipe_top(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        swipe_from_right(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        swipe_from_bottom(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        swipe_from_left(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        swipe_from_top(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        swipe_to_right(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        swipe_to_bottom(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        swipe_to_left(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        swipe_to_top(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        draw_start(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        draw(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        draw_end(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        style() {
-            return {
-                ...super.style(),
-                "touch-action": "none",
-                "overscroll-behavior": "none"
-            };
-        }
-        event() {
-            return {
-                ...super.event(),
-                pointerdown: (event) => this.event_start(event),
-                pointermove: (event) => this.event_move(event),
-                pointerup: (event) => this.event_end(event),
-                pointerleave: (event) => this.event_leave(event),
-                wheel: (event) => this.event_wheel(event)
-            };
-        }
-        event_start(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        event_move(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        event_end(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        event_leave(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-        event_wheel(event) {
-            if (event !== undefined)
-                return event;
-            return null;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "start_zoom", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "start_distance", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "zoom", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "action_type", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "action_point", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "start_pan", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "pan", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "pointer_center", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "start_pos", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "swipe_right", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "swipe_bottom", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "swipe_left", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "swipe_top", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "swipe_from_right", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "swipe_from_bottom", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "swipe_from_left", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "swipe_from_top", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "swipe_to_right", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "swipe_to_bottom", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "swipe_to_left", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "swipe_to_top", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "draw_start", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "draw", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "draw_end", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "event_start", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "event_move", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "event_end", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "event_leave", null);
-    __decorate([
-        $mol_mem
-    ], $mol_touch.prototype, "event_wheel", null);
-    $.$mol_touch = $mol_touch;
-})($ || ($ = {}));
-//mol/touch/-view.tree/touch.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -23266,84 +20163,64 @@ var $;
         $$.$mol_touch = $mol_touch;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mol/touch/touch.view.ts
+
+;
+	($.$mpds_visavis_plot_graph) = class $mpds_visavis_plot_graph extends ($.$mol_view) {
+		plot_raw(){
+			const obj = new this.$.$mpds_visavis_plot_raw();
+			return obj;
+		}
+		plugins(){
+			return [(this.Touch())];
+		}
+		sub(){
+			return [(this.Root())];
+		}
+		graph_rel(next){
+			if(next !== undefined) return next;
+			return "";
+		}
+		graph_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		allow_pan(next){
+			if(next !== undefined) return next;
+			return true;
+		}
+		pan(next){
+			return (this.Touch().pan(next));
+		}
+		Touch(){
+			const obj = new this.$.$mol_touch();
+			(obj.allow_draw) = () => (false);
+			(obj.allow_pan) = () => ((this.allow_pan()));
+			return obj;
+		}
+		view_box(){
+			return "0 0 0 0";
+		}
+		draw(){
+			return null;
+		}
+		Root(){
+			const obj = new this.$.$mol_svg_root();
+			(obj.view_box) = () => ((this.view_box()));
+			(obj.auto) = () => ((this.draw()));
+			return obj;
+		}
+	};
+	($mol_mem(($.$mpds_visavis_plot_graph.prototype), "plot_raw"));
+	($mol_mem(($.$mpds_visavis_plot_graph.prototype), "graph_rel"));
+	($mol_mem(($.$mpds_visavis_plot_graph.prototype), "graph_click"));
+	($mol_mem(($.$mpds_visavis_plot_graph.prototype), "allow_pan"));
+	($mol_mem(($.$mpds_visavis_plot_graph.prototype), "Touch"));
+	($mol_mem(($.$mpds_visavis_plot_graph.prototype), "Root"));
+
+
 ;
 "use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_plot_graph extends $mol_view {
-        plot_raw() {
-            const obj = new this.$.$mpds_visavis_plot_raw();
-            return obj;
-        }
-        plugins() {
-            return [
-                this.Touch()
-            ];
-        }
-        sub() {
-            return [
-                this.Root()
-            ];
-        }
-        graph_rel(next) {
-            if (next !== undefined)
-                return next;
-            return "";
-        }
-        graph_click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        allow_pan(next) {
-            if (next !== undefined)
-                return next;
-            return true;
-        }
-        pan(next) {
-            return this.Touch().pan(next);
-        }
-        Touch() {
-            const obj = new this.$.$mol_touch();
-            obj.allow_draw = () => false;
-            obj.allow_pan = () => this.allow_pan();
-            return obj;
-        }
-        view_box() {
-            return "0 0 0 0";
-        }
-        draw() {
-            return null;
-        }
-        Root() {
-            const obj = new this.$.$mol_svg_root();
-            obj.view_box = () => this.view_box();
-            obj.auto = () => this.draw();
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_graph.prototype, "plot_raw", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_graph.prototype, "graph_rel", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_graph.prototype, "graph_click", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_graph.prototype, "allow_pan", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_graph.prototype, "Touch", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot_graph.prototype, "Root", null);
-    $.$mpds_visavis_plot_graph = $mpds_visavis_plot_graph;
-})($ || ($ = {}));
-//mpds/visavis/plot/graph/-view.tree/graph.view.tree.ts
+
 ;
 "use strict";
 var $;
@@ -23499,14 +20376,14 @@ var $;
         $$.$mpds_visavis_plot_graph = $mpds_visavis_plot_graph;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/graph/graph.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mpds/visavis/plot/graph/graph.view.css", "[mpds_visavis_plot_graph_root] svg {\n\twidth: 100%;\n\theight: 100%;\n}\n\n[mpds_visavis_plot_graph_root] .edge {\n\tfill: none;\n\tstroke: #ddd;\n\tstroke-width: 1px;\n}\n\n[mpds_visavis_plot_graph_root] .edge.prel {\n\tstroke: #FE9A2E;\n}\n\n[mpds_visavis_plot_graph_root] .edge.hrel {\n\tstroke: #3e3f95;\n}\n\n[mpds_visavis_plot_graph_root] .edge.trel {\n\tstroke: #3e3f95;\n}\n\n[mpds_visavis_plot_graph_root] .edge.arel {\n\tstroke: #E36868;\n}\n\n[mpds_visavis_plot_graph_root] .edge.grel {\n\tstroke: #acc2b3;\n}\n\n[mpds_visavis_plot_graph_root] circle {\n\tcursor: move;\n\tfill: #ccc;\n}\n\n[mpds_visavis_plot_graph_root] circle.f {\n\tfill: #acc2b3;\n}\n\n[mpds_visavis_plot_graph_root] circle.p {\n\tfill: #FE9A2E;\n}\n\n[mpds_visavis_plot_graph_root] circle.h, circle.t {\n\tfill: #3e3f95;\n}\n\n[mpds_visavis_plot_graph_root] circle.a {\n\tfill: #E36868;\n}\n\n[mpds_visavis_plot_graph_root] text.micro {\n\tfont-size: 11px;\n\tletter-spacing: -0.5px;\n}\n\n[mpds_visavis_plot_graph_root] text.macro {\n\tfont-size: 14px;\n\tletter-spacing: 0.5px;\n}\n\n[mpds_visavis_plot_graph_root] text.captions {\n\tcursor: pointer;\n\tfill: #333;\n}\n\n[mpds_visavis_plot_graph_root] text.shadow {\n\tstroke: #fff;\n\tstroke-width: 3px;\n\tstroke-opacity: 0.8;\n}\n");
 })($ || ($ = {}));
-//mpds/visavis/plot/graph/-css/graph.view.css.ts
+
 ;
 "use strict";
 var $;
@@ -23525,377 +20402,288 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/graph/graph.view.css.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_plot extends $mol_view {
-        attr() {
-            return {
-                ...super.attr(),
-                mol_theme: "$mol_theme_light",
-                fullscreen: this.fullscreen()
-            };
-        }
-        json_request(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        json() {
-            return null;
-        }
-        json_cmp_request(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        json_cmp() {
-            return null;
-        }
-        multi_requests(next) {
-            if (next !== undefined)
-                return next;
-            return [];
-        }
-        multi_jsons() {
-            return null;
-        }
-        plot_raw() {
-            return null;
-        }
-        show_setup() {
-            return false;
-        }
-        notify(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        Fullscreen() {
-            const obj = new this.$.$mol_check();
-            obj.Icon = () => this.Expand_icon();
-            obj.checked = (next) => this.fullscreen(next);
-            return obj;
-        }
-        show_demo_warn(next) {
-            if (next !== undefined)
-                return next;
-            return true;
-        }
-        Demo_warn() {
-            const obj = new this.$.$mol_paragraph();
-            obj.title = () => "You are using the limited demo. Buy the full access and support our work.";
-            return obj;
-        }
-        plots() {
-            return {
-                matrix: this.Matrix(),
-                plot3d: this.Cube(),
-                pd: this.Phase(),
-                bar: this.Bar(),
-                discovery: this.Discovery(),
-                eigenplot: this.Eigen(),
-                pie: this.Pie(),
-                scatter: this.Scatter(),
-                customscatter: this.Customscatter(),
-                heatmap: this.Heatmap(),
-                graph: this.Graph()
-            };
-        }
-        Expand_icon() {
-            const obj = new this.$.$mol_icon_arrow_expand_all();
-            return obj;
-        }
-        fullscreen(next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        nonformers_checked(next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        matrix_fixel_checked(next) {
-            if (next !== undefined)
-                return next;
-            return true;
-        }
-        matrix_click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        matrix_x_op(next) {
-            return this.Matrix().x_op(next);
-        }
-        matrix_y_op(next) {
-            return this.Matrix().y_op(next);
-        }
-        matrix_x_sort(next) {
-            return this.Matrix().x_sort(next);
-        }
-        matrix_y_sort(next) {
-            return this.Matrix().y_sort(next);
-        }
-        Matrix() {
-            const obj = new this.$.$mpds_visavis_plot_matrix();
-            obj.plot_raw = () => this.plot_raw();
-            obj.multi_jsons = () => this.multi_jsons();
-            obj.show_setup = () => this.show_setup();
-            obj.nonformers_checked = (next) => this.nonformers_checked(next);
-            obj.fixel_checked = (next) => this.matrix_fixel_checked(next);
-            obj.matrix_click = (next) => this.matrix_click(next);
-            return obj;
-        }
-        show_fixel(next) {
-            if (next !== undefined)
-                return next;
-            return true;
-        }
-        cube_fixel_checked(next) {
-            if (next !== undefined)
-                return next;
-            return false;
-        }
-        cube_click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        x_op(next) {
-            return this.Cube().x_op(next);
-        }
-        y_op(next) {
-            return this.Cube().y_op(next);
-        }
-        z_op(next) {
-            return this.Cube().z_op(next);
-        }
-        x_sort(next) {
-            return this.Cube().x_sort(next);
-        }
-        y_sort(next) {
-            return this.Cube().y_sort(next);
-        }
-        z_sort(next) {
-            return this.Cube().z_sort(next);
-        }
-        Cube() {
-            const obj = new this.$.$mpds_visavis_plot_cube();
-            obj.plot_raw = () => this.plot_raw();
-            obj.multi_jsons = () => this.multi_jsons();
-            obj.show_setup = () => this.show_setup();
-            obj.show_fixel = (next) => this.show_fixel();
-            obj.nonformers_checked = (next) => this.nonformers_checked(next);
-            obj.fixel_checked = (next) => this.cube_fixel_checked(next);
-            obj.cube_click = (next) => this.cube_click(next);
-            return obj;
-        }
-        phase_click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        phase_data_demo() {
-            return this.Phase().data_demo();
-        }
-        Phase() {
-            const obj = new this.$.$mpds_visavis_plot_phase();
-            obj.plot_raw = () => this.plot_raw();
-            obj.phase_click = (next) => this.phase_click(next);
-            return obj;
-        }
-        bar_click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        Bar() {
-            const obj = new this.$.$mpds_visavis_plot_bar();
-            obj.plot_raw = () => this.plot_raw();
-            obj.bar_click = (next) => this.bar_click(next);
-            return obj;
-        }
-        discovery_click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        discovery_elementals_on(next) {
-            return this.Discovery().elementals_on(next);
-        }
-        Discovery() {
-            const obj = new this.$.$mpds_visavis_plot_discovery();
-            obj.plot_raw = () => this.plot_raw();
-            obj.json_cmp = () => this.json_cmp();
-            obj.show_setup = () => this.show_setup();
-            obj.discovery_click = (next) => this.discovery_click(next);
-            return obj;
-        }
-        Eigen() {
-            const obj = new this.$.$mpds_visavis_plot_eigen();
-            obj.plot_raw = () => this.plot_raw();
-            return obj;
-        }
-        pie_click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        Pie() {
-            const obj = new this.$.$mpds_visavis_plot_pie();
-            obj.plot_raw = () => this.plot_raw();
-            obj.pie_click = (next) => this.pie_click(next);
-            return obj;
-        }
-        Scatter() {
-            const obj = new this.$.$mpds_visavis_plot_scatter();
-            obj.plot_raw = () => this.plot_raw();
-            obj.notify = (next) => this.notify(next);
-            return obj;
-        }
-        nplots_changed(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        legend_click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        Customscatter() {
-            const obj = new this.$.$mpds_visavis_plot_customscatter();
-            obj.plot_raw = () => this.plot_raw();
-            obj.nplots_changed = (next) => this.nplots_changed(next);
-            obj.legend_click = (next) => this.legend_click(next);
-            return obj;
-        }
-        Heatmap() {
-            const obj = new this.$.$mpds_visavis_plot_heatmap();
-            obj.plot_raw = () => this.plot_raw();
-            return obj;
-        }
-        graph_click(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        graph_rel(next) {
-            return this.Graph().graph_rel(next);
-        }
-        Graph() {
-            const obj = new this.$.$mpds_visavis_plot_graph();
-            obj.plot_raw = () => this.plot_raw();
-            obj.graph_click = (next) => this.graph_click(next);
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "json_request", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "json_cmp_request", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "multi_requests", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "notify", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "Fullscreen", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "show_demo_warn", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "Demo_warn", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "Expand_icon", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "fullscreen", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "nonformers_checked", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "matrix_fixel_checked", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "matrix_click", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "Matrix", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "show_fixel", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "cube_fixel_checked", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "cube_click", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "Cube", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "phase_click", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "Phase", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "bar_click", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "Bar", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "discovery_click", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "Discovery", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "Eigen", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "pie_click", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "Pie", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "Scatter", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "nplots_changed", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "legend_click", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "Customscatter", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "Heatmap", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "graph_click", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_plot.prototype, "Graph", null);
-    $.$mpds_visavis_plot = $mpds_visavis_plot;
-})($ || ($ = {}));
-//mpds/visavis/plot/-view.tree/plot.view.tree.ts
+	($.$mpds_visavis_plot) = class $mpds_visavis_plot extends ($.$mol_view) {
+		attr(){
+			return {
+				...(super.attr()), 
+				"mol_theme": "$mol_theme_light", 
+				"fullscreen": (this.fullscreen())
+			};
+		}
+		json_request(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		json(){
+			return null;
+		}
+		json_cmp_request(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		json_cmp(){
+			return null;
+		}
+		multi_requests(next){
+			if(next !== undefined) return next;
+			return [];
+		}
+		multi_jsons(){
+			return null;
+		}
+		plot_raw(){
+			return null;
+		}
+		show_setup(){
+			return false;
+		}
+		notify(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		Fullscreen(){
+			const obj = new this.$.$mol_check();
+			(obj.Icon) = () => ((this.Expand_icon()));
+			(obj.checked) = (next) => ((this.fullscreen(next)));
+			return obj;
+		}
+		show_demo_warn(next){
+			if(next !== undefined) return next;
+			return true;
+		}
+		Demo_warn(){
+			const obj = new this.$.$mol_paragraph();
+			(obj.title) = () => ("You are using the limited demo. Buy the full access and support our work.");
+			return obj;
+		}
+		plots(){
+			return {
+				"matrix": (this.Matrix()), 
+				"plot3d": (this.Cube()), 
+				"pd": (this.Phase()), 
+				"bar": (this.Bar()), 
+				"discovery": (this.Discovery()), 
+				"eigenplot": (this.Eigen()), 
+				"pie": (this.Pie()), 
+				"scatter": (this.Scatter()), 
+				"customscatter": (this.Customscatter()), 
+				"heatmap": (this.Heatmap()), 
+				"graph": (this.Graph())
+			};
+		}
+		Expand_icon(){
+			const obj = new this.$.$mol_icon_arrow_expand_all();
+			return obj;
+		}
+		fullscreen(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		nonformers_checked(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		matrix_fixel_checked(next){
+			if(next !== undefined) return next;
+			return true;
+		}
+		matrix_x_op(next){
+			return (this.Matrix().x_op(next));
+		}
+		matrix_y_op(next){
+			return (this.Matrix().y_op(next));
+		}
+		matrix_x_sort(next){
+			return (this.Matrix().x_sort(next));
+		}
+		matrix_y_sort(next){
+			return (this.Matrix().y_sort(next));
+		}
+		matrix_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		Matrix(){
+			const obj = new this.$.$mpds_visavis_plot_matrix();
+			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.multi_jsons) = () => ((this.multi_jsons()));
+			(obj.show_setup) = () => ((this.show_setup()));
+			(obj.nonformers_checked) = (next) => ((this.nonformers_checked(next)));
+			(obj.fixel_checked) = (next) => ((this.matrix_fixel_checked(next)));
+			(obj.matrix_click) = (next) => ((this.matrix_click(next)));
+			return obj;
+		}
+		show_fixel(next){
+			if(next !== undefined) return next;
+			return true;
+		}
+		cube_fixel_checked(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		x_op(next){
+			return (this.Cube().x_op(next));
+		}
+		y_op(next){
+			return (this.Cube().y_op(next));
+		}
+		z_op(next){
+			return (this.Cube().z_op(next));
+		}
+		x_sort(next){
+			return (this.Cube().x_sort(next));
+		}
+		y_sort(next){
+			return (this.Cube().y_sort(next));
+		}
+		z_sort(next){
+			return (this.Cube().z_sort(next));
+		}
+		cube_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		Cube(){
+			const obj = new this.$.$mpds_visavis_plot_cube();
+			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.multi_jsons) = () => ((this.multi_jsons()));
+			(obj.show_setup) = () => ((this.show_setup()));
+			(obj.show_fixel) = (next) => ((this.show_fixel()));
+			(obj.nonformers_checked) = (next) => ((this.nonformers_checked(next)));
+			(obj.fixel_checked) = (next) => ((this.cube_fixel_checked(next)));
+			(obj.cube_click) = (next) => ((this.cube_click(next)));
+			return obj;
+		}
+		phase_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		phase_data_demo(){
+			return (this.Phase().data_demo());
+		}
+		Phase(){
+			const obj = new this.$.$mpds_visavis_plot_phase();
+			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.phase_click) = (next) => ((this.phase_click(next)));
+			return obj;
+		}
+		bar_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		Bar(){
+			const obj = new this.$.$mpds_visavis_plot_bar();
+			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.bar_click) = (next) => ((this.bar_click(next)));
+			return obj;
+		}
+		discovery_elementals_on(next){
+			return (this.Discovery().elementals_on(next));
+		}
+		discovery_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		Discovery(){
+			const obj = new this.$.$mpds_visavis_plot_discovery();
+			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.json_cmp) = () => ((this.json_cmp()));
+			(obj.show_setup) = () => ((this.show_setup()));
+			(obj.discovery_click) = (next) => ((this.discovery_click(next)));
+			return obj;
+		}
+		Eigen(){
+			const obj = new this.$.$mpds_visavis_plot_eigen();
+			(obj.plot_raw) = () => ((this.plot_raw()));
+			return obj;
+		}
+		pie_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		Pie(){
+			const obj = new this.$.$mpds_visavis_plot_pie();
+			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.pie_click) = (next) => ((this.pie_click(next)));
+			return obj;
+		}
+		Scatter(){
+			const obj = new this.$.$mpds_visavis_plot_scatter();
+			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.notify) = (next) => ((this.notify(next)));
+			return obj;
+		}
+		nplots_changed(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		legend_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		Customscatter(){
+			const obj = new this.$.$mpds_visavis_plot_customscatter();
+			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.nplots_changed) = (next) => ((this.nplots_changed(next)));
+			(obj.legend_click) = (next) => ((this.legend_click(next)));
+			return obj;
+		}
+		Heatmap(){
+			const obj = new this.$.$mpds_visavis_plot_heatmap();
+			(obj.plot_raw) = () => ((this.plot_raw()));
+			return obj;
+		}
+		graph_rel(next){
+			return (this.Graph().graph_rel(next));
+		}
+		graph_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		Graph(){
+			const obj = new this.$.$mpds_visavis_plot_graph();
+			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.graph_click) = (next) => ((this.graph_click(next)));
+			return obj;
+		}
+	};
+	($mol_mem(($.$mpds_visavis_plot.prototype), "json_request"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "json_cmp_request"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "multi_requests"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "notify"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "Fullscreen"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "show_demo_warn"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "Demo_warn"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "Expand_icon"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "fullscreen"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "nonformers_checked"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "matrix_fixel_checked"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "matrix_click"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "Matrix"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "show_fixel"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "cube_fixel_checked"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "cube_click"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "Cube"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "phase_click"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "Phase"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "bar_click"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "Bar"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "discovery_click"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "Discovery"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "Eigen"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "pie_click"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "Pie"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "Scatter"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "nplots_changed"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "legend_click"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "Customscatter"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "Heatmap"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "graph_click"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "Graph"));
+
+
 ;
 "use strict";
 var $;
@@ -23958,7 +20746,10 @@ var $;
     }
     $.$mol_view_component = $mol_view_component;
 })($ || ($ = {}));
-//mol/view/component/component.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -24067,14 +20858,14 @@ var $;
         $mol_view_component($mpds_visavis_plot);
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/plot.view.ts
+
 ;
 "use strict";
 var $;
 (function ($) {
     $mol_style_attach("mpds/visavis/plot/plot.view.css", "[mpds_visavis_plot][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_plot_matrix_plot][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_plot_matrix_root][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_plot_graph_root][mol_view_error]:not([mol_view_error=\"Promise\"]),\n[mpds_visavis_lib_plotly_view][mol_view_error]:not([mol_view_error=\"Promise\"]) {\n    background-image: none;\n\tpadding-top: 6rem;\n    align-items: flex-start;\n    justify-content: center;\n}\n\n[mpds_visavis_plot],\n[mpds_visavis_plot] .js-plotly-plot .plotly,\n[mpds_visavis_plot] .js-plotly-plot .plotly div {\n\tfont-family: inherit;\n}\n\n[mpds_visavis_plot][fullscreen] {\n\tposition: fixed;\n\tz-index: 9999;\n\ttop: 0;\n\tleft: 0;\n\tright: 0;\n\tbottom: 0;\n}\n");
 })($ || ($ = {}));
-//mpds/visavis/plot/-css/plot.view.css.ts
+
 ;
 "use strict";
 var $;
@@ -24107,355 +20898,263 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/plot/plot.view.css.ts
+
 ;
-"use strict";
-var $;
-(function ($) {
-    class $mpds_visavis_app extends $mol_book2 {
-        attr() {
-            return {
-                mol_theme: "$mol_theme_light"
-            };
-        }
-        title() {
-            return "Vis-à-vis";
-        }
-        examples() {
-            return {
-                "Bar plot": "/mpds/visavis/examples/bar_sci_literature.json",
-                "Pie plot": "/mpds/visavis/examples/pie_overview_Pu.json",
-                "Scatter plot": "/mpds/visavis/examples/customscatter_Ge_elastic_constant.json",
-                "Another scatter plot": "/mpds/visavis/examples/scatter_SrTiO3_thermal_expansion.json",
-                "Custom scatter plot": "/mpds/visavis/examples/eigenplot_bands_CaTiO3.json",
-                "Another custom scatter plot": "/mpds/visavis/examples/eigenplot_dos_CaTiO3.json",
-                "PCA plot": "/mpds/visavis/examples/discovery_ferroelectrics.json",
-                "Graph plot": "/mpds/visavis/examples/graph_ternary_Sr_Ru_O.json",
-                "Matrix 2d plot": "/mpds/visavis/examples/matrix_square_Pu.json",
-                "Matrix 2d heatmap plot": "/mpds/visavis/examples/matrix.heatmap.json",
-                "Cube 3d plot": "/mpds/visavis/examples/plot3d_cube_Pu.json",
-                "Cube 3d heatmap plot": "/mpds/visavis/examples/plot3d_heatmap.json",
-                "Binary phase diagram": "/mpds/visavis/examples/phase_diagram_Ga_In_binary_eutectics.json",
-                "Ternary phase diagram": "/mpds/visavis/examples/pd_phase_equilibria_fuel_cell_cathode_electrolyte.json"
-            };
-        }
-        Placeholder() {
-            return null;
-        }
-        pages() {
-            return [
-                this.Start_page(),
-                this.Menu(),
-                this.Plot_opened()
-            ];
-        }
-        Plot_page(id) {
-            const obj = new this.$.$mol_page();
-            obj.title = () => this.plot_id(id);
-            obj.Body_content = () => this.Plot_view(id);
-            return obj;
-        }
-        drop_file(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        Upload_label_choose() {
-            const obj = new this.$.$mol_paragraph();
-            obj.title = () => "Choose a plot JSON file";
-            return obj;
-        }
-        Upload_label_drop() {
-            const obj = new this.$.$mol_paragraph();
-            obj.title = () => "(drag and drop is supported)";
-            return obj;
-        }
-        files_read(next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        Start_page_upload() {
-            const obj = new this.$.$mol_button_open();
-            obj.accept = () => "application/json";
-            obj.files = (next) => this.files_read(next);
-            return obj;
-        }
-        Upload_content() {
-            const obj = new this.$.$mol_list();
-            obj.sub = () => [
-                this.Upload_label_choose(),
-                this.Upload_label_drop(),
-                this.Start_page_upload()
-            ];
-            return obj;
-        }
-        Examples_open() {
-            const obj = new this.$.$mol_link();
-            obj.title = () => "or browse examples";
-            obj.arg = () => ({
-                section: "examples"
-            });
-            return obj;
-        }
-        Start_page_content() {
-            const obj = new this.$.$mol_list();
-            obj.rows = () => [
-                this.Upload_content(),
-                this.Examples_open()
-            ];
-            return obj;
-        }
-        Start_page() {
-            const obj = new this.$.$mol_drop();
-            obj.receive = (next) => this.drop_file(next);
-            obj.Sub = () => this.Start_page_content();
-            return obj;
-        }
-        History_link() {
-            const obj = new this.$.$mol_link();
-            obj.title = () => "Uploads";
-            obj.arg = () => ({
-                section: null
-            });
-            return obj;
-        }
-        Examples_link() {
-            const obj = new this.$.$mol_link();
-            obj.title = () => "Examples";
-            obj.arg = () => ({
-                section: "examples",
-                file: null
-            });
-            return obj;
-        }
-        Source() {
-            const obj = new this.$.$mol_link_source();
-            obj.uri = () => "https://github.com/mpds-io/visavis";
-            return obj;
-        }
-        History_upload_label() {
-            const obj = new this.$.$mol_paragraph();
-            obj.title = () => "Choose a plot JSON file";
-            return obj;
-        }
-        History_upload_icon() {
-            const obj = new this.$.$mol_icon_upload();
-            return obj;
-        }
-        History_upload_native() {
-            const obj = new this.$.$mol_button_open_native();
-            obj.accept = () => "application/json";
-            obj.files = (next) => this.files_read(next);
-            return obj;
-        }
-        History_upload() {
-            const obj = new this.$.$mol_button_minor();
-            obj.sub = () => [
-                this.History_upload_label(),
-                this.History_upload_icon(),
-                this.History_upload_native()
-            ];
-            return obj;
-        }
-        History_drop_area() {
-            const obj = new this.$.$mol_drop();
-            obj.receive = (next) => this.drop_file(next);
-            obj.Sub = () => this.History_upload();
-            return obj;
-        }
-        history_drop(id, next) {
-            if (next !== undefined)
-                return next;
-            return null;
-        }
-        Plot_drop_icon(id) {
-            const obj = new this.$.$mol_icon_delete();
-            return obj;
-        }
-        Plot_drop(id) {
-            const obj = new this.$.$mol_button_minor();
-            obj.click = (next) => this.history_drop(id, next);
-            obj.sub = () => [
-                this.Plot_drop_icon(id)
-            ];
-            return obj;
-        }
-        History_plot_link(id) {
-            const obj = new this.$.$mol_view();
-            obj.sub = () => [
-                this.Plot_link(id),
-                this.Plot_drop(id)
-            ];
-            return obj;
-        }
-        history_rows() {
-            return [
-                this.History_plot_link("0")
-            ];
-        }
-        History_rows() {
-            const obj = new this.$.$mol_list();
-            obj.rows = () => this.history_rows();
-            return obj;
-        }
-        History() {
-            const obj = new this.$.$mol_list();
-            obj.title = () => "Uploads";
-            obj.sub = () => [
-                this.History_drop_area(),
-                this.History_rows()
-            ];
-            return obj;
-        }
-        plot_id(id) {
-            return "";
-        }
-        Plot_link(id) {
-            const obj = new this.$.$mol_link();
-            obj.arg = () => ({
-                file: this.plot_id(id)
-            });
-            obj.title = () => this.plot_id(id);
-            return obj;
-        }
-        example_rows() {
-            return [
-                this.Plot_link("0")
-            ];
-        }
-        Examples() {
-            const obj = new this.$.$mol_list();
-            obj.title = () => "Examples";
-            obj.rows = () => this.example_rows();
-            return obj;
-        }
-        menu_body() {
-            return [
-                this.History(),
-                this.Examples()
-            ];
-        }
-        Menu() {
-            const obj = new this.$.$mol_page();
-            obj.title = () => "Vis-à-vis";
-            obj.tools = () => [
-                this.History_link(),
-                this.Examples_link(),
-                this.Source()
-            ];
-            obj.body = () => this.menu_body();
-            return obj;
-        }
-        Plot_opened() {
-            return null;
-        }
-        plot_raw(id) {
-            return null;
-        }
-        Plot_view(id) {
-            const obj = new this.$.$mpds_visavis_plot();
-            obj.plot_raw = () => this.plot_raw(id);
-            obj.show_setup = () => true;
-            obj.show_fixel = () => false;
-            obj.show_demo_warn = () => false;
-            return obj;
-        }
-    }
-    __decorate([
-        $mol_mem_key
-    ], $mpds_visavis_app.prototype, "Plot_page", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "drop_file", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "Upload_label_choose", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "Upload_label_drop", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "files_read", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "Start_page_upload", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "Upload_content", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "Examples_open", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "Start_page_content", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "Start_page", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "History_link", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "Examples_link", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "Source", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "History_upload_label", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "History_upload_icon", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "History_upload_native", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "History_upload", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "History_drop_area", null);
-    __decorate([
-        $mol_mem_key
-    ], $mpds_visavis_app.prototype, "history_drop", null);
-    __decorate([
-        $mol_mem_key
-    ], $mpds_visavis_app.prototype, "Plot_drop_icon", null);
-    __decorate([
-        $mol_mem_key
-    ], $mpds_visavis_app.prototype, "Plot_drop", null);
-    __decorate([
-        $mol_mem_key
-    ], $mpds_visavis_app.prototype, "History_plot_link", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "History_rows", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "History", null);
-    __decorate([
-        $mol_mem_key
-    ], $mpds_visavis_app.prototype, "Plot_link", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "Examples", null);
-    __decorate([
-        $mol_mem
-    ], $mpds_visavis_app.prototype, "Menu", null);
-    __decorate([
-        $mol_mem_key
-    ], $mpds_visavis_app.prototype, "Plot_view", null);
-    $.$mpds_visavis_app = $mpds_visavis_app;
-})($ || ($ = {}));
-//mpds/visavis/app/-view.tree/app.view.tree.ts
+	($.$mpds_visavis_app) = class $mpds_visavis_app extends ($.$mol_book2) {
+		attr(){
+			return {"mol_theme": "$mol_theme_light"};
+		}
+		title(){
+			return "Vis-à-vis";
+		}
+		examples(){
+			return {
+				"Bar plot": "/mpds/visavis/examples/bar_sci_literature.json", 
+				"Pie plot": "/mpds/visavis/examples/pie_overview_Pu.json", 
+				"Scatter plot": "/mpds/visavis/examples/customscatter_Ge_elastic_constant.json", 
+				"Another scatter plot": "/mpds/visavis/examples/scatter_SrTiO3_thermal_expansion.json", 
+				"Custom scatter plot": "/mpds/visavis/examples/eigenplot_bands_CaTiO3.json", 
+				"Another custom scatter plot": "/mpds/visavis/examples/eigenplot_dos_CaTiO3.json", 
+				"PCA plot": "/mpds/visavis/examples/discovery_ferroelectrics.json", 
+				"Graph plot": "/mpds/visavis/examples/graph_ternary_Sr_Ru_O.json", 
+				"Matrix 2d plot": "/mpds/visavis/examples/matrix_square_Pu.json", 
+				"Matrix 2d heatmap plot": "/mpds/visavis/examples/matrix.heatmap.json", 
+				"Cube 3d plot": "/mpds/visavis/examples/plot3d_cube_Pu.json", 
+				"Cube 3d heatmap plot": "/mpds/visavis/examples/plot3d_heatmap.json", 
+				"Binary phase diagram": "/mpds/visavis/examples/phase_diagram_Ga_In_binary_eutectics.json", 
+				"Ternary phase diagram": "/mpds/visavis/examples/pd_phase_equilibria_fuel_cell_cathode_electrolyte.json"
+			};
+		}
+		Placeholder(){
+			return null;
+		}
+		pages(){
+			return [
+				(this.Start_page()), 
+				(this.Menu()), 
+				(this.Plot_opened())
+			];
+		}
+		Plot_page(id){
+			const obj = new this.$.$mol_page();
+			(obj.title) = () => ((this.plot_id(id)));
+			(obj.Body_content) = () => ((this.Plot_view(id)));
+			return obj;
+		}
+		drop_file(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		Upload_label_choose(){
+			const obj = new this.$.$mol_paragraph();
+			(obj.title) = () => ("Choose a plot JSON file");
+			return obj;
+		}
+		Upload_label_drop(){
+			const obj = new this.$.$mol_paragraph();
+			(obj.title) = () => ("(drag and drop is supported)");
+			return obj;
+		}
+		files_read(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		Start_page_upload(){
+			const obj = new this.$.$mol_button_open();
+			(obj.accept) = () => ("application/json");
+			(obj.files) = (next) => ((this.files_read(next)));
+			return obj;
+		}
+		Upload_content(){
+			const obj = new this.$.$mol_list();
+			(obj.sub) = () => ([
+				(this.Upload_label_choose()), 
+				(this.Upload_label_drop()), 
+				(this.Start_page_upload())
+			]);
+			return obj;
+		}
+		Examples_open(){
+			const obj = new this.$.$mol_link();
+			(obj.title) = () => ("or browse examples");
+			(obj.arg) = () => ({"section": "examples"});
+			return obj;
+		}
+		Start_page_content(){
+			const obj = new this.$.$mol_list();
+			(obj.rows) = () => ([(this.Upload_content()), (this.Examples_open())]);
+			return obj;
+		}
+		Start_page(){
+			const obj = new this.$.$mol_drop();
+			(obj.receive) = (next) => ((this.drop_file(next)));
+			(obj.Sub) = () => ((this.Start_page_content()));
+			return obj;
+		}
+		History_link(){
+			const obj = new this.$.$mol_link();
+			(obj.title) = () => ("Uploads");
+			(obj.arg) = () => ({"section": null});
+			return obj;
+		}
+		Examples_link(){
+			const obj = new this.$.$mol_link();
+			(obj.title) = () => ("Examples");
+			(obj.arg) = () => ({"section": "examples", "file": null});
+			return obj;
+		}
+		Source(){
+			const obj = new this.$.$mol_link_source();
+			(obj.uri) = () => ("https://github.com/mpds-io/visavis");
+			return obj;
+		}
+		History_upload_label(){
+			const obj = new this.$.$mol_paragraph();
+			(obj.title) = () => ("Choose a plot JSON file");
+			return obj;
+		}
+		History_upload_icon(){
+			const obj = new this.$.$mol_icon_upload();
+			return obj;
+		}
+		History_upload_native(){
+			const obj = new this.$.$mol_button_open_native();
+			(obj.accept) = () => ("application/json");
+			(obj.files) = (next) => ((this.files_read(next)));
+			return obj;
+		}
+		History_upload(){
+			const obj = new this.$.$mol_button_minor();
+			(obj.sub) = () => ([
+				(this.History_upload_label()), 
+				(this.History_upload_icon()), 
+				(this.History_upload_native())
+			]);
+			return obj;
+		}
+		History_drop_area(){
+			const obj = new this.$.$mol_drop();
+			(obj.receive) = (next) => ((this.drop_file(next)));
+			(obj.Sub) = () => ((this.History_upload()));
+			return obj;
+		}
+		history_drop(id, next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		Plot_drop_icon(id){
+			const obj = new this.$.$mol_icon_delete();
+			return obj;
+		}
+		Plot_drop(id){
+			const obj = new this.$.$mol_button_minor();
+			(obj.click) = (next) => ((this.history_drop(id, next)));
+			(obj.sub) = () => ([(this.Plot_drop_icon(id))]);
+			return obj;
+		}
+		History_plot_link(id){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ([(this.Plot_link(id)), (this.Plot_drop(id))]);
+			return obj;
+		}
+		history_rows(){
+			return [(this.History_plot_link("0"))];
+		}
+		History_rows(){
+			const obj = new this.$.$mol_list();
+			(obj.rows) = () => ((this.history_rows()));
+			return obj;
+		}
+		History(){
+			const obj = new this.$.$mol_list();
+			(obj.title) = () => ("Uploads");
+			(obj.sub) = () => ([(this.History_drop_area()), (this.History_rows())]);
+			return obj;
+		}
+		plot_id(id){
+			return "";
+		}
+		Plot_link(id){
+			const obj = new this.$.$mol_link();
+			(obj.arg) = () => ({"file": (this.plot_id(id))});
+			(obj.title) = () => ((this.plot_id(id)));
+			return obj;
+		}
+		example_rows(){
+			return [(this.Plot_link("0"))];
+		}
+		Examples(){
+			const obj = new this.$.$mol_list();
+			(obj.title) = () => ("Examples");
+			(obj.rows) = () => ((this.example_rows()));
+			return obj;
+		}
+		menu_body(){
+			return [(this.History()), (this.Examples())];
+		}
+		Menu(){
+			const obj = new this.$.$mol_page();
+			(obj.title) = () => ("Vis-à-vis");
+			(obj.tools) = () => ([
+				(this.History_link()), 
+				(this.Examples_link()), 
+				(this.Source())
+			]);
+			(obj.body) = () => ((this.menu_body()));
+			return obj;
+		}
+		Plot_opened(){
+			return null;
+		}
+		plot_raw(id){
+			return null;
+		}
+		Plot_view(id){
+			const obj = new this.$.$mpds_visavis_plot();
+			(obj.plot_raw) = () => ((this.plot_raw(id)));
+			(obj.show_setup) = () => (true);
+			(obj.show_fixel) = () => (false);
+			(obj.show_demo_warn) = () => (false);
+			return obj;
+		}
+	};
+	($mol_mem_key(($.$mpds_visavis_app.prototype), "Plot_page"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "drop_file"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "Upload_label_choose"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "Upload_label_drop"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "files_read"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "Start_page_upload"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "Upload_content"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "Examples_open"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "Start_page_content"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "Start_page"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "History_link"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "Examples_link"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "Source"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "History_upload_label"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "History_upload_icon"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "History_upload_native"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "History_upload"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "History_drop_area"));
+	($mol_mem_key(($.$mpds_visavis_app.prototype), "history_drop"));
+	($mol_mem_key(($.$mpds_visavis_app.prototype), "Plot_drop_icon"));
+	($mol_mem_key(($.$mpds_visavis_app.prototype), "Plot_drop"));
+	($mol_mem_key(($.$mpds_visavis_app.prototype), "History_plot_link"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "History_rows"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "History"));
+	($mol_mem_key(($.$mpds_visavis_app.prototype), "Plot_link"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "Examples"));
+	($mol_mem(($.$mpds_visavis_app.prototype), "Menu"));
+	($mol_mem_key(($.$mpds_visavis_app.prototype), "Plot_view"));
+
+
 ;
 "use strict";
 var $;
 (function ($) {
     $.$mol_blob = ($node.buffer?.Blob ?? $mol_dom_context.Blob);
 })($ || ($ = {}));
-//mol/blob/blob.ts
+
 ;
 "use strict";
 var $;
@@ -24470,7 +21169,7 @@ var $;
     }
     $.$mol_blob_text = $mol_blob_text;
 })($ || ($ = {}));
-//mol/blob/text/text.ts
+
 ;
 "use strict";
 var $;
@@ -24481,7 +21180,10 @@ var $;
     }
     $.$mol_blob_json = $mol_blob_json;
 })($ || ($ = {}));
-//mol/blob/json/json.ts
+
+;
+"use strict";
+
 ;
 "use strict";
 var $;
@@ -24638,7 +21340,7 @@ var $;
         $mol_view_component($mpds_visavis_app);
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/app/app.view.ts
+
 ;
 "use strict";
 var $;
@@ -24744,6 +21446,6 @@ var $;
         });
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
-//mpds/visavis/app/app.view.css.ts
+
 
 //# sourceMappingURL=web.js.map

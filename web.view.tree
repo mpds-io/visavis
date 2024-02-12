@@ -7598,6 +7598,7 @@ $mpds_visavis_plot_phase $mol_book2
 	auto /
 		<= subscribe_events null
 	phase_click? null
+	data_demo false
 	colors_by_nphases *
 		1 \#d1cde6
 		alt_1 \#9cf
@@ -7847,17 +7848,17 @@ $mol_touch $mol_plugin
 	allow_pan true
 	allow_zoom true
 	action_type? \
-	action_point? $mol_vector_2d /
+	action_point? $mol_vector_2d<number> /
 		NaN
 		NaN
 	-
 	start_pan? /
 		0
 		0
-	pan? $mol_vector_2d /
+	pan? $mol_vector_2d<number> /
 		0
 		0
-	pointer_center $mol_vector_2d /
+	pointer_center $mol_vector_2d<number> /
 		NaN
 		NaN
 	-
@@ -7991,7 +7992,7 @@ $mpds_visavis_plot $mol_view
 $mpds_visavis_app $mol_book2
 	attr * mol_theme \$mol_theme_light
 	title \Vis-à-vis
-	examples *
+	examples *string
 		\Bar plot
 			\/mpds/visavis/examples/bar_sci_literature.json
 		\Pie plot
