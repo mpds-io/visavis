@@ -1,6 +1,5 @@
 {
 	"name": "visavis",
-	"version": "1.0.0",
 	"private": true,
 	"description": "Web-viewer for plots in materials science, chemistry, and physics",
 	"keywords": [
