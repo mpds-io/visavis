@@ -281,7 +281,7 @@ namespace $.$$ {
 			svg.attr('width', this.size() + this.axis_width())
 				.attr('height', this.size() + this.axis_width())
 				// .style('font-size', this.range().bandwidth()) // for new d3 version
-				.style('font-size', this.range().rangeBand())
+				.style('font-size', this.range().rangeBand() + 'px')
 				.style('letter-spacing', '1px')
 			
 			const group = svg[ svg.select('g').empty() ? 'append' : 'select' ]('g')

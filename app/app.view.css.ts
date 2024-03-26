@@ -9,6 +9,9 @@ namespace $.$$ {
 				direction: 'column',
 			},
 			height: '100%',
+			background: {
+				color: 'white',
+			},
 		},
 
 		Start_page: {
