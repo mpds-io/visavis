@@ -157,14 +157,32 @@ $mol_drop $mol_ghost
 		\move
 		\link
 
-$mol_icon_script $mol_icon path \M17.8,20C17.4,21.2 16.3,22 15,22H5C3.3,22 2,20.7 2,19V18H5L14.2,18C14.6,19.2 15.7,20 17,20H17.8M19,2H8C6.3,2 5,3.3 5,5V16H16V17C16,17.6 16.4,18 17,18H18V5C18,4.4 18.4,4 19,4C19.6,4 20,4.4 20,5V6H22V5C22,3.3 20.7,2 19,2Z
+$mol_image $mol_view
+	dom_name \img
+	field *any
+		^
+		src <= uri \
+		alt <= title
+		loading <= loading \eager
+		decoding <= decoding \async
+		crossOrigin <= cors null
+	attr *any
+		^
+		width <= natural_width 0
+		height <= natural_height 0
+	event *any
+		load? <=> load? null
+	minimal_width 16
+	minimal_height 16
 
-$mol_icon_script_text $mol_icon path \M17.8,20C17.4,21.2 16.3,22 15,22H5C3.3,22 2,20.7 2,19V18H5L14.2,18C14.6,19.2 15.7,20 17,20H17.8M19,2C20.7,2 22,3.3 22,5V6H20V5C20,4.4 19.6,4 19,4C18.4,4 18,4.4 18,5V18H17C16.4,18 16,17.6 16,17V16H5V5C5,3.3 6.3,2 8,2H19M8,6V8H15V6H8M8,10V12H14V10H8Z
-
-$mol_link_source $mol_link
-	hint @ \Source code
+$mol_link_iconed $mol_link
 	sub /
-		<= Icon $mol_icon_script_text
+		<= Icon $mol_image
+			uri <= icon \
+			title \
+	content /
+		<= title <= uri
+	host \
 
 $mol_icon_delete $mol_icon path \M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19C6,20.1 6.9,21 8,21H16C17.1,21 18,20.1 18,19V7H6V19Z
 
@@ -354,7 +372,7 @@ $mpds_visavis_elements_list $mol_object
 		rcov \covalent radii
 		rmet \metallic radii
 		tmelt \melting temperature
-		eneg \electronegativit
+		eneg \electronegativity
 	list /
 		*
 			name \null
@@ -7800,7 +7818,7 @@ $mpds_visavis_plot_discovery $mol_view
 		<= Setup $mol_view
 			sub /
 				<= Elementals $mol_labeler
-					title \Elementals on
+					title \Select property
 					Content <= Elementals_check $mol_check_list
 						option_checked*? <=> elemental_checked*? false
 						options <= elementals_dict *
@@ -8051,8 +8069,9 @@ $mpds_visavis_app $mol_book2
 					arg *
 						section \examples
 						file null
-				<= Source $mol_link_source
+				<= Source $mol_link_iconed
 					uri \https://github.com/mpds-io/visavis
+					title \
 			body <= menu_body /
 				<= History $mol_list
 					title \Uploads
