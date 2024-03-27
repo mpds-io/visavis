@@ -20,7 +20,7 @@ $mpds_visavis_plot_discovery $mol_view
 		<= Setup $mol_view
 			sub /
 				<= Elementals $mol_labeler
-					title \Elementals on
+					title \Select property
 					Content <= Elementals_check $mol_check_list
 						option_checked*? <=> elemental_checked*? false
 						options <= elementals_dict *

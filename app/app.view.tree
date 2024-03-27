@@ -60,8 +60,9 @@ $mpds_visavis_app $mol_book2
 					arg *
 						section \examples
 						file null
-				<= Source $mol_link_source
+				<= Source $mol_link_iconed
 					uri \https://github.com/mpds-io/visavis
+					title \
 			body <= menu_body /
 				<= History $mol_list
 					title \Uploads

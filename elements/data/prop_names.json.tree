@@ -8,4 +8,4 @@
 	rcov \covalent radii
 	rmet \metallic radii
 	tmelt \melting temperature
-	eneg \electronegativit
+	eneg \electronegativity

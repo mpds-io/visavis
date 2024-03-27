@@ -9,7 +9,7 @@ $mpds_visavis_elements_list $mol_object
 		rcov \covalent radii
 		rmet \metallic radii
 		tmelt \melting temperature
-		eneg \electronegativit
+		eneg \electronegativity
 	list /
 		*
 			name \null
