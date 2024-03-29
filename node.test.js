@@ -5315,12 +5315,14 @@ var $;
 			(obj.background) = () => ((this.background(id)));
 			return obj;
 		}
+		Intersection(){
+			const obj = new this.$.$mpds_visavis_plot_legend_cmp_label();
+			(obj.label) = () => ("Intersection");
+			(obj.background) = () => ("gray");
+			return obj;
+		}
 		sub(){
-			return [
-				(this.Label("0")), 
-				"vs.", 
-				(this.Label("1"))
-			];
+			return [(this.Label("0")), (this.Intersection())];
 		}
 		labels(){
 			return [];
@@ -5330,6 +5332,7 @@ var $;
 		}
 	};
 	($mol_mem_key(($.$mpds_visavis_plot_legend_cmp.prototype), "Label"));
+	($mol_mem(($.$mpds_visavis_plot_legend_cmp.prototype), "Intersection"));
 	($.$mpds_visavis_plot_legend_cmp_label) = class $mpds_visavis_plot_legend_cmp_label extends ($.$mol_view) {
 		label(){
 			return "";
@@ -5357,9 +5360,11 @@ var $;
     (function ($$) {
         class $mpds_visavis_plot_legend_cmp extends $.$mpds_visavis_plot_legend_cmp {
             sub() {
-                return this.labels().length == 2
-                    ? super.sub()
-                    : this.labels().map((label, ind) => this.Label(ind));
+                const labels = this.labels();
+                return [
+                    ...labels.map((label, ind) => this.Label(ind)),
+                    ...labels.length > 1 ? [this.Intersection()] : []
+                ];
             }
             label(index) {
                 return this.labels()[index] ?? '';
@@ -5926,14 +5931,14 @@ var $;
 			(obj.checked) = (next) => ((this.nonformers_checked(next)));
 			return obj;
 		}
-		difference_checked(next){
+		intersection_only(next){
 			if(next !== undefined) return next;
 			return false;
 		}
-		Difference_on(){
+		Intersection_on(){
 			const obj = new this.$.$mol_check_box();
-			(obj.title) = () => ("Show difference");
-			(obj.checked) = (next) => ((this.difference_checked(next)));
+			(obj.title) = () => ("Show intersection");
+			(obj.checked) = (next) => ((this.intersection_only(next)));
 			return obj;
 		}
 		sort_control(next){
@@ -5970,7 +5975,7 @@ var $;
 			return [
 				(this.Fixel()), 
 				(this.Nonformers()), 
-				(this.Difference_on()), 
+				(this.Intersection_on()), 
 				(this.Order())
 			];
 		}
@@ -6086,8 +6091,8 @@ var $;
 	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Fixel"));
 	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "nonformers_checked"));
 	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Nonformers"));
-	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "difference_checked"));
-	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Difference_on"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "intersection_only"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Intersection_on"));
 	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "sort_control"));
 	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Order_switch"));
 	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "Order"));
@@ -14562,7 +14567,7 @@ var $;
             setup() {
                 return [
                     ...this.json().payload.fixel ? [this.Fixel()] : [],
-                    this.multi_jsons() ? this.Difference_on() : this.Nonformers(),
+                    this.multi_jsons() ? this.Intersection_on() : this.Nonformers(),
                     ...this.show_setup() ? [this.Order()] : [],
                 ];
             }
@@ -14599,6 +14604,18 @@ var $;
             }
             links() {
                 return this.json_master().payload.links.slice().sort((a, b) => a.value - b.value);
+            }
+            links_map() {
+                const map = new Map();
+                this.links().forEach(l => {
+                    const prev = map.get(l.cmt) ?? [];
+                    map.set(l.cmt, [...prev, l]);
+                });
+                return map;
+            }
+            intersection_label(cmt) {
+                const quantity = this.links_map().get(cmt)?.length;
+                return quantity > 1 ? String(quantity) : '';
             }
             links_value_min() {
                 return this.links()[0].value;
@@ -14685,24 +14702,30 @@ var $;
                 if (!cell.cmt)
                     return '';
                 const text = `${cell.cmt}: ${cell.z}`;
-                const title = !this.heatmap()
-                    ? `${text} ${cell.z === 1 ? 'entry' : 'entries'}`
-                    : text;
-                return title;
+                if (this.heatmap())
+                    return text;
+                const links = this.links_map().get(cell.cmt);
+                const title = `${text} ${cell.z === 1 ? 'entry' : 'entries'}`;
+                if (links?.length == 1)
+                    return title;
+                return `${title} (${links?.map(l => this.cmp_labels()[l.cmp ?? 0]).join('; ')})`;
             }
-            draw_cells(node, row) {
+            draw_cells(row_node, cells, intersection_only) {
                 const that = this;
-                d3.select(node)
+                const range = this.range();
+                const rangeBand = range.rangeBand();
+                const enters = d3.select(row_node)
                     .selectAll('.cell')
-                    .data(row.filter((d) => d.z))
-                    .enter().append('rect')
-                    .attr('class', (d) => d.nonformer ? 'nonformer cell' : 'cell')
+                    .data(cells.filter(d => d.z && (!intersection_only || that.intersection_label(d.cmt))))
+                    .enter();
+                const rects = enters.append('rect');
+                rects.attr('class', (d) => d.nonformer ? 'nonformer cell' : 'cell')
                     .attr('id', (d) => 'c_' + this.nodes()[d.x].num.toString() + '_' + this.nodes()[d.y].num.toString())
-                    .attr('x', (d) => this.range()(d.x))
-                    .attr('width', this.range().rangeBand())
-                    .attr('height', this.range().rangeBand())
+                    .attr('x', (d) => range(d.x))
+                    .attr('width', rangeBand)
+                    .attr('height', rangeBand)
                     .style('fill-opacity', (d) => this.opacity(d.z))
-                    .style('fill', (d) => this.color(d.z, d.cmp))
+                    .style('fill', (d) => that.intersection_label(d.cmt) ? 'gray' : this.color(d.z, d.cmp))
                     .on('mouseover', function (event) {
                     const cell_data = d3.select(this).data()[0];
                     d3.select(that.dom_node_actual()).selectAll(".row text").classed("active", (d, i) => { return i == cell_data.y; });
@@ -14719,37 +14742,46 @@ var $;
                     that.dom_node_actual().querySelector("#c_" + ids[0] + "_" + ids[1]).classList.add('visited');
                     const cell_data = sel.data()[0];
                     that.matrix_click({ cmt: cell_data.cmt });
-                })
-                    .append('svg:title').text((cell) => this.svg_title_text(cell));
+                });
+                rects.append('svg:title').text((cell) => this.svg_title_text(cell));
+                enters.append('text')
+                    .text((cell) => that.intersection_label(cell.cmt))
+                    .attr('x', (d) => range(d.x) + rangeBand / 2)
+                    .attr('dy', '.85em')
+                    .attr('text-anchor', 'middle')
+                    .attr('font-weight', 'bold')
+                    .attr('pointer-events', 'none');
             }
             draw() {
                 if (Number.isNaN(this.size()))
                     return;
                 const svg_element = $mol_wire_sync(document).createElementNS('http://www.w3.org/2000/svg', 'svg');
                 const svg = d3.select(svg_element);
-                svg.attr('width', this.size() + this.axis_width())
-                    .attr('height', this.size() + this.axis_width())
-                    .style('font-size', this.range().rangeBand() + 'px')
+                const size = this.size();
+                const rangeBand = this.range().rangeBand();
+                svg.attr('width', size + this.axis_width())
+                    .attr('height', size + this.axis_width())
+                    .style('font-size', rangeBand + 'px')
                     .style('letter-spacing', '1px');
                 const group = svg[svg.select('g').empty() ? 'append' : 'select']('g')
                     .attr('transform', `translate(${this.axis_width()},${this.axis_width()})`);
                 group.html("<defs><pattern id='nonformer' patternUnits='userSpaceOnUse' width='4' height='4'><path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' style='stroke:#ddd;stroke-width:1' /></pattern></defs>");
                 group.append('rect')
                     .attr('class', 'bgmatrix')
-                    .attr('width', this.size())
-                    .attr('height', this.size());
-                const draw_cells = (node, row) => this.draw_cells(node, row);
+                    .attr('width', size)
+                    .attr('height', size);
+                const draw_cells = (node, row) => this.draw_cells(node, row, this.intersection_only());
                 const row = group.selectAll('.row')
                     .data(this.matrix())
                     .enter().append('g')
                     .attr('class', 'row')
                     .attr('transform', (d, i) => 'translate(0,' + this.range()(i) + ')')
-                    .each(function (row) { draw_cells(this, row); });
+                    .each(function (cells) { draw_cells(this, cells); });
                 row.append('line')
-                    .attr('x2', this.size());
+                    .attr('x2', size);
                 row.append('text')
                     .attr('x', -6)
-                    .attr('y', this.range().rangeBand() / 2)
+                    .attr('y', rangeBand / 2)
                     .attr('dy', '.32em')
                     .attr('text-anchor', 'end')
                     .text((d, i) => this.nodes()[i].name);
@@ -14759,10 +14791,10 @@ var $;
                     .attr('class', 'column')
                     .attr('transform', (d, i) => 'translate(' + this.range()(i) + ')rotate(-90)');
                 column.append('line')
-                    .attr('x1', -this.size());
+                    .attr('x1', -size);
                 column.append('text')
                     .attr('x', 6)
-                    .attr('y', this.range().rangeBand() / 2)
+                    .attr('y', rangeBand / 2)
                     .attr('dy', '.32em')
                     .attr('text-anchor', 'start')
                     .text((d, i) => this.nodes()[i].name);
@@ -14897,6 +14929,12 @@ var $;
         ], $mpds_visavis_plot_matrix.prototype, "links", null);
         __decorate([
             $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "links_map", null);
+        __decorate([
+            $mol_mem_key
+        ], $mpds_visavis_plot_matrix.prototype, "intersection_label", null);
+        __decorate([
+            $mol_mem
         ], $mpds_visavis_plot_matrix.prototype, "heatmap", null);
         __decorate([
             $mol_mem_key
@@ -14923,7 +14961,7 @@ var $;
             $mol_mem
         ], $mpds_visavis_plot_matrix.prototype, "range", null);
         __decorate([
-            $mol_mem_key
+            $mol_action
         ], $mpds_visavis_plot_matrix.prototype, "draw_cells", null);
         __decorate([
             $mol_mem
@@ -17356,14 +17394,14 @@ var $;
 			(obj.checked) = (next) => ((this.nonformers_checked(next)));
 			return obj;
 		}
-		difference_checked(next){
+		intersection_only(next){
 			if(next !== undefined) return next;
 			return false;
 		}
-		Difference_on(){
+		Intersection_on(){
 			const obj = new this.$.$mol_check_box();
-			(obj.title) = () => ("Show difference");
-			(obj.checked) = (next) => ((this.difference_checked(next)));
+			(obj.title) = () => ("Show intersection");
+			(obj.checked) = (next) => ((this.intersection_only(next)));
 			return obj;
 		}
 		order_dict(){
@@ -17420,7 +17458,7 @@ var $;
 			return [
 				(this.Fixel()), 
 				(this.Nonformers()), 
-				(this.Difference_on()), 
+				(this.Intersection_on()), 
 				(this.X_order()), 
 				(this.Y_order()), 
 				(this.Z_order())
@@ -17531,8 +17569,8 @@ var $;
 	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Fixel"));
 	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "nonformers_checked"));
 	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Nonformers"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "difference_checked"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Difference_on"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "intersection_only"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Intersection_on"));
 	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "X_order_select"));
 	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "X_order"));
 	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Y_order_select"));
@@ -17626,7 +17664,7 @@ var $;
             setup() {
                 return [
                     ...this.show_fixel() ? [this.Fixel()] : [],
-                    this.multi_jsons() ? this.Difference_on() : this.Nonformers(),
+                    this.multi_jsons() ? this.Intersection_on() : this.Nonformers(),
                     ...this.show_setup() ? [this.X_order(), this.Y_order(), this.Z_order()] : [],
                 ];
             }
@@ -17698,27 +17736,81 @@ var $;
                     ...this.convert_to_axes(this.json().payload.points.x, this.json().payload.points.y, this.json().payload.points.z, this.x_sort(), this.y_sort(), this.z_sort())
                 };
             }
+            scatters() {
+                const values = new Map();
+                const entries = new Map();
+                const labels = new Set();
+                let points_x = [];
+                let points_y = [];
+                let points_z = [];
+                this.multi_jsons().map((json, index) => {
+                    const points = $mpds_visavis_plot_cube_json(json).payload.points;
+                    points.labels.forEach((label, i) => {
+                        const prev = entries.get(label) ?? [];
+                        entries.set(label, [...prev, index]);
+                        values.set([label, index], points.v[i]);
+                        if (!labels.has(label)) {
+                            labels.add(label);
+                            points_x.push(points.x[i]);
+                            points_y.push(points.y[i]);
+                            points_z.push(points.z[i]);
+                        }
+                    });
+                });
+                const converted = this.convert_to_axes(points_x, points_y, points_z, this.x_sort(), this.y_sort(), this.z_sort());
+                const points = new Map;
+                [...labels].forEach((label, i) => points.set(label, {
+                    x: converted.x[i],
+                    y: converted.y[i],
+                    z: converted.z[i],
+                }));
+                const new_scatter = (index) => {
+                    return {
+                        ...this.scatter3d_common(),
+                        marker: index == 'intersection' ? { color: "#303030", size: 5, opacity: 0.9 } : this.marker(index),
+                        x: [],
+                        y: [],
+                        z: [],
+                        v: [],
+                        text: [],
+                    };
+                };
+                const scatters_once = new Map();
+                const intersects = new_scatter('intersection');
+                entries.forEach((entry, label) => {
+                    const point = points.get(label);
+                    let scatter = intersects;
+                    if (entry.length == 1) {
+                        const index = entry[0];
+                        scatter = scatters_once.get(index) ?? new_scatter(index);
+                        scatters_once.set(index, scatter);
+                        scatter.v.push(values.get([label, index]));
+                    }
+                    scatter.text.push(label);
+                    scatter.x.push(point.x);
+                    scatter.y.push(point.y);
+                    scatter.z.push(point.z);
+                });
+                return { intersects, scatters_once };
+            }
             multi_dataset() {
                 if (!this.multi_jsons())
                     return null;
                 this.nonformers_checked(false);
-                return this.multi_jsons().map((json, index) => {
-                    const json_valid = $mpds_visavis_plot_cube_json(json);
-                    return {
-                        ...this.scatter3d_common(),
-                        text: json_valid.payload.points.labels,
-                        marker: this.marker(index),
-                        ...this.convert_to_axes(json_valid.payload.points.x, json_valid.payload.points.y, json_valid.payload.points.z, this.x_sort(), this.y_sort(), this.z_sort())
-                    };
-                });
+                const { intersects, scatters_once } = this.scatters();
+                return [
+                    intersects,
+                    ...this.intersection_only() ? [] : scatters_once.values()
+                ];
             }
             cmp_labels() {
                 return this.multi_jsons() ? this.multi_jsons().map((json) => json.answerto) : [];
             }
             data_shown() {
+                const dataset = this.multi_dataset();
                 return [
                     ...this.nonformers_checked() ? [this.data_nonformers()] : [],
-                    ...this.multi_dataset() ? this.multi_dataset() : [this.data()],
+                    ...dataset ? dataset : [this.data()],
                 ];
             }
             scene() {
@@ -17884,6 +17976,9 @@ var $;
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_cube.prototype, "data", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_cube.prototype, "scatters", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_cube.prototype, "multi_dataset", null);

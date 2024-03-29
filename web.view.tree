@@ -221,8 +221,9 @@ $mpds_visavis_plot_legend_cmp $mol_view
 		<= Label*0 $mpds_visavis_plot_legend_cmp_label
 			label <= label* \
 			background <= background* \
-		\vs.
-		<= Label*1
+		<= Intersection $mpds_visavis_plot_legend_cmp_label
+			label \Intersection
+			background \gray
 	labels /
 	colorset /
 
@@ -342,9 +343,9 @@ $mpds_visavis_plot_matrix $mol_view
 					hint \Continuous solid solutions and complete insolubility systems
 					title \Show non-formers
 					checked? <=> nonformers_checked? false
-				<= Difference_on $mol_check_box
-					title \Show difference
-					checked? <=> difference_checked? false
+				<= Intersection_on $mol_check_box
+					title \Show intersection
+					checked? <=> intersection_only? false
 				<= Order $mol_labeler
 					title \Sort by
 					Content <= Order_switch $mol_switch
@@ -7586,9 +7587,9 @@ $mpds_visavis_plot_cube $mol_view
 					hint \Continuous solid solutions and complete insolubility systems
 					title \Show non-formers
 					checked? <=> nonformers_checked? false
-				<= Difference_on $mol_check_box
-					title \Show difference
-					checked? <=> difference_checked? false
+				<= Intersection_on $mol_check_box
+					title \Show intersection
+					checked? <=> intersection_only? false
 				<= X_order $mol_labeler
 					title \X sort by
 					Content <= X_order_select $mol_select
