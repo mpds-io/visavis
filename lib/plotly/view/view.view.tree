@@ -1,9 +1,9 @@
 $mpds_visavis_lib_plotly_view $mol_view
-	sub / 
+	sub /
 		<= Plotly_root null
 	data /
 	layout *
 	plot_options *
 		displaylogo false
 		displayModeBar false
-		staticPlot false
+		staticPlot true

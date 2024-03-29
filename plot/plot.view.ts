@@ -9,7 +9,7 @@ namespace $.$$ {
 			const json = $mol_fetch.json( request ) as any
 
 			if ( json && json.error ) return $mol_fail( new $mol_data_error( json.error ) )
-			if ( !json || !json.use_visavis_type ) return $mol_fail( new $mol_data_error( 'Error: unknown data format' ) )	
+			if ( !json || !json.use_visavis_type ) return $mol_fail( new $mol_data_error( 'Error: unknown data format' ) )
 
 			return json
 		}
@@ -26,7 +26,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		multi_jsons() {
-			return this.multi_requests().length > 0 
+			return this.multi_requests().length > 0
 				? this.multi_requests().map( req => $mpds_visavis_plot.fetch_plot_json( req ) )
 				: this.json_cmp() ? [ this.json(), this.json_cmp() ] : null
 		}
@@ -42,23 +42,23 @@ namespace $.$$ {
 		@ $mol_mem
 		plot_raw() {
 			return this.multi_jsons()
-				? $mpds_visavis_plot_raw_from_json( this.multi_jsons()![0] ) 
+				? $mpds_visavis_plot_raw_from_json( this.multi_jsons()![0] )
 				: this.json()
-					? $mpds_visavis_plot_raw_from_json( this.json() ) 
+					? $mpds_visavis_plot_raw_from_json( this.json() )
 					: null
 		}
 
 		@ $mol_mem
 		sub() {
 			const phase_data_demo = this.plot_raw()?.type()! == 'pd' ? this.phase_data_demo() : false
-			const show_demo_warn = this.show_demo_warn() 
-				&& ! [ 'matrix', 'discovery' ].includes( this.plot_raw()?.type()! ) 
+			const show_demo_warn = this.show_demo_warn()
+				&& ! [ 'matrix', 'discovery' ].includes( this.plot_raw()?.type()! )
 				&& ! phase_data_demo
 
 			return this.plot_raw() ? [
 				... show_demo_warn ? [ this.Demo_warn() ] : [],
-				this.Fullscreen(), 
-				this.plots()[ this.plot_raw()!.type() ] 
+				this.Fullscreen(),
+				this.plots()[ this.plot_raw()!.type() ]
 			] : []
 		}
 

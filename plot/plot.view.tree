@@ -15,7 +15,7 @@ $mpds_visavis_plot $mol_view
 	Fullscreen $mol_check
 		Icon <= Expand_icon $mol_icon_arrow_expand_all
 		checked? <=> fullscreen? false
-	show_demo_warn? true
+	show_demo_warn? false
 	Demo_warn $mol_paragraph
 		title \You are using the limited demo. Buy the full access and support our work.
 	plots *

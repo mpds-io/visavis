@@ -6,7 +6,7 @@ namespace $.$$ {
 				name: $mol_data_string,
 				type: $mol_data_string,
 				mode: $mol_data_string,
-				interpolation: $mol_data_string,
+				//interpolation: $mol_data_string,
 				x: $mol_data_array( $mol_data_number ),
 				y: $mol_data_array( $mol_data_number ),
 			} )
@@ -28,7 +28,7 @@ namespace $.$$ {
 		subscribe_legend_click() {
 			const plotly_root = this.Plotly_root()
 			if (! plotly_root ) return
-			
+
 			const legends = $mpds_visavis_lib_plotly.d3.select( plotly_root ).selectAll('.legendtoggle')
 			// plotly_root.on('plotly_legendclick', (event: any)=> {
 			legends.on('click', (data: any) => {
@@ -43,7 +43,7 @@ namespace $.$$ {
 			const n = this.json().plots.length
 
 			this.nplots_changed( n )
-			
+
 			return n
 		}
 
@@ -92,8 +92,8 @@ namespace $.$$ {
 					ticklen: json.xrpd ? 0 : 4,
 					title: json.ytitle
 				},
-				font: { 
-					family: 'inherit', 
+				font: {
+					family: 'inherit',
 					size: 13,
 				},
 				margin: {
@@ -111,5 +111,5 @@ namespace $.$$ {
 		}
 
 	}
-	
+
 }

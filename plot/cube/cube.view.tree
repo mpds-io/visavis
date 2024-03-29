@@ -42,6 +42,10 @@ $mpds_visavis_plot_cube $mol_view
 				<= Root $mpds_visavis_lib_plotly_view
 					data <= data_shown /
 					layout <= layout *
+					plot_options *
+						displaylogo false
+						displayModeBar false
+						staticPlot false
 					Plotly_root => Plotly_root
 				<= Cmp_legend $mpds_visavis_plot_legend_cmp
 					labels <= cmp_labels /
@@ -69,7 +73,7 @@ $mpds_visavis_plot_cube $mol_view
 				<= X_order $mol_labeler
 					title \X sort by
 					Content <= X_order_select $mol_select
-						value? <=> x_sort? 
+						value? <=> x_sort?
 						dictionary <= order_dict *
 							nump \Periodic number
 							num \Atomic number
@@ -84,10 +88,10 @@ $mpds_visavis_plot_cube $mol_view
 				<= Y_order $mol_labeler
 					title \Y sort by
 					Content <= Y_order_select $mol_select
-						value? <=> y_sort? 
+						value? <=> y_sort?
 						dictionary <= order_dict
 				<= Z_order $mol_labeler
 					title \Z sort by
 					Content <= Z_order_select $mol_select
-						value? <=> z_sort? 
+						value? <=> z_sort?
 						dictionary <= order_dict

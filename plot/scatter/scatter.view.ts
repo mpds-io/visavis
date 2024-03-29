@@ -109,7 +109,7 @@ namespace $.$$ {
 			const json = this.json()
 
 			const x_data = this.x_data()
-		
+
 			const array = json.sample.measurement[0].property.matrix;
 			if (array[0][2] == array[0][3] && array[0][3] == array[0][4]){
 				// cubic
@@ -178,22 +178,20 @@ namespace $.$$ {
 		layout() {
 
 			const array = this.json().sample.measurement[0].property.matrix;
-			let y_comment = '';
-			if (array[0][2] == array[0][3] && array[0][3] == array[0][4]){
+
+			/*if (array[0][2] == array[0][3] && array[0][3] == array[0][4]){
 				// cubic
 			} else if (array[0][2] == array[0][3] && array[0][3] != array[0][4]){
 				// tetragonal, hexagonal, trigonal
-				y_comment = ' (diff.)';
 			} else {
 				// orthorhombic, monoclinic, triclinic
-				y_comment = ' (diff.)';
-			}
+			}*/
 
 			return {
 				showlegend: true,
 				legend: {
-					x: 100, 
-					y: 1, 
+					x: 100,
+					y: 1,
 					font: {
 						size: 14,
 					},
@@ -214,15 +212,15 @@ namespace $.$$ {
 					showticklabels: true,
 					zeroline: false,
 					ticklen: 4,
-					title: 'Cell parameters' + y_comment + ', A'
+					title: 'Cell parameters, Å'
 				},
 				font: {
-					family: 'inherit', 
+					family: 'inherit',
 					size: 13,
 				},
 			}
 		}
 
 	}
-	
+
 }
