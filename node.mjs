@@ -14624,8 +14624,7 @@ var $;
             links_map() {
                 const map = new Map();
                 this.links().forEach(l => {
-                    const prev = map.get(l.cmt) ?? [];
-                    map.set(l.cmt, [...prev, l]);
+                    map.get(l.cmt)?.push(l) ?? map.set(l.cmt, [l]);
                 });
                 return map;
             }
@@ -17762,8 +17761,7 @@ var $;
                 this.multi_jsons().map((json, index) => {
                     const points = $mpds_visavis_plot_cube_json(json).payload.points;
                     points.labels.forEach((label, i) => {
-                        const prev = entries.get(label) ?? [];
-                        entries.set(label, [...prev, index]);
+                        entries.get(label)?.push(index) ?? entries.set(label, [index]);
                         values.set([label, index], points.v[i]);
                         if (!labels.has(label)) {
                             labels.add(label);
