@@ -241,11 +241,15 @@ namespace $.$$ {
 			if (!cell.cmt) return ''
 
 			const text = `${cell.cmt}: ${cell.z}`
-			const title = !this.heatmap()
-				? `${text} ${cell.z === 1 ? 'entry' : 'entries'}`
-				: text
 
-			return title
+			if( this.heatmap() ) return text
+
+			const links = this.links_map().get( cell.cmt )
+			const title = `${text} ${cell.z === 1 ? 'entry' : 'entries'}`
+
+			if( links?.length == 1 ) return title
+
+			return `${title} (${ links?.map( l => this.cmp_labels()[ l.cmp ?? 0 ] ).join('; ') })`
 		}
 
 		@ $mol_action
