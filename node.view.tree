@@ -7320,14 +7320,14 @@ $mpds_visavis_elements_nonformer $mol_object
 		\Ce-Ta-Nb
 
 $mpds_visavis_lib_plotly_view $mol_view
-	sub / 
+	sub /
 		<= Plotly_root null
 	data /
 	layout *
 	plot_options *
 		displaylogo false
 		displayModeBar false
-		staticPlot false
+		staticPlot true
 
 $mol_pop $mol_view
 	showed? false
@@ -7561,6 +7561,10 @@ $mpds_visavis_plot_cube $mol_view
 				<= Root $mpds_visavis_lib_plotly_view
 					data <= data_shown /
 					layout <= layout *
+					plot_options *
+						displaylogo false
+						displayModeBar false
+						staticPlot false
 					Plotly_root => Plotly_root
 				<= Cmp_legend $mpds_visavis_plot_legend_cmp
 					labels <= cmp_labels /
@@ -7588,7 +7592,7 @@ $mpds_visavis_plot_cube $mol_view
 				<= X_order $mol_labeler
 					title \X sort by
 					Content <= X_order_select $mol_select
-						value? <=> x_sort? 
+						value? <=> x_sort?
 						dictionary <= order_dict *
 							nump \Periodic number
 							num \Atomic number
@@ -7603,12 +7607,12 @@ $mpds_visavis_plot_cube $mol_view
 				<= Y_order $mol_labeler
 					title \Y sort by
 					Content <= Y_order_select $mol_select
-						value? <=> y_sort? 
+						value? <=> y_sort?
 						dictionary <= order_dict
 				<= Z_order $mol_labeler
 					title \Z sort by
 					Content <= Z_order_select $mol_select
-						value? <=> z_sort? 
+						value? <=> z_sort?
 						dictionary <= order_dict
 
 $mpds_visavis_plot_phase $mol_book2
@@ -7946,7 +7950,7 @@ $mpds_visavis_plot $mol_view
 	Fullscreen $mol_check
 		Icon <= Expand_icon $mol_icon_arrow_expand_all
 		checked? <=> fullscreen? false
-	show_demo_warn? true
+	show_demo_warn? false
 	Demo_warn $mol_paragraph
 		title \You are using the limited demo. Buy the full access and support our work.
 	plots *

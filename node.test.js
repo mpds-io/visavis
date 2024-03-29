@@ -3905,7 +3905,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("mol/button/typed/typed.view.css", "[mol_button_typed] {\n\talign-content: center;\n\talign-items: center;\n\tpadding: var(--mol_gap_text);\n\tborder-radius: var(--mol_gap_round);\n\tgap: var(--mol_gap_space);\n\tuser-select: none;\n\tcursor: pointer;\n}\n\n[mol_button_typed][disabled] {\n\tpointer-events: none;\n}\n\n[mol_button_typed]:hover ,\n[mol_button_typed]:focus-visible {\n\tbackground-color: var(--mol_theme_hover);\n}\n\n[mol_button_typed]:active {\n\tcolor: var(--mol_theme_focus);\n}\n\n");
+    $mol_style_attach("mol/button/typed/typed.view.css", "[mol_button_typed] {\n\talign-content: center;\n\talign-items: center;\n\tpadding: var(--mol_gap_text);\n\tborder-radius: var(--mol_gap_round);\n\tgap: var(--mol_gap_space);\n\tuser-select: none;\n\tcursor: pointer;\n}\n\n[mol_button_typed][disabled] {\n\tpointer-events: none;\n}\n\n[mol_button_typed]:hover ,\n[mol_button_typed]:focus-visible {\n\tbox-shadow: inset 0 0 0 10rem var(--mol_theme_hover);\n}\n\n[mol_button_typed]:active {\n\tcolor: var(--mol_theme_focus);\n}\n\n");
 })($ || ($ = {}));
 
 ;
@@ -15027,7 +15027,7 @@ var $;
 			return {
 				"displaylogo": false, 
 				"displayModeBar": false, 
-				"staticPlot": false
+				"staticPlot": true
 			};
 		}
 	};
@@ -17266,6 +17266,11 @@ var $;
 			const obj = new this.$.$mpds_visavis_lib_plotly_view();
 			(obj.data) = () => ((this.data_shown()));
 			(obj.layout) = () => ((this.layout()));
+			(obj.plot_options) = () => ({
+				"displaylogo": false, 
+				"displayModeBar": false, 
+				"staticPlot": false
+			});
 			return obj;
 		}
 		cmp_labels(){
@@ -19888,15 +19893,6 @@ var $;
             }
             layout() {
                 const array = this.json().sample.measurement[0].property.matrix;
-                let y_comment = '';
-                if (array[0][2] == array[0][3] && array[0][3] == array[0][4]) {
-                }
-                else if (array[0][2] == array[0][3] && array[0][3] != array[0][4]) {
-                    y_comment = ' (diff.)';
-                }
-                else {
-                    y_comment = ' (diff.)';
-                }
                 return {
                     showlegend: true,
                     legend: {
@@ -19922,7 +19918,7 @@ var $;
                         showticklabels: true,
                         zeroline: false,
                         ticklen: 4,
-                        title: 'Cell parameters' + y_comment + ', A'
+                        title: 'Cell parameters, Å'
                     },
                     font: {
                         family: 'inherit',
@@ -20005,7 +20001,6 @@ var $;
                 name: $mol_data_string,
                 type: $mol_data_string,
                 mode: $mol_data_string,
-                interpolation: $mol_data_string,
                 x: $mol_data_array($mol_data_number),
                 y: $mol_data_array($mol_data_number),
             })),
@@ -21228,7 +21223,7 @@ var $;
 		}
 		show_demo_warn(next){
 			if(next !== undefined) return next;
-			return true;
+			return false;
 		}
 		Demo_warn(){
 			const obj = new this.$.$mol_paragraph();
