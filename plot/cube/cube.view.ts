@@ -140,7 +140,7 @@ namespace $.$$ {
 		@ $mol_mem
 		scatters() {
 
-			const values: Map< [string/*label*/, number/*json index*/], number/*v*/ > = new Map()
+			const values: Map< [ label: string, json_index: number ], number/*v*/ > = new Map()
 
 			const entries: Map< string/*point label*/, number[]/*json indexes*/> = new Map()
 
@@ -154,8 +154,8 @@ namespace $.$$ {
 				const points = $mpds_visavis_plot_cube_json( json ).payload.points
 				points.labels.forEach( (label, i)=> {
 
-					const prev = entries.get( label ) ?? []
-					entries.set( label, [ ...prev, index ] )
+					entries.get( label )?.push( index ) ?? entries.set( label, [ index ] )
+
 					values.set( [ label, index ], points.v[i] )
 
 					if( !labels.has( label ) ) {

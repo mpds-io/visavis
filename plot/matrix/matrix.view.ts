@@ -114,8 +114,7 @@ namespace $.$$ {
 			const map = new Map< string, typeof $mpds_visavis_plot_matrix_json_link['Value'][] >()
 
 			this.links().forEach( l => {
-				const prev = map.get( l.cmt ) ?? []
-				map.set( l.cmt, [ ...prev, l ] )
+				map.get( l.cmt )?.push( l ) ?? map.set( l.cmt, [ l ] )
 			} )
 
 			return map
