@@ -52,7 +52,7 @@ namespace $.$$ {
 		setup() {
 			return [
 				... this.json().payload.fixel ? [ this.Fixel() ] : [],
-				this.multi_jsons() ? this.Difference_on() : this.Nonformers(),
+				this.multi_jsons() ? this.Intersection_on() : this.Nonformers(),
 				... this.show_setup() ? [ this.Order() ] : [],
 			]
 		}
@@ -248,8 +248,8 @@ namespace $.$$ {
 			return title
 		}
 
-		@ $mol_mem_key
-		draw_cells(row_node: SVGElement, cells: Matrix_cell[]) {
+		@ $mol_action
+		draw_cells(row_node: SVGElement, cells: Matrix_cell[], intersection_only: boolean) {
 			const that = this
 
 			const range = this.range()
@@ -257,7 +257,7 @@ namespace $.$$ {
 
 			const enters = d3.select(row_node)
 				.selectAll('.cell')
-				.data(cells.filter((d: any) => d.z))
+				.data(cells.filter(d => d.z && ( !intersection_only || that.intersection_label( d.cmt ) )))
 				// .join('rect') // for new d3 version
 				.enter()
 				
@@ -331,7 +331,7 @@ namespace $.$$ {
 				.attr('width', size)
 				.attr('height', size);
 
-			const draw_cells = (node: any, row: Matrix_cell[]) => this.draw_cells(node, row)
+			const draw_cells = (node: any, row: Matrix_cell[]) => this.draw_cells(node, row, this.intersection_only())
 		
 			const row = group.selectAll('.row')
 				.data(this.matrix())
