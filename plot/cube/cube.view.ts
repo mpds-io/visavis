@@ -167,19 +167,19 @@ namespace $.$$ {
 
 				} )
 
-			} )	
+			} )
 
 			const converted = this.convert_to_axes(
-				points_x, points_y, points_z, 
-				this.x_sort() as Prop_name, 
-				this.y_sort() as Prop_name, 
+				points_x, points_y, points_z,
+				this.x_sort() as Prop_name,
+				this.y_sort() as Prop_name,
 				this.z_sort() as Prop_name,
 			)
 
-			const points: Map< string, {x:number, y:number, z:number} > = new Map
+			const points: Map< string, { x: number, y: number, z: number } > = new Map
 			;[...labels].forEach( ( label, i ) => points.set( label, {
-				x: converted.x[ i],
-				y: converted.y[ i ] ,
+				x: converted.x[ i ],
+				y: converted.y[ i ],
 				z: converted.z[ i ],
 			}) )
 			
