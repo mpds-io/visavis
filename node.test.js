@@ -5384,7 +5384,7 @@ var $;
     var $$;
     (function ($$) {
         $mol_style_define($mpds_visavis_plot_legend_cmp, {
-            lineHeight: '1',
+            lineHeight: '1.3',
             position: 'absolute',
             left: 0,
             bottom: 0,
@@ -5402,6 +5402,8 @@ var $;
         });
         $mol_style_define($mpds_visavis_plot_legend_cmp_label, {
             color: 'white',
+            fontSize: '0.8em',
+            fontStyle: 'italic',
             padding: {
                 left: $mol_gap.space,
                 right: $mol_gap.space,
