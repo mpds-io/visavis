@@ -29,7 +29,7 @@ namespace $.$$ {
 		setup() {
 			return [
 				... this.show_fixel() ? [ this.Fixel() ] : [],
-				this.multi_jsons() ? this.Difference_on() : this.Nonformers(),
+				this.multi_jsons() ? this.Intersection_on() : this.Nonformers(),
 				... this.show_setup() ? [ this.X_order(), this.Y_order(), this.Z_order() ] : [],
 			]
 		}
@@ -138,27 +138,103 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
+		scatters() {
+
+			const values: Map< [ label: string, json_index: number ], number/*v*/ > = new Map()
+
+			const entries: Map< string/*point label*/, number[]/*json indexes*/> = new Map()
+
+			const labels: Set< string > = new Set()
+			let points_x: number[] = []
+			let points_y: number[] = []
+			let points_z: number[] = []
+
+			this.multi_jsons().map( (json: any, index: number) => {
+
+				const points = $mpds_visavis_plot_cube_json( json ).payload.points
+				points.labels.forEach( (label, i)=> {
+
+					entries.get( label )?.push( index ) ?? entries.set( label, [ index ] )
+
+					values.set( [ label, index ], points.v[i] )
+
+					if( !labels.has( label ) ) {
+						labels.add( label )
+						points_x.push( points.x[i] )
+						points_y.push( points.y[i] )
+						points_z.push( points.z[i] )
+					}
+
+				} )
+
+			} )
+
+			const converted = this.convert_to_axes(
+				points_x, points_y, points_z,
+				this.x_sort() as Prop_name,
+				this.y_sort() as Prop_name,
+				this.z_sort() as Prop_name,
+			)
+
+			const points: Map< string, { x: number, y: number, z: number } > = new Map
+			;[...labels].forEach( ( label, i ) => points.set( label, {
+				x: converted.x[ i ],
+				y: converted.y[ i ],
+				z: converted.z[ i ],
+			}) )
+			
+			const new_scatter = ( index: number | 'intersection' )=> {
+				return {
+					...this.scatter3d_common(),
+					marker: index == 'intersection' ? {color: "#303030", size: 5, opacity: 0.9} : this.marker( index ),
+					x: [] as number[],
+					y: [] as number[],
+					z: [] as number[],
+					v: [] as number[],
+					text: [] as string[],
+				}
+			}
+
+			const scatters_once: Map<number, ReturnType< typeof new_scatter >> = new Map()
+			const intersects = new_scatter( 'intersection' )
+
+			entries.forEach( ( entry, label )=> {
+
+				const point = points.get( label )!
+
+				let scatter = intersects
+				if( entry.length == 1 ) {
+					const index = entry[ 0 ]
+					scatter = scatters_once.get( index ) ?? new_scatter( index )
+					scatters_once.set( index, scatter )
+
+					scatter.v.push( values.get( [ label, index ] )! )
+				}
+
+				scatter.text.push( label )
+				scatter.x.push( point.x )
+				scatter.y.push( point.y )
+				scatter.z.push( point.z )
+
+			} )
+
+			return { intersects, scatters_once }
+
+		}
+
+		@ $mol_mem
 		multi_dataset(): any[] | null {
+
 			if( ! this.multi_jsons() ) return null
 
 			this.nonformers_checked( false )
+			const { intersects, scatters_once } = this.scatters()
 
-			return this.multi_jsons().map( (json: any, index: number) => {
-				const json_valid = $mpds_visavis_plot_cube_json( json )
-				return {
-					...this.scatter3d_common(),
-					text: json_valid.payload.points.labels,
-					marker: this.marker( index ),
-					...this.convert_to_axes(
-						json_valid.payload.points.x, 
-						json_valid.payload.points.y, 
-						json_valid.payload.points.z, 
-						this.x_sort() as Prop_name, 
-						this.y_sort() as Prop_name, 
-						this.z_sort() as Prop_name,
-					)
-				}
-			} )
+			return [ 
+				intersects, 
+				... this.intersection_only() ? [] : scatters_once.values() 
+			]
+
 		}
 
 		@ $mol_mem
@@ -168,9 +244,10 @@ namespace $.$$ {
 
 		@ $mol_mem
 		data_shown() {
+			const dataset = this.multi_dataset()
 			return [
 				... this.nonformers_checked() ? [ this.data_nonformers() ] : [],
-				... this.multi_dataset() ? this.multi_dataset()! : [ this.data() ],
+				... dataset ? dataset! : [ this.data() ],
 			]
 		}
 
@@ -276,7 +353,7 @@ namespace $.$$ {
 			z_op?: any
 		){
 			//console.log(x_src, y_src, z_src, x_sort, y_sort, z_sort, x_op, y_op, z_op);
-			var converted = {'x': [], 'y': [], 'z': []};
+			var converted: {x: number[], y: number[], z: number[]} = {'x': [], 'y': [], 'z': []}
 		
 			if (x_op){
 				var x_temp = [];

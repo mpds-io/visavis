@@ -3,8 +3,9 @@ $mpds_visavis_plot_legend_cmp $mol_view
 		<= Label*0 $mpds_visavis_plot_legend_cmp_label
 			label <= label* \
 			background <= background* \
-		\vs.
-		<= Label*1
+		<= Intersection $mpds_visavis_plot_legend_cmp_label
+			label \Intersection
+			background \gray
 	labels /
 	colorset /
 

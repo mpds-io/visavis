@@ -2,7 +2,7 @@ namespace $.$$ {
 
 	$mol_style_define( $mpds_visavis_plot_legend_cmp, {
 
-		lineHeight: '1',
+		lineHeight: '1.3',
 
 		position: 'absolute',
 		left: 0,
@@ -11,7 +11,7 @@ namespace $.$$ {
 		padding: {
 			bottom: $mol_gap.space,
 		},
-		
+
 		gap: $mol_gap.block,
 		align: {
 			items: 'center',
@@ -25,6 +25,8 @@ namespace $.$$ {
 	$mol_style_define( $mpds_visavis_plot_legend_cmp_label, {
 
 		color: 'white',
+		fontSize: '0.8em',
+		fontStyle: 'italic',
 		padding: {
 			left: $mol_gap.space,
 			right: $mol_gap.space,

@@ -52,7 +52,7 @@ namespace $.$$ {
 		setup() {
 			return [
 				... this.json().payload.fixel ? [ this.Fixel() ] : [],
-				this.multi_jsons() ? this.Difference_on() : this.Nonformers(),
+				this.multi_jsons() ? this.Intersection_on() : this.Nonformers(),
 				... this.show_setup() ? [ this.Order() ] : [],
 			]
 		}
@@ -107,6 +107,23 @@ namespace $.$$ {
 		@ $mol_mem
 		links() {
 			return this.json_master().payload.links.slice().sort( (a, b) => a.value - b.value )
+		}
+
+		@ $mol_mem
+		links_map() {
+			const map = new Map< string, typeof $mpds_visavis_plot_matrix_json_link['Value'][] >()
+
+			this.links().forEach( l => {
+				map.get( l.cmt )?.push( l ) ?? map.set( l.cmt, [ l ] )
+			} )
+
+			return map
+		}
+
+		@ $mol_mem_key
+		intersection_label( cmt: string ): string {
+			const quantity = this.links_map().get( cmt )?.length!
+			return quantity > 1 ? String( quantity ) : ''
 		}
 
 		links_value_min() {
@@ -223,30 +240,41 @@ namespace $.$$ {
 			if (!cell.cmt) return ''
 
 			const text = `${cell.cmt}: ${cell.z}`
-			const title = !this.heatmap()
-				? `${text} ${cell.z === 1 ? 'entry' : 'entries'}`
-				: text
 
-			return title
+			if( this.heatmap() ) return text
+
+			const links = this.links_map().get( cell.cmt )
+			const title = `${text} ${cell.z === 1 ? 'entry' : 'entries'}`
+
+			if( links?.length == 1 ) return title
+
+			return `${title} (${ links?.map( l => this.cmp_labels()[ l.cmp ?? 0 ] ).join('; ') })`
 		}
 
-		@ $mol_mem_key
-		draw_cells(node: SVGElement, row: Matrix_cell[]) {
+		@ $mol_action
+		draw_cells(row_node: SVGElement, cells: Matrix_cell[], intersection_only: boolean) {
 			const that = this
-			d3.select(node)
+
+			const range = this.range()
+			const rangeBand = range.rangeBand()
+
+			const enters = d3.select(row_node)
 				.selectAll('.cell')
-				.data(row.filter((d: any) => d.z))
+				.data(cells.filter(d => d.z && ( !intersection_only || that.intersection_label( d.cmt ) )))
 				// .join('rect') // for new d3 version
-				.enter().append('rect')
-				.attr('class', (d: any) => d.nonformer ? 'nonformer cell' : 'cell')
+				.enter()
+				
+			const rects = enters.append('rect')
+			
+			rects.attr('class', (d: any) => d.nonformer ? 'nonformer cell' : 'cell')
 				.attr('id', (d: any) => 'c_' + this.nodes()[d.x].num.toString() + '_' + this.nodes()[d.y].num.toString())
-				.attr('x', (d: any) => this.range()(d.x) as any)
-				// .attr('width', this.range().bandwidth()) // for new d3 version
-				// .attr('height', this.range().bandwidth()) // for new d3 version
-				.attr('width', this.range().rangeBand())
-				.attr('height', this.range().rangeBand())
+				.attr('x', (d: any) => range(d.x) )
+				// .attr('width', range.bandwidth()) // for new d3 version
+				// .attr('height', range.bandwidth()) // for new d3 version
+				.attr('width', rangeBand)
+				.attr('height', rangeBand)
 				.style('fill-opacity', (d: any) => this.opacity(d.z))
-				.style('fill', (d: any) => this.color(d.z, d.cmp) )
+				.style('fill', (d: any) => that.intersection_label( d.cmt ) ? 'gray' : this.color(d.z, d.cmp))
 
 				.on('mouseover', function (this: any, event: PointerEvent) {
 					const cell_data = d3.select(this).data()[0] as Matrix_cell
@@ -268,7 +296,16 @@ namespace $.$$ {
 					that.matrix_click( { cmt: cell_data.cmt } )
 				} )
 
-				.append('svg:title').text((cell: any) => this.svg_title_text(cell))
+			rects.append('svg:title').text((cell: any) => this.svg_title_text(cell))
+				
+			enters.append('text')
+				.text((cell: any) => that.intersection_label(cell.cmt))
+				.attr('x', (d: any) => range(d.x) + rangeBand / 2 )
+				.attr('dy', '.85em')
+				.attr('text-anchor', 'middle')
+				.attr('font-weight', 'bold')
+				.attr('pointer-events', 'none')
+
 		}
 
 		@ $mol_mem
@@ -278,10 +315,13 @@ namespace $.$$ {
 			const svg_element = $mol_wire_sync( document ).createElementNS( 'http://www.w3.org/2000/svg', 'svg' )
 			const svg = d3.select(svg_element)
 
-			svg.attr('width', this.size() + this.axis_width())
-				.attr('height', this.size() + this.axis_width())
+			const size = this.size()
+			const rangeBand = this.range().rangeBand()
+
+			svg.attr('width', size + this.axis_width())
+				.attr('height', size + this.axis_width())
 				// .style('font-size', this.range().bandwidth()) // for new d3 version
-				.style('font-size', this.range().rangeBand() + 'px')
+				.style('font-size', rangeBand + 'px')
 				.style('letter-spacing', '1px')
 			
 			const group = svg[ svg.select('g').empty() ? 'append' : 'select' ]('g')
@@ -291,10 +331,10 @@ namespace $.$$ {
 		
 			group.append('rect')
 				.attr('class', 'bgmatrix')
-				.attr('width', this.size())
-				.attr('height', this.size());
+				.attr('width', size)
+				.attr('height', size);
 
-			const draw_cells = (node: any, row: Matrix_cell[]) => this.draw_cells(node, row)
+			const draw_cells = (node: any, row: Matrix_cell[]) => this.draw_cells(node, row, this.intersection_only())
 		
 			const row = group.selectAll('.row')
 				.data(this.matrix())
@@ -302,15 +342,15 @@ namespace $.$$ {
 				.enter().append('g')
 				.attr('class', 'row')
 				.attr('transform', (d: any, i: number) => 'translate(0,' + this.range()(i as any) + ')' )
-				.each(function (this: any, row: any) { draw_cells(this, row) })
+				.each(function (this: any, cells: any) { draw_cells(this, cells) })
 		
 			row.append('line')
-				.attr('x2', this.size());
+				.attr('x2', size);
 		
 			row.append('text')
 				.attr('x', -6)
 				// .attr('y', this.range().bandwidth() / 2) // for new d3 version
-				.attr('y', this.range().rangeBand() / 2)
+				.attr('y', rangeBand / 2)
 				.attr('dy', '.32em')
 				.attr('text-anchor', 'end')
 				.text((d: any, i: any)=> this.nodes()[i].name)
@@ -323,12 +363,12 @@ namespace $.$$ {
 				.attr('transform', (d: any, i: any)=> 'translate(' + this.range()(i) + ')rotate(-90)');
 		
 			column.append('line')
-				.attr('x1', -this.size());
+				.attr('x1', -size);
 		
 			column.append('text')
 				.attr('x', 6)
 				// .attr('y', this.range().bandwidth() / 2) // for new d3 version
-				.attr('y', this.range().rangeBand() / 2)
+				.attr('y', rangeBand / 2)
 				.attr('dy', '.32em')
 				.attr('text-anchor', 'start')
 				.text((d: any, i: any) => this.nodes()[i].name);
