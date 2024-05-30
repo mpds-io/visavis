@@ -185,10 +185,13 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		size() {
+		size_undebounced() {
 			const rect = this.Plot().view_rect()
+			this.$.$mol_wait_timeout( 300 )
 			if (!rect) return NaN
-			return Math.min(rect.width, rect.height) - this.plot_padding() - this.axis_width()
+
+			const size = Math.min(rect.width, rect.height) - this.plot_padding() - this.axis_width()
+			return this.size( size )
 		}
 
 		@ $mol_mem
