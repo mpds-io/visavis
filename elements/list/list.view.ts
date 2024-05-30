@@ -41,7 +41,7 @@ namespace $.$$ {
 			// const tree = $$.$mol_tree2_from_string( $mol_fetch.text( '/mpds/visavis/elements/data/prop_names.json.tree' ) )
 			// const json: any = $$.$mol_tree2_to_json( tree )
 			// return Prop_names( json )
-			return Prop_names( this.data().prop_names() as typeof Prop_names.Value )
+			return Prop_names( this.data().prop_names() )
 		}
 
 		@ $mol_mem

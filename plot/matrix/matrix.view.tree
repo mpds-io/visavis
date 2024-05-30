@@ -45,6 +45,10 @@ $mpds_visavis_plot_matrix $mol_view
 			sub <= plot_body /
 				<= Root $mol_view
 					render <= draw null
+				<= X_label $mol_view
+					sub / <= x_label \
+				<= Y_label $mol_view
+					sub / <= y_label \
 				<= Cmp_legend $mpds_visavis_plot_legend_cmp
 					labels <= cmp_labels /
 					colorset <= colorset
@@ -73,27 +77,17 @@ $mpds_visavis_plot_matrix $mol_view
 						title \Sort by
 						Content <= Order_switch $mol_switch
 							value? <=> sort_control? \nump
-							options <= order_dict *
-								nump \Periodic number
-								num \Atomic number
-								size \Atomic size
-								rea \Atomic reactivity
-								rpp \Pseudopotential radii
-								rion \Ionic radii
-								rcov \Covalent radii
-								rmet \Metallic radii
-								tmelt \Melting temperature
-								eneg \Electronegativity
+							options <= sort_dict *
 					<= X_sort_label $mol_labeler
 						title \Sort first axis by
 						Content <= X_sort $mol_select
 							value? <=> x_sort?
-							dictionary <= order_dict
+							dictionary <= sort_dict
 					<= Y_sort_label $mol_labeler
 						title \Sort second axis by
 						Content <= Y_sort $mol_select
 							value? <=> y_sort?
-							dictionary <= order_dict
+							dictionary <= sort_dict
 					<= X_op_label $mol_labeler
 						title \X joint sort operator
 						Content <= X_op $mol_select
