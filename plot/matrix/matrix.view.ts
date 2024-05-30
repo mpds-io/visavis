@@ -53,7 +53,7 @@ namespace $.$$ {
 			return [
 				... this.json().payload.fixel ? [ this.Fixel() ] : [],
 				this.multi_jsons() ? this.Intersection_on() : this.Nonformers(),
-				... this.show_setup() ? [ this.Order() ] : [],
+				... this.show_setup() ? this.sorting() : [],
 			]
 		}
 		
@@ -427,6 +427,24 @@ namespace $.$$ {
 				return next as never
 			}
 			return "nump"
+		}
+		
+		@ $mol_mem
+		x_op_str( next?: string ) {
+			if( next == 'null' ) {
+				this.x_op( null )
+				return next
+			}
+			return this.x_op( next )
+		}
+		
+		@ $mol_mem
+		y_op_str( next?: string ) {
+			if( next == 'null' ) {
+				this.y_op( null )
+				return next
+			}
+			return this.y_op( next )
 		}
 
 		@ $mol_mem

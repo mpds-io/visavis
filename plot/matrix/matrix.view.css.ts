@@ -37,6 +37,9 @@ namespace $.$$ {
 			flex: {
 				shrink: 1,
 			},
+			Option: {
+				padding: ['.25rem', '.75rem'],
+			},
 		},
 
 		Plot: {
