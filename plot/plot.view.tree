@@ -75,3 +75,4 @@ $mpds_visavis_plot $mol_view
 			plot_raw <= plot_raw
 			graph_rel? => graph_rel?
 			graph_click? <=> graph_click? null
+			notify? <=> notify?

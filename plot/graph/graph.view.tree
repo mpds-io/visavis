@@ -1,5 +1,6 @@
 $mpds_visavis_plot_graph $mol_view
 	plot_raw $mpds_visavis_plot_raw
+	notify? null
 	plugins /
 		<= Touch $mol_touch
 			allow_draw false
