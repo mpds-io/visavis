@@ -23,16 +23,6 @@ namespace $.$$ {
 			grow: 1
 		},
 
-		X_order: {
-			zIndex: 3,
-		},
-		Y_order: {
-			zIndex: 2,
-		},
-		Z_order: {
-			zIndex: 1,
-		},
-
 		Side_right: {
 			position: 'absolute',
 			top: '50%',
