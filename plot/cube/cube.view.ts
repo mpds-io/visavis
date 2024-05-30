@@ -61,6 +61,11 @@ namespace $.$$ {
 			return this.value_list().slice(-1)[0]
 		}
 
+		@ $mol_mem
+		sort_dict() {
+			return $mpds_visavis_elements_list.prop_names()
+		}
+
 		@ $mol_mem_key
 		order(order: Prop_name) {
 			return d3.range(95).sort( (a: any, b: any) =>

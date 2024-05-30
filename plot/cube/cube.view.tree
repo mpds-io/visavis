@@ -74,24 +74,14 @@ $mpds_visavis_plot_cube $mol_view
 					title \X sort by
 					Content <= X_order_select $mol_select
 						value? <=> x_sort?
-						dictionary <= order_dict *
-							nump \Periodic number
-							num \Atomic number
-							size \Atomic size
-							rea \Atomic reactivity
-							rpp \Pseudopotential radii
-							rion \Ionic radii
-							rcov \Covalent radii
-							rmet \Metallic radii
-							tmelt \Melting temperature
-							eneg \Electronegativity
+						dictionary <= sort_dict *
 				<= Y_order $mol_labeler
 					title \Y sort by
 					Content <= Y_order_select $mol_select
 						value? <=> y_sort?
-						dictionary <= order_dict
+						dictionary <= sort_dict
 				<= Z_order $mol_labeler
 					title \Z sort by
 					Content <= Z_order_select $mol_select
 						value? <=> z_sort?
-						dictionary <= order_dict
+						dictionary <= sort_dict
