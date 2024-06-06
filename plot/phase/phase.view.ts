@@ -90,7 +90,7 @@ namespace $.$$ {
 		els.forEach( function( el ) {
 			coeff = Math.round( ( obj_a[ el ] * a + obj_b[ el ] * b + obj_c[ el ] * c ) * 100 ) / 100
 			if( !coeff ) return
-			formula += el + ' &times; ' + coeff.toFixed( 2 ) + ', '
+			formula += el + ' × ' + coeff.toFixed( 2 ) + ', '
 		} )
 
 		return formula.slice( 0, formula.length - 2 )
@@ -299,19 +299,19 @@ namespace $.$$ {
 			})
 			
 			const canvas = plotly_root
+			const self = this
 
 			// rectangle
 			if (!this.is_triangle()) {
+
 				const fixed = fix_comp_impossible(json.comp_range, json.comp_start, json.comp_end);
 				const comp_start = fixed?.comp_start ?? json.comp_start
 				const comp_end = fixed?.comp_end ?? json.comp_end
-
 				const xaxis = canvas._fullLayout.xaxis
 				const yaxis = canvas._fullLayout.yaxis
 				const margin_l = canvas._fullLayout.margin.l
 				const margin_t = canvas._fullLayout.margin.t
 
-				const self = this
 
 				canvas.addEventListener('mousemove', $mol_wire_async((evt: any) => {
 					const comp = xaxis.p2c(evt.layerX - margin_l)
@@ -324,6 +324,29 @@ namespace $.$$ {
 						self.label('')
 					}
 				}))
+
+			} else { // triangle
+				
+				const svg_el = d3.select("g.layer-above")
+				const domrect = svg_el[0][0].getBoundingClientRect()
+				const origin_a = [domrect.x, domrect.y + domrect.height]
+				const origin_b = [domrect.x + domrect.width/2, domrect.y]
+				const origin_c = [domrect.x + domrect.width, domrect.y + domrect.height]
+
+				canvas.addEventListener('mousemove', function(evt: any){
+					//console.log(['x: ' + evt.x, 'y : ' + evt.y].join(' and '));
+					if (inside_triangle(evt.x, evt.y, origin_a[0], origin_a[1], origin_b[0], origin_b[1], origin_c[0], origin_c[1])){
+						const x0 = (evt.x - domrect.x)/domrect.width
+						const y0 = Math.sqrt(3)/2 * (1 - (evt.y - domrect.y)/domrect.height)
+						const triangle = cartesian_to_ternary(x0, y0)
+
+						const label = get_tri_pd_compound(triangle[0], triangle[1], triangle[2], json.comp_a, json.comp_b, json.comp_c)
+						self.label(label)
+					} else {
+						self.label('')
+					}
+				})
+
 			}
 		}
 
