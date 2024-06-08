@@ -204,7 +204,7 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		size_undebounced() {
+		size_debounced() {
 			const rect = this.Plot().view_rect()
 			this.$.$mol_wait_timeout( 300 )
 			if (!rect) return NaN
