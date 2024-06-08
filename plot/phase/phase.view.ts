@@ -392,10 +392,10 @@ namespace $.$$ {
 			const frame_rect = frame_node.getBoundingClientRect()
 			const actual_rect = actual_node.getBoundingClientRect()
 
-			const scaleX = frame_rect.width / actual_rect.width
-			const scaleY = frame_rect.height / actual_rect.height
-			const centerX = frame_coords.x + frame_rect.width / 2
-			const centerY = frame_coords.y + frame_rect.height // NB!
+			const scale_x = frame_rect.width / actual_rect.width
+			const scale_y = frame_rect.height / actual_rect.height
+			const center_x = frame_coords.x + frame_rect.width / 2
+			const center_y = frame_coords.y + frame_rect.height // NB!
 
 			// const origdims = [] as number[]
 			// d3.select( plotly_root ).selectAll( "[mpds_visavis_plot_phase_root] text.annotation-text" ).each( function( this: any ) {
@@ -405,9 +405,9 @@ namespace $.$$ {
 			const graph_node_bottom = frame_rect.top + frame_rect.height
 			const svg_node_bottom = actual_rect.top + actual_rect.height
 
-			const translateX = -centerX * ( scaleX - 1 )
-			const translate_y = -centerY * ( scaleY - 1 ) + (graph_node_bottom - svg_node_bottom)*scaleY
-			actual_el.attr( "transform", "translate(" + translateX + ", " + translate_y + ") scale(" + scaleX + ", " + scaleY + ")" )
+			const translate_x = -center_x * ( scale_x - 1 )
+			const translate_y = -center_y * ( scale_y - 1 ) + (graph_node_bottom - svg_node_bottom)*scale_y
+			actual_el.attr( "transform", "translate(" + translate_x + ", " + translate_y + ") scale(" + scale_x + ", " + scale_y + ")" )
 
 			const root_rect = root.getBoundingClientRect()
 			const abs_center_x = root_rect.x + root_rect.width / 2
@@ -415,8 +415,8 @@ namespace $.$$ {
 
 			d3.select( plotly_root ).selectAll( "[mpds_visavis_plot_phase_root] g.annotation" ).each( function( this: any, d: any, i: any ) {
 				const { x: abs_x, y: abs_y } = this.getBoundingClientRect()
-				const translate_x = (abs_center_x - abs_x) * ( 1 - scaleX )
-				const translate_y = (abs_center_y - abs_y) * ( 1 - scaleY ) - root_rect.height * 0.05
+				const translate_x = (abs_center_x - abs_x) * ( 1 - scale_x )
+				const translate_y = (abs_center_y - abs_y) * ( 1 - scale_y ) - root_rect.height * 0.05
 				d3.select( this ).attr( "transform", "translate(" + translate_x + ", " + translate_y + ")" )
 				// d3.select( this ).attr( "transform", "translate(" + ( -centerX * ( scaleX - 1 ) ) + ", " + ( -centerY * ( scaleY - 1 ) ) + ") scale(" + scaleX + ", " + scaleY + ") translate(" + ( -origdims[ i ] / 1.25 ) + ", 0) scale(1.75, 1)" )
 			} )
