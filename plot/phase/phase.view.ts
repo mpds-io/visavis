@@ -402,11 +402,11 @@ namespace $.$$ {
 			// 	origdims.push( parseInt( this.getBoundingClientRect().left ) )
 			// } )
 
-			const graph_node_bottom = frame_rect.top + frame_rect.height
-			const svg_node_bottom = actual_rect.top + actual_rect.height
+			const frame_bottom = frame_rect.top + frame_rect.height
+			const actual_bottom = actual_rect.top + actual_rect.height
 
 			const translate_x = -center_x * ( scale_x - 1 )
-			const translate_y = -center_y * ( scale_y - 1 ) + (graph_node_bottom - svg_node_bottom)*scale_y
+			const translate_y = -center_y * ( scale_y - 1 ) + (frame_bottom - actual_bottom)*scale_y
 			actual_el.attr( "transform", "translate(" + translate_x + ", " + translate_y + ") scale(" + scale_x + ", " + scale_y + ")" )
 
 			const root_rect = root.getBoundingClientRect()
