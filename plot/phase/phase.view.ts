@@ -244,13 +244,13 @@ namespace $.$$ {
 			const plotly_root = this.Plotly_root()
 			if (! plotly_root ) return
 
-			if ( this.is_triangle() ) this.pd_fix_triangle()
+			const is_triangle = this.is_triangle()
+			if ( is_triangle ) this.pd_fix_triangle()
 
 			// skip unsupported PD types
 			if ( this.json().diatype && this.json().diatype?.indexOf( 'projection' ) !== -1 ) return
 
 			const json = this.json()
-			const is_triangle = this.is_triangle()
 
 			const figures = d3.select( plotly_root ).selectAll('path')
 			figures.on('mouseover', function(this: any) {
@@ -302,7 +302,7 @@ namespace $.$$ {
 			const self = this
 
 			// rectangle
-			if (!this.is_triangle()) {
+			if (!is_triangle) {
 
 				const fixed = fix_comp_impossible(json.comp_range, json.comp_start, json.comp_end);
 				const comp_start = fixed?.comp_start ?? json.comp_start
@@ -383,30 +383,42 @@ namespace $.$$ {
 				return fn( b.x, b.y )
 			}
 
-			const svgroot = d3.select( plotly_root ).select( "svg.main-svg" ).node()
-			let graph_node = d3.select( plotly_root ).select( "[mpds_visavis_plot_phase_root] g.toplevel.plotbg" ).node() // graph frame
-			const graph_coords = get_absolute_coords( graph_node, svgroot )
-			const svg_el = d3.select( plotly_root ).select( "[mpds_visavis_plot_phase_root] g.layer-above" ) // actual drawing
-			let svg_node = svg_el.node()
+			const root = d3.select( plotly_root ).select( "svg.main-svg" ).node()
+			const frame_node = d3.select( plotly_root ).select( "[mpds_visavis_plot_phase_root] g.toplevel.plotbg" ).node() // graph frame
+			const frame_coords = get_absolute_coords( frame_node, root )
+			const actual_el = d3.select( plotly_root ).select( "[mpds_visavis_plot_phase_root] g.layer-above" ) // actual drawing
+			const actual_node = actual_el.node()
 
-			graph_node = graph_node.getBoundingClientRect()
-			svg_node = svg_node.getBoundingClientRect()
+			const frame_rect = frame_node.getBoundingClientRect()
+			const actual_rect = actual_node.getBoundingClientRect()
 
-			const scaleX = graph_node.width / svg_node.width
-			const scaleY = graph_node.height / svg_node.height
-			const centerX = graph_coords.x + graph_node.width / 2
-			const centerY = graph_coords.y + graph_node.height // NB!
+			const scaleX = frame_rect.width / actual_rect.width
+			const scaleY = frame_rect.height / actual_rect.height
+			const centerX = frame_coords.x + frame_rect.width / 2
+			const centerY = frame_coords.y + frame_rect.height // NB!
 
-			const origdims = [] as number[]
+			// const origdims = [] as number[]
+			// d3.select( plotly_root ).selectAll( "[mpds_visavis_plot_phase_root] text.annotation-text" ).each( function( this: any ) {
+			// 	origdims.push( parseInt( this.getBoundingClientRect().left ) )
+			// } )
 
-			d3.select( plotly_root ).selectAll( "[mpds_visavis_plot_phase_root] text.annotation-text" ).each( function( this: any ) {
-				origdims.push( parseInt( this.getBoundingClientRect().left ) )
-			} )
+			const graph_node_bottom = frame_rect.top + frame_rect.height
+			const svg_node_bottom = actual_rect.top + actual_rect.height
 
-			svg_el.attr( "transform", "translate(" + ( -centerX * ( scaleX - 1 ) ) + ", " + ( -centerY * ( scaleY - 1 ) ) + ") scale(" + scaleX + ", " + scaleY + ")" )
+			const translateX = -centerX * ( scaleX - 1 )
+			const translate_y = -centerY * ( scaleY - 1 ) + (graph_node_bottom - svg_node_bottom)*scaleY
+			actual_el.attr( "transform", "translate(" + translateX + ", " + translate_y + ") scale(" + scaleX + ", " + scaleY + ")" )
+
+			const root_rect = root.getBoundingClientRect()
+			const abs_center_x = root_rect.x + root_rect.width / 2
+			const abs_center_y = root_rect.y + root_rect.height / 2
 
 			d3.select( plotly_root ).selectAll( "[mpds_visavis_plot_phase_root] g.annotation" ).each( function( this: any, d: any, i: any ) {
-				d3.select( this ).attr( "transform", "translate(" + ( -centerX * ( scaleX - 1 ) ) + ", " + ( -centerY * ( scaleY - 1 ) ) + ") scale(" + scaleX + ", " + scaleY + ") translate(" + ( -origdims[ i ] / 1.25 ) + ", 0) scale(1.75, 1)" )
+				const { x: abs_x, y: abs_y } = this.getBoundingClientRect()
+				const translate_x = (abs_center_x - abs_x) * ( 1 - scaleX )
+				const translate_y = (abs_center_y - abs_y) * ( 1 - scaleY ) - root_rect.height * 0.05
+				d3.select( this ).attr( "transform", "translate(" + translate_x + ", " + translate_y + ")" )
+				// d3.select( this ).attr( "transform", "translate(" + ( -centerX * ( scaleX - 1 ) ) + ", " + ( -centerY * ( scaleY - 1 ) ) + ") scale(" + scaleX + ", " + scaleY + ") translate(" + ( -origdims[ i ] / 1.25 ) + ", 0) scale(1.75, 1)" )
 			} )
 		}
 
