@@ -53,7 +53,7 @@ namespace $.$$ {
 			return [
 				... this.json().payload.fixel ? [ this.Fixel() ] : [],
 				this.multi_jsons() ? this.Intersection_on() : this.Nonformers(),
-				... this.show_setup() ? [ this.Order() ] : [],
+				... this.show_setup() ? this.sorting() : [],
 			]
 		}
 		
@@ -61,6 +61,8 @@ namespace $.$$ {
 		plot_body() {
 			return [
 				this.Root(),
+				... this.x_op() ? [ this.X_label() ] : [],
+				... this.y_op() ? [ this.Y_label() ] : [],
 				... this.multi_jsons() ? [ this.Cmp_legend() ] : [],
 				... this.heatmap() ? [ this.Side_right() ] : [],
 			]
@@ -69,6 +71,23 @@ namespace $.$$ {
 		@ $mol_mem
 		json() {
 			return $mpds_visavis_plot_matrix_json( this.plot_raw().json() as any )
+		}
+
+		@ $mol_mem
+		sort_dict() {
+			return $mpds_visavis_elements_list.prop_names()
+		}
+
+		@ $mol_mem
+		x_label() {
+			const prop_name = this.x_sort() as keyof ReturnType<typeof $mpds_visavis_elements_list.prop_names>
+			return `${this.x_op()} / ${this.sort_dict()[ prop_name ]} →`
+		}
+
+		@ $mol_mem
+		y_label() {
+			const prop_name = this.y_sort() as keyof ReturnType<typeof $mpds_visavis_elements_list.prop_names>
+			return `${this.y_op()} / ${this.sort_dict()[ prop_name ]} →`
 		}
 
 		@ $mol_mem
@@ -185,10 +204,13 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		size() {
+		size_debounced() {
 			const rect = this.Plot().view_rect()
+			this.$.$mol_wait_timeout( 300 )
 			if (!rect) return NaN
-			return Math.min(rect.width, rect.height) - this.plot_padding() - this.axis_width()
+
+			const size = Math.min(rect.width, rect.height) - this.plot_padding() - this.axis_width()
+			return this.size( size )
 		}
 
 		@ $mol_mem
@@ -347,13 +369,15 @@ namespace $.$$ {
 			row.append('line')
 				.attr('x2', size);
 		
-			row.append('text')
-				.attr('x', -6)
-				// .attr('y', this.range().bandwidth() / 2) // for new d3 version
-				.attr('y', rangeBand / 2)
-				.attr('dy', '.32em')
-				.attr('text-anchor', 'end')
-				.text((d: any, i: any)=> this.nodes()[i].name)
+			if( !this.y_op() ) {
+				row.append('text')
+					.attr('x', -6)
+					// .attr('y', this.range().bandwidth() / 2) // for new d3 version
+					.attr('y', rangeBand / 2)
+					.attr('dy', '.32em')
+					.attr('text-anchor', 'end')
+					.text((d: any, i: any)=> this.nodes()[i].name)
+			}
 				
 			const column = group.selectAll('.column')
 				.data(this.matrix())
@@ -365,13 +389,15 @@ namespace $.$$ {
 			column.append('line')
 				.attr('x1', -size);
 		
-			column.append('text')
-				.attr('x', 6)
-				// .attr('y', this.range().bandwidth() / 2) // for new d3 version
-				.attr('y', rangeBand / 2)
-				.attr('dy', '.32em')
-				.attr('text-anchor', 'start')
-				.text((d: any, i: any) => this.nodes()[i].name);
+			if( !this.x_op() ) {
+				column.append('text')
+					.attr('x', 6)
+					// .attr('y', this.range().bandwidth() / 2) // for new d3 version
+					.attr('y', rangeBand / 2)
+					.attr('dy', '.32em')
+					.attr('text-anchor', 'start')
+					.text((d: any, i: any) => this.nodes()[i].name);
+			}
 
 			this.Root().dom_node_actual().replaceChildren( svg_element )
 		}
@@ -427,6 +453,24 @@ namespace $.$$ {
 				return next as never
 			}
 			return "nump"
+		}
+		
+		@ $mol_mem
+		x_op_str( next?: string ) {
+			if( next == 'null' ) {
+				this.x_op( null )
+				return next
+			}
+			return this.x_op( next )
+		}
+		
+		@ $mol_mem
+		y_op_str( next?: string ) {
+			if( next == 'null' ) {
+				this.y_op( null )
+				return next
+			}
+			return this.y_op( next )
 		}
 
 		@ $mol_mem

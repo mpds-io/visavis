@@ -2,9 +2,9 @@ path{pointer-events:painted;}
 g{pointer-events:painted;}
 
 /* PLOTLY SVG HACKS */
-@media all and (max-aspect-ratio:10/9){g.toplevel.aline, g.toplevel.bline, g.toplevel.cline{display:none;}}
+/* @media all and (max-aspect-ratio:10/9){g.toplevel.aline, g.toplevel.bline, g.toplevel.cline{display:none;}}
 @media all and (max-aspect-ratio:5/6){
     g.g-atitle, g.g-btitle, g.g-ctitle{transform:translateY(75px);}
     g.annotation{display:none;}
-}
+} */
 g.aaxis, g.baxis, g.caxis{display:none;}

@@ -33,9 +33,49 @@ namespace $.$$ {
 			transform: 'translateX(-50%)'
 		},
 
+		X_label: {
+			font: {
+				size: '0.875rem',
+				style: 'italic',
+			},
+			position: 'absolute',
+			left: 0,
+			top: 0,
+			width: '100%',
+			padding: {
+				bottom: $mol_gap.space,
+			},
+
+			gap: $mol_gap.block,
+			align: {
+				items: 'center',
+			},
+			justify: {
+				content: 'center',
+			}
+		},
+
+		Y_label: {
+			font: {
+				size: '0.875rem',
+				style: 'italic',
+			},
+			position: 'absolute',
+			transform: 'rotate(-90deg) translateY(-50%)',
+			left: 0,
+			top: '50%',
+			padding: {
+				bottom: $mol_gap.space,
+			},
+			gap: $mol_gap.block,
+		},
+
 		Order_switch: {
 			flex: {
 				shrink: 1,
+			},
+			Option: {
+				padding: ['.25rem', '.75rem'],
 			},
 		},
 

@@ -38,17 +38,11 @@ namespace $.$$ {
 
 		@ $mol_mem
 		static prop_names() {
-			// const tree = $$.$mol_tree2_from_string( $mol_fetch.text( '/mpds/visavis/elements/data/prop_names.json.tree' ) )
-			// const json: any = $$.$mol_tree2_to_json( tree )
-			// return Prop_names( json )
-			return Prop_names( this.data().prop_names() as typeof Prop_names.Value )
+			return Prop_names( this.data().prop_names() )
 		}
 
 		@ $mol_mem
 		static list() {
-			// const tree = $$.$mol_tree2_from_string( $mol_fetch.text( '/mpds/visavis/elements/data/elements.json.tree' ) )
-			// const json: any = tree.kids.map( tree => $$.$mol_tree2_to_json( tree ) )
-			// return Elements_list( json )
 			return Elements_list( this.data().list() )
 		}
 
