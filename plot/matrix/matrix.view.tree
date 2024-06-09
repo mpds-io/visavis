@@ -91,7 +91,7 @@ $mpds_visavis_plot_matrix $mol_view
 					<= X_op_label $mol_labeler
 						title \X joint sort operator
 						Content <= X_op $mol_select
-							value? <=> x_op_str?
+							value? <=> x_op_str? \null
 							dictionary <= op_dict *
 								null \none
 								diff \diff
@@ -102,5 +102,5 @@ $mpds_visavis_plot_matrix $mol_view
 					<= Y_op_label $mol_labeler
 						title \Y joint sort operator
 						Content <= Y_op $mol_select
-							value? <=> y_op_str?
+							value? <=> y_op_str? \null
 							dictionary <= op_dict
