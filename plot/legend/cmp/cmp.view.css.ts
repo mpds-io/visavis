@@ -6,7 +6,7 @@ namespace $.$$ {
 
 		position: 'absolute',
 		left: 0,
-		bottom: 0,
+		bottom: '6%',
 		width: '100%',
 		padding: {
 			bottom: $mol_gap.space,
