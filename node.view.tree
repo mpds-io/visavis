@@ -222,7 +222,7 @@ $mpds_visavis_plot_legend_cmp $mol_view
 			label <= label* \
 			background <= background* \
 		<= Intersection $mpds_visavis_plot_legend_cmp_label
-			label \Intersection
+			label \Intersection count
 			background \gray
 	labels /
 	colorset /
