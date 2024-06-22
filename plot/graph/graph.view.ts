@@ -39,7 +39,7 @@ namespace $.$$ {
 		json() {
 			return $mpds_visavis_plot_graph_json( this.plot_raw().json() as any )
 		}
-		
+
 		plot_title() {
 			return this.plot_raw().id()
 		}
@@ -55,10 +55,10 @@ namespace $.$$ {
 			const radii: Record<string, number> = {}
 			const foci: Record<string, string> = {}
 			let counter = 0
-		
+
 			const visavis_cache = {ref: json.payload, type: 'graph'};
 			const graph_rel = this.graph_rel() || json.graph_rel || 'prel';
-		
+
 			// filter edges and compute the distinct nodes from the links
 			visavis_cache.ref.forEach( (link) => {
 				if (link.type == graph_rel){
@@ -68,20 +68,20 @@ namespace $.$$ {
 					const lrep = { source: sourceNode, type: link.type, target: targetNode };
 					edges.push(lrep);
 					counter++;
-		
+
 				} else if (link.type == 'label'){
 					labels[link.source] = String(link.target);
-		
+
 				} else if (link.type == 'radius'){
 					const radius = Math.min($mol_data_number(link.target as number), 36)
 					radii[link.source] = radius + 2;
 				}
 			});
 			if (!counter) return $mol_fail( new $mol_data_error('Warning: nothing to show') )
-		
+
 			const circle_cls = graph_rel.slice(0, 1)
 			const text_cls = (counter > 25) ? "micro" : "macro"
-			
+
 			const table: Record<string, number> = {}
 
 			Object.keys(nodes).forEach( ( p,i ) => {
@@ -106,12 +106,12 @@ namespace $.$$ {
 		draw() {
 			// var width = predefined_h ? document.body.clientWidth : document.body.clientWidth - 15,
 			// 	height = predefined_h || parseInt(0.8 * width);
-		
+
 			const { nodes, edges, labels, radii, foci, table, circle_cls, text_cls } = this.data()
-			
+
 			const svg_element = this.Root().dom_node()
 			const svg = d3.select(svg_element)
-		
+
 			const force = d3.layout.force()
 				.nodes(d3.values(nodes))
 				.links(edges)
@@ -119,17 +119,17 @@ namespace $.$$ {
 				.gravity(0.3)
 				.charge(-2500)
 				.on("tick", tick)
-		
+
 			const drag = force.drag()
 				.on("dragstart", function(this: any, d: any){
 					d3.select(this).classed("fixed", d.fixed = true);
 				});
-		
+
 			const path = svg.append("g").selectAll("path")
 				.data(force.links())
 				.enter().append("path")
 				.attr("class", function(d: any){ return "edge " + d.type; });
-		
+
 			const circle = svg.append("g").selectAll("circle")
 				.data(force.nodes())
 				.enter().append("circle")
@@ -139,11 +139,11 @@ namespace $.$$ {
 				.on("mouseenter", ()=> this.allow_pan( false ))
 				.on("mouseleave", ()=> this.allow_pan( true ))
 				.call(drag);
-		
+
 			const text = svg.append("g").selectAll("g")
 				.data(force.nodes())
 				.enter().append("g");
-		
+
 			// a copy of the text with a thick white stroke for legibility
 			text.append("text")
 				.attr("x", -20)
@@ -151,7 +151,7 @@ namespace $.$$ {
 				.attr("class", "shadow " + text_cls)
 				.attr("id", function(d: any, i: any){ return "s_" + table[d.name] })
 				.html(function(d: any){ return labels[d.name] });
-		
+
 			text.append("text")
 				.attr("x", -20)
 				.attr("y", -10)
@@ -161,7 +161,7 @@ namespace $.$$ {
 				.on("mouseenter", ()=> this.allow_pan( false ))
 				.on("mouseleave", ()=> this.allow_pan( true ))
 				.call(drag);
-		
+
 			text.on("click", (d: any)=> {
 				const graph_mapping = {f: 'formulae', p: 'props', h: 'aetypes', t: 'lattices', a: 'codens', g: 'geos'}; //global const?
 				const found_fct = (graph_mapping as Record<string, string>)[ d.name.charAt(0) ]
@@ -169,21 +169,21 @@ namespace $.$$ {
 
 				this.graph_click( { facet: found_fct, label } )
 			});
-		
+
 			function tick(){
 				path.attr("d", direct);
 				circle.attr("transform", transform);
 				text.attr("transform", transform);
 			}
-		
+
 			function direct(d: Edge){
 				return "M" + d.source.x + "," + d.source.y + " " + d.target.x + "," + d.target.y;
 			}
-		
+
 			function transform(d: Node){
 				return "translate(" + d.x + "," + d.y + ")";
 			}
-		
+
 			force.start()
 			for (var i = 400; i > 0; i--) force.tick()
 			force.stop()
