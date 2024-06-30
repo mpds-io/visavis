@@ -1,4 +1,4 @@
-name: $mpds_visavis
+name: build demo
 
 on:
   workflow_dispatch:
