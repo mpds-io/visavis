@@ -16660,8 +16660,8 @@ var $;
                 })
                     .on('mouseover', function (event) {
                     const cell_data = d3.select(this).data()[0];
-                    d3.select(that.dom_node_actual()).selectAll(".row text").classed("active", (d, i) => { return i == cell_data.y; });
-                    d3.select(that.dom_node_actual()).selectAll(".column text").classed("active", (d, i) => { return i == cell_data.x; });
+                    d3.select(that.dom_node_actual()).selectAll(".row .element").classed("active", (d, i) => i == cell_data.y);
+                    d3.select(that.dom_node_actual()).selectAll(".column .element").classed("active", (d, i) => i == cell_data.x);
                 })
                     .on('mouseout', function (event) {
                     d3.select(that.dom_node_actual()).selectAll(".row text").classed("active", null);
@@ -16713,6 +16713,7 @@ var $;
                     .attr('x2', size);
                 if (!this.y_op()) {
                     row.append('text')
+                        .attr('class', 'element')
                         .attr('x', -6)
                         .attr('y', rangeBand / 2)
                         .attr('dy', '.32em')
@@ -16728,6 +16729,7 @@ var $;
                     .attr('x1', -size);
                 if (!this.x_op()) {
                     column.append('text')
+                        .attr('class', 'element')
                         .attr('x', 6)
                         .attr('y', rangeBand / 2)
                         .attr('dy', '.32em')
