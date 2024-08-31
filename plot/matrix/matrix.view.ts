@@ -199,7 +199,7 @@ namespace $.$$ {
 		datasets_type() {
 			const heatmap_datasets = this.heatmap_datasets()
 			if( heatmap_datasets.size == 0 ) {
-				return 'enitries'
+				return 'entries'
 			}
 			
 			const datesets_quantity = this.multi_jsons().length
