@@ -75,6 +75,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		heatmap() {
+			if( this.multi_jsons() ) return false
 			return this.json().payload.points.v.some(val => Math.floor(val) !== val)
 		}
 
