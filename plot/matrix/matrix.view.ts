@@ -202,8 +202,8 @@ namespace $.$$ {
 				return 'entries'
 			}
 			
-			const datesets_quantity = this.multi_jsons().length
-			if( datesets_quantity == 2 && heatmap_datasets.size == 2 ) {
+			const datesets_quantity = this.multi_jsons()?.length || 1
+			if( datesets_quantity == heatmap_datasets.size && heatmap_datasets.size <= 2 ) {
 				return 'heatmap'
 			}
 
