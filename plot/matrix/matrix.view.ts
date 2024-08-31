@@ -362,8 +362,8 @@ namespace $.$$ {
 
 				.on('mouseover', function (this: any, event: PointerEvent) {
 					const cell_data = d3.select(this).data()[0] as Matrix_cell
-					d3.select( that.dom_node_actual() ).selectAll( ".row text" ).classed( "active", (d: any, i: number)=> { return i == cell_data.y });
-					d3.select( that.dom_node_actual() ).selectAll( ".column text" ).classed( "active", (d: any, i: number)=> { return i == cell_data.x });
+					d3.select( that.dom_node_actual() ).selectAll( ".row .element" ).classed( "active", (d: any, i: number)=> i == cell_data.y )
+					d3.select( that.dom_node_actual() ).selectAll( ".column .element" ).classed( "active", (d: any, i: number)=> i == cell_data.x )
 				} )
 
 				.on('mouseout', function (this: any, event: PointerEvent) {
@@ -433,6 +433,7 @@ namespace $.$$ {
 		
 			if( !this.y_op() ) {
 				row.append('text')
+					.attr('class', 'element')
 					.attr('x', -6)
 					// .attr('y', this.range().bandwidth() / 2) // for new d3 version
 					.attr('y', rangeBand / 2)
@@ -453,6 +454,7 @@ namespace $.$$ {
 		
 			if( !this.x_op() ) {
 				column.append('text')
+					.attr('class', 'element')
 					.attr('x', 6)
 					// .attr('y', this.range().bandwidth() / 2) // for new d3 version
 					.attr('y', rangeBand / 2)
