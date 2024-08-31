@@ -242,6 +242,15 @@ namespace $.$$ {
 				matrix[cell.x][cell.y] = {...cell, x: cell.y, y: cell.x} // NB only AB-all
 			})
 
+			if (this.nonformers_checked()) {
+				for (const item of $mpds_visavis_elements_nonformer.pd_bin()) {
+					matrix[item[0]][item[1]].z = 1;
+					matrix[item[1]][item[0]].z = 1; // NB only AB-all
+					matrix[item[0]][item[1]].nonformer = true;
+					matrix[item[1]][item[0]].nonformer = true; // NB only AB-all
+				}
+			}
+
 			return matrix
 		}
 
