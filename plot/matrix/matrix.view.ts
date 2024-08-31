@@ -42,6 +42,7 @@ namespace $.$$ {
 		cmt: string
 		cmp: number
 		nonformer: boolean 
+		intersection?: number
 	}
 
 	type Prop_name = keyof ReturnType<typeof $mpds_visavis_elements_list.prop_names>
@@ -125,41 +126,95 @@ namespace $.$$ {
 
 		@ $mol_mem
 		links() {
-			return this.json_master().payload.links.slice().sort( (a, b) => a.value - b.value )
+			return this.json_master().payload.links
+		}
+
+		@ $mol_mem
+		links_traversed() {
+			const links_map = new Map< string, typeof $mpds_visavis_plot_matrix_json_link['Value'][] >()
+			const cells_map = new Map< string, Matrix_cell >()
+			const heatmap_datasets: Set< number > = new Set
+			let value_min = Infinity
+			let value_max = -Infinity
+			const intersected_cells: Matrix_cell[] = []
+
+			this.links().forEach( l => {
+				links_map.get( l.cmt )?.push( l ) ?? links_map.set( l.cmt, [ l ] )
+
+				const intersection = links_map.get( l.cmt )?.length ?? 0
+				if( intersection > 1 ) {
+					const cell = cells_map.get( l.cmt )!
+					cell.z += l.value
+					cell.intersection = intersection
+					intersected_cells.push( cell )
+				} else {
+					cells_map.set( l.cmt, {
+						y: l.source, x: l.target, cmt: l.cmt, cmp: l.cmp || 0, z: l.value, nonformer: false,
+					} )
+				}
+
+				if( Math.floor(l.value) !== l.value ) heatmap_datasets.add( l.cmp || 0 )
+
+				value_min = Math.min( value_min, l.value )
+				value_max = Math.max( value_max, l.value )
+			} )
+
+			let intersect_value_min = Infinity
+			let intersect_value_max = -Infinity
+			if( heatmap_datasets.size == 2 ) {
+				intersected_cells.forEach( cell => {
+					const links = links_map.get( cell.cmt )!
+					cell.z = Math.abs( links[0].value - links[1].value )
+					intersect_value_min = Math.min( intersect_value_min, cell.z )
+					intersect_value_max = Math.max( intersect_value_max, cell.z )
+				} )
+			}
+
+			return { map: links_map, cells_map, heatmap_datasets, value_min, value_max, intersect_value_min, intersect_value_max }
 		}
 
 		@ $mol_mem
 		links_map() {
-			const map = new Map< string, typeof $mpds_visavis_plot_matrix_json_link['Value'][] >()
-
-			this.links().forEach( l => {
-				map.get( l.cmt )?.push( l ) ?? map.set( l.cmt, [ l ] )
-			} )
-
-			return map
+			return this.links_traversed().map
 		}
 
-		@ $mol_mem_key
-		intersection_label( cmt: string ): string {
-			const quantity = this.links_map().get( cmt )?.length!
-			return quantity > 1 ? String( quantity ) : ''
+		@ $mol_mem
+		heatmap_datasets() {
+			return this.links_traversed().heatmap_datasets
 		}
 
-		links_value_min() {
-			return this.links()[0].value
+		@ $mol_mem
+		value_min() {
+			if( this.intersection_only() ) return this.links_traversed().intersect_value_min
+			return this.links_traversed().value_min
 		}
 
-		links_value_max() {
-			return this.links().slice(-1)[0].value
+		@ $mol_mem
+		value_max() {
+			if( this.intersection_only() ) return this.links_traversed().intersect_value_max
+			return this.links_traversed().value_max
+		}
+
+		@ $mol_mem
+		datasets_type() {
+			const heatmap_datasets = this.heatmap_datasets()
+			if( heatmap_datasets.size == 0 ) {
+				return 'entries'
+			}
+			
+			const datesets_quantity = this.multi_jsons().length
+			if( datesets_quantity == 2 && heatmap_datasets.size == 2 ) {
+				return 'heatmap'
+			}
+
+			return 'mix'
 		}
 
 		@ $mol_mem
 		heatmap() {
-			return this.links().reduce( (heatmap, link) => {
-				if (!heatmap && Math.floor(link.value) !== link.value) return true
-				else if (link.cmp) return false
-				return heatmap
-			}, false )
+			if( this.datasets_type() != 'heatmap' ) return false
+			if( this.heatmap_datasets().size == 2 ) return this.intersection_only() ? true : false
+			return true
 		}
 
 		@ $mol_mem_key
@@ -178,18 +233,14 @@ namespace $.$$ {
 		matrix() {
 			const matrix: Matrix_cell[][] = this.nodes().map( (node, i) => {
 				return d3.range(95).map( (j: any) =>
-					({ x: j, y: i, z: 0, cmt: '', cmp: 0, nonformer: false })
+					({ x: j, y: i, z: 0, cmt: '', nonformer: false })
 				)
 			} )
 
-			for (const link of this.links()) {
-				matrix[link.source][link.target].z += link.value;
-				matrix[link.target][link.source].z += link.value; // NB only AB-all
-				matrix[link.source][link.target].cmt = link.cmt;
-				matrix[link.target][link.source].cmt = link.cmt; // NB only AB-all
-				matrix[link.source][link.target].cmp = link.cmp || 0;
-				matrix[link.target][link.source].cmp = link.cmp || 0;
-			}
+			this.links_traversed().cells_map.forEach( cell => {
+				matrix[cell.y][cell.x] = cell
+				matrix[cell.x][cell.y] = {...cell, x: cell.y, y: cell.x} // NB only AB-all
+			})
 
 			if (this.nonformers_checked()) {
 				for (const item of $mpds_visavis_elements_nonformer.pd_bin()) {
@@ -216,10 +267,11 @@ namespace $.$$ {
 		@ $mol_mem
 		opacity_scale() {
 			// return d3.scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true) // for new d3 version
-			return d3.scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true)
+			return d3.scale.linear().domain([this.value_min(), this.value_max()]).range([0.2, 1]).clamp(true)
 		}
 
 		opacity(index: number) {
+			if( this.datasets_type() == 'mix' ) return 1
 			return this.heatmap() ? 1 : this.opacity_scale()(index)
 		}
 
@@ -244,11 +296,12 @@ namespace $.$$ {
 		@ $mol_mem
 		color_heatmap_scale() {
 			// return d3.scaleLinear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1]) // for new d3 version
-			return d3.scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1])
+			return d3.scale.linear().domain([this.value_min(), this.value_max()]).range([0, 1])
 		}
 
 		color(index: number, cmp: number) {
-			if (this.heatmap()) return cmp ? this.colorset()[1] : this.color_heatmap()( this.color_heatmap_scale()( index ) )
+			if (this.heatmap()) return this.color_heatmap()( this.color_heatmap_scale()( index ) )
+			// if (this.heatmap()) return cmp ? this.colorset()[1] : this.color_heatmap()( this.color_heatmap_scale()( index ) )
 			return this.colorset()[cmp] || '#ccc'
 		}
 
@@ -260,21 +313,23 @@ namespace $.$$ {
 
 		svg_title_text(cell: Matrix_cell) {
 			if (!cell.cmt) return ''
+			if( this.datasets_type() == 'mix' ) return cell.cmt
 
 			const text = `${cell.cmt}: ${cell.z}`
+			if( this.heatmap_datasets().has( Number(cell.cmt) || 0 ) ) return text
 
-			if( this.heatmap() ) return text
-
-			const links = this.links_map().get( cell.cmt )
 			const title = `${text} ${cell.z === 1 ? 'entry' : 'entries'}`
 
-			if( links?.length == 1 ) return title
+			const links = this.links_map().get( cell.cmt )
+			if( links?.length == 1 ) {
+				return title
+			}
 
 			return `${title} (${ links?.map( l => this.cmp_labels()[ l.cmp ?? 0 ] ).join('; ') })`
 		}
 
 		@ $mol_action
-		draw_cells(row_node: SVGElement, cells: Matrix_cell[], intersection_only: boolean) {
+		draw_row_cells( row_node: SVGElement, cells: Matrix_cell[], intersection_only: boolean ) {
 			const that = this
 
 			const range = this.range()
@@ -282,10 +337,14 @@ namespace $.$$ {
 
 			const enters = d3.select(row_node)
 				.selectAll('.cell')
-				.data(cells.filter(d => d.z && ( !intersection_only || that.intersection_label( d.cmt ) )))
+				.data( cells.filter( d => {
+					if( intersection_only ) return d.intersection ? true : false
+					if( d.z !== 0 || d.intersection ) return true
+					return false
+				} ) )
 				// .join('rect') // for new d3 version
 				.enter()
-				
+			
 			const rects = enters.append('rect')
 			
 			rects.attr('class', (d: any) => d.nonformer ? 'nonformer cell' : 'cell')
@@ -296,12 +355,15 @@ namespace $.$$ {
 				.attr('width', rangeBand)
 				.attr('height', rangeBand)
 				.style('fill-opacity', (d: any) => this.opacity(d.z))
-				.style('fill', (d: any) => that.intersection_label( d.cmt ) ? 'gray' : this.color(d.z, d.cmp))
+				.style('fill', (d: any) => {
+					if( d.intersection && !that.heatmap() ) return 'gray'
+					return this.color(d.z ?? 1, d.cmp)
+				})
 
 				.on('mouseover', function (this: any, event: PointerEvent) {
 					const cell_data = d3.select(this).data()[0] as Matrix_cell
-					d3.select( that.dom_node_actual() ).selectAll( ".row text" ).classed( "active", (d: any, i: number)=> { return i == cell_data.y });
-					d3.select( that.dom_node_actual() ).selectAll( ".column text" ).classed( "active", (d: any, i: number)=> { return i == cell_data.x });
+					d3.select( that.dom_node_actual() ).selectAll( ".row .element" ).classed( "active", (d: any, i: number)=> i == cell_data.y )
+					d3.select( that.dom_node_actual() ).selectAll( ".column .element" ).classed( "active", (d: any, i: number)=> i == cell_data.x )
 				} )
 
 				.on('mouseout', function (this: any, event: PointerEvent) {
@@ -319,9 +381,10 @@ namespace $.$$ {
 				} )
 
 			rects.append('svg:title').text((cell: any) => this.svg_title_text(cell))
+				// .attr('mpds_visavis_plot_matrix_intersection', true)
 				
 			enters.append('text')
-				.text((cell: any) => that.intersection_label(cell.cmt))
+				.text((cell: any) => cell.intersection || '')
 				.attr('x', (d: any) => range(d.x) + rangeBand / 2 )
 				.attr('dy', '.85em')
 				.attr('text-anchor', 'middle')
@@ -356,21 +419,21 @@ namespace $.$$ {
 				.attr('width', size)
 				.attr('height', size);
 
-			const draw_cells = (node: any, row: Matrix_cell[]) => this.draw_cells(node, row, this.intersection_only())
-		
+			const that = this
 			const row = group.selectAll('.row')
 				.data(this.matrix())
 				// .join('g') // for new d3 version
 				.enter().append('g')
 				.attr('class', 'row')
 				.attr('transform', (d: any, i: number) => 'translate(0,' + this.range()(i as any) + ')' )
-				.each(function (this: any, cells: any) { draw_cells(this, cells) })
+				.each(function (this: any, cells: any) { that.draw_row_cells(this, cells, that.intersection_only()) })
 		
 			row.append('line')
 				.attr('x2', size);
 		
 			if( !this.y_op() ) {
 				row.append('text')
+					.attr('class', 'element')
 					.attr('x', -6)
 					// .attr('y', this.range().bandwidth() / 2) // for new d3 version
 					.attr('y', rangeBand / 2)
@@ -391,6 +454,7 @@ namespace $.$$ {
 		
 			if( !this.x_op() ) {
 				column.append('text')
+					.attr('class', 'element')
 					.attr('x', 6)
 					// .attr('y', this.range().bandwidth() / 2) // for new d3 version
 					.attr('y', rangeBand / 2)
@@ -523,16 +587,6 @@ namespace $.$$ {
 			d3.selectAll("g.column text").classed("hidden", x_op);
 			d3.selectAll("g.row text").classed("hidden", y_op);
 			d3.select("rect.bgmatrix").classed("hidden", (x_op || y_op));
-		
-			// if (x_op){
-			// 	document.getElementById('matrix_xtitle').innerHTML = x_op + '/' + visavis.elemental_names[x_sort] + ' &rarr;';
-			// 	document.getElementById('matrix_xtitle').style.display = 'block';
-			// } else document.getElementById('matrix_xtitle').style.display = 'none';
-		
-			// if (y_op){
-			// 	document.getElementById('matrix_ytitle').innerHTML = y_op + '/' + visavis.elemental_names[y_sort] + ' &rarr;';
-			// 	document.getElementById('matrix_ytitle').style.display = 'block';
-			// } else document.getElementById('matrix_ytitle').style.display = 'none';
 		
 			var t = svg.transition().duration(600);
 		
