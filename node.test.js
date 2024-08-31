@@ -12464,1127 +12464,6 @@ var $;
 })($ || ($ = {}));
 
 ;
-"use strict";
-var $;
-(function ($) {
-    function $mol_promise() {
-        let done;
-        let fail;
-        const promise = new Promise((d, f) => {
-            done = d;
-            fail = f;
-        });
-        return Object.assign(promise, {
-            done,
-            fail,
-        });
-    }
-    $.$mol_promise = $mol_promise;
-})($ || ($ = {}));
-
-;
-"use strict";
-var $;
-(function ($) {
-    function $mol_wait_timeout_async(timeout) {
-        const promise = $mol_promise();
-        const task = new this.$mol_after_timeout(timeout, () => promise.done());
-        return Object.assign(promise, {
-            destructor: () => task.destructor()
-        });
-    }
-    $.$mol_wait_timeout_async = $mol_wait_timeout_async;
-    function $mol_wait_timeout(timeout) {
-        return this.$mol_wire_sync(this).$mol_wait_timeout_async(timeout);
-    }
-    $.$mol_wait_timeout = $mol_wait_timeout;
-})($ || ($ = {}));
-
-;
-"use strict";
-
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        const d3 = $mpds_visavis_lib_plotly.d3;
-        const $mpds_visavis_plot_matrix_json_node = $mol_data_record({
-            name: $mol_data_string,
-            num: $mol_data_number,
-            nump: $mol_data_number,
-            size: $mol_data_number,
-            rea: $mol_data_number,
-            rpp: $mol_data_number,
-            rion: $mol_data_number,
-            rcov: $mol_data_number,
-            rmet: $mol_data_number,
-            tmelt: $mol_data_number,
-            eneg: $mol_data_number,
-            count: $mol_data_optional($mol_data_number),
-        });
-        const $mpds_visavis_plot_matrix_json_link = $mol_data_record({
-            source: $mol_data_number,
-            target: $mol_data_number,
-            value: $mol_data_number,
-            cmt: $mol_data_string,
-            cmp: $mol_data_optional($mol_data_number),
-        });
-        const $mpds_visavis_plot_matrix_json = $mol_data_record({
-            use_visavis_type: $mol_data_const('matrix'),
-            answerto: $mol_data_optional($mol_data_string),
-            payload: $mol_data_record({
-                nodes: $mol_data_array($mpds_visavis_plot_matrix_json_node),
-                links: $mol_data_array($mpds_visavis_plot_matrix_json_link),
-                fixel: $mol_data_nullable($mol_data_number),
-            }),
-        });
-        class $mpds_visavis_plot_matrix extends $.$mpds_visavis_plot_matrix {
-            setup() {
-                return [
-                    ...this.json().payload.fixel ? [this.Fixel()] : [],
-                    this.multi_jsons() ? this.Intersection_on() : this.Nonformers(),
-                    ...this.show_setup() ? this.sorting() : [],
-                ];
-            }
-            plot_body() {
-                return [
-                    this.Root(),
-                    ...this.x_op() ? [this.X_label()] : [],
-                    ...this.y_op() ? [this.Y_label()] : [],
-                    ...this.multi_jsons() ? [this.Cmp_legend()] : [],
-                    ...this.heatmap() ? [this.Side_right()] : [],
-                ];
-            }
-            json() {
-                return $mpds_visavis_plot_matrix_json(this.plot_raw().json());
-            }
-            sort_dict() {
-                return $mpds_visavis_elements_list.prop_names();
-            }
-            x_label() {
-                const prop_name = this.x_sort();
-                return `${this.x_op()} / ${this.sort_dict()[prop_name]} →`;
-            }
-            y_label() {
-                const prop_name = this.y_sort();
-                return `${this.y_op()} / ${this.sort_dict()[prop_name]} →`;
-            }
-            cmp_labels() {
-                return this.multi_jsons() ? this.multi_jsons().map((json) => json.answerto) : [];
-            }
-            json_master() {
-                if (!this.multi_jsons())
-                    return this.json();
-                const jsons = this.multi_jsons();
-                const json_master = JSON.parse(JSON.stringify($mpds_visavis_plot_matrix_json(jsons[0])));
-                jsons.slice(1).forEach((json, i) => {
-                    const json_valid = $mpds_visavis_plot_matrix_json(json);
-                    const links = json_valid.payload.links.map(link => {
-                        return { ...link, cmp: i + 1 };
-                    });
-                    json_master.payload.links.push(...links);
-                });
-                this.nonformers_checked(false);
-                return $mpds_visavis_plot_matrix_json(json_master);
-            }
-            nodes() {
-                return this.json_master().payload.nodes;
-            }
-            links() {
-                return this.json_master().payload.links;
-            }
-            links_traversed() {
-                const links_map = new Map();
-                const cells_map = new Map();
-                const heatmap_datasets = new Set;
-                let value_min = Infinity;
-                let value_max = -Infinity;
-                const intersected_cells = [];
-                this.links().forEach(l => {
-                    links_map.get(l.cmt)?.push(l) ?? links_map.set(l.cmt, [l]);
-                    const intersection = links_map.get(l.cmt)?.length ?? 0;
-                    if (intersection > 1) {
-                        const cell = cells_map.get(l.cmt);
-                        cell.z += l.value;
-                        cell.intersection = intersection;
-                        intersected_cells.push(cell);
-                    }
-                    else {
-                        cells_map.set(l.cmt, {
-                            y: l.source, x: l.target, cmt: l.cmt, cmp: l.cmp || 0, z: l.value, nonformer: false,
-                        });
-                    }
-                    if (Math.floor(l.value) !== l.value)
-                        heatmap_datasets.add(l.cmp || 0);
-                    value_min = Math.min(value_min, l.value);
-                    value_max = Math.max(value_max, l.value);
-                });
-                let intersect_value_min = Infinity;
-                let intersect_value_max = -Infinity;
-                if (heatmap_datasets.size == 2) {
-                    intersected_cells.forEach(cell => {
-                        const links = links_map.get(cell.cmt);
-                        cell.z = Math.abs(links[0].value - links[1].value);
-                        intersect_value_min = Math.min(intersect_value_min, cell.z);
-                        intersect_value_max = Math.max(intersect_value_max, cell.z);
-                    });
-                }
-                return { map: links_map, cells_map, heatmap_datasets, value_min, value_max, intersect_value_min, intersect_value_max };
-            }
-            links_map() {
-                return this.links_traversed().map;
-            }
-            heatmap_datasets() {
-                return this.links_traversed().heatmap_datasets;
-            }
-            value_min() {
-                if (this.intersection_only())
-                    return this.links_traversed().intersect_value_min;
-                return this.links_traversed().value_min;
-            }
-            value_max() {
-                if (this.intersection_only())
-                    return this.links_traversed().intersect_value_max;
-                return this.links_traversed().value_max;
-            }
-            datasets_type() {
-                const heatmap_datasets = this.heatmap_datasets();
-                if (heatmap_datasets.size == 0) {
-                    return 'enitries';
-                }
-                const datesets_quantity = this.multi_jsons().length;
-                if (datesets_quantity == 2 && heatmap_datasets.size == 2) {
-                    return 'heatmap';
-                }
-                return 'mix';
-            }
-            heatmap() {
-                if (this.datasets_type() != 'heatmap')
-                    return false;
-                if (this.heatmap_datasets().size == 2)
-                    return this.intersection_only() ? true : false;
-                return true;
-            }
-            order_by_prop(prop) {
-                return d3.range(95).sort((a, b) => {
-                    return this.nodes()[a][prop] - this.nodes()[b][prop];
-                });
-            }
-            default_order() {
-                return this.order_by_prop('nump');
-            }
-            matrix() {
-                const matrix = this.nodes().map((node, i) => {
-                    return d3.range(95).map((j) => ({ x: j, y: i, z: 0, cmt: '', nonformer: false }));
-                });
-                this.links_traversed().cells_map.forEach(cell => {
-                    matrix[cell.y][cell.x] = cell;
-                    matrix[cell.x][cell.y] = { ...cell, x: cell.y, y: cell.x };
-                });
-                return matrix;
-            }
-            size_debounced() {
-                const rect = this.Plot().view_rect();
-                this.$.$mol_wait_timeout(300);
-                if (!rect)
-                    return NaN;
-                const size = Math.min(rect.width, rect.height) - this.plot_padding() - this.axis_width();
-                return this.size(size);
-            }
-            opacity_scale() {
-                return d3.scale.linear().domain([this.value_min(), this.value_max()]).range([0.2, 1]).clamp(true);
-            }
-            opacity(index) {
-                if (this.datasets_type() == 'mix')
-                    return 1;
-                return this.heatmap() ? 1 : this.opacity_scale()(index);
-            }
-            color_heatmap() {
-                return d3.scale.linear().domain(d3.range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors());
-            }
-            heatmap_color(index) {
-                return this.heatmap_colors()[index];
-            }
-            heatmap_color_list() {
-                return [
-                    this.Heatmap_min(),
-                    ...this.heatmap_colors().map((_, index) => this.Heatmap_color(index)),
-                    this.Heatmap_max(),
-                ];
-            }
-            color_heatmap_scale() {
-                return d3.scale.linear().domain([this.value_min(), this.value_max()]).range([0, 1]);
-            }
-            color(index, cmp) {
-                if (this.heatmap())
-                    return this.color_heatmap()(this.color_heatmap_scale()(index));
-                return this.colorset()[cmp] || '#ccc';
-            }
-            range() {
-                return d3.scale.ordinal().rangeBands([0, this.size()]).domain(this.default_order());
-            }
-            svg_title_text(cell) {
-                if (!cell.cmt)
-                    return '';
-                if (this.datasets_type() == 'mix')
-                    return cell.cmt;
-                const text = `${cell.cmt}: ${cell.z}`;
-                if (this.heatmap_datasets().has(Number(cell.cmt) || 0))
-                    return text;
-                const title = `${text} ${cell.z === 1 ? 'entry' : 'entries'}`;
-                const links = this.links_map().get(cell.cmt);
-                if (links?.length == 1) {
-                    return title;
-                }
-                return `${title} (${links?.map(l => this.cmp_labels()[l.cmp ?? 0]).join('; ')})`;
-            }
-            draw_row_cells(row_node, cells, intersection_only) {
-                const that = this;
-                const range = this.range();
-                const rangeBand = range.rangeBand();
-                const enters = d3.select(row_node)
-                    .selectAll('.cell')
-                    .data(cells.filter(d => {
-                    if (intersection_only)
-                        return d.intersection ? true : false;
-                    if (d.z !== 0 || d.intersection)
-                        return true;
-                    return false;
-                }))
-                    .enter();
-                const rects = enters.append('rect');
-                rects.attr('class', (d) => d.nonformer ? 'nonformer cell' : 'cell')
-                    .attr('id', (d) => 'c_' + this.nodes()[d.x].num.toString() + '_' + this.nodes()[d.y].num.toString())
-                    .attr('x', (d) => range(d.x))
-                    .attr('width', rangeBand)
-                    .attr('height', rangeBand)
-                    .style('fill-opacity', (d) => this.opacity(d.z))
-                    .style('fill', (d) => {
-                    if (d.intersection && !that.heatmap())
-                        return 'gray';
-                    return this.color(d.z ?? 1, d.cmp);
-                })
-                    .on('mouseover', function (event) {
-                    const cell_data = d3.select(this).data()[0];
-                    d3.select(that.dom_node_actual()).selectAll(".row text").classed("active", (d, i) => { return i == cell_data.y; });
-                    d3.select(that.dom_node_actual()).selectAll(".column text").classed("active", (d, i) => { return i == cell_data.x; });
-                })
-                    .on('mouseout', function (event) {
-                    d3.select(that.dom_node_actual()).selectAll(".row text").classed("active", null);
-                    d3.select(that.dom_node_actual()).selectAll(".column text").classed("active", null);
-                })
-                    .on('click', function (event) {
-                    const sel = d3.select(this);
-                    var ids = sel.attr("id").substr(2).split("_");
-                    that.dom_node_actual().querySelector("#c_" + ids[1] + "_" + ids[0]).classList.add('visited');
-                    that.dom_node_actual().querySelector("#c_" + ids[0] + "_" + ids[1]).classList.add('visited');
-                    const cell_data = sel.data()[0];
-                    that.matrix_click({ cmt: cell_data.cmt });
-                });
-                rects.append('svg:title').text((cell) => this.svg_title_text(cell));
-                enters.append('text')
-                    .text((cell) => cell.intersection || '')
-                    .attr('x', (d) => range(d.x) + rangeBand / 2)
-                    .attr('dy', '.85em')
-                    .attr('text-anchor', 'middle')
-                    .attr('font-weight', 'bold')
-                    .attr('pointer-events', 'none');
-            }
-            draw() {
-                if (Number.isNaN(this.size()))
-                    return;
-                const svg_element = $mol_wire_sync(document).createElementNS('http://www.w3.org/2000/svg', 'svg');
-                const svg = d3.select(svg_element);
-                const size = this.size();
-                const rangeBand = this.range().rangeBand();
-                svg.attr('width', size + this.axis_width())
-                    .attr('height', size + this.axis_width())
-                    .style('font-size', rangeBand + 'px')
-                    .style('letter-spacing', '1px');
-                const group = svg[svg.select('g').empty() ? 'append' : 'select']('g')
-                    .attr('transform', `translate(${this.axis_width()},${this.axis_width()})`);
-                group.html("<defs><pattern id='nonformer' patternUnits='userSpaceOnUse' width='4' height='4'><path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' style='stroke:#ddd;stroke-width:1' /></pattern></defs>");
-                group.append('rect')
-                    .attr('class', 'bgmatrix')
-                    .attr('width', size)
-                    .attr('height', size);
-                const that = this;
-                const row = group.selectAll('.row')
-                    .data(this.matrix())
-                    .enter().append('g')
-                    .attr('class', 'row')
-                    .attr('transform', (d, i) => 'translate(0,' + this.range()(i) + ')')
-                    .each(function (cells) { that.draw_row_cells(this, cells, that.intersection_only()); });
-                row.append('line')
-                    .attr('x2', size);
-                if (!this.y_op()) {
-                    row.append('text')
-                        .attr('x', -6)
-                        .attr('y', rangeBand / 2)
-                        .attr('dy', '.32em')
-                        .attr('text-anchor', 'end')
-                        .text((d, i) => this.nodes()[i].name);
-                }
-                const column = group.selectAll('.column')
-                    .data(this.matrix())
-                    .enter().append('g')
-                    .attr('class', 'column')
-                    .attr('transform', (d, i) => 'translate(' + this.range()(i) + ')rotate(-90)');
-                column.append('line')
-                    .attr('x1', -size);
-                if (!this.x_op()) {
-                    column.append('text')
-                        .attr('x', 6)
-                        .attr('y', rangeBand / 2)
-                        .attr('dy', '.32em')
-                        .attr('text-anchor', 'start')
-                        .text((d, i) => this.nodes()[i].name);
-                }
-                this.Root().dom_node_actual().replaceChildren(svg_element);
-            }
-            get_bin_domain(args) {
-                const { sort, op } = args;
-                var cond_slice = $mpds_visavis_elements_list.prop_values(sort).slice(1);
-                switch (op) {
-                    case 'sum': return [
-                        d3.min(cond_slice) * 2,
-                        d3.max($mpds_visavis_elements_list.prop_values(sort)) * 2
-                    ];
-                    case 'diff': return [
-                        d3.min(cond_slice),
-                        d3.max($mpds_visavis_elements_list.prop_values(sort)) - d3.min(cond_slice)
-                    ];
-                    case 'product': return [
-                        Math.pow(d3.min(cond_slice), 2),
-                        Math.pow(d3.max($mpds_visavis_elements_list.prop_values(sort)), 2)
-                    ];
-                    case 'ratio': return [
-                        d3.min(cond_slice) / d3.max($mpds_visavis_elements_list.prop_values(sort)),
-                        d3.max($mpds_visavis_elements_list.prop_values(sort)) / d3.min(cond_slice)
-                    ];
-                    case 'max': return [
-                        d3.min(cond_slice),
-                        d3.max($mpds_visavis_elements_list.prop_values(sort))
-                    ];
-                    case 'min': return [
-                        d3.min(cond_slice),
-                        d3.max($mpds_visavis_elements_list.prop_values(sort))
-                    ];
-                }
-            }
-            renorm(args) {
-                const { sort, op } = args;
-                const svgdim = this.size();
-                return op ?
-                    d3.scale.quantize().range(d3.range(0, svgdim, svgdim / 95)).domain(this.get_bin_domain({ sort, op })) :
-                    d3.scale.ordinal().rangeBands([0, svgdim]).domain(this.order_by_prop(sort));
-            }
-            sort_control(next) {
-                if (next !== undefined) {
-                    this.x_sort(next);
-                    this.y_sort(next);
-                    return next;
-                }
-                return "nump";
-            }
-            x_op_str(next) {
-                if (next == 'null') {
-                    this.x_op(null);
-                    return next;
-                }
-                return this.x_op(next);
-            }
-            y_op_str(next) {
-                if (next == 'null') {
-                    this.y_op(null);
-                    return next;
-                }
-                return this.y_op(next);
-            }
-            auto_reorder() {
-                this.nonformers_checked();
-                const x_sort = this.x_sort();
-                const y_sort = this.y_sort() || x_sort;
-                const x_op = this.x_op();
-                const y_op = this.y_op();
-                const svg = d3.select(this.Root().dom_node_actual().firstChild);
-                function bin_op(op, a, b) {
-                    switch (op) {
-                        case 'sum': return a + b;
-                        case 'diff': return Math.abs(a - b);
-                        case 'product': return a * b;
-                        case 'ratio': return a / b;
-                        case 'max': return (a > b) ? a : b;
-                        case 'min': return (a < b) ? a : b;
-                    }
-                }
-                const arrange = (sort, op, input, index) => {
-                    const x = input.x !== undefined ? $mpds_visavis_elements_list.prop_values(sort)[input.x + 1] :
-                        $mpds_visavis_elements_list.prop_values(sort)[index];
-                    const y = input.y !== undefined ? $mpds_visavis_elements_list.prop_values(sort)[input.y + 1] :
-                        $mpds_visavis_elements_list.prop_values(sort)[index];
-                    var bin = bin_op(op, x, y);
-                    return this.renorm({ sort, op })(bin);
-                };
-                const x_arrange = (input, index) => {
-                    if (!x_op) {
-                        const x_renorm = this.renorm({ sort: x_sort, op: x_op });
-                        return index !== undefined ? x_renorm(index) : x_renorm(input.x);
-                    }
-                    return arrange(x_sort, x_op, input, index);
-                };
-                const y_arrange = (input, index) => {
-                    if (!y_op) {
-                        const y_renorm = this.renorm({ sort: y_sort, op: y_op });
-                        return y_renorm(index);
-                    }
-                    return arrange(y_sort, y_op, input, index);
-                };
-                d3.selectAll("rect.visited").classed("visited", false);
-                d3.selectAll("g.column text").classed("hidden", x_op);
-                d3.selectAll("g.row text").classed("hidden", y_op);
-                d3.select("rect.bgmatrix").classed("hidden", (x_op || y_op));
-                var t = svg.transition().duration(600);
-                if (y_op) {
-                    t.selectAll(".row")
-                        .attr("transform", null)
-                        .selectAll(".cell")
-                        .attr("x", null)
-                        .attr("transform", (d) => { return "translate(" + x_arrange(d) + "," + y_arrange(d) + ")"; });
-                }
-                else {
-                    t.selectAll(".row")
-                        .attr("transform", (d, i) => { return "translate(0," + y_arrange(d, i) + ")"; })
-                        .selectAll(".cell")
-                        .attr("transform", null)
-                        .attr("x", (d) => { return x_arrange(d); });
-                }
-                if (!x_op) {
-                    t.selectAll(".column")
-                        .attr("transform", (d, i) => { return "translate(" + x_arrange(d, i) + ")rotate(-90)"; });
-                }
-            }
-        }
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "setup", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "plot_body", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "json", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "sort_dict", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "x_label", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "y_label", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "cmp_labels", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "json_master", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "links", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "links_traversed", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "links_map", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "heatmap_datasets", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "value_min", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "value_max", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "datasets_type", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "heatmap", null);
-        __decorate([
-            $mol_mem_key
-        ], $mpds_visavis_plot_matrix.prototype, "order_by_prop", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "default_order", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "matrix", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "size_debounced", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "opacity_scale", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "color_heatmap", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "color_heatmap_scale", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "range", null);
-        __decorate([
-            $mol_action
-        ], $mpds_visavis_plot_matrix.prototype, "draw_row_cells", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "draw", null);
-        __decorate([
-            $mol_mem_key
-        ], $mpds_visavis_plot_matrix.prototype, "get_bin_domain", null);
-        __decorate([
-            $mol_mem_key
-        ], $mpds_visavis_plot_matrix.prototype, "renorm", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "sort_control", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "x_op_str", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "y_op_str", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "auto_reorder", null);
-        $$.$mpds_visavis_plot_matrix = $mpds_visavis_plot_matrix;
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_style_attach("mpds/visavis/plot/matrix/matrix.view.css", "[mpds_visavis_plot_matrix_plot] rect.nonformer {\n\tfill:url(#nonformer) !important;\n\tfill-opacity:1.0 !important;\n}\n\n[mpds_visavis_plot_matrix_plot] rect.visited{\n\tfill:#0f0 !important;\n\tfill-opacity:1.0 !important;\n}\n\n[mpds_visavis_plot_matrix_plot] rect.bgmatrix {\n\tfill:#f6f6f6;\n}\n\n[mpds_visavis_plot_matrix_plot] rect.bgmatrix.hidden {\n\tfill:#fff;\n}\n\n[mpds_visavis_plot_matrix_plot] line {\n\tstroke:#fff;\n}\n\n[mpds_visavis_plot_matrix_plot] text.active {\n\tfill:#f00;\n\tfont-weight:bold;\n}\n");
-})($ || ($ = {}));
-
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        $mol_style_define($.$mpds_visavis_plot_matrix, {
-            flex: {
-                grow: 1,
-            },
-            Side_right: {
-                position: 'absolute',
-                top: '50%',
-                right: $mol_gap.space,
-                transform: 'translateY(-50%)'
-            },
-            Heatmap_color: {
-                width: '1rem',
-                height: '1rem',
-                margin: '1px',
-            },
-            Heatmap_legend: {
-                alignItems: 'flex-end',
-                flex: {
-                    direction: 'column-reverse',
-                },
-            },
-            Root: {
-                margin: 'auto',
-                position: 'absolute',
-                left: '50%',
-                transform: 'translateX(-50%)'
-            },
-            X_label: {
-                font: {
-                    size: '0.875rem',
-                    style: 'italic',
-                },
-                position: 'absolute',
-                left: 0,
-                top: 0,
-                width: '100%',
-                padding: {
-                    bottom: $mol_gap.space,
-                },
-                gap: $mol_gap.block,
-                align: {
-                    items: 'center',
-                },
-                justify: {
-                    content: 'center',
-                }
-            },
-            Y_label: {
-                font: {
-                    size: '0.875rem',
-                    style: 'italic',
-                },
-                position: 'absolute',
-                transform: 'rotate(-90deg) translateY(-50%)',
-                left: 0,
-                top: '50%',
-                padding: {
-                    bottom: $mol_gap.space,
-                },
-                gap: $mol_gap.block,
-            },
-            Order_switch: {
-                flex: {
-                    shrink: 1,
-                },
-                Option: {
-                    padding: ['.25rem', '.75rem'],
-                },
-            },
-            Plot: {
-                flex: {
-                    grow: 1,
-                },
-                position: 'relative',
-            },
-            Setup: {
-                flex: {
-                    direction: 'column',
-                    basis: '10rem',
-                },
-                font: {
-                    size: '.75rem',
-                },
-                justifyContent: 'center',
-            },
-        });
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-
-;
-	($.$mpds_visavis_lib_plotly_view) = class $mpds_visavis_lib_plotly_view extends ($.$mol_view) {
-		Plotly_root(){
-			return null;
-		}
-		sub(){
-			return [(this?.Plotly_root())];
-		}
-		data(){
-			return [];
-		}
-		layout(){
-			return {};
-		}
-		plot_options(){
-			return {
-				"displaylogo": false, 
-				"displayModeBar": false, 
-				"staticPlot": true
-			};
-		}
-	};
-
-
-;
-"use strict";
-
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        class $mpds_visavis_lib_plotly_view extends $.$mpds_visavis_lib_plotly_view {
-            size() {
-                if (!this.view_rect())
-                    return;
-                const { width, height } = this.view_rect();
-                return { width, height };
-            }
-            Plotly_root() {
-                if (!this.size())
-                    return;
-                const { width, height } = this.size();
-                const plotly_root = $mol_wire_sync(document).createElement('div');
-                const plotly_root_actual = $mol_wire_sync($mpds_visavis_lib_plotly).react(plotly_root, this.data(), { ...this.layout(), width, height }, this.plot_options());
-                return plotly_root_actual;
-            }
-        }
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_lib_plotly_view.prototype, "size", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_lib_plotly_view.prototype, "Plotly_root", null);
-        $$.$mpds_visavis_lib_plotly_view = $mpds_visavis_lib_plotly_view;
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-
-;
-"use strict";
-var $;
-(function ($) {
-    $mol_style_attach("mpds/visavis/lib/plotly/view/view.view.css", ".js-plotly-plot {\n\tposition: absolute;\n}\n\n/* default plotly styles for shadow DOM */\n.js-plotly-plot .plotly button,\n.js-plotly-plot .plotly input,\n.plotly-notifier {\n\tfont-family: \"Open Sans\", verdana, arial, sans-serif\n}\n\n.js-plotly-plot .plotly,\n.js-plotly-plot .plotly div {\n\tdirection: ltr;\n\tfont-family: \"Open Sans\", verdana, arial, sans-serif;\n\tmargin: 0;\n\tpadding: 0\n}\n\n.js-plotly-plot .plotly button:focus,\n.js-plotly-plot .plotly input:focus {\n\toutline: 0\n}\n\n.js-plotly-plot .plotly a,\n.js-plotly-plot .plotly a:hover {\n\ttext-decoration: none\n}\n\n.js-plotly-plot .plotly .crisp {\n\tshape-rendering: crispEdges\n}\n\n.js-plotly-plot .plotly .user-select-none {\n\t-webkit-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\t-o-user-select: none;\n\tuser-select: none\n}\n\n.js-plotly-plot .plotly svg {\n\toverflow: hidden\n}\n\n.js-plotly-plot .plotly svg a {\n\tfill: #447adb\n}\n\n.js-plotly-plot .plotly svg a:hover {\n\tfill: #3c6dc5\n}\n\n.js-plotly-plot .plotly .main-svg {\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n\tpointer-events: none\n}\n\n.js-plotly-plot .plotly .main-svg .draglayer {\n\tpointer-events: all\n}\n\n.js-plotly-plot .plotly .cursor-default {\n\tcursor: default\n}\n\n.js-plotly-plot .plotly .cursor-pointer {\n\tcursor: pointer\n}\n\n.js-plotly-plot .plotly .cursor-crosshair {\n\tcursor: crosshair\n}\n\n.js-plotly-plot .plotly .cursor-move {\n\tcursor: move\n}\n\n.js-plotly-plot .plotly .cursor-col-resize {\n\tcursor: col-resize\n}\n\n.js-plotly-plot .plotly .cursor-row-resize {\n\tcursor: row-resize\n}\n\n.js-plotly-plot .plotly .cursor-ns-resize {\n\tcursor: ns-resize\n}\n\n.js-plotly-plot .plotly .cursor-ew-resize {\n\tcursor: ew-resize\n}\n\n.js-plotly-plot .plotly .cursor-sw-resize {\n\tcursor: sw-resize\n}\n\n.js-plotly-plot .plotly .cursor-s-resize {\n\tcursor: s-resize\n}\n\n.js-plotly-plot .plotly .cursor-se-resize {\n\tcursor: se-resize\n}\n\n.js-plotly-plot .plotly .cursor-w-resize {\n\tcursor: w-resize\n}\n\n.js-plotly-plot .plotly .cursor-e-resize {\n\tcursor: e-resize\n}\n\n.js-plotly-plot .plotly .cursor-nw-resize {\n\tcursor: nw-resize\n}\n\n.js-plotly-plot .plotly .cursor-n-resize {\n\tcursor: n-resize\n}\n\n.js-plotly-plot .plotly .cursor-ne-resize {\n\tcursor: ne-resize\n}\n\n.js-plotly-plot .plotly .cursor-grab {\n\tcursor: -webkit-grab;\n\tcursor: grab\n}\n\n.js-plotly-plot .plotly .modebar {\n\tposition: absolute;\n\ttop: 2px;\n\tright: 2px\n}\n\n.js-plotly-plot .plotly .ease-bg {\n\t-webkit-transition: background-color .3s;\n\t-moz-transition: background-color .3s;\n\t-ms-transition: background-color .3s;\n\t-o-transition: background-color .3s;\n\ttransition: background-color .3s\n}\n\n.js-plotly-plot .plotly .modebar--hover>:not(.watermark) {\n\topacity: 0;\n\t-webkit-transition: opacity .3s;\n\t-moz-transition: opacity .3s;\n\t-ms-transition: opacity .3s;\n\t-o-transition: opacity .3s;\n\ttransition: opacity .3s\n}\n\n.js-plotly-plot .plotly:hover .modebar--hover .modebar-group {\n\topacity: 1\n}\n\n.js-plotly-plot .plotly .modebar-group {\n\tfloat: left;\n\tdisplay: inline-block;\n\tbox-sizing: border-box;\n\tpadding-left: 8px;\n\tposition: relative;\n\tvertical-align: middle;\n\twhite-space: nowrap\n}\n\n.js-plotly-plot .plotly .modebar-btn {\n\tposition: relative;\n\tfont-size: 16px;\n\tpadding: 3px 4px;\n\theight: 22px;\n\tcursor: pointer;\n\tline-height: normal;\n\tbox-sizing: border-box\n}\n\n.js-plotly-plot .plotly .modebar-btn svg {\n\tposition: relative;\n\ttop: 2px\n}\n\n.js-plotly-plot .plotly .modebar.vertical {\n\tdisplay: flex;\n\tflex-direction: column;\n\tflex-wrap: wrap;\n\talign-content: flex-end;\n\tmax-height: 100%\n}\n\n.js-plotly-plot .plotly .modebar.vertical svg {\n\ttop: -1px\n}\n\n.js-plotly-plot .plotly .modebar.vertical .modebar-group {\n\tdisplay: block;\n\tfloat: none;\n\tpadding-left: 0;\n\tpadding-bottom: 8px\n}\n\n.js-plotly-plot .plotly .modebar.vertical .modebar-group .modebar-btn {\n\tdisplay: block;\n\ttext-align: center\n}\n\n.js-plotly-plot .plotly [data-title]:after,\n.js-plotly-plot .plotly [data-title]:before {\n\tposition: absolute;\n\t-webkit-transform: translate3d(0, 0, 0);\n\t-moz-transform: translate3d(0, 0, 0);\n\t-ms-transform: translate3d(0, 0, 0);\n\t-o-transform: translate3d(0, 0, 0);\n\ttransform: translate3d(0, 0, 0);\n\tdisplay: none;\n\topacity: 0;\n\tz-index: 1001;\n\tpointer-events: none;\n\ttop: 110%;\n\tright: 50%\n}\n\n.js-plotly-plot .plotly [data-title]:hover:after,\n.js-plotly-plot .plotly [data-title]:hover:before {\n\tdisplay: block;\n\topacity: 1\n}\n\n.js-plotly-plot .plotly [data-title]:before {\n\tcontent: \"\";\n\tposition: absolute;\n\tbackground: 0 0;\n\tborder: 6px solid transparent;\n\tz-index: 1002;\n\tmargin-top: -12px;\n\tborder-bottom-color: #69738a;\n\tmargin-right: -6px\n}\n\n.js-plotly-plot .plotly [data-title]:after {\n\tcontent: attr(data-title);\n\tbackground: #69738a;\n\tcolor: #fff;\n\tpadding: 8px 10px;\n\tfont-size: 12px;\n\tline-height: 12px;\n\twhite-space: nowrap;\n\tmargin-right: -18px;\n\tborder-radius: 2px\n}\n\n.js-plotly-plot .plotly .vertical [data-title]:after,\n.js-plotly-plot .plotly .vertical [data-title]:before {\n\ttop: 0;\n\tright: 200%\n}\n\n.js-plotly-plot .plotly .vertical [data-title]:before {\n\tborder: 6px solid transparent;\n\tborder-left-color: #69738a;\n\tmargin-top: 8px;\n\tmargin-right: -30px\n}\n\n.plotly-notifier {\n\tposition: fixed;\n\ttop: 50px;\n\tright: 20px;\n\tz-index: 10000;\n\tfont-size: 10pt;\n\tmax-width: 180px\n}\n\n.plotly-notifier p {\n\tmargin: 0\n}\n\n.plotly-notifier .notifier-note {\n\tmin-width: 180px;\n\tmax-width: 250px;\n\tborder: 1px solid #fff;\n\tz-index: 3000;\n\tmargin: 0;\n\tbackground-color: rgba(140, 151, 175, .9);\n\tcolor: #fff;\n\tpadding: 10px;\n\toverflow-wrap: break-word;\n\tword-wrap: break-word;\n\t-ms-hyphens: auto;\n\t-webkit-hyphens: auto;\n\thyphens: auto\n}\n\n.plotly-notifier .notifier-close {\n\tcolor: #fff;\n\topacity: .8;\n\tfloat: right;\n\tpadding: 0 5px;\n\tbackground: 0 0;\n\tborder: none;\n\tfont-size: 20px;\n\tfont-weight: 700;\n\tline-height: 20px\n}\n\n.plotly-notifier .notifier-close:hover {\n\tcolor: #444;\n\ttext-decoration: none;\n\tcursor: pointer\n}\n");
-})($ || ($ = {}));
-
-;
-"use strict";
-var $;
-(function ($) {
-    var $$;
-    (function ($$) {
-        $mol_style_define($mpds_visavis_lib_plotly_view, {
-            flex: {
-                grow: 1
-            },
-        });
-    })($$ = $.$$ || ($.$$ = {}));
-})($ || ($ = {}));
-
-;
-	($.$mpds_visavis_plot_cube) = class $mpds_visavis_plot_cube extends ($.$mol_view) {
-		subscribe_click(){
-			return null;
-		}
-		data_shown(){
-			return [];
-		}
-		layout(){
-			return {};
-		}
-		Plotly_root(){
-			return (this?.Root()?.Plotly_root());
-		}
-		Root(){
-			const obj = new this.$.$mpds_visavis_lib_plotly_view();
-			(obj.data) = () => ((this?.data_shown()));
-			(obj.layout) = () => ((this?.layout()));
-			(obj.plot_options) = () => ({
-				"displaylogo": false, 
-				"displayModeBar": false, 
-				"staticPlot": false
-			});
-			return obj;
-		}
-		cmp_labels(){
-			return [];
-		}
-		Cmp_legend(){
-			const obj = new this.$.$mpds_visavis_plot_legend_cmp();
-			(obj.labels) = () => ((this?.cmp_labels()));
-			(obj.colorset) = () => ((this?.colorset()));
-			return obj;
-		}
-		value_min(){
-			return 0;
-		}
-		Heatmap_min(){
-			const obj = new this.$.$mol_view();
-			(obj.sub) = () => ([(this?.value_min())]);
-			return obj;
-		}
-		heatmap_color(id){
-			return "";
-		}
-		Heatmap_color(id){
-			const obj = new this.$.$mol_view();
-			(obj.style) = () => ({"background": (this?.heatmap_color(id))});
-			return obj;
-		}
-		value_max(){
-			return 0;
-		}
-		Heatmap_max(){
-			const obj = new this.$.$mol_view();
-			(obj.sub) = () => ([(this?.value_max())]);
-			return obj;
-		}
-		heatmap_color_list(){
-			return [
-				(this?.Heatmap_min()), 
-				(this?.Heatmap_color("0")), 
-				(this?.Heatmap_max())
-			];
-		}
-		Heatmap_legend(){
-			const obj = new this.$.$mol_list();
-			(obj.rows) = () => ((this?.heatmap_color_list()));
-			return obj;
-		}
-		Side_right(){
-			const obj = new this.$.$mol_scroll();
-			(obj.sub) = () => ([(this?.Heatmap_legend())]);
-			return obj;
-		}
-		plot_body(){
-			return [
-				(this?.Root()), 
-				(this?.Cmp_legend()), 
-				(this?.Side_right())
-			];
-		}
-		Plot(){
-			const obj = new this.$.$mol_view();
-			(obj.sub) = () => ((this?.plot_body()));
-			return obj;
-		}
-		fixel_checked(next){
-			if(next !== undefined) return next;
-			return false;
-		}
-		Fixel(){
-			const obj = new this.$.$mol_check_box();
-			(obj.title) = () => ("Project on 2d");
-			(obj.checked) = (next) => ((this?.fixel_checked(next)));
-			return obj;
-		}
-		nonformers_checked(next){
-			if(next !== undefined) return next;
-			return false;
-		}
-		Nonformers(){
-			const obj = new this.$.$mol_check_box();
-			(obj.hint) = () => ("Continuous solid solutions and complete insolubility systems");
-			(obj.title) = () => ("Show non-formers");
-			(obj.checked) = (next) => ((this?.nonformers_checked(next)));
-			return obj;
-		}
-		intersection_only(next){
-			if(next !== undefined) return next;
-			return false;
-		}
-		Intersection_on(){
-			const obj = new this.$.$mol_check_box();
-			(obj.title) = () => ("Show intersection");
-			(obj.checked) = (next) => ((this?.intersection_only(next)));
-			return obj;
-		}
-		sort_dict(){
-			return {};
-		}
-		X_order_select(){
-			const obj = new this.$.$mol_select();
-			(obj.value) = (next) => ((this?.x_sort(next)));
-			(obj.dictionary) = () => ((this?.sort_dict()));
-			return obj;
-		}
-		X_order(){
-			const obj = new this.$.$mol_labeler();
-			(obj.title) = () => ("X sort by");
-			(obj.Content) = () => ((this?.X_order_select()));
-			return obj;
-		}
-		Y_order_select(){
-			const obj = new this.$.$mol_select();
-			(obj.value) = (next) => ((this?.y_sort(next)));
-			(obj.dictionary) = () => ((this?.sort_dict()));
-			return obj;
-		}
-		Y_order(){
-			const obj = new this.$.$mol_labeler();
-			(obj.title) = () => ("Y sort by");
-			(obj.Content) = () => ((this?.Y_order_select()));
-			return obj;
-		}
-		Z_order_select(){
-			const obj = new this.$.$mol_select();
-			(obj.value) = (next) => ((this?.z_sort(next)));
-			(obj.dictionary) = () => ((this?.sort_dict()));
-			return obj;
-		}
-		Z_order(){
-			const obj = new this.$.$mol_labeler();
-			(obj.title) = () => ("Z sort by");
-			(obj.Content) = () => ((this?.Z_order_select()));
-			return obj;
-		}
-		setup(){
-			return [
-				(this?.Fixel()), 
-				(this?.Nonformers()), 
-				(this?.Intersection_on()), 
-				(this?.X_order()), 
-				(this?.Y_order()), 
-				(this?.Z_order())
-			];
-		}
-		Setup(){
-			const obj = new this.$.$mol_view();
-			(obj.sub) = () => ((this?.setup()));
-			return obj;
-		}
-		plot_raw(){
-			const obj = new this.$.$mpds_visavis_plot_raw();
-			return obj;
-		}
-		auto(){
-			return [(this?.subscribe_click())];
-		}
-		multi_jsons(next){
-			if(next !== undefined) return next;
-			return null;
-		}
-		show_setup(){
-			return true;
-		}
-		show_fixel(next){
-			if(next !== undefined) return next;
-			return true;
-		}
-		heatmap(next){
-			if(next !== undefined) return next;
-			return false;
-		}
-		order(id){
-			return [];
-		}
-		order_current(next){
-			if(next !== undefined) return next;
-			return "nump";
-		}
-		x_op(next){
-			if(next !== undefined) return next;
-			return false;
-		}
-		y_op(next){
-			if(next !== undefined) return next;
-			return false;
-		}
-		z_op(next){
-			if(next !== undefined) return next;
-			return false;
-		}
-		x_sort(next){
-			if(next !== undefined) return next;
-			return "nump";
-		}
-		y_sort(next){
-			if(next !== undefined) return next;
-			return "nump";
-		}
-		z_sort(next){
-			if(next !== undefined) return next;
-			return "nump";
-		}
-		cube_click(next){
-			if(next !== undefined) return next;
-			return null;
-		}
-		colorset(){
-			return [
-				"#3e3f95", 
-				"#c00", 
-				"#FE9A2E", 
-				"#090", 
-				"#f0f", 
-				"#09f", 
-				"#666", 
-				"#0f3", 
-				"#0ff", 
-				"#90c"
-			];
-		}
-		heatmap_colors(){
-			return [
-				"rgb(150,0,90)", 
-				"rgb(0,0,200)", 
-				"rgb(0,25,255)", 
-				"rgb(0,152,255)", 
-				"rgb(44,255,150)", 
-				"rgb(151,255,0)", 
-				"rgb(255,234,0)", 
-				"rgb(255,111,0)", 
-				"rgb(255,0,0)"
-			];
-		}
-		sub(){
-			return [(this?.Plot()), (this?.Setup())];
-		}
-	};
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Root"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Cmp_legend"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Heatmap_min"));
-	($mol_mem_key(($.$mpds_visavis_plot_cube.prototype), "Heatmap_color"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Heatmap_max"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Heatmap_legend"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Side_right"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Plot"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "fixel_checked"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Fixel"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "nonformers_checked"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Nonformers"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "intersection_only"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Intersection_on"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "X_order_select"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "X_order"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Y_order_select"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Y_order"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Z_order_select"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Z_order"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Setup"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "plot_raw"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "multi_jsons"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "show_fixel"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "heatmap"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "order_current"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "x_op"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "y_op"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "z_op"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "x_sort"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "y_sort"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "z_sort"));
-	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "cube_click"));
-
-
-;
-"use strict";
-var $;
-(function ($) {
-    $.$mol_data_boolean = (val) => {
-        if (typeof val === 'boolean')
-            return val;
-        return $mol_fail(new $mol_data_error(`${val} is not a boolean`));
-    };
-})($ || ($ = {}));
-
-;
-"use strict";
-var $;
-(function ($) {
-    function $mol_data_variant(...sub) {
-        return $mol_data_setup((val) => {
-            const errors = [];
-            for (const type of sub) {
-                let hidden = $.$mol_fail_hidden;
-                try {
-                    $.$mol_fail = $.$mol_fail_hidden;
-                    return type(val);
-                }
-                catch (error) {
-                    $.$mol_fail = hidden;
-                    if (error instanceof $mol_data_error) {
-                        errors.push(error);
-                    }
-                    else {
-                        return $mol_fail_hidden(error);
-                    }
-                }
-            }
-            return $mol_fail(new $mol_data_error(`${val} is not any of variants`, {}, ...errors));
-        }, sub);
-    }
-    $.$mol_data_variant = $mol_data_variant;
-})($ || ($ = {}));
-
-;
 	($.$mpds_visavis_elements_nonformer) = class $mpds_visavis_elements_nonformer extends ($.$mol_object) {
 		pd_bin(){
 			return [
@@ -17914,6 +16793,1135 @@ var $;
         ], $mpds_visavis_elements_nonformer, "pd_tri_nums", null);
         $$.$mpds_visavis_elements_nonformer = $mpds_visavis_elements_nonformer;
     })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+
+;
+"use strict";
+var $;
+(function ($) {
+    function $mol_promise() {
+        let done;
+        let fail;
+        const promise = new Promise((d, f) => {
+            done = d;
+            fail = f;
+        });
+        return Object.assign(promise, {
+            done,
+            fail,
+        });
+    }
+    $.$mol_promise = $mol_promise;
+})($ || ($ = {}));
+
+;
+"use strict";
+var $;
+(function ($) {
+    function $mol_wait_timeout_async(timeout) {
+        const promise = $mol_promise();
+        const task = new this.$mol_after_timeout(timeout, () => promise.done());
+        return Object.assign(promise, {
+            destructor: () => task.destructor()
+        });
+    }
+    $.$mol_wait_timeout_async = $mol_wait_timeout_async;
+    function $mol_wait_timeout(timeout) {
+        return this.$mol_wire_sync(this).$mol_wait_timeout_async(timeout);
+    }
+    $.$mol_wait_timeout = $mol_wait_timeout;
+})($ || ($ = {}));
+
+;
+"use strict";
+
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        const d3 = $mpds_visavis_lib_plotly.d3;
+        const $mpds_visavis_plot_matrix_json_node = $mol_data_record({
+            name: $mol_data_string,
+            num: $mol_data_number,
+            nump: $mol_data_number,
+            size: $mol_data_number,
+            rea: $mol_data_number,
+            rpp: $mol_data_number,
+            rion: $mol_data_number,
+            rcov: $mol_data_number,
+            rmet: $mol_data_number,
+            tmelt: $mol_data_number,
+            eneg: $mol_data_number,
+            count: $mol_data_optional($mol_data_number),
+        });
+        const $mpds_visavis_plot_matrix_json_link = $mol_data_record({
+            source: $mol_data_number,
+            target: $mol_data_number,
+            value: $mol_data_number,
+            cmt: $mol_data_string,
+            cmp: $mol_data_optional($mol_data_number),
+        });
+        const $mpds_visavis_plot_matrix_json = $mol_data_record({
+            use_visavis_type: $mol_data_const('matrix'),
+            answerto: $mol_data_optional($mol_data_string),
+            payload: $mol_data_record({
+                nodes: $mol_data_array($mpds_visavis_plot_matrix_json_node),
+                links: $mol_data_array($mpds_visavis_plot_matrix_json_link),
+                fixel: $mol_data_nullable($mol_data_number),
+            }),
+        });
+        class $mpds_visavis_plot_matrix extends $.$mpds_visavis_plot_matrix {
+            setup() {
+                return [
+                    ...this.json().payload.fixel ? [this.Fixel()] : [],
+                    this.multi_jsons() ? this.Intersection_on() : this.Nonformers(),
+                    ...this.show_setup() ? this.sorting() : [],
+                ];
+            }
+            plot_body() {
+                return [
+                    this.Root(),
+                    ...this.x_op() ? [this.X_label()] : [],
+                    ...this.y_op() ? [this.Y_label()] : [],
+                    ...this.multi_jsons() ? [this.Cmp_legend()] : [],
+                    ...this.heatmap() ? [this.Side_right()] : [],
+                ];
+            }
+            json() {
+                return $mpds_visavis_plot_matrix_json(this.plot_raw().json());
+            }
+            sort_dict() {
+                return $mpds_visavis_elements_list.prop_names();
+            }
+            x_label() {
+                const prop_name = this.x_sort();
+                return `${this.x_op()} / ${this.sort_dict()[prop_name]} →`;
+            }
+            y_label() {
+                const prop_name = this.y_sort();
+                return `${this.y_op()} / ${this.sort_dict()[prop_name]} →`;
+            }
+            cmp_labels() {
+                return this.multi_jsons() ? this.multi_jsons().map((json) => json.answerto) : [];
+            }
+            json_master() {
+                if (!this.multi_jsons())
+                    return this.json();
+                const jsons = this.multi_jsons();
+                const json_master = JSON.parse(JSON.stringify($mpds_visavis_plot_matrix_json(jsons[0])));
+                jsons.slice(1).forEach((json, i) => {
+                    const json_valid = $mpds_visavis_plot_matrix_json(json);
+                    const links = json_valid.payload.links.map(link => {
+                        return { ...link, cmp: i + 1 };
+                    });
+                    json_master.payload.links.push(...links);
+                });
+                this.nonformers_checked(false);
+                return $mpds_visavis_plot_matrix_json(json_master);
+            }
+            nodes() {
+                return this.json_master().payload.nodes;
+            }
+            links() {
+                return this.json_master().payload.links;
+            }
+            links_traversed() {
+                const links_map = new Map();
+                const cells_map = new Map();
+                const heatmap_datasets = new Set;
+                let value_min = Infinity;
+                let value_max = -Infinity;
+                const intersected_cells = [];
+                this.links().forEach(l => {
+                    links_map.get(l.cmt)?.push(l) ?? links_map.set(l.cmt, [l]);
+                    const intersection = links_map.get(l.cmt)?.length ?? 0;
+                    if (intersection > 1) {
+                        const cell = cells_map.get(l.cmt);
+                        cell.z += l.value;
+                        cell.intersection = intersection;
+                        intersected_cells.push(cell);
+                    }
+                    else {
+                        cells_map.set(l.cmt, {
+                            y: l.source, x: l.target, cmt: l.cmt, cmp: l.cmp || 0, z: l.value, nonformer: false,
+                        });
+                    }
+                    if (Math.floor(l.value) !== l.value)
+                        heatmap_datasets.add(l.cmp || 0);
+                    value_min = Math.min(value_min, l.value);
+                    value_max = Math.max(value_max, l.value);
+                });
+                let intersect_value_min = Infinity;
+                let intersect_value_max = -Infinity;
+                if (heatmap_datasets.size == 2) {
+                    intersected_cells.forEach(cell => {
+                        const links = links_map.get(cell.cmt);
+                        cell.z = Math.abs(links[0].value - links[1].value);
+                        intersect_value_min = Math.min(intersect_value_min, cell.z);
+                        intersect_value_max = Math.max(intersect_value_max, cell.z);
+                    });
+                }
+                return { map: links_map, cells_map, heatmap_datasets, value_min, value_max, intersect_value_min, intersect_value_max };
+            }
+            links_map() {
+                return this.links_traversed().map;
+            }
+            heatmap_datasets() {
+                return this.links_traversed().heatmap_datasets;
+            }
+            value_min() {
+                if (this.intersection_only())
+                    return this.links_traversed().intersect_value_min;
+                return this.links_traversed().value_min;
+            }
+            value_max() {
+                if (this.intersection_only())
+                    return this.links_traversed().intersect_value_max;
+                return this.links_traversed().value_max;
+            }
+            datasets_type() {
+                const heatmap_datasets = this.heatmap_datasets();
+                if (heatmap_datasets.size == 0) {
+                    return 'enitries';
+                }
+                const datesets_quantity = this.multi_jsons().length;
+                if (datesets_quantity == 2 && heatmap_datasets.size == 2) {
+                    return 'heatmap';
+                }
+                return 'mix';
+            }
+            heatmap() {
+                if (this.datasets_type() != 'heatmap')
+                    return false;
+                if (this.heatmap_datasets().size == 2)
+                    return this.intersection_only() ? true : false;
+                return true;
+            }
+            order_by_prop(prop) {
+                return d3.range(95).sort((a, b) => {
+                    return this.nodes()[a][prop] - this.nodes()[b][prop];
+                });
+            }
+            default_order() {
+                return this.order_by_prop('nump');
+            }
+            matrix() {
+                const matrix = this.nodes().map((node, i) => {
+                    return d3.range(95).map((j) => ({ x: j, y: i, z: 0, cmt: '', nonformer: false }));
+                });
+                this.links_traversed().cells_map.forEach(cell => {
+                    matrix[cell.y][cell.x] = cell;
+                    matrix[cell.x][cell.y] = { ...cell, x: cell.y, y: cell.x };
+                });
+                if (this.nonformers_checked()) {
+                    for (const item of $mpds_visavis_elements_nonformer.pd_bin()) {
+                        matrix[item[0]][item[1]].z = 1;
+                        matrix[item[1]][item[0]].z = 1;
+                        matrix[item[0]][item[1]].nonformer = true;
+                        matrix[item[1]][item[0]].nonformer = true;
+                    }
+                }
+                return matrix;
+            }
+            size_debounced() {
+                const rect = this.Plot().view_rect();
+                this.$.$mol_wait_timeout(300);
+                if (!rect)
+                    return NaN;
+                const size = Math.min(rect.width, rect.height) - this.plot_padding() - this.axis_width();
+                return this.size(size);
+            }
+            opacity_scale() {
+                return d3.scale.linear().domain([this.value_min(), this.value_max()]).range([0.2, 1]).clamp(true);
+            }
+            opacity(index) {
+                if (this.datasets_type() == 'mix')
+                    return 1;
+                return this.heatmap() ? 1 : this.opacity_scale()(index);
+            }
+            color_heatmap() {
+                return d3.scale.linear().domain(d3.range(0, 1, 1.0 / (this.heatmap_colors().length - 1))).range(this.heatmap_colors());
+            }
+            heatmap_color(index) {
+                return this.heatmap_colors()[index];
+            }
+            heatmap_color_list() {
+                return [
+                    this.Heatmap_min(),
+                    ...this.heatmap_colors().map((_, index) => this.Heatmap_color(index)),
+                    this.Heatmap_max(),
+                ];
+            }
+            color_heatmap_scale() {
+                return d3.scale.linear().domain([this.value_min(), this.value_max()]).range([0, 1]);
+            }
+            color(index, cmp) {
+                if (this.heatmap())
+                    return this.color_heatmap()(this.color_heatmap_scale()(index));
+                return this.colorset()[cmp] || '#ccc';
+            }
+            range() {
+                return d3.scale.ordinal().rangeBands([0, this.size()]).domain(this.default_order());
+            }
+            svg_title_text(cell) {
+                if (!cell.cmt)
+                    return '';
+                if (this.datasets_type() == 'mix')
+                    return cell.cmt;
+                const text = `${cell.cmt}: ${cell.z}`;
+                if (this.heatmap_datasets().has(Number(cell.cmt) || 0))
+                    return text;
+                const title = `${text} ${cell.z === 1 ? 'entry' : 'entries'}`;
+                const links = this.links_map().get(cell.cmt);
+                if (links?.length == 1) {
+                    return title;
+                }
+                return `${title} (${links?.map(l => this.cmp_labels()[l.cmp ?? 0]).join('; ')})`;
+            }
+            draw_row_cells(row_node, cells, intersection_only) {
+                const that = this;
+                const range = this.range();
+                const rangeBand = range.rangeBand();
+                const enters = d3.select(row_node)
+                    .selectAll('.cell')
+                    .data(cells.filter(d => {
+                    if (intersection_only)
+                        return d.intersection ? true : false;
+                    if (d.z !== 0 || d.intersection)
+                        return true;
+                    return false;
+                }))
+                    .enter();
+                const rects = enters.append('rect');
+                rects.attr('class', (d) => d.nonformer ? 'nonformer cell' : 'cell')
+                    .attr('id', (d) => 'c_' + this.nodes()[d.x].num.toString() + '_' + this.nodes()[d.y].num.toString())
+                    .attr('x', (d) => range(d.x))
+                    .attr('width', rangeBand)
+                    .attr('height', rangeBand)
+                    .style('fill-opacity', (d) => this.opacity(d.z))
+                    .style('fill', (d) => {
+                    if (d.intersection && !that.heatmap())
+                        return 'gray';
+                    return this.color(d.z ?? 1, d.cmp);
+                })
+                    .on('mouseover', function (event) {
+                    const cell_data = d3.select(this).data()[0];
+                    d3.select(that.dom_node_actual()).selectAll(".row text").classed("active", (d, i) => { return i == cell_data.y; });
+                    d3.select(that.dom_node_actual()).selectAll(".column text").classed("active", (d, i) => { return i == cell_data.x; });
+                })
+                    .on('mouseout', function (event) {
+                    d3.select(that.dom_node_actual()).selectAll(".row text").classed("active", null);
+                    d3.select(that.dom_node_actual()).selectAll(".column text").classed("active", null);
+                })
+                    .on('click', function (event) {
+                    const sel = d3.select(this);
+                    var ids = sel.attr("id").substr(2).split("_");
+                    that.dom_node_actual().querySelector("#c_" + ids[1] + "_" + ids[0]).classList.add('visited');
+                    that.dom_node_actual().querySelector("#c_" + ids[0] + "_" + ids[1]).classList.add('visited');
+                    const cell_data = sel.data()[0];
+                    that.matrix_click({ cmt: cell_data.cmt });
+                });
+                rects.append('svg:title').text((cell) => this.svg_title_text(cell));
+                enters.append('text')
+                    .text((cell) => cell.intersection || '')
+                    .attr('x', (d) => range(d.x) + rangeBand / 2)
+                    .attr('dy', '.85em')
+                    .attr('text-anchor', 'middle')
+                    .attr('font-weight', 'bold')
+                    .attr('pointer-events', 'none');
+            }
+            draw() {
+                if (Number.isNaN(this.size()))
+                    return;
+                const svg_element = $mol_wire_sync(document).createElementNS('http://www.w3.org/2000/svg', 'svg');
+                const svg = d3.select(svg_element);
+                const size = this.size();
+                const rangeBand = this.range().rangeBand();
+                svg.attr('width', size + this.axis_width())
+                    .attr('height', size + this.axis_width())
+                    .style('font-size', rangeBand + 'px')
+                    .style('letter-spacing', '1px');
+                const group = svg[svg.select('g').empty() ? 'append' : 'select']('g')
+                    .attr('transform', `translate(${this.axis_width()},${this.axis_width()})`);
+                group.html("<defs><pattern id='nonformer' patternUnits='userSpaceOnUse' width='4' height='4'><path d='M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2' style='stroke:#ddd;stroke-width:1' /></pattern></defs>");
+                group.append('rect')
+                    .attr('class', 'bgmatrix')
+                    .attr('width', size)
+                    .attr('height', size);
+                const that = this;
+                const row = group.selectAll('.row')
+                    .data(this.matrix())
+                    .enter().append('g')
+                    .attr('class', 'row')
+                    .attr('transform', (d, i) => 'translate(0,' + this.range()(i) + ')')
+                    .each(function (cells) { that.draw_row_cells(this, cells, that.intersection_only()); });
+                row.append('line')
+                    .attr('x2', size);
+                if (!this.y_op()) {
+                    row.append('text')
+                        .attr('x', -6)
+                        .attr('y', rangeBand / 2)
+                        .attr('dy', '.32em')
+                        .attr('text-anchor', 'end')
+                        .text((d, i) => this.nodes()[i].name);
+                }
+                const column = group.selectAll('.column')
+                    .data(this.matrix())
+                    .enter().append('g')
+                    .attr('class', 'column')
+                    .attr('transform', (d, i) => 'translate(' + this.range()(i) + ')rotate(-90)');
+                column.append('line')
+                    .attr('x1', -size);
+                if (!this.x_op()) {
+                    column.append('text')
+                        .attr('x', 6)
+                        .attr('y', rangeBand / 2)
+                        .attr('dy', '.32em')
+                        .attr('text-anchor', 'start')
+                        .text((d, i) => this.nodes()[i].name);
+                }
+                this.Root().dom_node_actual().replaceChildren(svg_element);
+            }
+            get_bin_domain(args) {
+                const { sort, op } = args;
+                var cond_slice = $mpds_visavis_elements_list.prop_values(sort).slice(1);
+                switch (op) {
+                    case 'sum': return [
+                        d3.min(cond_slice) * 2,
+                        d3.max($mpds_visavis_elements_list.prop_values(sort)) * 2
+                    ];
+                    case 'diff': return [
+                        d3.min(cond_slice),
+                        d3.max($mpds_visavis_elements_list.prop_values(sort)) - d3.min(cond_slice)
+                    ];
+                    case 'product': return [
+                        Math.pow(d3.min(cond_slice), 2),
+                        Math.pow(d3.max($mpds_visavis_elements_list.prop_values(sort)), 2)
+                    ];
+                    case 'ratio': return [
+                        d3.min(cond_slice) / d3.max($mpds_visavis_elements_list.prop_values(sort)),
+                        d3.max($mpds_visavis_elements_list.prop_values(sort)) / d3.min(cond_slice)
+                    ];
+                    case 'max': return [
+                        d3.min(cond_slice),
+                        d3.max($mpds_visavis_elements_list.prop_values(sort))
+                    ];
+                    case 'min': return [
+                        d3.min(cond_slice),
+                        d3.max($mpds_visavis_elements_list.prop_values(sort))
+                    ];
+                }
+            }
+            renorm(args) {
+                const { sort, op } = args;
+                const svgdim = this.size();
+                return op ?
+                    d3.scale.quantize().range(d3.range(0, svgdim, svgdim / 95)).domain(this.get_bin_domain({ sort, op })) :
+                    d3.scale.ordinal().rangeBands([0, svgdim]).domain(this.order_by_prop(sort));
+            }
+            sort_control(next) {
+                if (next !== undefined) {
+                    this.x_sort(next);
+                    this.y_sort(next);
+                    return next;
+                }
+                return "nump";
+            }
+            x_op_str(next) {
+                if (next == 'null') {
+                    this.x_op(null);
+                    return next;
+                }
+                return this.x_op(next);
+            }
+            y_op_str(next) {
+                if (next == 'null') {
+                    this.y_op(null);
+                    return next;
+                }
+                return this.y_op(next);
+            }
+            auto_reorder() {
+                this.nonformers_checked();
+                const x_sort = this.x_sort();
+                const y_sort = this.y_sort() || x_sort;
+                const x_op = this.x_op();
+                const y_op = this.y_op();
+                const svg = d3.select(this.Root().dom_node_actual().firstChild);
+                function bin_op(op, a, b) {
+                    switch (op) {
+                        case 'sum': return a + b;
+                        case 'diff': return Math.abs(a - b);
+                        case 'product': return a * b;
+                        case 'ratio': return a / b;
+                        case 'max': return (a > b) ? a : b;
+                        case 'min': return (a < b) ? a : b;
+                    }
+                }
+                const arrange = (sort, op, input, index) => {
+                    const x = input.x !== undefined ? $mpds_visavis_elements_list.prop_values(sort)[input.x + 1] :
+                        $mpds_visavis_elements_list.prop_values(sort)[index];
+                    const y = input.y !== undefined ? $mpds_visavis_elements_list.prop_values(sort)[input.y + 1] :
+                        $mpds_visavis_elements_list.prop_values(sort)[index];
+                    var bin = bin_op(op, x, y);
+                    return this.renorm({ sort, op })(bin);
+                };
+                const x_arrange = (input, index) => {
+                    if (!x_op) {
+                        const x_renorm = this.renorm({ sort: x_sort, op: x_op });
+                        return index !== undefined ? x_renorm(index) : x_renorm(input.x);
+                    }
+                    return arrange(x_sort, x_op, input, index);
+                };
+                const y_arrange = (input, index) => {
+                    if (!y_op) {
+                        const y_renorm = this.renorm({ sort: y_sort, op: y_op });
+                        return y_renorm(index);
+                    }
+                    return arrange(y_sort, y_op, input, index);
+                };
+                d3.selectAll("rect.visited").classed("visited", false);
+                d3.selectAll("g.column text").classed("hidden", x_op);
+                d3.selectAll("g.row text").classed("hidden", y_op);
+                d3.select("rect.bgmatrix").classed("hidden", (x_op || y_op));
+                var t = svg.transition().duration(600);
+                if (y_op) {
+                    t.selectAll(".row")
+                        .attr("transform", null)
+                        .selectAll(".cell")
+                        .attr("x", null)
+                        .attr("transform", (d) => { return "translate(" + x_arrange(d) + "," + y_arrange(d) + ")"; });
+                }
+                else {
+                    t.selectAll(".row")
+                        .attr("transform", (d, i) => { return "translate(0," + y_arrange(d, i) + ")"; })
+                        .selectAll(".cell")
+                        .attr("transform", null)
+                        .attr("x", (d) => { return x_arrange(d); });
+                }
+                if (!x_op) {
+                    t.selectAll(".column")
+                        .attr("transform", (d, i) => { return "translate(" + x_arrange(d, i) + ")rotate(-90)"; });
+                }
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "setup", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "plot_body", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "json", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "sort_dict", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "x_label", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "y_label", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "cmp_labels", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "json_master", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "links", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "links_traversed", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "links_map", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "heatmap_datasets", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "value_min", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "value_max", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "datasets_type", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "heatmap", null);
+        __decorate([
+            $mol_mem_key
+        ], $mpds_visavis_plot_matrix.prototype, "order_by_prop", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "default_order", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "matrix", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "size_debounced", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "opacity_scale", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "color_heatmap", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "color_heatmap_scale", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "range", null);
+        __decorate([
+            $mol_action
+        ], $mpds_visavis_plot_matrix.prototype, "draw_row_cells", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "draw", null);
+        __decorate([
+            $mol_mem_key
+        ], $mpds_visavis_plot_matrix.prototype, "get_bin_domain", null);
+        __decorate([
+            $mol_mem_key
+        ], $mpds_visavis_plot_matrix.prototype, "renorm", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "sort_control", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "x_op_str", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "y_op_str", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot_matrix.prototype, "auto_reorder", null);
+        $$.$mpds_visavis_plot_matrix = $mpds_visavis_plot_matrix;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mpds/visavis/plot/matrix/matrix.view.css", "[mpds_visavis_plot_matrix_plot] rect.nonformer {\n\tfill:url(#nonformer) !important;\n\tfill-opacity:1.0 !important;\n}\n\n[mpds_visavis_plot_matrix_plot] rect.visited{\n\tfill:#0f0 !important;\n\tfill-opacity:1.0 !important;\n}\n\n[mpds_visavis_plot_matrix_plot] rect.bgmatrix {\n\tfill:#f6f6f6;\n}\n\n[mpds_visavis_plot_matrix_plot] rect.bgmatrix.hidden {\n\tfill:#fff;\n}\n\n[mpds_visavis_plot_matrix_plot] line {\n\tstroke:#fff;\n}\n\n[mpds_visavis_plot_matrix_plot] text.active {\n\tfill:#f00;\n\tfont-weight:bold;\n}\n");
+})($ || ($ = {}));
+
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        $mol_style_define($.$mpds_visavis_plot_matrix, {
+            flex: {
+                grow: 1,
+            },
+            Side_right: {
+                position: 'absolute',
+                top: '50%',
+                right: $mol_gap.space,
+                transform: 'translateY(-50%)'
+            },
+            Heatmap_color: {
+                width: '1rem',
+                height: '1rem',
+                margin: '1px',
+            },
+            Heatmap_legend: {
+                alignItems: 'flex-end',
+                flex: {
+                    direction: 'column-reverse',
+                },
+            },
+            Root: {
+                margin: 'auto',
+                position: 'absolute',
+                left: '50%',
+                transform: 'translateX(-50%)'
+            },
+            X_label: {
+                font: {
+                    size: '0.875rem',
+                    style: 'italic',
+                },
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                width: '100%',
+                padding: {
+                    bottom: $mol_gap.space,
+                },
+                gap: $mol_gap.block,
+                align: {
+                    items: 'center',
+                },
+                justify: {
+                    content: 'center',
+                }
+            },
+            Y_label: {
+                font: {
+                    size: '0.875rem',
+                    style: 'italic',
+                },
+                position: 'absolute',
+                transform: 'rotate(-90deg) translateY(-50%)',
+                left: 0,
+                top: '50%',
+                padding: {
+                    bottom: $mol_gap.space,
+                },
+                gap: $mol_gap.block,
+            },
+            Order_switch: {
+                flex: {
+                    shrink: 1,
+                },
+                Option: {
+                    padding: ['.25rem', '.75rem'],
+                },
+            },
+            Plot: {
+                flex: {
+                    grow: 1,
+                },
+                position: 'relative',
+            },
+            Setup: {
+                flex: {
+                    direction: 'column',
+                    basis: '10rem',
+                },
+                font: {
+                    size: '.75rem',
+                },
+                justifyContent: 'center',
+            },
+        });
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+
+;
+	($.$mpds_visavis_lib_plotly_view) = class $mpds_visavis_lib_plotly_view extends ($.$mol_view) {
+		Plotly_root(){
+			return null;
+		}
+		sub(){
+			return [(this?.Plotly_root())];
+		}
+		data(){
+			return [];
+		}
+		layout(){
+			return {};
+		}
+		plot_options(){
+			return {
+				"displaylogo": false, 
+				"displayModeBar": false, 
+				"staticPlot": true
+			};
+		}
+	};
+
+
+;
+"use strict";
+
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $mpds_visavis_lib_plotly_view extends $.$mpds_visavis_lib_plotly_view {
+            size() {
+                if (!this.view_rect())
+                    return;
+                const { width, height } = this.view_rect();
+                return { width, height };
+            }
+            Plotly_root() {
+                if (!this.size())
+                    return;
+                const { width, height } = this.size();
+                const plotly_root = $mol_wire_sync(document).createElement('div');
+                const plotly_root_actual = $mol_wire_sync($mpds_visavis_lib_plotly).react(plotly_root, this.data(), { ...this.layout(), width, height }, this.plot_options());
+                return plotly_root_actual;
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_lib_plotly_view.prototype, "size", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_lib_plotly_view.prototype, "Plotly_root", null);
+        $$.$mpds_visavis_lib_plotly_view = $mpds_visavis_lib_plotly_view;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mpds/visavis/lib/plotly/view/view.view.css", ".js-plotly-plot {\n\tposition: absolute;\n}\n\n/* default plotly styles for shadow DOM */\n.js-plotly-plot .plotly button,\n.js-plotly-plot .plotly input,\n.plotly-notifier {\n\tfont-family: \"Open Sans\", verdana, arial, sans-serif\n}\n\n.js-plotly-plot .plotly,\n.js-plotly-plot .plotly div {\n\tdirection: ltr;\n\tfont-family: \"Open Sans\", verdana, arial, sans-serif;\n\tmargin: 0;\n\tpadding: 0\n}\n\n.js-plotly-plot .plotly button:focus,\n.js-plotly-plot .plotly input:focus {\n\toutline: 0\n}\n\n.js-plotly-plot .plotly a,\n.js-plotly-plot .plotly a:hover {\n\ttext-decoration: none\n}\n\n.js-plotly-plot .plotly .crisp {\n\tshape-rendering: crispEdges\n}\n\n.js-plotly-plot .plotly .user-select-none {\n\t-webkit-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\t-o-user-select: none;\n\tuser-select: none\n}\n\n.js-plotly-plot .plotly svg {\n\toverflow: hidden\n}\n\n.js-plotly-plot .plotly svg a {\n\tfill: #447adb\n}\n\n.js-plotly-plot .plotly svg a:hover {\n\tfill: #3c6dc5\n}\n\n.js-plotly-plot .plotly .main-svg {\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n\tpointer-events: none\n}\n\n.js-plotly-plot .plotly .main-svg .draglayer {\n\tpointer-events: all\n}\n\n.js-plotly-plot .plotly .cursor-default {\n\tcursor: default\n}\n\n.js-plotly-plot .plotly .cursor-pointer {\n\tcursor: pointer\n}\n\n.js-plotly-plot .plotly .cursor-crosshair {\n\tcursor: crosshair\n}\n\n.js-plotly-plot .plotly .cursor-move {\n\tcursor: move\n}\n\n.js-plotly-plot .plotly .cursor-col-resize {\n\tcursor: col-resize\n}\n\n.js-plotly-plot .plotly .cursor-row-resize {\n\tcursor: row-resize\n}\n\n.js-plotly-plot .plotly .cursor-ns-resize {\n\tcursor: ns-resize\n}\n\n.js-plotly-plot .plotly .cursor-ew-resize {\n\tcursor: ew-resize\n}\n\n.js-plotly-plot .plotly .cursor-sw-resize {\n\tcursor: sw-resize\n}\n\n.js-plotly-plot .plotly .cursor-s-resize {\n\tcursor: s-resize\n}\n\n.js-plotly-plot .plotly .cursor-se-resize {\n\tcursor: se-resize\n}\n\n.js-plotly-plot .plotly .cursor-w-resize {\n\tcursor: w-resize\n}\n\n.js-plotly-plot .plotly .cursor-e-resize {\n\tcursor: e-resize\n}\n\n.js-plotly-plot .plotly .cursor-nw-resize {\n\tcursor: nw-resize\n}\n\n.js-plotly-plot .plotly .cursor-n-resize {\n\tcursor: n-resize\n}\n\n.js-plotly-plot .plotly .cursor-ne-resize {\n\tcursor: ne-resize\n}\n\n.js-plotly-plot .plotly .cursor-grab {\n\tcursor: -webkit-grab;\n\tcursor: grab\n}\n\n.js-plotly-plot .plotly .modebar {\n\tposition: absolute;\n\ttop: 2px;\n\tright: 2px\n}\n\n.js-plotly-plot .plotly .ease-bg {\n\t-webkit-transition: background-color .3s;\n\t-moz-transition: background-color .3s;\n\t-ms-transition: background-color .3s;\n\t-o-transition: background-color .3s;\n\ttransition: background-color .3s\n}\n\n.js-plotly-plot .plotly .modebar--hover>:not(.watermark) {\n\topacity: 0;\n\t-webkit-transition: opacity .3s;\n\t-moz-transition: opacity .3s;\n\t-ms-transition: opacity .3s;\n\t-o-transition: opacity .3s;\n\ttransition: opacity .3s\n}\n\n.js-plotly-plot .plotly:hover .modebar--hover .modebar-group {\n\topacity: 1\n}\n\n.js-plotly-plot .plotly .modebar-group {\n\tfloat: left;\n\tdisplay: inline-block;\n\tbox-sizing: border-box;\n\tpadding-left: 8px;\n\tposition: relative;\n\tvertical-align: middle;\n\twhite-space: nowrap\n}\n\n.js-plotly-plot .plotly .modebar-btn {\n\tposition: relative;\n\tfont-size: 16px;\n\tpadding: 3px 4px;\n\theight: 22px;\n\tcursor: pointer;\n\tline-height: normal;\n\tbox-sizing: border-box\n}\n\n.js-plotly-plot .plotly .modebar-btn svg {\n\tposition: relative;\n\ttop: 2px\n}\n\n.js-plotly-plot .plotly .modebar.vertical {\n\tdisplay: flex;\n\tflex-direction: column;\n\tflex-wrap: wrap;\n\talign-content: flex-end;\n\tmax-height: 100%\n}\n\n.js-plotly-plot .plotly .modebar.vertical svg {\n\ttop: -1px\n}\n\n.js-plotly-plot .plotly .modebar.vertical .modebar-group {\n\tdisplay: block;\n\tfloat: none;\n\tpadding-left: 0;\n\tpadding-bottom: 8px\n}\n\n.js-plotly-plot .plotly .modebar.vertical .modebar-group .modebar-btn {\n\tdisplay: block;\n\ttext-align: center\n}\n\n.js-plotly-plot .plotly [data-title]:after,\n.js-plotly-plot .plotly [data-title]:before {\n\tposition: absolute;\n\t-webkit-transform: translate3d(0, 0, 0);\n\t-moz-transform: translate3d(0, 0, 0);\n\t-ms-transform: translate3d(0, 0, 0);\n\t-o-transform: translate3d(0, 0, 0);\n\ttransform: translate3d(0, 0, 0);\n\tdisplay: none;\n\topacity: 0;\n\tz-index: 1001;\n\tpointer-events: none;\n\ttop: 110%;\n\tright: 50%\n}\n\n.js-plotly-plot .plotly [data-title]:hover:after,\n.js-plotly-plot .plotly [data-title]:hover:before {\n\tdisplay: block;\n\topacity: 1\n}\n\n.js-plotly-plot .plotly [data-title]:before {\n\tcontent: \"\";\n\tposition: absolute;\n\tbackground: 0 0;\n\tborder: 6px solid transparent;\n\tz-index: 1002;\n\tmargin-top: -12px;\n\tborder-bottom-color: #69738a;\n\tmargin-right: -6px\n}\n\n.js-plotly-plot .plotly [data-title]:after {\n\tcontent: attr(data-title);\n\tbackground: #69738a;\n\tcolor: #fff;\n\tpadding: 8px 10px;\n\tfont-size: 12px;\n\tline-height: 12px;\n\twhite-space: nowrap;\n\tmargin-right: -18px;\n\tborder-radius: 2px\n}\n\n.js-plotly-plot .plotly .vertical [data-title]:after,\n.js-plotly-plot .plotly .vertical [data-title]:before {\n\ttop: 0;\n\tright: 200%\n}\n\n.js-plotly-plot .plotly .vertical [data-title]:before {\n\tborder: 6px solid transparent;\n\tborder-left-color: #69738a;\n\tmargin-top: 8px;\n\tmargin-right: -30px\n}\n\n.plotly-notifier {\n\tposition: fixed;\n\ttop: 50px;\n\tright: 20px;\n\tz-index: 10000;\n\tfont-size: 10pt;\n\tmax-width: 180px\n}\n\n.plotly-notifier p {\n\tmargin: 0\n}\n\n.plotly-notifier .notifier-note {\n\tmin-width: 180px;\n\tmax-width: 250px;\n\tborder: 1px solid #fff;\n\tz-index: 3000;\n\tmargin: 0;\n\tbackground-color: rgba(140, 151, 175, .9);\n\tcolor: #fff;\n\tpadding: 10px;\n\toverflow-wrap: break-word;\n\tword-wrap: break-word;\n\t-ms-hyphens: auto;\n\t-webkit-hyphens: auto;\n\thyphens: auto\n}\n\n.plotly-notifier .notifier-close {\n\tcolor: #fff;\n\topacity: .8;\n\tfloat: right;\n\tpadding: 0 5px;\n\tbackground: 0 0;\n\tborder: none;\n\tfont-size: 20px;\n\tfont-weight: 700;\n\tline-height: 20px\n}\n\n.plotly-notifier .notifier-close:hover {\n\tcolor: #444;\n\ttext-decoration: none;\n\tcursor: pointer\n}\n");
+})($ || ($ = {}));
+
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        $mol_style_define($mpds_visavis_lib_plotly_view, {
+            flex: {
+                grow: 1
+            },
+        });
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+
+;
+	($.$mpds_visavis_plot_cube) = class $mpds_visavis_plot_cube extends ($.$mol_view) {
+		subscribe_click(){
+			return null;
+		}
+		data_shown(){
+			return [];
+		}
+		layout(){
+			return {};
+		}
+		Plotly_root(){
+			return (this?.Root()?.Plotly_root());
+		}
+		Root(){
+			const obj = new this.$.$mpds_visavis_lib_plotly_view();
+			(obj.data) = () => ((this?.data_shown()));
+			(obj.layout) = () => ((this?.layout()));
+			(obj.plot_options) = () => ({
+				"displaylogo": false, 
+				"displayModeBar": false, 
+				"staticPlot": false
+			});
+			return obj;
+		}
+		cmp_labels(){
+			return [];
+		}
+		Cmp_legend(){
+			const obj = new this.$.$mpds_visavis_plot_legend_cmp();
+			(obj.labels) = () => ((this?.cmp_labels()));
+			(obj.colorset) = () => ((this?.colorset()));
+			return obj;
+		}
+		value_min(){
+			return 0;
+		}
+		Heatmap_min(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ([(this?.value_min())]);
+			return obj;
+		}
+		heatmap_color(id){
+			return "";
+		}
+		Heatmap_color(id){
+			const obj = new this.$.$mol_view();
+			(obj.style) = () => ({"background": (this?.heatmap_color(id))});
+			return obj;
+		}
+		value_max(){
+			return 0;
+		}
+		Heatmap_max(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ([(this?.value_max())]);
+			return obj;
+		}
+		heatmap_color_list(){
+			return [
+				(this?.Heatmap_min()), 
+				(this?.Heatmap_color("0")), 
+				(this?.Heatmap_max())
+			];
+		}
+		Heatmap_legend(){
+			const obj = new this.$.$mol_list();
+			(obj.rows) = () => ((this?.heatmap_color_list()));
+			return obj;
+		}
+		Side_right(){
+			const obj = new this.$.$mol_scroll();
+			(obj.sub) = () => ([(this?.Heatmap_legend())]);
+			return obj;
+		}
+		plot_body(){
+			return [
+				(this?.Root()), 
+				(this?.Cmp_legend()), 
+				(this?.Side_right())
+			];
+		}
+		Plot(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ((this?.plot_body()));
+			return obj;
+		}
+		fixel_checked(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		Fixel(){
+			const obj = new this.$.$mol_check_box();
+			(obj.title) = () => ("Project on 2d");
+			(obj.checked) = (next) => ((this?.fixel_checked(next)));
+			return obj;
+		}
+		nonformers_checked(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		Nonformers(){
+			const obj = new this.$.$mol_check_box();
+			(obj.hint) = () => ("Continuous solid solutions and complete insolubility systems");
+			(obj.title) = () => ("Show non-formers");
+			(obj.checked) = (next) => ((this?.nonformers_checked(next)));
+			return obj;
+		}
+		intersection_only(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		Intersection_on(){
+			const obj = new this.$.$mol_check_box();
+			(obj.title) = () => ("Show intersection");
+			(obj.checked) = (next) => ((this?.intersection_only(next)));
+			return obj;
+		}
+		sort_dict(){
+			return {};
+		}
+		X_order_select(){
+			const obj = new this.$.$mol_select();
+			(obj.value) = (next) => ((this?.x_sort(next)));
+			(obj.dictionary) = () => ((this?.sort_dict()));
+			return obj;
+		}
+		X_order(){
+			const obj = new this.$.$mol_labeler();
+			(obj.title) = () => ("X sort by");
+			(obj.Content) = () => ((this?.X_order_select()));
+			return obj;
+		}
+		Y_order_select(){
+			const obj = new this.$.$mol_select();
+			(obj.value) = (next) => ((this?.y_sort(next)));
+			(obj.dictionary) = () => ((this?.sort_dict()));
+			return obj;
+		}
+		Y_order(){
+			const obj = new this.$.$mol_labeler();
+			(obj.title) = () => ("Y sort by");
+			(obj.Content) = () => ((this?.Y_order_select()));
+			return obj;
+		}
+		Z_order_select(){
+			const obj = new this.$.$mol_select();
+			(obj.value) = (next) => ((this?.z_sort(next)));
+			(obj.dictionary) = () => ((this?.sort_dict()));
+			return obj;
+		}
+		Z_order(){
+			const obj = new this.$.$mol_labeler();
+			(obj.title) = () => ("Z sort by");
+			(obj.Content) = () => ((this?.Z_order_select()));
+			return obj;
+		}
+		setup(){
+			return [
+				(this?.Fixel()), 
+				(this?.Nonformers()), 
+				(this?.Intersection_on()), 
+				(this?.X_order()), 
+				(this?.Y_order()), 
+				(this?.Z_order())
+			];
+		}
+		Setup(){
+			const obj = new this.$.$mol_view();
+			(obj.sub) = () => ((this?.setup()));
+			return obj;
+		}
+		plot_raw(){
+			const obj = new this.$.$mpds_visavis_plot_raw();
+			return obj;
+		}
+		auto(){
+			return [(this?.subscribe_click())];
+		}
+		multi_jsons(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		show_setup(){
+			return true;
+		}
+		show_fixel(next){
+			if(next !== undefined) return next;
+			return true;
+		}
+		heatmap(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		order(id){
+			return [];
+		}
+		order_current(next){
+			if(next !== undefined) return next;
+			return "nump";
+		}
+		x_op(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		y_op(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		z_op(next){
+			if(next !== undefined) return next;
+			return false;
+		}
+		x_sort(next){
+			if(next !== undefined) return next;
+			return "nump";
+		}
+		y_sort(next){
+			if(next !== undefined) return next;
+			return "nump";
+		}
+		z_sort(next){
+			if(next !== undefined) return next;
+			return "nump";
+		}
+		cube_click(next){
+			if(next !== undefined) return next;
+			return null;
+		}
+		colorset(){
+			return [
+				"#3e3f95", 
+				"#c00", 
+				"#FE9A2E", 
+				"#090", 
+				"#f0f", 
+				"#09f", 
+				"#666", 
+				"#0f3", 
+				"#0ff", 
+				"#90c"
+			];
+		}
+		heatmap_colors(){
+			return [
+				"rgb(150,0,90)", 
+				"rgb(0,0,200)", 
+				"rgb(0,25,255)", 
+				"rgb(0,152,255)", 
+				"rgb(44,255,150)", 
+				"rgb(151,255,0)", 
+				"rgb(255,234,0)", 
+				"rgb(255,111,0)", 
+				"rgb(255,0,0)"
+			];
+		}
+		sub(){
+			return [(this?.Plot()), (this?.Setup())];
+		}
+	};
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Root"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Cmp_legend"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Heatmap_min"));
+	($mol_mem_key(($.$mpds_visavis_plot_cube.prototype), "Heatmap_color"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Heatmap_max"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Heatmap_legend"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Side_right"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Plot"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "fixel_checked"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Fixel"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "nonformers_checked"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Nonformers"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "intersection_only"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Intersection_on"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "X_order_select"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "X_order"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Y_order_select"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Y_order"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Z_order_select"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Z_order"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "Setup"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "plot_raw"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "multi_jsons"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "show_fixel"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "heatmap"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "order_current"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "x_op"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "y_op"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "z_op"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "x_sort"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "y_sort"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "z_sort"));
+	($mol_mem(($.$mpds_visavis_plot_cube.prototype), "cube_click"));
+
+
+;
+"use strict";
+var $;
+(function ($) {
+    $.$mol_data_boolean = (val) => {
+        if (typeof val === 'boolean')
+            return val;
+        return $mol_fail(new $mol_data_error(`${val} is not a boolean`));
+    };
+})($ || ($ = {}));
+
+;
+"use strict";
+var $;
+(function ($) {
+    function $mol_data_variant(...sub) {
+        return $mol_data_setup((val) => {
+            const errors = [];
+            for (const type of sub) {
+                let hidden = $.$mol_fail_hidden;
+                try {
+                    $.$mol_fail = $.$mol_fail_hidden;
+                    return type(val);
+                }
+                catch (error) {
+                    $.$mol_fail = hidden;
+                    if (error instanceof $mol_data_error) {
+                        errors.push(error);
+                    }
+                    else {
+                        return $mol_fail_hidden(error);
+                    }
+                }
+            }
+            return $mol_fail(new $mol_data_error(`${val} is not any of variants`, {}, ...errors));
+        }, sub);
+    }
+    $.$mol_data_variant = $mol_data_variant;
 })($ || ($ = {}));
 
 ;
