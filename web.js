@@ -7632,12 +7632,9 @@ var $;
 			(obj.colorset) = () => ((this?.colorset()));
 			return obj;
 		}
-		value_min(){
-			return 0;
-		}
 		Heatmap_min(){
 			const obj = new this.$.$mol_view();
-			(obj.sub) = () => ([(this?.value_min())]);
+			(obj.sub) = () => ([(this?.links_value_min())]);
 			return obj;
 		}
 		heatmap_color(id){
@@ -7648,12 +7645,9 @@ var $;
 			(obj.style) = () => ({"background": (this?.heatmap_color(id))});
 			return obj;
 		}
-		value_max(){
-			return 0;
-		}
 		Heatmap_max(){
 			const obj = new this.$.$mol_view();
-			(obj.sub) = () => ([(this?.value_max())]);
+			(obj.sub) = () => ([(this?.links_value_max())]);
 			return obj;
 		}
 		heatmap_color_list(){
@@ -7846,7 +7840,16 @@ var $;
 			if(next !== undefined) return next;
 			return 0;
 		}
-		heatmap(){
+		links_value_min(next){
+			if(next !== undefined) return next;
+			return 0;
+		}
+		links_value_max(next){
+			if(next !== undefined) return next;
+			return 0;
+		}
+		heatmap(next){
+			if(next !== undefined) return next;
 			return false;
 		}
 		matrix(){
@@ -7945,6 +7948,9 @@ var $;
 	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "plot_raw"));
 	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "multi_jsons"));
 	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "size"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "links_value_min"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "links_value_max"));
+	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "heatmap"));
 	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "x_sort"));
 	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "y_sort"));
 	($mol_mem(($.$mpds_visavis_plot_matrix.prototype), "x_op"));
@@ -16477,79 +16483,33 @@ var $;
                 return this.json_master().payload.nodes;
             }
             links() {
-                return this.json_master().payload.links;
-            }
-            links_traversed() {
-                const links_map = new Map();
-                const cells_map = new Map();
-                const heatmap_datasets = new Set;
-                let value_min = Infinity;
-                let value_max = -Infinity;
-                const intersected_cells = [];
-                this.links().forEach(l => {
-                    links_map.get(l.cmt)?.push(l) ?? links_map.set(l.cmt, [l]);
-                    const intersection = links_map.get(l.cmt)?.length ?? 0;
-                    if (intersection > 1) {
-                        const cell = cells_map.get(l.cmt);
-                        cell.z += l.value;
-                        cell.intersection = intersection;
-                        intersected_cells.push(cell);
-                    }
-                    else {
-                        cells_map.set(l.cmt, {
-                            y: l.source, x: l.target, cmt: l.cmt, cmp: l.cmp || 0, z: l.value, nonformer: false,
-                        });
-                    }
-                    if (Math.floor(l.value) !== l.value)
-                        heatmap_datasets.add(l.cmp || 0);
-                    value_min = Math.min(value_min, l.value);
-                    value_max = Math.max(value_max, l.value);
-                });
-                let intersect_value_min = Infinity;
-                let intersect_value_max = -Infinity;
-                if (heatmap_datasets.size == 2) {
-                    intersected_cells.forEach(cell => {
-                        const links = links_map.get(cell.cmt);
-                        cell.z = Math.abs(links[0].value - links[1].value);
-                        intersect_value_min = Math.min(intersect_value_min, cell.z);
-                        intersect_value_max = Math.max(intersect_value_max, cell.z);
-                    });
-                }
-                return { map: links_map, cells_map, heatmap_datasets, value_min, value_max, intersect_value_min, intersect_value_max };
+                return this.json_master().payload.links.slice().sort((a, b) => a.value - b.value);
             }
             links_map() {
-                return this.links_traversed().map;
+                const map = new Map();
+                this.links().forEach(l => {
+                    map.get(l.cmt)?.push(l) ?? map.set(l.cmt, [l]);
+                });
+                return map;
             }
-            heatmap_datasets() {
-                return this.links_traversed().heatmap_datasets;
+            intersection_label(cmt) {
+                const quantity = this.links_map().get(cmt)?.length;
+                return quantity > 1 ? String(quantity) : '';
             }
-            value_min() {
-                if (this.intersection_only())
-                    return this.links_traversed().intersect_value_min;
-                return this.links_traversed().value_min;
+            links_value_min() {
+                return this.links()[0].value;
             }
-            value_max() {
-                if (this.intersection_only())
-                    return this.links_traversed().intersect_value_max;
-                return this.links_traversed().value_max;
-            }
-            datasets_type() {
-                const heatmap_datasets = this.heatmap_datasets();
-                if (heatmap_datasets.size == 0) {
-                    return 'entries';
-                }
-                const datesets_quantity = this.multi_jsons().length;
-                if (datesets_quantity == 2 && heatmap_datasets.size == 2) {
-                    return 'heatmap';
-                }
-                return 'mix';
+            links_value_max() {
+                return this.links().slice(-1)[0].value;
             }
             heatmap() {
-                if (this.datasets_type() != 'heatmap')
-                    return false;
-                if (this.heatmap_datasets().size == 2)
-                    return this.intersection_only() ? true : false;
-                return true;
+                return this.links().reduce((heatmap, link) => {
+                    if (!heatmap && Math.floor(link.value) !== link.value)
+                        return true;
+                    else if (link.cmp)
+                        return false;
+                    return heatmap;
+                }, false);
             }
             order_by_prop(prop) {
                 return d3.range(95).sort((a, b) => {
@@ -16561,12 +16521,16 @@ var $;
             }
             matrix() {
                 const matrix = this.nodes().map((node, i) => {
-                    return d3.range(95).map((j) => ({ x: j, y: i, z: 0, cmt: '', nonformer: false }));
+                    return d3.range(95).map((j) => ({ x: j, y: i, z: 0, cmt: '', cmp: 0, nonformer: false }));
                 });
-                this.links_traversed().cells_map.forEach(cell => {
-                    matrix[cell.y][cell.x] = cell;
-                    matrix[cell.x][cell.y] = { ...cell, x: cell.y, y: cell.x };
-                });
+                for (const link of this.links()) {
+                    matrix[link.source][link.target].z += link.value;
+                    matrix[link.target][link.source].z += link.value;
+                    matrix[link.source][link.target].cmt = link.cmt;
+                    matrix[link.target][link.source].cmt = link.cmt;
+                    matrix[link.source][link.target].cmp = link.cmp || 0;
+                    matrix[link.target][link.source].cmp = link.cmp || 0;
+                }
                 if (this.nonformers_checked()) {
                     for (const item of $mpds_visavis_elements_nonformer.pd_bin()) {
                         matrix[item[0]][item[1]].z = 1;
@@ -16586,11 +16550,9 @@ var $;
                 return this.size(size);
             }
             opacity_scale() {
-                return d3.scale.linear().domain([this.value_min(), this.value_max()]).range([0.2, 1]).clamp(true);
+                return d3.scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0.2, 1]).clamp(true);
             }
             opacity(index) {
-                if (this.datasets_type() == 'mix')
-                    return 1;
                 return this.heatmap() ? 1 : this.opacity_scale()(index);
             }
             color_heatmap() {
@@ -16607,11 +16569,11 @@ var $;
                 ];
             }
             color_heatmap_scale() {
-                return d3.scale.linear().domain([this.value_min(), this.value_max()]).range([0, 1]);
+                return d3.scale.linear().domain([this.links_value_min(), this.links_value_max()]).range([0, 1]);
             }
             color(index, cmp) {
                 if (this.heatmap())
-                    return this.color_heatmap()(this.color_heatmap_scale()(index));
+                    return cmp ? this.colorset()[1] : this.color_heatmap()(this.color_heatmap_scale()(index));
                 return this.colorset()[cmp] || '#ccc';
             }
             range() {
@@ -16620,31 +16582,22 @@ var $;
             svg_title_text(cell) {
                 if (!cell.cmt)
                     return '';
-                if (this.datasets_type() == 'mix')
-                    return cell.cmt;
                 const text = `${cell.cmt}: ${cell.z}`;
-                if (this.heatmap_datasets().has(Number(cell.cmt) || 0))
+                if (this.heatmap())
                     return text;
-                const title = `${text} ${cell.z === 1 ? 'entry' : 'entries'}`;
                 const links = this.links_map().get(cell.cmt);
-                if (links?.length == 1) {
+                const title = `${text} ${cell.z === 1 ? 'entry' : 'entries'}`;
+                if (links?.length == 1)
                     return title;
-                }
                 return `${title} (${links?.map(l => this.cmp_labels()[l.cmp ?? 0]).join('; ')})`;
             }
-            draw_row_cells(row_node, cells, intersection_only) {
+            draw_cells(row_node, cells, intersection_only) {
                 const that = this;
                 const range = this.range();
                 const rangeBand = range.rangeBand();
                 const enters = d3.select(row_node)
                     .selectAll('.cell')
-                    .data(cells.filter(d => {
-                    if (intersection_only)
-                        return d.intersection ? true : false;
-                    if (d.z !== 0 || d.intersection)
-                        return true;
-                    return false;
-                }))
+                    .data(cells.filter(d => d.z && (!intersection_only || that.intersection_label(d.cmt))))
                     .enter();
                 const rects = enters.append('rect');
                 rects.attr('class', (d) => d.nonformer ? 'nonformer cell' : 'cell')
@@ -16653,15 +16606,11 @@ var $;
                     .attr('width', rangeBand)
                     .attr('height', rangeBand)
                     .style('fill-opacity', (d) => this.opacity(d.z))
-                    .style('fill', (d) => {
-                    if (d.intersection && !that.heatmap())
-                        return 'gray';
-                    return this.color(d.z ?? 1, d.cmp);
-                })
+                    .style('fill', (d) => that.intersection_label(d.cmt) ? 'gray' : this.color(d.z, d.cmp))
                     .on('mouseover', function (event) {
                     const cell_data = d3.select(this).data()[0];
-                    d3.select(that.dom_node_actual()).selectAll(".row .element").classed("active", (d, i) => i == cell_data.y);
-                    d3.select(that.dom_node_actual()).selectAll(".column .element").classed("active", (d, i) => i == cell_data.x);
+                    d3.select(that.dom_node_actual()).selectAll(".row text").classed("active", (d, i) => { return i == cell_data.y; });
+                    d3.select(that.dom_node_actual()).selectAll(".column text").classed("active", (d, i) => { return i == cell_data.x; });
                 })
                     .on('mouseout', function (event) {
                     d3.select(that.dom_node_actual()).selectAll(".row text").classed("active", null);
@@ -16677,7 +16626,7 @@ var $;
                 });
                 rects.append('svg:title').text((cell) => this.svg_title_text(cell));
                 enters.append('text')
-                    .text((cell) => cell.intersection || '')
+                    .text((cell) => that.intersection_label(cell.cmt))
                     .attr('x', (d) => range(d.x) + rangeBand / 2)
                     .attr('dy', '.85em')
                     .attr('text-anchor', 'middle')
@@ -16702,18 +16651,17 @@ var $;
                     .attr('class', 'bgmatrix')
                     .attr('width', size)
                     .attr('height', size);
-                const that = this;
+                const draw_cells = (node, row) => this.draw_cells(node, row, this.intersection_only());
                 const row = group.selectAll('.row')
                     .data(this.matrix())
                     .enter().append('g')
                     .attr('class', 'row')
                     .attr('transform', (d, i) => 'translate(0,' + this.range()(i) + ')')
-                    .each(function (cells) { that.draw_row_cells(this, cells, that.intersection_only()); });
+                    .each(function (cells) { draw_cells(this, cells); });
                 row.append('line')
                     .attr('x2', size);
                 if (!this.y_op()) {
                     row.append('text')
-                        .attr('class', 'element')
                         .attr('x', -6)
                         .attr('y', rangeBand / 2)
                         .attr('dy', '.32em')
@@ -16729,7 +16677,6 @@ var $;
                     .attr('x1', -size);
                 if (!this.x_op()) {
                     column.append('text')
-                        .attr('class', 'element')
                         .attr('x', 6)
                         .attr('y', rangeBand / 2)
                         .attr('dy', '.32em')
@@ -16890,22 +16837,10 @@ var $;
         ], $mpds_visavis_plot_matrix.prototype, "links", null);
         __decorate([
             $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "links_traversed", null);
-        __decorate([
-            $mol_mem
         ], $mpds_visavis_plot_matrix.prototype, "links_map", null);
         __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "heatmap_datasets", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "value_min", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "value_max", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot_matrix.prototype, "datasets_type", null);
+            $mol_mem_key
+        ], $mpds_visavis_plot_matrix.prototype, "intersection_label", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_matrix.prototype, "heatmap", null);
@@ -16935,7 +16870,7 @@ var $;
         ], $mpds_visavis_plot_matrix.prototype, "range", null);
         __decorate([
             $mol_action
-        ], $mpds_visavis_plot_matrix.prototype, "draw_row_cells", null);
+        ], $mpds_visavis_plot_matrix.prototype, "draw_cells", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_matrix.prototype, "draw", null);
@@ -17540,8 +17475,6 @@ var $;
                 return d3.range(95).sort((a, b) => $mpds_visavis_elements_list.element_by_num(a + 1)[order] - $mpds_visavis_elements_list.element_by_num(b + 1)[order]);
             }
             heatmap() {
-                if (this.multi_jsons())
-                    return false;
                 return this.json().payload.points.v.some(val => Math.floor(val) !== val);
             }
             heatmap_color(index) {
@@ -21492,25 +21425,16 @@ var $;
                     return $mol_fail(new $mol_data_error('Error: unknown data format'));
                 return json;
             }
-            json_fetched(request) {
-                return $mpds_visavis_plot.fetch_plot_json(request);
-            }
             json() {
-                return this.json_fetched(this.json_request());
+                return $mpds_visavis_plot.fetch_plot_json(this.json_request());
             }
             json_cmp() {
-                return this.multi_jsons()?.[1] ?? null;
-            }
-            multi_requests(next) {
-                if (next !== undefined)
-                    return next;
-                if (this.json_cmp_request())
-                    return [this.json_request(), this.json_cmp_request()];
-                return super.multi_requests();
+                return $mpds_visavis_plot.fetch_plot_json(this.json_cmp_request());
             }
             multi_jsons() {
-                let requests = this.multi_requests();
-                return requests.length > 0 ? requests.map(req => this.json_fetched(req)) : null;
+                return this.multi_requests().length > 0
+                    ? this.multi_requests().map(req => $mpds_visavis_plot.fetch_plot_json(req))
+                    : this.json_cmp() ? [this.json(), this.json_cmp()] : null;
             }
             json_cmp_request(next) {
                 if (next === null && $mol_wire_probe(() => this.json_cmp_request()) === null) {
@@ -21518,15 +21442,7 @@ var $;
                 }
                 return next ?? null;
             }
-            inconsistent_projection() {
-                const fixels = new Set;
-                this.multi_jsons()?.forEach(json => fixels.add(json.payload?.fixel));
-                return fixels.size > 1;
-            }
             plot_raw() {
-                if (this.inconsistent_projection()) {
-                    this.notify('Error: inconsistent datasets projection');
-                }
                 return this.multi_jsons()
                     ? $mpds_visavis_plot_raw_from_json(this.multi_jsons()[0])
                     : this.json()
@@ -21558,28 +21474,11 @@ var $;
                 }
                 return false;
             }
-            on_fixel_checked(checked) {
-                let requests = this.multi_requests();
-                if (requests.length == 0) {
-                    const url = this.json_request();
-                    this.json_request(checked ? this.url_fixel(url) : this.url_unfixel(url));
-                    return;
-                }
-                this.multi_requests(requests.map(url => checked ? this.url_fixel(url) : this.url_unfixel(url)));
-            }
-            url_unfixel(url) {
-                return url.replace('&fixel=1', '');
-            }
-            url_fixel(url) {
-                return url + '&fixel=1';
-            }
+            on_fixel_checked(checked) { }
             notify(msg) {
                 alert(msg);
             }
         }
-        __decorate([
-            $mol_mem_key
-        ], $mpds_visavis_plot.prototype, "json_fetched", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot.prototype, "json", null);
@@ -21588,16 +21487,10 @@ var $;
         ], $mpds_visavis_plot.prototype, "json_cmp", null);
         __decorate([
             $mol_mem
-        ], $mpds_visavis_plot.prototype, "multi_requests", null);
-        __decorate([
-            $mol_mem
         ], $mpds_visavis_plot.prototype, "multi_jsons", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot.prototype, "json_cmp_request", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot.prototype, "inconsistent_projection", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot.prototype, "plot_raw", null);
@@ -21613,12 +21506,6 @@ var $;
         __decorate([
             $mol_action
         ], $mpds_visavis_plot.prototype, "on_fixel_checked", null);
-        __decorate([
-            $mol_action
-        ], $mpds_visavis_plot.prototype, "url_unfixel", null);
-        __decorate([
-            $mol_action
-        ], $mpds_visavis_plot.prototype, "url_fixel", null);
         __decorate([
             $mol_action
         ], $mpds_visavis_plot.prototype, "notify", null);
