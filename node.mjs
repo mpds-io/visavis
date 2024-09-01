@@ -18006,7 +18006,7 @@ var $;
             }
             heatmap_diif() {
                 const jsons = this.multi_jsons();
-                if (jsons.length == 2) {
+                if (jsons?.length == 2) {
                     return jsons.every(json => json.payload.points.v.some(val => Math.floor(val) !== val));
                 }
                 return false;
