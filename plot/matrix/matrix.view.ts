@@ -238,7 +238,7 @@ namespace $.$$ {
 			} )
 
 			this.links_traversed().cells_map.forEach( cell => {
-				matrix[cell.y][cell.x] = cell
+				matrix[cell.y][cell.x] = {...cell}
 				matrix[cell.x][cell.y] = {...cell, x: cell.y, y: cell.x} // NB only AB-all
 			})
 
