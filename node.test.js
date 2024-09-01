@@ -17012,7 +17012,7 @@ var $;
                     return d3.range(95).map((j) => ({ x: j, y: i, z: 0, cmt: '', nonformer: false }));
                 });
                 this.links_traversed().cells_map.forEach(cell => {
-                    matrix[cell.y][cell.x] = cell;
+                    matrix[cell.y][cell.x] = { ...cell };
                     matrix[cell.x][cell.y] = { ...cell, x: cell.y, y: cell.x };
                 });
                 if (this.nonformers_checked()) {
