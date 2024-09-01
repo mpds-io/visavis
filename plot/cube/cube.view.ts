@@ -47,18 +47,16 @@ namespace $.$$ {
 			return $mpds_visavis_plot_cube_json( this.plot_raw().json() as any )
 		}
 
+		@ $mol_mem
+		value_min() {
+			if( this.heatmap_diif() ) return this.points_traversed().diff_value_min
+			return this.points_traversed().value_min
+		}
 
 		@ $mol_mem
-		value_list() {
-			return this.json().payload.points.v.slice().sort( (a, b) => a - b )
-		}
-
-		value_min() {
-			return this.value_list()[0]
-		}
-
 		value_max() {
-			return this.value_list().slice(-1)[0]
+			if( this.heatmap_diif() ) return this.points_traversed().diff_value_max
+			return this.points_traversed().value_max
 		}
 
 		@ $mol_mem
@@ -74,9 +72,23 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
+		heatmap_diif() {
+			const jsons = this.multi_jsons() as typeof $mpds_visavis_plot_cube_json.Value[]
+			if( jsons.length == 2 ) {
+				return jsons.every( json => json.payload.points.v.some(val => Math.floor(val) !== val) )
+			}
+			return false
+		}
+
+		@ $mol_mem
 		heatmap() {
-			if( this.multi_jsons() ) return false
-			return this.json().payload.points.v.some(val => Math.floor(val) !== val)
+			if( this.heatmap_diif() ) return this.intersection_only()
+
+			const jsons = this.multi_jsons() as typeof $mpds_visavis_plot_cube_json.Value[]
+			let json = this.json()
+			if( jsons?.length == 1 ) json = jsons[0]
+
+			return json.payload.points.v.some(val => Math.floor(val) !== val)
 		}
 
 		heatmap_color( index: number ) {
@@ -91,11 +103,23 @@ namespace $.$$ {
 			]
 		}
 
+		@ $mol_action
+		marker_heatmap( values: readonly number[] ) {
+			return {
+				color: values,
+				colorscale: 'Rainbow',
+				size: 4,
+				opacity: 0.9
+			}
+		}
+
 		@ $mol_mem_key
 		marker( color_id: number ) {
+			if( this.heatmap() ) {
+				return this.marker_heatmap( this.json().payload.points.v )
+			}
 			return {
-				color: this.heatmap() ? this.json().payload.points.v : this.colorset()[ color_id ],
-				... this.heatmap() ? { colorscale: 'Rainbow' } : {},
+				color: this.colorset()[ color_id ],
 				size: 4,
 				opacity: 0.9
 			}
@@ -144,11 +168,17 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		scatters() {
+		points_traversed() {
 
-			const values: Map< [ label: string, json_index: number ], number/*v*/ > = new Map()
+			const values_by_label: Record<
+				string/*json index*/, 
+				Map< string/*point label*/, number/*v*/ > 
+			> = Object.fromEntries( this.multi_jsons().map( (j: any, i:number )=> [i, new Map] ) )
 
-			const entries: Map< string/*point label*/, number[]/*json indexes*/> = new Map()
+			let value_min = Infinity
+			let value_max = -Infinity
+
+			const indexes_by_label: Map< string/*point label*/, number[]/*json indexes*/> = new Map()
 
 			const labels: Set< string > = new Set()
 			let points_x: number[] = []
@@ -160,17 +190,19 @@ namespace $.$$ {
 				const points = $mpds_visavis_plot_cube_json( json ).payload.points
 				points.labels.forEach( (label, i)=> {
 
-					entries.get( label )?.push( index ) ?? entries.set( label, [ index ] )
+					indexes_by_label.get( label )?.push( index ) ?? indexes_by_label.set( label, [ index ] )
 
-					values.set( [ label, index ], points.v[i] )
-
+					values_by_label[index].set( label, points.v[i] )
+					value_min = Math.min( value_min, points.v[i] )
+					value_max = Math.max( value_max, points.v[i] )
+					
 					if( !labels.has( label ) ) {
 						labels.add( label )
 						points_x.push( points.x[i] )
 						points_y.push( points.y[i] )
 						points_z.push( points.z[i] )
 					}
-
+					
 				} )
 
 			} )
@@ -189,10 +221,10 @@ namespace $.$$ {
 				z: converted.z[ i ],
 			}) )
 			
-			const new_scatter = ( index: number | 'intersection' )=> {
+			const new_scatter = ( marker: ReturnType< $mpds_visavis_plot_cube['marker'] > )=> {
 				return {
 					...this.scatter3d_common(),
-					marker: index == 'intersection' ? {color: "#303030", size: 5, opacity: 0.9} : this.marker( index ),
+					marker,
 					x: [] as number[],
 					y: [] as number[],
 					z: [] as number[],
@@ -201,20 +233,37 @@ namespace $.$$ {
 				}
 			}
 
-			const scatters_once: Map<number, ReturnType< typeof new_scatter >> = new Map()
-			const intersects = new_scatter( 'intersection' )
+			const no_intersects: Map<number, ReturnType< typeof new_scatter >> = new Map()
+			const intersects = new_scatter( {color: "#303030", size: 5, opacity: 0.9} )
 
-			entries.forEach( ( entry, label )=> {
+			const heatmap_diif = this.heatmap_diif()
+			let diff_value_min = Infinity
+			let diff_value_max = -Infinity
+
+			indexes_by_label.forEach( ( indexes, label )=> {
 
 				const point = points.get( label )!
 
 				let scatter = intersects
-				if( entry.length == 1 ) {
-					const index = entry[ 0 ]
-					scatter = scatters_once.get( index ) ?? new_scatter( index )
-					scatters_once.set( index, scatter )
+				
+				if( indexes.length == 1 ) {
+					
+					const index = indexes[ 0 ]
+					scatter = no_intersects.get( index ) ?? new_scatter( this.marker( index ) )
+					no_intersects.set( index, scatter )
 
-					scatter.v.push( values.get( [ label, index ] )! )
+					scatter.v.push( values_by_label[index].get( label )! )
+
+				} else if( heatmap_diif ) {
+
+					const v1 = values_by_label[indexes[0]].get( label )!
+					const v2 = values_by_label[indexes[1]].get( label )!
+					const diff = Math.abs( v1 - v2  )
+
+					scatter.v.push( diff )
+
+					diff_value_min = Math.min( diff_value_min, diff )
+					diff_value_max = Math.max( diff_value_max, diff )
 				}
 
 				scatter.text.push( label )
@@ -224,8 +273,22 @@ namespace $.$$ {
 
 			} )
 
-			return { intersects, scatters_once }
+			return { intersects, no_intersects, value_min, value_max, diff_value_min, diff_value_max }
 
+		}
+
+		@ $mol_mem
+		scatters_no_intersect() {
+			return this.points_traversed().no_intersects
+		}
+
+		@ $mol_mem
+		intersects_colored() {
+			const intersects = this.points_traversed().intersects
+			const marker = this.heatmap()
+				? this.marker_heatmap( intersects.v )
+				: { color: "#303030", size: 5, opacity: 0.9 }
+			return { ... intersects, marker }
 		}
 
 		@ $mol_mem
@@ -234,11 +297,10 @@ namespace $.$$ {
 			if( ! this.multi_jsons() ) return null
 
 			this.nonformers_checked( false )
-			const { intersects, scatters_once } = this.scatters()
 
 			return [ 
-				intersects, 
-				... this.intersection_only() ? [] : scatters_once.values() 
+				this.intersects_colored(),
+				... this.intersection_only() ? [] : this.scatters_no_intersect().values()
 			]
 
 		}
