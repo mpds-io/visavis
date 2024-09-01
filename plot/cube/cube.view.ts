@@ -170,10 +170,12 @@ namespace $.$$ {
 		@ $mol_mem
 		points_traversed() {
 
+			const jsons = this.multi_jsons() ?? [ this.json() ]
+
 			const values_by_label: Record<
 				string/*json index*/, 
 				Map< string/*point label*/, number/*v*/ > 
-			> = Object.fromEntries( this.multi_jsons().map( (j: any, i:number )=> [i, new Map] ) )
+			> = Object.fromEntries( jsons.map( (j: any, i:number )=> [i, new Map] ) )
 
 			let value_min = Infinity
 			let value_max = -Infinity
@@ -185,7 +187,7 @@ namespace $.$$ {
 			let points_y: number[] = []
 			let points_z: number[] = []
 
-			this.multi_jsons().map( (json: any, index: number) => {
+			jsons.map( (json: any, index: number) => {
 
 				const points = $mpds_visavis_plot_cube_json( json ).payload.points
 				points.labels.forEach( (label, i)=> {
