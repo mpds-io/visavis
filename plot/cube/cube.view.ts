@@ -74,7 +74,7 @@ namespace $.$$ {
 		@ $mol_mem
 		heatmap_diif() {
 			const jsons = this.multi_jsons() as typeof $mpds_visavis_plot_cube_json.Value[]
-			if( jsons.length == 2 ) {
+			if( jsons?.length == 2 ) {
 				return jsons.every( json => json.payload.points.v.some(val => Math.floor(val) !== val) )
 			}
 			return false
@@ -247,7 +247,7 @@ namespace $.$$ {
 				let scatter = intersects
 				
 				if( indexes.length == 1 ) {
-					
+
 					const index = indexes[ 0 ]
 					scatter = no_intersects.get( index ) ?? new_scatter( this.marker( index ) )
 					no_intersects.set( index, scatter )
