@@ -18074,7 +18074,8 @@ var $;
                 };
             }
             points_traversed() {
-                const values_by_label = Object.fromEntries(this.multi_jsons().map((j, i) => [i, new Map]));
+                const jsons = this.multi_jsons() ?? [this.json()];
+                const values_by_label = Object.fromEntries(jsons.map((j, i) => [i, new Map]));
                 let value_min = Infinity;
                 let value_max = -Infinity;
                 const indexes_by_label = new Map();
@@ -18082,7 +18083,7 @@ var $;
                 let points_x = [];
                 let points_y = [];
                 let points_z = [];
-                this.multi_jsons().map((json, index) => {
+                jsons.map((json, index) => {
                     const points = $mpds_visavis_plot_cube_json(json).payload.points;
                     points.labels.forEach((label, i) => {
                         indexes_by_label.get(label)?.push(index) ?? indexes_by_label.set(label, [index]);
