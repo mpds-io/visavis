@@ -20300,7 +20300,7 @@ var $;
             }
             x_title() {
                 const dict = {
-                    'pressure': 'P, Gpa',
+                    'pressure': 'P, GPa',
                     'temperature': 'T, K',
                 };
                 return dict[this.x_data_type()];
