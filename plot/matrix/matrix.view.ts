@@ -53,7 +53,8 @@ namespace $.$$ {
 		setup() {
 			return [
 				... this.json().payload.fixel ? [ this.Fixel() ] : [],
-				this.multi_jsons() ? this.Intersection_on() : this.Nonformers(),
+				... this.multi_jsons() ? [ this.Intersection_on() ] : [],
+				this.Nonformers(),
 				... this.show_setup() ? this.sorting() : [],
 			]
 		}
