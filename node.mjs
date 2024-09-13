@@ -17100,13 +17100,13 @@ var $;
                 }
                 return `${title} (${links?.map(l => this.cmp_labels()[l.cmp ?? 0]).join('; ')})`;
             }
-            draw_row_cells(row_node, cells, intersection_only) {
+            draw_row_cells(row_node, cells_data, intersection_only) {
                 const that = this;
                 const range = this.range();
                 const rangeBand = range.rangeBand();
                 const enters = d3.select(row_node)
                     .selectAll('.cell')
-                    .data(cells.filter(d => {
+                    .data(cells_data.filter(d => {
                     if (intersection_only)
                         return d.intersection ? true : false;
                     if (d.z !== 0 || d.intersection)
@@ -17114,8 +17114,10 @@ var $;
                     return false;
                 }))
                     .enter();
-                const rects = enters.append('rect');
-                rects.attr('class', (d) => d.nonformer ? 'nonformer cell' : 'cell')
+                const cells = enters.append('g');
+                cells.attr('class', 'cell');
+                const rects = cells.append('rect');
+                rects.attr('class', (d) => d.nonformer ? 'nonformer' : '')
                     .attr('id', (d) => 'c_' + this.nodes()[d.x].num.toString() + '_' + this.nodes()[d.y].num.toString())
                     .attr('x', (d) => range(d.x))
                     .attr('width', rangeBand)
@@ -17144,7 +17146,7 @@ var $;
                     that.matrix_click({ cmt: cell_data.cmt });
                 });
                 rects.append('svg:title').text((cell) => this.svg_title_text(cell));
-                enters.append('text')
+                cells.append('text')
                     .text((cell) => cell.intersection || '')
                     .attr('x', (d) => range(d.x) + rangeBand / 2)
                     .attr('dy', '.85em')
@@ -17265,8 +17267,18 @@ var $;
                 }
                 return this.y_op(next);
             }
+            reordered_state = {
+                nonformers_checked: false,
+                intersection_only: false,
+            };
             auto_reorder() {
-                this.nonformers_checked();
+                let duration = 600;
+                if (this.nonformers_checked() != this.reordered_state.nonformers_checked)
+                    duration = 0;
+                if (this.intersection_only() != this.reordered_state.intersection_only)
+                    duration = 0;
+                this.reordered_state.nonformers_checked = this.nonformers_checked();
+                this.reordered_state.intersection_only = this.intersection_only();
                 const x_sort = this.x_sort();
                 const y_sort = this.y_sort() || x_sort;
                 const x_op = this.x_op();
@@ -17308,7 +17320,7 @@ var $;
                 d3.selectAll("g.column text").classed("hidden", x_op);
                 d3.selectAll("g.row text").classed("hidden", y_op);
                 d3.select("rect.bgmatrix").classed("hidden", (x_op || y_op));
-                var t = svg.transition().duration(600);
+                var t = svg.transition().duration(duration);
                 if (y_op) {
                     t.selectAll(".row")
                         .attr("transform", null)
