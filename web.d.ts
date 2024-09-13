@@ -947,7 +947,7 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mol_view__title__W1WSR68F = $mol_type_enforce<
+	type $mol_view__title__HH01W88T = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_view['title'] >
@@ -1129,7 +1129,7 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mol_speck__value__ZEO8OPQF = $mol_type_enforce<
+	type $mol_speck__value__C4UCPYJW = $mol_type_enforce<
 		ReturnType< $mol_button['error'] >
 		,
 		ReturnType< $mol_speck['value'] >
@@ -1268,7 +1268,7 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mol_svg_path__geometry__8DTJVN7S = $mol_type_enforce<
+	type $mol_svg_path__geometry__PBF5CHXG = $mol_type_enforce<
 		ReturnType< $mol_icon['path'] >
 		,
 		ReturnType< $mol_svg_path['geometry'] >
@@ -1296,17 +1296,17 @@ declare namespace $ {
 //# sourceMappingURL=upload.view.tree.d.ts.map
 declare namespace $ {
 
-	type $mol_button_open_native__files__TN1E6BQ1 = $mol_type_enforce<
+	type $mol_button_open_native__files__5EJV6TP7 = $mol_type_enforce<
 		ReturnType< $mol_button_open['files'] >
 		,
 		ReturnType< $mol_button_open_native['files'] >
 	>
-	type $mol_button_open_native__accept__15KESYBH = $mol_type_enforce<
+	type $mol_button_open_native__accept__5QKVUQ9D = $mol_type_enforce<
 		ReturnType< $mol_button_open['accept'] >
 		,
 		ReturnType< $mol_button_open_native['accept'] >
 	>
-	type $mol_button_open_native__multiple__QUAMQMI1 = $mol_type_enforce<
+	type $mol_button_open_native__multiple__MASA60OQ = $mol_type_enforce<
 		ReturnType< $mol_button_open['multiple'] >
 		,
 		ReturnType< $mol_button_open_native['multiple'] >
@@ -1355,14 +1355,14 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mol_view__style__6XFPZW7Y = $mol_type_enforce<
+	type $mol_view__style__VA3XB93W = $mol_type_enforce<
 		({ 
 			'paddingTop': ReturnType< $mol_list['gap_before'] >,
 		}) 
 		,
 		ReturnType< $mol_view['style'] >
 	>
-	type $mol_view__style__X1EM5W2S = $mol_type_enforce<
+	type $mol_view__style__GASHQZNH = $mol_type_enforce<
 		({ 
 			'paddingTop': ReturnType< $mol_list['gap_after'] >,
 		}) 
@@ -1583,12 +1583,12 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mol_image__uri__D3P905SL = $mol_type_enforce<
+	type $mol_image__uri__ERPVZDDW = $mol_type_enforce<
 		ReturnType< $mol_link_iconed['icon'] >
 		,
 		ReturnType< $mol_image['uri'] >
 	>
-	type $mol_image__title__7P4MSD6Z = $mol_type_enforce<
+	type $mol_image__title__E7ALGZNA = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_image['title'] >
@@ -1628,57 +1628,57 @@ declare namespace $ {
 //# sourceMappingURL=delete.view.tree.d.ts.map
 declare namespace $ {
 
-	type $mol_view__dom_name__PY4CE8QB = $mol_type_enforce<
+	type $mol_view__dom_name__43V6JX2X = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_view['dom_name'] >
 	>
-	type $mol_view__sub__Z85HL2JO = $mol_type_enforce<
+	type $mol_view__sub__TIQHYNVV = $mol_type_enforce<
 		ReturnType< $mol_page['title_content'] >
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mol_view__sub__KJRDAI3H = $mol_type_enforce<
+	type $mol_view__sub__91BP1O7X = $mol_type_enforce<
 		ReturnType< $mol_page['tools'] >
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mol_view__minimal_height__2JRJMQBQ = $mol_type_enforce<
+	type $mol_view__minimal_height__ANA9TV0S = $mol_type_enforce<
 		number
 		,
 		ReturnType< $mol_view['minimal_height'] >
 	>
-	type $mol_view__dom_name__Y53N3NUS = $mol_type_enforce<
+	type $mol_view__dom_name__CUHUI81U = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_view['dom_name'] >
 	>
-	type $mol_view__sub__X3M2MGEF = $mol_type_enforce<
+	type $mol_view__sub__BGJG9U08 = $mol_type_enforce<
 		ReturnType< $mol_page['head'] >
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mol_page_body_scroll_top__EJQ81PZG = $mol_type_enforce<
+	type $mol_page_body_scroll_top__ZRY07S15 = $mol_type_enforce<
 		Parameters< $mol_page['body_scroll_top'] >[0]
 		,
 		Parameters< ReturnType< $mol_page['Body'] >['scroll_top'] >[0]
 	>
-	type $mol_view__sub__EU7H1NBY = $mol_type_enforce<
+	type $mol_view__sub__ZFR92PE0 = $mol_type_enforce<
 		ReturnType< $mol_page['body'] >
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mol_scroll__sub__6MULYL19 = $mol_type_enforce<
+	type $mol_scroll__sub__ET2Z3T1F = $mol_type_enforce<
 		ReturnType< $mol_page['body_content'] >
 		,
 		ReturnType< $mol_scroll['sub'] >
 	>
-	type $mol_view__dom_name__XDPWX77Z = $mol_type_enforce<
+	type $mol_view__dom_name__VOOWGZYX = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_view['dom_name'] >
 	>
-	type $mol_view__sub__7L72QDKG = $mol_type_enforce<
+	type $mol_view__sub__TLH73Y3U = $mol_type_enforce<
 		ReturnType< $mol_page['foot'] >
 		,
 		ReturnType< $mol_view['sub'] >
@@ -1732,22 +1732,22 @@ declare namespace $ {
 //# sourceMappingURL=all.view.tree.d.ts.map
 declare namespace $ {
 
-	type $mpds_visavis_plot_legend_cmp_label__label__HIQ1WSNW = $mol_type_enforce<
+	type $mpds_visavis_plot_legend_cmp_label__label__U0PS6BJ3 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_legend_cmp['label'] >
 		,
 		ReturnType< $mpds_visavis_plot_legend_cmp_label['label'] >
 	>
-	type $mpds_visavis_plot_legend_cmp_label__background__3N56JTO6 = $mol_type_enforce<
+	type $mpds_visavis_plot_legend_cmp_label__background__SM1RRSMY = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_legend_cmp['background'] >
 		,
 		ReturnType< $mpds_visavis_plot_legend_cmp_label['background'] >
 	>
-	type $mpds_visavis_plot_legend_cmp_label__label__6L2JSIRO = $mol_type_enforce<
+	type $mpds_visavis_plot_legend_cmp_label__label__E3Y2Z4L9 = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mpds_visavis_plot_legend_cmp_label['label'] >
 	>
-	type $mpds_visavis_plot_legend_cmp_label__background__4F93M62B = $mol_type_enforce<
+	type $mpds_visavis_plot_legend_cmp_label__background__9IX28KZC = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mpds_visavis_plot_legend_cmp_label['background'] >
@@ -1790,7 +1790,7 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mol_view__sub__09O1RPM1 = $mol_type_enforce<
+	type $mol_view__sub__3FAQA0BX = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_view['sub'] >
@@ -1846,27 +1846,27 @@ declare namespace $ {
 //# sourceMappingURL=box.view.tree.d.ts.map
 declare namespace $ {
 
-	type $mol_check__checked__VUR5U9DW = $mol_type_enforce<
+	type $mol_check__checked__AHTEA17J = $mol_type_enforce<
 		ReturnType< $mol_check_list['option_checked'] >
 		,
 		ReturnType< $mol_check['checked'] >
 	>
-	type $mol_check__label__5ZOTFQG7 = $mol_type_enforce<
+	type $mol_check__label__PVIYF7FM = $mol_type_enforce<
 		ReturnType< $mol_check_list['option_label'] >
 		,
 		ReturnType< $mol_check['label'] >
 	>
-	type $mol_check__enabled__XLHWDXDG = $mol_type_enforce<
+	type $mol_check__enabled__O5LBZ7HK = $mol_type_enforce<
 		ReturnType< $mol_check_list['option_enabled'] >
 		,
 		ReturnType< $mol_check['enabled'] >
 	>
-	type $mol_check__hint__PW89RHY3 = $mol_type_enforce<
+	type $mol_check__hint__CRP9EZ9R = $mol_type_enforce<
 		ReturnType< $mol_check_list['option_hint'] >
 		,
 		ReturnType< $mol_check['hint'] >
 	>
-	type $mol_check__minimal_height__Z5YZ1HST = $mol_type_enforce<
+	type $mol_check__minimal_height__QLPGD7S3 = $mol_type_enforce<
 		number
 		,
 		ReturnType< $mol_check['minimal_height'] >
@@ -1940,22 +1940,22 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mol_view__minimal_height__77AQIFFV = $mol_type_enforce<
+	type $mol_view__minimal_height__CXO2FEJ1 = $mol_type_enforce<
 		number
 		,
 		ReturnType< $mol_view['minimal_height'] >
 	>
-	type $mol_view__sub__WEFYUZC3 = $mol_type_enforce<
+	type $mol_view__sub__9Y5XV5FF = $mol_type_enforce<
 		ReturnType< $mol_labeler['label'] >
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mol_view__minimal_height__9Z9BURMF = $mol_type_enforce<
+	type $mol_view__minimal_height__Z17NJ171 = $mol_type_enforce<
 		number
 		,
 		ReturnType< $mol_view['minimal_height'] >
 	>
-	type $mol_view__sub__CBYJCA37 = $mol_type_enforce<
+	type $mol_view__sub__J843BPLN = $mol_type_enforce<
 		ReturnType< $mol_labeler['content'] >
 		,
 		ReturnType< $mol_view['sub'] >
@@ -1973,17 +1973,17 @@ declare namespace $ {
 //# sourceMappingURL=labeler.view.tree.d.ts.map
 declare namespace $ {
 
-	type $mol_pop_bubble__align__XWRVNGOF = $mol_type_enforce<
+	type $mol_pop_bubble__align__QDJVR9VQ = $mol_type_enforce<
 		ReturnType< $mol_pop['align'] >
 		,
 		ReturnType< $mol_pop_bubble['align'] >
 	>
-	type $mol_pop_bubble__content__XQB2FNSL = $mol_type_enforce<
+	type $mol_pop_bubble__content__T56E6Z0M = $mol_type_enforce<
 		ReturnType< $mol_pop['bubble_content'] >
 		,
 		ReturnType< $mol_pop_bubble['content'] >
 	>
-	type $mol_pop_bubble__height_max__0OA1ICK1 = $mol_type_enforce<
+	type $mol_pop_bubble__height_max__GTAVE0ZN = $mol_type_enforce<
 		ReturnType< $mol_pop['height_max'] >
 		,
 		ReturnType< $mol_pop_bubble['height_max'] >
@@ -2049,37 +2049,37 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mol_check__minimal_width__ONCO5P7B = $mol_type_enforce<
+	type $mol_check__minimal_width__3CW9KU3G = $mol_type_enforce<
 		number
 		,
 		ReturnType< $mol_check['minimal_width'] >
 	>
-	type $mol_check__minimal_height__V5WG3S3Y = $mol_type_enforce<
+	type $mol_check__minimal_height__SXDJW6AW = $mol_type_enforce<
 		number
 		,
 		ReturnType< $mol_check['minimal_height'] >
 	>
-	type $mol_check__enabled__RSWSLPUG = $mol_type_enforce<
+	type $mol_check__enabled__UYGZUZAQ = $mol_type_enforce<
 		ReturnType< $mol_pick['trigger_enabled'] >
 		,
 		ReturnType< $mol_check['enabled'] >
 	>
-	type $mol_check__checked__D9G35HUF = $mol_type_enforce<
+	type $mol_check__checked__X93F0XPB = $mol_type_enforce<
 		ReturnType< $mol_pick['showed'] >
 		,
 		ReturnType< $mol_check['checked'] >
 	>
-	type $mol_check__clicks__RY0269NB = $mol_type_enforce<
+	type $mol_check__clicks__3SUQODK1 = $mol_type_enforce<
 		ReturnType< $mol_pick['clicks'] >
 		,
 		ReturnType< $mol_check['clicks'] >
 	>
-	type $mol_check__sub__V47RAZON = $mol_type_enforce<
+	type $mol_check__sub__XWYUBTHP = $mol_type_enforce<
 		ReturnType< $mol_pick['trigger_content'] >
 		,
 		ReturnType< $mol_check['sub'] >
 	>
-	type $mol_check__hint__4TW7MR1P = $mol_type_enforce<
+	type $mol_check__hint__KOE4LE4K = $mol_type_enforce<
 		ReturnType< $mol_pick['hint'] >
 		,
 		ReturnType< $mol_check['hint'] >
@@ -2212,12 +2212,12 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mol_paragraph__sub__HCN3KHSL = $mol_type_enforce<
+	type $mol_paragraph__sub__ULC6QEUV = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_paragraph['sub'] >
 	>
-	type $mol_paragraph__sub__5A9K6QGX = $mol_type_enforce<
+	type $mol_paragraph__sub__GMK8AXT9 = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_paragraph['sub'] >
@@ -2474,12 +2474,12 @@ declare namespace $.$$ {
 
 declare namespace $ {
 
-	type $mol_hotkey__mod_ctrl__P6B7XO4V = $mol_type_enforce<
+	type $mol_hotkey__mod_ctrl__KA2VLRED = $mol_type_enforce<
 		ReturnType< $mol_string['submit_with_ctrl'] >
 		,
 		ReturnType< $mol_hotkey['mod_ctrl'] >
 	>
-	type $mol_hotkey__key__G5HJT88X = $mol_type_enforce<
+	type $mol_hotkey__key__ZHLWGPEU = $mol_type_enforce<
 		({ 
 			enter( next?: ReturnType< $mol_string['submit'] > ): ReturnType< $mol_string['submit'] >,
 		}) 
@@ -2564,99 +2564,99 @@ declare namespace $ {
 //# sourceMappingURL=close.view.tree.d.ts.map
 declare namespace $ {
 
-	type $mol_hotkey__key__W34RFOL1 = $mol_type_enforce<
+	type $mol_hotkey__key__UXAJTMLK = $mol_type_enforce<
 		({ 
 			escape( next?: ReturnType< $mol_search['clear'] > ): ReturnType< $mol_search['clear'] >,
 		}) 
 		,
 		ReturnType< $mol_hotkey['key'] >
 	>
-	type $mol_nav__keys_y__Z7DBZXGH = $mol_type_enforce<
+	type $mol_nav__keys_y__MWK43C7Z = $mol_type_enforce<
 		ReturnType< $mol_search['nav_components'] >
 		,
 		ReturnType< $mol_nav['keys_y'] >
 	>
-	type $mol_nav__current_y__AVVYVV7P = $mol_type_enforce<
+	type $mol_nav__current_y__VA9CJXFY = $mol_type_enforce<
 		ReturnType< $mol_search['nav_focused'] >
 		,
 		ReturnType< $mol_nav['current_y'] >
 	>
-	type $mol_string__value__U4EC3PB0 = $mol_type_enforce<
+	type $mol_string__value__BAS9SKGL = $mol_type_enforce<
 		ReturnType< $mol_search['query'] >
 		,
 		ReturnType< $mol_string['value'] >
 	>
-	type $mol_string__hint__LFAD0KAG = $mol_type_enforce<
+	type $mol_string__hint__HCSYHHS9 = $mol_type_enforce<
 		ReturnType< $mol_search['hint'] >
 		,
 		ReturnType< $mol_string['hint'] >
 	>
-	type $mol_string__submit__TPRK11ZO = $mol_type_enforce<
+	type $mol_string__submit__AEQ6FB6T = $mol_type_enforce<
 		ReturnType< $mol_search['submit'] >
 		,
 		ReturnType< $mol_string['submit'] >
 	>
-	type $mol_string__enabled__F5FV40OB = $mol_type_enforce<
+	type $mol_string__enabled__I6XR2TPH = $mol_type_enforce<
 		ReturnType< $mol_search['enabled'] >
 		,
 		ReturnType< $mol_string['enabled'] >
 	>
-	type $mol_string__keyboard__YFATKW9A = $mol_type_enforce<
+	type $mol_string__keyboard__Y16VCA0B = $mol_type_enforce<
 		ReturnType< $mol_search['keyboard'] >
 		,
 		ReturnType< $mol_string['keyboard'] >
 	>
-	type $mol_string__enter__B7LCI8CE = $mol_type_enforce<
+	type $mol_string__enter__8PPV165A = $mol_type_enforce<
 		ReturnType< $mol_search['enter'] >
 		,
 		ReturnType< $mol_string['enter'] >
 	>
-	type $mol_button_minor__hint__TMOYAQJH = $mol_type_enforce<
+	type $mol_button_minor__hint__JFVCOBNL = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_button_minor['hint'] >
 	>
-	type $mol_button_minor__click__U9QP5WZO = $mol_type_enforce<
+	type $mol_button_minor__click__F81OV81I = $mol_type_enforce<
 		ReturnType< $mol_search['clear'] >
 		,
 		ReturnType< $mol_button_minor['click'] >
 	>
-	type $mol_button_minor__sub__W1V9TLTK = $mol_type_enforce<
+	type $mol_button_minor__sub__C6ATEX5L = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_button_minor['sub'] >
 	>
-	type $mol_list__rows__0NX6056X = $mol_type_enforce<
+	type $mol_list__rows__V378CK0G = $mol_type_enforce<
 		ReturnType< $mol_search['menu_items'] >
 		,
 		ReturnType< $mol_list['rows'] >
 	>
-	type $mol_dimmer__haystack__HD6AK2VK = $mol_type_enforce<
+	type $mol_dimmer__haystack__POVFREOM = $mol_type_enforce<
 		ReturnType< $mol_search['suggest_label'] >
 		,
 		ReturnType< $mol_dimmer['haystack'] >
 	>
-	type $mol_dimmer__needle__ZDNL8OXO = $mol_type_enforce<
+	type $mol_dimmer__needle__PIF4NKWS = $mol_type_enforce<
 		ReturnType< $mol_search['query'] >
 		,
 		ReturnType< $mol_dimmer['needle'] >
 	>
-	type $mol_search_plugins__QW59M7EK = $mol_type_enforce<
+	type $mol_search_plugins__RCEHOHU5 = $mol_type_enforce<
 		ReturnType< $mol_pop['plugins'] >[number]
 		,
 		$mol_plugin
 	>
-	type $mol_view__sub__PW2IFHNT = $mol_type_enforce<
+	type $mol_view__sub__EBPGMZOW = $mol_type_enforce<
 		ReturnType< $mol_search['anchor_content'] >
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mol_button_minor__click__LSL268VF = $mol_type_enforce<
+	type $mol_button_minor__click__DQ234SXH = $mol_type_enforce<
 		ReturnType< $mol_search['suggest_select'] >
 		,
 		ReturnType< $mol_button_minor['click'] >
 	>
-	type $mol_button_minor__sub__XCLS4CKO = $mol_type_enforce<
+	type $mol_button_minor__sub__TBMPM0ZF = $mol_type_enforce<
 		ReturnType< $mol_search['suggest_content'] >
 		,
 		ReturnType< $mol_button_minor['sub'] >
@@ -2729,72 +2729,72 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mol_dimmer__haystack__DJ5ZZS8H = $mol_type_enforce<
+	type $mol_dimmer__haystack__SE3IDFH7 = $mol_type_enforce<
 		ReturnType< $mol_select['option_label'] >
 		,
 		ReturnType< $mol_dimmer['haystack'] >
 	>
-	type $mol_dimmer__needle__I5KIA80Q = $mol_type_enforce<
+	type $mol_dimmer__needle__ITARKWSQ = $mol_type_enforce<
 		ReturnType< $mol_select['filter_pattern'] >
 		,
 		ReturnType< $mol_dimmer['needle'] >
 	>
-	type $mol_nav__keys_y__H3LSD7KJ = $mol_type_enforce<
+	type $mol_nav__keys_y__KAMVK9H3 = $mol_type_enforce<
 		ReturnType< $mol_select['nav_components'] >
 		,
 		ReturnType< $mol_nav['keys_y'] >
 	>
-	type $mol_nav__current_y__PJQ51SWC = $mol_type_enforce<
+	type $mol_nav__current_y__YN02R89H = $mol_type_enforce<
 		ReturnType< $mol_select['option_focused'] >
 		,
 		ReturnType< $mol_nav['current_y'] >
 	>
-	type $mol_nav__cycle__89UHKB3P = $mol_type_enforce<
+	type $mol_nav__cycle__V2BQMV0O = $mol_type_enforce<
 		ReturnType< $mol_select['nav_cycle'] >
 		,
 		ReturnType< $mol_nav['cycle'] >
 	>
-	type $mol_list__rows__YWHR57UC = $mol_type_enforce<
+	type $mol_list__rows__UL7EGBPN = $mol_type_enforce<
 		ReturnType< $mol_select['menu_content'] >
 		,
 		ReturnType< $mol_list['rows'] >
 	>
-	type $mol_scroll__sub__MF65XRZ5 = $mol_type_enforce<
+	type $mol_scroll__sub__W234QPGN = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_scroll['sub'] >
 	>
-	type $mol_button_minor__event_click__SB7RJW2N = $mol_type_enforce<
+	type $mol_button_minor__event_click__2LNVCB6K = $mol_type_enforce<
 		ReturnType< $mol_select['event_select'] >
 		,
 		ReturnType< $mol_button_minor['event_click'] >
 	>
-	type $mol_button_minor__sub__0IN4BEG0 = $mol_type_enforce<
+	type $mol_button_minor__sub__RZNXZ3XV = $mol_type_enforce<
 		ReturnType< $mol_select['option_content'] >
 		,
 		ReturnType< $mol_button_minor['sub'] >
 	>
-	type $mol_view__sub__Z6C29XVH = $mol_type_enforce<
+	type $mol_view__sub__OBVIZIOJ = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mol_search__query__G5YEDBDL = $mol_type_enforce<
+	type $mol_search__query__H92I1Q31 = $mol_type_enforce<
 		ReturnType< $mol_select['filter_pattern'] >
 		,
 		ReturnType< $mol_search['query'] >
 	>
-	type $mol_search__hint__QW3UR48R = $mol_type_enforce<
+	type $mol_search__hint__EBDT38TG = $mol_type_enforce<
 		ReturnType< $mol_select['filter_hint'] >
 		,
 		ReturnType< $mol_search['hint'] >
 	>
-	type $mol_search__submit__CQ5PTL98 = $mol_type_enforce<
+	type $mol_search__submit__WN17RUJU = $mol_type_enforce<
 		ReturnType< $mol_select['submit'] >
 		,
 		ReturnType< $mol_search['submit'] >
 	>
-	type $mol_search__enabled__I9QFB1QW = $mol_type_enforce<
+	type $mol_search__enabled__OZ5ODDDV = $mol_type_enforce<
 		ReturnType< $mol_select['enabled'] >
 		,
 		ReturnType< $mol_search['enabled'] >
@@ -3199,17557 +3199,17557 @@ declare namespace $.$$ {
 
 declare namespace $ {
 
-	type $mpds_visavis_elements_nonformer_pd_tri__0UAMU4L2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D106E965 = $mol_type_enforce<
 		`Pm-Dy-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B0FFPS1B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8UVLFP0Q = $mol_type_enforce<
 		`Yb-Gd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AY7K16JB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I6Y44S9F = $mol_type_enforce<
 		`Cr-Ni-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KTY2C3RP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J9CU54CS = $mol_type_enforce<
 		`Pu-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__60MN1J87 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BIDMZ80S = $mol_type_enforce<
 		`Pm-Er-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PTUCL2G5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9QWR99EO = $mol_type_enforce<
 		`Tm-Lu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U232KKZE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AYBTGY2N = $mol_type_enforce<
 		`Nd-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZPCVD9OM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__57ZNMK2L = $mol_type_enforce<
 		`Al-Zn-In`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JOUDV65W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MVL4F22D = $mol_type_enforce<
 		`Eu-U-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L1THAXPE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__78D4BN5N = $mol_type_enforce<
 		`Ni-Ru-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VL35B2P9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SS0LG4B6 = $mol_type_enforce<
 		`Ce-Pm-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8JT2ZM0H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CCECIRIX = $mol_type_enforce<
 		`Cu-Tc-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BQ44BTSL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MM86FBN0 = $mol_type_enforce<
 		`La-Sm-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M9R1XJSN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2J834HI8 = $mol_type_enforce<
 		`La-Yb-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L65LQI4P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SUFDSQWT = $mol_type_enforce<
 		`Gd-Lu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VXLKL3HB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8PG1JSE9 = $mol_type_enforce<
 		`Li-Hf-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8TVII87A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JD97AJW0 = $mol_type_enforce<
 		`La-Dy-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HUSRXBFQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y7OE8EXO = $mol_type_enforce<
 		`Ba-Yb-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OYWDXP1D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CZHLDDR0 = $mol_type_enforce<
 		`K-Zr-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1IJJ2WO6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WDSYJOKF = $mol_type_enforce<
 		`Y-Zr-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9NZ31LDV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NNQ2LQCD = $mol_type_enforce<
 		`Li-Ce-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SMLNKB3G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ULUQ4NDW = $mol_type_enforce<
 		`Sc-U-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JBAZR3FH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KRB14VR4 = $mol_type_enforce<
 		`Ho-Er-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V782KMLU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UCC910MS = $mol_type_enforce<
 		`Tm-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BJ6UAT0S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5FVGZPVB = $mol_type_enforce<
 		`La-Pu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E4WNGU3X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PAEXFIMW = $mol_type_enforce<
 		`Ir-Pd-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VWR8JARM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZISPJCH1 = $mol_type_enforce<
 		`Gd-Ho-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EL03L5WV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__62QALPEW = $mol_type_enforce<
 		`Ca-Y-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1E73A8F4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NVW0812K = $mol_type_enforce<
 		`Rb-Hf-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EVX3KOK8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JCUDSZVT = $mol_type_enforce<
 		`La-Yb-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7J7NB0C3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J63FGOCV = $mol_type_enforce<
 		`Nd-Pu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QAQJNJ3F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UNHTS1NK = $mol_type_enforce<
 		`Yb-Y-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SE3LVZT9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7Q6NB796 = $mol_type_enforce<
 		`La-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R8GTBECG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AABWUPIP = $mol_type_enforce<
 		`Ba-La-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0BJ9VATU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0O0F70RW = $mol_type_enforce<
 		`Cs-Li-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2V9S4G5K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3O2VJ76Z = $mol_type_enforce<
 		`Ba-Sr-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B07NTOO5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__96POHKJ0 = $mol_type_enforce<
 		`Yb-Y-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GVA3IJCM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9PL3TNPZ = $mol_type_enforce<
 		`Cs-Pr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R8Q7CNOG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DVI17QTE = $mol_type_enforce<
 		`Zn-Bi-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4FLGTHKH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FB9B1RK4 = $mol_type_enforce<
 		`Tb-Pm-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C40M1M1O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0N35CTEK = $mol_type_enforce<
 		`Gd-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HTMVQN2E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2KY0K032 = $mol_type_enforce<
 		`Ce-Eu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WW6U458M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QVH74EHQ = $mol_type_enforce<
 		`Fe-Os-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VE6FGY2B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2XYXN7X3 = $mol_type_enforce<
 		`Nb-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TU3ZMVS3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TXT3YNP7 = $mol_type_enforce<
 		`Eu-Hf-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KOV8ZEOZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MLI79SB9 = $mol_type_enforce<
 		`Be-Al-In`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__93FF1JHN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2TLLFA9Y = $mol_type_enforce<
 		`Pr-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TMNB5E9J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6VQP8FTS = $mol_type_enforce<
 		`Li-Er-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y3D1JN6M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R6VM8EPF = $mol_type_enforce<
 		`Pu-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BO54TNFN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IQBDYI13 = $mol_type_enforce<
 		`Rb-Na-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2STF3VDD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O4VD1H4X = $mol_type_enforce<
 		`Mg-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2ZIB0I4F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DRF8FP5V = $mol_type_enforce<
 		`Pr-Nd-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q7ZP08IQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6NFGYKLU = $mol_type_enforce<
 		`Pr-Sm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9D1R24ZR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__71DR2MMJ = $mol_type_enforce<
 		`Pd-Ru-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RIN1AJFL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4FK8U7D0 = $mol_type_enforce<
 		`Er-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PJCXW7X7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NIO53ZND = $mol_type_enforce<
 		`Ce-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C6X2EKZG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FCE5TDJE = $mol_type_enforce<
 		`Li-Tm-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3QC85VCE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IEOMPYMM = $mol_type_enforce<
 		`Nd-Gd-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EF6SQVE1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C386BUKE = $mol_type_enforce<
 		`Fe-Rh-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C5E76NQ0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__40OT96ZE = $mol_type_enforce<
 		`Cs-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XCNYF4CX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0C26ORT9 = $mol_type_enforce<
 		`Ru-Pt-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UCYUI9D5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z7UZNA58 = $mol_type_enforce<
 		`Ca-Lu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2D890J6V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__79CBYY9N = $mol_type_enforce<
 		`Cs-K-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SV1ZTORQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7BJY8QXI = $mol_type_enforce<
 		`Lu-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C012M7P4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5WDKH1S9 = $mol_type_enforce<
 		`Nd-U-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OTEJJMNG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SI7CLLJR = $mol_type_enforce<
 		`Ga-Si-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7QKMD14E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X9QBYXOU = $mol_type_enforce<
 		`K-Mg-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JTV7352J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1HH1ZYR5 = $mol_type_enforce<
 		`Ce-Th-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1OO27WSW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3H8IGL2O = $mol_type_enforce<
 		`Yb-Dy-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JBDL9JSY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VYXVCNMT = $mol_type_enforce<
 		`Ba-Nd-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6L5R74P1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TJA8V6FF = $mol_type_enforce<
 		`Y-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5LYTX6WA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C7UR889C = $mol_type_enforce<
 		`Pr-Gd-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TA9J7V0H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EUKEKRT5 = $mol_type_enforce<
 		`La-Y-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__29TLKZN3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2L1JU79O = $mol_type_enforce<
 		`Er-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GD4QW3JB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QUHMHZ1Q = $mol_type_enforce<
 		`Cs-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ACP17R0K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__20ZCT281 = $mol_type_enforce<
 		`Li-Y-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SDF0TPLR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2QAJ7DUV = $mol_type_enforce<
 		`Pr-Th-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__16AJ4JWL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5FTMOQ18 = $mol_type_enforce<
 		`Fe-Cu-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__085XVV26 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W7U0IWII = $mol_type_enforce<
 		`Ce-Sm-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W6VJCI4C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KUU86X8B = $mol_type_enforce<
 		`Dy-Y-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DRQHQGCU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4MLCRZZY = $mol_type_enforce<
 		`Cu-Ir-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KC23ABXW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3FH40T2Q = $mol_type_enforce<
 		`Si-Sb-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3MWIXDK8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VOQ705EU = $mol_type_enforce<
 		`Pr-Ho-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J9QVO3JZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BLDSFN2B = $mol_type_enforce<
 		`K-Li-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M2YP8CUD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__69HNJ3FZ = $mol_type_enforce<
 		`La-Tb-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IYAB15DK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PGJSWMZA = $mol_type_enforce<
 		`Li-Nd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FIMLNJM6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__86Y3GKTR = $mol_type_enforce<
 		`Sm-Th-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z1TIUO98 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GBJRFLIO = $mol_type_enforce<
 		`Cs-Zr-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TI8CY7I1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SQ9KBEXE = $mol_type_enforce<
 		`Pr-Y-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BBER0LHM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KX9DP3II = $mol_type_enforce<
 		`Tb-Yb-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__58X22QLW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CUV1ZDCU = $mol_type_enforce<
 		`Y-Hf-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LW2UQSH8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C5A3PEJE = $mol_type_enforce<
 		`Na-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__23Z7SQZ2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5B2U4XPH = $mol_type_enforce<
 		`K-Mg-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0YJ7SKBS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AGMUZE8D = $mol_type_enforce<
 		`Li-Er-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XHQC171P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WVYNJB97 = $mol_type_enforce<
 		`Ce-Hf-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KJZZ69K7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z7SUUNVI = $mol_type_enforce<
 		`Dy-Ho-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OMH6YCW3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EM7JGS4B = $mol_type_enforce<
 		`Ce-Mn-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8BUE3FSP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TQ3QNV87 = $mol_type_enforce<
 		`Mn-Fe-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K2LJGOGO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9A7DWR5M = $mol_type_enforce<
 		`Rb-Hf-Mg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CPO5Z85E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__40XUDGH6 = $mol_type_enforce<
 		`La-Tb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZEJ0G863 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FICCL109 = $mol_type_enforce<
 		`Sr-Nd-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NL4I70VU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PPHBR75N = $mol_type_enforce<
 		`Tb-Sm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G14N8PWW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PU98GW8M = $mol_type_enforce<
 		`Ce-Sc-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AZBHKJQW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZMKFD1L8 = $mol_type_enforce<
 		`Y-Ho-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ENJ86DRC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NKIQW42W = $mol_type_enforce<
 		`Rb-Li-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H0JDFSBB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WWDEDC4F = $mol_type_enforce<
 		`Nd-Th-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9PCTXIVH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F7HE3JIO = $mol_type_enforce<
 		`Al-Si-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MBGQZ4BB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XGNQ5YSQ = $mol_type_enforce<
 		`Ca-La-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KL90RJ3P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E8N2PXPY = $mol_type_enforce<
 		`La-Sc-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R4E0KT6F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C0ZEF2NW = $mol_type_enforce<
 		`Sm-Gd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZR89HUGB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7VSTD0UA = $mol_type_enforce<
 		`Y-Sc-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9U1CSX5A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CVJI7Q0N = $mol_type_enforce<
 		`Na-Sr-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3SAL5FMQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EYEZMJHC = $mol_type_enforce<
 		`K-Li-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ORYGL3L5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1G6CPPS3 = $mol_type_enforce<
 		`Cs-Rb-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QJCJOE4F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NZ088LSQ = $mol_type_enforce<
 		`Zn-Ga-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N75IP5SO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__88698VHV = $mol_type_enforce<
 		`La-Pm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J7SSQIXK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6358VM4M = $mol_type_enforce<
 		`Mn-Fe-Co`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V5FZ19EA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QZC1RHID = $mol_type_enforce<
 		`Gd-Tm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R07FF1X3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R793VAAY = $mol_type_enforce<
 		`Sm-Gd-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BMSYFUD2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1LLYWHRY = $mol_type_enforce<
 		`U-Ti-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VIYSWHQJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5GVDCVI0 = $mol_type_enforce<
 		`La-Ce-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IXR26CRC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0WCUJ4JK = $mol_type_enforce<
 		`Re-Hg-Sb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__30OD59XD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D6UC6SY6 = $mol_type_enforce<
 		`Gd-Dy-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G6IC1NMB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U56UKBC5 = $mol_type_enforce<
 		`Dy-Ho-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R03IH0JA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1T5MY392 = $mol_type_enforce<
 		`La-Nd-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S9H76859 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1VE09TZZ = $mol_type_enforce<
 		`Ce-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__266X3NRK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__108AYQ7O = $mol_type_enforce<
 		`Ce-Lu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z6L7NOCR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TOJK38KH = $mol_type_enforce<
 		`Ce-Nd-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K3U2JP98 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L2SHLJFF = $mol_type_enforce<
 		`Pm-Tm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NK5A4I7O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4530SI2N = $mol_type_enforce<
 		`Ce-Tm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O1KF4KJO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WXM7IYYK = $mol_type_enforce<
 		`Pr-Sm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0RCODYI3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OAOBLY65 = $mol_type_enforce<
 		`Ca-La-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TYK31YM5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F2DW21D2 = $mol_type_enforce<
 		`Yb-Lu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KE8JI8HY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RU2OK8UV = $mol_type_enforce<
 		`Sm-Lu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__40Q6TKMK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2ME4BMNF = $mol_type_enforce<
 		`Gd-Tm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R1AI5D73 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4WEMULXK = $mol_type_enforce<
 		`Li-Pr-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NCEEJ6BU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FGNNJYNA = $mol_type_enforce<
 		`Al-Ga-Hg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3GWKVJQG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P5E8N2HZ = $mol_type_enforce<
 		`Na-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F0MUTS7L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QQC4R1MP = $mol_type_enforce<
 		`Yb-Nd-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__86GJ2Q8R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8SX5W44N = $mol_type_enforce<
 		`Nd-Gd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RGFHXKGM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__83PEXTL1 = $mol_type_enforce<
 		`La-Tb-Pm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8TXRP0YR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1MR3W2GX = $mol_type_enforce<
 		`Ir-Pd-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6X8TOSIK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NOXEVBHW = $mol_type_enforce<
 		`Tm-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MTFKNAL9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A09DZCVO = $mol_type_enforce<
 		`Tm-Th-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NLPU3IFU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RNBMQ56Z = $mol_type_enforce<
 		`La-Er-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YV1VXNZE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__10W1FDFY = $mol_type_enforce<
 		`Cu-Ni-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S0R6FZKB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B6F9CE8J = $mol_type_enforce<
 		`Tb-Sc-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__18P4KW97 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QLHQSAOL = $mol_type_enforce<
 		`Ba-Sr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R9XFQ2VI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5EH6U7FR = $mol_type_enforce<
 		`Th-Sc-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FM6AH5OR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D9NPYM70 = $mol_type_enforce<
 		`Mn-Co-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GDAZKP5P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LDB0I4R4 = $mol_type_enforce<
 		`Cu-Ni-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5M90HDAA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DRPBBC2P = $mol_type_enforce<
 		`Tb-Ce-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y4X42MGX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ODNRKLES = $mol_type_enforce<
 		`Nd-Lu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BXSKQR0V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BEV7P64U = $mol_type_enforce<
 		`Li-Pm-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M7D5WH75 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H79BHR12 = $mol_type_enforce<
 		`La-Tm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9EJZZH9E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K0ZUMNA1 = $mol_type_enforce<
 		`La-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L96SR607 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5L85I4SH = $mol_type_enforce<
 		`Pm-Pr-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VEHGGXBW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E040FJXD = $mol_type_enforce<
 		`Ce-Ho-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GW9SD6D6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F26D5H5K = $mol_type_enforce<
 		`Cu-Tc-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YO80MK3A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ERKVWH1G = $mol_type_enforce<
 		`Nd-Dy-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7OXLJMCE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__G6LVI36H = $mol_type_enforce<
 		`Ca-Pm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YM83HFZE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KT9FQ8G7 = $mol_type_enforce<
 		`Fe-Cu-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T2U5SXN8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IL87WO4A = $mol_type_enforce<
 		`Li-Sm-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__97E6PB7X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__94X5NMLH = $mol_type_enforce<
 		`Mn-Ag-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JYYPQCIH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SUFHWSOB = $mol_type_enforce<
 		`Li-Er-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MKM9PQUJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9VGQJVXI = $mol_type_enforce<
 		`La-Tb-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JIUGWCYF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KIVRGS8B = $mol_type_enforce<
 		`Gd-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3O0TTI27 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6P0ZWSQQ = $mol_type_enforce<
 		`Ce-Gd-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YDCLCIZY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1OM0C7N9 = $mol_type_enforce<
 		`Er-Sc-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2YSDOWS1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RENKEFX4 = $mol_type_enforce<
 		`Sm-Er-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AQ6RMXXD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EN5VHTZY = $mol_type_enforce<
 		`Cr-Ni-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LL0LC4YQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7W1O42Z7 = $mol_type_enforce<
 		`Nd-U-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZFMC8WKV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__53JADC48 = $mol_type_enforce<
 		`Co-Au-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6SHRUHHO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AQI8HEIL = $mol_type_enforce<
 		`Nd-Pu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P58FVRR2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5Y6OG03N = $mol_type_enforce<
 		`La-Yb-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6NIGFRZU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SHJX0JJN = $mol_type_enforce<
 		`Sc-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7LZ1T4L3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FXOMHF5U = $mol_type_enforce<
 		`Zr-Sc-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1N69IECP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P3QH0TMS = $mol_type_enforce<
 		`Pr-Tm-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NY7S8T4V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B2DM8BQU = $mol_type_enforce<
 		`Cs-Hf-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__60FROK9I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3NBFQAHA = $mol_type_enforce<
 		`Ce-Ho-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W4TJ19L3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TROKT9K8 = $mol_type_enforce<
 		`Yb-Gd-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WJUPK9S3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BHCCX0ZQ = $mol_type_enforce<
 		`Li-Ce-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__34BU0EDQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7RBVUGVO = $mol_type_enforce<
 		`Y-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W4UV10HC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__22LFX48V = $mol_type_enforce<
 		`La-Sc-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4CAVUTRL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__66Y23Q3I = $mol_type_enforce<
 		`Tb-Sc-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YBBC3THO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ASZAGWU5 = $mol_type_enforce<
 		`Tb-Pr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZTGGNHD6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RTKFJR2U = $mol_type_enforce<
 		`Sb-Pb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VTCERIWG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5UYWAZV9 = $mol_type_enforce<
 		`Ba-Yb-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QLZQG8YO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R11DYAOK = $mol_type_enforce<
 		`Dy-Pu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y60V3HKM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XEOHE7NC = $mol_type_enforce<
 		`Tb-Gd-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__22NBRKZ6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OY3Q3T59 = $mol_type_enforce<
 		`Tb-Lu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZGHJ9ZZG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BNZ2HYTG = $mol_type_enforce<
 		`Gd-Er-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__67Q476YS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IHTIX8LI = $mol_type_enforce<
 		`Yb-Ti-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HEJGKE0V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R3FO19R7 = $mol_type_enforce<
 		`Tm-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ASP0DY2G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BIQTNQJ7 = $mol_type_enforce<
 		`Pd-Pt-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__09R83QN3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P4AWO8PL = $mol_type_enforce<
 		`Eu-Pu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J35ISFOF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IMMOYK9N = $mol_type_enforce<
 		`Ba-Sm-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5SZTTX3A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A5PBNP2O = $mol_type_enforce<
 		`La-Sm-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5SQAM2RT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__35I1H7VF = $mol_type_enforce<
 		`U-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__12IAALGB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WJEGTDLY = $mol_type_enforce<
 		`Ba-Pm-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3S4IMAMF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QPKJ7QGO = $mol_type_enforce<
 		`Sm-Ho-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OOEI552N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SSMWLJ5Q = $mol_type_enforce<
 		`Gd-Th-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__65CLVL67 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__II7ESUWC = $mol_type_enforce<
 		`Ce-Pr-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BEG6QDWN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QJPBDA10 = $mol_type_enforce<
 		`Lu-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__THW0BSCM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y4ICB3BJ = $mol_type_enforce<
 		`Dy-Lu-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__APTPJ57T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6UBFQY8R = $mol_type_enforce<
 		`La-Sc-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B9ICPF2T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XTBAF5Z8 = $mol_type_enforce<
 		`Y-U-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__418MAU7H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3VJQJWN3 = $mol_type_enforce<
 		`Pm-Nd-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__38BQI9UI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1ISBNQHQ = $mol_type_enforce<
 		`Tb-Gd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2PCV4OBV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XOABMRT1 = $mol_type_enforce<
 		`Yb-Er-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M1LUCURG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MRRA474N = $mol_type_enforce<
 		`Li-Pr-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L6A029NC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8J86KLEZ = $mol_type_enforce<
 		`Mg-Mn-Cd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R5IZFS0L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KKB8Y4EV = $mol_type_enforce<
 		`Ce-Pm-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1AGLDXUV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ANGQWFPS = $mol_type_enforce<
 		`Pu-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LWH7ELYT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LJCCE310 = $mol_type_enforce<
 		`Tl-Cd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VI5WJ1WA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FCI9RKEI = $mol_type_enforce<
 		`Sc-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8SH723RI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TAEM303U = $mol_type_enforce<
 		`Pu-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HLOL77MF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N1RNBHS6 = $mol_type_enforce<
 		`Mn-Fe-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__14BF6PG2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__024ZM6ZW = $mol_type_enforce<
 		`Eu-Zr-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3XJ0YA0C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZIQZNQ79 = $mol_type_enforce<
 		`Tb-Y-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4W767D08 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XYFKOAVD = $mol_type_enforce<
 		`Tb-Pr-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4LAU1MGX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DN6L9EO8 = $mol_type_enforce<
 		`Ca-Nd-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__78O5O2IL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HTMQH6Z4 = $mol_type_enforce<
 		`Ba-Nd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5L62ALQX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5K0875PP = $mol_type_enforce<
 		`Ca-Tb-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L1CM53LF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5A2W55PF = $mol_type_enforce<
 		`Pu-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IT5C90T5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QDKIRAZQ = $mol_type_enforce<
 		`Ca-Yb-Eu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J97REU8T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CA5H2A9P = $mol_type_enforce<
 		`Th-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XXYWS9CE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J2R4J455 = $mol_type_enforce<
 		`Si-Sn-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1988009O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OOEO3YP8 = $mol_type_enforce<
 		`Tb-Sc-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__53HE6BRG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BTCH1E09 = $mol_type_enforce<
 		`Na-Cr-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BGNBODH2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EXSYFQUA = $mol_type_enforce<
 		`Y-Er-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U0VHGXGU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OET3AL5U = $mol_type_enforce<
 		`Y-Ho-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y78WUC38 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6JDFU1KX = $mol_type_enforce<
 		`Ni-Pd-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4X4FIBWA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SCCEIW0W = $mol_type_enforce<
 		`Y-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PYEOJ6FV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3VL9UA6L = $mol_type_enforce<
 		`Co-Pd-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N7KKFEHE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7MIAMUJT = $mol_type_enforce<
 		`Li-Gd-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O0D309WT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XYFXNGID = $mol_type_enforce<
 		`Tb-Y-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4ZPELH4W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DGQN517X = $mol_type_enforce<
 		`Pr-Y-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7JCGAJLW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BL7Z0Y0K = $mol_type_enforce<
 		`La-Yb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NEPCQQKE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JFEJN7GZ = $mol_type_enforce<
 		`Ca-Yb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__34PU9MCP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3PYEK3VW = $mol_type_enforce<
 		`Dy-Er-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5DFIGL06 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MYY6TD7B = $mol_type_enforce<
 		`Nd-Sm-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WG08H511 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NJL863MY = $mol_type_enforce<
 		`Tb-Y-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UMUKOOZ2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LAQ3UXC1 = $mol_type_enforce<
 		`Gd-Er-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7I8NFBST = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9963W4NT = $mol_type_enforce<
 		`Ca-Pm-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KU8B4LOK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QZBUWH47 = $mol_type_enforce<
 		`Tl-Zn-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C9QLP08E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2O6CKH76 = $mol_type_enforce<
 		`Yb-Sc-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZF3JHPCN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__71HG90BJ = $mol_type_enforce<
 		`Fe-Co-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NIFX2SPB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z4118IEI = $mol_type_enforce<
 		`La-Sm-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3VMPYIEE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__98QN302A = $mol_type_enforce<
 		`Nb-V-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CIP3KQVP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K27UXH01 = $mol_type_enforce<
 		`La-Sm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7MJXEWDV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NJVCU6ZB = $mol_type_enforce<
 		`Li-Pr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EH17TFM1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8MHYHBD4 = $mol_type_enforce<
 		`Tb-Gd-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7MM4AIKX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2MEQPH6S = $mol_type_enforce<
 		`Eu-Th-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M044TEBL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SRNLFA92 = $mol_type_enforce<
 		`Yb-U-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JVRKHHLR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P865S99S = $mol_type_enforce<
 		`Yb-Er-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JIHA5N7Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LQHYDOAZ = $mol_type_enforce<
 		`La-Ho-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2PCLIJS1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A53Q5PNB = $mol_type_enforce<
 		`Dy-Y-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B9FULNBH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6P5FP0SO = $mol_type_enforce<
 		`La-Ce-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3Q8KW1HQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__88LLMDEI = $mol_type_enforce<
 		`Pr-Lu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J74YT2ON = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LLGDQKFZ = $mol_type_enforce<
 		`Eu-Y-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SN2P0RSZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BYDMHL9I = $mol_type_enforce<
 		`Dy-Er-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C0G8QRO8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9CEKFZ9I = $mol_type_enforce<
 		`La-Yb-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5K5SBPQL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T0H3IAQY = $mol_type_enforce<
 		`Ce-Pm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I1LSC3FA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MV60OLN6 = $mol_type_enforce<
 		`Tb-Pm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ETUY4ALJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NJ6AP5JC = $mol_type_enforce<
 		`Pr-Dy-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KE2Q42NX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VH7LF0H2 = $mol_type_enforce<
 		`La-Pu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WOY4ZOPM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X282HZNO = $mol_type_enforce<
 		`Li-Ce-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WB2L0MP2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JICIE1MJ = $mol_type_enforce<
 		`Li-Pr-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4ZXXNVTQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VB8PO5JI = $mol_type_enforce<
 		`Tb-Pm-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AP2TSDGL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I1ZAGKYY = $mol_type_enforce<
 		`Dy-Er-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B36UQF4P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PIXDELK6 = $mol_type_enforce<
 		`Al-In-Ga`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A86BMPPS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P67248TA = $mol_type_enforce<
 		`Nd-Er-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KO57UQO0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FNQZBXF5 = $mol_type_enforce<
 		`Pr-Nd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AL7DBX37 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AZ83TQOS = $mol_type_enforce<
 		`Ba-Pm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NGQ4UXWE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7687O93R = $mol_type_enforce<
 		`Pr-Dy-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AS0JWD41 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5WLF0T0L = $mol_type_enforce<
 		`Rb-Na-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2KUEPH1X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A9NMEHOF = $mol_type_enforce<
 		`Tb-Pm-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I0X1BCWO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I5FLX2WJ = $mol_type_enforce<
 		`Gd-Er-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z59UKJ7W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R33UY5CT = $mol_type_enforce<
 		`Y-Th-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FNGY246C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1QIMN740 = $mol_type_enforce<
 		`Gd-Y-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R51NUDBF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PQO88OC7 = $mol_type_enforce<
 		`Ba-Pm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K523V3U8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0CK2ASVL = $mol_type_enforce<
 		`Pu-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FTA06GL3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4NU68ZLD = $mol_type_enforce<
 		`Er-Th-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YHB5NZBZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IJMZ8BXM = $mol_type_enforce<
 		`Co-Ni-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BYEYIH8A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7KGHS04G = $mol_type_enforce<
 		`Ho-Th-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2REPUKBQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6P9M6QCI = $mol_type_enforce<
 		`Pm-Pr-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1LXL55G6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3UT6I5FR = $mol_type_enforce<
 		`Sm-Lu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1TD1RAC7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5ICUCXMB = $mol_type_enforce<
 		`Yb-Pr-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L51FCHVK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__047MEJ8A = $mol_type_enforce<
 		`Cu-Ag-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LP1KVHQ5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MUGOX807 = $mol_type_enforce<
 		`Pm-Ho-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8IEMIQTL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IA9SN24B = $mol_type_enforce<
 		`Re-Ir-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EXQ56424 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PBRKO4HK = $mol_type_enforce<
 		`Er-Lu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CTQDJDNL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8LZSC3AD = $mol_type_enforce<
 		`La-Eu-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P3M8Y33M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ENIINPK6 = $mol_type_enforce<
 		`Cu-Ag-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X8B6A93Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2YMMWUEQ = $mol_type_enforce<
 		`Dy-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZT5FWWYQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J776XS2L = $mol_type_enforce<
 		`Dy-Th-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZF7U7CH3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MQF5R8A6 = $mol_type_enforce<
 		`Re-Bi-Sb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P2EF09JD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9O0OZTXI = $mol_type_enforce<
 		`Pm-Pr-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IGHF1X7M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FMZQNEZS = $mol_type_enforce<
 		`Th-Sc-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VTAWABA9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PRCV2EOJ = $mol_type_enforce<
 		`Y-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1UIGXQ7F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HFT8JNQP = $mol_type_enforce<
 		`Fe-Ag-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R0F6CRR8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T4KRVF0Y = $mol_type_enforce<
 		`Co-Os-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SN5496ER = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NBDHK061 = $mol_type_enforce<
 		`Rb-Li-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KPW7TCKP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CKL57798 = $mol_type_enforce<
 		`Gd-Dy-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PWQBRWZ4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KD5754ZK = $mol_type_enforce<
 		`Tb-Er-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DY8LE5IM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L2SBETZQ = $mol_type_enforce<
 		`Ce-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2W0GEEVA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1GFONPRZ = $mol_type_enforce<
 		`Ba-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SB5DO2T5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8JJLH1VF = $mol_type_enforce<
 		`Nd-Dy-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WD3B3ETZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2ZTZUMJW = $mol_type_enforce<
 		`Ca-Tm-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OIY2J16F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6HGBUO3Z = $mol_type_enforce<
 		`Li-Hf-Mg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VW3CJ78H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D28KUAU7 = $mol_type_enforce<
 		`Tb-Sc-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0ZDNKMN1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NVRLPSUN = $mol_type_enforce<
 		`Tl-Zn-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZV2WTWRS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4BW5GH87 = $mol_type_enforce<
 		`Pr-Tm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EV7W22VO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IGOKTR5R = $mol_type_enforce<
 		`Er-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2Y6QPVHP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RLWUP7QO = $mol_type_enforce<
 		`Er-Sc-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PS3W7754 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B9M040CE = $mol_type_enforce<
 		`K-Li-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YXVOJTRB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JWL7VNHD = $mol_type_enforce<
 		`Yb-Sc-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PPNLG9Y4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HG2KSNZ0 = $mol_type_enforce<
 		`La-Ce-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__05L10W37 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PDB82GNZ = $mol_type_enforce<
 		`Cs-Mg-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NOOH7LRE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HFOZ2355 = $mol_type_enforce<
 		`Ga-B-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HUV5GNWF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HI2445E1 = $mol_type_enforce<
 		`Re-Ir-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ELU0RJAR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K6X32BMX = $mol_type_enforce<
 		`Pr-Gd-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MG7SP4X0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3KKK4AII = $mol_type_enforce<
 		`Re-Ni-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2VENC52B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CBURY2IA = $mol_type_enforce<
 		`Tb-Nd-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y0RDRGL7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V4G3PDMH = $mol_type_enforce<
 		`Tb-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3H4HW9TX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F2ELFBWM = $mol_type_enforce<
 		`Nd-Y-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QA5PHPYX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8NDYO99Z = $mol_type_enforce<
 		`Tb-Dy-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__97RR4XKH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DHDG3ALL = $mol_type_enforce<
 		`Tb-Pr-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9ATVKPF6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I2KFBVS0 = $mol_type_enforce<
 		`La-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z22IZZUV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1U25IXKV = $mol_type_enforce<
 		`Eu-Th-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NL2QQOQI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D639YDKV = $mol_type_enforce<
 		`Li-Tb-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8BJZ5B59 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FU7HPPW6 = $mol_type_enforce<
 		`Na-V-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3KP6FF0W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9N2YTM76 = $mol_type_enforce<
 		`Cu-Re-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WXOCHRCL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KRALO7OO = $mol_type_enforce<
 		`Cd-Ge-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6HYIR9KS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__35Z3R2G5 = $mol_type_enforce<
 		`Sm-Gd-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R1BAIUJC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YFVVV58U = $mol_type_enforce<
 		`Al-In-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3L4NY25C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UTTDAL3V = $mol_type_enforce<
 		`Al-Cd-Ga`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0QDCX4AQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YSMBYK7V = $mol_type_enforce<
 		`Ce-Eu-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8F5E5ITR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3FZOVRRM = $mol_type_enforce<
 		`La-Tb-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3Q5TC3KR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HAYLPRO1 = $mol_type_enforce<
 		`Li-Tb-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HAAJP0IC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UCCZ9X79 = $mol_type_enforce<
 		`Pr-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A5FNSQHH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VJKJR7LG = $mol_type_enforce<
 		`La-Pm-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q9DULOM7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RL1VK9FO = $mol_type_enforce<
 		`Gd-Er-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ULAWU89S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9CV1A4KR = $mol_type_enforce<
 		`Li-La-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C8SUZ13L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HYFDAMJY = $mol_type_enforce<
 		`Al-Ga-Sn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4CPR6RXC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EZETCAT7 = $mol_type_enforce<
 		`Tl-As-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5ZZE6PGR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0F0P6834 = $mol_type_enforce<
 		`Re-Pd-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1HRLUAOC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZCHJ58C0 = $mol_type_enforce<
 		`Eu-Y-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BHDL4TYR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZNDUYOS9 = $mol_type_enforce<
 		`Tm-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XJ4MFOFL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R4WK4GBX = $mol_type_enforce<
 		`Eu-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M9JGNSI4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JDJHR9JC = $mol_type_enforce<
 		`Be-Zn-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YLPBDUHD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0HI71NW6 = $mol_type_enforce<
 		`Li-Pm-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__98FUKIVG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IU3XTNLU = $mol_type_enforce<
 		`Na-Mg-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SB3YK7BR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HB795DPT = $mol_type_enforce<
 		`Fe-Ag-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IVQX7UQX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XATNRORD = $mol_type_enforce<
 		`Tl-Zn-Cd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YI5D12TV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__43R8OSLU = $mol_type_enforce<
 		`Nd-Sm-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NDE1NEYE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z45J97OW = $mol_type_enforce<
 		`Y-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3Z6U5ZZ0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CTV22FJA = $mol_type_enforce<
 		`Gd-Lu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8QJH2RLA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ALBXL34J = $mol_type_enforce<
 		`Li-Tb-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FVBCKLR7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZF6CQUG7 = $mol_type_enforce<
 		`Be-Ga-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9DA5MHE1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GN9NQ0W6 = $mol_type_enforce<
 		`Mn-Cu-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0IPJZK5W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HBPAOCSS = $mol_type_enforce<
 		`Pr-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XBXGWLYD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GH4C9WLN = $mol_type_enforce<
 		`Ho-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D5FFRIMA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RDRZWD9Q = $mol_type_enforce<
 		`Na-Li-Mg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YJC8JVAZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RYKXU567 = $mol_type_enforce<
 		`Re-Ru-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MCIR3T0B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NHY0B3BM = $mol_type_enforce<
 		`La-Tb-Ce`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WTFBFAN1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4UR7P4Z4 = $mol_type_enforce<
 		`Cr-Pb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z1Y7JG41 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__60WEDVZY = $mol_type_enforce<
 		`Pr-Er-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QB6B8VPO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HUGAZFTN = $mol_type_enforce<
 		`Ag-Pd-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SSYP9R80 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T23NFQ9O = $mol_type_enforce<
 		`Ca-Nd-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I1920U06 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TCA22HQN = $mol_type_enforce<
 		`Mg-Cr-Cd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F19GLX5N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I6B9R346 = $mol_type_enforce<
 		`Mn-Ni-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__URHT3DSJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4STXBMBO = $mol_type_enforce<
 		`Cu-B-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q3X1IFKD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3O1NYKLG = $mol_type_enforce<
 		`Li-Er-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1JEE9FON = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C20RPG7Z = $mol_type_enforce<
 		`Ni-Os-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0GUBR8HU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WXJ11SXT = $mol_type_enforce<
 		`Fe-Ag-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J0THBWV6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L8EGKVO6 = $mol_type_enforce<
 		`Li-Er-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RO6MSUOS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X8DHORGF = $mol_type_enforce<
 		`Sm-Y-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KKIJSNQ9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4AUX1FN7 = $mol_type_enforce<
 		`Dy-Tm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZLLEODX3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CEX5T6GZ = $mol_type_enforce<
 		`Na-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0UHFFWNQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3FY2NEH9 = $mol_type_enforce<
 		`Tb-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A07ZOYWI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__44H2AUX0 = $mol_type_enforce<
 		`Rb-Na-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__91D0SHV5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FHBAQ3VX = $mol_type_enforce<
 		`Gd-Y-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WAOC3DFK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TXA0F2V7 = $mol_type_enforce<
 		`Pr-Er-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AA1T3J2U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YF7HNA0F = $mol_type_enforce<
 		`Pr-Sm-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2THIW20T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__56K0HXA9 = $mol_type_enforce<
 		`Gd-Tm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NIHYCH9F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6B8P5VGW = $mol_type_enforce<
 		`Zr-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OT0XRICA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EBEXA5HU = $mol_type_enforce<
 		`Cr-Hg-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZZ5IQSCD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y69G1Z6J = $mol_type_enforce<
 		`Yb-Er-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V3SJCI1M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5S7QPC3Z = $mol_type_enforce<
 		`Ca-Pm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KPA6QNBO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__01NKZMYP = $mol_type_enforce<
 		`Co-Cu-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F3FR6QWQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SQFJFQK4 = $mol_type_enforce<
 		`Gd-Ho-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0CDJ32TX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4XFPJTIC = $mol_type_enforce<
 		`Sc-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CTEYAWQC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__G7SZHIH4 = $mol_type_enforce<
 		`Ga-Si-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GY644N7N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WPYGEBL6 = $mol_type_enforce<
 		`Li-Lu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XC6OI8TW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BMJ2XN5K = $mol_type_enforce<
 		`Ba-Sr-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QXRVKV6X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P4N8COX2 = $mol_type_enforce<
 		`Li-Pm-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SGEUQD4G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IRL8LWCF = $mol_type_enforce<
 		`Na-Li-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8SBGFHW0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4EFUTTUR = $mol_type_enforce<
 		`Gd-Sc-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J7XWXFL1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__85TMM4IF = $mol_type_enforce<
 		`Yb-Er-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6OW4FSRN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KUAOO2QY = $mol_type_enforce<
 		`Ho-Lu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6A3ESQEV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R72O8707 = $mol_type_enforce<
 		`Nd-Sc-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B903VAQD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FTG3EM5Y = $mol_type_enforce<
 		`Ca-Ce-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YVLPURL7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YXY1FJYQ = $mol_type_enforce<
 		`Pm-Gd-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GQD6O4ED = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H8OFNIND = $mol_type_enforce<
 		`La-Y-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WK4YTVD1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S5374ALG = $mol_type_enforce<
 		`Ca-Yb-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JIXAWNP9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__88GM93EZ = $mol_type_enforce<
 		`Pr-Th-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X1B15D5S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1C57KJKV = $mol_type_enforce<
 		`Tm-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1WUDILGW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z6SZ2Y12 = $mol_type_enforce<
 		`Rb-Li-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QMW5407Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J2VOX8GN = $mol_type_enforce<
 		`Gd-Y-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__26QC17NG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UJGDMSNW = $mol_type_enforce<
 		`Yb-Pr-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TEFET8ZW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5UBPBX6Y = $mol_type_enforce<
 		`Ce-Hf-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OY6461L2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MH4YTRU4 = $mol_type_enforce<
 		`Nd-Y-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DD4XQOUM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7AQRRIK4 = $mol_type_enforce<
 		`Er-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ABEIF5RQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M4RJW5EQ = $mol_type_enforce<
 		`Dy-Th-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BA4S3ZOU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YVY2X52T = $mol_type_enforce<
 		`La-Pr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KYOYNZTS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V66VVSPV = $mol_type_enforce<
 		`Yb-Ho-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KJVLYVJD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HQYJ20W9 = $mol_type_enforce<
 		`La-Yb-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NMT0ZG3N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8QV2D7ZY = $mol_type_enforce<
 		`Co-Rh-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8I6QD7VI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JT6T1R9D = $mol_type_enforce<
 		`La-Eu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TULGTG8N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FGFSXQFV = $mol_type_enforce<
 		`Y-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OJUQEQF0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NFGP65MM = $mol_type_enforce<
 		`K-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SEFI97SU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S12RELLX = $mol_type_enforce<
 		`Pr-Sm-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N0ZLID3R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HR7GZ0B8 = $mol_type_enforce<
 		`Eu-Sc-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E8C8BA11 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NAO04ILF = $mol_type_enforce<
 		`Ga-Sn-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GV8QRG45 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WL3BZMV8 = $mol_type_enforce<
 		`Cu-Ag-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VO4LQXA8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__85GKNMED = $mol_type_enforce<
 		`Ce-Gd-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HHSMKMDI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0GOVRQQX = $mol_type_enforce<
 		`Tl-Ga-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1Y4P6NWX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__63PJQ7RB = $mol_type_enforce<
 		`Gd-Er-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WGYRULW4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3680XXTQ = $mol_type_enforce<
 		`Ti-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KCWCE8CE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N6K7F6DP = $mol_type_enforce<
 		`Ga-Sn-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NCYCT52K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__086FAMKX = $mol_type_enforce<
 		`La-Eu-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__10GRQPUR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K951UHBU = $mol_type_enforce<
 		`Tm-Lu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F482V75U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ENXTP6HL = $mol_type_enforce<
 		`Pm-Tm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QMMK0KB2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ARA5UC8F = $mol_type_enforce<
 		`Be-Al-Sn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8VB7BU9L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A23VKWKY = $mol_type_enforce<
 		`Dy-Lu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AKSX6SAN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NE0GJ22A = $mol_type_enforce<
 		`Yb-Tm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EAJDQ8UH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2RT530HN = $mol_type_enforce<
 		`Na-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OKI2EGHH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1K3JCL2W = $mol_type_enforce<
 		`Li-Gd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E6NEKHLG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OPVJP866 = $mol_type_enforce<
 		`Na-Sr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8PJ3AF93 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__766NWWC7 = $mol_type_enforce<
 		`Ba-La-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1NS01KPW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S4HING5M = $mol_type_enforce<
 		`Sm-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H6V3VCF3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T29IEFBA = $mol_type_enforce<
 		`La-Tm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UK7BQAN9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y5Q64G0F = $mol_type_enforce<
 		`K-Cr-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P2RFEMDO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H695KOZK = $mol_type_enforce<
 		`Y-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DYO1RQPT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O3B4ZY8P = $mol_type_enforce<
 		`Ce-Pm-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XYKJ39YF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FG0EONMG = $mol_type_enforce<
 		`Sm-Tm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZMDZZORX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__785PO8T4 = $mol_type_enforce<
 		`Er-Th-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MNO2TKT4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ICIK2EI2 = $mol_type_enforce<
 		`Co-Os-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MKNXAIZ7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RT7RE9XI = $mol_type_enforce<
 		`Sm-Dy-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SCQR7EO3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6R1VKIEU = $mol_type_enforce<
 		`Sr-Ca-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P3A9BTW6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O9S6I3TC = $mol_type_enforce<
 		`Pm-Er-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TBL0WSNE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5NH764S8 = $mol_type_enforce<
 		`Yb-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LU9VWXX7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FIDEZ0LM = $mol_type_enforce<
 		`La-Gd-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VC5NDIKZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z3SRVQ0U = $mol_type_enforce<
 		`Tb-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HZQ9NF3E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O9JAIO4T = $mol_type_enforce<
 		`Cs-Mg-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J8P462KH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SQ7T9IG0 = $mol_type_enforce<
 		`Ca-Nd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BXT8E9PU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D2G3WVSP = $mol_type_enforce<
 		`Pr-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XINA11MA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K7IVO0Y7 = $mol_type_enforce<
 		`Pm-Sm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RWSR1G2W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__08R4K5S9 = $mol_type_enforce<
 		`La-Sm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TCENRVXH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QOECOKFB = $mol_type_enforce<
 		`Zr-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I1PBENTC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RQOEW2PH = $mol_type_enforce<
 		`Cr-Cu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8IJF5U7G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LHNVUZTK = $mol_type_enforce<
 		`Cu-Ni-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WC8EGNKK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SFTXHCJQ = $mol_type_enforce<
 		`Sm-Pu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CJ64ZLUK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5ZGKMZLT = $mol_type_enforce<
 		`Ce-Pr-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7ZTJ7V83 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HBLH1T5Q = $mol_type_enforce<
 		`Ce-Lu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IMBRM5CZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CV0I0BP7 = $mol_type_enforce<
 		`La-V-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6VACRZ2Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7B1K42QW = $mol_type_enforce<
 		`Sm-Y-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B5I5346H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9LUY6RM9 = $mol_type_enforce<
 		`Ce-Er-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6R3W7XJ4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XR6C5VOJ = $mol_type_enforce<
 		`Ce-Y-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RUPR1IR9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XPMF23XR = $mol_type_enforce<
 		`Ca-Pm-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0UU225HO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HM8ECQYE = $mol_type_enforce<
 		`Ce-Pr-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TPMNIT80 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BPTKJFDG = $mol_type_enforce<
 		`Ce-Lu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JS16O32J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W6J90RY5 = $mol_type_enforce<
 		`Re-Ru-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D0OTWE5R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1YH1CWH3 = $mol_type_enforce<
 		`Cu-Os-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6XW5UOPQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z22G0HCS = $mol_type_enforce<
 		`Co-Ni-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7TQXICQ4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__86ZXKH48 = $mol_type_enforce<
 		`La-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8JDQR5F8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q2OZ0E0X = $mol_type_enforce<
 		`Ba-V-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__USYLK8ZM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KKOMHQ7C = $mol_type_enforce<
 		`Gd-Th-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0OVDJ6U7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VYEEQ8U5 = $mol_type_enforce<
 		`Li-Er-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2KW6Y36E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OAOGILYD = $mol_type_enforce<
 		`La-Yb-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6Z1C6FNX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__13AJHPFU = $mol_type_enforce<
 		`Ce-Y-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ICKHAR22 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CIFISR1U = $mol_type_enforce<
 		`Y-Lu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZRRQFIWJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__04720ATR = $mol_type_enforce<
 		`Tm-Th-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5BT9G55P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9R4I2LXS = $mol_type_enforce<
 		`La-Eu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HHCMO5TV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0E47AGIF = $mol_type_enforce<
 		`Pr-Dy-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CBL20F5O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__871X6PCV = $mol_type_enforce<
 		`Ca-Yb-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__07QOCJDP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AX8OI48F = $mol_type_enforce<
 		`La-U-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O0VG7HCI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__67RBQVR7 = $mol_type_enforce<
 		`Pr-U-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__25M2KSBS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PQMA16FE = $mol_type_enforce<
 		`Nd-Lu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OHYD6QOM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0H81P0X6 = $mol_type_enforce<
 		`Pu-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z43UNEZW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PF1KQUYZ = $mol_type_enforce<
 		`Li-Nd-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SW5SKCLO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UUXSKPHW = $mol_type_enforce<
 		`Li-Ce-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SQBYNHFE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UKTS5U06 = $mol_type_enforce<
 		`Tl-Cu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5DC1FL4X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9ATM2IFJ = $mol_type_enforce<
 		`Al-Zn-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PESS9GCG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XW5J7SGM = $mol_type_enforce<
 		`Er-Sc-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DVRMPMU1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ON170UI7 = $mol_type_enforce<
 		`K-Mg-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M3XAA8I7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OYZ2FYDF = $mol_type_enforce<
 		`Li-Ce-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0W5YM1VT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__65MHE9Z1 = $mol_type_enforce<
 		`Na-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7AS38TM4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EK11SBG4 = $mol_type_enforce<
 		`Ba-La-Pm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EWDSX2YW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__USMHFBRM = $mol_type_enforce<
 		`Tb-Th-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SMPO4WKF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I4D713Z2 = $mol_type_enforce<
 		`Pr-Ho-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1VADAKKQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3YPR9KR3 = $mol_type_enforce<
 		`Tb-Yb-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GIZ111NJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CE8CTNRO = $mol_type_enforce<
 		`Sm-Y-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E7PDSP66 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AIOD4TYR = $mol_type_enforce<
 		`Tb-Dy-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XO4O05K4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DZ9WC8LB = $mol_type_enforce<
 		`Ag-Ge-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3B56OGT4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SXQPQ07Z = $mol_type_enforce<
 		`Nd-Er-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OP0IKDBN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RF8PYRKY = $mol_type_enforce<
 		`Yb-Y-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__311B47UH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZAY9KTM4 = $mol_type_enforce<
 		`Dy-Ho-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CLR18L5N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RKV7AQRT = $mol_type_enforce<
 		`Gd-Ta-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LU8ATNOX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S7LIIRLB = $mol_type_enforce<
 		`Nd-Sm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__83M1NKB4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R7ISYFP8 = $mol_type_enforce<
 		`Tb-Sm-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TJPYK52L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6715FWKY = $mol_type_enforce<
 		`Li-Lu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E7Y71JVI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q36OWFRB = $mol_type_enforce<
 		`Y-Hf-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HONDKEV5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MRFZ8TUH = $mol_type_enforce<
 		`Eu-Sc-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VIA7T4VE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZL6XXNW4 = $mol_type_enforce<
 		`Ti-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EFVEWQ42 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X8JRYUOV = $mol_type_enforce<
 		`Re-Ag-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WRZ4W3L6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MBQSRNKA = $mol_type_enforce<
 		`Pm-Er-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6ZTV96LX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7P0QZD80 = $mol_type_enforce<
 		`Ca-Tb-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JXJ0WC2C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1VIPTOZR = $mol_type_enforce<
 		`Ta-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A5JFWSQ3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__551Z4HCH = $mol_type_enforce<
 		`Tb-Er-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6NJPC49G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZRFK8T7B = $mol_type_enforce<
 		`Li-La-Tb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F6GFS45T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N0F6F77R = $mol_type_enforce<
 		`Tl-Ag-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0AKOB8DO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9K4UUSGH = $mol_type_enforce<
 		`Tb-Y-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HDS852FM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W6JD9RS5 = $mol_type_enforce<
 		`Er-Zr-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S5EWVI86 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0E5401QV = $mol_type_enforce<
 		`Fe-Ni-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DZEO0ADH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PL4L3Q9I = $mol_type_enforce<
 		`La-Er-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N877PJ1W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IGQHPCRV = $mol_type_enforce<
 		`Co-Re-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I972HY20 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ETUGM2CQ = $mol_type_enforce<
 		`Li-Cr-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WY40J8KG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9KQT24KM = $mol_type_enforce<
 		`V-Ag-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OQ1650DR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J1WRJP70 = $mol_type_enforce<
 		`Zn-Sn-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LQSAE7BA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N4RZ6A7N = $mol_type_enforce<
 		`Ce-Nd-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6PN8FVI6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GVK1R5JO = $mol_type_enforce<
 		`La-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LM3FSRPF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__05AIPILO = $mol_type_enforce<
 		`Ca-Eu-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P14PT8AZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TUXUT13A = $mol_type_enforce<
 		`Ho-Er-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IZHQEYFQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IQOGGKWI = $mol_type_enforce<
 		`Yb-Zr-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q6K4VLCB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EV9S9L3I = $mol_type_enforce<
 		`Eu-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BO34JG52 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W24NU2Y1 = $mol_type_enforce<
 		`Ni-Ir-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6GVZZ4E5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N0A7RB5M = $mol_type_enforce<
 		`Y-Tm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ADGM52MR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GMBRMTG8 = $mol_type_enforce<
 		`Pr-Pu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LRASRPQB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LI71XA6V = $mol_type_enforce<
 		`Ho-Th-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TYYGY4D8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MVZAP0VX = $mol_type_enforce<
 		`Pr-Tm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O6PFIJ2Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TGCMJ13K = $mol_type_enforce<
 		`Pr-Er-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E759Z7E2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U25FJGRB = $mol_type_enforce<
 		`Pr-Pu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KMN2M1U3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L50NX0HC = $mol_type_enforce<
 		`Tb-Ce-Pm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QN7DK0CU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NT93GCCL = $mol_type_enforce<
 		`Ce-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B7AWE75Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1KCCZZ9V = $mol_type_enforce<
 		`Li-Tb-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7DOWXALU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C8VLU2UV = $mol_type_enforce<
 		`Mn-Tl-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__76NM53K9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GN1A9DQS = $mol_type_enforce<
 		`Ba-La-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VBAKKF5O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GO2LESN5 = $mol_type_enforce<
 		`Th-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DRZOPPIJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__77UDGLPX = $mol_type_enforce<
 		`Li-La-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7C9YEQN0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RTQTS2CD = $mol_type_enforce<
 		`Mn-Fe-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4DZV7FBT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LL3NLJCQ = $mol_type_enforce<
 		`Ho-Tm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A1ISBXLO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__06D9S5HH = $mol_type_enforce<
 		`K-Rb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1CUUA1XG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__67WTFTDK = $mol_type_enforce<
 		`La-Gd-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CLXABZBS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UWMNCR9E = $mol_type_enforce<
 		`Cu-Ag-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1BRDH8Z4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F7090W49 = $mol_type_enforce<
 		`Ce-Y-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E87XK81L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XZYUIRWY = $mol_type_enforce<
 		`Ho-Zr-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NK15YA0Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3NSXRMMP = $mol_type_enforce<
 		`Ce-Tm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OFK1K5L9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OYAV56TI = $mol_type_enforce<
 		`Co-Ru-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HWJK8LWQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VHT17HTN = $mol_type_enforce<
 		`Ce-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X4V0ON3R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S4KK8FF5 = $mol_type_enforce<
 		`Yb-Hf-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A745SMZ4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HUDT2LSA = $mol_type_enforce<
 		`Tl-Si-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UEY50HGD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HR4PLC30 = $mol_type_enforce<
 		`Tb-Yb-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WRINTUXB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__63T7JE4I = $mol_type_enforce<
 		`Rb-Li-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8D4R6KKW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ARFWCRM2 = $mol_type_enforce<
 		`Co-Ni-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6N13SMTL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PJAB40CO = $mol_type_enforce<
 		`Co-Ir-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OT3TLUJM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E5GHM1T2 = $mol_type_enforce<
 		`Gd-Lu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__906DFLHT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T3UZPNUI = $mol_type_enforce<
 		`Gd-Dy-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DFGQ13PK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QL1D5BGQ = $mol_type_enforce<
 		`Mn-Cu-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7CEKPZN7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__99K3LZMK = $mol_type_enforce<
 		`Cu-Mo-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YVP90C9Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HKY6I27R = $mol_type_enforce<
 		`Tb-Pr-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3QL03BBX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E0V5UMSL = $mol_type_enforce<
 		`Li-Mg-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GLE8CG6S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IKE34L4W = $mol_type_enforce<
 		`Yb-Pr-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1OJ0R8SP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__01O5F8VL = $mol_type_enforce<
 		`Li-Sm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__URCQKXAR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F7ASL2E6 = $mol_type_enforce<
 		`Li-Tb-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UBNJI90Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JQ6XVTOW = $mol_type_enforce<
 		`Sm-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__05QY7NDK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IMNN72FR = $mol_type_enforce<
 		`Ba-La-Yb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LNBL0OEH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GWU0FQR9 = $mol_type_enforce<
 		`La-Dy-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H31L04MN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3NL54H73 = $mol_type_enforce<
 		`Zn-Si-Sn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3I96QTGG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JL6MYZ7O = $mol_type_enforce<
 		`Ca-Y-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UFZUSKNV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3CWO8KR1 = $mol_type_enforce<
 		`U-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7MQZSVZP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IWE666H9 = $mol_type_enforce<
 		`Pr-Lu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YVSNNEH7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S0VAK6LW = $mol_type_enforce<
 		`Si-Bi-Sb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6XB1F1YY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__21E9QWVC = $mol_type_enforce<
 		`Li-Ce-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EO0FQII7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2G1FGJ1X = $mol_type_enforce<
 		`Cu-Re-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CL7BGLAA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NGKG9VJD = $mol_type_enforce<
 		`Ba-Ca-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GG0XMV91 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YGIMY9XB = $mol_type_enforce<
 		`La-Lu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2WDAEKC1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WS4US66G = $mol_type_enforce<
 		`Zn-Cd-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__91D5TKCY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NM0883WZ = $mol_type_enforce<
 		`In-Ga-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0UDJGSFA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B501R8E7 = $mol_type_enforce<
 		`Dy-Er-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MOYYRQTF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IGEE98FQ = $mol_type_enforce<
 		`Cr-Hg-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JIP5SGO9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__03NFHVES = $mol_type_enforce<
 		`Yb-Dy-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GAYNG5PL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T5ZJ97RP = $mol_type_enforce<
 		`Eu-Y-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JBD7XBVC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SQT37LP8 = $mol_type_enforce<
 		`Mn-Co-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JMCVLAMX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LYP6PNEN = $mol_type_enforce<
 		`Yb-Er-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NJUX9OM7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QLKCAA2B = $mol_type_enforce<
 		`Nb-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S6IQJ5G2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q82MHZI5 = $mol_type_enforce<
 		`Yb-Nd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MDA3W0K5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EDKRMS8D = $mol_type_enforce<
 		`Yb-Th-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XQVTKOKT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZZRPHOLV = $mol_type_enforce<
 		`K-Rb-Mg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XKER39FV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S1EWYOQV = $mol_type_enforce<
 		`Ce-Gd-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__95TN5UQN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MJS1BI2E = $mol_type_enforce<
 		`Dy-Lu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4QV0NX63 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UK5U34OR = $mol_type_enforce<
 		`V-Fe-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__78JNWVDY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q6N8FZIU = $mol_type_enforce<
 		`Yb-Zr-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JPMRM3FZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WEZNIZQT = $mol_type_enforce<
 		`La-Ce-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L1WUP1UE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AOU6QQ8D = $mol_type_enforce<
 		`Ni-Pd-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SUF4GCM7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CCSVZ7W8 = $mol_type_enforce<
 		`La-Pr-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__93JMEFDJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H7B7XWFB = $mol_type_enforce<
 		`La-Ce-Pr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CLC3F41Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q4FPS15O = $mol_type_enforce<
 		`Eu-Th-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XVBUWSUJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FT7CK8XY = $mol_type_enforce<
 		`Nd-Ho-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J1BWSXEL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OA8U6SA1 = $mol_type_enforce<
 		`Hf-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1EX3XFSG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__POPSD80M = $mol_type_enforce<
 		`Tb-Yb-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C8FQ657T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QNUBCXO2 = $mol_type_enforce<
 		`Tb-Pr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1RS1W2EB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0CFZSPFY = $mol_type_enforce<
 		`Er-Pu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9LJJIH9Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__69EHZQO2 = $mol_type_enforce<
 		`Re-Hg-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R82G3M7F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D9GQM1AT = $mol_type_enforce<
 		`Ba-Yb-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I79PMONA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P6QCCHNI = $mol_type_enforce<
 		`Lu-Zr-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YQFCQ51E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YHBQ3LRT = $mol_type_enforce<
 		`Nd-Y-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UBYRVS1S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YEVUNHQZ = $mol_type_enforce<
 		`Rb-Na-Li`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P7Y7HO0C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9K5VIWIR = $mol_type_enforce<
 		`Sm-Dy-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MV6PB1YL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DAXY375R = $mol_type_enforce<
 		`U-Nb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4KPL84J7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NIJXV47W = $mol_type_enforce<
 		`Ce-Lu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WLFTQ9II = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CPG6E7R1 = $mol_type_enforce<
 		`Pd-Rh-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NLG14TCV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AQ1K88R1 = $mol_type_enforce<
 		`Tb-Ce-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M0YH2736 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DLS70TEK = $mol_type_enforce<
 		`Eu-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9VU316LE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P2L3NR49 = $mol_type_enforce<
 		`Y-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5W50OHE6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UM6GHUFQ = $mol_type_enforce<
 		`Li-Ce-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TWC6UZU0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3RXGKW4U = $mol_type_enforce<
 		`Yb-Gd-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5336LFJH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__88EB1PVC = $mol_type_enforce<
 		`Cd-B-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7F2VJV35 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9FJKZY8J = $mol_type_enforce<
 		`Th-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I4DIB39N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2OR4PL4L = $mol_type_enforce<
 		`Ba-La-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VOMFCIID = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7322I25Z = $mol_type_enforce<
 		`Er-Lu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M2O2SD71 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FZ7NGU5J = $mol_type_enforce<
 		`K-Rb-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SWET4WWR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IFQTD5LL = $mol_type_enforce<
 		`Cd-Fe-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B7JIW5TS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__09CPNTS0 = $mol_type_enforce<
 		`Al-Tl-Cd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XBLFYWJN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0ZQAQDQ8 = $mol_type_enforce<
 		`Pr-Nd-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L5K518UG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZW8JW8DD = $mol_type_enforce<
 		`Nd-Ho-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RG4D3YH7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GNTA9X1O = $mol_type_enforce<
 		`Ce-Ho-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2G5VX9ZW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HCHQ0ZMV = $mol_type_enforce<
 		`La-Pu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7XUUTTNI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZIYXAN5K = $mol_type_enforce<
 		`Ge-Au-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AF588K7V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PCXXBB5C = $mol_type_enforce<
 		`Ca-Y-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9QZ2GZPD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N0USY1MG = $mol_type_enforce<
 		`Yb-Gd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IVDCRH5C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RTEAXNUT = $mol_type_enforce<
 		`Na-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JQ77S5I7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T32L9LH8 = $mol_type_enforce<
 		`Y-Ho-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P2G72WFN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L9312F7F = $mol_type_enforce<
 		`Ba-Sr-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K6I5HNSA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SBE7LA9S = $mol_type_enforce<
 		`Tb-Dy-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VSSTRGEK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z1QWNUW5 = $mol_type_enforce<
 		`La-Gd-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4FC6ZZL6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2Y2MH7XU = $mol_type_enforce<
 		`Y-Er-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2N2XRQRZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U7CUO019 = $mol_type_enforce<
 		`Ce-Sm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FN6H3CIF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OF369WUV = $mol_type_enforce<
 		`V-Pd-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HD9JRTU7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0W6DXKHD = $mol_type_enforce<
 		`Li-Tb-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OV52KXDA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HWXK2XY2 = $mol_type_enforce<
 		`Yb-Pr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TGSV0WCX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YXZJ4WMG = $mol_type_enforce<
 		`Yb-Gd-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U8FKQIDP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AFN41OR7 = $mol_type_enforce<
 		`Y-Ho-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YWZRKYXJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6V1S7YTA = $mol_type_enforce<
 		`Pm-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z65RCJ8A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HHHSJZ1Z = $mol_type_enforce<
 		`Eu-Th-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZZWWH07S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MLZ5SPKM = $mol_type_enforce<
 		`La-Er-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TRCBZ9CS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EA92FVPC = $mol_type_enforce<
 		`Ba-Y-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BGUODJDR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H7HPOF44 = $mol_type_enforce<
 		`Co-Hg-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4NO8MBTI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DBTG7Q0F = $mol_type_enforce<
 		`Lu-Pu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W58NOQ9R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B91SKAU9 = $mol_type_enforce<
 		`Y-Tm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K83X5LM7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EPUP6IDL = $mol_type_enforce<
 		`Ba-Ca-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N1YDXBXD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NJB8V5RH = $mol_type_enforce<
 		`K-Li-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ITY6WSRM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__91SYY7KU = $mol_type_enforce<
 		`V-Hg-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0BFYJZUK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FXRO7LZV = $mol_type_enforce<
 		`Tb-Gd-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DEKYZ2GN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W0QNCVP7 = $mol_type_enforce<
 		`La-Pm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P0C78HSH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QHCFRO7G = $mol_type_enforce<
 		`Ir-Ru-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9ZUWY4YS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__71P5XAS7 = $mol_type_enforce<
 		`Ca-Y-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__35PLL91Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3GTSDQPP = $mol_type_enforce<
 		`Tb-Yb-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NMHODNWQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5AYEXR13 = $mol_type_enforce<
 		`Li-Sc-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QM0QDIMA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B2MFRP2B = $mol_type_enforce<
 		`Er-Hf-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RPBEKX45 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IKA0MLY3 = $mol_type_enforce<
 		`La-Ta-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1XPH6OXE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__13ADSF8N = $mol_type_enforce<
 		`La-Dy-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9PRYSF94 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RNUK46TS = $mol_type_enforce<
 		`Ce-Nd-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IGV60FR0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WZ1TZ7LW = $mol_type_enforce<
 		`Co-Pt-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G4OVYCVC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VNHFKU77 = $mol_type_enforce<
 		`Tm-Lu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PGDZ5X8K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7VVYT2AP = $mol_type_enforce<
 		`Na-Mg-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EPFU8FNK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3TUE8QJU = $mol_type_enforce<
 		`Ce-Eu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S1ALQH4D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MFMZW95B = $mol_type_enforce<
 		`Cs-Li-Mg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MGCP8A5B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VED3K1M6 = $mol_type_enforce<
 		`Gd-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OAD3H1AS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8JT083Z6 = $mol_type_enforce<
 		`Re-Pd-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NR766VBL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NO2TD6IA = $mol_type_enforce<
 		`Yb-Nd-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3ZGBB3MY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VEW6BH68 = $mol_type_enforce<
 		`Mg-U-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__916DPMJ8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JWY5ZAXK = $mol_type_enforce<
 		`Fe-Pd-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FVDCHVF0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QWZQSE0K = $mol_type_enforce<
 		`K-Rb-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TUH2H0ZY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B7AAXG2B = $mol_type_enforce<
 		`Ba-Ca-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7HGQZYP6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JTSN9T6R = $mol_type_enforce<
 		`Rb-Mg-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T7348MFY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OI3XOTVY = $mol_type_enforce<
 		`La-Sm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6K5MYNBV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FY6B5J5I = $mol_type_enforce<
 		`Y-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H7YVCHTC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8ZS79BH0 = $mol_type_enforce<
 		`Cs-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U9KNRICF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R56PAJP7 = $mol_type_enforce<
 		`Tb-Th-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8CW3QM6J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A61P05E6 = $mol_type_enforce<
 		`Pm-Gd-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EL4FP33R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7G4NOI0P = $mol_type_enforce<
 		`La-Er-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8ZHEX80S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RXFGERDS = $mol_type_enforce<
 		`Tb-Gd-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__32SLETTW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4HTK4GTZ = $mol_type_enforce<
 		`Ce-Pm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__58B7VEJV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RNDTLRA8 = $mol_type_enforce<
 		`Pm-Sm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QK4JI806 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I9JRMN2U = $mol_type_enforce<
 		`Hf-Sc-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AJYVZ5EW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5DDEXOVB = $mol_type_enforce<
 		`Y-Pu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MC5BIZX1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1VOT2QX7 = $mol_type_enforce<
 		`Be-Zn-In`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LQUXE0Q5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PQGFY7ND = $mol_type_enforce<
 		`Yb-U-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6GBV8H1P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L572HVRI = $mol_type_enforce<
 		`Nd-Y-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZQTPUHES = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0IFMDF1M = $mol_type_enforce<
 		`Ce-Hf-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4ZXX0IKG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5W6OAYH9 = $mol_type_enforce<
 		`Cs-K-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TWGVPN4I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9L9ED42N = $mol_type_enforce<
 		`Ag-Pd-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GDVE4VOA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FY4ATUKP = $mol_type_enforce<
 		`Sm-Tm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9MBY7Z8B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__07KLB4E4 = $mol_type_enforce<
 		`Ho-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V21SGWLF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U7ZGO38A = $mol_type_enforce<
 		`Yb-U-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C02XY3CL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N0Q99NBI = $mol_type_enforce<
 		`Tb-Lu-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5SEF5F4P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TGCD9G9L = $mol_type_enforce<
 		`Yb-Th-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6H0SOGLU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8UU0PHOM = $mol_type_enforce<
 		`Ca-Tb-Ce`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X03A1VFR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N3XMX61R = $mol_type_enforce<
 		`Tb-Dy-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SKGAXIHI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q6TNZ7OB = $mol_type_enforce<
 		`Zn-Cd-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X4A1Y2FO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LFIQ22MJ = $mol_type_enforce<
 		`Pm-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LXP7VGR5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9MTNN4QH = $mol_type_enforce<
 		`Yb-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JRUIIWZR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2S4UBXCR = $mol_type_enforce<
 		`Hf-U-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z6AOYU4U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__POD357QB = $mol_type_enforce<
 		`Li-Sm-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WJCAWB2Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PISK1EAL = $mol_type_enforce<
 		`Li-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SNGHOGOK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NVIQ48U6 = $mol_type_enforce<
 		`Na-Ta-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BQNOIDRM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UEBW60XM = $mol_type_enforce<
 		`Pr-Er-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PXATUVO6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__57NNYXR1 = $mol_type_enforce<
 		`V-In-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QX3NFFUX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JZMX7BKX = $mol_type_enforce<
 		`Er-Th-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OFW2HTGQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4C7PVV6W = $mol_type_enforce<
 		`Pm-Dy-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RE8UDWG5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X4EHNXXK = $mol_type_enforce<
 		`Tb-Gd-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YP9FLO6M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SYFW0DJW = $mol_type_enforce<
 		`Nd-Zr-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NZWGBA17 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C2UUJ6O0 = $mol_type_enforce<
 		`Sr-Ca-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SH8HQFOJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IGQA2QI3 = $mol_type_enforce<
 		`Tm-Th-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0GPJPAMI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HRBQ1VX9 = $mol_type_enforce<
 		`Gd-Sc-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TZG4VRZZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZUPAGJN6 = $mol_type_enforce<
 		`Li-Gd-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8O4H841C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LYWUX6SP = $mol_type_enforce<
 		`Ag-Os-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WUJGCQDH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PJ6WDKBO = $mol_type_enforce<
 		`La-U-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EP0HMD7V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WATC2UCR = $mol_type_enforce<
 		`Th-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VXUIFWUB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0GRM69OU = $mol_type_enforce<
 		`Co-Pd-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5DJG1E0Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RMVNGXAZ = $mol_type_enforce<
 		`Ce-Ho-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JC7HXDQH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KCMJD9S1 = $mol_type_enforce<
 		`Cu-Re-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NBDIQWGU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S3ISHHVK = $mol_type_enforce<
 		`Yb-Sc-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RYNAMLQR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BNBN537X = $mol_type_enforce<
 		`Li-La-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RYC7BNPJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z9V2OKEO = $mol_type_enforce<
 		`Cu-Ag-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PQW5T4X4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__18TSNGDQ = $mol_type_enforce<
 		`Eu-Sc-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BMGC3D53 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WHZV16V9 = $mol_type_enforce<
 		`Rb-Na-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MGWT3R93 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3Z5NNAML = $mol_type_enforce<
 		`Co-Rh-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LLJH0PXB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P19QVBYD = $mol_type_enforce<
 		`Tb-Ho-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4OMZ4TEH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K8353BAS = $mol_type_enforce<
 		`Ce-Gd-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PAI84DF5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YO9UZV44 = $mol_type_enforce<
 		`Tb-Ce-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A9KZLNLX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A9HLXJEK = $mol_type_enforce<
 		`Gd-Dy-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UYSE5CQ5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__79MTQYAQ = $mol_type_enforce<
 		`Zn-In-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PCWCFOPG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C2ZEGPG3 = $mol_type_enforce<
 		`Ce-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CNKRD92L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JKKO2XN8 = $mol_type_enforce<
 		`Y-Ho-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TNMC7Y1Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T9YO0OZN = $mol_type_enforce<
 		`Pm-Pr-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QVOWX4A6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7AO5Y271 = $mol_type_enforce<
 		`Li-Pr-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A5AQC3NR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IX4KQ95D = $mol_type_enforce<
 		`Er-Lu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KP97N1FT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4R542USB = $mol_type_enforce<
 		`Li-Gd-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JFRVCCRQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MQ0TJ62G = $mol_type_enforce<
 		`Li-Gd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7WZ86QMY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GMFYR5N6 = $mol_type_enforce<
 		`Yb-Lu-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ORAJTW4S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PIQR8AGQ = $mol_type_enforce<
 		`Pu-Nb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5OWKN1XC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DUQ9C01W = $mol_type_enforce<
 		`La-Tb-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CGS4Y3VZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2XEE0NLN = $mol_type_enforce<
 		`Li-La-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XZHRIL24 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RCXLUH6S = $mol_type_enforce<
 		`Cu-Ni-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JM2ZJ0UP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UFBAV1PO = $mol_type_enforce<
 		`Yb-Pr-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EE8GXW8M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7MJDXOW0 = $mol_type_enforce<
 		`La-Sc-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ERONVRMI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VY5SFLCO = $mol_type_enforce<
 		`Fe-Ag-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H0GVYG79 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FB9E504L = $mol_type_enforce<
 		`Mg-Mn-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S2PKR246 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__47R7XUT3 = $mol_type_enforce<
 		`Fe-Ag-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__03TRJKBL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__34CFHYL4 = $mol_type_enforce<
 		`Nd-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YGXG52FT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O5FDZPUP = $mol_type_enforce<
 		`La-Pr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LFWQENXN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3VZ5QK07 = $mol_type_enforce<
 		`Cr-Cu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EDQKSUNN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SZN10L7R = $mol_type_enforce<
 		`Tb-Er-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SM8YSB19 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SRV8RZ5A = $mol_type_enforce<
 		`Li-Lu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3PTRYNA2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NML3NQHW = $mol_type_enforce<
 		`Y-Lu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2EWPSCS6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NKXIUXP9 = $mol_type_enforce<
 		`Lu-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S3INQ3DR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1DDCYZZI = $mol_type_enforce<
 		`Sn-B-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y2FDJ5EZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QGCFONGE = $mol_type_enforce<
 		`Li-Pr-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N8CTFS8L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TTTS4BQH = $mol_type_enforce<
 		`Re-Hg-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JDTFZSFT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5NEGYVAQ = $mol_type_enforce<
 		`Yb-Dy-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VQALONC5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3CKMMNJW = $mol_type_enforce<
 		`Tb-Pm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7WA0LM11 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZAK7DAP5 = $mol_type_enforce<
 		`Cs-K-Mg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MLTJH9AZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZXVSPXU7 = $mol_type_enforce<
 		`Ni-Ir-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BKNBZG8B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SGWWB2G1 = $mol_type_enforce<
 		`Ca-Sc-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B9KEJZX2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5XP8ZXQ1 = $mol_type_enforce<
 		`Eu-Y-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ID0MQ8EB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__091T7E2U = $mol_type_enforce<
 		`Zr-Sc-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PIVAM8RC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PGU63BNJ = $mol_type_enforce<
 		`Yb-Pu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__90ZF4Q4C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__54B3X74A = $mol_type_enforce<
 		`K-Li-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8TE5P8ZI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ME6AMBC0 = $mol_type_enforce<
 		`Yb-Pr-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZNEGABKF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HUHLHY81 = $mol_type_enforce<
 		`Y-Pu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2YCK7XWD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__42SF5WPQ = $mol_type_enforce<
 		`Ce-Th-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VJ84ZYQE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WYHN168J = $mol_type_enforce<
 		`Ce-Y-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2P74GFSM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q1JDADEQ = $mol_type_enforce<
 		`Nb-V-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CCL6SOBN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E3DFONUN = $mol_type_enforce<
 		`V-Cu-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EKDXC74S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2E9JNLP2 = $mol_type_enforce<
 		`Y-U-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OG3X7BL4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K3EMMBYT = $mol_type_enforce<
 		`Fe-Cu-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I8X53JOT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QSC482U3 = $mol_type_enforce<
 		`Re-Pt-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8Y28KZ5F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8F5MC9S5 = $mol_type_enforce<
 		`Pu-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V8F1O2UM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X2802G6O = $mol_type_enforce<
 		`Re-Ir-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K539RT2Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FXBECY12 = $mol_type_enforce<
 		`Ca-Yb-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7AI5L56O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QQ7IBDDY = $mol_type_enforce<
 		`Nd-Sm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZD2QCHUI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J59IKM9U = $mol_type_enforce<
 		`Na-Sr-Ca`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DE9FUS5D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8DDSCMN7 = $mol_type_enforce<
 		`Ho-Pu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2GOFD67I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IATDNCYN = $mol_type_enforce<
 		`Ce-Ho-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VBRBL8CP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__24QJPMKZ = $mol_type_enforce<
 		`Ce-Zr-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OPRSHAJK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__225B33UK = $mol_type_enforce<
 		`Pm-Th-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__78GH64R1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QV9LFH4F = $mol_type_enforce<
 		`La-Gd-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__53OCTVDP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IFGG8EMY = $mol_type_enforce<
 		`Dy-Lu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ET1BGBS7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZOJ1L0LY = $mol_type_enforce<
 		`Ta-Ti-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CCNCKR2F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N9PQVTEP = $mol_type_enforce<
 		`Nd-Dy-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H6W3PE99 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S4H8W6EJ = $mol_type_enforce<
 		`Y-Ho-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y6PPXZM7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T8S2M39E = $mol_type_enforce<
 		`Sr-Y-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RTBK4AKO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AN7O7FI7 = $mol_type_enforce<
 		`La-Pr-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M07P4UPB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9A98JP81 = $mol_type_enforce<
 		`Cr-Cu-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P5N8LAQF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X5CD4CBH = $mol_type_enforce<
 		`Pm-Lu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6BAJFX5W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M5QOIS1E = $mol_type_enforce<
 		`La-Pm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S98X7HJR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GGAS6LHA = $mol_type_enforce<
 		`Sm-Er-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7O9CZC4G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K7BHF8CQ = $mol_type_enforce<
 		`Y-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T8PZTYX0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UV1G9IJ9 = $mol_type_enforce<
 		`Ba-Sr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2MIEXWU7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CQPGYEFS = $mol_type_enforce<
 		`Ta-V-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V8SS422J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WYT0P6TJ = $mol_type_enforce<
 		`Ga-Hg-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X2MMT1L6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__55KZ6QWC = $mol_type_enforce<
 		`La-Pu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2B8IP5EZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NPJ7BAYT = $mol_type_enforce<
 		`Nd-Pu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W7X3B6EG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__82BGB35T = $mol_type_enforce<
 		`Li-Sc-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5ZC34XYB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SUYKR0U0 = $mol_type_enforce<
 		`Ca-Eu-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZXN0ZJOF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CB2M6H7X = $mol_type_enforce<
 		`Pr-Y-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JZHCRB37 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X7K8OH78 = $mol_type_enforce<
 		`Lu-Pu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FFYBOAUP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__69S0CE80 = $mol_type_enforce<
 		`Dy-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KT277M7Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EQP7VDK2 = $mol_type_enforce<
 		`Ce-Y-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3UUVY9J1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DZEQOFFQ = $mol_type_enforce<
 		`Na-Zr-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S306VKMM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AY3KBJQM = $mol_type_enforce<
 		`La-Lu-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__53G2CCL7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CIGPY63A = $mol_type_enforce<
 		`Tb-Nd-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QAX1ELT4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MM3UCF7X = $mol_type_enforce<
 		`Eu-Sc-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E0UK5DFM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9EMEX4OC = $mol_type_enforce<
 		`Ca-Ce-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QGB3HT3E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6GG7JHR0 = $mol_type_enforce<
 		`Pr-Lu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SPVB92SQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2E3WYS2O = $mol_type_enforce<
 		`Pm-Ho-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EM5DB090 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4S9A7V1Y = $mol_type_enforce<
 		`Nd-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6VDGWXSO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5PNRFV68 = $mol_type_enforce<
 		`La-Lu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L9N5WV0K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S6ANZ79Q = $mol_type_enforce<
 		`Co-Pd-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6MB9GEJ1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TE372S77 = $mol_type_enforce<
 		`Pr-Sm-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BMCMWCTM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PJMXZTOZ = $mol_type_enforce<
 		`Li-Mg-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W7XEF2LN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GUJNMCE4 = $mol_type_enforce<
 		`Lu-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P9D0FXP7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AF1AI9C4 = $mol_type_enforce<
 		`Eu-Hf-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4KP48HFY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M9V6MZL6 = $mol_type_enforce<
 		`Li-Gd-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BSLW7NJ3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0ACNWD5W = $mol_type_enforce<
 		`Er-Pu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VBE5OFHG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N4J3DKRT = $mol_type_enforce<
 		`Yb-Nd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V9QU765F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D1A5YJ9D = $mol_type_enforce<
 		`La-Eu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QQUX6QU0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HP1QAMM4 = $mol_type_enforce<
 		`Gd-Ho-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YCYUTSAL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ABKCLWZD = $mol_type_enforce<
 		`Cs-Li-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O4MG2GCN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L1QS53NC = $mol_type_enforce<
 		`La-Ho-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K833MK8T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5UWQ3033 = $mol_type_enforce<
 		`Rb-Zr-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VDNS1X1E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3V3GUO2Y = $mol_type_enforce<
 		`La-Pr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CT0FHEOC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LQ8JY7RX = $mol_type_enforce<
 		`Nd-Gd-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JQVUXDRU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AH7RCFYV = $mol_type_enforce<
 		`Th-U-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OTVKAAYG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BGZ95XKV = $mol_type_enforce<
 		`Na-Mg-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DTE8XJA3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0H082SEG = $mol_type_enforce<
 		`Ce-Sc-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LNFQZG2M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F2TIP81R = $mol_type_enforce<
 		`Eu-U-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AAXG4Y3Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JF29M7SD = $mol_type_enforce<
 		`Na-Be-Al`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5SNZ7HM0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q0D6KZVR = $mol_type_enforce<
 		`Yb-Lu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__666U1G5M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6EJVFFYZ = $mol_type_enforce<
 		`Gd-Dy-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ETOCKO05 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TTLECRHU = $mol_type_enforce<
 		`Pm-Sm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5D40CS50 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QPO75NHA = $mol_type_enforce<
 		`Cs-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TRMWKAJ3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6W0T0E7U = $mol_type_enforce<
 		`Pm-Pu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PKYZV0CU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BJ06735X = $mol_type_enforce<
 		`Gd-Y-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DNPCXZKC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2VZ9VR8W = $mol_type_enforce<
 		`Cs-K-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4W9I8Q8W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WA1NPZ32 = $mol_type_enforce<
 		`Tb-Yb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4EMZRBRP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BZRNGF10 = $mol_type_enforce<
 		`K-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E2MYMXF3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z10MBLS8 = $mol_type_enforce<
 		`La-Yb-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LPU07CJK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NCHSS6BT = $mol_type_enforce<
 		`Rb-Li-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IWPS466Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__65A9JSON = $mol_type_enforce<
 		`Li-Gd-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6HXPL9JG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IKVBBAF8 = $mol_type_enforce<
 		`La-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__095FWQ1C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LXUKL2OU = $mol_type_enforce<
 		`Ce-U-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9PZQOEK2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4BP8EBKM = $mol_type_enforce<
 		`Ba-Gd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2U62T0T0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XR401VK0 = $mol_type_enforce<
 		`Ba-Y-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1JZVX7KU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S7IXNIFQ = $mol_type_enforce<
 		`Cu-Ni-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W15S06IP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PHWNUB4Q = $mol_type_enforce<
 		`Nd-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TZE915FL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6I2GT60X = $mol_type_enforce<
 		`Cd-Si-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B9TSOUID = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HTD8ONX1 = $mol_type_enforce<
 		`Nd-Tm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7OW02RJW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZS9PU5BC = $mol_type_enforce<
 		`Tb-Er-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SS3KFF8V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5IZ56HCX = $mol_type_enforce<
 		`Pr-Ho-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7XGDT5G7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PKAYIQ8E = $mol_type_enforce<
 		`U-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IOYYZLUI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZBMIUQMY = $mol_type_enforce<
 		`Nd-U-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6H27L4OP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8LLW1X6A = $mol_type_enforce<
 		`Fe-Pd-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U0VEQVCI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SHRC2I37 = $mol_type_enforce<
 		`Na-Li-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JCBGODBB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R222M2C4 = $mol_type_enforce<
 		`Ba-Ca-Yb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SLR8XYCL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JA0ERBWE = $mol_type_enforce<
 		`Sm-Er-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AE3SUKSS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__63NECFF7 = $mol_type_enforce<
 		`Ca-La-Eu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AJI4ORFX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LCNBE99O = $mol_type_enforce<
 		`Ca-La-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FXW5D53C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HT0AXJRQ = $mol_type_enforce<
 		`Mn-Co-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AXIPIEFM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5C2SIWMJ = $mol_type_enforce<
 		`Nd-Sm-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7V9VVNEV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HS0K5OJD = $mol_type_enforce<
 		`Tc-Pd-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5FARJOIA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HXQEBC0R = $mol_type_enforce<
 		`Cs-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WNVX7ZAL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__25ILIPIR = $mol_type_enforce<
 		`Ca-Eu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3ZZ30L2F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EXSAPUSN = $mol_type_enforce<
 		`Li-La-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9KU7SRN1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6189SJWI = $mol_type_enforce<
 		`Ni-Ir-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XN6ND6PA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OFHDCLOI = $mol_type_enforce<
 		`Fe-Ni-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P82T6KP2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZCXYLEE1 = $mol_type_enforce<
 		`Pu-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1ALOZJ6P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VI42IAG0 = $mol_type_enforce<
 		`Yb-Y-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FJ6N53J9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__735JZXX9 = $mol_type_enforce<
 		`Eu-Y-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FUYDLKUW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T3GU4VPG = $mol_type_enforce<
 		`Re-Ni-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J1DBY1AM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TO94J7KO = $mol_type_enforce<
 		`Pm-Sm-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6GEPW0DZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z4XTDJC5 = $mol_type_enforce<
 		`Cu-Re-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TAJNCSOC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__50DIO0ZO = $mol_type_enforce<
 		`Lu-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FZ4WLOXR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MES5JT4N = $mol_type_enforce<
 		`Tm-Lu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HWT8438D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RAQNLJY2 = $mol_type_enforce<
 		`Ce-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LH8DZ2K5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__65N6OC3B = $mol_type_enforce<
 		`Ca-Ce-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VOC62I9A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LBH9CFBN = $mol_type_enforce<
 		`Ce-Sm-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OHRKGY1D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1IGWYNSQ = $mol_type_enforce<
 		`Re-Tc-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M2BA1A3P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PFSBNWQK = $mol_type_enforce<
 		`Ag-Ru-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5TLLEDYU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1RBT3VVB = $mol_type_enforce<
 		`Mg-Cr-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BKRN6KLU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8LI5WYS9 = $mol_type_enforce<
 		`Ba-Ca-La`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A1757YRP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7RBHW6TV = $mol_type_enforce<
 		`Ca-Yb-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H9N2YHDV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H41K6FB3 = $mol_type_enforce<
 		`Ni-Os-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JQ90BY5Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QIFOWY33 = $mol_type_enforce<
 		`Tl-Cd-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UCUFO3CT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O9MCOFZR = $mol_type_enforce<
 		`Mg-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CM1V3O9A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6NQZP593 = $mol_type_enforce<
 		`Ba-Sc-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R1P0QLG1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__26OZQLZF = $mol_type_enforce<
 		`Fe-Ru-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__29OBHTMY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZKCVWOAA = $mol_type_enforce<
 		`Pr-Hf-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R70G2ADL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XR138VZZ = $mol_type_enforce<
 		`Nd-Y-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZG7BHXGS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EIZNCQIB = $mol_type_enforce<
 		`Ho-Tm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0M94KMV5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L5UPMFQC = $mol_type_enforce<
 		`Ce-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9JFQ5ORC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T72F0UO1 = $mol_type_enforce<
 		`Ce-Y-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A589H87W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7EF6BKEH = $mol_type_enforce<
 		`Eu-U-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QGORBBF7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XL76JDOI = $mol_type_enforce<
 		`Tb-Sm-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8JI51KZR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JJKXPHMF = $mol_type_enforce<
 		`Ce-Pr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EFJ56ZJI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CTUWCZGO = $mol_type_enforce<
 		`Sc-Ti-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JOR06120 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EXYN3N6C = $mol_type_enforce<
 		`Sm-Dy-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5CF5FD8L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4VFKG7CK = $mol_type_enforce<
 		`Pm-Dy-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N63D128X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z2LM48BW = $mol_type_enforce<
 		`Er-Lu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__61NZ3LKC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZQSIRQGP = $mol_type_enforce<
 		`La-Gd-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B1D16OH9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AJDILRKU = $mol_type_enforce<
 		`La-Mn-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DTLLCZYN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PIKKI43W = $mol_type_enforce<
 		`Ba-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RPB3RXNN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6QEBA5SQ = $mol_type_enforce<
 		`Tb-Ce-Pr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VEWUKYDJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HQISQ35A = $mol_type_enforce<
 		`Ag-Ru-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WU7BUL7A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O9UUC7JG = $mol_type_enforce<
 		`Ba-Pr-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MORRM6R2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__27TMUPAJ = $mol_type_enforce<
 		`Yb-Dy-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W5QDFB5A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MXHXGCMC = $mol_type_enforce<
 		`La-Pr-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AJQWHYRI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GE7VPIKQ = $mol_type_enforce<
 		`Li-Ta-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZMY5DXQK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2IGQE1AC = $mol_type_enforce<
 		`La-Ho-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G0BYZX0P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NEULKJ1N = $mol_type_enforce<
 		`Tl-V-In`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IW9G6129 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3ZE1XK0Y = $mol_type_enforce<
 		`Tb-Ho-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MUHQQ7X4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LUHSGT9H = $mol_type_enforce<
 		`La-Y-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4U2B1EY9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FKNFAUWW = $mol_type_enforce<
 		`Ru-Pt-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QS8Z4AQ0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZUU39D3B = $mol_type_enforce<
 		`Sm-Y-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RWBLILW9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MTXAGWZJ = $mol_type_enforce<
 		`Tm-Lu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W8HDMSST = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CT6PXONU = $mol_type_enforce<
 		`Ce-Er-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0AL13HZR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8QUHKR3O = $mol_type_enforce<
 		`Cr-W-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N89WBERZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YLY6X9PV = $mol_type_enforce<
 		`Yb-U-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ATHHO65R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F1HC8NGS = $mol_type_enforce<
 		`La-Eu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1TPF81TG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TYSUZ0RC = $mol_type_enforce<
 		`Pr-Nd-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZRIY5UL7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MU3TBH10 = $mol_type_enforce<
 		`Li-Nb-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZXO2SWBZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AQY220RY = $mol_type_enforce<
 		`Cu-Pt-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__INIUW13S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BEZFWAJV = $mol_type_enforce<
 		`Ni-Ag-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JT6WOPMA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4D8AFGYM = $mol_type_enforce<
 		`Yb-Hf-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RQCW376N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y95B9WH2 = $mol_type_enforce<
 		`Li-Pm-Pr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8KR8T5WJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3DNN0Q14 = $mol_type_enforce<
 		`Cs-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6LJ6Z68Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NXOXT8FL = $mol_type_enforce<
 		`Y-Ti-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AU0QDM21 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TH6M8NKO = $mol_type_enforce<
 		`Fe-Ag-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4S8KTEX8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WWNMCXOD = $mol_type_enforce<
 		`Hf-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0TRRLN0H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3JB9IV4I = $mol_type_enforce<
 		`La-Sm-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BPA0A9Q6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JMMME5F4 = $mol_type_enforce<
 		`Er-Hf-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V7BE3BLD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZYZ3SCKK = $mol_type_enforce<
 		`Ir-Os-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4BSLFW8J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5SGX76PL = $mol_type_enforce<
 		`Dy-Ho-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JXVMEKQC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JGJWHNDG = $mol_type_enforce<
 		`Ba-Nd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__12E81EXS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UIUTXAZU = $mol_type_enforce<
 		`Ag-Pd-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__34CNJS97 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KLDS1U7Z = $mol_type_enforce<
 		`K-Rb-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X0OQC0S4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KO4VAKGF = $mol_type_enforce<
 		`Pr-Sm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VFHS5XA2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D7U00FP7 = $mol_type_enforce<
 		`Nd-Dy-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0PF36YW3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T2LLN9NY = $mol_type_enforce<
 		`Li-Pm-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AB9Q7MDS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ITZVV4WY = $mol_type_enforce<
 		`Ba-Yb-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CZMTRLG5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PJZH61RP = $mol_type_enforce<
 		`Tb-Pm-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PM5UH831 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4UL3ET8O = $mol_type_enforce<
 		`La-Pm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YHG32YWP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0GHYMSE0 = $mol_type_enforce<
 		`Sm-Dy-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XVO865VI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V0PLXD8X = $mol_type_enforce<
 		`V-Cr-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__41LR1X7V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SA6SJ6WO = $mol_type_enforce<
 		`Tb-Pm-Pr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L9B362FA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P6AI2YW9 = $mol_type_enforce<
 		`Ho-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MBJ2CWVH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JVHB153N = $mol_type_enforce<
 		`Ba-Yb-Eu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LES1DSP2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QYXVJX2Z = $mol_type_enforce<
 		`La-Sm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XL6A9KYX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XIKH8Y0F = $mol_type_enforce<
 		`Li-Tb-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TZBAE2Y5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LXA39S04 = $mol_type_enforce<
 		`Tb-Er-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6Z42V8GD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QCH6Z7V8 = $mol_type_enforce<
 		`Na-Mg-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OUCSDBL8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UTIH7BWD = $mol_type_enforce<
 		`Pr-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HKSID98V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LZK7N7QB = $mol_type_enforce<
 		`Ce-Tm-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XOKJH5ZD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7B0ECAXC = $mol_type_enforce<
 		`Er-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R6YE1416 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4L77SFRO = $mol_type_enforce<
 		`Gd-Ho-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LVF4C393 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UNNJSSP0 = $mol_type_enforce<
 		`Tb-Ho-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P1F27L4R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TWNFENG8 = $mol_type_enforce<
 		`Nd-Gd-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4QK0PO6Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8RE3USNN = $mol_type_enforce<
 		`Li-Pr-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EL21HBAN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JET0JG6C = $mol_type_enforce<
 		`Cr-Ag-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MACXSTNN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4NSPE2KY = $mol_type_enforce<
 		`Lu-Pu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QAQXQOBK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NT6PDIJS = $mol_type_enforce<
 		`Nb-Hg-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WIIL4MSM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TAYWQXEN = $mol_type_enforce<
 		`Tb-Gd-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A690Z3PG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4XKQ8KGG = $mol_type_enforce<
 		`La-Yb-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KMJW9B3X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0D7UWS32 = $mol_type_enforce<
 		`Fe-Ir-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0B2YKGUU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6UFP8HYV = $mol_type_enforce<
 		`Sm-Tm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SAT4AI9U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5APWSRES = $mol_type_enforce<
 		`Th-Sc-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V85DTFS6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O2HYXNS1 = $mol_type_enforce<
 		`Tb-Gd-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JXV7G3WU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R8IQILBJ = $mol_type_enforce<
 		`Tb-Pm-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QIG24LQN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GPSTW3EW = $mol_type_enforce<
 		`Pr-Y-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0EFTCHAQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OFLRD3EN = $mol_type_enforce<
 		`Er-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TD9R4NK5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2N6CA1VL = $mol_type_enforce<
 		`Th-Sc-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NELBBXZ6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WPSNAASK = $mol_type_enforce<
 		`Y-Tm-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H0VYACIS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AGCSV83T = $mol_type_enforce<
 		`La-Lu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B9XIH0MV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JJ7O4YN0 = $mol_type_enforce<
 		`Ga-Hg-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4817VIFV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6SXSF6R7 = $mol_type_enforce<
 		`U-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__POFCGCZK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IJ9K7EPU = $mol_type_enforce<
 		`Ce-Pr-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NAODXFVM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O389VGLP = $mol_type_enforce<
 		`Ho-Th-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T4Z9HTMJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QSUQ9RFD = $mol_type_enforce<
 		`Pm-Gd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RK13T84K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DHM6WAX0 = $mol_type_enforce<
 		`Li-Ho-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P260O7NR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PLFD56PM = $mol_type_enforce<
 		`Cr-Fe-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DSLBWCY7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1Q0E0T6S = $mol_type_enforce<
 		`Rb-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__24211ZMV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3UEELGH3 = $mol_type_enforce<
 		`Ce-Pr-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K9DAHGS5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8LSW5XXC = $mol_type_enforce<
 		`Li-Pr-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4DWO48WX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0LAXRMBU = $mol_type_enforce<
 		`Yb-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N8HQYI7D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XPMHYHD0 = $mol_type_enforce<
 		`La-Lu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YJD7BRCV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C3WMXAZ4 = $mol_type_enforce<
 		`Pm-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BNDRTPNM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9STNBUKA = $mol_type_enforce<
 		`Hg-Bi-Sb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WP44VUEU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PUNOP45S = $mol_type_enforce<
 		`Ce-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9NT502MB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K8I9KT2Z = $mol_type_enforce<
 		`K-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6VSSC6DH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3IJGSKS1 = $mol_type_enforce<
 		`Ca-Eu-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CFG8VX8J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__610ACS2O = $mol_type_enforce<
 		`Y-Sc-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q7D0AWCH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YJYRW9MW = $mol_type_enforce<
 		`Nd-Y-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G7XUVJB8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0TBY8V47 = $mol_type_enforce<
 		`Ag-Ir-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OC4O53Y7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__052YM8BC = $mol_type_enforce<
 		`Ni-Ru-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5KCM1WOL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6T0JDWVL = $mol_type_enforce<
 		`Li-Nd-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KC077OYA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KW9349DP = $mol_type_enforce<
 		`Cs-Rb-Li`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U2P9W63M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WMT8IL8V = $mol_type_enforce<
 		`Na-Li-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PU8X5Q7X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EXM49I2I = $mol_type_enforce<
 		`Gd-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BFS4YAZX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YB1GZE95 = $mol_type_enforce<
 		`Co-Ag-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__12VP7IKL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__12QAC4G5 = $mol_type_enforce<
 		`B-Sb-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3DGFDXH9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SUTQBQMC = $mol_type_enforce<
 		`Pr-Y-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4Q5553FI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L5UZB0CD = $mol_type_enforce<
 		`La-Zr-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EUZZWDN9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AFNVXJHC = $mol_type_enforce<
 		`Tb-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L65G8D5E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LRUSN00U = $mol_type_enforce<
 		`Re-Ni-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1A1UPGER = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZR604HIV = $mol_type_enforce<
 		`Yb-Nb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XW8UJYFT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W34FZ6KN = $mol_type_enforce<
 		`Pm-Er-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I8CNAVYU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__G91B8WDK = $mol_type_enforce<
 		`La-Y-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VAR1XV9A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1EUH8WD4 = $mol_type_enforce<
 		`Be-Si-Sn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__30Q2DSHX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MCZRV1L6 = $mol_type_enforce<
 		`Cr-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__22MWNH81 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JHAQBY9H = $mol_type_enforce<
 		`Ce-Lu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__054XBV3W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BI374ZV0 = $mol_type_enforce<
 		`Ce-Lu-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KRLKWQG6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q87LNN1F = $mol_type_enforce<
 		`Li-Y-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6O8I3WH6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FM4UE37W = $mol_type_enforce<
 		`Tb-Ho-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TBR8II4I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0VBEXXDJ = $mol_type_enforce<
 		`Tb-Sm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FKPVQCZS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V9OGDPGL = $mol_type_enforce<
 		`Pm-Nd-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OF1F4RPF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3D6YWWVO = $mol_type_enforce<
 		`Sc-U-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FT7GRLCX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YY7U7LGR = $mol_type_enforce<
 		`Li-Nd-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1TDFIRC3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B1KMO4R2 = $mol_type_enforce<
 		`La-Nd-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8Y11RRYA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OZDX9JO4 = $mol_type_enforce<
 		`La-Yb-Pr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7KKCMDM0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QJ0TU4S1 = $mol_type_enforce<
 		`Ce-Er-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__069LDA1O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5IWDRQ19 = $mol_type_enforce<
 		`Rb-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GKYKN7JR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DRB378VP = $mol_type_enforce<
 		`La-Cr-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FLCRRO6Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GAMPXQKI = $mol_type_enforce<
 		`Ce-Nd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__78DDF9F7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__31MH8W5T = $mol_type_enforce<
 		`Zr-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3RZPU7R2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1MUAHUTS = $mol_type_enforce<
 		`Lu-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V38Z12A6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZZTXXHVH = $mol_type_enforce<
 		`Sm-Dy-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LDR6UIZC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2XL6X134 = $mol_type_enforce<
 		`Nd-U-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GCPDKCIX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6DYW3V7Z = $mol_type_enforce<
 		`Nd-Dy-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5DVSK8SU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CHU4EY5X = $mol_type_enforce<
 		`Pm-Ho-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UO1UBUPX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__78HSTSD0 = $mol_type_enforce<
 		`Na-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VT09BA1V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1SK2N9U9 = $mol_type_enforce<
 		`Pr-Er-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R3ZAEUNC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8ABKVARM = $mol_type_enforce<
 		`La-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X8MQPMUK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7N4GK1JY = $mol_type_enforce<
 		`Al-Ga-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__84KWHN61 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MUUCPJ9B = $mol_type_enforce<
 		`La-Pm-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JSUUH0VV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TO995OI9 = $mol_type_enforce<
 		`Sm-Lu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P4BL2U74 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OH6W1C2R = $mol_type_enforce<
 		`Gd-Er-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D42SIYPC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FJGBDTLF = $mol_type_enforce<
 		`Nd-Sm-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GQ7YSXRK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3RHE0CW6 = $mol_type_enforce<
 		`Tb-Pm-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1CZYULYA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IE95MMOE = $mol_type_enforce<
 		`Al-Hg-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MV6M1LAB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BJBS94RQ = $mol_type_enforce<
 		`V-Hg-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6F2QOBOU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O8B7S2R4 = $mol_type_enforce<
 		`Pm-Pr-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UIIAE01K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NJAML28X = $mol_type_enforce<
 		`Ce-Th-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y3UDZB0P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JNM71KTV = $mol_type_enforce<
 		`K-Hf-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HSJPKMEZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PHE2ANO0 = $mol_type_enforce<
 		`Pr-Dy-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C9ZKU68A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5O6220V4 = $mol_type_enforce<
 		`Li-Y-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S1ZKHDJX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z9BONY4M = $mol_type_enforce<
 		`La-Er-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GW60TJ3C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NR3D11MB = $mol_type_enforce<
 		`Dy-Y-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SP6DWY0W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HDJE77NW = $mol_type_enforce<
 		`Lu-Pu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OXQPNQBU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3JKQ8M0S = $mol_type_enforce<
 		`Nd-Tm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PI25IDHX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__82F6ZN38 = $mol_type_enforce<
 		`Pr-Lu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z3T1XVB6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VJU012WM = $mol_type_enforce<
 		`La-Pm-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZJFNIUZV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ROKTCLK9 = $mol_type_enforce<
 		`Tl-Cd-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QHS7X1L2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K7GIHB44 = $mol_type_enforce<
 		`Yb-Y-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KGFVFUR7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4G0EYJVO = $mol_type_enforce<
 		`Os-Pd-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AI2UJ2US = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PEYJ1T8C = $mol_type_enforce<
 		`Sm-Dy-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5JPSBTKH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ASDF2R0H = $mol_type_enforce<
 		`Pu-Np-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y647F5NO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VH5WT50L = $mol_type_enforce<
 		`Nb-V-Hg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D1BCX32Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__761TQ5AW = $mol_type_enforce<
 		`Pr-Dy-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YBVLZLAV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YCQOLL23 = $mol_type_enforce<
 		`Nd-Tm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VJYCWW4K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IFR32VUS = $mol_type_enforce<
 		`Ho-Sc-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9JKEO47J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6CRP9P9S = $mol_type_enforce<
 		`Zr-Sc-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RIM3OLY3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NVAU9QXL = $mol_type_enforce<
 		`Pm-Tm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UDF1Y5MD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q0F28IM8 = $mol_type_enforce<
 		`V-Ag-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5YYT2KYE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OPGY43KM = $mol_type_enforce<
 		`Pr-Dy-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P5RV22LB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1X48NHLL = $mol_type_enforce<
 		`Zn-Cd-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VUWR5Z7S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F5D6C1K0 = $mol_type_enforce<
 		`Li-Sm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0ARBZOU5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X7421D94 = $mol_type_enforce<
 		`La-Tb-Pr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DAFMOTGE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FW564076 = $mol_type_enforce<
 		`Cr-Ni-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4MATL0AG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EB58SPIV = $mol_type_enforce<
 		`La-U-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QRC9HQ7P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3LZ1SODU = $mol_type_enforce<
 		`La-Ce-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OSJNWA7A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z890CCAR = $mol_type_enforce<
 		`Yb-Lu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OVITYL22 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__917B339Z = $mol_type_enforce<
 		`Yb-Tm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZOLRJGRQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__09MYMU10 = $mol_type_enforce<
 		`Na-Ca-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F5GVRA5L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LO4GP8LW = $mol_type_enforce<
 		`Co-Hg-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KOD79KLY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7BY4RA68 = $mol_type_enforce<
 		`Pm-Pr-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M63YAR4Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__33B0N940 = $mol_type_enforce<
 		`Be-Si-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4O97S55B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A11XN4U4 = $mol_type_enforce<
 		`Sr-Y-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZL96APZ4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H18075CZ = $mol_type_enforce<
 		`Yb-Gd-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CH3LKD9B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TH0DWAER = $mol_type_enforce<
 		`V-Pd-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W6X29WDE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PK1WHN42 = $mol_type_enforce<
 		`Re-Ir-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PD1UFT7Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I32WA4SI = $mol_type_enforce<
 		`Ce-Gd-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VK4BFQ9Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5QLHT8L9 = $mol_type_enforce<
 		`Li-Ho-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZAWQ26MJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B1SUUW6W = $mol_type_enforce<
 		`Be-Zn-Ga`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2LDKWDF5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3YGFQ86A = $mol_type_enforce<
 		`Y-U-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7V4ZG19T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__39HJSEP0 = $mol_type_enforce<
 		`Ga-Hg-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J0CQ2DHW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8WNDXYSO = $mol_type_enforce<
 		`Ba-Pr-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RJMNS6MN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__153C3AUA = $mol_type_enforce<
 		`La-Tm-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZTMWN66C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__23F7W4VF = $mol_type_enforce<
 		`Li-Tb-Ce`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OHR7LP7A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2TQMBVXK = $mol_type_enforce<
 		`Yb-Eu-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OS7JQRWS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E4V3BHSM = $mol_type_enforce<
 		`Si-Ag-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RR0MV3FV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1JSYGTQX = $mol_type_enforce<
 		`Ce-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7T1W9WDB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XMQHO12N = $mol_type_enforce<
 		`Gd-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R69ST4AM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S68KZ4O6 = $mol_type_enforce<
 		`Th-Sc-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1MO0JWW5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VOU9JY23 = $mol_type_enforce<
 		`Ag-Ir-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DKLOC44I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7HXHZJJY = $mol_type_enforce<
 		`Cu-Re-Tc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R2D9E8Y8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M3LXTLCE = $mol_type_enforce<
 		`Ce-Pm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CSN0XB85 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6EZHCC92 = $mol_type_enforce<
 		`Ba-Fe-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LS7IWFM8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KVX3BVIA = $mol_type_enforce<
 		`Ir-Os-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0O20IM43 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ADCAB7QW = $mol_type_enforce<
 		`Cr-Cu-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__68ZGT1BA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5BVBNMPO = $mol_type_enforce<
 		`La-Ce-Pm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0HSY9B8W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RH688M08 = $mol_type_enforce<
 		`Li-La-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YK80VWSI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EJ1HUGK2 = $mol_type_enforce<
 		`Ca-Yb-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FL12E47A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BQVSQFBR = $mol_type_enforce<
 		`Fe-Pd-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LVA9LIFT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9P632SYS = $mol_type_enforce<
 		`Ce-Eu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AE5G96R5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IWV1Y6LP = $mol_type_enforce<
 		`Cs-Pr-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7BKV280F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y034Q0PV = $mol_type_enforce<
 		`Nb-Cu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XVZWEXJD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UG0AEISD = $mol_type_enforce<
 		`Fe-Cu-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9CHPKC8K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V54G63JF = $mol_type_enforce<
 		`Tb-Er-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__584VIRP1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OUCSUHJJ = $mol_type_enforce<
 		`La-Th-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PWW1MSH1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S2A66SE0 = $mol_type_enforce<
 		`Sm-Er-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5SP4BQ0T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DII682Z1 = $mol_type_enforce<
 		`Yb-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y4ZVQJJW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LQU9QY34 = $mol_type_enforce<
 		`Al-Zn-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EL3N3ONI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JVBRB1TT = $mol_type_enforce<
 		`Yb-Ho-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9W1UM5LC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IYMHQ48I = $mol_type_enforce<
 		`Cs-K-Li`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DVXR0WUQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VXPKQUVX = $mol_type_enforce<
 		`Pr-Hf-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E1D55U7C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3UIYL53W = $mol_type_enforce<
 		`Fe-Co-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UF22UHHJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SU9TPQ7Q = $mol_type_enforce<
 		`Tb-Pm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FRI93LRH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__G8MVPGW9 = $mol_type_enforce<
 		`Lu-Th-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VRGG2WPR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L1WHOJR5 = $mol_type_enforce<
 		`Y-Ho-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__20177URG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TT5K3NYT = $mol_type_enforce<
 		`Li-Ce-Pr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E1JG9SS6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K4O0F933 = $mol_type_enforce<
 		`Sm-Y-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JTRUPW0H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F4H2X0GH = $mol_type_enforce<
 		`Ni-Pd-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X34DP6ZJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8NW29OQU = $mol_type_enforce<
 		`Sc-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A8SMIJYN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OJMLF1II = $mol_type_enforce<
 		`Zn-In-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BPL5FN9F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZAMADS42 = $mol_type_enforce<
 		`Y-Lu-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2C2RB0B9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KZNVQ4AW = $mol_type_enforce<
 		`Ce-Eu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N3XVUPIT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3PKIQGR9 = $mol_type_enforce<
 		`Yb-Gd-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__36NVBZQX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ML9IEPEX = $mol_type_enforce<
 		`Tb-Tm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ES0VG30B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TMN4TN4R = $mol_type_enforce<
 		`Yb-Th-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1QJZQ9EW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9T2MXV52 = $mol_type_enforce<
 		`Tb-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CN6K77GS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MDXY9Y6F = $mol_type_enforce<
 		`Ta-Tl-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N5T0DW84 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BM5RXYJK = $mol_type_enforce<
 		`Hg-Mo-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HMAWH85Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E7LBJGOW = $mol_type_enforce<
 		`Sm-Er-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZTEGL34Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KUNADBC4 = $mol_type_enforce<
 		`Co-Re-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8RXCJOGP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CY3UGGB4 = $mol_type_enforce<
 		`Co-Ag-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4508ZB8C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XQA2DLR3 = $mol_type_enforce<
 		`La-Tm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__00NK6MM0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GG0C41TI = $mol_type_enforce<
 		`Hf-Zr-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LGOK5MEJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OP8U2QY1 = $mol_type_enforce<
 		`Fe-Ni-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GZNFN53E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TTMMYRIM = $mol_type_enforce<
 		`Nb-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1BYBVKV7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1UAQ02SE = $mol_type_enforce<
 		`Gd-Th-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WYX59ZNR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E8UX7H17 = $mol_type_enforce<
 		`Pd-Pt-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GEHCN51H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A8MG93Z5 = $mol_type_enforce<
 		`Pm-Dy-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TOWDP99H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BJRG8C9M = $mol_type_enforce<
 		`Co-Ni-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7AC26F8R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__36NJLP1W = $mol_type_enforce<
 		`Gd-Dy-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BY4H9KE3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FKEOEABE = $mol_type_enforce<
 		`Tm-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HGZ4EUV9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__32NPMZRC = $mol_type_enforce<
 		`Nd-Dy-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5W2ADOSD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GK5E7XY7 = $mol_type_enforce<
 		`Dy-Er-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OXILWK9O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XRYXQBMF = $mol_type_enforce<
 		`Tb-Er-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MU4SS4WN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7H4FBMCS = $mol_type_enforce<
 		`Nd-Tm-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VEINO4QT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NRUOWPBF = $mol_type_enforce<
 		`Sm-Er-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z20LFFRN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O5N98A16 = $mol_type_enforce<
 		`Li-La-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RF706TBH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__18G5KVFV = $mol_type_enforce<
 		`Th-Nb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MN04U23V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HVTFUWWY = $mol_type_enforce<
 		`Tb-Ce-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZE4W5QXC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H5DQ96C7 = $mol_type_enforce<
 		`Gd-Ho-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O848LBMH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6SY539ME = $mol_type_enforce<
 		`Pr-Dy-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HTBB24SU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QRR1QI8X = $mol_type_enforce<
 		`Hf-Zr-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__93IX9N7O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BUTAUUAL = $mol_type_enforce<
 		`Ca-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XYGEUZ9R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WV6TPD91 = $mol_type_enforce<
 		`Ti-Nb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K04UW3LK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8SNX6HIG = $mol_type_enforce<
 		`Co-Ir-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VK9UNBLD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LCEJ1QBA = $mol_type_enforce<
 		`Ba-Sr-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LDFSPEIA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y7I7LI9C = $mol_type_enforce<
 		`Ba-Yb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3POFORJW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QIZCOYE9 = $mol_type_enforce<
 		`Yb-Th-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K5I236PU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JX88CFI9 = $mol_type_enforce<
 		`Li-Nd-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2YTPG6N1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UEQREDXO = $mol_type_enforce<
 		`Ce-Er-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DUANRMP5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S7BL1PHJ = $mol_type_enforce<
 		`Co-Re-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A5MOP936 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E0TK01CK = $mol_type_enforce<
 		`Yb-Er-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QU8TI4W4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QH4Q1CBT = $mol_type_enforce<
 		`Re-Pd-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9PBFQXLZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__10PFTOHO = $mol_type_enforce<
 		`Ni-Pd-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BP0HJF3U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KIUKFHMU = $mol_type_enforce<
 		`Ho-Sc-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UTAQ1W32 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BU4Q1G07 = $mol_type_enforce<
 		`Cr-Fe-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UKJE5H98 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C9M9UAEM = $mol_type_enforce<
 		`Tb-Sm-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IN63KMDH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__G9S3QNBY = $mol_type_enforce<
 		`Ce-Gd-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IYHOZKYW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R2RQFEAD = $mol_type_enforce<
 		`Li-Ce-Pm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5E0S48XF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GNKQCUEC = $mol_type_enforce<
 		`Nd-Y-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H95USV8A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B1FDRYS0 = $mol_type_enforce<
 		`Li-Nd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9V5OYRIG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U7U1I5WI = $mol_type_enforce<
 		`Nd-Y-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OIT4JI9X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UL2WBXN3 = $mol_type_enforce<
 		`La-Ho-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OFAAJ57B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7J24256K = $mol_type_enforce<
 		`La-Ce-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HO3WX0DD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IN4EVP4Z = $mol_type_enforce<
 		`La-Ti-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2U6RIVD7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V76B28FW = $mol_type_enforce<
 		`Ag-Os-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HB6D4O4I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I9TK4I3Z = $mol_type_enforce<
 		`Pt-W-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NORVA2OL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RLLHHK52 = $mol_type_enforce<
 		`Cu-Bi-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QSZK8HWB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8TQR5F9T = $mol_type_enforce<
 		`Pr-Nd-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LGS43UP0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5LXTJXHP = $mol_type_enforce<
 		`Fe-Co-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L03YKFME = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WGZHQMOV = $mol_type_enforce<
 		`Li-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DANVC9F2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M6GKLRJ3 = $mol_type_enforce<
 		`Y-Sc-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9ZEG99SP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E2JRGM4H = $mol_type_enforce<
 		`Be-Si-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4EUCE2C7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SAVF5J0C = $mol_type_enforce<
 		`Li-Hf-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UKGWOSCB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YSOG5AP6 = $mol_type_enforce<
 		`Th-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D7R5JMTW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H388R4S2 = $mol_type_enforce<
 		`Ho-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QFKKDZ9U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3STXIZNZ = $mol_type_enforce<
 		`Pm-Y-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__77MUA53C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PVDBKRJU = $mol_type_enforce<
 		`Th-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YFYXZWPZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZBCIU0RL = $mol_type_enforce<
 		`Gd-Ho-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6Z76S0D5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RTSONU0M = $mol_type_enforce<
 		`Yb-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6G4FHDHO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S6S04EKO = $mol_type_enforce<
 		`Tm-Ti-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N5U7E2BS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XBEMKYTG = $mol_type_enforce<
 		`Cs-Mg-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7C58GFW6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5D9VBE48 = $mol_type_enforce<
 		`La-Gd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LDT524JF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GIT4ZZGV = $mol_type_enforce<
 		`Li-Nd-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G5E47M7O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__45DXTPC1 = $mol_type_enforce<
 		`Co-Ag-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6DGOYWHR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8SBQ900Y = $mol_type_enforce<
 		`Ba-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZZD4E9OC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VL2786FR = $mol_type_enforce<
 		`Pr-Gd-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XQ1N1WCJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J30W42ZI = $mol_type_enforce<
 		`Ce-U-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U4Z9ASWL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B31C4790 = $mol_type_enforce<
 		`Tb-Dy-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LMIVPSPD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A2HIKGWA = $mol_type_enforce<
 		`Sr-Ca-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y29TTQT0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q6RBZXME = $mol_type_enforce<
 		`Nd-Sc-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I5SNGEA9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F41Q61ZK = $mol_type_enforce<
 		`Li-Y-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PA7WN7BB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7O5ZNT3J = $mol_type_enforce<
 		`Y-Th-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A7STIPZD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7G0IG249 = $mol_type_enforce<
 		`Cr-Cu-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GFO6Z50X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JWJSPP5S = $mol_type_enforce<
 		`Fe-Os-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CZ1TZ5V4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A14IV6MN = $mol_type_enforce<
 		`Pm-Sm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VRPSK62T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OBUO4ZX3 = $mol_type_enforce<
 		`Cu-Pb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E5178KO0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PVI79T6U = $mol_type_enforce<
 		`Nd-Ho-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HNAR104S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NGVYC4FB = $mol_type_enforce<
 		`Pm-Nd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8C6ASUOM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__REBSPQYM = $mol_type_enforce<
 		`Ce-Nd-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A3A80V4N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XKWYTCBQ = $mol_type_enforce<
 		`Fe-Ni-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__06MOE0OS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3FR6QJPY = $mol_type_enforce<
 		`U-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AKJ7UIPT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B10699W3 = $mol_type_enforce<
 		`Nd-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U8BRYLHX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GCAJR1P3 = $mol_type_enforce<
 		`Dy-Pu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J8VASX6V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PZPG91VZ = $mol_type_enforce<
 		`Ce-Pu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TM0FBVA6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UP3BRGEQ = $mol_type_enforce<
 		`La-Ce-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N3IXGOJK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4NJKR84S = $mol_type_enforce<
 		`Tm-Lu-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FUZBF9G2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IZA62KQD = $mol_type_enforce<
 		`La-Ho-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4TFVILA3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TSNPTR4D = $mol_type_enforce<
 		`Ba-La-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TYMXKW2R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MKQQLMW9 = $mol_type_enforce<
 		`Tm-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZT096OY7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SCP2XDXP = $mol_type_enforce<
 		`Eu-Y-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MDD35WDN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4TRKGGIM = $mol_type_enforce<
 		`Yb-Y-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HEA8A03C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GZ0WO1W2 = $mol_type_enforce<
 		`La-Yb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1M9OYL0C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__18CJHMBB = $mol_type_enforce<
 		`Hf-Th-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JH67X4CZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P105DHES = $mol_type_enforce<
 		`Nd-Sm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XMO8K7S0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QP7M17X4 = $mol_type_enforce<
 		`Na-Hf-Mg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VO49UIB0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WTBVRGU5 = $mol_type_enforce<
 		`Fe-Ag-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0FIX3R5N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8B7IG5XL = $mol_type_enforce<
 		`Li-Pu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9N8XIGCK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QCKQUCIA = $mol_type_enforce<
 		`Pr-Sm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SF6WQM5S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A643IJT1 = $mol_type_enforce<
 		`Tb-Er-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X2M71CHQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HFI8Y9DZ = $mol_type_enforce<
 		`Sm-Gd-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HJTHMDDI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5QDQ3ERW = $mol_type_enforce<
 		`Co-Cu-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RTFLORGM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SBW5IZDK = $mol_type_enforce<
 		`Re-Ag-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YTFOUFGE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__38CDG9E9 = $mol_type_enforce<
 		`Ru-Rh-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KISLBHIX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XZKZL79S = $mol_type_enforce<
 		`Mn-Tl-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XGXQLIEG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N5CEDJK8 = $mol_type_enforce<
 		`Pr-Er-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y87NO4G9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q56RY2Q1 = $mol_type_enforce<
 		`La-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JERPXHKT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q3IYGM40 = $mol_type_enforce<
 		`Dy-Pu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YODZBF34 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YN41BXOM = $mol_type_enforce<
 		`Ta-In-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5M5GD17P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CV222VNJ = $mol_type_enforce<
 		`Be-In-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JOPC03Z8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5SKNS4XL = $mol_type_enforce<
 		`Y-Lu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IUWE7788 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IZKG6KF8 = $mol_type_enforce<
 		`Cd-Bi-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__85OXQQG2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__88IE4UCX = $mol_type_enforce<
 		`Yb-Dy-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9Z3BAH9V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3PZXLLQ4 = $mol_type_enforce<
 		`Na-Hf-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LVYYS3S6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HI75UO8K = $mol_type_enforce<
 		`Ba-Nd-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MC4BUWAA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JAK4N67R = $mol_type_enforce<
 		`Ca-Mn-Co`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WTALIKS0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NON4EJUY = $mol_type_enforce<
 		`Li-Nd-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PBKOFDD1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J9ELI3WU = $mol_type_enforce<
 		`Co-Os-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X1Z7KF05 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RC0K529R = $mol_type_enforce<
 		`Co-Ru-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ERGAHDVB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WC9RL2OG = $mol_type_enforce<
 		`Yb-Pu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U53HS866 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VY45WRQA = $mol_type_enforce<
 		`K-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F5RCPW8K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QD8929X8 = $mol_type_enforce<
 		`Tb-Yb-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EYYGDLBU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5FQBSYN0 = $mol_type_enforce<
 		`Tb-Yb-Pr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XU58SBBK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OE0IGF1Z = $mol_type_enforce<
 		`Sc-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7SAINA60 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BBXL23S3 = $mol_type_enforce<
 		`Fe-Co-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y51ZL3X2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MSWW87A1 = $mol_type_enforce<
 		`Fe-Cu-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GZ0XWH2X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CV7XU1XH = $mol_type_enforce<
 		`Hf-Th-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4L05XBAA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BMLTF6WJ = $mol_type_enforce<
 		`Tb-Y-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YFAR94BX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K6YHBITC = $mol_type_enforce<
 		`Hg-Ge-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M970ZK0Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GVVSHLTV = $mol_type_enforce<
 		`K-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AYVA7ZRO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__977ZHZ17 = $mol_type_enforce<
 		`Li-La-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OCS8X46U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UT385XG2 = $mol_type_enforce<
 		`Er-Th-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F8WEGAMN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MIKH2RQF = $mol_type_enforce<
 		`K-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SCQQGECL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L3Q4APPY = $mol_type_enforce<
 		`Ce-Y-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I3HKQ7MP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CY0TOJII = $mol_type_enforce<
 		`Gd-Lu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GAPI95XG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__52R14913 = $mol_type_enforce<
 		`Li-Tb-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FEIIVGFM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DUR3V1C9 = $mol_type_enforce<
 		`Fe-Cu-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MXAPPIS5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S91NR8ED = $mol_type_enforce<
 		`Cu-Os-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PWZCGINJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NR43Y2TJ = $mol_type_enforce<
 		`Tb-Tm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ACV9WBAS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T5ADWTMS = $mol_type_enforce<
 		`Pr-Tm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K2KUWWYP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U84WHXKR = $mol_type_enforce<
 		`Li-Y-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QM3FRR7M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WH1K81IR = $mol_type_enforce<
 		`Dy-Ho-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F0UWNOP3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GVLMLQB4 = $mol_type_enforce<
 		`Na-Cu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I28JXTJ0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3QU5ZZS8 = $mol_type_enforce<
 		`Yb-Eu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UTXF1VYG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QFFM3VB1 = $mol_type_enforce<
 		`Li-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PD54YBLO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5J56ECYG = $mol_type_enforce<
 		`Cs-Hf-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YPY47CCC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U97J6QG6 = $mol_type_enforce<
 		`Co-Cu-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EK3G44QD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7XF3YNAE = $mol_type_enforce<
 		`Rb-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TWGS5LQX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YYZ5P7X7 = $mol_type_enforce<
 		`Al-Ga-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PITXVY0M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__91YG5SNR = $mol_type_enforce<
 		`V-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J9S3I0OT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__G06W6XMB = $mol_type_enforce<
 		`Pm-Gd-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BCJ7G78Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GKYRNL6L = $mol_type_enforce<
 		`Li-La-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JVOPEL8D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6GC81STV = $mol_type_enforce<
 		`Ce-Ho-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__45SOIG4Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SKV7N0AR = $mol_type_enforce<
 		`Ce-Hf-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5FP3SRD4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X992GR62 = $mol_type_enforce<
 		`Ag-Rh-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AW2J6XVL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I4SD4O0X = $mol_type_enforce<
 		`Ce-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IGL3TQZ9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9D88DF20 = $mol_type_enforce<
 		`Bi-B-Sb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JUQELJUX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__61E7CQ6V = $mol_type_enforce<
 		`Ho-Er-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LSSSHB5D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5B6BWOLC = $mol_type_enforce<
 		`La-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J51RXCT8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JB2PBDMF = $mol_type_enforce<
 		`Tb-Dy-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NMO2E4NP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P2922JQ7 = $mol_type_enforce<
 		`Pm-Lu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S6DUJB4J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1Y8NIJI4 = $mol_type_enforce<
 		`Tb-Tm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P7SFPGG3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GQ25EKPB = $mol_type_enforce<
 		`Zn-Cd-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2BOTM5HP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__26NR2J9O = $mol_type_enforce<
 		`Ce-Nb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__USGPYVEP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0RZQ7QJL = $mol_type_enforce<
 		`Sm-Tm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TSH4HKP6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RXXLREUD = $mol_type_enforce<
 		`Th-U-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HDCJDN3E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0AKB6XYA = $mol_type_enforce<
 		`Tb-Nd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y467F6CK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KDMSSJJH = $mol_type_enforce<
 		`Pr-Sm-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GYIBG7LS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SXSZVVNX = $mol_type_enforce<
 		`La-Pr-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EERNVSQZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__69XQY4GB = $mol_type_enforce<
 		`Ho-Sc-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JCZTJA53 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NEEIMBVE = $mol_type_enforce<
 		`Ag-Bi-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YGI9WMHA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OGZBZFPR = $mol_type_enforce<
 		`Li-Tb-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NDVHK9U1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4BDDJ1DH = $mol_type_enforce<
 		`Sr-Y-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YJ5ROY3H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B2SZXZLC = $mol_type_enforce<
 		`Co-Re-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1UG67DLG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2TF3P8W7 = $mol_type_enforce<
 		`Y-Tm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1BD9884C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WLKU01DS = $mol_type_enforce<
 		`Ce-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M45HH7SO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J3ATQK1O = $mol_type_enforce<
 		`Pm-Tm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N99PWECR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M4GJLSMT = $mol_type_enforce<
 		`Sm-Dy-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0YVWUD91 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__97T0HBSG = $mol_type_enforce<
 		`Pd-Ru-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__425RZVDJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NS389GDN = $mol_type_enforce<
 		`Hg-Bi-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JDAA5O1J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1AQQI1T2 = $mol_type_enforce<
 		`Sc-U-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5DKMW3IR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PCE5OQ65 = $mol_type_enforce<
 		`Yb-Pr-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CUSY32FD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IM3XRGHU = $mol_type_enforce<
 		`Al-Tl-In`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OVJ46M7G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FPEBQE1M = $mol_type_enforce<
 		`Ho-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1U3NEHGJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IXIQA6TL = $mol_type_enforce<
 		`Rb-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PPHBT74G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B0B7MP5X = $mol_type_enforce<
 		`Tm-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EVDQ59C1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P194OMED = $mol_type_enforce<
 		`Pr-Sm-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3QZIO1ZM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FWCSC6B2 = $mol_type_enforce<
 		`Gd-Tm-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VEIR8Z07 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__48I2HLW7 = $mol_type_enforce<
 		`Mn-V-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AA9GQF2Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I6J9XTAB = $mol_type_enforce<
 		`Cr-Cd-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__73FKI1DP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SI23OOVJ = $mol_type_enforce<
 		`Tb-Ta-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8QHV5UA0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VPYOZ290 = $mol_type_enforce<
 		`V-Ag-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WPDULFUM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4111U4EN = $mol_type_enforce<
 		`La-Ho-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C5HYEKZ6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1XC0XOCY = $mol_type_enforce<
 		`La-Dy-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MXJ84OED = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9CHVJ533 = $mol_type_enforce<
 		`Li-Gd-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VRHM34KE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LSUQEQC0 = $mol_type_enforce<
 		`Y-Er-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y64XV3ZO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZDXQKS9X = $mol_type_enforce<
 		`Li-Sc-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HA684P4A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3NCTAUS7 = $mol_type_enforce<
 		`Np-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V9841HIX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GXXQOL8P = $mol_type_enforce<
 		`Ag-Mo-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PL5G346B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H32CVM5D = $mol_type_enforce<
 		`Co-Hg-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6K1GVQFE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__18WB1A0V = $mol_type_enforce<
 		`Mn-Tl-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PXICKCED = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q491QXYK = $mol_type_enforce<
 		`Eu-Y-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3KQWB02D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5KMSDZU8 = $mol_type_enforce<
 		`Cu-Ir-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DKYSAC55 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NH5W8SO0 = $mol_type_enforce<
 		`Tb-Gd-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X860L6LL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L4CV1Y4V = $mol_type_enforce<
 		`Pr-Hf-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ODOIR9X4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J6X1OFME = $mol_type_enforce<
 		`Tb-Ce-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B1LCZHEN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4TVTM90A = $mol_type_enforce<
 		`Ag-Ir-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DI69YHES = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7NXU9S6F = $mol_type_enforce<
 		`Tl-Zn-In`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OQKKH30F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DF96G2UC = $mol_type_enforce<
 		`Li-Sm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__412AT4K1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZMONGAXR = $mol_type_enforce<
 		`Nd-Sm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4NB59X1H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9IX7FOM1 = $mol_type_enforce<
 		`Re-Ni-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__87UR2BS6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AE1R5F77 = $mol_type_enforce<
 		`Yb-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PS7PJ4RT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ONA53DND = $mol_type_enforce<
 		`La-Dy-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2IBAXQLD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EX1OXD4C = $mol_type_enforce<
 		`Mn-Ru-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4RDWTQP5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V5Z91QOI = $mol_type_enforce<
 		`Dy-Tm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__09C8W3PQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BT51TG4R = $mol_type_enforce<
 		`Pr-Nd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__65J78B39 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6CFKMTLT = $mol_type_enforce<
 		`Sm-Ho-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__URQUT87S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K6V5V9XD = $mol_type_enforce<
 		`Eu-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OC3QWC1R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TU7G3AHR = $mol_type_enforce<
 		`Y-Er-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TD5QLZ59 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JJMI2LO2 = $mol_type_enforce<
 		`Ce-U-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4R5Y9OTX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GITZBGBH = $mol_type_enforce<
 		`Sn-Ge-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZPFGK494 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EW8PCV5P = $mol_type_enforce<
 		`Nd-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U16XF0TI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TD32QBZ8 = $mol_type_enforce<
 		`Hf-Sc-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IJS61TKQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8LWJP5N1 = $mol_type_enforce<
 		`Tl-Ga-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4QJLZEUB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DATXGM81 = $mol_type_enforce<
 		`Tm-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WTHRVQP5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9DEA7HVF = $mol_type_enforce<
 		`Fe-Ru-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DIHUUUKR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C3WQFSUP = $mol_type_enforce<
 		`Ho-Er-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NFIBF1ZM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NG5SO8GA = $mol_type_enforce<
 		`Yb-Th-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V5KG1RAF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D2S7OXKO = $mol_type_enforce<
 		`Nd-Er-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RDC8UEU0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7QCZG46J = $mol_type_enforce<
 		`Cs-Rb-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E8CFEKTT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TH9SU6J0 = $mol_type_enforce<
 		`Lu-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BV5TQIUZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QO9YBPIA = $mol_type_enforce<
 		`Zn-Ga-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D70ILPYG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X8C19NEL = $mol_type_enforce<
 		`Pr-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HVUE7UQA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S9I7FPSH = $mol_type_enforce<
 		`La-Eu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UJYYUTEA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VHBNLVXQ = $mol_type_enforce<
 		`Yb-U-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S2KT9MEK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XZ69XFVE = $mol_type_enforce<
 		`Yb-Gd-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1A78JVJ4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__76LIF7AG = $mol_type_enforce<
 		`Tl-Ge-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VDBBYR19 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HP92N02B = $mol_type_enforce<
 		`Tb-Ce-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OZB9MRES = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WUKKJ1KI = $mol_type_enforce<
 		`Gd-Lu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0KQBDWU8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DJTY2GMZ = $mol_type_enforce<
 		`La-Dy-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0244163F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HLPYIP6O = $mol_type_enforce<
 		`Co-Re-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UC8BIDUP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O0B4BTNU = $mol_type_enforce<
 		`Yb-Sc-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OBUNR45J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6BFNN7BI = $mol_type_enforce<
 		`Al-Zn-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X1NS9UHT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O7648VXM = $mol_type_enforce<
 		`Tl-Ni-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EQBWMWSA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PNJ77408 = $mol_type_enforce<
 		`K-Rb-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2LTVGSYS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YK9OYYDU = $mol_type_enforce<
 		`Y-Th-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B4VN7UHV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6W7R42GE = $mol_type_enforce<
 		`Pm-Y-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KQPM1U0Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U2CO48QW = $mol_type_enforce<
 		`Ce-Sm-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CHN1R71C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YMUD5SN5 = $mol_type_enforce<
 		`La-Ho-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H9KCAQ1T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6HFPTXNY = $mol_type_enforce<
 		`Ce-Y-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VWH1I8SK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SP08SHGJ = $mol_type_enforce<
 		`Na-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3F0L476M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BAB4NI75 = $mol_type_enforce<
 		`Tb-Ce-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T71USK4X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TBJ9RKNX = $mol_type_enforce<
 		`Sm-Gd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__09UK5W5N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VEVCWFS4 = $mol_type_enforce<
 		`Cs-Li-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9QV0RU36 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TOWDTA19 = $mol_type_enforce<
 		`Pr-Pu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MFD4PWPL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__54V3UPDY = $mol_type_enforce<
 		`Dy-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3BS1G0IJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A0J3JA6R = $mol_type_enforce<
 		`Ca-Fe-Co`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GY5CUY21 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CJDDTU1K = $mol_type_enforce<
 		`Lu-Ta-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8TB0A0YZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I7535VLB = $mol_type_enforce<
 		`Al-Ga-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TKDGC9X1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7Z8DFJM1 = $mol_type_enforce<
 		`Pr-Th-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__II5HTJZ8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X6W4OB8O = $mol_type_enforce<
 		`Na-Li-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IXIRD7I4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KDPWYAID = $mol_type_enforce<
 		`Ir-Ru-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R5UQWRSG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F39TJAE7 = $mol_type_enforce<
 		`Fe-Ru-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4CBVS5CS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AFV3QZOU = $mol_type_enforce<
 		`Ho-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KIT7SWNF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QBIXCG51 = $mol_type_enforce<
 		`Lu-Th-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZI66127I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PMPOM1D3 = $mol_type_enforce<
 		`Pu-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MTJG8BJS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B011JF1G = $mol_type_enforce<
 		`Lu-Th-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q9SWVWHI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A3W4V10C = $mol_type_enforce<
 		`Ca-Tm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DTWLAQL4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VBI39QWB = $mol_type_enforce<
 		`La-Dy-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OMAH7KGY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2M2P7YTK = $mol_type_enforce<
 		`Ce-Sc-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PZR9IJE2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6LGJOFJ0 = $mol_type_enforce<
 		`Li-La-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NNJQ2XW4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2GK6HIQL = $mol_type_enforce<
 		`Mn-V-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NBA0C65E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7WRKGFG6 = $mol_type_enforce<
 		`Ni-Ag-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__APDEK7A7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JD7UO2X1 = $mol_type_enforce<
 		`Li-Tb-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OX5UH6G3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6WYG7HOX = $mol_type_enforce<
 		`Cs-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VXJMQVOE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A2MJNS0T = $mol_type_enforce<
 		`Li-Ho-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HNMKCMWJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XOF4JRUN = $mol_type_enforce<
 		`Cs-Pr-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XDJW8FDT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VV8ZFB5D = $mol_type_enforce<
 		`Hf-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y7SIMFTM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7ZY0C6IX = $mol_type_enforce<
 		`Sm-Th-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RL4PUWDN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DWQOAHSA = $mol_type_enforce<
 		`Pr-Er-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__95GBV40C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UNJ1D1T7 = $mol_type_enforce<
 		`Yb-Dy-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PFB8DK25 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J14VXGLG = $mol_type_enforce<
 		`Tb-Gd-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__61VIG5HF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8GX6L8DS = $mol_type_enforce<
 		`La-Yb-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JDI1Z3KP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6ZAV1K4V = $mol_type_enforce<
 		`Mn-Tl-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NAXQWK87 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5T67KYGQ = $mol_type_enforce<
 		`Yb-Pr-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R3R22H6R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FI73MIML = $mol_type_enforce<
 		`La-Y-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C2HKXX1U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JEOC8GG3 = $mol_type_enforce<
 		`Ce-Pr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JR5VJP0P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1M9B58NB = $mol_type_enforce<
 		`La-Nd-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LJDBTX3F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3JIN45ZJ = $mol_type_enforce<
 		`Ce-Y-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IME2UCQ6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IUWQ3HDK = $mol_type_enforce<
 		`Ca-Lu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A108RIDR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AGFPEWZN = $mol_type_enforce<
 		`Tb-Pr-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WF4AN2KR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JJ61W98E = $mol_type_enforce<
 		`Dy-Er-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PAARTOCX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZUWGLGST = $mol_type_enforce<
 		`Ni-Pt-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XPAOGF8D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WZ8ZCYV9 = $mol_type_enforce<
 		`Ni-Rh-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S8R3QDLU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E0UL8VS9 = $mol_type_enforce<
 		`Hf-Mg-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V3RJVKH3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VTCB9AUM = $mol_type_enforce<
 		`Ca-Tm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GRVZ62R5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F8FCO6K9 = $mol_type_enforce<
 		`Al-Hg-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZB2MFD9C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RRY4WU09 = $mol_type_enforce<
 		`Nd-Ho-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X2DDA3GT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1SL5JDWI = $mol_type_enforce<
 		`Li-Sm-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6GCH9XQ1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2PETYKWZ = $mol_type_enforce<
 		`Pm-Ho-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__18XGFOFF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EFF5Y454 = $mol_type_enforce<
 		`Ca-Yb-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0RDRNFMQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1VJETGQF = $mol_type_enforce<
 		`Co-Cu-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__887Z1DV6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1OHMP0EI = $mol_type_enforce<
 		`Li-Tm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JCD4MZJR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RJXEHE9C = $mol_type_enforce<
 		`Er-Sc-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SPRLL2S8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D9JRD3ZJ = $mol_type_enforce<
 		`Sr-Mn-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V5MQ1EN4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5J1S3OJY = $mol_type_enforce<
 		`Pr-Gd-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X39QWRSU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RM3AU8MF = $mol_type_enforce<
 		`Na-Li-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ANXXX1IG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__G8586A3G = $mol_type_enforce<
 		`Na-V-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XBHQSJ3S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4F7FG4JI = $mol_type_enforce<
 		`Na-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T874WRDQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3OH851DW = $mol_type_enforce<
 		`Pd-W-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4J6YY3H1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UDKWOVK8 = $mol_type_enforce<
 		`Li-Gd-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JYVZHV4C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BGPDDLF8 = $mol_type_enforce<
 		`Li-Lu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QBBEC3LP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O8T5FUS8 = $mol_type_enforce<
 		`Rb-Li-Mg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2MFY2WYV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5KH1T408 = $mol_type_enforce<
 		`Co-Hg-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6JE3L1TQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6X6964NS = $mol_type_enforce<
 		`Dy-Y-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MIPOYRSP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SVTJI92L = $mol_type_enforce<
 		`La-Nd-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SSHLIMKC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GBBSTJ1L = $mol_type_enforce<
 		`Al-Sn-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4NRZ3SFA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LUK3K7HY = $mol_type_enforce<
 		`Na-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L2AMPRN5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GQPUJ1LY = $mol_type_enforce<
 		`Er-Tm-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H5ZPHXFN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__99WDT0PC = $mol_type_enforce<
 		`Sr-Ca-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HGNN8OHT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0HTZPIT2 = $mol_type_enforce<
 		`Rb-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6XHQQFEW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9YE5VLAE = $mol_type_enforce<
 		`Y-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7LUAS10E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GALGABBG = $mol_type_enforce<
 		`Tb-Nd-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__745922ST = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MC373DC3 = $mol_type_enforce<
 		`Rb-Na-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OD3DELE8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VLBWOGF8 = $mol_type_enforce<
 		`Cd-Ga-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y76IQJSS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VIBC6MOL = $mol_type_enforce<
 		`Ca-Tb-Yb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UHVR3ZAA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IJM56AD7 = $mol_type_enforce<
 		`Sn-Ge-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6QKOS4QO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1JYVAJH4 = $mol_type_enforce<
 		`Yb-Gd-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8QVYFQRA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5HS3FSEC = $mol_type_enforce<
 		`Y-Ho-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D0T94XMO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GHNZ1QEX = $mol_type_enforce<
 		`Yb-Y-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PDPE5NDB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IL2UZA3J = $mol_type_enforce<
 		`Ce-Gd-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WYQ3O6IY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8QJLXVDR = $mol_type_enforce<
 		`Ba-Sm-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BI9LCV6C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GK2S2CKQ = $mol_type_enforce<
 		`Cr-Cd-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YI6X0BUO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EWWIMSC3 = $mol_type_enforce<
 		`La-Y-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O6QTLRWC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__G1X21MHK = $mol_type_enforce<
 		`Ba-Mn-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9FCC1SPC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S2B0RNA0 = $mol_type_enforce<
 		`Gd-Pu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YOQBJ24N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DFT86N3A = $mol_type_enforce<
 		`Tb-Th-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TE06LFFJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3T6C0L8E = $mol_type_enforce<
 		`Ba-Mn-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HC118EA2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NJX3T0WF = $mol_type_enforce<
 		`Cu-Ni-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R3OMGVBZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OG6FLGH6 = $mol_type_enforce<
 		`Lu-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R5PAMQOJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UK7YE17Y = $mol_type_enforce<
 		`Pr-Gd-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A20XU6U4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__49SN39UB = $mol_type_enforce<
 		`Er-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TNEGBEWB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SZPTU6S2 = $mol_type_enforce<
 		`La-Nd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I1UKIP5H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RNEK0Z2P = $mol_type_enforce<
 		`Mn-Co-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__02I7IZTM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IROMKUAN = $mol_type_enforce<
 		`Yb-Eu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J2ARSEN2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BC2KWJ2F = $mol_type_enforce<
 		`Li-Pm-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__84M92RGY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CRNNLSYI = $mol_type_enforce<
 		`La-Sm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZMGF96JT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KNQU2MRN = $mol_type_enforce<
 		`La-Eu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RM4CQH2F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8OZ2H40B = $mol_type_enforce<
 		`Sn-Ge-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9XJNC1LT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FSBYBKVN = $mol_type_enforce<
 		`La-Er-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I8OF35WT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0SF1SNB0 = $mol_type_enforce<
 		`Yb-Pr-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3HLCK2V4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CEVEFW69 = $mol_type_enforce<
 		`Ce-Lu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__COZ24GYI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WCIYD99D = $mol_type_enforce<
 		`Rb-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V7VUJB80 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U1N8R8DG = $mol_type_enforce<
 		`Tl-Ag-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7DZ6BOFQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DCU1J97N = $mol_type_enforce<
 		`Gd-Lu-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y8KAOZ57 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QA1CADJZ = $mol_type_enforce<
 		`Y-Er-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KZA2A0JI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D8KTDFQ9 = $mol_type_enforce<
 		`Tb-Lu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N8LK1684 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DQHE3QZ1 = $mol_type_enforce<
 		`Fe-Ir-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A02MTLTD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KOYA93RI = $mol_type_enforce<
 		`Hg-Os-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HDYI3M91 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1IISBU1Y = $mol_type_enforce<
 		`Ba-Yb-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YVP7D4P8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NMY9FCDX = $mol_type_enforce<
 		`Nd-Y-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AG0ISEAS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TSVCC0S3 = $mol_type_enforce<
 		`Ce-Sm-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F85CTG9J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZA42NT38 = $mol_type_enforce<
 		`Ba-Pr-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QEU1L2DH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0S56KNDP = $mol_type_enforce<
 		`La-Pr-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QLRPVS7W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QGVIP4E7 = $mol_type_enforce<
 		`Rb-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0X910542 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UZJVBAE4 = $mol_type_enforce<
 		`Ba-Ca-Pm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XHINT26B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M1IFP2Z0 = $mol_type_enforce<
 		`La-Tm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M2X7NI3E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HH5N3Q9U = $mol_type_enforce<
 		`Lu-Th-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YMLZIDCD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1N2FIVSZ = $mol_type_enforce<
 		`Al-Ge-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TLRSM4AG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1T60JWH9 = $mol_type_enforce<
 		`Li-Y-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HC5O0UKK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XD8QO94X = $mol_type_enforce<
 		`K-Mg-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0B3K5OOE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LVXPFZUQ = $mol_type_enforce<
 		`Hg-Ir-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WJDSD811 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WPUY8G5Q = $mol_type_enforce<
 		`Nd-Th-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZU2A56BH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OH2N295C = $mol_type_enforce<
 		`Cs-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YFKVPQE1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4AZ7EKCN = $mol_type_enforce<
 		`Cu-Pd-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T633ALQV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__159RO6NG = $mol_type_enforce<
 		`Yb-Dy-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GR13BR43 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6Q3EX6LX = $mol_type_enforce<
 		`Dy-Th-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FI4YEVDM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T0N15U7B = $mol_type_enforce<
 		`Hg-Ge-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F67NWKB5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IRS9HR4G = $mol_type_enforce<
 		`Cu-Ni-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LITXWZ7W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XV5N0TH3 = $mol_type_enforce<
 		`Y-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CCTTQWT3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DAXPIB64 = $mol_type_enforce<
 		`Sm-Ho-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NAUKUQO5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DTPIVHSJ = $mol_type_enforce<
 		`Dy-Y-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DV8T2N12 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AU89WD58 = $mol_type_enforce<
 		`Tb-Nd-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TST2631U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R6J1J2AJ = $mol_type_enforce<
 		`Ta-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LW6NJN1Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AL3W8CYS = $mol_type_enforce<
 		`Tm-Lu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UZGB7DUF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ABHNYYOK = $mol_type_enforce<
 		`Li-Tm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KE2WE6ZB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LQQZ33PF = $mol_type_enforce<
 		`Nd-Gd-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NPDEDLRB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__62VRXVZQ = $mol_type_enforce<
 		`Na-Cr-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D6EL4O6V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ALE0VTPI = $mol_type_enforce<
 		`Li-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WM0VX41Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NABX60JR = $mol_type_enforce<
 		`Tb-Pm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GUDRXDV4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1QU1TOF6 = $mol_type_enforce<
 		`Lu-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7GRJZOHX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AZY0JM88 = $mol_type_enforce<
 		`Th-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7WUTVMGE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DAI5NZ3M = $mol_type_enforce<
 		`Cd-Ge-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8ZREAG5H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J8SZ7MF0 = $mol_type_enforce<
 		`Th-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LHV8WQIW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QGTK1R3J = $mol_type_enforce<
 		`Yb-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0J3IUESH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TN87KS9B = $mol_type_enforce<
 		`Nd-Lu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6ZZNVIHI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PXXHIPQK = $mol_type_enforce<
 		`Al-Cd-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__85TMAMRP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OGNP8LQV = $mol_type_enforce<
 		`Tb-Nd-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__53KUS36X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LHYEMG4Q = $mol_type_enforce<
 		`Ag-Os-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IJ4AGXBP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LAVT3OP2 = $mol_type_enforce<
 		`Yb-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EJBWBFQV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9971AVXD = $mol_type_enforce<
 		`Ce-Zr-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CP7RVHH0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XNJ7DM44 = $mol_type_enforce<
 		`Co-Hg-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V5TXSE17 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C82OV3IT = $mol_type_enforce<
 		`Ba-Sr-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DRR5U6CW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4QDI5SN3 = $mol_type_enforce<
 		`Nd-Y-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WNA9EVR8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AX5XCGA1 = $mol_type_enforce<
 		`Tb-Tm-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3UAJV0HS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E1J75XJ1 = $mol_type_enforce<
 		`Tb-Er-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y3STWV45 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YS2WDD7F = $mol_type_enforce<
 		`Re-Ni-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EMU1SGOL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FRC3GWSH = $mol_type_enforce<
 		`Y-U-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6U9RIIXZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4B8MU6ZX = $mol_type_enforce<
 		`Yb-Gd-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7DBHWR8X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QS4FG62P = $mol_type_enforce<
 		`Sc-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KBY811HR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FHNIARFL = $mol_type_enforce<
 		`Ce-Sm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BFZTM7CM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LXV8TYA1 = $mol_type_enforce<
 		`Pr-Gd-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q72VMFYF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__174P1GVP = $mol_type_enforce<
 		`Nd-Y-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0TH42KWA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ELKHFG9Y = $mol_type_enforce<
 		`Dy-Y-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SFMZZ277 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LFZT1FAC = $mol_type_enforce<
 		`Ca-La-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VDST2O4B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5OC4UQT2 = $mol_type_enforce<
 		`Ce-Lu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FABW4MLV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L7OV4ZWP = $mol_type_enforce<
 		`Cu-Ru-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__10PN05WT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IMZTNOPB = $mol_type_enforce<
 		`Si-Sn-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AAOG9CC4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WU6EMBA5 = $mol_type_enforce<
 		`Cu-Re-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MN6XDKLY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5FSJ965B = $mol_type_enforce<
 		`Ga-Ge-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BMJS5GA4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J5J75Z3I = $mol_type_enforce<
 		`La-Eu-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4OJ8WZZ1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2ND2QPYH = $mol_type_enforce<
 		`Tb-Ce-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LCOJZDL7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KZND5YZE = $mol_type_enforce<
 		`Yb-Pr-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HF5U9SRO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VOVU9CDP = $mol_type_enforce<
 		`K-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TKEXSX3G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QGFBAPUL = $mol_type_enforce<
 		`K-V-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y8CHML68 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V8GACHB4 = $mol_type_enforce<
 		`Lu-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__78RVLGAU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3QGX1WGW = $mol_type_enforce<
 		`Pm-Er-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C3WOHVRI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I0L5WV4J = $mol_type_enforce<
 		`Pr-Sm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TAWJ4HPL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XBUQJXQL = $mol_type_enforce<
 		`Al-Si-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9VSFF1SV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CU0WSQ6J = $mol_type_enforce<
 		`Sm-Gd-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZBZ4D9BX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__46YJE8TC = $mol_type_enforce<
 		`Ni-Ir-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HSOQGOE6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ULSG8QCG = $mol_type_enforce<
 		`Cu-Re-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HFYQ3X0H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HFJJ1NZH = $mol_type_enforce<
 		`Tl-Ge-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6Q5PT0BF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q61D80IE = $mol_type_enforce<
 		`Ba-Pm-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4QQFNMW4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7IJ214TD = $mol_type_enforce<
 		`Yb-Er-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VL6SNBEB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ENS923W7 = $mol_type_enforce<
 		`Fe-Bi-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4KWALZS5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7W5F8A3L = $mol_type_enforce<
 		`Yb-Lu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TZ129IVY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1WU0HMJ2 = $mol_type_enforce<
 		`Cs-Pr-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JK4I4ZM1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__63C28D8H = $mol_type_enforce<
 		`Ca-Tb-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ULCLS3Y2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HU53I71O = $mol_type_enforce<
 		`Li-Ho-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SZXHV5AI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KQDECK2E = $mol_type_enforce<
 		`Tb-Er-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K1ITL8SX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FQ1G3K8Y = $mol_type_enforce<
 		`Ca-La-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ME6V087N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6FS862ZR = $mol_type_enforce<
 		`Gd-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M6RH31MA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SZDLUEOX = $mol_type_enforce<
 		`Gd-Ho-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9W55U6QH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GWITF016 = $mol_type_enforce<
 		`Nd-Lu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TB4BWPLU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P11LHKQX = $mol_type_enforce<
 		`Tb-Yb-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6PCA4BSP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B6D31UJ3 = $mol_type_enforce<
 		`La-U-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OU0898FL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V4QB8CX5 = $mol_type_enforce<
 		`Pm-Th-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RIB4U2XL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z6P9NLJS = $mol_type_enforce<
 		`Ba-Ca-Eu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PINQ6NX1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W4T138BK = $mol_type_enforce<
 		`La-Ce-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1RB78M69 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WLAC0SDE = $mol_type_enforce<
 		`U-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0IU0H3ZZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E0Y5RUZZ = $mol_type_enforce<
 		`Ca-Ce-Pm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NZ158WEQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IQCOBJIJ = $mol_type_enforce<
 		`Ho-Er-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V8PFPJ4X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VOE3Y6DB = $mol_type_enforce<
 		`Y-Er-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MSOQZMKQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B8ZWFH9A = $mol_type_enforce<
 		`Gd-Tm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RQRVVR7X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QN31QIUX = $mol_type_enforce<
 		`Yb-Tm-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IOBKBU77 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J4AJSEW0 = $mol_type_enforce<
 		`La-Eu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__16SBEEKT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WCPR2IGV = $mol_type_enforce<
 		`Rb-Hf-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3KVXPQN0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__10V0D0KO = $mol_type_enforce<
 		`Li-Er-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J6SB9FNU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I00OWJRQ = $mol_type_enforce<
 		`Pm-Er-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4PAJLJ4Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MDYDWN2M = $mol_type_enforce<
 		`Li-Hf-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RBDWBRX4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0HF1VRWG = $mol_type_enforce<
 		`Sr-V-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DM5KKQG4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0VPUA6Y2 = $mol_type_enforce<
 		`Pm-Tm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__23J5XX2Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3GYPOQA6 = $mol_type_enforce<
 		`Er-Th-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KAQEJ68A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GJ1SA93Z = $mol_type_enforce<
 		`Ca-Lu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HNRT3QY0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3BNNEGKV = $mol_type_enforce<
 		`Li-Y-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LU82JEBY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EHKS7I4L = $mol_type_enforce<
 		`Ba-Ca-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PGYLEVVK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BIK9EJVR = $mol_type_enforce<
 		`Tb-Pm-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H12SMD8O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QPZ3UQ03 = $mol_type_enforce<
 		`Sm-U-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V8K60KCV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__63H7KK1F = $mol_type_enforce<
 		`Ce-Eu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LF5GNWHC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4EM8YPRE = $mol_type_enforce<
 		`Nd-Y-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PHA7LY1B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FGT7DKP7 = $mol_type_enforce<
 		`Fe-Co-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E3L3ERAL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZZGC414H = $mol_type_enforce<
 		`Gd-Y-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V7LGEGWR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HSP5WUXX = $mol_type_enforce<
 		`Cs-Mg-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9FB2DCY4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__40JO7LHN = $mol_type_enforce<
 		`Ho-Th-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VZ2NUSY0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JGHPIDJE = $mol_type_enforce<
 		`Y-Th-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UQIWQGZA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I3V29HQI = $mol_type_enforce<
 		`Li-La-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R7GUB62O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QARO99OC = $mol_type_enforce<
 		`Li-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4IGAIAUV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QLFJERU3 = $mol_type_enforce<
 		`Ce-Th-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PV379LOO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VTQS57NU = $mol_type_enforce<
 		`Li-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TB7SW9FV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YPLV4A9Q = $mol_type_enforce<
 		`Yb-Ho-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HFNDOB1D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SILB67AA = $mol_type_enforce<
 		`K-Rb-Li`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0BO2SEWF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6CRNT6LO = $mol_type_enforce<
 		`Er-Hf-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FDI8AIV2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DG7PQF1F = $mol_type_enforce<
 		`Cu-Tc-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TORADPJW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AIFOM3Y7 = $mol_type_enforce<
 		`Ni-Rh-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8K422UJM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C2BAHYVU = $mol_type_enforce<
 		`Ni-Ag-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VGT73L1C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GOZ3JM0O = $mol_type_enforce<
 		`Cr-Fe-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CTRTDGAH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KY9PB1EU = $mol_type_enforce<
 		`Y-Sc-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VJRIU39H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BUDUZWOY = $mol_type_enforce<
 		`Tb-Nd-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KXSI2QDL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7B20B0QB = $mol_type_enforce<
 		`Dy-Er-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ISKCQR6K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GVCSEFSV = $mol_type_enforce<
 		`Rb-Hf-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4RR83KBJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UNPTUWTC = $mol_type_enforce<
 		`Li-Tb-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__57TOULAR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UM3G97E2 = $mol_type_enforce<
 		`Sm-Gd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3I6EUYP7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0FO53UAD = $mol_type_enforce<
 		`Ir-Pd-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UZ2BHWZK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XBI3ZN9M = $mol_type_enforce<
 		`Pm-Nd-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IBK6YCSM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__75QJIIVC = $mol_type_enforce<
 		`Ba-Pm-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__94IVMYD1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8E7P4TMU = $mol_type_enforce<
 		`Y-Hf-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZG4PT0JI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QXOOK5JC = $mol_type_enforce<
 		`Nd-Gd-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M8KFFTH9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9T8ZPFZV = $mol_type_enforce<
 		`Th-U-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O8WR49AL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WF1VQHRI = $mol_type_enforce<
 		`K-Mg-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XPJM8VHG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KH3POMWA = $mol_type_enforce<
 		`Ni-Pt-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UKEO0MO9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LFX1X6J1 = $mol_type_enforce<
 		`Cu-Pd-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2C03F360 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DN2JAKG4 = $mol_type_enforce<
 		`Gd-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U4BHLS2L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RZT3L9OJ = $mol_type_enforce<
 		`Co-Ag-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XBC7JHBX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X6I2AQ7O = $mol_type_enforce<
 		`Li-Ce-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N1AX4W2A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LEMQSN5W = $mol_type_enforce<
 		`Tm-Th-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V2IPAC72 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K98WQMNP = $mol_type_enforce<
 		`Pm-Dy-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XDD0DMI9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H1DWAIM4 = $mol_type_enforce<
 		`Er-Sc-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7BTBMNYD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LUR94497 = $mol_type_enforce<
 		`Sm-Th-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LN9CX0FQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JOD5BIV6 = $mol_type_enforce<
 		`Yb-Mn-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__99MT2DM4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8GMG40UR = $mol_type_enforce<
 		`K-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WVLTCKRK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I96WOF1E = $mol_type_enforce<
 		`Dy-Tm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8X6BL8BG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5KQKJMHO = $mol_type_enforce<
 		`La-Tb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B7JV03AS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RDKXQBUV = $mol_type_enforce<
 		`Yb-Nd-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__63DH4XUT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DZ6ALYJM = $mol_type_enforce<
 		`Y-Ho-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FDJR58IZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NEE8CXI1 = $mol_type_enforce<
 		`Yb-Pu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1G1B4EWN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ETLQBGHI = $mol_type_enforce<
 		`Ce-Pr-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B6NASJ70 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KDXPOV9A = $mol_type_enforce<
 		`Co-Re-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NWIG7X9K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QAGXQH4R = $mol_type_enforce<
 		`Ce-Pu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CTTVTG7N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__22RNPWPP = $mol_type_enforce<
 		`Ag-Mo-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TVRK3V0G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7P8SRASP = $mol_type_enforce<
 		`Ca-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KK80MLAZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4JRV7N3K = $mol_type_enforce<
 		`Tl-Cu-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PBYHF9OA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2WN4CYWL = $mol_type_enforce<
 		`Tb-Lu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RD6N1TN4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6NQIG8R4 = $mol_type_enforce<
 		`Be-Sn-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DWL6C8JA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C91AK5JX = $mol_type_enforce<
 		`Y-Er-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UX54T435 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O2CZJRVF = $mol_type_enforce<
 		`Nd-Dy-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1G2GNEB0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NPJGWSNB = $mol_type_enforce<
 		`Nd-Ho-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__963OTZSD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__G7UVQ9SM = $mol_type_enforce<
 		`Be-Zn-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__96BLUL6C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RO57X1B3 = $mol_type_enforce<
 		`La-Pr-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6VI9FCWE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DG00230V = $mol_type_enforce<
 		`In-Ga-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AEAYZ4NG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1G92OWE7 = $mol_type_enforce<
 		`Li-Fe-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PUVONLN1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GETR1XW7 = $mol_type_enforce<
 		`Ni-Ru-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VSBJPHMO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MF1J1WUB = $mol_type_enforce<
 		`Gd-Sc-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AUEMAC61 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7BB4GLMG = $mol_type_enforce<
 		`Gd-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UGMIV1HQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C3TPUU3M = $mol_type_enforce<
 		`Er-Tm-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DZMXRUQ6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1T3FU6TC = $mol_type_enforce<
 		`Cu-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G8CZXM8C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__31QH9K6M = $mol_type_enforce<
 		`Pm-Ho-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IX8TPO0P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XP4E8X8R = $mol_type_enforce<
 		`Hf-Th-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L0GTFAQJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GA0TIHV7 = $mol_type_enforce<
 		`Sc-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9PGTOZTO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KE90OO6H = $mol_type_enforce<
 		`Cr-Cd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N6FISWLG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1P34OG51 = $mol_type_enforce<
 		`U-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O4CSRACP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1GP9YD1K = $mol_type_enforce<
 		`Tb-Th-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QX8SPJOA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__71M6K4B4 = $mol_type_enforce<
 		`Co-Cu-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PT4KGIP3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B214PFX4 = $mol_type_enforce<
 		`Zn-Sn-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NA8CSWU6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E9UVXUP4 = $mol_type_enforce<
 		`Pm-Lu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P66BWPO5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L192UGAB = $mol_type_enforce<
 		`Ba-Eu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TI3VO22D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CC7BU3F0 = $mol_type_enforce<
 		`Er-Lu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__79QHG6E5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__420KEQT4 = $mol_type_enforce<
 		`Ni-Ir-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6CBMB31M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SVT10OV0 = $mol_type_enforce<
 		`Li-Mn-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XBE2DF22 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SF6XG8NU = $mol_type_enforce<
 		`Mg-U-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8VBX6A78 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T9CCGWLI = $mol_type_enforce<
 		`Gd-Ti-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7737BI74 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0HX7NDNK = $mol_type_enforce<
 		`Co-Ni-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2QMZA54K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J6Z5OT9R = $mol_type_enforce<
 		`Yb-Er-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MK6R3IRN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MIVGIF10 = $mol_type_enforce<
 		`Yb-Ho-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DUP34FJ4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SN19O6DN = $mol_type_enforce<
 		`Cu-Ir-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CVC771BI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J5JUPQGC = $mol_type_enforce<
 		`Nd-Er-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__64O9DO90 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V5ET4EKT = $mol_type_enforce<
 		`U-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EHIWCG93 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PSLQQS95 = $mol_type_enforce<
 		`Sm-Lu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9GXFYHG8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I6OZYWLD = $mol_type_enforce<
 		`Mn-Ag-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GLIMH08G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JTL80PX4 = $mol_type_enforce<
 		`Pm-Th-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ANCD1JTO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZFTV3S5Y = $mol_type_enforce<
 		`Er-Lu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__864ZCTWX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I2LWEF30 = $mol_type_enforce<
 		`Nd-Tm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MOMC1GFQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DF4VFV7E = $mol_type_enforce<
 		`Sc-Ta-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TOGJ1XGR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W6F1C6H2 = $mol_type_enforce<
 		`Dy-Er-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OR7LGKFW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KXWH8JFS = $mol_type_enforce<
 		`Eu-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HTUX1OCL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J2MQGN24 = $mol_type_enforce<
 		`Y-Th-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BHRZR6J0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OINJJQBN = $mol_type_enforce<
 		`Eu-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__420HH08A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BHJXEAFE = $mol_type_enforce<
 		`Nd-Gd-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OV8GSEF1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XRCPQ8G3 = $mol_type_enforce<
 		`Cs-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LR7MOOWL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HT99PV8E = $mol_type_enforce<
 		`La-Nd-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J92J7H2H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R0G9ISBW = $mol_type_enforce<
 		`Nd-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PQZ84BEC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__98492DA6 = $mol_type_enforce<
 		`Zn-Si-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QNE9VNA1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6F4RL54Y = $mol_type_enforce<
 		`Mg-Cd-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AFB7GC2W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YDCF6J3B = $mol_type_enforce<
 		`Re-Ag-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R0FJ2O0Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HZ6EXFBP = $mol_type_enforce<
 		`Sr-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__44UHHPG3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XHXG0PYL = $mol_type_enforce<
 		`Fe-Ag-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C11W41G7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__43ZZUG0A = $mol_type_enforce<
 		`V-Cu-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2TUMR189 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TXAB4PYK = $mol_type_enforce<
 		`Sm-U-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__75ZJLIG1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ICHFB283 = $mol_type_enforce<
 		`Ce-Pu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RJYXYXZ7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2C4L85C7 = $mol_type_enforce<
 		`Na-Fe-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OYE21WYO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4XA0VE1S = $mol_type_enforce<
 		`Li-Sm-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IQ7VBG3B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DJ5W5ZLO = $mol_type_enforce<
 		`Yb-Ho-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NS0CZ68R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VAOVU8BZ = $mol_type_enforce<
 		`La-Yb-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R1PAH1G4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KHQYFAXX = $mol_type_enforce<
 		`Li-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VCEPDBQK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6B5GB84B = $mol_type_enforce<
 		`Tm-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4IN4DYHD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SVXMZM00 = $mol_type_enforce<
 		`Ta-Cu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5FC53KC8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XI9384UO = $mol_type_enforce<
 		`Tb-Pm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3WQIJHX8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DOPUVEEI = $mol_type_enforce<
 		`Ni-Ag-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__45YZUDXP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6AVDCOML = $mol_type_enforce<
 		`Pm-Y-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LIXG2620 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ND8510J7 = $mol_type_enforce<
 		`Pu-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W3SJJ3XX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5BLCLDLO = $mol_type_enforce<
 		`Eu-Pu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C49U5AGD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GR4HSNKY = $mol_type_enforce<
 		`Th-Zr-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OR0N102W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B3A5NWLF = $mol_type_enforce<
 		`K-Rb-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FEOGAS8S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BB1FV4C5 = $mol_type_enforce<
 		`Sm-Lu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PCUC0DP5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6XANFU7I = $mol_type_enforce<
 		`Mg-Cd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CQUP7Y5U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__07WFTP3B = $mol_type_enforce<
 		`Tb-Pr-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X802TYZ3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P9FLUHZP = $mol_type_enforce<
 		`Ce-Eu-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8J3GZZG7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UJSUW7SY = $mol_type_enforce<
 		`La-Nd-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QUVK73T5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__54O60163 = $mol_type_enforce<
 		`Ru-Pt-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WAYI0DIC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MDO3Y3II = $mol_type_enforce<
 		`La-Lu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KT0C06DF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__43LYW9F8 = $mol_type_enforce<
 		`Pm-Tm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MEC7FIAL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TOW4HRVK = $mol_type_enforce<
 		`Yb-Th-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VMZKH4JP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9YL82FFT = $mol_type_enforce<
 		`Ce-Pm-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZAWE7PFO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4DDKR1FO = $mol_type_enforce<
 		`Co-Ni-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B8NXRXMS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4ESTKTR6 = $mol_type_enforce<
 		`Si-Sn-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3GV3NGOY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R8GXBYZS = $mol_type_enforce<
 		`Er-Th-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ULXW9176 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8MBULEYH = $mol_type_enforce<
 		`Os-Pd-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T3WWKTBP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BVQFYOMT = $mol_type_enforce<
 		`Hf-Mg-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z691WFU9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D5PY3BHA = $mol_type_enforce<
 		`Mo-W-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KI8Y1Q0C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EJQ9MXGM = $mol_type_enforce<
 		`Sm-Gd-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ISQQSTIG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CEMYC8RP = $mol_type_enforce<
 		`Ca-Tb-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4C2AXJ8D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZY0C8OBI = $mol_type_enforce<
 		`Ho-Lu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R18POQ46 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9QIP5307 = $mol_type_enforce<
 		`Fe-Co-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A39GPLWW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8OPPT4RF = $mol_type_enforce<
 		`La-Sm-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y696SGDH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__G06NFKUT = $mol_type_enforce<
 		`Be-Al-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__81L3KD43 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HV8KU0WQ = $mol_type_enforce<
 		`Er-Tm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VID19EX4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5EUBDMHM = $mol_type_enforce<
 		`Sn-Bi-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YWSRBOR8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BHPZ5LG1 = $mol_type_enforce<
 		`Nd-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PMEHFRK0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZGW2KRT9 = $mol_type_enforce<
 		`Eu-Th-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I911YL0J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P4GYIJYL = $mol_type_enforce<
 		`La-Nd-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WTQ9XWVR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RWEVAAQ0 = $mol_type_enforce<
 		`Pm-Nd-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4BKHW4LL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B98QS7QV = $mol_type_enforce<
 		`Dy-Th-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__08WKLWSM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5BL0S874 = $mol_type_enforce<
 		`Pm-Er-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I7QZG9S8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7XCWKRZ9 = $mol_type_enforce<
 		`Tl-Zn-Ga`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z6Z7VG0M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W5DTZ4WD = $mol_type_enforce<
 		`Y-Pu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LOJGIJ46 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FQXMN6BI = $mol_type_enforce<
 		`Ba-Pm-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8HE0V9R8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7QPPJUW8 = $mol_type_enforce<
 		`Ce-Pr-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GFV7WW2M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SCAMWPEP = $mol_type_enforce<
 		`V-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TMQ1S3K8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O9X5P6G3 = $mol_type_enforce<
 		`Ce-Th-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AWHDVYHG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5LMHKME0 = $mol_type_enforce<
 		`Yb-Dy-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MC619XXY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MPVV5QRF = $mol_type_enforce<
 		`La-Er-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UX9CAFLH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AWHSA1IM = $mol_type_enforce<
 		`Li-Mg-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R8VXP001 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XFX0LN7L = $mol_type_enforce<
 		`Y-Lu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y57YDAEZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RD72KEKF = $mol_type_enforce<
 		`Sm-Y-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5EMTBGP5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D6PY02UV = $mol_type_enforce<
 		`Ce-Eu-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BRXARO62 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__791BHZLK = $mol_type_enforce<
 		`Ag-Ge-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GNSCBUEL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z4HWO4LQ = $mol_type_enforce<
 		`Sm-Ho-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ERFW3018 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0DOCY59L = $mol_type_enforce<
 		`Na-Li-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B2LAHTN7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UNPWD3XB = $mol_type_enforce<
 		`Tb-Yb-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CFSW2BA5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HXZL6UTI = $mol_type_enforce<
 		`Pr-Gd-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M9GGMAZ9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IC607RQ1 = $mol_type_enforce<
 		`Dy-Y-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EJ92S16G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C5JBHRXI = $mol_type_enforce<
 		`Er-Pu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I37GZERI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5KNDOO7T = $mol_type_enforce<
 		`Na-Li-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ISE16AUA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2HFY0LGJ = $mol_type_enforce<
 		`Pm-Nd-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IAO0WC9R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WHN0NPAO = $mol_type_enforce<
 		`La-Ce-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3UNYWX02 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B3TXL7EC = $mol_type_enforce<
 		`Dy-Y-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XJEKZOOO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TCODGWMH = $mol_type_enforce<
 		`Ca-Nd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__92F1OC8D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y37WCGCT = $mol_type_enforce<
 		`Nd-Sm-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9J62LSBA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LJZ3M06X = $mol_type_enforce<
 		`Yb-Nd-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IQ63RAAX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D9YMW4K8 = $mol_type_enforce<
 		`Li-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__777UWCTY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QUKM5TQ0 = $mol_type_enforce<
 		`Ca-Ce-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1W055E45 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SEFRCWW3 = $mol_type_enforce<
 		`Cs-Li-Pr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VIU5ZY96 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S9N6O1CS = $mol_type_enforce<
 		`Y-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HRWY3HXI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M5P2C6BT = $mol_type_enforce<
 		`Sm-Dy-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7IR43NCI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__08J5JDET = $mol_type_enforce<
 		`Ho-Tm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OKQNMO9G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X5H818X6 = $mol_type_enforce<
 		`Dy-Y-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HP9D2X5A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GT0PWBSO = $mol_type_enforce<
 		`Pu-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__303YDRH7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HHR1P819 = $mol_type_enforce<
 		`Ce-Sc-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1P1VIQ9I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H7Z0PXTF = $mol_type_enforce<
 		`Sm-U-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DIEHA6CH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZAMHPEV7 = $mol_type_enforce<
 		`La-Sm-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8GX4RU8J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__84JTKO8B = $mol_type_enforce<
 		`Yb-Nd-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3BMYQJD6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VJEI2TFK = $mol_type_enforce<
 		`Pr-Dy-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FB3CSYBU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VI9R1GYD = $mol_type_enforce<
 		`Ho-Er-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JO1T5Y43 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AMPJOD3B = $mol_type_enforce<
 		`Lu-Th-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3PWCBK5D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0OG2O5PD = $mol_type_enforce<
 		`Yb-Nd-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CSZP7AZA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JV49UZSB = $mol_type_enforce<
 		`Rb-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YXU25ODN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TM4IUUZW = $mol_type_enforce<
 		`Gd-Er-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WR63HFR5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UU9SF3PW = $mol_type_enforce<
 		`Ho-Sc-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BSM74K7X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QN15SAGE = $mol_type_enforce<
 		`Tc-Pd-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4ENFFKX3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5X0GFCD4 = $mol_type_enforce<
 		`Ce-Tm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZDX3O0Y4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PP5K5FNH = $mol_type_enforce<
 		`Cu-Pt-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FGBQWKYE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SVMJPR3J = $mol_type_enforce<
 		`La-Ho-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HC6WL0YX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AYJOK8UJ = $mol_type_enforce<
 		`Sm-Ho-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E2DY398H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UXHTP5LY = $mol_type_enforce<
 		`La-Gd-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X4OTS2DY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D4OXWNWE = $mol_type_enforce<
 		`Al-Zn-Cd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VDUTT0SG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VTRH2N7P = $mol_type_enforce<
 		`Cs-Pr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6HOJEE6V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WRRDYGB1 = $mol_type_enforce<
 		`Pm-Pr-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FH66CVNA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KISVUKML = $mol_type_enforce<
 		`Os-Pt-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DEBAMWKM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TR11VYJE = $mol_type_enforce<
 		`Er-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TCQJSMTF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K2TAY5BZ = $mol_type_enforce<
 		`Gd-Dy-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1RH5ZJAX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RY73WVMT = $mol_type_enforce<
 		`Tb-Er-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G3E7GC2C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__REL5149G = $mol_type_enforce<
 		`Ce-Nd-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KSNUXD6H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FJZK8EMM = $mol_type_enforce<
 		`Be-Al-Ga`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PNL2WEEH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XQDPCIE8 = $mol_type_enforce<
 		`Cu-Tc-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4XPDK7NJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1WWWN69O = $mol_type_enforce<
 		`Nd-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K1PXS4GM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WJSJUHXT = $mol_type_enforce<
 		`Ca-La-Tb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__66OS0J6B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FB03PYYD = $mol_type_enforce<
 		`Be-Zn-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IK6XY2SI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B31GFY6A = $mol_type_enforce<
 		`Cu-Rh-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XER25F71 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5A5YRYFB = $mol_type_enforce<
 		`Lu-Pu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NHMTN7BC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5YCCD110 = $mol_type_enforce<
 		`Pr-Nd-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J1ZIHI2U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C2ED8S0Z = $mol_type_enforce<
 		`Rb-Na-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4VZAMY1V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P10O7EQX = $mol_type_enforce<
 		`Yb-Pr-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HZ9FW4K6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KN8PPLC7 = $mol_type_enforce<
 		`Ce-Pr-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XJEKFRFK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KF4GHNQP = $mol_type_enforce<
 		`Hf-Mg-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0OYUEV67 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DCYIWJN4 = $mol_type_enforce<
 		`Tb-Th-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AOUGO5AV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EMAEMH2R = $mol_type_enforce<
 		`Co-Ag-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__08OFXYX0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5PP1302T = $mol_type_enforce<
 		`Li-Tb-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GCSYPU2X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4HEQSST3 = $mol_type_enforce<
 		`Yb-Tm-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B8S8J32H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZRLQVUCX = $mol_type_enforce<
 		`Yb-Y-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VWL9HWMA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CMUAZZ2S = $mol_type_enforce<
 		`Yb-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I3CFXC9B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0S1UXHVR = $mol_type_enforce<
 		`Sc-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X32IQ7DT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KUZ0H2LD = $mol_type_enforce<
 		`La-Lu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ET9T3NP9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__59DA5APH = $mol_type_enforce<
 		`Ca-Ce-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5BW0TKRM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4Q2137P7 = $mol_type_enforce<
 		`Ce-Ho-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HRKHPS9P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CA5WL7G5 = $mol_type_enforce<
 		`La-U-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EQD9HT94 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GKM4AGP6 = $mol_type_enforce<
 		`Pu-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VYILC1OU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5CGRC3B5 = $mol_type_enforce<
 		`Yb-Y-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__64FHXN6T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DY72IGRR = $mol_type_enforce<
 		`Er-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JWTV9IQ9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6U8TU2U3 = $mol_type_enforce<
 		`U-Cr-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DCRHJG1N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7MMCAT03 = $mol_type_enforce<
 		`Dy-Tm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A8EWUCQ9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NN67IP8B = $mol_type_enforce<
 		`Si-Ag-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RS3FMSPI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__97CM4A0W = $mol_type_enforce<
 		`Tb-Y-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FKSOID95 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5B3LANOR = $mol_type_enforce<
 		`Pr-Gd-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QFZ4QXV6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2T87V0CV = $mol_type_enforce<
 		`Ce-Er-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D7XQ00AY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QFT773R3 = $mol_type_enforce<
 		`Tl-Cu-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PPILX55H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D6WZ6QYV = $mol_type_enforce<
 		`Ho-Sc-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6U2AUIHM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J1CP2VA6 = $mol_type_enforce<
 		`Li-Mg-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__42NEHEJT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3DC1INZY = $mol_type_enforce<
 		`Y-Lu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SQJST0XY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OUYBEJCE = $mol_type_enforce<
 		`Sc-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YMP0YKDK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MH7HAB8O = $mol_type_enforce<
 		`Cu-Bi-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1Y741X57 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LBWM7PU8 = $mol_type_enforce<
 		`Tl-Zn-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__817SB2WS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JCZ1HJEM = $mol_type_enforce<
 		`Nd-Ho-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__03O2SXJZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CQNT3B3H = $mol_type_enforce<
 		`Ni-Pt-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6XOHKKPQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A11B1WMN = $mol_type_enforce<
 		`Sm-Er-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V7FHC0TP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T2LQ0JLI = $mol_type_enforce<
 		`Li-Lu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NBTJ8VNF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NR671ZGJ = $mol_type_enforce<
 		`Yb-Y-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E31OSBQP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LKFWY2XY = $mol_type_enforce<
 		`Ce-Th-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V0ESB8KB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UTVHBGHU = $mol_type_enforce<
 		`Pr-Lu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IRDG9EEM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RPDR09FP = $mol_type_enforce<
 		`Ir-Os-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FMH6FJMK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__589L8NNB = $mol_type_enforce<
 		`Er-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4X8Y8VSJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AUWYY4KN = $mol_type_enforce<
 		`Tb-Sm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LDS8ZCHL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1OWCP1BI = $mol_type_enforce<
 		`Dy-Ti-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__43KI8IJQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AWO0ZDYC = $mol_type_enforce<
 		`Nb-Tl-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J4RZ0JP3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XFC5VYDE = $mol_type_enforce<
 		`La-Lu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3NXURTNR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__18460LYZ = $mol_type_enforce<
 		`Ag-Pd-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MMCOSV7Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9WZA4VRK = $mol_type_enforce<
 		`Hf-Sc-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6ID0AE5X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5ZVF84YX = $mol_type_enforce<
 		`Re-Os-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7CM2QL95 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JXAWH7PJ = $mol_type_enforce<
 		`La-Th-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QVLSI6S0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NK7ZO53M = $mol_type_enforce<
 		`Pm-Y-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X9K7E22C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HPVQ2P3E = $mol_type_enforce<
 		`Y-Hf-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H6CPP33A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IDU7ASW5 = $mol_type_enforce<
 		`Pr-Y-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2HRLIPTC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0EDL7QAZ = $mol_type_enforce<
 		`Na-Hf-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FSZRC2V7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IPVU8NED = $mol_type_enforce<
 		`Tl-V-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BD0WCIJO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S0EH5JLJ = $mol_type_enforce<
 		`Gd-Y-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4ERC2QYD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XQL26H8W = $mol_type_enforce<
 		`Li-Pu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HE104G3Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3JN30KGX = $mol_type_enforce<
 		`Pr-Sm-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6QLWVX69 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T4DPHR2J = $mol_type_enforce<
 		`Ce-Gd-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DTF9C9OL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K8UIUISB = $mol_type_enforce<
 		`Mn-Fe-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8R84V5GA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WOL96QQD = $mol_type_enforce<
 		`Y-Th-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XWO00NTW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2AZ7S9TF = $mol_type_enforce<
 		`Ba-Eu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2XRWL3Q0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PNDNZOY2 = $mol_type_enforce<
 		`Ce-Ho-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CTB0NIOJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SL3XRHV2 = $mol_type_enforce<
 		`Gd-Zr-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W4F6IAZ9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JCH9969C = $mol_type_enforce<
 		`Ce-Y-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MZDTFKDN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QX81509L = $mol_type_enforce<
 		`Mn-Ni-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0CH2HKJB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CHR2P958 = $mol_type_enforce<
 		`Tb-Pr-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5QXY7A84 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QYEYYBCH = $mol_type_enforce<
 		`Nd-Lu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__540SSVHX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ACS18K9P = $mol_type_enforce<
 		`Nb-Cu-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S8EBNFVS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XDTFR37X = $mol_type_enforce<
 		`Li-Ho-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JZRGZ3XN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__35EQB9MW = $mol_type_enforce<
 		`Li-Sm-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EHHVPO2Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YR5PNW4Q = $mol_type_enforce<
 		`Al-Ge-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QD4VN4WL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WTB4YJWD = $mol_type_enforce<
 		`Tb-Pu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UB2BNDM2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VRJDQPX9 = $mol_type_enforce<
 		`Tb-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KLMI1WYP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D4XBCSTJ = $mol_type_enforce<
 		`Nd-Sc-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YGEPOFUO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NSTWO5GH = $mol_type_enforce<
 		`Sr-Sc-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1NWTGJEY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F6ITSJTC = $mol_type_enforce<
 		`Er-Pu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NR6O46AX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HBV32AUJ = $mol_type_enforce<
 		`Mg-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__52Q9LU8M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M1GSCB6Y = $mol_type_enforce<
 		`Dy-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0M0ZWL9N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DL3N1DXW = $mol_type_enforce<
 		`Gd-Tm-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P2J6DDSC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MEMR5KH2 = $mol_type_enforce<
 		`Na-Li-Be`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y9OI5S13 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NWSGPJ2O = $mol_type_enforce<
 		`Sm-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YAUM5KZL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C6UXKK47 = $mol_type_enforce<
 		`La-Pr-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9P6YVO7L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3J25I86X = $mol_type_enforce<
 		`Ce-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C3TV8NJF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BXKYCQG6 = $mol_type_enforce<
 		`Ce-Er-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KSE48W60 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H6YT065I = $mol_type_enforce<
 		`Er-Lu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S6J7DSFF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NVLVM9WL = $mol_type_enforce<
 		`Lu-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QD39ADG7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CY8UU519 = $mol_type_enforce<
 		`Fe-Ir-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KM6T1ZCF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L9AJQ7AH = $mol_type_enforce<
 		`Li-Y-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X01MYABO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SAUD9VR0 = $mol_type_enforce<
 		`Pm-Pr-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__REFHFSWA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SMJOHVHH = $mol_type_enforce<
 		`Th-Sc-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ENKG0EIJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L5QACX14 = $mol_type_enforce<
 		`Tl-In-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B0BJHP8V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VZN14SYI = $mol_type_enforce<
 		`Tm-Pu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NKH4545N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AF8DXRMH = $mol_type_enforce<
 		`Tc-Ni-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E4BOQRAW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3ZI4I62S = $mol_type_enforce<
 		`La-Yb-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OTAX99EF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V2145Z29 = $mol_type_enforce<
 		`Li-Pr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BETT8195 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IZBMVYUY = $mol_type_enforce<
 		`Sr-Nd-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TI4SZLAJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HSWTGTRZ = $mol_type_enforce<
 		`Ce-Sc-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GEIM5ZRD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4Z2BIJ96 = $mol_type_enforce<
 		`La-Th-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J9IL61W6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__45NA6YAN = $mol_type_enforce<
 		`Li-Ce-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W65QXMLQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GJRQWWKY = $mol_type_enforce<
 		`Ba-La-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L1AF59YR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q4JVZV4F = $mol_type_enforce<
 		`La-Y-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I798LF0B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RV0FJEPZ = $mol_type_enforce<
 		`Ce-Pr-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FA9U8SEI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__51MUZ0Y6 = $mol_type_enforce<
 		`Cs-K-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1EX009NU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TI08ELRN = $mol_type_enforce<
 		`Sm-Gd-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M482NRZZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K4HOWO6O = $mol_type_enforce<
 		`Li-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TT0GI8XF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JX906UDT = $mol_type_enforce<
 		`La-Yb-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EH04ZWYI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2R0WREY3 = $mol_type_enforce<
 		`La-Dy-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WAUR1FVL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RN7H6ZQM = $mol_type_enforce<
 		`Y-Pu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EVGNHFFD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7W1B65CD = $mol_type_enforce<
 		`Th-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TD17D9AJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q8OMXD01 = $mol_type_enforce<
 		`Ho-Tm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GD4LWLL7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YPNUYI60 = $mol_type_enforce<
 		`Ce-Lu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8WK1W04C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VSXUJ05N = $mol_type_enforce<
 		`Tb-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__58EHOGJT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__050MQZYB = $mol_type_enforce<
 		`La-Pu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HEO73MMA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VUKIDGSN = $mol_type_enforce<
 		`La-Pr-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5I3V2OAA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YTQTNG43 = $mol_type_enforce<
 		`Cs-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YSDOZ2A3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WPZ4VN4L = $mol_type_enforce<
 		`Bi-Sb-P`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N3A7792M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KSLGJY9G = $mol_type_enforce<
 		`Mn-Cu-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V6GW21J6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WS8WBCDA = $mol_type_enforce<
 		`Mg-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1RT0XIWX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5894HT0Y = $mol_type_enforce<
 		`Er-Th-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4PS8HFJL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__83W7ONZQ = $mol_type_enforce<
 		`Th-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SY2TESM2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ACYXNBRU = $mol_type_enforce<
 		`Cr-Cu-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VQ848FHT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3C6TKCRQ = $mol_type_enforce<
 		`Er-Nb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7FKJXO2C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KKIU7BUF = $mol_type_enforce<
 		`Tb-Tm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NRF133U0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L6214UMU = $mol_type_enforce<
 		`Li-La-Pr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NC0MX81G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QD6ZTB13 = $mol_type_enforce<
 		`Ce-U-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WD3VNKNZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7LUG3YHU = $mol_type_enforce<
 		`Tc-Ni-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4FTUHYJ9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__88HTJEFB = $mol_type_enforce<
 		`Pr-Ho-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EIDGAIVP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QQ50XCFW = $mol_type_enforce<
 		`Li-Cr-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KFZSEMHI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QIETC170 = $mol_type_enforce<
 		`La-Sm-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4MNSDP4G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KCR704OC = $mol_type_enforce<
 		`Fe-Cu-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9Z1KF0YI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XSDO6T3I = $mol_type_enforce<
 		`Co-Cu-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__98AZYYXU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0GNQMNS2 = $mol_type_enforce<
 		`Nb-Tl-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1EUGBZZ4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__296RG9Q2 = $mol_type_enforce<
 		`Co-Pt-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N9VG4O06 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P69ZUUP2 = $mol_type_enforce<
 		`Ce-Er-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U3R69098 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8RLM8TPD = $mol_type_enforce<
 		`Re-Ir-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DTHWMBIX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IMS7PLUD = $mol_type_enforce<
 		`Lu-Pu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TK8VPWNM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KPZN9MNK = $mol_type_enforce<
 		`Eu-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IVM4URQ4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2WNLS423 = $mol_type_enforce<
 		`Ce-Sc-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7VMI2F1S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DZA9G0AS = $mol_type_enforce<
 		`Ir-Pd-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y3EME6P1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__102A03Q6 = $mol_type_enforce<
 		`Hg-Ir-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N8TJAH98 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JE2R6MBH = $mol_type_enforce<
 		`Y-Sc-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YCILKUOM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5OEPIPWI = $mol_type_enforce<
 		`La-Th-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YNJG3G0R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ID8XSJIF = $mol_type_enforce<
 		`Tl-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ABGQFTN9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q69BJFJJ = $mol_type_enforce<
 		`Co-Cu-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SV88K57J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3IY2ZKFC = $mol_type_enforce<
 		`Pm-Y-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LHV605EP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__23F2Z7AR = $mol_type_enforce<
 		`Ce-Pr-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OXXVXATQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ENU4GC2X = $mol_type_enforce<
 		`Tb-Pr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SDV1GKKY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HX7WR7ZO = $mol_type_enforce<
 		`Yb-Th-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0TC2S0SN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8KXV0Q7T = $mol_type_enforce<
 		`Pm-Dy-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UGPCHZKO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XE6ZF1JM = $mol_type_enforce<
 		`Co-Ru-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FYVX29VU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SDRHCZD0 = $mol_type_enforce<
 		`Tb-Yb-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YXX97FJK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZOO4EPJ1 = $mol_type_enforce<
 		`Gd-Y-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UOFC8IJ2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MH0XB5W0 = $mol_type_enforce<
 		`Dy-Ho-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PPA3TPGN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KRJVI8YA = $mol_type_enforce<
 		`La-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YOR01XVX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AI292VSD = $mol_type_enforce<
 		`La-Tm-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DJMR0DTB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M2X40CUT = $mol_type_enforce<
 		`U-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QDB62HRS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MGJUJEA5 = $mol_type_enforce<
 		`La-Pm-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UDHX07XS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LBE0TXQP = $mol_type_enforce<
 		`Cs-K-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YB211HWV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W9ZEHMRT = $mol_type_enforce<
 		`Tb-Nd-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AOM538VB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A51Y972R = $mol_type_enforce<
 		`Nd-Th-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DPLCGVG8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M3ID22TC = $mol_type_enforce<
 		`Li-Lu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FIW808JY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__08T6G08C = $mol_type_enforce<
 		`Sm-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S2KBQ70W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RMW5QDHX = $mol_type_enforce<
 		`La-Nd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8BNSXRMR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__643OWZIW = $mol_type_enforce<
 		`Gd-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0EKFHQ6I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R3N7YQMH = $mol_type_enforce<
 		`Ce-Nd-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MLNUO8VG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UA6I71AF = $mol_type_enforce<
 		`Tb-Yb-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AVENPU7D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QND4GOQ1 = $mol_type_enforce<
 		`Ce-Th-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__758OLA50 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0TSIU2DK = $mol_type_enforce<
 		`Pr-U-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PACE1A24 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OQBMFFO2 = $mol_type_enforce<
 		`La-Er-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HIST21GK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C6EUU5LG = $mol_type_enforce<
 		`Dy-Y-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B0WA20LT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2JQ9GTWV = $mol_type_enforce<
 		`Li-Pr-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0D1CAM18 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7I7ZVOXJ = $mol_type_enforce<
 		`Ce-Er-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__02RHARJD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KHLGB2SE = $mol_type_enforce<
 		`Dy-Y-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IL52LUT6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9EUBVIQO = $mol_type_enforce<
 		`Er-Sc-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S2XQRNL3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M3VCEOTI = $mol_type_enforce<
 		`La-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PH96KJDV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7U7A31LH = $mol_type_enforce<
 		`Ca-Ce-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MSU90B6B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PRVVC814 = $mol_type_enforce<
 		`Eu-U-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FHURQ5XR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5EIU2J1L = $mol_type_enforce<
 		`La-Sc-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TKW509WQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O6W6GHNE = $mol_type_enforce<
 		`Li-Ce-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EXL2KK8Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HSZ54HAO = $mol_type_enforce<
 		`La-Dy-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D03LM2U0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q2OLL1DG = $mol_type_enforce<
 		`Lu-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DAFE0GPD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RUSD7DU4 = $mol_type_enforce<
 		`Gd-Y-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__85U8HG4K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IKMH62BZ = $mol_type_enforce<
 		`Li-Ce-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GGUNZGED = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OD1NPG9A = $mol_type_enforce<
 		`Cr-Cd-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7GTKN0KJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8KNK6P4C = $mol_type_enforce<
 		`La-Tm-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DD9IP9ZW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TZP0H2F4 = $mol_type_enforce<
 		`Rb-Mg-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4VYEGF6H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YDD443IL = $mol_type_enforce<
 		`Tb-Gd-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VEW26JU4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2SF20V3X = $mol_type_enforce<
 		`Eu-Sc-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__576DRSQE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J2FP23BM = $mol_type_enforce<
 		`Co-Ag-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CGNA4KKH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZW6IP9I2 = $mol_type_enforce<
 		`La-Tb-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NUE13LAW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AL4R5H3P = $mol_type_enforce<
 		`Rb-Mg-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RTC8Q84Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1TBFMCJW = $mol_type_enforce<
 		`Cu-Ir-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PW0TJ2ZO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1ZWPRO3S = $mol_type_enforce<
 		`Rb-Hf-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U0AAEZGA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X40LSCF6 = $mol_type_enforce<
 		`Gd-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VC7298QI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CUDI0JOF = $mol_type_enforce<
 		`Er-Pu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U392SL44 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GUVTUT6D = $mol_type_enforce<
 		`V-Cu-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GV0Q727X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M6CEAU0E = $mol_type_enforce<
 		`Dy-Pu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AC3P3HWY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JIH5I6SQ = $mol_type_enforce<
 		`Sc-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VI3D3YZY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F3ZTVBT4 = $mol_type_enforce<
 		`Tb-Gd-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C0WX77MA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D4EWW01S = $mol_type_enforce<
 		`Li-Tb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X7GGI4UD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PFCC31OM = $mol_type_enforce<
 		`Er-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XQKM1J8F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7DD92I2U = $mol_type_enforce<
 		`V-Cr-Hg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__96CIXII5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5M4M6QP1 = $mol_type_enforce<
 		`La-Y-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QO8L80V2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__28MYOXZ4 = $mol_type_enforce<
 		`Ta-Cu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SBCHNEUK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HEFM53AB = $mol_type_enforce<
 		`Ta-Nb-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T40XH4TY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EJZYRCNI = $mol_type_enforce<
 		`Nd-Sm-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JXOKRL1T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LW4RJHM4 = $mol_type_enforce<
 		`V-Fe-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q61OES8J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y4I0QU6X = $mol_type_enforce<
 		`Yb-Eu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7OLRPZV7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9G0MUGWD = $mol_type_enforce<
 		`La-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8TSVVOOZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__54XF8C2S = $mol_type_enforce<
 		`Pd-Au-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NO1IKUQL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0SPX99T0 = $mol_type_enforce<
 		`Sc-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JSKCEASG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__56L151JM = $mol_type_enforce<
 		`Mn-Co-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y8RLQKQ2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z1VIHKF8 = $mol_type_enforce<
 		`Yb-Nd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MKMY8AAV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7IK026R2 = $mol_type_enforce<
 		`Sm-Er-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OZRME4P9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__620XH3R6 = $mol_type_enforce<
 		`Ce-Pr-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UKL0IE9G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1QOCTVX0 = $mol_type_enforce<
 		`Ag-Ir-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0G6GQFVN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QLPT1J3Q = $mol_type_enforce<
 		`Nd-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__788CYYGA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SFEOFUZX = $mol_type_enforce<
 		`Li-Y-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7RVYQ4G3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q5N16JN5 = $mol_type_enforce<
 		`La-Ce-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZKK60X85 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CFSHS48Z = $mol_type_enforce<
 		`Al-Si-Sn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4LYIDBZW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9LPAGB52 = $mol_type_enforce<
 		`La-Eu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QHWB7PUN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W5CB43GZ = $mol_type_enforce<
 		`In-Si-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CXYZOASQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7Z8YLK9M = $mol_type_enforce<
 		`V-Cr-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EB2WEUJM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y89POI7P = $mol_type_enforce<
 		`Al-Sn-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RRU637IL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W9TH3LHJ = $mol_type_enforce<
 		`Ba-Mn-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7X0F4MZ0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C22DJF59 = $mol_type_enforce<
 		`Th-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7YC9PG9F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H27JRJQA = $mol_type_enforce<
 		`Cs-Li-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IMXP89QB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RIFTJGEA = $mol_type_enforce<
 		`Ca-Pu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E0ASIV3E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7O3IAEUO = $mol_type_enforce<
 		`Al-Si-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ALE3MIV5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LBIEDBCP = $mol_type_enforce<
 		`Li-Mg-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4789P4W8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OXEXZMXS = $mol_type_enforce<
 		`Yb-U-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WC6QV6CI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OU4UARPN = $mol_type_enforce<
 		`Mn-Tl-Cd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IZSHM76L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PSUQ9VL0 = $mol_type_enforce<
 		`Fe-Ir-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FS6DJ9TE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RBAY2T6H = $mol_type_enforce<
 		`Tb-Nd-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZMFDRO2N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8A3TT99Z = $mol_type_enforce<
 		`Nd-Er-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VME3I6IE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__65E46HNA = $mol_type_enforce<
 		`Ba-Sr-Ca`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PIRUBULH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EUMWZK6E = $mol_type_enforce<
 		`La-Eu-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NAVUT50I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7WCPXXR8 = $mol_type_enforce<
 		`Sm-Ho-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BJX8MAG0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R1KY85HW = $mol_type_enforce<
 		`Y-Ho-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TQA2ABS9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z1IGE1AZ = $mol_type_enforce<
 		`Tc-Ir-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AV9JHDGN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5IP2V3YY = $mol_type_enforce<
 		`Cs-Hf-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__28SVTP7C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MJDQINIO = $mol_type_enforce<
 		`Gd-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9YIMNPLU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EVNAR9BP = $mol_type_enforce<
 		`Dy-Tm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4FEE9LSX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JMZSHGTB = $mol_type_enforce<
 		`La-Pm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YQI0FF3C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P6QOVFTB = $mol_type_enforce<
 		`Yb-Pu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NXG4US7W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__22NSZ5RC = $mol_type_enforce<
 		`Ce-U-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TQ8Q4BYY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HJ14SKHV = $mol_type_enforce<
 		`Ir-Os-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WRE22B6K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4XU6DWX4 = $mol_type_enforce<
 		`Ce-Sm-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1APWBWIG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1S14GLPK = $mol_type_enforce<
 		`Tb-Y-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GM1HHQEU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F10E2CDF = $mol_type_enforce<
 		`Pm-Y-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UIP1IVKQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MC4VTLLJ = $mol_type_enforce<
 		`Pr-Th-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OX4P6NCG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WGAAQC5H = $mol_type_enforce<
 		`Tb-Ce-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D7J0J9JR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OCHR5TC3 = $mol_type_enforce<
 		`Hg-Bi-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EYPPCX00 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OGJJOZX3 = $mol_type_enforce<
 		`Tb-Ce-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O67GQ8R1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UCFI7DNE = $mol_type_enforce<
 		`Pr-Y-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__75HBYHM5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MCPXV0QN = $mol_type_enforce<
 		`Cu-Ni-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K3MRRTKB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2ACM1KOE = $mol_type_enforce<
 		`Fe-Co-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7MNQZHWT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MC7VYNP4 = $mol_type_enforce<
 		`Pr-Tm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VX4NSAAC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SP2RXHGM = $mol_type_enforce<
 		`Zn-Sn-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DVKQZJFX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U3FY03VN = $mol_type_enforce<
 		`Yb-Eu-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ITCQ404L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FOAQJJ2W = $mol_type_enforce<
 		`Cd-Fe-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DGCN4TZX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2PQNLPFP = $mol_type_enforce<
 		`La-Gd-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KL6RO6PT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__67RTYHMQ = $mol_type_enforce<
 		`Ga-Bi-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8ADZR88Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DTQNU1CT = $mol_type_enforce<
 		`Sm-Gd-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M1TULQ65 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HB8F1GB0 = $mol_type_enforce<
 		`Co-Pt-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I3ZM27VN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LAFLTU02 = $mol_type_enforce<
 		`Ce-Er-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q1NVQKR9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4Q8PLWGI = $mol_type_enforce<
 		`Tb-Ce-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DOUE2NDY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B8J03RGO = $mol_type_enforce<
 		`Sr-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__493DXQ8C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J159OHAK = $mol_type_enforce<
 		`Cr-Fe-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S9JCI8SP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W39EIGQ0 = $mol_type_enforce<
 		`Yb-Hf-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E7RU7PFW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2GXROY7B = $mol_type_enforce<
 		`Eu-Hf-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6TBFIDWC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__26SDD1H6 = $mol_type_enforce<
 		`Zn-Ge-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IV87ETQM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OD8ITL7U = $mol_type_enforce<
 		`Ca-Sc-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ACZJEM3E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UJH8MWPN = $mol_type_enforce<
 		`Nd-Sm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9OFDTC79 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H6UX7QJH = $mol_type_enforce<
 		`Ce-Tm-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ER7AYC0H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KZ1HI9WA = $mol_type_enforce<
 		`Na-Ca-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V2KZUPGB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YT86HW6B = $mol_type_enforce<
 		`Tl-Cd-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7R13RP6O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__69UQLJ4P = $mol_type_enforce<
 		`Nd-Lu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C529M5T4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XYWZ05BD = $mol_type_enforce<
 		`Li-Sc-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3YT0UB4W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9N616NEO = $mol_type_enforce<
 		`Pr-Dy-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ELURHPYZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3NMJC6CV = $mol_type_enforce<
 		`Pr-Th-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UXHEQHEX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MZQ6PKMK = $mol_type_enforce<
 		`Co-Cu-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AOPUCH8M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RJZPBGD5 = $mol_type_enforce<
 		`Tb-Pu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8D9QWRFN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6Z10SRX1 = $mol_type_enforce<
 		`Li-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q7LL8SRN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HIM9I5XJ = $mol_type_enforce<
 		`Pm-Y-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X0WQY32C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J6GW168Z = $mol_type_enforce<
 		`La-Y-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6HPS4MF8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AUXJKX9O = $mol_type_enforce<
 		`Pr-Sm-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TEB5Z91Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__21GZYEI7 = $mol_type_enforce<
 		`Pr-Ho-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RO4TXA28 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZR9PSCGI = $mol_type_enforce<
 		`Yb-Gd-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DYL6C8RR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U3X2TPM7 = $mol_type_enforce<
 		`Gd-Er-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L3IP8ZUK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AVQY3XC8 = $mol_type_enforce<
 		`Ho-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UDX793FK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VH3SJNIE = $mol_type_enforce<
 		`Yb-Dy-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1400XEMY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MSUFHO3V = $mol_type_enforce<
 		`Li-Mg-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ILZELSPQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NKWI1AJY = $mol_type_enforce<
 		`Yb-Er-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AOFZB4I6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GVPCZW0Y = $mol_type_enforce<
 		`Lu-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TL3QPRUP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OX3ZF2DS = $mol_type_enforce<
 		`Ca-Nd-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WFOQ51XO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZTDU68FZ = $mol_type_enforce<
 		`Tb-Ce-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XTV24YSM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__660YF5JG = $mol_type_enforce<
 		`Dy-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HTRC5R8L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RYA0PYEM = $mol_type_enforce<
 		`Sr-Ca-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6O5PKM1R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__33FKOHT9 = $mol_type_enforce<
 		`Tb-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HJ3948VD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q9QZB80F = $mol_type_enforce<
 		`Pr-Y-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z9NVFNGC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S4BF0LA0 = $mol_type_enforce<
 		`Yb-Pr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HHJFT8B0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D6VJYS7G = $mol_type_enforce<
 		`Cd-Ga-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4Z12F78C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GDWANM0L = $mol_type_enforce<
 		`Tb-Th-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JGXQY38O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VYPRLATY = $mol_type_enforce<
 		`La-Ce-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K6I7ZGEV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W8YJ3H3Y = $mol_type_enforce<
 		`Sm-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9V38HXCP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EEK2V6A0 = $mol_type_enforce<
 		`Li-Sm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9878OZSQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z6AB9EWN = $mol_type_enforce<
 		`Ba-Yb-Pr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BX7I91XB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__75KD871S = $mol_type_enforce<
 		`Gd-Ho-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PE8AVSNP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OFR9N8DZ = $mol_type_enforce<
 		`Eu-Pu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O69Q6TEN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZDP9REH3 = $mol_type_enforce<
 		`La-Er-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JWR3G69T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0RBSFP1H = $mol_type_enforce<
 		`Pm-Lu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J0QH0TVG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZL60IRO0 = $mol_type_enforce<
 		`Ce-Pr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ODRDS15J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__848QQBHA = $mol_type_enforce<
 		`U-V-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J1CGIWNH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U2PPG410 = $mol_type_enforce<
 		`Cs-Li-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GKVOCN6C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZVMM0VSP = $mol_type_enforce<
 		`Yb-Y-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BEHHY38C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S2NY3Q3M = $mol_type_enforce<
 		`La-Th-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__STMBHZTK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O3WCCI4Z = $mol_type_enforce<
 		`Tb-Sc-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VX0KG4YG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S1AVGJIV = $mol_type_enforce<
 		`Eu-Ta-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M8GWLUC9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AV5KSDRG = $mol_type_enforce<
 		`Cs-Rb-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S1M0BO0V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CEQOS15T = $mol_type_enforce<
 		`Pm-Gd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RZIZNLD5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YF2HCWRW = $mol_type_enforce<
 		`Sr-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O0XAF26L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AN6XPCSR = $mol_type_enforce<
 		`Cu-Ru-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1505M78Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RU9JQGX2 = $mol_type_enforce<
 		`La-Sm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z002NFXT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0LMYXQ4U = $mol_type_enforce<
 		`La-U-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WT0V5MRK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q8HA2I0D = $mol_type_enforce<
 		`Pr-Gd-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K8QEC0NM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IKGPK4II = $mol_type_enforce<
 		`Er-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XV6I10RU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YME41K6Y = $mol_type_enforce<
 		`Ho-Lu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__92BF1BCI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__63X74WKA = $mol_type_enforce<
 		`Yb-Er-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M7MXVYQ5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__30GNHYZM = $mol_type_enforce<
 		`Y-Lu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CG37363U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O9GPOJWQ = $mol_type_enforce<
 		`Cr-Ag-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6DN825Z2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J1TX5BHP = $mol_type_enforce<
 		`Sm-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VWOVZQT5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HQ1YXH4M = $mol_type_enforce<
 		`Li-Y-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8YOG98XA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LLGVQ2F9 = $mol_type_enforce<
 		`Gd-Ho-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SD42T1CY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U1KUTBK5 = $mol_type_enforce<
 		`Sc-U-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OPAC5ZKX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VQ94ST6B = $mol_type_enforce<
 		`Rb-Mg-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__30NFWPMR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z4CL3H0C = $mol_type_enforce<
 		`Th-Ta-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FM4CMV2F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YK09ZJ7J = $mol_type_enforce<
 		`K-Hf-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U3UW1GUY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O4JQB8RI = $mol_type_enforce<
 		`Ho-Lu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BNVJXGUK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J2UN5R5Y = $mol_type_enforce<
 		`Ba-Nd-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1J1YSANX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CLPSAV8E = $mol_type_enforce<
 		`Rb-Na-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5U4LU742 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QRJEWOTN = $mol_type_enforce<
 		`Ce-Sm-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__15TDK2B9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YI6AC421 = $mol_type_enforce<
 		`Pr-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1OM2TZS9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CPNJS2GS = $mol_type_enforce<
 		`Ba-Pr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4MJO2MTL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BZEOE9K3 = $mol_type_enforce<
 		`Li-Nd-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UNJM2M0W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S5WCEE0K = $mol_type_enforce<
 		`Re-Os-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UEEQCS1U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B06NVOHB = $mol_type_enforce<
 		`Eu-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UHOIVQ9L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K2XWR23Q = $mol_type_enforce<
 		`Nd-Er-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SVGSKTKR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VLPMG86G = $mol_type_enforce<
 		`Cs-Rb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GYCXNXI3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WFSYBI5L = $mol_type_enforce<
 		`Tb-Pm-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SKPX0ARA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6GT4QKMV = $mol_type_enforce<
 		`Cs-K-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BHQV5T2N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZTE7L4R1 = $mol_type_enforce<
 		`Na-Sr-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5M94SD9A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8SZ448L8 = $mol_type_enforce<
 		`La-Ce-Eu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z3Z6AXHI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8HDXZNTT = $mol_type_enforce<
 		`La-Gd-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IM2SXX35 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EFZW684U = $mol_type_enforce<
 		`Tb-Lu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V4ESV1J7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H6IWXWJL = $mol_type_enforce<
 		`Th-U-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZO7KP1BG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FKCTS06R = $mol_type_enforce<
 		`Li-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G9CWASOF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RQ3FPHZ5 = $mol_type_enforce<
 		`Lu-Th-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6YZE7VR3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J6IX6SWM = $mol_type_enforce<
 		`Tb-Nd-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__061MOSU1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0F66FT36 = $mol_type_enforce<
 		`Nb-Bi-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__50L76Q2C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HLTYOMPE = $mol_type_enforce<
 		`Cd-Si-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YJG8K05T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R7ZDF0JH = $mol_type_enforce<
 		`Sm-Ho-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QDVHY0GT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VSQ9K2VN = $mol_type_enforce<
 		`Be-In-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__42P3W9UV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6S9J9II5 = $mol_type_enforce<
 		`Sr-Ca-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F2X2K4TN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JESW4MG8 = $mol_type_enforce<
 		`Pd-Pt-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XKEIVLA9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KLZL7TYD = $mol_type_enforce<
 		`Pm-Pr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C8ZRKS31 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WRMBVFO3 = $mol_type_enforce<
 		`La-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WNFLFEDL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JA3PZA7K = $mol_type_enforce<
 		`Ce-Gd-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UB0CN3OH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LKFUC7OC = $mol_type_enforce<
 		`La-Ce-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PYFNE8G1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CQS92S2V = $mol_type_enforce<
 		`La-Th-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__322MSJJW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JGWZLUKS = $mol_type_enforce<
 		`K-Li-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UC8L92W6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__425KSQNV = $mol_type_enforce<
 		`Ho-Er-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WV0AGY2E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y1NB8QBI = $mol_type_enforce<
 		`Nd-Gd-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OOTE4EID = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__G4C4TF9J = $mol_type_enforce<
 		`Ce-Sm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XZO0WBE0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9W96DEYH = $mol_type_enforce<
 		`Nd-Dy-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PK1BYQ2J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H6V5XJXF = $mol_type_enforce<
 		`Tb-Lu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3TJGX6H4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MKU2V85H = $mol_type_enforce<
 		`Er-Pu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ESQPH9ZQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V9HXKR0A = $mol_type_enforce<
 		`Sm-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F3SNAUVM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LVJ0QCA5 = $mol_type_enforce<
 		`Pm-Sm-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U9VUA4WR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PB2WJM27 = $mol_type_enforce<
 		`Sc-U-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VBMND4HQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N0V430CY = $mol_type_enforce<
 		`Cs-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R64IPL3P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UCZBSPZK = $mol_type_enforce<
 		`Yb-Hf-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X88YZCIU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__566ZTTPW = $mol_type_enforce<
 		`Pr-Th-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BQHANEKP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J4RVWBCL = $mol_type_enforce<
 		`Zn-Ga-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2S2U0TVN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QFC70LY1 = $mol_type_enforce<
 		`Yb-Nd-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CJEHUJ4V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HJT3E6D7 = $mol_type_enforce<
 		`Er-Zr-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YHT9CC54 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DN10OIRD = $mol_type_enforce<
 		`Pm-Sm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QTYAZ449 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CE1AU4O7 = $mol_type_enforce<
 		`Mn-Cd-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KKP79T3K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V0S4T5E5 = $mol_type_enforce<
 		`Ba-La-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XER2UIUX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WWSA4CXQ = $mol_type_enforce<
 		`La-Tb-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NG6M4XIH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TH0DHMF7 = $mol_type_enforce<
 		`Yb-Nd-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FNOO6L6J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ASICL70Z = $mol_type_enforce<
 		`Pr-Y-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3PJXDUFZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OPAXK5M4 = $mol_type_enforce<
 		`Er-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MCQ5H4J0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9CPCWA0H = $mol_type_enforce<
 		`Co-Re-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2BT1F22G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B2JR3IN9 = $mol_type_enforce<
 		`Co-Ni-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JGF40YLR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C0VH0J0A = $mol_type_enforce<
 		`La-Ce-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UMRT07UM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0A4MMHW9 = $mol_type_enforce<
 		`Sm-Y-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P2WPL0CX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A1266O4E = $mol_type_enforce<
 		`Pm-Sm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R0OCITGJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W5LC0G8B = $mol_type_enforce<
 		`Yb-Y-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7H420WUR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3VY2I9WD = $mol_type_enforce<
 		`Hf-Mg-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GQPCOW5S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VR3PBVMT = $mol_type_enforce<
 		`Pr-Ho-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T0ZFSJQ6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TO4NY3DW = $mol_type_enforce<
 		`Pm-Pr-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8BH190A8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6IN4EMIX = $mol_type_enforce<
 		`Pm-Sm-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KIDSZT4E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QNTK8YHQ = $mol_type_enforce<
 		`K-Mg-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y40FW0RL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6OQ40SPQ = $mol_type_enforce<
 		`V-In-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KTM7J2C7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B1JWHIN6 = $mol_type_enforce<
 		`Yb-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UCNCOZM1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JZFQT47A = $mol_type_enforce<
 		`Li-Tb-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__63B21RQM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HE5L7QV6 = $mol_type_enforce<
 		`Y-Th-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H3FQI7MB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XO2HQJ5H = $mol_type_enforce<
 		`Th-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S7TIDFMU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0UCC2DQX = $mol_type_enforce<
 		`Ba-Eu-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AYP9QSWZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OLN20OWU = $mol_type_enforce<
 		`Ce-Sm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y21K8HL9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q43GS2YP = $mol_type_enforce<
 		`Pr-Lu-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RWDALYV0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I1SFQFT1 = $mol_type_enforce<
 		`Ba-Ca-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R6Q0F1R1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3PIVEJHA = $mol_type_enforce<
 		`Ge-Bi-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z858HCRA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L3R75YSG = $mol_type_enforce<
 		`Ce-Th-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IGP1QYE7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__USA1O552 = $mol_type_enforce<
 		`Rb-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L8LU8EGX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0N7MDW0D = $mol_type_enforce<
 		`Yb-Pr-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FDF0N1O2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4MNELGM4 = $mol_type_enforce<
 		`Si-Ge-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DCW7NZEY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S64SDDHH = $mol_type_enforce<
 		`Li-Er-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O4O0H2K1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QQDFZV6K = $mol_type_enforce<
 		`Ba-La-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y75QTQCS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__USWJNGUW = $mol_type_enforce<
 		`Er-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__USOCOONI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1FFYHDYG = $mol_type_enforce<
 		`Ce-Pr-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PVVT2OOB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZTBUAAGK = $mol_type_enforce<
 		`Y-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8764BSLL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RGYQ8OVP = $mol_type_enforce<
 		`Na-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3D6SGMHF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__78O58OIO = $mol_type_enforce<
 		`Yb-Tm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OPK5SOKV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BBAYW6QW = $mol_type_enforce<
 		`Tb-Pm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BMTTEA4Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y70VC2XZ = $mol_type_enforce<
 		`Sm-Pu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BPL4KXU1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N68FFGTI = $mol_type_enforce<
 		`Pr-Tm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__40UI5EXZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DBRKW7T9 = $mol_type_enforce<
 		`Ba-Sc-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4YEPVBZP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7UXHJ09F = $mol_type_enforce<
 		`Ag-Bi-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WCI2R7LN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TN1NVMK0 = $mol_type_enforce<
 		`Nb-Cu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ALM9J7R9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ENKRVUFY = $mol_type_enforce<
 		`Tb-Ho-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1LGOXCB8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6P55LOW0 = $mol_type_enforce<
 		`Pm-Sm-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HKYU9W81 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MAP8WFL1 = $mol_type_enforce<
 		`Zn-Ge-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MX0DI9GO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__07IZC9DH = $mol_type_enforce<
 		`Tb-Pr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TD900VDH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R2IX5ZMM = $mol_type_enforce<
 		`Ca-Ce-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8DCJJP0H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OUIZUFIB = $mol_type_enforce<
 		`Tm-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W4ICWY79 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JTXVZINM = $mol_type_enforce<
 		`Tc-Ni-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M5UDAFND = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AGD5AG20 = $mol_type_enforce<
 		`Eu-Pu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NRHZ132C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WGYW5KAI = $mol_type_enforce<
 		`La-Tb-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8NXRRXFG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__257SEB41 = $mol_type_enforce<
 		`Yb-Lu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XBGCKK7L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BKMY5O9E = $mol_type_enforce<
 		`Yb-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SVH3UOPR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PVQWC8WX = $mol_type_enforce<
 		`Ce-Y-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FS6EZHRM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A08IAWWM = $mol_type_enforce<
 		`Tb-Nd-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L1E4XMZM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IYM6P0JM = $mol_type_enforce<
 		`Cu-Ir-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9G4VPRW5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IUNKNY5M = $mol_type_enforce<
 		`Ba-La-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QSKB0FN8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AD7TLL47 = $mol_type_enforce<
 		`La-Gd-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UMR3JXBZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__09QX0CK8 = $mol_type_enforce<
 		`Ga-Sn-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X5SXBQT3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L563SOIK = $mol_type_enforce<
 		`Tb-Ho-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y95SWBR7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6CKXVBNG = $mol_type_enforce<
 		`Er-Th-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WIV8W1Q6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RQOTB76I = $mol_type_enforce<
 		`Pr-Y-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F3YD7OXV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EEAJPQ13 = $mol_type_enforce<
 		`Dy-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B5AFQ9JX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MXYLBWCD = $mol_type_enforce<
 		`Lu-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OEBZLAO8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BD2D9CU2 = $mol_type_enforce<
 		`Pr-Gd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9JFC4E7B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__54G86O4W = $mol_type_enforce<
 		`La-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TR2W9YF4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VWWUWYWA = $mol_type_enforce<
 		`Tb-Pu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JKF93ICR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GJ471E2Y = $mol_type_enforce<
 		`Lu-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DIPTOXU8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DP3T6G3A = $mol_type_enforce<
 		`Cs-Rb-Mg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4IXZXT6T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y37R1A2F = $mol_type_enforce<
 		`Fe-Co-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZT9E3J7U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NZ67D9KV = $mol_type_enforce<
 		`K-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TJFW9T8T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SWIXHDSB = $mol_type_enforce<
 		`Tb-Yb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NNQ2W5SG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3M4YBOZH = $mol_type_enforce<
 		`Fe-Au-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I64AQOFA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__76SPO7DI = $mol_type_enforce<
 		`Dy-Ho-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KL50HNZX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TZ6TA4GB = $mol_type_enforce<
 		`Y-Pu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V6MLC60W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BO5MP1QT = $mol_type_enforce<
 		`Tb-Pr-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FMWIFQ94 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GP3H10T1 = $mol_type_enforce<
 		`Sc-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PY3OM185 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__10RMDCXY = $mol_type_enforce<
 		`Gd-Ho-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__86Q0L8Q6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CBE3JQE5 = $mol_type_enforce<
 		`Li-Y-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TLDPYLF5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8KRQMFMZ = $mol_type_enforce<
 		`Mn-V-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J98QEONH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TDZHMUA2 = $mol_type_enforce<
 		`Yb-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q4MI46BP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UZBN4YDH = $mol_type_enforce<
 		`Sm-Y-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PWNVENTU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AN08B1PK = $mol_type_enforce<
 		`La-Nd-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__168J59WT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C4ZHI7IG = $mol_type_enforce<
 		`Ga-Si-Sn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OJI5GTOV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3KGUSET3 = $mol_type_enforce<
 		`Ba-Y-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B426D1P7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IRG6HCBM = $mol_type_enforce<
 		`Nd-Y-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9RGWVRF2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TYG2937B = $mol_type_enforce<
 		`Gd-Lu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2P23OXU3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HPARZSFX = $mol_type_enforce<
 		`Eu-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RVT207M3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1VEA1MDB = $mol_type_enforce<
 		`Er-Tm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YQVTA1RJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FZ6JRDTG = $mol_type_enforce<
 		`Be-Ga-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BP91MQU0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__57ZRNYVN = $mol_type_enforce<
 		`K-Li-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L43830C3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ONIJ3OLY = $mol_type_enforce<
 		`Tl-V-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QUIHH69Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TOR3HUVD = $mol_type_enforce<
 		`Co-Os-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RMAZZMG5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EQNZ3SSE = $mol_type_enforce<
 		`V-Hg-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KTET0SMW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QF7GLUEE = $mol_type_enforce<
 		`Fe-Co-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OY70HQI6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EKLWDJ8G = $mol_type_enforce<
 		`La-Tb-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5897KUKW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KQGPE0VJ = $mol_type_enforce<
 		`Pr-Dy-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P2VRLJTI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4056HBCV = $mol_type_enforce<
 		`Ta-Nb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H2XG8U21 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9WY9XA42 = $mol_type_enforce<
 		`Li-Pu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YQ619505 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ITCOVO8N = $mol_type_enforce<
 		`Zn-In-Ga`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6DE5FR31 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__67Q67QYB = $mol_type_enforce<
 		`Tb-Ce-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PU1VYV58 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A6US7VH3 = $mol_type_enforce<
 		`Ca-Yb-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8MLJCA9R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0Q3FTJLA = $mol_type_enforce<
 		`La-Y-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8OFPN228 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TAB014BQ = $mol_type_enforce<
 		`Yb-Ho-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__80HABN9A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RUI1766N = $mol_type_enforce<
 		`La-Lu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OU16KPJH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZZM0TC99 = $mol_type_enforce<
 		`Li-Ho-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HZXNWCKW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U0TB1HPY = $mol_type_enforce<
 		`Yb-Pr-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1IIU93IO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7OQ0IJWZ = $mol_type_enforce<
 		`Li-Pr-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GN4YDND0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D39L0FUS = $mol_type_enforce<
 		`Ho-Th-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D7LKF7YU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K0R44HZF = $mol_type_enforce<
 		`Pr-Sm-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9HKMYW5M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YKSZLI7I = $mol_type_enforce<
 		`Tb-Lu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1OQ1Z7ZO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y27YPJYA = $mol_type_enforce<
 		`Yb-Eu-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V7XGSPHJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O5R49ZPD = $mol_type_enforce<
 		`Nd-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8D5EX0RL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N3RTREJ6 = $mol_type_enforce<
 		`Ga-Hg-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XM1FIA4Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y6RKXSXN = $mol_type_enforce<
 		`Pm-Nd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JIFUUN4X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2MX87EYM = $mol_type_enforce<
 		`Ba-Gd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZD5DBLOY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SCMFI6QK = $mol_type_enforce<
 		`Ni-Ru-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1FEU1OZF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KWONOLPS = $mol_type_enforce<
 		`Y-Er-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J72WV8NR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y4JQXW78 = $mol_type_enforce<
 		`Ca-Lu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KQHN6GWG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2DO2478K = $mol_type_enforce<
 		`Al-Zn-Sn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__18EYJDTT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YGHVOQVA = $mol_type_enforce<
 		`Th-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KTDNLNAF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5K4WWAMS = $mol_type_enforce<
 		`Fe-Ni-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z72NLIR9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VSUJAMIY = $mol_type_enforce<
 		`Tb-Sm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HNOPM6W8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J7P5QHYD = $mol_type_enforce<
 		`Li-Pu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UW2D7KK2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HQVD9T9H = $mol_type_enforce<
 		`Pm-Dy-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LOFJTR51 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L247FSBW = $mol_type_enforce<
 		`Fe-Co-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EUIH5792 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9X6G18FS = $mol_type_enforce<
 		`Gd-Th-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5QSIUFWK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PHOVP0KK = $mol_type_enforce<
 		`Dy-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G2YZXU72 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__02CHMCTC = $mol_type_enforce<
 		`La-Ce-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X4R9840S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A3K40HU1 = $mol_type_enforce<
 		`Yb-Th-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8Z715IZG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1B59Z6G2 = $mol_type_enforce<
 		`Tb-Ho-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DOSFGS77 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7I8NWY5Z = $mol_type_enforce<
 		`Tb-Y-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MTIRMZJA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__726LCVJK = $mol_type_enforce<
 		`Tc-Ir-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FQKEAUW8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HZNW03BV = $mol_type_enforce<
 		`Ce-Nd-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EFYA5UUC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J3O9JTGZ = $mol_type_enforce<
 		`Yb-Y-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JGA34DVI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XJ9LWW5S = $mol_type_enforce<
 		`Na-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QECW17JX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__G0CA2MYK = $mol_type_enforce<
 		`Nd-Lu-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ML6PRRPO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P0XOYJXO = $mol_type_enforce<
 		`Ho-Pu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ABWXPB1B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H1QJGMF6 = $mol_type_enforce<
 		`Ba-Ca-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JEVJ8TBN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JZRICS73 = $mol_type_enforce<
 		`Fe-Os-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7DBN825J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__83W2MKA7 = $mol_type_enforce<
 		`Pm-Ho-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6AMQDZ4C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QH87DAWJ = $mol_type_enforce<
 		`Gd-Th-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G5ELC8HO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZB5UZS6K = $mol_type_enforce<
 		`Tb-Dy-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UDIVQNSB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HEIZNRUJ = $mol_type_enforce<
 		`La-Sc-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NCLRCFMC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NR9U0AXN = $mol_type_enforce<
 		`Sr-Mn-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BQ89F4QT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__G34A8O0N = $mol_type_enforce<
 		`La-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VVXH6HM7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__05NI18JR = $mol_type_enforce<
 		`Dy-Lu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZFC2NGYX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YGIOEN09 = $mol_type_enforce<
 		`Tl-Zn-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X5SGDXPA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7766SLPB = $mol_type_enforce<
 		`Nb-Tl-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XLHV5JPE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N37JOGE2 = $mol_type_enforce<
 		`Pu-Np-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3PP41XZ7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UQMMUN90 = $mol_type_enforce<
 		`Ir-Pt-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DWK3LIRG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HEEMFTVR = $mol_type_enforce<
 		`Yb-Dy-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XQUL3JN1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JYJ1J1SC = $mol_type_enforce<
 		`Li-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CR1R68CG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TFWVQHUK = $mol_type_enforce<
 		`Pr-Tm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q5GPRWFC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0M5DN8ZQ = $mol_type_enforce<
 		`Nd-Dy-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RVANKPSZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SNWIZIYK = $mol_type_enforce<
 		`Ce-Tm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DQEAP4RV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KBMWQ7I7 = $mol_type_enforce<
 		`Be-Al-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8Q49OC3A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VU5QX2SD = $mol_type_enforce<
 		`Dy-Th-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XVTIS68D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HSR4TFN5 = $mol_type_enforce<
 		`Al-Cd-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SUWOLQWO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LZ5CN7WA = $mol_type_enforce<
 		`La-Er-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WSBHVEWY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IV72A1Y1 = $mol_type_enforce<
 		`Tb-Nd-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N42ZKV5P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__08R57U7J = $mol_type_enforce<
 		`Eu-Hf-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q0KTEWKM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2UPAFSII = $mol_type_enforce<
 		`Re-Os-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6Z46P5M3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OYLE8969 = $mol_type_enforce<
 		`Nd-Tm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AJO3BPF6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__69NO5NW3 = $mol_type_enforce<
 		`Sm-Tm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YCHQJ0WK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2NAU0L8V = $mol_type_enforce<
 		`Cs-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BBLHZDE3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2G77D0H7 = $mol_type_enforce<
 		`Tb-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__48N3GSBD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TADJRZMK = $mol_type_enforce<
 		`Mg-Mn-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WPPPTTEV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZD6TI3J1 = $mol_type_enforce<
 		`Cu-Pd-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E9Q6G11I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D043QYCW = $mol_type_enforce<
 		`Li-Er-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RG8XETQB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E2G58Q9P = $mol_type_enforce<
 		`Li-Lu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EN0G3YV3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W9DD6K06 = $mol_type_enforce<
 		`Y-Lu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9EBXJ4R5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U4WZ4CBO = $mol_type_enforce<
 		`Yb-Ho-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YI0MV7TS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PLCMGWUP = $mol_type_enforce<
 		`Li-Sm-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__39VUFVE3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5W095KMZ = $mol_type_enforce<
 		`Dy-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HZ7US3HX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F97NL5FA = $mol_type_enforce<
 		`Ca-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NUDJ29W1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M4IUVCML = $mol_type_enforce<
 		`Pr-Hf-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SGFOGNKM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T5ZCSUWX = $mol_type_enforce<
 		`La-Yb-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VFA5EV4D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D49EN88Q = $mol_type_enforce<
 		`Eu-Mn-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RHA5TUW2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A26MZCU8 = $mol_type_enforce<
 		`Tb-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3JNS0BOD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3WAK9SJ7 = $mol_type_enforce<
 		`Yb-Nd-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BFJCV51O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1X4JB24X = $mol_type_enforce<
 		`Ti-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H99PYU5V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__55RTZMB5 = $mol_type_enforce<
 		`Mg-Zr-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OJN6R2JM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BR8F5CTB = $mol_type_enforce<
 		`Ta-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PCYTSAA9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LMPG1LRQ = $mol_type_enforce<
 		`Li-Nd-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LTL77W0C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KAFE5NKE = $mol_type_enforce<
 		`Tl-Ag-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BEDQ5XJ7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SY5COWDL = $mol_type_enforce<
 		`Tb-Gd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GZCIRIJ3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EENB62GS = $mol_type_enforce<
 		`Gd-Pu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YXBSFNSB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JUU2Q44V = $mol_type_enforce<
 		`Cu-Pd-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3RPKOX8S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BGFW80ZI = $mol_type_enforce<
 		`Li-Zr-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TSNYZGB4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ST2JBTH2 = $mol_type_enforce<
 		`Gd-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U7LY0J5Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZLH58UD7 = $mol_type_enforce<
 		`Cu-Ru-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7LSEN872 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BICKC9QL = $mol_type_enforce<
 		`Li-Er-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZZP9ZLQR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A8QSKYLF = $mol_type_enforce<
 		`Yb-Sc-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G33MU1X2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5WZPKQWX = $mol_type_enforce<
 		`Gd-Er-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JMGUGVW6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2Y8EZ6KF = $mol_type_enforce<
 		`Pr-Lu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HPFAN861 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DZ9JPKB4 = $mol_type_enforce<
 		`V-Fe-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M774W7RX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O7Y3X6WA = $mol_type_enforce<
 		`La-Gd-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3NHLZVNN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DG0RF53H = $mol_type_enforce<
 		`Ta-V-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F6Y42IZF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__77I3VG64 = $mol_type_enforce<
 		`Tb-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NCT8LRKM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XI8YB5RS = $mol_type_enforce<
 		`Cr-Mo-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4NI88D7K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OFGG0JIV = $mol_type_enforce<
 		`Tb-Ce-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NHWJI8X2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FEGQWWCW = $mol_type_enforce<
 		`Ca-La-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S3AD2V4H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QIEYE62D = $mol_type_enforce<
 		`Gd-Y-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QG5GCXQL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2GTH6GIC = $mol_type_enforce<
 		`Cr-Fe-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M7US5F8Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y4U73PYH = $mol_type_enforce<
 		`Cr-Bi-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CHEX0L9S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C2C6MLMG = $mol_type_enforce<
 		`Ce-Pr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2JOHS2RL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EZHZK9EX = $mol_type_enforce<
 		`Sr-Sc-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N1KD6JN6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FV6J69W5 = $mol_type_enforce<
 		`Ag-Ge-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SSE580ZJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1S7093XM = $mol_type_enforce<
 		`Y-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OAPPCHXF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7U3RF3GJ = $mol_type_enforce<
 		`Er-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JKS76OJL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SE3WMUR5 = $mol_type_enforce<
 		`Sm-U-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__54I0HPX6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H6EJUBUR = $mol_type_enforce<
 		`Cr-Hg-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PK7CPJDF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SJORALWG = $mol_type_enforce<
 		`La-Pr-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F2LXJJU7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GI44L5QH = $mol_type_enforce<
 		`Ca-Ce-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GKBPSS81 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5THIJ3KY = $mol_type_enforce<
 		`Th-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T004M27V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BQJL21AM = $mol_type_enforce<
 		`Ba-Nd-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__986C5A92 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SMQOLOPG = $mol_type_enforce<
 		`Ce-Eu-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X3M7WDO1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HZ1JDQ6D = $mol_type_enforce<
 		`Y-Ta-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__653WP9EB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C7T2206Y = $mol_type_enforce<
 		`Cs-Li-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3IVTN1LO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FOQ7QFSU = $mol_type_enforce<
 		`Tb-Nd-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AM2RDY60 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5LYY1T1H = $mol_type_enforce<
 		`K-Rb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8W3LDU7O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L6JI03PC = $mol_type_enforce<
 		`Ca-Tm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7UJ3U3F9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O80824TT = $mol_type_enforce<
 		`Tb-Dy-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I9SL81NZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CGO5B7RW = $mol_type_enforce<
 		`Ce-Pu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V3R9NXPY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NQU0LUKP = $mol_type_enforce<
 		`Yb-Hf-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UWLB0G9V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UROOKHAJ = $mol_type_enforce<
 		`Y-Sc-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q5TTN7TE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VR7L6G51 = $mol_type_enforce<
 		`Gd-Dy-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T3DV4NQZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YL263NO9 = $mol_type_enforce<
 		`Yb-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__71ALPBC1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5UA986XT = $mol_type_enforce<
 		`Ce-Pr-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O30Y0WX0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ABMZJU6O = $mol_type_enforce<
 		`Dy-Er-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OONBLRIM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7AFE29CE = $mol_type_enforce<
 		`Y-Er-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SOERNY2X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TYOR32SL = $mol_type_enforce<
 		`Hf-Th-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7KV6PX8J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1ZE1C1N5 = $mol_type_enforce<
 		`Cu-Mo-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5IC2VRJG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LF1TX3OA = $mol_type_enforce<
 		`Ho-Pu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HSJ2KCFC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FCYHVD1S = $mol_type_enforce<
 		`Na-Mg-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X7L45XBS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XQ2XOF21 = $mol_type_enforce<
 		`Cu-Re-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SWLXD1CO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JXX5TFKY = $mol_type_enforce<
 		`Si-Ag-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y1R2A4WH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y2BSO538 = $mol_type_enforce<
 		`Ba-La-Eu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OSGRNKTO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5RK2NSH0 = $mol_type_enforce<
 		`Pm-Lu-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4BZ7VBUE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4K5EXT62 = $mol_type_enforce<
 		`Mn-V-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HQ9YIPJT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4J914S3Q = $mol_type_enforce<
 		`Ca-La-Pm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZH9PG86J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZQHQVG76 = $mol_type_enforce<
 		`Pr-U-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WHITEJ7I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6KHH9K7L = $mol_type_enforce<
 		`Nd-Er-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HMNTKZB7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9J2QED3P = $mol_type_enforce<
 		`Re-Ni-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0L4HSW5H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5CVF6PUK = $mol_type_enforce<
 		`Gd-Y-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RHY7DU2A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__121JVVOR = $mol_type_enforce<
 		`Ce-Hf-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HQ7RUD39 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5UI43RR8 = $mol_type_enforce<
 		`La-Nd-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZKBDBPFC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NACHY0LH = $mol_type_enforce<
 		`Yb-Ho-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3XLVIEWF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HEHSCVQB = $mol_type_enforce<
 		`Al-Cd-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WEXMQPTG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QZMZ5B6X = $mol_type_enforce<
 		`Al-Tl-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TUTXXZSD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D8PPQWCH = $mol_type_enforce<
 		`Tb-Sm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YYQUPASX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I9JTFO72 = $mol_type_enforce<
 		`Pm-Sm-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RRI7DZ8L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2S95AXIU = $mol_type_enforce<
 		`Ce-Ti-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2DKD3XCD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UZ4G9OV6 = $mol_type_enforce<
 		`Pr-Gd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2X3FZ04A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KBZI1EUX = $mol_type_enforce<
 		`Dy-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F7NLEKJA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RG0SXKV0 = $mol_type_enforce<
 		`Zn-Sn-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ABTJQMQG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EMZPD5NC = $mol_type_enforce<
 		`Rb-Mg-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YIIGDMQE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VQTBJJ7G = $mol_type_enforce<
 		`Tl-In-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7IORS2NH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2NM5OO0I = $mol_type_enforce<
 		`Ca-V-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N26JKTIQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F7P0AZU4 = $mol_type_enforce<
 		`Th-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QZDZXSXR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__701THOJE = $mol_type_enforce<
 		`Gd-Er-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1BLBS81H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RBM7WM48 = $mol_type_enforce<
 		`La-Er-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9K2XY1RS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DHE1UD5D = $mol_type_enforce<
 		`Nd-Th-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZHJAYC44 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DZ7TRL1T = $mol_type_enforce<
 		`Ce-Pm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GNI39MOB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZP5VPL8K = $mol_type_enforce<
 		`Tb-Y-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__REXOW06N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MGLNK1BR = $mol_type_enforce<
 		`Gd-Th-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GRHXAWKV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__58AUWGFB = $mol_type_enforce<
 		`Yb-Pr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H73YQDZF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M78CW2UB = $mol_type_enforce<
 		`Yb-Hf-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QM85LRLG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VU3UYUSU = $mol_type_enforce<
 		`Rb-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EBGRLJ7B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8L6Z7JHN = $mol_type_enforce<
 		`Dy-Pu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LSYE1LBO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UVJSDYA7 = $mol_type_enforce<
 		`Be-Ga-Sn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2Y5DJLLD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NKH0OR3O = $mol_type_enforce<
 		`Y-Ho-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M24P0N94 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__96IHYWA8 = $mol_type_enforce<
 		`Ba-Yb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MQTCPUQW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NUCTQUI3 = $mol_type_enforce<
 		`Yb-Y-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0SBVNL76 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PY05IUM3 = $mol_type_enforce<
 		`Tb-Nd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HCS61BJD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RCXB9B4L = $mol_type_enforce<
 		`Ho-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H5PNQCV5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KP3LX0AG = $mol_type_enforce<
 		`Pm-Gd-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZRV33T92 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1XDBGZO7 = $mol_type_enforce<
 		`Li-Mn-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I3ABLW0W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TMPAOT3D = $mol_type_enforce<
 		`Ce-Eu-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7ACKQRTF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2S8DO8BJ = $mol_type_enforce<
 		`Be-Al-Zn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__68C28OO9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LR0QFNM5 = $mol_type_enforce<
 		`Zn-Ge-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JJ1NKUBL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LUTM4V2O = $mol_type_enforce<
 		`Pr-Ho-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GC9AMZBM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ADD00BEI = $mol_type_enforce<
 		`Tb-Y-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YTEVYH0W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LNT0BK21 = $mol_type_enforce<
 		`Li-Sm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VC8212LY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RU6C4JZ2 = $mol_type_enforce<
 		`Dy-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3VLC33UB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W8LXFVTM = $mol_type_enforce<
 		`Ba-Ca-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I0P79ZOA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2R3SI6J1 = $mol_type_enforce<
 		`Ho-Th-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V3P4CKLX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HQOLHL19 = $mol_type_enforce<
 		`Er-Hf-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2WZ6I7IF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XPF3ZP8K = $mol_type_enforce<
 		`Ca-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PIY5R0SO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7MPVAMGE = $mol_type_enforce<
 		`Os-Pd-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L5NSS964 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VUCHAL06 = $mol_type_enforce<
 		`Pr-Pu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EJ2CMSET = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BWYSBZ3W = $mol_type_enforce<
 		`Cr-Ag-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OJ57SJ0O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TVCY5SGO = $mol_type_enforce<
 		`La-Ce-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1Y1XJX3C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YGA9NFKF = $mol_type_enforce<
 		`Mn-Cu-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JOJ3PL9G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HH3E1CE0 = $mol_type_enforce<
 		`Yb-Sc-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YBG3DKVY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SPSZLGFZ = $mol_type_enforce<
 		`La-Nd-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3QZ4DKDD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__92IL9KIU = $mol_type_enforce<
 		`Ce-Ho-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E1JPHEQ6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZMEHT99J = $mol_type_enforce<
 		`Re-Ag-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YWCCJ76D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JOQK0W5B = $mol_type_enforce<
 		`Tl-Mo-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SSFW2AZO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XQTS9MMJ = $mol_type_enforce<
 		`Sm-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2UXPAGA4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3Y39E3LE = $mol_type_enforce<
 		`Co-Ir-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3EX6TUDQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3UX68WD1 = $mol_type_enforce<
 		`Pm-Gd-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5BXWSSKO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XLFPULYT = $mol_type_enforce<
 		`Ce-Er-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZBLNOVW5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6WMFRU55 = $mol_type_enforce<
 		`Ce-Sm-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P07ZT1IK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CZR29AWV = $mol_type_enforce<
 		`La-Tb-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0TOJ5J6W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SRH1SOFW = $mol_type_enforce<
 		`Yb-Gd-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CW1AHC6Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FH23O0OR = $mol_type_enforce<
 		`Cu-Ni-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G4RJR7U9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M2NUMNXO = $mol_type_enforce<
 		`Rb-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NKJ98LNV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YUR1WR84 = $mol_type_enforce<
 		`Yb-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DAKONL3P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QZ2PTC6V = $mol_type_enforce<
 		`Nd-Sc-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1CC48QVB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4AZO0SK9 = $mol_type_enforce<
 		`Tl-Cd-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KO30EI4G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KESSWZ3V = $mol_type_enforce<
 		`Tb-Sm-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z5INBJGU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__44ZDOQGA = $mol_type_enforce<
 		`Sm-Gd-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JL1P5UVI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WRERNMAB = $mol_type_enforce<
 		`Tb-Yb-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CZRBKMRF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XJXUWH3K = $mol_type_enforce<
 		`Li-Er-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DU9OVJ4O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BNIA9TMD = $mol_type_enforce<
 		`Pr-Er-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8XB7GYFE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XBFWPYUB = $mol_type_enforce<
 		`Mg-U-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__39VKRG4N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RDN31C0G = $mol_type_enforce<
 		`La-Ce-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FVRKU3IU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CMHJMP67 = $mol_type_enforce<
 		`Th-Sc-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MMSRYYHR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IEAWXDX0 = $mol_type_enforce<
 		`Nd-Gd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P8Z6R7NL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8X78VY7D = $mol_type_enforce<
 		`Eu-Hf-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PZLJ4H99 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PL4281DB = $mol_type_enforce<
 		`Ce-Sc-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GFG5MXS0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DC1E92TV = $mol_type_enforce<
 		`Gd-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L6JLI4PX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S5PZ7O6J = $mol_type_enforce<
 		`Er-Ti-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ATYSK8JT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GRBC2498 = $mol_type_enforce<
 		`Ca-Pm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QIIGPW3N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XY6UDD6P = $mol_type_enforce<
 		`Co-Cu-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E96211DM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4ILTEYW4 = $mol_type_enforce<
 		`Yb-Eu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T0W2YRG1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NT242WYI = $mol_type_enforce<
 		`Sm-Lu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5690K5RI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B9BVG9LV = $mol_type_enforce<
 		`Y-U-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VMAX3JLG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7W0IWII3 = $mol_type_enforce<
 		`Y-Th-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4VR8HL4Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8Q1RBKFX = $mol_type_enforce<
 		`V-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__28DT253B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RJSYAWTL = $mol_type_enforce<
 		`Ce-Tm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FDZ9TGD1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__70QF6RDS = $mol_type_enforce<
 		`Cs-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LM2K4HU4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NZI8A46W = $mol_type_enforce<
 		`Nd-Dy-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YRSCKQNA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SE4YYATE = $mol_type_enforce<
 		`Li-Ho-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YAOG36AT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VFAOSN81 = $mol_type_enforce<
 		`Si-Ag-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OIYVSLDE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KIXC0J6O = $mol_type_enforce<
 		`Yb-Sc-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RV91EH8V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XFM0VPVL = $mol_type_enforce<
 		`Tl-Cd-Ga`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EVWMR17D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HBDUTP4F = $mol_type_enforce<
 		`Tb-Th-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8IC6AQRW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4QFQ9XBJ = $mol_type_enforce<
 		`Ce-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JOZPQ1TU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F1T57TGA = $mol_type_enforce<
 		`Yb-Pr-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XT0EE1YQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1PXH6H48 = $mol_type_enforce<
 		`Nd-Th-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M0NXFPDL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AKDAMPWK = $mol_type_enforce<
 		`Pr-Nd-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__315P967U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TDLSG7OZ = $mol_type_enforce<
 		`Li-Sc-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B9REVS3I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O8QWD29C = $mol_type_enforce<
 		`Yb-Ho-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EVCX6M7M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XAVH53B7 = $mol_type_enforce<
 		`Tb-Ho-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HEUWCJH3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LGKDUMS0 = $mol_type_enforce<
 		`La-Pu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S5B0Y616 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SSFA45S0 = $mol_type_enforce<
 		`Nd-Dy-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K1SVBR0F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2DM272JZ = $mol_type_enforce<
 		`Pm-Nd-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5WVB8QKJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D5PTJPBP = $mol_type_enforce<
 		`Li-Tb-Pr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__18DOT19H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N9LTC0H7 = $mol_type_enforce<
 		`Gd-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7NQ0UJ80 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HGVRRBYX = $mol_type_enforce<
 		`Li-La-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KYN5F0T3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H2FC8YX5 = $mol_type_enforce<
 		`Pu-Ti-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GMGY62A8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HLHNVV9J = $mol_type_enforce<
 		`Na-Ca-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OONOFP9O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RAZ4LJPX = $mol_type_enforce<
 		`Y-Nb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FAFOJ19P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IJFZVBE7 = $mol_type_enforce<
 		`Ce-Y-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LSEU2FJF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VFGG7FQK = $mol_type_enforce<
 		`Hf-Sc-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VX5GYPOE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0HFPYNJ5 = $mol_type_enforce<
 		`La-Tm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZBS53O5G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PBNTVSZW = $mol_type_enforce<
 		`Ho-Lu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PR0Q6S3D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EM4U887R = $mol_type_enforce<
 		`Ca-Sc-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XJ6Q3THR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NWM4OHOH = $mol_type_enforce<
 		`Nd-Sc-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F3VRG3NV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J0U6PDWW = $mol_type_enforce<
 		`La-Tb-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LQ8BFMHH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__46R1EAZB = $mol_type_enforce<
 		`Yb-Gd-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XGOXJZN2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C65H7VON = $mol_type_enforce<
 		`Tc-Pd-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L50H652H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VJUIU1TM = $mol_type_enforce<
 		`Li-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RTS1OE4J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__586SE9H8 = $mol_type_enforce<
 		`Li-Sm-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FS75KVPU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MPW87WKY = $mol_type_enforce<
 		`Be-Ge-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NM4Z32LA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0KYIXQ59 = $mol_type_enforce<
 		`Ca-Tb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EO3WG4JR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5N6VDUZB = $mol_type_enforce<
 		`K-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2UU7UG4X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PPAK3DMY = $mol_type_enforce<
 		`Pm-Gd-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I0VWOXLW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__28R5JY80 = $mol_type_enforce<
 		`La-Sm-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YY0ER6XD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RWAW47OV = $mol_type_enforce<
 		`Ca-Yb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z923PYIP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4YQL1TJO = $mol_type_enforce<
 		`Nd-Gd-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XY01F9MC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DV26EAF7 = $mol_type_enforce<
 		`Pm-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ELUNXQ9S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JW72N7EX = $mol_type_enforce<
 		`Yb-Th-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DL7QAHL5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GDFSIQVI = $mol_type_enforce<
 		`Ce-Hf-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UCJ7CLVF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UME887L9 = $mol_type_enforce<
 		`Dy-Tm-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6RCHM2E2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JUUJ50GH = $mol_type_enforce<
 		`Yb-Ta-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L1BY3P72 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F3UJ0A1J = $mol_type_enforce<
 		`Cu-Pd-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__25FM4C5V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KDJZCMXD = $mol_type_enforce<
 		`La-Tb-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YP94CQ7E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PI6SSYGG = $mol_type_enforce<
 		`Tm-Pu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HTJTOFAZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__G6C0VQZM = $mol_type_enforce<
 		`Tb-Ho-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CW37JCY8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6ZD5F6B5 = $mol_type_enforce<
 		`La-Sc-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NTLG2XZ9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SKNNQ3H6 = $mol_type_enforce<
 		`Sm-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O9TRDCQZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZMFVZJ5I = $mol_type_enforce<
 		`Li-Mn-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZQ98CRAG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U8XHHV7J = $mol_type_enforce<
 		`Ce-Gd-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4MC6FI7Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A7NKADMV = $mol_type_enforce<
 		`Sc-Nb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__66HCEDSM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I8J43D51 = $mol_type_enforce<
 		`Ta-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__14TTVS6U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WRPNN7JA = $mol_type_enforce<
 		`Nd-Sm-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N0TET00V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TPOS52AX = $mol_type_enforce<
 		`Nd-Ho-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__77OMWO1Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E72ZJDW7 = $mol_type_enforce<
 		`La-Er-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PZS5W2OG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J6FKVI43 = $mol_type_enforce<
 		`La-Y-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4NLO4DSF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AO4G0JGA = $mol_type_enforce<
 		`Ca-Nd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DN6ERH74 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0225D3G2 = $mol_type_enforce<
 		`Re-Hg-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XXSQVJES = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BUGFDYYB = $mol_type_enforce<
 		`Tb-Dy-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FO8Z6FJF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CKB1K5JE = $mol_type_enforce<
 		`La-Tb-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NO2N54KT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F8ACIU3M = $mol_type_enforce<
 		`La-Zr-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7B7J4QK2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4L50LT0C = $mol_type_enforce<
 		`Cu-Tc-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__91JXN5C3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0GBUXJDH = $mol_type_enforce<
 		`Li-Tm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B0GX6H4A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PBV1M39O = $mol_type_enforce<
 		`Si-Ge-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y5PJHYLG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5N8ASIK0 = $mol_type_enforce<
 		`Gd-Y-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OVJB1GFO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZEF8XWTO = $mol_type_enforce<
 		`Sm-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JL4AG768 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LMLSD86T = $mol_type_enforce<
 		`Na-Mg-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R87M75BR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PQUKKGSI = $mol_type_enforce<
 		`La-Ce-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RLNKD4FA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SCYKY4IP = $mol_type_enforce<
 		`Th-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__717159SD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__74UF3HP3 = $mol_type_enforce<
 		`Y-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K2J9UF47 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GY2SO56M = $mol_type_enforce<
 		`La-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5MJGRXBO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FXJU8077 = $mol_type_enforce<
 		`Dy-Tm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9NB0UDU4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__37ESX9LI = $mol_type_enforce<
 		`La-Pr-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R06FE8YP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FT0DCUWQ = $mol_type_enforce<
 		`Ca-La-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9F1W5OIX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DNBS6Y70 = $mol_type_enforce<
 		`Pr-Dy-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F5EKEYRJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z4YY0WWT = $mol_type_enforce<
 		`Ce-Nd-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3YYKT7CE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y3YA0KAF = $mol_type_enforce<
 		`Lu-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UYB7YDTK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__09EBJMNU = $mol_type_enforce<
 		`Y-Pu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MMEHIE49 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F2WFW5GG = $mol_type_enforce<
 		`Li-Ce-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YE7ATM7Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BUCYO6LO = $mol_type_enforce<
 		`La-Eu-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3TRX1VZT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3RYYS6CA = $mol_type_enforce<
 		`Nd-Sm-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GV668LGH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2CL0WUPW = $mol_type_enforce<
 		`La-Tb-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CJIPUAR5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__44YHCQMB = $mol_type_enforce<
 		`Li-Ce-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NFKDYZ2F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TKSF7H75 = $mol_type_enforce<
 		`Dy-Y-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NJ73FW2Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AQMPG9JD = $mol_type_enforce<
 		`Zn-Ga-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2MT0ZV07 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F0G1DJ0L = $mol_type_enforce<
 		`Y-Zr-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W9WG1OQY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__11LKZIX2 = $mol_type_enforce<
 		`Li-Pm-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ANGPV91R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YZ7HXQBX = $mol_type_enforce<
 		`Pm-Nd-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZWQEADVQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P38IY46J = $mol_type_enforce<
 		`Pr-Ti-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A1T9NUTP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__23VFCX65 = $mol_type_enforce<
 		`Ba-La-Pr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AFEWJIXB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0SRQEDBQ = $mol_type_enforce<
 		`Fe-Co-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OA8SFMHZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FX83LEYZ = $mol_type_enforce<
 		`Pr-Nd-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BJH8NP7T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SLDITFCI = $mol_type_enforce<
 		`Tl-In-Ga`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FLP7RL1L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VSR6SG9O = $mol_type_enforce<
 		`Li-Pm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G2GT0TM0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GMLJ9GA6 = $mol_type_enforce<
 		`Nd-Lu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DUBRPU6W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IFYAC3KJ = $mol_type_enforce<
 		`Pr-Nd-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1ECSLJH1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z8MTHDT2 = $mol_type_enforce<
 		`Pr-Th-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2MNIA8CO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M1OMZQOX = $mol_type_enforce<
 		`Ce-Y-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HJPE9GFH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q8N56M81 = $mol_type_enforce<
 		`Tb-Ce-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V3PYO27R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S95REC1Y = $mol_type_enforce<
 		`V-Cr-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MY7NI0S3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YKVWSI3F = $mol_type_enforce<
 		`Fe-Rh-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YTJ3FF9F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5HATTLBN = $mol_type_enforce<
 		`Cs-K-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2WPYBNBS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8JYOY2T7 = $mol_type_enforce<
 		`Er-Tm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0SLZ00W6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WT03W8XI = $mol_type_enforce<
 		`Tb-Y-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SF3CNLFA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AW2L0SF4 = $mol_type_enforce<
 		`K-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__94Z5ZIT7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F9CGCNEJ = $mol_type_enforce<
 		`Gd-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G32GFNBU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E4GQ3AL0 = $mol_type_enforce<
 		`La-Th-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GRW7ZGO3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3VP40JIT = $mol_type_enforce<
 		`Yb-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E0J8DE92 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DNNEVSYV = $mol_type_enforce<
 		`Ho-Th-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1K2WLL8V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BMVZQDUV = $mol_type_enforce<
 		`Pr-Ho-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4KTOL2AC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VT9FFBKL = $mol_type_enforce<
 		`Mg-V-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WMESFGF6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6DZ330KN = $mol_type_enforce<
 		`Ta-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AHYKDW6X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FP6P2O4U = $mol_type_enforce<
 		`Li-Mg-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G7VQ1RRJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CJ9187NY = $mol_type_enforce<
 		`Nd-Lu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YS7ZYXDB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WCZ6UDDW = $mol_type_enforce<
 		`Tm-Th-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6WZXPJ8Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NE5UFKIH = $mol_type_enforce<
 		`K-Hf-Mg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D196N77O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DQIGVBSR = $mol_type_enforce<
 		`Cs-Mg-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WFYA4YHA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B7YA6AS2 = $mol_type_enforce<
 		`Pr-Ta-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RIHVBXXK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PTV0BP2G = $mol_type_enforce<
 		`Ba-Gd-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__400GYAVO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KIP11YD2 = $mol_type_enforce<
 		`Sm-Er-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JODJIP3D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5EV31CRE = $mol_type_enforce<
 		`Yb-Eu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__17LT2AY2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H23MT68V = $mol_type_enforce<
 		`Pr-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6NIPUIGK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OOLT36IB = $mol_type_enforce<
 		`La-Pm-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EZITANKA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H2J9MCJE = $mol_type_enforce<
 		`Li-Nd-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MYVRGGWA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q0W8RVP1 = $mol_type_enforce<
 		`Yb-Dy-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BUCJXGIH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V8007FXV = $mol_type_enforce<
 		`Li-Gd-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UDJWPQ0G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__50BGFH1V = $mol_type_enforce<
 		`Ta-Nb-Tl`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__619BWJYI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U8R3AKQL = $mol_type_enforce<
 		`Fe-Cu-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ILXPRAER = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LWMPUNEN = $mol_type_enforce<
 		`Pm-Pr-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RIEQSMCV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JPS7V144 = $mol_type_enforce<
 		`Fe-Cu-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LUSRUXIL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__28HBNS0G = $mol_type_enforce<
 		`Dy-Th-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A91P24U0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AHTF0UD2 = $mol_type_enforce<
 		`Nb-Hg-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SMTSLX15 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K868CL1J = $mol_type_enforce<
 		`Er-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PGQ4G2LD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4J683DBU = $mol_type_enforce<
 		`Sr-Y-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y9XHS4PF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B8B2RH2W = $mol_type_enforce<
 		`Dy-Th-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__584D9D0Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IRITEWGJ = $mol_type_enforce<
 		`Tb-Yb-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C5EU2TMY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VBPEEY4Q = $mol_type_enforce<
 		`Nd-Y-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A62ZRDDO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__13HVLSPU = $mol_type_enforce<
 		`Be-Zn-Sn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R6S0VS34 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z8S88UAM = $mol_type_enforce<
 		`Eu-Y-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YA5KHTEQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OU4X1N5V = $mol_type_enforce<
 		`Yb-Y-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U9Y26NFX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6JGCNCM2 = $mol_type_enforce<
 		`Ce-Gd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2PLHPC7E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XSDVWTO2 = $mol_type_enforce<
 		`Gd-Th-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P2ECCQJG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HAABCBFU = $mol_type_enforce<
 		`Tl-Si-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AAT9T53T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4L1XLH9X = $mol_type_enforce<
 		`Sm-Dy-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2PN63YCV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4RYI943T = $mol_type_enforce<
 		`La-Ho-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GFJB3O45 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BZUIWRHH = $mol_type_enforce<
 		`Cs-Li-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AEP3QORN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VR72K4ZD = $mol_type_enforce<
 		`Cu-Bi-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MDKRV0DJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__635XHFHO = $mol_type_enforce<
 		`Yb-Y-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OUWDKUXO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W1X55FMW = $mol_type_enforce<
 		`Ce-U-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KBEOVB2J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RO1SKAXD = $mol_type_enforce<
 		`Li-V-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E60J5MGM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__66CR8C76 = $mol_type_enforce<
 		`Gd-Er-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P4PCVXQ0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H19K57R4 = $mol_type_enforce<
 		`Yb-Dy-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TNUQWZRH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZEOXSBFZ = $mol_type_enforce<
 		`Re-Ni-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XON19G6D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TM1MBX5F = $mol_type_enforce<
 		`Ca-Nd-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3E0TSKPL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1LAVDWYJ = $mol_type_enforce<
 		`Yb-Pu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YBOQFWCG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4XYGBJUA = $mol_type_enforce<
 		`La-Tb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1T6D8VJ7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B875PK0T = $mol_type_enforce<
 		`Ir-Rh-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5UT9PQOX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DWT0GBEA = $mol_type_enforce<
 		`Al-Tl-Ga`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YEDVQWM3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IAKAKT9X = $mol_type_enforce<
 		`La-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VM8IN2X9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AF9593WR = $mol_type_enforce<
 		`Nd-Gd-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__512ES9G9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HBXB2W2D = $mol_type_enforce<
 		`Al-Cd-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I95NJUNU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BARMX7OA = $mol_type_enforce<
 		`Li-Ho-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1YHERJV2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZSNDTMB6 = $mol_type_enforce<
 		`Ho-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YXQW6BDX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YOPZ5SJJ = $mol_type_enforce<
 		`Li-Gd-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TZLE3KJT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RQSMBSGN = $mol_type_enforce<
 		`Ga-Re-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__70G0MMK7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OC24HFX7 = $mol_type_enforce<
 		`Yb-Lu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YOY0MRO4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2SR6DFAB = $mol_type_enforce<
 		`Li-Pr-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XGM3UO26 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__605SON8L = $mol_type_enforce<
 		`U-Ta-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RCIXOGE4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GXCIR2BQ = $mol_type_enforce<
 		`Yb-Tm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6X2QPEL5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E1EYF2GQ = $mol_type_enforce<
 		`Ce-Ho-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7G7N0C6B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GEEEAHA6 = $mol_type_enforce<
 		`Fe-Ir-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__STCN2Z90 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8QIAK2YS = $mol_type_enforce<
 		`Gd-Pu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0C4UJ749 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4Y8S85W9 = $mol_type_enforce<
 		`Tb-Gd-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8VBNYC3K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JHF2LO84 = $mol_type_enforce<
 		`Ca-La-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7Y1SBXO9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8IHQQ4PG = $mol_type_enforce<
 		`Ce-Nd-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6D9SD795 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PNEPDEZG = $mol_type_enforce<
 		`Yb-Eu-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TLYSWQS3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A13LSH7K = $mol_type_enforce<
 		`Ta-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XVG0IBN1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CB21CWTT = $mol_type_enforce<
 		`Th-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__THMY7S7J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y59S8KIB = $mol_type_enforce<
 		`Ca-Tm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NNOV8XC0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SPWZ6Q3I = $mol_type_enforce<
 		`Er-Sc-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VJ5UMAON = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N7GW5FMI = $mol_type_enforce<
 		`Sm-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4T7KVB6D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LYGIMLDA = $mol_type_enforce<
 		`Ce-Pm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8KW5BEPB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IISJ0JPY = $mol_type_enforce<
 		`Pr-Sm-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8F5YRW0M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EJE3R1GZ = $mol_type_enforce<
 		`Ta-Tl-In`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LJ9Q5QEN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K9MC74Z2 = $mol_type_enforce<
 		`Li-Tb-Pm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QFA8XTKD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5GZRWXZB = $mol_type_enforce<
 		`Ba-Pm-Pr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NIT8PP7F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RNURK3FI = $mol_type_enforce<
 		`Li-Gd-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ILTC7GA9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YGRUOX8M = $mol_type_enforce<
 		`Hg-B-Sb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KADHCKLL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ONM2687M = $mol_type_enforce<
 		`Gd-Tm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QMVDXXKK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q93TNWZP = $mol_type_enforce<
 		`Tb-Pr-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1O4VQCYK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WKAZZCB3 = $mol_type_enforce<
 		`Ce-Gd-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OYJ3EW2D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W2LBUFHH = $mol_type_enforce<
 		`Ho-Tm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MXRIV2ZW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AJM6JWVD = $mol_type_enforce<
 		`Y-U-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CR2L3FEF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7Q4KNXWS = $mol_type_enforce<
 		`Ir-Pt-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VUFLLG87 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__G0V6FKGN = $mol_type_enforce<
 		`La-Tb-Yb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XLV9KE3J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__99E9JFZP = $mol_type_enforce<
 		`Li-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__URITNXXX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IZUTCRWJ = $mol_type_enforce<
 		`Tm-Lu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ROAVIENJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0WRQ92AQ = $mol_type_enforce<
 		`Tb-Pr-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1IQPMTYJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6MBBHJIJ = $mol_type_enforce<
 		`Pr-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YI4NP9YD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UCV0NYYE = $mol_type_enforce<
 		`Re-Bi-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6CK8NS0N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y6VI0IHZ = $mol_type_enforce<
 		`Co-Cu-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__411ID5Z0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__337JE9K9 = $mol_type_enforce<
 		`Nd-Ho-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AI36YJ5I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QNQPR4M8 = $mol_type_enforce<
 		`La-Pm-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1L0S0TTF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YNCQYSHN = $mol_type_enforce<
 		`Ca-Eu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__30NOW7K9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WSE7CD4R = $mol_type_enforce<
 		`Ba-Sc-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P2E4DXQN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z3J349B5 = $mol_type_enforce<
 		`Na-Nb-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7REC47G4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W8HDPAEJ = $mol_type_enforce<
 		`Cs-Li-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I9YPD97Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MANORPH3 = $mol_type_enforce<
 		`Gd-Dy-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SSYQGFFA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0B3G43NZ = $mol_type_enforce<
 		`La-Ce-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K3Q41JKS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CCZEEJ49 = $mol_type_enforce<
 		`Cu-Re-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LXH9KP47 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S8GWXBK3 = $mol_type_enforce<
 		`Li-Mg-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CY1HHDQ7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MWWUUH8U = $mol_type_enforce<
 		`Ce-Pu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XBR6Y7AW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KA5RAGXF = $mol_type_enforce<
 		`Ca-La-Yb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MTAPQ8G6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OQ1TXO8M = $mol_type_enforce<
 		`Ce-Y-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1I81B9SY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JY8UMASV = $mol_type_enforce<
 		`Zn-Cd-Ga`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__15OLUSSO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1YYXDGAQ = $mol_type_enforce<
 		`Nd-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B3I9TXBF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XS15ECZ5 = $mol_type_enforce<
 		`V-Fe-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PXYTLSOW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5G38SSDP = $mol_type_enforce<
 		`Tb-Dy-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G5FO7C9X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3T0987A6 = $mol_type_enforce<
 		`Hf-Th-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7SNTG6D3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6N5CDUFO = $mol_type_enforce<
 		`Sc-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SPLTRBSO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VZJR7WUS = $mol_type_enforce<
 		`La-Y-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XC5OX7PJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V8R13EMO = $mol_type_enforce<
 		`Al-In-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9UEQJ40J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RTB5FQGR = $mol_type_enforce<
 		`Be-Ga-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q3QL99DD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BOXMQXUX = $mol_type_enforce<
 		`Os-Ru-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7M5CUOSE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RTFGZKPB = $mol_type_enforce<
 		`Ag-Ge-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E6D6GY86 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E7CWKOF0 = $mol_type_enforce<
 		`Pm-Y-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WI31ORND = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7I110WPJ = $mol_type_enforce<
 		`Li-La-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IXVRJ41W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QCB5R6TK = $mol_type_enforce<
 		`Cs-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NL9CQPTH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XV9EXF18 = $mol_type_enforce<
 		`Ce-Sc-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VD2VT26M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3NPJSCLO = $mol_type_enforce<
 		`Pr-Nd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UAREQFFO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EA0D96X9 = $mol_type_enforce<
 		`Li-Tm-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9J26IQM4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J71ZXFA2 = $mol_type_enforce<
 		`La-Ho-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4U1NJTRT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AIR6RNUC = $mol_type_enforce<
 		`Nd-Tm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SOI9S152 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JH1T796E = $mol_type_enforce<
 		`Th-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__99E3GJCO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CO8WMPBF = $mol_type_enforce<
 		`Er-Tm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GBV8I1WK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E77BKXRL = $mol_type_enforce<
 		`Gd-Y-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GR2XSKRV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U151473V = $mol_type_enforce<
 		`Lu-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7FFPRH7O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ST8CG6BZ = $mol_type_enforce<
 		`Lu-Th-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HYMH8IBO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WXUZE9KH = $mol_type_enforce<
 		`Ce-Er-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VPC29670 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TLSFVWUL = $mol_type_enforce<
 		`Ce-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RXOOIAP6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4CQO54NJ = $mol_type_enforce<
 		`Li-Ce-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C3ZEKTI5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CGWXPHI4 = $mol_type_enforce<
 		`Ce-Th-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LOS73N8W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__485RVWIB = $mol_type_enforce<
 		`Li-Hf-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N8DAMKEI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3FSDF2N1 = $mol_type_enforce<
 		`Yb-Ho-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QDQDR6IZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5EGO9ZIT = $mol_type_enforce<
 		`Li-Pm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y4M7OSSE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W484NPSL = $mol_type_enforce<
 		`Ce-Gd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IW2S90MO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PWSADI0C = $mol_type_enforce<
 		`Cs-K-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WRC7E8AQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GP4WJ4DW = $mol_type_enforce<
 		`Tb-Ti-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F6QKL4I5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YCWZHBZ6 = $mol_type_enforce<
 		`Ce-Tm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GJK4QL52 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BRL0XF3H = $mol_type_enforce<
 		`Ho-Lu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1U92NO88 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J15IQERH = $mol_type_enforce<
 		`Y-Er-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YVNWXV75 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IHJMWXYA = $mol_type_enforce<
 		`Gd-Dy-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__50KNBF4A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UOPYKQ5R = $mol_type_enforce<
 		`Gd-Pu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__06E3BAD6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SE2JAVWM = $mol_type_enforce<
 		`Li-Cr-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ASGGPE2U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O3MYSMRQ = $mol_type_enforce<
 		`Co-Bi-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GEKPPEG5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WQZ38YN6 = $mol_type_enforce<
 		`Gd-Pu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KGG7TMJ0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__207W84LF = $mol_type_enforce<
 		`Co-Ru-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IKCC7MRO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__73YQBEGF = $mol_type_enforce<
 		`Gd-Lu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7KHNXL1Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3O3DBCOA = $mol_type_enforce<
 		`Li-La-Ce`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QP4AI61T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0SAWT1EC = $mol_type_enforce<
 		`Be-Al-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RGW4Y91Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XSVPXQH1 = $mol_type_enforce<
 		`Gd-Y-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BZCD52YF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X6N8GY2H = $mol_type_enforce<
 		`Pr-Dy-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BEMCZ08L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PRJ9JEW6 = $mol_type_enforce<
 		`Yb-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SH6N3P5C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__13NVG4IJ = $mol_type_enforce<
 		`La-Gd-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BKW3QN9M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1GSFICZF = $mol_type_enforce<
 		`Tl-Cu-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__16SQVF6N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YLK39IGE = $mol_type_enforce<
 		`Cr-Ag-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DXYZLA4W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4B4C4CZQ = $mol_type_enforce<
 		`Tb-Tm-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PM6DJMZD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OPQF062L = $mol_type_enforce<
 		`Nd-Y-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I22RPALS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ONWXII5E = $mol_type_enforce<
 		`Eu-Th-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__09ZKN5YX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S0DT50C1 = $mol_type_enforce<
 		`Ga-Ge-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NHJ4D7O3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1R8LX026 = $mol_type_enforce<
 		`Li-Pm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F5BTA5HH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XJLX0X9C = $mol_type_enforce<
 		`Li-Nd-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OKBHIE52 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GL1WG3FM = $mol_type_enforce<
 		`Ba-Pr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OPOE5ETJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SG4R2DTW = $mol_type_enforce<
 		`Li-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__19DWR0DI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DXPOC9TG = $mol_type_enforce<
 		`Pr-Y-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DQU6VI5P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WXTJEENS = $mol_type_enforce<
 		`Ce-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P4R52QYP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q1FL3YFK = $mol_type_enforce<
 		`Dy-Er-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HC53NNM1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SX8PC4C3 = $mol_type_enforce<
 		`Ca-Eu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NJO8R62M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DIQSAXNH = $mol_type_enforce<
 		`Ni-Pd-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0WCXGYA7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YYKFJTBB = $mol_type_enforce<
 		`Er-Lu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7LMK338K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GVAFOH11 = $mol_type_enforce<
 		`Ba-Y-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZMNH1RT3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZB4QQNI3 = $mol_type_enforce<
 		`Pr-Nd-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ISKB0IW3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z2C2A6SZ = $mol_type_enforce<
 		`Ce-Nd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3D26UEWI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7EWLL3WZ = $mol_type_enforce<
 		`Na-Mg-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JEUYRGGG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9FZNHGOF = $mol_type_enforce<
 		`Cu-Ag-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1C99NL6L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O63W17R9 = $mol_type_enforce<
 		`La-Ce-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S10HCV12 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QBIQHE0V = $mol_type_enforce<
 		`La-Er-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GPM5QQ1X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LS9TAUOD = $mol_type_enforce<
 		`Tc-Ni-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X9PPOVO8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9YX13OLT = $mol_type_enforce<
 		`Ti-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q8YBJPNP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8JROXTMV = $mol_type_enforce<
 		`Tb-Ce-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H8I5N6A3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HBO28G4V = $mol_type_enforce<
 		`Hf-U-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PHJXWM9X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NFN3JU3B = $mol_type_enforce<
 		`Lu-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2P9MCMFE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1NYHLY8I = $mol_type_enforce<
 		`Ta-V-In`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__51UAWOKM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A7S6KTC9 = $mol_type_enforce<
 		`Co-Ir-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MSMYV4GA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SPKDI64E = $mol_type_enforce<
 		`Na-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B5YSBRQ2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6XQHDYIW = $mol_type_enforce<
 		`Yb-Hf-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A9RY8OKE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BWR1UMMK = $mol_type_enforce<
 		`Mn-Cu-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R5F5H9QA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5WOZYP77 = $mol_type_enforce<
 		`Ce-Nd-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VAJQDI2Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0FR5IYJ2 = $mol_type_enforce<
 		`Pr-Gd-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FYRATRBE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PWDMSQ11 = $mol_type_enforce<
 		`Ca-Pm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0G2H80PL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A1ZFIPWT = $mol_type_enforce<
 		`Nd-Gd-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JTTGLWCY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ORCGYVEM = $mol_type_enforce<
 		`Yb-Eu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GI3HEKBB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NA9SE1CA = $mol_type_enforce<
 		`Al-Hg-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W19T6XSP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RQ46QKF4 = $mol_type_enforce<
 		`V-Cr-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OZH5TKEA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GDLB8MJT = $mol_type_enforce<
 		`Ce-Nd-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HA9TTQ8M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IOJUBUCN = $mol_type_enforce<
 		`Ho-Er-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__41WJU9LC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EVP55YIP = $mol_type_enforce<
 		`Tb-Nd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4O54MTU1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JMG647HP = $mol_type_enforce<
 		`Ca-Tb-Pm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AXRJ2BT1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZIB6KEVX = $mol_type_enforce<
 		`Nd-Ho-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UOZLJB1U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OHHOGXCF = $mol_type_enforce<
 		`Pu-Ta-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PDAFT5O7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4WOP5KS4 = $mol_type_enforce<
 		`V-Cu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IAZTUU16 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YW06FGJ9 = $mol_type_enforce<
 		`Tb-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S3AW8L3I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__035PL5MD = $mol_type_enforce<
 		`V-Cu-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YCPM9WSD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PHLDC03Q = $mol_type_enforce<
 		`Fe-Ni-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F4P12COP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S1INBWNC = $mol_type_enforce<
 		`Lu-Th-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0QRTGDZE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O7BYFA5A = $mol_type_enforce<
 		`Fe-Ni-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KLSAAB5J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0SMV55UX = $mol_type_enforce<
 		`Ca-Y-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H3VL150P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0OVA34RG = $mol_type_enforce<
 		`Ca-Ce-Eu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GD4ZVVMS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4Y8LKAL1 = $mol_type_enforce<
 		`Rb-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H7B6YHDY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5KEZJYKP = $mol_type_enforce<
 		`Nd-Sm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2S2E3CTQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F7D6ZDXX = $mol_type_enforce<
 		`Co-Re-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3UG82ERJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V26DSFIO = $mol_type_enforce<
 		`Gd-Lu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__01I5LT4D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__320IC8RD = $mol_type_enforce<
 		`Eu-Pu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FNWYS692 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CIZL4VPW = $mol_type_enforce<
 		`Pu-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0J8R7OM2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__09SBD5UP = $mol_type_enforce<
 		`Pm-Sm-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IZ6K7K5N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RP8P0NIX = $mol_type_enforce<
 		`La-Ce-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BMSEQ2RL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__N3L083XI = $mol_type_enforce<
 		`Ga-Sn-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZKLRBSO2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D63U299V = $mol_type_enforce<
 		`Ba-Sr-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KXN72HJQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__94BB1TRF = $mol_type_enforce<
 		`Co-Re-Hg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UW8TQNW3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2E9YITHB = $mol_type_enforce<
 		`La-Lu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R2ODTQGI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AQJ6MNF9 = $mol_type_enforce<
 		`Cs-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XACN99O0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IJ8AA705 = $mol_type_enforce<
 		`La-Y-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AEZ7ZV9Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UAYBHVZD = $mol_type_enforce<
 		`Ce-Sm-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__62ZG08UI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JGAUMHH8 = $mol_type_enforce<
 		`Co-Ni-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PGKYYKYV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YUO7BNKG = $mol_type_enforce<
 		`Mg-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X54FII4D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OK5QD5U0 = $mol_type_enforce<
 		`Sc-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2M60I81V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QZVCZPAP = $mol_type_enforce<
 		`Sm-U-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KXAQ03KR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PI4A62MA = $mol_type_enforce<
 		`Ce-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WXL4W2RM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B154RNR7 = $mol_type_enforce<
 		`Li-Y-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L3AINUO5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S1H914U9 = $mol_type_enforce<
 		`Tb-Dy-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N85HSRJL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ODPU7OMU = $mol_type_enforce<
 		`Cs-Rb-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5AZ1KG58 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F91ICSE0 = $mol_type_enforce<
 		`Cs-Rb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5YWNVB0J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MHAUGAQB = $mol_type_enforce<
 		`Ce-Gd-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IYMD43ON = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E3EFEF3K = $mol_type_enforce<
 		`Mg-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__736FIXKK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T3Q4XKBS = $mol_type_enforce<
 		`K-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5NZ6VRKZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D8U5EC7U = $mol_type_enforce<
 		`Rb-Na-Mg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UPOMRD9Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XSLYTUKD = $mol_type_enforce<
 		`Ba-Gd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3PKZN63T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L6DOFQA7 = $mol_type_enforce<
 		`Ca-Tb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ULWT4581 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ODCN0ADX = $mol_type_enforce<
 		`Pr-Er-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CL4QOC3U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZZUWJO11 = $mol_type_enforce<
 		`Si-Ge-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QA2C4W3N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7HXJNC1N = $mol_type_enforce<
 		`Y-Er-Hf`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3BKODK4X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5W71JSQ2 = $mol_type_enforce<
 		`Zn-Si-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D78T7P9H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SU26C7EQ = $mol_type_enforce<
 		`Li-Pm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KK05OVFM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OBDEA5YI = $mol_type_enforce<
 		`Yb-Lu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GYF1T41J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5IF83G30 = $mol_type_enforce<
 		`La-Dy-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QNO38RY9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3RCIJZEB = $mol_type_enforce<
 		`La-Pm-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AGAV5VB1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GB5QJ1BZ = $mol_type_enforce<
 		`Hf-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3IWNAFRW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2BMPC97L = $mol_type_enforce<
 		`K-Hf-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HD3LRAF7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EXCZ2YMD = $mol_type_enforce<
 		`Lu-Ti-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PK8ZIUH0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RI8F74C1 = $mol_type_enforce<
 		`Li-Pu-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FVZJU7ER = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ROCGH0R2 = $mol_type_enforce<
 		`Cd-Ga-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K7PFRMUV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P7AACGSA = $mol_type_enforce<
 		`Cd-Ga-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q5C71BQI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IGLCUGG9 = $mol_type_enforce<
 		`Gd-Y-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YEZWFGYQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FNTH0VAZ = $mol_type_enforce<
 		`Cu-W-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__45GGBU0Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JJTSHGW6 = $mol_type_enforce<
 		`Yb-Nd-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NDQ217MP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KPWCSLK4 = $mol_type_enforce<
 		`Er-Tm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RDNF8XYX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J5UZWH12 = $mol_type_enforce<
 		`Tb-Gd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3DKWEYC2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GDH5QPCK = $mol_type_enforce<
 		`Er-Lu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FSB9UPJD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F6NBKHQ7 = $mol_type_enforce<
 		`Tc-Pt-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V6X2QSCO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QG3T1PZA = $mol_type_enforce<
 		`Dy-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1AH3V24D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9NE23T3A = $mol_type_enforce<
 		`Cu-Pd-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5YXQZ8XM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0MPE6Q06 = $mol_type_enforce<
 		`Y-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__77FQU8DA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SNZYES8L = $mol_type_enforce<
 		`La-Yb-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7PP8YLM5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JIW1HL77 = $mol_type_enforce<
 		`Lu-Nb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__80I9D7JV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__38K2FXJA = $mol_type_enforce<
 		`Cr-Cu-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5KFZFDSG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IH0Y40SM = $mol_type_enforce<
 		`Y-Sc-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V7AMPD66 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__85EW0YL0 = $mol_type_enforce<
 		`Li-La-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DCP3KS6C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B98HXF5E = $mol_type_enforce<
 		`Tb-Sm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3FTUIXLN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3U8VROC5 = $mol_type_enforce<
 		`Tb-Y-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1NLIDIYF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PCGCCXW3 = $mol_type_enforce<
 		`Ce-Er-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KOQMB29H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YST4QHAD = $mol_type_enforce<
 		`Gd-Dy-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J4M4S45A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QYXZ1X19 = $mol_type_enforce<
 		`Ca-Ce-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9BSTPW2K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1CUXVBP5 = $mol_type_enforce<
 		`Ta-Tl-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BTJZKIKB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QZ4MJ7P3 = $mol_type_enforce<
 		`Pr-Nd-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__72JWPRDE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VO80YPZN = $mol_type_enforce<
 		`Li-Pr-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F7L0TS16 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TY4U1PGK = $mol_type_enforce<
 		`La-Pr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MO52DIPE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I3SOHOXX = $mol_type_enforce<
 		`Tm-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V03IUFUI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I3PSECOD = $mol_type_enforce<
 		`Ce-Ho-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WANX7W3B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EGZNTS0Q = $mol_type_enforce<
 		`Ba-Yb-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZPJMO604 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R25QDWEO = $mol_type_enforce<
 		`Na-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V4VEKC86 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7MHTCLMI = $mol_type_enforce<
 		`Er-Th-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WNR5ZNZG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X69K452J = $mol_type_enforce<
 		`Er-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D46TOZPN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I1P1Y9X3 = $mol_type_enforce<
 		`Cd-Ge-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UUFE1271 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C2YP8X6S = $mol_type_enforce<
 		`Ba-Eu-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2AMJHSPO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8QQG1GJZ = $mol_type_enforce<
 		`Re-Ag-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2ZK7ZZJL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V90PM5OX = $mol_type_enforce<
 		`Pr-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__51P40T93 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NUJET3WK = $mol_type_enforce<
 		`Lu-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__666X7H27 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__58ZXBTPK = $mol_type_enforce<
 		`Fe-Co-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CPBY5QIU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LWSOMHJW = $mol_type_enforce<
 		`Li-Mn-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__876AIW1V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XE099UK4 = $mol_type_enforce<
 		`Nd-Ho-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N95O1U05 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y9027U39 = $mol_type_enforce<
 		`La-Pm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GNY3QQB9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ENGYIFWN = $mol_type_enforce<
 		`Mg-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__51J4C4DN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3L7IKIK2 = $mol_type_enforce<
 		`Ce-Pm-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6RWM7BW0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UB0YIIQM = $mol_type_enforce<
 		`Pd-Ru-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R0G4TJJ1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R3E4RQJJ = $mol_type_enforce<
 		`Gd-Sc-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AQOBD0NC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PBV788PH = $mol_type_enforce<
 		`Nd-Pu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GTRAUMTM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XY41I0ZA = $mol_type_enforce<
 		`Pr-Gd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YGGMS2ZQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4RIULKZF = $mol_type_enforce<
 		`Sc-U-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VKSBY7W5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BGFCK1NN = $mol_type_enforce<
 		`Co-Cu-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7KF3TU02 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VCO1QQ1W = $mol_type_enforce<
 		`Eu-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TH3YUWXG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RQJZOAU2 = $mol_type_enforce<
 		`Y-Tm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8EZEGCG7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OT0D9T7G = $mol_type_enforce<
 		`Tb-Lu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S1KCY1W3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WTL22THU = $mol_type_enforce<
 		`La-Nd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U1I53HUA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F27VM63D = $mol_type_enforce<
 		`Th-Ti-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3JZHOTQA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4Q4ZTOT2 = $mol_type_enforce<
 		`Li-Nd-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8YOAGB08 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5PPXS8AZ = $mol_type_enforce<
 		`Pm-Gd-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PHWQGN4Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4ATNMUN6 = $mol_type_enforce<
 		`Tl-Cu-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VOWDMC9V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YW6K3J5L = $mol_type_enforce<
 		`Pr-U-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RMBEC0E8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3S9UZQF0 = $mol_type_enforce<
 		`Ca-Tb-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SOFXXR3A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C2ZSSBOY = $mol_type_enforce<
 		`Co-Pd-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JM2R71XN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZH5ILA6I = $mol_type_enforce<
 		`Li-Pm-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6YE4W82W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LVQ3OGDW = $mol_type_enforce<
 		`Cu-Os-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OXXHXTF7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MR5J4UTQ = $mol_type_enforce<
 		`Tb-Pu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AO2PRU88 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S1BRCXFM = $mol_type_enforce<
 		`Ni-Ag-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7HUH05XD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CZOR2TE3 = $mol_type_enforce<
 		`Li-Gd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EXI8I688 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YBRC14J5 = $mol_type_enforce<
 		`Na-Hf-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LEI7TQUX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__G4GQGAZ0 = $mol_type_enforce<
 		`La-Sm-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XQRX3FGS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PUGH452H = $mol_type_enforce<
 		`Ca-La-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0OI0AW58 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__131101RB = $mol_type_enforce<
 		`Sr-Ca-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5IA1E0FQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CWKM9H9I = $mol_type_enforce<
 		`La-Mn-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SC8SWJ1I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WG15W3YE = $mol_type_enforce<
 		`La-Th-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9R5ATDTB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MHNDBB6E = $mol_type_enforce<
 		`Tb-Ce-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XK78XT3O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PPGWJPBP = $mol_type_enforce<
 		`Mo-Pb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P7DSYTXC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IJ10Y4MR = $mol_type_enforce<
 		`Tb-Y-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NYYESTRQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__69IPVA1B = $mol_type_enforce<
 		`Al-Ga-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MZ8W5M1E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__INJEFWL6 = $mol_type_enforce<
 		`V-Fe-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3DQWRWKF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z7UAWKDY = $mol_type_enforce<
 		`Nd-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U4CAWCHQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SKHKPNIR = $mol_type_enforce<
 		`Tl-Si-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H24J88C6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E2MZ8FJY = $mol_type_enforce<
 		`Tb-Ce-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NVHS5GXQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JA7WE1HC = $mol_type_enforce<
 		`Cs-Pr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9BUN1D1Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1YM16VSH = $mol_type_enforce<
 		`Nd-U-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1YNGGBMX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E34CNCSF = $mol_type_enforce<
 		`Eu-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3FR2YL8V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L2KFTER3 = $mol_type_enforce<
 		`La-Dy-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4XH7GTIR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X93ZO9J2 = $mol_type_enforce<
 		`Mg-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2M3CKKA0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4RSF6FF8 = $mol_type_enforce<
 		`Li-Fe-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M8TMX8NX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8WHZ9TM1 = $mol_type_enforce<
 		`Na-Li-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q4WKDZRJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZWLBLFL4 = $mol_type_enforce<
 		`La-Tb-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__39O98TUL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RXM5XX7D = $mol_type_enforce<
 		`Th-Zr-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4FXZJ7DQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OSD8PG8V = $mol_type_enforce<
 		`Ce-Gd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__II0NG2DH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T7D7CV96 = $mol_type_enforce<
 		`Dy-Lu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BJWLAV0H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FC5S4G8E = $mol_type_enforce<
 		`Nd-Sc-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7YBFI0RK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4HOWP3ZS = $mol_type_enforce<
 		`Yb-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RACSGV0T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NZUGH6IM = $mol_type_enforce<
 		`Ga-Si-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KNDPAVI0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SB5QFII7 = $mol_type_enforce<
 		`Pr-Lu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AJPK966C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__584IUDRY = $mol_type_enforce<
 		`Eu-Y-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5HS2WE0U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H0OOP379 = $mol_type_enforce<
 		`Hf-U-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W1EBV7MF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__COQCMF7A = $mol_type_enforce<
 		`Pu-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OY1JZJC9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NHDV1044 = $mol_type_enforce<
 		`Li-Nd-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RG18Y9XH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ND6EUF1W = $mol_type_enforce<
 		`Cu-Ag-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F7BR2DWX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QNAOS2GZ = $mol_type_enforce<
 		`Sm-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SOOB63PR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZWB6ZHKI = $mol_type_enforce<
 		`Gd-Dy-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__10HN2B4Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6NC7C11R = $mol_type_enforce<
 		`Ho-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__352Y9KOP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S7A6ABH8 = $mol_type_enforce<
 		`Cu-Ag-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__63A1DDJY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P5DGODUC = $mol_type_enforce<
 		`Tc-Ni-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__88U0P2ME = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GGF2KF1R = $mol_type_enforce<
 		`Y-Lu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8MCKHBIF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JCJT10P9 = $mol_type_enforce<
 		`Ni-Os-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K6J3AODD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RNNBERX3 = $mol_type_enforce<
 		`Dy-Lu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YRY123HD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QLA89Z3B = $mol_type_enforce<
 		`Fe-Cu-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D0P9XYWB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W8IPABF8 = $mol_type_enforce<
 		`Ta-Tl-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7DBNK0KG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VK2UZEPA = $mol_type_enforce<
 		`Eu-Y-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HNO671OM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I22N4URJ = $mol_type_enforce<
 		`Co-Pd-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UNHWBQ1B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PUD0I5PB = $mol_type_enforce<
 		`Re-Hg-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AZBGMQ6K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q9ST7OZF = $mol_type_enforce<
 		`La-Yb-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P3BM1HU0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R2P73UXI = $mol_type_enforce<
 		`Nd-Er-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0GVIGSN8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OPWFRDLG = $mol_type_enforce<
 		`Tb-Yb-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8G61X6AG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RX7OA4KW = $mol_type_enforce<
 		`Yb-Th-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JRGVPQCH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7W3FJ7QN = $mol_type_enforce<
 		`K-Li-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HHYC6J9V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W30T5EGH = $mol_type_enforce<
 		`Re-Tc-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7WFV4QXR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XP0CQBOS = $mol_type_enforce<
 		`Cs-K-Al`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S8IGRX7U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R2MPEJSB = $mol_type_enforce<
 		`Pr-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MRUW4KIS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CCADDWCJ = $mol_type_enforce<
 		`Yb-Eu-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZHPLF295 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BYG3LBZO = $mol_type_enforce<
 		`Y-Th-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E1TUMTA9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U62436XT = $mol_type_enforce<
 		`Yb-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V8B2A70E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LVOFSHLS = $mol_type_enforce<
 		`Nd-Gd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TZTO3AGV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R60S40KH = $mol_type_enforce<
 		`Sm-Dy-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PZ2RD9TR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T80LA1L1 = $mol_type_enforce<
 		`Y-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PRCFHXAF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W5X0JK4W = $mol_type_enforce<
 		`Ce-Er-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PS4MTE5E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2ALOZLHC = $mol_type_enforce<
 		`Re-Tc-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T20SK81E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__70KMCHF3 = $mol_type_enforce<
 		`Ce-Nd-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K7PKPGYJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FSIMVRNB = $mol_type_enforce<
 		`Li-Ho-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PCJROV54 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ILUK3AVO = $mol_type_enforce<
 		`Y-Tm-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4NDOHGR1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZNKNUDT6 = $mol_type_enforce<
 		`Al-Tl-Zn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CIYH4XTE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DP5DVBLB = $mol_type_enforce<
 		`Li-La-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R2X6EXKX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ADTG6QDM = $mol_type_enforce<
 		`Pr-Ho-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E51DVGBD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BHNQYANY = $mol_type_enforce<
 		`Eu-Th-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__STL4JVJQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0OLJ6EZD = $mol_type_enforce<
 		`Pr-Nd-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0DPH64SF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XUWY93BK = $mol_type_enforce<
 		`Pm-Gd-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PM10G5K7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M72L3WT2 = $mol_type_enforce<
 		`Na-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GHEGJK5G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C1BD17X9 = $mol_type_enforce<
 		`Al-Zn-Ga`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8N2NI566 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UYZGMD83 = $mol_type_enforce<
 		`Ba-Sm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZTFZCY8X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__654V5ZAT = $mol_type_enforce<
 		`Y-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BW210QBM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P4Y78TXH = $mol_type_enforce<
 		`Nd-Th-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E8OFK4K2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MUNZD0AB = $mol_type_enforce<
 		`Co-Ir-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QIJH6UDY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AKGJLLJS = $mol_type_enforce<
 		`Yb-Gd-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VPZ8PGD5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YO4AMW02 = $mol_type_enforce<
 		`Hg-Ge-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1TRHSJBL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OLW5R0O6 = $mol_type_enforce<
 		`Ho-Tm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__33CR5WFZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__841VZ75Y = $mol_type_enforce<
 		`Pr-Tm-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HLOZKERF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FFKZPH4K = $mol_type_enforce<
 		`Tb-Dy-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__53LLU04H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__17UZ6N3V = $mol_type_enforce<
 		`Ir-Ru-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MP0W9FWL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DAN4HP8E = $mol_type_enforce<
 		`Ce-Pm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WVS21RIV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QH8VDC6B = $mol_type_enforce<
 		`Tm-Pu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7VMHVCB4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DYGHCW1P = $mol_type_enforce<
 		`Pm-Nd-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__097YFVPC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1Q915PZG = $mol_type_enforce<
 		`Yb-Gd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HY3WHN3D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AD6XJB6A = $mol_type_enforce<
 		`La-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M4YTQ6KG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YBLH8UFF = $mol_type_enforce<
 		`Sm-Pu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KM1IYA3O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QSZQCXZD = $mol_type_enforce<
 		`Hf-Th-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8VB96PT8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HIDWAMT2 = $mol_type_enforce<
 		`Ta-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XZH72B17 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AK7OVJFS = $mol_type_enforce<
 		`Be-Sn-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BNRG3MMB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PD7SDL2L = $mol_type_enforce<
 		`Pm-Ho-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HRLTI40X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OLVEKGQ1 = $mol_type_enforce<
 		`Yb-Eu-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4YT0KTEW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EBRDLNDE = $mol_type_enforce<
 		`Ho-Lu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4OLIQOPL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8WPJ6I48 = $mol_type_enforce<
 		`Tb-Dy-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HI40R16N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NULGF9N0 = $mol_type_enforce<
 		`Ce-Y-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G0CB394G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7CS9650D = $mol_type_enforce<
 		`Al-Zn-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DT07KOS2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7YCVPFJM = $mol_type_enforce<
 		`Ca-La-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QHX9BBXW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FMDYC3BL = $mol_type_enforce<
 		`Yb-Eu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZHG43W2F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8ZWZYJVD = $mol_type_enforce<
 		`Cs-Hf-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4LM9D4CB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8HIP2KB6 = $mol_type_enforce<
 		`Na-Ca-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4J3KEJOM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J0Z5JXAI = $mol_type_enforce<
 		`Tb-Pu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YYLX4Z48 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VPDNUV9V = $mol_type_enforce<
 		`Sr-Sc-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6I3YZXVY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OF3KYP2Q = $mol_type_enforce<
 		`Tc-Ir-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FDBRRDPI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9MY6R3HL = $mol_type_enforce<
 		`Y-Hf-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B63YS9SB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6J7QRY4S = $mol_type_enforce<
 		`Ti-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XMJPUOMH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W8DO9T5Q = $mol_type_enforce<
 		`Pr-Gd-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PRQVJ4Y8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BMD293ZD = $mol_type_enforce<
 		`Co-Cu-Re`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GZJYR2SP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E55GT1C0 = $mol_type_enforce<
 		`La-Y-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EHOA2T37 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__M6OL6WT2 = $mol_type_enforce<
 		`Re-Sn-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0U9A1RNK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UYASTZQ5 = $mol_type_enforce<
 		`Yb-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T4FLUZRR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3AZ3DJQI = $mol_type_enforce<
 		`Nd-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZTMCBDIH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VABU7CDH = $mol_type_enforce<
 		`Fe-Ni-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__11TOXKFQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E4DQ91FA = $mol_type_enforce<
 		`Pr-Nd-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7OXIYKPC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OX4HYMF0 = $mol_type_enforce<
 		`Yb-Lu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WNKQXYXX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WE5U1VHR = $mol_type_enforce<
 		`Ce-Pu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z2SAHBLO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EK8OC3N7 = $mol_type_enforce<
 		`Ac-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__83IK56X4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6SCP30SW = $mol_type_enforce<
 		`Zn-B-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YXVPQL9U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__925M0YYY = $mol_type_enforce<
 		`La-Yb-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UZ4KMWA7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7F69SFU8 = $mol_type_enforce<
 		`Ba-Nd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BA6R0YAN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QBQSWNUG = $mol_type_enforce<
 		`Mn-Co-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FFNCS7XR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K1ADXG4Z = $mol_type_enforce<
 		`Dy-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G9INJ2I9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VFPHFL4W = $mol_type_enforce<
 		`Er-Tm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5GRYVMT1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X5PHF76U = $mol_type_enforce<
 		`La-Y-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PCDO0ZC6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZC7RZUWL = $mol_type_enforce<
 		`Tc-Ir-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GPQIYCKG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OZLU3TWA = $mol_type_enforce<
 		`Pr-Er-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IU5TXZMV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EIOQ9FND = $mol_type_enforce<
 		`Yb-Ho-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8M0OQ374 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TPJ05WCG = $mol_type_enforce<
 		`Mn-Fe-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BFBQ11S8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J1V1L19L = $mol_type_enforce<
 		`Ca-Y-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__07IANS0W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QK188SGS = $mol_type_enforce<
 		`Pd-Ru-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FUXK68JC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R8AQ4HJH = $mol_type_enforce<
 		`Ce-Hf-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__00WELRFZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JUP3HB6V = $mol_type_enforce<
 		`La-Pm-Pr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B2DMKIM1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QICTSP9T = $mol_type_enforce<
 		`Tb-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B60XGCHD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LVIGNV0J = $mol_type_enforce<
 		`Ba-Eu-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__B5AOUJQI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R54HGXR8 = $mol_type_enforce<
 		`Ta-Bi-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7W80ASJY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YL7COQZ1 = $mol_type_enforce<
 		`Nd-Dy-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9W5IFR3P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1JU52H87 = $mol_type_enforce<
 		`Tl-B-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__02WEC66Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J7AOS40N = $mol_type_enforce<
 		`Li-Hf-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SKKOENSS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C2N9I2SQ = $mol_type_enforce<
 		`Li-La-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PJMCQFZ8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J8JDYXBC = $mol_type_enforce<
 		`Al-Sn-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__329ZOGR9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IU63KHCI = $mol_type_enforce<
 		`Ce-Pm-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YQLY4BFP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8BTJAQJ5 = $mol_type_enforce<
 		`Ni-Au-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YXP9N0NV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I6TN81YX = $mol_type_enforce<
 		`Er-Ta-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3WVMQQAL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2M369HAL = $mol_type_enforce<
 		`Pr-Er-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I6MPRPY1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SAFGC61Y = $mol_type_enforce<
 		`La-Nd-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__47U81XX1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O1C0KKMR = $mol_type_enforce<
 		`Ni-Ag-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CM6F8MAW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T0I648PD = $mol_type_enforce<
 		`La-Ce-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__37E2J8RG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JONP93W5 = $mol_type_enforce<
 		`La-Yb-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MICH3D9O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QHWD4WT2 = $mol_type_enforce<
 		`Pm-Nd-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K5W2I0EM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KUIBYV74 = $mol_type_enforce<
 		`Ce-Th-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__634A3FXH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6AX6I1ST = $mol_type_enforce<
 		`Eu-U-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3O9WHYBI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0E9YM3YN = $mol_type_enforce<
 		`Pm-Ho-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DP0YC017 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YFW7RDPE = $mol_type_enforce<
 		`Ce-Lu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SSL6YD16 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZRM65FZ1 = $mol_type_enforce<
 		`Li-Cu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AZMRA8QS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J8RMQMV4 = $mol_type_enforce<
 		`Sm-Y-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8B0WMZZO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QNHYOOG5 = $mol_type_enforce<
 		`Tb-Nd-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A5RGW6HO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__056HT9YM = $mol_type_enforce<
 		`Nd-Er-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7ANP6OQI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6V0IKSE4 = $mol_type_enforce<
 		`Rb-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N8I9PY9Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2CMPXMAB = $mol_type_enforce<
 		`Pr-Y-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E8AQTY12 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U17Z8SVN = $mol_type_enforce<
 		`Y-Er-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GQVMSD71 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KO1V2J03 = $mol_type_enforce<
 		`Cd-Mo-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I25FNPBL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5PO6Q1Y7 = $mol_type_enforce<
 		`Li-Er-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G5NSC1F7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CFCJOFH2 = $mol_type_enforce<
 		`V-Cu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CNWX5KLX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H7R8IV6J = $mol_type_enforce<
 		`Pm-Nd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BWZ3QPY0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K1VZJFOG = $mol_type_enforce<
 		`Yb-Er-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D8WC5PLF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YWU760E2 = $mol_type_enforce<
 		`Tb-Sc-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__40IKUZ6L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0NH77H0K = $mol_type_enforce<
 		`Ca-Ti-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UIYTIH43 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BDLPNV5T = $mol_type_enforce<
 		`Tb-Tm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YWBEN4BZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XUCPMOOC = $mol_type_enforce<
 		`Y-Lu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3MDHTF1B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GBA9M7ZI = $mol_type_enforce<
 		`Rb-Li-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3TLVXW2J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2LSC0B18 = $mol_type_enforce<
 		`Hg-Sb-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8K9ZNZR2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8HVJ6FDU = $mol_type_enforce<
 		`La-Dy-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I6B0JQAC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6Q69LDEI = $mol_type_enforce<
 		`Pd-Rh-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__33QJV3XX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z0BUUCK1 = $mol_type_enforce<
 		`K-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YDAVH6D9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VQG0SBXA = $mol_type_enforce<
 		`Li-La-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SHPTJVDK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L875YOXY = $mol_type_enforce<
 		`Pr-Dy-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YVFOGNTY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HB3AEEBL = $mol_type_enforce<
 		`Yb-Pr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T18XGIEW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XLZUHJO8 = $mol_type_enforce<
 		`La-Nd-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PJB9P1A3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LVMSBFL0 = $mol_type_enforce<
 		`Sm-Nb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O2X5RL8N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EGINVCLN = $mol_type_enforce<
 		`Ce-Eu-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MDJIS9TG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YYZAOX1D = $mol_type_enforce<
 		`Nd-Sc-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AZ2P0BXC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3YWK7RY9 = $mol_type_enforce<
 		`Ag-Ir-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__26U9KIX1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X8SB8YPE = $mol_type_enforce<
 		`Pm-Y-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K0XBK5ML = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K16ZOSFU = $mol_type_enforce<
 		`Yb-Dy-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YONK34HA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4LEV1GV5 = $mol_type_enforce<
 		`U-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Y2SHXZYY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NVCVR4KO = $mol_type_enforce<
 		`Ca-Tb-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__84NG0VQW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5WKCMZGS = $mol_type_enforce<
 		`Tb-Yb-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T1UDCCVU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4ZZB0E4K = $mol_type_enforce<
 		`Ce-Pm-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N1RVKJYD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__16AM843R = $mol_type_enforce<
 		`Sr-Nd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R2EV28IW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y7KPZXQ1 = $mol_type_enforce<
 		`Co-Ni-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YK4VAZOU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1M1CMFAL = $mol_type_enforce<
 		`Rb-Mg-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EGOJYLC6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KFDAE4G0 = $mol_type_enforce<
 		`Ti-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__64CRUCOV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JIVGMGOM = $mol_type_enforce<
 		`Th-U-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4GQF7PJ4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FVTCX82V = $mol_type_enforce<
 		`Yb-Pu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U9168WJN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XMAJQI54 = $mol_type_enforce<
 		`Ta-Cu-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1BCG5P3D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ECV0WNBG = $mol_type_enforce<
 		`La-Yb-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AGK2QO1T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XI3OVHXL = $mol_type_enforce<
 		`Pr-Ho-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LF7Y34CJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5M3NCRLQ = $mol_type_enforce<
 		`Rb-Na-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5ZECUK4P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QSJJSJYY = $mol_type_enforce<
 		`Ce-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FF6MPB5K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AQW0W6HG = $mol_type_enforce<
 		`Ce-Ta-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S015YWRP = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__65V2O8QI = $mol_type_enforce<
 		`Eu-Y-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L1TJDKKR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__THQZXK73 = $mol_type_enforce<
 		`La-Ho-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7203YIPE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6223WM98 = $mol_type_enforce<
 		`Cd-Ga-Bi`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DZWKIWFY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FFJGYUE4 = $mol_type_enforce<
 		`Eu-Pu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MGVJPVH3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9SERQAVT = $mol_type_enforce<
 		`Nd-Gd-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UOR09W5A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9WCGD7TZ = $mol_type_enforce<
 		`Na-Li-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N3J792ZO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P3I87WK9 = $mol_type_enforce<
 		`Tb-Tm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HP5KY7TI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IQ40GFDG = $mol_type_enforce<
 		`Th-Sc-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5UF5YSAT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SXMKKKNN = $mol_type_enforce<
 		`Lu-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FKWTY2XZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KQSJS2WB = $mol_type_enforce<
 		`Tb-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NMKOHUM5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Q3IGOZ4X = $mol_type_enforce<
 		`Tb-Sm-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EKO7NKRG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4VQZAYX8 = $mol_type_enforce<
 		`Dy-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K2RLQMSF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6TPYWU05 = $mol_type_enforce<
 		`Rb-Li-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PMOPE2S7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EP14E8FG = $mol_type_enforce<
 		`Li-Ta-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ODCBR4BC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TQS1HW0F = $mol_type_enforce<
 		`Re-Tc-Pt`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QTWZ8IG9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8XTFPOP0 = $mol_type_enforce<
 		`Pm-Gd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MQ1B33JL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D76OJ4FC = $mol_type_enforce<
 		`La-Gd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AGYUHORH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LNBFJP95 = $mol_type_enforce<
 		`La-Dy-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__82SDF1FL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RAW7BV5A = $mol_type_enforce<
 		`Mg-Ti-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IOWVT68F = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZS9ZN320 = $mol_type_enforce<
 		`Nd-Th-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AF9846H5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__93UKBNCG = $mol_type_enforce<
 		`Dy-Y-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UINUD4JD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HT5CJ9JW = $mol_type_enforce<
 		`Tb-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2XFCES5P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9D9U3KXE = $mol_type_enforce<
 		`Pd-Pt-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__24DF6S9X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S0406IL6 = $mol_type_enforce<
 		`Cs-Rb-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DNYT7UPJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F0JR4EQP = $mol_type_enforce<
 		`Ca-Nd-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SJBX09ZO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0AXAB0SK = $mol_type_enforce<
 		`La-Pm-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I340KYG2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WRSTNDVA = $mol_type_enforce<
 		`Sm-Ho-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MLWHORER = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__369UU2R9 = $mol_type_enforce<
 		`Hg-Bi-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L4JJNE0E = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JMUB3NJS = $mol_type_enforce<
 		`Co-Ag-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SWAHMBFM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ECFWW6T4 = $mol_type_enforce<
 		`Ce-Pm-Pr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AFFR795B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R56E03RA = $mol_type_enforce<
 		`Cu-Re-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0ZZOWR9V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S23258BJ = $mol_type_enforce<
 		`La-Th-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MNAEBCQS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DN8Z5JLD = $mol_type_enforce<
 		`Ba-Pr-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NK849YGH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UK25W011 = $mol_type_enforce<
 		`La-Yb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HWQAWZIR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OSS47JRT = $mol_type_enforce<
 		`Li-Y-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__002TOMKV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XDYT1W62 = $mol_type_enforce<
 		`Th-U-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__429P30UR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7H9U32WH = $mol_type_enforce<
 		`Li-Tm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U1G3XU3X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1J6AEXX2 = $mol_type_enforce<
 		`Zn-Si-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q2168IJ1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DOS6DZ8Q = $mol_type_enforce<
 		`Sc-Nb-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LK8J1EZ7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z6WGKVWR = $mol_type_enforce<
 		`Sm-Th-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PUVEEFU1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZHRBF0MT = $mol_type_enforce<
 		`Li-La-Pm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VV08RSBI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PUJ84KN2 = $mol_type_enforce<
 		`Li-Y-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8B85H2DJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0QTO9RT6 = $mol_type_enforce<
 		`Y-Hf-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KHO0Q4C1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NNA3D0IE = $mol_type_enforce<
 		`Ti-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JL7Z9OLZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2DTAZGGR = $mol_type_enforce<
 		`Sm-Lu-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9FW33ACI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7PIIWBJ9 = $mol_type_enforce<
 		`Li-Cu-Ni`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ETYYPFRD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8UPFKSU4 = $mol_type_enforce<
 		`Ce-Y-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RNSJKCPW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__48LKVJGO = $mol_type_enforce<
 		`Tm-Th-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3I8EGKQ6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DJP1J1IN = $mol_type_enforce<
 		`Yb-Tm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ROOIHV0H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MXQPL061 = $mol_type_enforce<
 		`Ca-Yb-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BI9LNMHJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__30WQ5VMP = $mol_type_enforce<
 		`Ce-Eu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4RRCLV4Y = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VI7P6HMO = $mol_type_enforce<
 		`Nd-Er-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PK687461 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZPLEZWD3 = $mol_type_enforce<
 		`Hf-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3N95D9S8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NRQPLQES = $mol_type_enforce<
 		`Co-Ag-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6JY8LJO2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FBPGHMRN = $mol_type_enforce<
 		`Co-Ir-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T9VLV3W7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QNGYDOKP = $mol_type_enforce<
 		`Ca-Mn-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0A3QKGS3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5K99445L = $mol_type_enforce<
 		`Pu-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CR0ENPUH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__R9OS8ETY = $mol_type_enforce<
 		`V-Bi-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__F7O7SIHY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L8GNBP9M = $mol_type_enforce<
 		`Y-Hf-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VY9ZCYGE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__E87A52SK = $mol_type_enforce<
 		`Dy-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DQZ2AY6W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DL0LQ2P3 = $mol_type_enforce<
 		`Ce-Sm-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CT4SF68X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XIETFHUT = $mol_type_enforce<
 		`Ni-Ir-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FL45GP59 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EQXLGK6R = $mol_type_enforce<
 		`Re-Os-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I17WXB5B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0LX8CIY2 = $mol_type_enforce<
 		`Ce-Nd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__21MNLNDC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TM2I1W4V = $mol_type_enforce<
 		`Er-Hf-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LYAA741G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EXKEQ2V5 = $mol_type_enforce<
 		`Cr-Fe-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NL2FQXA6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__019OSSCD = $mol_type_enforce<
 		`Li-Nd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A8V4GX3Q = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FGDHH2V0 = $mol_type_enforce<
 		`Eu-Sc-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JDHV133I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B3A0V474 = $mol_type_enforce<
 		`Yb-Tm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XBTNUN5W = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OIJ84VPB = $mol_type_enforce<
 		`Ga-Ge-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HDE3DKJO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LO7YRMHD = $mol_type_enforce<
 		`Eu-Sc-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BQU8MQ02 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TS3XWWA1 = $mol_type_enforce<
 		`Li-Pr-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__58ND5WMC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6253JH4N = $mol_type_enforce<
 		`Yb-Pr-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JU28D0ED = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NHQ7HZEN = $mol_type_enforce<
 		`Sm-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WLB9IYWW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__67GUKOVW = $mol_type_enforce<
 		`La-Nd-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4DG51E8C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3N71VY3P = $mol_type_enforce<
 		`Ce-Ho-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NLGNYI18 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3MZX48IP = $mol_type_enforce<
 		`Li-Pm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S92X6MK9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4TEX40MT = $mol_type_enforce<
 		`Y-Sc-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H3P0ZVZR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Y9DYU1ID = $mol_type_enforce<
 		`Pr-Sm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__99CT2ADU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KXBYTKLB = $mol_type_enforce<
 		`Pr-U-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JDRQOU0C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V03IDLD7 = $mol_type_enforce<
 		`Re-Tc-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HMCIL2Y6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0CIHJSJD = $mol_type_enforce<
 		`Nd-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5QL6Y5IR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VHGELT8T = $mol_type_enforce<
 		`Tl-In-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DVWCK4LL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__92S1S9GI = $mol_type_enforce<
 		`Yb-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2ESHC41B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5XDCMQX4 = $mol_type_enforce<
 		`Tb-Pr-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CXPNDK7Z = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__42D58L2Q = $mol_type_enforce<
 		`Mn-Fe-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3ZIQ96RT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NW5KMXLZ = $mol_type_enforce<
 		`Ce-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I9NMO48M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I61OH98W = $mol_type_enforce<
 		`K-Ti-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A0WQBLPI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U1OQJ3XK = $mol_type_enforce<
 		`Ce-Sm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L6BYL2MA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B45J4Y75 = $mol_type_enforce<
 		`Ni-Ag-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OYUECARB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DMC4XOAK = $mol_type_enforce<
 		`K-Mg-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FIPIJCU8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3YMUJ7RC = $mol_type_enforce<
 		`Tb-Nd-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ORKEWZG1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5KTU10UB = $mol_type_enforce<
 		`Pu-Cr-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I1R41ART = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KQ7L37RV = $mol_type_enforce<
 		`La-Gd-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3YZQ916N = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PX5Y1KTW = $mol_type_enforce<
 		`Pm-Nd-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A9XZIVSC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2V9I6YQ7 = $mol_type_enforce<
 		`La-Dy-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__594VR3JV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RH9AIHPH = $mol_type_enforce<
 		`Tb-Th-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__811S6FF6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SMMY4U4W = $mol_type_enforce<
 		`Cu-Tc-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R79FSDEV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6IRA6KEH = $mol_type_enforce<
 		`Li-Tb-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OD49Z4Y3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__G37JKCVX = $mol_type_enforce<
 		`Tb-Sm-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LUFEXRBG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DQ4WJHAV = $mol_type_enforce<
 		`Sr-Nd-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1XGCDATC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BY7WX4EE = $mol_type_enforce<
 		`Pm-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LCB1988G = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JOKB9ZI0 = $mol_type_enforce<
 		`K-Rb-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L3S5SZAQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5Y5OMRFL = $mol_type_enforce<
 		`Gd-Sc-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PF7KJ3CO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W4PY2DLP = $mol_type_enforce<
 		`Y-Er-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DHS3DKA2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__B2PMIBTH = $mol_type_enforce<
 		`Ce-Eu-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6EW11WZJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JYDI3LKY = $mol_type_enforce<
 		`Yb-Nd-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8DT8FATQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2VKTKKVN = $mol_type_enforce<
 		`Er-Hf-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VJJS99P9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O7ECL8OQ = $mol_type_enforce<
 		`Pr-Y-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T892URN9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I8UMJCLB = $mol_type_enforce<
 		`Eu-Zr-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AVIYLO5I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3PY3PG8W = $mol_type_enforce<
 		`Gd-Sc-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X7GP4OBX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QIULK8EW = $mol_type_enforce<
 		`Li-Ce-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JY4TY9VX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__97GKHHK6 = $mol_type_enforce<
 		`Na-Hf-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L706P6KI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EU1MQTX5 = $mol_type_enforce<
 		`Sm-Gd-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5N7222IC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I94AV29Y = $mol_type_enforce<
 		`La-Pr-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1D78NTN4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8053CI5T = $mol_type_enforce<
 		`Ga-Re-Hg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V8AS0PVO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1T2UGX8W = $mol_type_enforce<
 		`Li-La-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1BR96JSX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KKONT6BA = $mol_type_enforce<
 		`Co-Ni-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FK66RILX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GE3WCZPO = $mol_type_enforce<
 		`La-Tb-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M1T2Q6L8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__C3B9G614 = $mol_type_enforce<
 		`Yb-Lu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1QIMZDDA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__PI0PESTN = $mol_type_enforce<
 		`Er-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PU8Q6XHH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TDC7KWE9 = $mol_type_enforce<
 		`Tl-Ga-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C8L6LSP8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JXLM49AP = $mol_type_enforce<
 		`Yb-Sc-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZVRF89SH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DEKEDSIC = $mol_type_enforce<
 		`Co-Ag-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9WEN5M80 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O8SD2SNS = $mol_type_enforce<
 		`Li-Zr-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IV2894QB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__76TWAFQ8 = $mol_type_enforce<
 		`Rb-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GIYBLOJL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__STA73AVC = $mol_type_enforce<
 		`K-Li-Mg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O6NHIY71 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RYSR3ZO1 = $mol_type_enforce<
 		`Dy-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__7IOWNTFT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LK6B2LZ8 = $mol_type_enforce<
 		`Pu-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DUONXT32 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AU2NSODE = $mol_type_enforce<
 		`Li-La-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SXOGRU09 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6WHMLQ64 = $mol_type_enforce<
 		`Tb-Zr-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K8DVXE77 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U7QGI8EQ = $mol_type_enforce<
 		`La-Pr-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H4RQZXS3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8QIEWF7U = $mol_type_enforce<
 		`Tb-Lu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__92J11DWW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__II0G0GZY = $mol_type_enforce<
 		`Tb-Ho-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X3MJLJR8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YVAXDCOD = $mol_type_enforce<
 		`Ba-Ca-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8UFLKVXL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__IQZON4DU = $mol_type_enforce<
 		`Gd-Th-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IST6KQGN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RZYYX7E6 = $mol_type_enforce<
 		`Ta-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__L899DEAQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VXMUZAC4 = $mol_type_enforce<
 		`La-Y-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EHB63TE1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__12IYCCLX = $mol_type_enforce<
 		`La-Tm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K4THSDKO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EEQGCNWO = $mol_type_enforce<
 		`Ge-B-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IAC16UFG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6Y9IVQPZ = $mol_type_enforce<
 		`Li-Pr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FPM0NBAJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V5NENMGH = $mol_type_enforce<
 		`Cu-Pt-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__40JRVOU3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L6SVWLHL = $mol_type_enforce<
 		`La-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1TUCJJZM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__U66W8NAY = $mol_type_enforce<
 		`Tb-Pr-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IIBNP5DT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6NIKE6MM = $mol_type_enforce<
 		`Eu-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZDR4DF9S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ETONEY18 = $mol_type_enforce<
 		`Ce-Tm-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__43HFV062 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BR7AF9LO = $mol_type_enforce<
 		`Pr-Tm-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1RLA4W7U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YYHSJ13M = $mol_type_enforce<
 		`La-Gd-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S1VLC1LB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DR6HRZXF = $mol_type_enforce<
 		`Pm-Pr-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0TOECB13 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2Y0Z3D6J = $mol_type_enforce<
 		`Sm-Tm-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W43GJ1HT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2X2TVF7I = $mol_type_enforce<
 		`Mn-Ni-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__D8D4NYI3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AB6U8I8C = $mol_type_enforce<
 		`Ce-Y-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RZCBCVZ2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9IXX413A = $mol_type_enforce<
 		`Rb-Cr-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__55IBIDUV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SHYGF5FX = $mol_type_enforce<
 		`La-Nb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RLR181Y0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4740LM0W = $mol_type_enforce<
 		`Ca-Y-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BWIQX6P1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WKDFBUEG = $mol_type_enforce<
 		`Sm-Lu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RJ60OK4J = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LQLLTOMU = $mol_type_enforce<
 		`Li-V-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__MJ8S9F3R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CRZL7JJQ = $mol_type_enforce<
 		`Y-Er-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WT4G6UM0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S9SH531Q = $mol_type_enforce<
 		`Nd-Dy-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__IJ6ISNO1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CPF0KRUM = $mol_type_enforce<
 		`Pm-Pr-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZQLYE1TR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V5MCD6TN = $mol_type_enforce<
 		`Mg-U-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8WYKT4JN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S5C2VTH5 = $mol_type_enforce<
 		`La-Yb-Eu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TTXJM2UM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CCBTC7C6 = $mol_type_enforce<
 		`Gd-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5DU8P9EL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OABGGEW7 = $mol_type_enforce<
 		`Eu-Zr-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I2SN6CFJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LJX92E0N = $mol_type_enforce<
 		`Tb-Ho-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QJICX032 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S7EQG7XI = $mol_type_enforce<
 		`Cs-Rb-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NOPI56OZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JK0517C5 = $mol_type_enforce<
 		`Tb-Pr-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CGA94OVY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__Z55J21CQ = $mol_type_enforce<
 		`Cd-Bi-B`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RC0FZXYE = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZEEXR7IZ = $mol_type_enforce<
 		`Cu-Ir-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__VMJ1WZ5X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__47PMDWBA = $mol_type_enforce<
 		`Gd-Ho-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NBXL254V = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__075PFZXD = $mol_type_enforce<
 		`Pr-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TXILY8KD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L7S8R4LJ = $mol_type_enforce<
 		`La-Nd-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S4203CWQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LXMN167T = $mol_type_enforce<
 		`Y-Tm-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z3M3O8C2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__9UOJB9JM = $mol_type_enforce<
 		`Ni-Ag-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__36Q661JH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__H5FIEOWD = $mol_type_enforce<
 		`K-Hf-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GWQMJ2UL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TRGFRH44 = $mol_type_enforce<
 		`Nd-Ho-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HTOMZBH0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1NEOYQRE = $mol_type_enforce<
 		`Pr-Nd-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PS53MOAL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X2GPRX46 = $mol_type_enforce<
 		`La-Gd-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LQIVPB72 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CY3T9MQW = $mol_type_enforce<
 		`Yb-Er-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GJHS4ARZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0UGLNX1A = $mol_type_enforce<
 		`Dy-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4RJ5ALRB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K7WPZ00H = $mol_type_enforce<
 		`La-Nd-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__M8LBT1NL = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LKAIQOTZ = $mol_type_enforce<
 		`Ce-Pr-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__TMTWWHSQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T6G8FZP7 = $mol_type_enforce<
 		`Ce-Nd-Gd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UTVIUSDR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__J8RSTHG8 = $mol_type_enforce<
 		`Y-Th-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__9NYJVSF7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZS1LWZYZ = $mol_type_enforce<
 		`Tl-Ni-Ag`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3W2JNCLC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__GARN3KR2 = $mol_type_enforce<
 		`Nd-Gd-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WN7G6COV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7DLU6UB6 = $mol_type_enforce<
 		`K-Li-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SPYG7PD2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L7Z131UM = $mol_type_enforce<
 		`Li-Ce-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U1S1GENZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SGLKRNBK = $mol_type_enforce<
 		`Mn-Ni-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__O4XJA4CU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1OU0DV72 = $mol_type_enforce<
 		`Ho-Pu-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G3LATCP6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OPC694J1 = $mol_type_enforce<
 		`Pm-Dy-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JF7FPRCH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RYEPKPJZ = $mol_type_enforce<
 		`Ce-Sm-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T88BBHXW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__V675W37X = $mol_type_enforce<
 		`Ni-Os-Pd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DFWUYWMO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6O7MRJYL = $mol_type_enforce<
 		`Cr-Mo-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__W83AFHL5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KBIJR4RF = $mol_type_enforce<
 		`Er-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XKDSSKTT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__O2FEP4TW = $mol_type_enforce<
 		`Ce-Nd-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UYUTL2N1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__70QFU5DF = $mol_type_enforce<
 		`Zn-Ga-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2VZRN1I3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MUHOAWCU = $mol_type_enforce<
 		`Sm-Y-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V45IKRQI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2O551AAD = $mol_type_enforce<
 		`Eu-Nb-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__02PLPXGX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FQSHGWG5 = $mol_type_enforce<
 		`Fe-Pd-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6TA146Y7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__0W93N300 = $mol_type_enforce<
 		`Co-Re-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HYB1DX6D = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A25GEILL = $mol_type_enforce<
 		`Sm-Y-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8TYC90RK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3IMFK367 = $mol_type_enforce<
 		`Fe-Cu-C`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BMYVMTOW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S3TYQS2Q = $mol_type_enforce<
 		`Tm-Pu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NM7N4ZX1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UBGA7PGZ = $mol_type_enforce<
 		`Ta-Nb-Cu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I3T1983R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8ZENYYDY = $mol_type_enforce<
 		`Ho-Ta-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AEXXQZK4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EEAUIYQ6 = $mol_type_enforce<
 		`Li-Lu-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZIFTKNL2 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EPVOS234 = $mol_type_enforce<
 		`Yb-Er-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__FUGELTLJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__KX4361H9 = $mol_type_enforce<
 		`Fe-Ni-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RRO9B4DI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7VWZ5TG8 = $mol_type_enforce<
 		`Nd-Ta-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6FLQ9DR8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LFTV8VEZ = $mol_type_enforce<
 		`La-Pr-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6UQQU8Z6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HZP7XQBC = $mol_type_enforce<
 		`Mg-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NTD7S19I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__947MOQXF = $mol_type_enforce<
 		`La-Pr-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5F4LKN1K = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__MS49PQBZ = $mol_type_enforce<
 		`Y-Zr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PG6118CC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__24ZF45RU = $mol_type_enforce<
 		`Cu-Ni-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__T7ORJZSH = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NHN0AVTU = $mol_type_enforce<
 		`Rb-Li-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q9HUEQ67 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2I3E1DVB = $mol_type_enforce<
 		`Li-Ho-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0IRG49FR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BY2CEY0N = $mol_type_enforce<
 		`Fe-Ag-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__AR2KZGSG = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZM4R9TXR = $mol_type_enforce<
 		`Eu-Y-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HV3XOTB1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2G40XU7K = $mol_type_enforce<
 		`Nd-Th-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4YXO610B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6SHZKBCM = $mol_type_enforce<
 		`Pm-Pr-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__6NSGECA5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HZ6TAEPR = $mol_type_enforce<
 		`Sm-Y-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XK3I34ZO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3O1FO8J6 = $mol_type_enforce<
 		`Zn-Ga-Sn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__0PIUNUN3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__T7Y3ZSR6 = $mol_type_enforce<
 		`Tl-Ga-Si`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__GB5KZAEN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__NHK79QJU = $mol_type_enforce<
 		`La-Tb-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__E4UVTR2C = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FN5YSUTU = $mol_type_enforce<
 		`Tm-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__RKRKPWBB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TYM329CG = $mol_type_enforce<
 		`Sr-Nd-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OA0IDPNO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5NKF2NX6 = $mol_type_enforce<
 		`Y-Tm-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PJBCYNBD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3FZ372LG = $mol_type_enforce<
 		`Tb-Yb-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5KXICS95 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SHQAJ9JQ = $mol_type_enforce<
 		`La-Ho-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__P4R7XLD9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3R7NLMHN = $mol_type_enforce<
 		`Dy-Ho-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__N8K1UUDW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AU46D6WV = $mol_type_enforce<
 		`Cs-Hf-Mg`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PDMPEOTI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__77QUYGG3 = $mol_type_enforce<
 		`Ba-Sm-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YDA9CQA9 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__LGTAF9GT = $mol_type_enforce<
 		`Pr-Y-Lu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WWUZOE86 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__P569C61L = $mol_type_enforce<
 		`Nd-Er-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JLXIZV9X = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__L0XLKWTA = $mol_type_enforce<
 		`Tm-Mo-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Z46Q7TKJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__2TO7NOJ8 = $mol_type_enforce<
 		`Li-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NVDY4NQ5 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4AJI0BQ1 = $mol_type_enforce<
 		`Gd-Tm-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q9DSQFDO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6IE2869O = $mol_type_enforce<
 		`Ti-V-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__Q4G97UP4 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__A2UX3EC6 = $mol_type_enforce<
 		`Sc-Ta-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__8EXWGNRR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__HQF00DMM = $mol_type_enforce<
 		`La-Sm-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HDW0H3TM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3BKFESWL = $mol_type_enforce<
 		`Ce-Er-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LFQP1MPU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZKUNKMP7 = $mol_type_enforce<
 		`Y-Ho-Er`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZYK9PZEX = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5JDT071W = $mol_type_enforce<
 		`Sm-Th-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H16F4H2O = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8LPDHGO0 = $mol_type_enforce<
 		`Tb-Sm-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__EP1I3NF1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__12QB1C76 = $mol_type_enforce<
 		`Li-Tb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1EE7A5OK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AT1Y6ME1 = $mol_type_enforce<
 		`Ho-Lu-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2L162T84 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FCATQRS8 = $mol_type_enforce<
 		`Sm-Pu-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__JPUIITOD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__S6WQ3QPM = $mol_type_enforce<
 		`Nd-Tm-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3KMGX3CZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SYYSTG0O = $mol_type_enforce<
 		`Na-Li-Ta`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5TRYZFA1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4BEUE1GC = $mol_type_enforce<
 		`K-Ti-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__C0KYSP8H = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1HIV7HOR = $mol_type_enforce<
 		`Mn-Tl-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__OATEI9VJ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7QA5ST6I = $mol_type_enforce<
 		`Hg-B-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SRVNTDHU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XVS2CGTC = $mol_type_enforce<
 		`Er-Lu-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BYMOPEXK = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__W65F4MUY = $mol_type_enforce<
 		`Pu-Zr-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__I2MI21FQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JTSWWLTO = $mol_type_enforce<
 		`Ca-La-Ce`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LFSH0CD1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__RZO1O95T = $mol_type_enforce<
 		`Eu-Hf-U`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__09RQI1R1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__12SWS1UX = $mol_type_enforce<
 		`Os-Ru-Rh`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__34KQ9MNY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FO37A5PK = $mol_type_enforce<
 		`La-Sc-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__1PL2UCQS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1NJVXD5F = $mol_type_enforce<
 		`V-Ag-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U4POBD6P = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__REEIL0FA = $mol_type_enforce<
 		`Ba-Pr-Sm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BNNGIUBM = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__55KPG2B8 = $mol_type_enforce<
 		`Nd-Th-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__92OWORR0 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JHF464ZB = $mol_type_enforce<
 		`Pr-Ta-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NXW6SRIY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__EF7SWS6T = $mol_type_enforce<
 		`Y-Tm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YFGWSHZ7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__3XP0B9IE = $mol_type_enforce<
 		`Tb-Y-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QSVIREBN = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__JQOBLPL2 = $mol_type_enforce<
 		`Ce-Nd-Th`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__X1WS92WU = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AYQHRMH0 = $mol_type_enforce<
 		`Pt-Rh-Au`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3FI36RLY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F41U6S7T = $mol_type_enforce<
 		`Er-Nb-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__A5ALWONT = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__WFZVN6NL = $mol_type_enforce<
 		`Ba-La-Mn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__J7OKTL0B = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SWRCK3HV = $mol_type_enforce<
 		`Pr-Pu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__2VISAC6S = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__ZR0IMR08 = $mol_type_enforce<
 		`Sm-Y-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__K77PSZDY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4ICGX6L4 = $mol_type_enforce<
 		`Ga-Re-Sn`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PZN6A8K6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1TLMGDSF = $mol_type_enforce<
 		`Ho-Er-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__UEOEPIQI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TYVVMS7Z = $mol_type_enforce<
 		`Al-Tl-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YDP4HSJV = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__F27YIPLM = $mol_type_enforce<
 		`Dy-Lu-Mo`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YRYTLV0T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__SBDHQQ2Y = $mol_type_enforce<
 		`Na-Sr-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__S4CUCEAD = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UF2S78G7 = $mol_type_enforce<
 		`Cd-Si-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__DXJRLDNO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__8BH2S6Z3 = $mol_type_enforce<
 		`Tb-Pr-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R7QSED6M = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__TZ2FJNR4 = $mol_type_enforce<
 		`Ba-Gd-Sc`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__V8N30MKW = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__VZH2YBPJ = $mol_type_enforce<
 		`Ca-Tb-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__QNJ3WEIA = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CH5FF8D9 = $mol_type_enforce<
 		`Cu-Ag-Os`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4EOV262A = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6MRNQB12 = $mol_type_enforce<
 		`Co-Cu-Ir`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WJIEVWCS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CYMIBACM = $mol_type_enforce<
 		`Pm-Dy-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__R2PQT9S6 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AR49WU0J = $mol_type_enforce<
 		`Zn-Cd-Ge`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__4H02ZH8L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__21TV555R = $mol_type_enforce<
 		`La-V-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__XOM6CPY7 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__7K5PBBXK = $mol_type_enforce<
 		`Sr-Ca-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__H3M969U1 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__FUW3QX40 = $mol_type_enforce<
 		`Dy-Ho-Tm`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SBM8A0UZ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__4T7VA1RF = $mol_type_enforce<
 		`Eu-Th-W`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__829REL1R = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__X9IPSPSE = $mol_type_enforce<
 		`Ca-Pm-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5Z4S8IEF = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1C22SX7J = $mol_type_enforce<
 		`Eu-Th-Zr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__SLCZTCLY = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__QVBK8CFL = $mol_type_enforce<
 		`Cu-Os-Ru`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__HMCFD1VS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DDDG0PI6 = $mol_type_enforce<
 		`Be-In-Ga`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__LN96P353 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1Y9EADR9 = $mol_type_enforce<
 		`La-Th-Ti`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NCOTB7P3 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__D9HZDUAW = $mol_type_enforce<
 		`Nd-Pu-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__KQ4RKSNR = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__CN9F9Z8E = $mol_type_enforce<
 		`Ca-Ce-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__60JB545U = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__YIKCOKTO = $mol_type_enforce<
 		`Yb-Y-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ORCJ46UC = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__I6EZ0IB6 = $mol_type_enforce<
 		`Ca-La-Y`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__NFF63LPI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__UPQ6EQ3M = $mol_type_enforce<
 		`Li-Tm-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__ZTO2XDIO = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__K3TST1GD = $mol_type_enforce<
 		`Al-Tl-Pb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__BHI9UCUQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__DAR1M1AB = $mol_type_enforce<
 		`Li-Ce-Ho`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__PXR9487I = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__AGTMJ6X9 = $mol_type_enforce<
 		`Li-Sc-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__5SX0II1T = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BABGCQ57 = $mol_type_enforce<
 		`Pr-Nd-Dy`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__WS9GTNOB = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__32PTB1FQ = $mol_type_enforce<
 		`Yb-Nd-Pu`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__55537E0L = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__BWJR19L3 = $mol_type_enforce<
 		`Li-Ce-Nd`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__CAJ1KTB8 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__41KX9UDN = $mol_type_enforce<
 		`Pm-Dy-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3WVISX16 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__5MZISBQS = $mol_type_enforce<
 		`Dy-Lu-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__U2COFAJS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__6ENMDJVJ = $mol_type_enforce<
 		`Ca-Mn-Fe`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__G267VMKI = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__OENHHD9H = $mol_type_enforce<
 		`Cs-Mg-V`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3TBG9P38 = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__1EGANM0T = $mol_type_enforce<
 		`Ce-Eu-Nb`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__YQTE9ZWS = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__65ARLAK0 = $mol_type_enforce<
 		`Tb-V-Cr`
 		,
 		string
 	>
-	type $mpds_visavis_elements_nonformer_pd_tri__3SNWK3XQ = $mol_type_enforce<
+	type $mpds_visavis_elements_nonformer_pd_tri__XUV2T7QN = $mol_type_enforce<
 		`Ce-Ta-Nb`
 		,
 		string
@@ -20794,199 +20794,199 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mol_view__render__U19BPU85 = $mol_type_enforce<
+	type $mol_view__render__YOLPSUWV = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['draw'] >
 		,
 		ReturnType< $mol_view['render'] >
 	>
-	type $mol_view__sub__9LAYXTG0 = $mol_type_enforce<
+	type $mol_view__sub__Z2261NTM = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mol_view__sub__CH4F93L6 = $mol_type_enforce<
+	type $mol_view__sub__ENKRGDQU = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mpds_visavis_plot_legend_cmp__labels__HHFZJVCQ = $mol_type_enforce<
+	type $mpds_visavis_plot_legend_cmp__labels__34LCOPCN = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['cmp_labels'] >
 		,
 		ReturnType< $mpds_visavis_plot_legend_cmp['labels'] >
 	>
-	type $mpds_visavis_plot_legend_cmp__colorset__JGBG7LU8 = $mol_type_enforce<
+	type $mpds_visavis_plot_legend_cmp__colorset__ZXDUH7P3 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['colorset'] >
 		,
 		ReturnType< $mpds_visavis_plot_legend_cmp['colorset'] >
 	>
-	type $mol_view__sub__ZHEA0JEJ = $mol_type_enforce<
+	type $mol_view__sub__CEO5G7EP = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mol_view__style__V38EJRGJ = $mol_type_enforce<
+	type $mol_view__style__SXKPL0KM = $mol_type_enforce<
 		({ 
 			'background': ReturnType< $mpds_visavis_plot_matrix['heatmap_color'] >,
 		}) 
 		,
 		ReturnType< $mol_view['style'] >
 	>
-	type $mol_view__sub__9DN50Q2F = $mol_type_enforce<
+	type $mol_view__sub__ZOUWLFWJ = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mol_list__rows__VRD5SE7Z = $mol_type_enforce<
+	type $mol_list__rows__LNLQAUDM = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['heatmap_color_list'] >
 		,
 		ReturnType< $mol_list['rows'] >
 	>
-	type $mol_scroll__sub__RXU8JLEM = $mol_type_enforce<
+	type $mol_scroll__sub__YPXRS90I = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_scroll['sub'] >
 	>
-	type $mol_view__sub__SSIUWF3J = $mol_type_enforce<
+	type $mol_view__sub__HMZZ7LJI = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['plot_body'] >
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mol_check_box__title__7U092D9N = $mol_type_enforce<
+	type $mol_check_box__title__HJHQNWNG = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_check_box['title'] >
 	>
-	type $mol_check_box__checked__FYPTL732 = $mol_type_enforce<
+	type $mol_check_box__checked__9CZNUABW = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['fixel_checked'] >
 		,
 		ReturnType< $mol_check_box['checked'] >
 	>
-	type $mol_check_box__hint__CW5NALJQ = $mol_type_enforce<
+	type $mol_check_box__hint__2TG7IX8J = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_check_box['hint'] >
 	>
-	type $mol_check_box__title__0IORQZ7K = $mol_type_enforce<
+	type $mol_check_box__title__1DMHEU2O = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_check_box['title'] >
 	>
-	type $mol_check_box__checked__R0PBQWGY = $mol_type_enforce<
+	type $mol_check_box__checked__HA0CAF5O = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['nonformers_checked'] >
 		,
 		ReturnType< $mol_check_box['checked'] >
 	>
-	type $mol_check_box__title__FLJHK14J = $mol_type_enforce<
+	type $mol_check_box__title__UBH9DI2O = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_check_box['title'] >
 	>
-	type $mol_check_box__checked__VO63EFD7 = $mol_type_enforce<
+	type $mol_check_box__checked__DQZOGVRX = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['intersection_only'] >
 		,
 		ReturnType< $mol_check_box['checked'] >
 	>
-	type $mol_switch__value__Q36CBW3X = $mol_type_enforce<
+	type $mol_switch__value__X00V8R7I = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['sort_control'] >
 		,
 		ReturnType< $mol_switch['value'] >
 	>
-	type $mol_switch__options__NVVEADEM = $mol_type_enforce<
+	type $mol_switch__options__7OLK26KF = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['sort_dict'] >
 		,
 		ReturnType< $mol_switch['options'] >
 	>
-	type $mol_labeler__title__67AMFZ99 = $mol_type_enforce<
+	type $mol_labeler__title__I5D4BAZK = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_labeler['title'] >
 	>
-	type $mol_labeler__Content__V6BO02OP = $mol_type_enforce<
+	type $mol_labeler__Content__4U3BE4LO = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['Order_switch'] >
 		,
 		ReturnType< $mol_labeler['Content'] >
 	>
-	type $mol_select__value__631H5DR8 = $mol_type_enforce<
+	type $mol_select__value__YC5BKWDS = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['x_sort'] >
 		,
 		ReturnType< $mol_select['value'] >
 	>
-	type $mol_select__dictionary__CZGCMH6J = $mol_type_enforce<
+	type $mol_select__dictionary__UFUS1X9W = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['sort_dict'] >
 		,
 		ReturnType< $mol_select['dictionary'] >
 	>
-	type $mol_labeler__title__L0KLH9UI = $mol_type_enforce<
+	type $mol_labeler__title__517AA3Y1 = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_labeler['title'] >
 	>
-	type $mol_labeler__Content__XVDL1KQX = $mol_type_enforce<
+	type $mol_labeler__Content__UHMF1XYI = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['X_sort'] >
 		,
 		ReturnType< $mol_labeler['Content'] >
 	>
-	type $mol_select__value__JBTV3K4M = $mol_type_enforce<
+	type $mol_select__value__GHRR8R4H = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['y_sort'] >
 		,
 		ReturnType< $mol_select['value'] >
 	>
-	type $mol_select__dictionary__HLZ5PDYG = $mol_type_enforce<
+	type $mol_select__dictionary__PCTOPZJH = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['sort_dict'] >
 		,
 		ReturnType< $mol_select['dictionary'] >
 	>
-	type $mol_labeler__title__G7IRUSNE = $mol_type_enforce<
+	type $mol_labeler__title__IDRWZLM1 = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_labeler['title'] >
 	>
-	type $mol_labeler__Content__GA9BNDWJ = $mol_type_enforce<
+	type $mol_labeler__Content__X577B2A1 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['Y_sort'] >
 		,
 		ReturnType< $mol_labeler['Content'] >
 	>
-	type $mol_select__value__8HACALPR = $mol_type_enforce<
+	type $mol_select__value__JGGD92PB = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['x_op_str'] >
 		,
 		ReturnType< $mol_select['value'] >
 	>
-	type $mol_select__dictionary__2PT3UB8L = $mol_type_enforce<
+	type $mol_select__dictionary__E8KCMUZU = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['op_dict'] >
 		,
 		ReturnType< $mol_select['dictionary'] >
 	>
-	type $mol_labeler__title__ALSMK4X1 = $mol_type_enforce<
+	type $mol_labeler__title__ZKDHKPKB = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_labeler['title'] >
 	>
-	type $mol_labeler__Content__U3IC3VBD = $mol_type_enforce<
+	type $mol_labeler__Content__1N697KMK = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['X_op'] >
 		,
 		ReturnType< $mol_labeler['Content'] >
 	>
-	type $mol_select__value__2XV3NGNZ = $mol_type_enforce<
+	type $mol_select__value__E6DF53LQ = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['y_op_str'] >
 		,
 		ReturnType< $mol_select['value'] >
 	>
-	type $mol_select__dictionary__A92ADMKR = $mol_type_enforce<
+	type $mol_select__dictionary__HVKUR11R = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['op_dict'] >
 		,
 		ReturnType< $mol_select['dictionary'] >
 	>
-	type $mol_labeler__title__AVQ0LT45 = $mol_type_enforce<
+	type $mol_labeler__title__4WHVMUPK = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_labeler['title'] >
 	>
-	type $mol_labeler__Content__K5DNM6CN = $mol_type_enforce<
+	type $mol_labeler__Content__45PTANMB = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['Y_op'] >
 		,
 		ReturnType< $mol_labeler['Content'] >
 	>
-	type $mol_view__sub__4Q69Q5AZ = $mol_type_enforce<
+	type $mol_view__sub__J29A9M2M = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_matrix['setup'] >
 		,
 		ReturnType< $mol_view['sub'] >
@@ -21284,17 +21284,17 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mpds_visavis_lib_plotly_view__data__4O5QD2NU = $mol_type_enforce<
+	type $mpds_visavis_lib_plotly_view__data__IJBOBDQM = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['data_shown'] >
 		,
 		ReturnType< $mpds_visavis_lib_plotly_view['data'] >
 	>
-	type $mpds_visavis_lib_plotly_view__layout__MSMT9HSS = $mol_type_enforce<
+	type $mpds_visavis_lib_plotly_view__layout__2S7PK7S4 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['layout'] >
 		,
 		ReturnType< $mpds_visavis_lib_plotly_view['layout'] >
 	>
-	type $mpds_visavis_lib_plotly_view__plot_options__NVDB75IW = $mol_type_enforce<
+	type $mpds_visavis_lib_plotly_view__plot_options__LA776JT4 = $mol_type_enforce<
 		({ 
 			'displaylogo': boolean,
 			'displayModeBar': boolean,
@@ -21303,144 +21303,144 @@ declare namespace $ {
 		,
 		ReturnType< $mpds_visavis_lib_plotly_view['plot_options'] >
 	>
-	type $mpds_visavis_plot_legend_cmp__labels__UK84713D = $mol_type_enforce<
+	type $mpds_visavis_plot_legend_cmp__labels__N1I3XSQD = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['cmp_labels'] >
 		,
 		ReturnType< $mpds_visavis_plot_legend_cmp['labels'] >
 	>
-	type $mpds_visavis_plot_legend_cmp__colorset__GOCEY1SQ = $mol_type_enforce<
+	type $mpds_visavis_plot_legend_cmp__colorset__WATNHULN = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['colorset'] >
 		,
 		ReturnType< $mpds_visavis_plot_legend_cmp['colorset'] >
 	>
-	type $mol_view__sub__L7RYH884 = $mol_type_enforce<
+	type $mol_view__sub__BZ9HEL1H = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mol_view__style__PQ0YO0SP = $mol_type_enforce<
+	type $mol_view__style__P7ZP1FVS = $mol_type_enforce<
 		({ 
 			'background': ReturnType< $mpds_visavis_plot_cube['heatmap_color'] >,
 		}) 
 		,
 		ReturnType< $mol_view['style'] >
 	>
-	type $mol_view__sub__IZW8LLPF = $mol_type_enforce<
+	type $mol_view__sub__D4D67T2A = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mol_list__rows__3K6GSN2K = $mol_type_enforce<
+	type $mol_list__rows__AHJ2DH2S = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['heatmap_color_list'] >
 		,
 		ReturnType< $mol_list['rows'] >
 	>
-	type $mol_scroll__sub__R4K4QKS1 = $mol_type_enforce<
+	type $mol_scroll__sub__6DBC1I65 = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_scroll['sub'] >
 	>
-	type $mol_view__sub__2NZP2LTL = $mol_type_enforce<
+	type $mol_view__sub__PXX440Z7 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['plot_body'] >
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mol_check_box__title__TOPW6EUD = $mol_type_enforce<
+	type $mol_check_box__title__1D4G4LCC = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_check_box['title'] >
 	>
-	type $mol_check_box__checked__7B4WF7SO = $mol_type_enforce<
+	type $mol_check_box__checked__9VJCHQQL = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['fixel_checked'] >
 		,
 		ReturnType< $mol_check_box['checked'] >
 	>
-	type $mol_check_box__hint__WX8IWI50 = $mol_type_enforce<
+	type $mol_check_box__hint__CAPTCNRH = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_check_box['hint'] >
 	>
-	type $mol_check_box__title__Z74MFBDF = $mol_type_enforce<
+	type $mol_check_box__title__H5YIDDI0 = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_check_box['title'] >
 	>
-	type $mol_check_box__checked__IV0V2DQJ = $mol_type_enforce<
+	type $mol_check_box__checked__MPIMP4NJ = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['nonformers_checked'] >
 		,
 		ReturnType< $mol_check_box['checked'] >
 	>
-	type $mol_check_box__title__BKMPFQDI = $mol_type_enforce<
+	type $mol_check_box__title__RR6ICRJE = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_check_box['title'] >
 	>
-	type $mol_check_box__checked__BQDD3IBZ = $mol_type_enforce<
+	type $mol_check_box__checked__D2HFD45A = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['intersection_only'] >
 		,
 		ReturnType< $mol_check_box['checked'] >
 	>
-	type $mol_select__value__G7J798NQ = $mol_type_enforce<
+	type $mol_select__value__DAXU1A3I = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['x_sort'] >
 		,
 		ReturnType< $mol_select['value'] >
 	>
-	type $mol_select__dictionary__X819U6RW = $mol_type_enforce<
+	type $mol_select__dictionary__QDSXP7PO = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['sort_dict'] >
 		,
 		ReturnType< $mol_select['dictionary'] >
 	>
-	type $mol_labeler__title__1IB63QL1 = $mol_type_enforce<
+	type $mol_labeler__title__TEX3W68Z = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_labeler['title'] >
 	>
-	type $mol_labeler__Content__YGY85CD9 = $mol_type_enforce<
+	type $mol_labeler__Content__JV4YBGB9 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['X_order_select'] >
 		,
 		ReturnType< $mol_labeler['Content'] >
 	>
-	type $mol_select__value__GSO3YWYP = $mol_type_enforce<
+	type $mol_select__value__9A9I0YRK = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['y_sort'] >
 		,
 		ReturnType< $mol_select['value'] >
 	>
-	type $mol_select__dictionary__WMYUD7JT = $mol_type_enforce<
+	type $mol_select__dictionary__NJW9VJ2H = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['sort_dict'] >
 		,
 		ReturnType< $mol_select['dictionary'] >
 	>
-	type $mol_labeler__title__761W4ZDY = $mol_type_enforce<
+	type $mol_labeler__title__RUEVOM5B = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_labeler['title'] >
 	>
-	type $mol_labeler__Content__3OJHHMY7 = $mol_type_enforce<
+	type $mol_labeler__Content__10FJBZL0 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['Y_order_select'] >
 		,
 		ReturnType< $mol_labeler['Content'] >
 	>
-	type $mol_select__value__WX8NG99W = $mol_type_enforce<
+	type $mol_select__value__Q06YYF0S = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['z_sort'] >
 		,
 		ReturnType< $mol_select['value'] >
 	>
-	type $mol_select__dictionary__UK6V7N9G = $mol_type_enforce<
+	type $mol_select__dictionary__0ERABINN = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['sort_dict'] >
 		,
 		ReturnType< $mol_select['dictionary'] >
 	>
-	type $mol_labeler__title__50KXDGQO = $mol_type_enforce<
+	type $mol_labeler__title__W1A11T2F = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_labeler['title'] >
 	>
-	type $mol_labeler__Content__GHRP8PKW = $mol_type_enforce<
+	type $mol_labeler__Content__ESW3G69I = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['Z_order_select'] >
 		,
 		ReturnType< $mol_labeler['Content'] >
 	>
-	type $mol_view__sub__T47UBVQI = $mol_type_enforce<
+	type $mol_view__sub__H3OEJKOY = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_cube['setup'] >
 		,
 		ReturnType< $mol_view['sub'] >
@@ -21886,17 +21886,17 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mol_view__sub__UJ831MVF = $mol_type_enforce<
+	type $mol_view__sub__IAYNXTQQ = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mpds_visavis_lib_plotly_view__data__0JNIQTE1 = $mol_type_enforce<
+	type $mpds_visavis_lib_plotly_view__data__UQH3E3I6 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_phase['data'] >
 		,
 		ReturnType< $mpds_visavis_lib_plotly_view['data'] >
 	>
-	type $mpds_visavis_lib_plotly_view__layout__E8HKV9V5 = $mol_type_enforce<
+	type $mpds_visavis_lib_plotly_view__layout__XSMP45F2 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_phase['layout'] >
 		,
 		ReturnType< $mpds_visavis_lib_plotly_view['layout'] >
@@ -22523,47 +22523,47 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mpds_visavis_lib_plotly_view__data__5WVYN6XL = $mol_type_enforce<
+	type $mpds_visavis_lib_plotly_view__data__HORHN5WE = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_discovery['data'] >
 		,
 		ReturnType< $mpds_visavis_lib_plotly_view['data'] >
 	>
-	type $mpds_visavis_lib_plotly_view__layout__0BPA5Z9D = $mol_type_enforce<
+	type $mpds_visavis_lib_plotly_view__layout__RVESDFK7 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_discovery['layout'] >
 		,
 		ReturnType< $mpds_visavis_lib_plotly_view['layout'] >
 	>
-	type $mpds_visavis_plot_legend_cmp__labels__F1420FAE = $mol_type_enforce<
+	type $mpds_visavis_plot_legend_cmp__labels__RHM38NO2 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_discovery['cmp_labels'] >
 		,
 		ReturnType< $mpds_visavis_plot_legend_cmp['labels'] >
 	>
-	type $mpds_visavis_plot_legend_cmp__colorset__ZJ8GEQXG = $mol_type_enforce<
+	type $mpds_visavis_plot_legend_cmp__colorset__XWNCNBDM = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_discovery['colorset'] >
 		,
 		ReturnType< $mpds_visavis_plot_legend_cmp['colorset'] >
 	>
-	type $mol_check_list__option_checked__TVQGA7SI = $mol_type_enforce<
+	type $mol_check_list__option_checked__RLJVAMSN = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_discovery['elemental_checked'] >
 		,
 		ReturnType< $mol_check_list['option_checked'] >
 	>
-	type $mol_check_list__options__X1NRB7NR = $mol_type_enforce<
+	type $mol_check_list__options__6J2LTZWE = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_discovery['elementals_dict'] >
 		,
 		ReturnType< $mol_check_list['options'] >
 	>
-	type $mol_labeler__title__ZEZ2MBU0 = $mol_type_enforce<
+	type $mol_labeler__title__3XXBG5P1 = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_labeler['title'] >
 	>
-	type $mol_labeler__Content__QJ1EJJY6 = $mol_type_enforce<
+	type $mol_labeler__Content__MLZKJL4E = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_discovery['Elementals_check'] >
 		,
 		ReturnType< $mol_labeler['Content'] >
 	>
-	type $mol_view__sub__T07Y2OB2 = $mol_type_enforce<
+	type $mol_view__sub__15IM107G = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_view['sub'] >
@@ -24959,17 +24959,17 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mol_vector_2d__VPRPBGJA = $mol_type_enforce<
+	type $mol_vector_2d__ABSS7DT0 = $mol_type_enforce<
 		[ number, number ]
 		,
 		ConstructorParameters< typeof $mol_vector_2d<number> >
 	>
-	type $mol_vector_2d__E8BKPOG7 = $mol_type_enforce<
+	type $mol_vector_2d__SBRFWA7L = $mol_type_enforce<
 		[ number, number ]
 		,
 		ConstructorParameters< typeof $mol_vector_2d<number> >
 	>
-	type $mol_vector_2d__7RP0Z8CH = $mol_type_enforce<
+	type $mol_vector_2d__AZAPDMC5 = $mol_type_enforce<
 		[ number, number ]
 		,
 		ConstructorParameters< typeof $mol_vector_2d<number> >
@@ -25047,27 +25047,27 @@ declare namespace $.$$ {
 
 declare namespace $ {
 
-	type $mpds_visavis_plot_graph_pan__JAIBKVVM = $mol_type_enforce<
+	type $mpds_visavis_plot_graph_pan__1DKLZJSD = $mol_type_enforce<
 		Parameters< $mpds_visavis_plot_graph['pan'] >[0]
 		,
 		Parameters< ReturnType< $mpds_visavis_plot_graph['Touch'] >['pan'] >[0]
 	>
-	type $mol_touch__allow_draw__D3OA2W8X = $mol_type_enforce<
+	type $mol_touch__allow_draw__YUOP0355 = $mol_type_enforce<
 		boolean
 		,
 		ReturnType< $mol_touch['allow_draw'] >
 	>
-	type $mol_touch__allow_pan__ABU41OTB = $mol_type_enforce<
+	type $mol_touch__allow_pan__YL488DSY = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_graph['allow_pan'] >
 		,
 		ReturnType< $mol_touch['allow_pan'] >
 	>
-	type $mol_svg_root__view_box__LQWJ3R0D = $mol_type_enforce<
+	type $mol_svg_root__view_box__1WF60X6X = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_graph['view_box'] >
 		,
 		ReturnType< $mol_svg_root['view_box'] >
 	>
-	type $mol_svg_root__auto__PJLWP4L5 = $mol_type_enforce<
+	type $mol_svg_root__auto__WMR46L7L = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_graph['draw'] >
 		,
 		ReturnType< $mol_svg_root['auto'] >
@@ -25484,6 +25484,7 @@ declare namespace $ {
             readonly clientTop: number;
             readonly clientWidth: number;
             id: string;
+            innerHTML: string;
             readonly localName: string;
             readonly namespaceURI: string | null;
             onfullscreenchange: ((this: Element, ev: Event) => any) | null;
@@ -25523,12 +25524,13 @@ declare namespace $ {
             getElementsByTagNameNS(namespaceURI: "http://www.w3.org/2000/svg", localName: string): HTMLCollectionOf<SVGElement>;
             getElementsByTagNameNS(namespaceURI: "http://www.w3.org/1998/Math/MathML", localName: string): HTMLCollectionOf<MathMLElement>;
             getElementsByTagNameNS(namespace: string | null, localName: string): HTMLCollectionOf<Element>;
+            getHTML(options?: GetHTMLOptions): string;
             hasAttribute(qualifiedName: string): boolean;
             hasAttributeNS(namespace: string | null, localName: string): boolean;
             hasAttributes(): boolean;
             hasPointerCapture(pointerId: number): boolean;
             insertAdjacentElement(where: InsertPosition, element: Element): Element | null;
-            insertAdjacentHTML(position: InsertPosition, text: string): void;
+            insertAdjacentHTML(position: InsertPosition, string: string): void;
             insertAdjacentText(where: InsertPosition, data: string): void;
             matches(selectors: string): boolean;
             releasePointerCapture(pointerId: number): void;
@@ -25536,7 +25538,7 @@ declare namespace $ {
             removeAttributeNS(namespace: string | null, localName: string): void;
             removeAttributeNode(attr: Attr): Attr;
             requestFullscreen(options?: FullscreenOptions): Promise<void>;
-            requestPointerLock(): void;
+            requestPointerLock(options?: PointerLockOptions): Promise<void>;
             scroll(options?: ScrollToOptions): void;
             scroll(x: number, y: number): void;
             scrollBy(options?: ScrollToOptions): void;
@@ -25646,7 +25648,6 @@ declare namespace $ {
             before(...nodes: (Node | string)[]): void;
             remove(): void;
             replaceWith(...nodes: (Node | string)[]): void;
-            innerHTML: string;
             readonly nextElementSibling: Element | null;
             readonly previousElementSibling: Element | null;
             readonly childElementCount: number;
@@ -25688,7 +25689,9 @@ declare namespace $ {
             onchange: ((this: GlobalEventHandlers, ev: Event) => any) | null;
             onclick: ((this: GlobalEventHandlers, ev: MouseEvent) => any) | null;
             onclose: ((this: GlobalEventHandlers, ev: Event) => any) | null;
+            oncontextlost: ((this: GlobalEventHandlers, ev: Event) => any) | null;
             oncontextmenu: ((this: GlobalEventHandlers, ev: MouseEvent) => any) | null;
+            oncontextrestored: ((this: GlobalEventHandlers, ev: Event) => any) | null;
             oncopy: ((this: GlobalEventHandlers, ev: ClipboardEvent) => any) | null;
             oncuechange: ((this: GlobalEventHandlers, ev: Event) => any) | null;
             oncut: ((this: GlobalEventHandlers, ev: ClipboardEvent) => any) | null;
@@ -25783,247 +25786,247 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mpds_visavis_plot_matrix_x_op__U8MI33Y0 = $mol_type_enforce<
+	type $mpds_visavis_plot_matrix_x_op__B74XZ30Z = $mol_type_enforce<
 		Parameters< $mpds_visavis_plot['matrix_x_op'] >[0]
 		,
 		Parameters< ReturnType< $mpds_visavis_plot['Matrix'] >['x_op'] >[0]
 	>
-	type $mpds_visavis_plot_matrix_y_op__P8S4USMJ = $mol_type_enforce<
+	type $mpds_visavis_plot_matrix_y_op__9UNDRTUF = $mol_type_enforce<
 		Parameters< $mpds_visavis_plot['matrix_y_op'] >[0]
 		,
 		Parameters< ReturnType< $mpds_visavis_plot['Matrix'] >['y_op'] >[0]
 	>
-	type $mpds_visavis_plot_matrix_x_sort__JK8CB8OE = $mol_type_enforce<
+	type $mpds_visavis_plot_matrix_x_sort__PJZ8X3O1 = $mol_type_enforce<
 		Parameters< $mpds_visavis_plot['matrix_x_sort'] >[0]
 		,
 		Parameters< ReturnType< $mpds_visavis_plot['Matrix'] >['x_sort'] >[0]
 	>
-	type $mpds_visavis_plot_matrix_y_sort__7TYB6ZR1 = $mol_type_enforce<
+	type $mpds_visavis_plot_matrix_y_sort__H010PFLB = $mol_type_enforce<
 		Parameters< $mpds_visavis_plot['matrix_y_sort'] >[0]
 		,
 		Parameters< ReturnType< $mpds_visavis_plot['Matrix'] >['y_sort'] >[0]
 	>
-	type $mpds_visavis_plot_matrix__plot_raw__XNOJTCW5 = $mol_type_enforce<
+	type $mpds_visavis_plot_matrix__plot_raw__OFEMXGCG = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['plot_raw'] >
 		,
 		ReturnType< $mpds_visavis_plot_matrix['plot_raw'] >
 	>
-	type $mpds_visavis_plot_matrix__multi_jsons__5GXN9HDE = $mol_type_enforce<
+	type $mpds_visavis_plot_matrix__multi_jsons__616ONZI3 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['multi_jsons'] >
 		,
 		ReturnType< $mpds_visavis_plot_matrix['multi_jsons'] >
 	>
-	type $mpds_visavis_plot_matrix__show_setup__TUC17HJ6 = $mol_type_enforce<
+	type $mpds_visavis_plot_matrix__show_setup__NWRS8ZZL = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['show_setup'] >
 		,
 		ReturnType< $mpds_visavis_plot_matrix['show_setup'] >
 	>
-	type $mpds_visavis_plot_matrix__nonformers_checked__NO0CVLRM = $mol_type_enforce<
+	type $mpds_visavis_plot_matrix__nonformers_checked__LXQCSMC7 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['nonformers_checked'] >
 		,
 		ReturnType< $mpds_visavis_plot_matrix['nonformers_checked'] >
 	>
-	type $mpds_visavis_plot_matrix__fixel_checked__HCO8PI2L = $mol_type_enforce<
+	type $mpds_visavis_plot_matrix__fixel_checked__N9K2LIMX = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['matrix_fixel_checked'] >
 		,
 		ReturnType< $mpds_visavis_plot_matrix['fixel_checked'] >
 	>
-	type $mpds_visavis_plot_matrix__matrix_click__WTSSPS2Q = $mol_type_enforce<
+	type $mpds_visavis_plot_matrix__matrix_click__H3YAESES = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['matrix_click'] >
 		,
 		ReturnType< $mpds_visavis_plot_matrix['matrix_click'] >
 	>
-	type $mpds_visavis_plot_x_op__TOFC76OE = $mol_type_enforce<
+	type $mpds_visavis_plot_x_op__R0J475GX = $mol_type_enforce<
 		Parameters< $mpds_visavis_plot['x_op'] >[0]
 		,
 		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['x_op'] >[0]
 	>
-	type $mpds_visavis_plot_y_op__2A9QHN35 = $mol_type_enforce<
+	type $mpds_visavis_plot_y_op__CXELO8SL = $mol_type_enforce<
 		Parameters< $mpds_visavis_plot['y_op'] >[0]
 		,
 		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['y_op'] >[0]
 	>
-	type $mpds_visavis_plot_z_op__50GG5KHO = $mol_type_enforce<
+	type $mpds_visavis_plot_z_op__STQ0JBIE = $mol_type_enforce<
 		Parameters< $mpds_visavis_plot['z_op'] >[0]
 		,
 		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['z_op'] >[0]
 	>
-	type $mpds_visavis_plot_x_sort__AE7LAFUW = $mol_type_enforce<
+	type $mpds_visavis_plot_x_sort__B45X3MBE = $mol_type_enforce<
 		Parameters< $mpds_visavis_plot['x_sort'] >[0]
 		,
 		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['x_sort'] >[0]
 	>
-	type $mpds_visavis_plot_y_sort__IC8ZHJ3H = $mol_type_enforce<
+	type $mpds_visavis_plot_y_sort__7EYNDBAX = $mol_type_enforce<
 		Parameters< $mpds_visavis_plot['y_sort'] >[0]
 		,
 		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['y_sort'] >[0]
 	>
-	type $mpds_visavis_plot_z_sort__EQ8NLF59 = $mol_type_enforce<
+	type $mpds_visavis_plot_z_sort__ANV9QZC0 = $mol_type_enforce<
 		Parameters< $mpds_visavis_plot['z_sort'] >[0]
 		,
 		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['z_sort'] >[0]
 	>
-	type $mpds_visavis_plot_cube__plot_raw__IKKEJS9R = $mol_type_enforce<
+	type $mpds_visavis_plot_cube__plot_raw__OMARW3OD = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['plot_raw'] >
 		,
 		ReturnType< $mpds_visavis_plot_cube['plot_raw'] >
 	>
-	type $mpds_visavis_plot_cube__multi_jsons__I2HBIF6E = $mol_type_enforce<
+	type $mpds_visavis_plot_cube__multi_jsons__R6J56DEH = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['multi_jsons'] >
 		,
 		ReturnType< $mpds_visavis_plot_cube['multi_jsons'] >
 	>
-	type $mpds_visavis_plot_cube__show_setup__7NCVC4QF = $mol_type_enforce<
+	type $mpds_visavis_plot_cube__show_setup__9153WLDP = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['show_setup'] >
 		,
 		ReturnType< $mpds_visavis_plot_cube['show_setup'] >
 	>
-	type $mpds_visavis_plot_cube__show_fixel__CYAH6924 = $mol_type_enforce<
+	type $mpds_visavis_plot_cube__show_fixel__B119X413 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['show_fixel'] >
 		,
 		ReturnType< $mpds_visavis_plot_cube['show_fixel'] >
 	>
-	type $mpds_visavis_plot_cube__nonformers_checked__IN273FY0 = $mol_type_enforce<
+	type $mpds_visavis_plot_cube__nonformers_checked__6343430K = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['nonformers_checked'] >
 		,
 		ReturnType< $mpds_visavis_plot_cube['nonformers_checked'] >
 	>
-	type $mpds_visavis_plot_cube__fixel_checked__F1WQ2B2M = $mol_type_enforce<
+	type $mpds_visavis_plot_cube__fixel_checked__9OU84V6J = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['cube_fixel_checked'] >
 		,
 		ReturnType< $mpds_visavis_plot_cube['fixel_checked'] >
 	>
-	type $mpds_visavis_plot_cube__cube_click__43QUYCQ1 = $mol_type_enforce<
+	type $mpds_visavis_plot_cube__cube_click__4JIOOL05 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['cube_click'] >
 		,
 		ReturnType< $mpds_visavis_plot_cube['cube_click'] >
 	>
-	type $mpds_visavis_plot_phase__plot_raw__RPQXZ6H9 = $mol_type_enforce<
+	type $mpds_visavis_plot_phase__plot_raw__S14D6TD1 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['plot_raw'] >
 		,
 		ReturnType< $mpds_visavis_plot_phase['plot_raw'] >
 	>
-	type $mpds_visavis_plot_phase__phase_click__UN2A6I04 = $mol_type_enforce<
+	type $mpds_visavis_plot_phase__phase_click__FN38L9V5 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['phase_click'] >
 		,
 		ReturnType< $mpds_visavis_plot_phase['phase_click'] >
 	>
-	type $mpds_visavis_plot_bar__plot_raw__606W1ZXA = $mol_type_enforce<
+	type $mpds_visavis_plot_bar__plot_raw__R4TB49TC = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['plot_raw'] >
 		,
 		ReturnType< $mpds_visavis_plot_bar['plot_raw'] >
 	>
-	type $mpds_visavis_plot_bar__bar_click__OHNH7IVI = $mol_type_enforce<
+	type $mpds_visavis_plot_bar__bar_click__Z39ZU3PM = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['bar_click'] >
 		,
 		ReturnType< $mpds_visavis_plot_bar['bar_click'] >
 	>
-	type $mpds_visavis_plot_discovery_elementals_on__ISHYNPNG = $mol_type_enforce<
+	type $mpds_visavis_plot_discovery_elementals_on__CZFLC7RW = $mol_type_enforce<
 		Parameters< $mpds_visavis_plot['discovery_elementals_on'] >[0]
 		,
 		Parameters< ReturnType< $mpds_visavis_plot['Discovery'] >['elementals_on'] >[0]
 	>
-	type $mpds_visavis_plot_discovery__plot_raw__45RPKC4F = $mol_type_enforce<
+	type $mpds_visavis_plot_discovery__plot_raw__LJEE2KLQ = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['plot_raw'] >
 		,
 		ReturnType< $mpds_visavis_plot_discovery['plot_raw'] >
 	>
-	type $mpds_visavis_plot_discovery__json_cmp__OFL9D465 = $mol_type_enforce<
+	type $mpds_visavis_plot_discovery__json_cmp__KOA4SZ7L = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['json_cmp'] >
 		,
 		ReturnType< $mpds_visavis_plot_discovery['json_cmp'] >
 	>
-	type $mpds_visavis_plot_discovery__show_setup__UU19UR03 = $mol_type_enforce<
+	type $mpds_visavis_plot_discovery__show_setup__2GMNRUVC = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['show_setup'] >
 		,
 		ReturnType< $mpds_visavis_plot_discovery['show_setup'] >
 	>
-	type $mpds_visavis_plot_discovery__discovery_click__NUGJ0B58 = $mol_type_enforce<
+	type $mpds_visavis_plot_discovery__discovery_click__JAK62FKQ = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['discovery_click'] >
 		,
 		ReturnType< $mpds_visavis_plot_discovery['discovery_click'] >
 	>
-	type $mpds_visavis_plot_eigen__plot_raw__ISVQT6JY = $mol_type_enforce<
+	type $mpds_visavis_plot_eigen__plot_raw__J9VHGX6K = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['plot_raw'] >
 		,
 		ReturnType< $mpds_visavis_plot_eigen['plot_raw'] >
 	>
-	type $mpds_visavis_plot_pie__plot_raw__AFZLH1MR = $mol_type_enforce<
+	type $mpds_visavis_plot_pie__plot_raw__B0G3RCH7 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['plot_raw'] >
 		,
 		ReturnType< $mpds_visavis_plot_pie['plot_raw'] >
 	>
-	type $mpds_visavis_plot_pie__pie_click__FM8DYH6O = $mol_type_enforce<
+	type $mpds_visavis_plot_pie__pie_click__M64E3WR2 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['pie_click'] >
 		,
 		ReturnType< $mpds_visavis_plot_pie['pie_click'] >
 	>
-	type $mpds_visavis_plot_scatter__plot_raw__9R8U3MCK = $mol_type_enforce<
+	type $mpds_visavis_plot_scatter__plot_raw__B9DA8QAC = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['plot_raw'] >
 		,
 		ReturnType< $mpds_visavis_plot_scatter['plot_raw'] >
 	>
-	type $mpds_visavis_plot_scatter__notify__9GSWUDLB = $mol_type_enforce<
+	type $mpds_visavis_plot_scatter__notify__VE05RV68 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['notify'] >
 		,
 		ReturnType< $mpds_visavis_plot_scatter['notify'] >
 	>
-	type $mpds_visavis_plot_customscatter__plot_raw__85QL0GNL = $mol_type_enforce<
+	type $mpds_visavis_plot_customscatter__plot_raw__JIADCX1C = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['plot_raw'] >
 		,
 		ReturnType< $mpds_visavis_plot_customscatter['plot_raw'] >
 	>
-	type $mpds_visavis_plot_customscatter__nplots_changed__W065HCFX = $mol_type_enforce<
+	type $mpds_visavis_plot_customscatter__nplots_changed__9UGHC3VI = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['nplots_changed'] >
 		,
 		ReturnType< $mpds_visavis_plot_customscatter['nplots_changed'] >
 	>
-	type $mpds_visavis_plot_customscatter__legend_click__EWJ1LIDA = $mol_type_enforce<
+	type $mpds_visavis_plot_customscatter__legend_click__O85Q4VI4 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['legend_click'] >
 		,
 		ReturnType< $mpds_visavis_plot_customscatter['legend_click'] >
 	>
-	type $mpds_visavis_plot_heatmap__plot_raw__OEMIQR2P = $mol_type_enforce<
+	type $mpds_visavis_plot_heatmap__plot_raw__Q1JZ461B = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['plot_raw'] >
 		,
 		ReturnType< $mpds_visavis_plot_heatmap['plot_raw'] >
 	>
-	type $mpds_visavis_plot_graph_rel__GC8H6EYJ = $mol_type_enforce<
+	type $mpds_visavis_plot_graph_rel__2804KBBT = $mol_type_enforce<
 		Parameters< $mpds_visavis_plot['graph_rel'] >[0]
 		,
 		Parameters< ReturnType< $mpds_visavis_plot['Graph'] >['graph_rel'] >[0]
 	>
-	type $mpds_visavis_plot_graph__plot_raw__H8KZUNNK = $mol_type_enforce<
+	type $mpds_visavis_plot_graph__plot_raw__PPV2CYUQ = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['plot_raw'] >
 		,
 		ReturnType< $mpds_visavis_plot_graph['plot_raw'] >
 	>
-	type $mpds_visavis_plot_graph__graph_click__ZS5LIS0Q = $mol_type_enforce<
+	type $mpds_visavis_plot_graph__graph_click__NITCMYII = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['graph_click'] >
 		,
 		ReturnType< $mpds_visavis_plot_graph['graph_click'] >
 	>
-	type $mpds_visavis_plot_graph__notify__LXCJ8J0W = $mol_type_enforce<
+	type $mpds_visavis_plot_graph__notify__SWIBB9VF = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['notify'] >
 		,
 		ReturnType< $mpds_visavis_plot_graph['notify'] >
 	>
-	type $mol_locale_select__value__L63F5YXV = $mol_type_enforce<
+	type $mol_locale_select__value__QTMD1I8X = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['locale'] >
 		,
 		ReturnType< $mol_locale_select['value'] >
 	>
-	type $mol_check__Icon__J0MRNKLZ = $mol_type_enforce<
+	type $mol_check__Icon__X1JC3M18 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['Expand_icon'] >
 		,
 		ReturnType< $mol_check['Icon'] >
 	>
-	type $mol_check__checked__PIKP8HRS = $mol_type_enforce<
+	type $mol_check__checked__UVTM3F74 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot['fullscreen'] >
 		,
 		ReturnType< $mol_check['checked'] >
 	>
-	type $mol_paragraph__title__FDNHRI51 = $mol_type_enforce<
+	type $mol_paragraph__title__A0MNFMZ6 = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_paragraph['title'] >
@@ -26149,76 +26152,76 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mol_paragraph__title__QVBA5VS2 = $mol_type_enforce<
+	type $mol_paragraph__title__8XULRSRO = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_paragraph['title'] >
 	>
-	type $mol_paragraph__title__0LJK99TX = $mol_type_enforce<
+	type $mol_paragraph__title__R8NBVGC6 = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_paragraph['title'] >
 	>
-	type $mol_button_open__accept__BP12M27V = $mol_type_enforce<
+	type $mol_button_open__accept__DJ6M955L = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_button_open['accept'] >
 	>
-	type $mol_button_open__files__F34NR63M = $mol_type_enforce<
+	type $mol_button_open__files__03CPMKW7 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_app['files_read'] >
 		,
 		ReturnType< $mol_button_open['files'] >
 	>
-	type $mol_list__sub__45UJ9M36 = $mol_type_enforce<
+	type $mol_list__sub__ON49HL0M = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_list['sub'] >
 	>
-	type $mol_link__title__9Y3SW2QD = $mol_type_enforce<
+	type $mol_link__title__3EGXK85B = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_link['title'] >
 	>
-	type $mol_link__arg__KSCP8U8X = $mol_type_enforce<
+	type $mol_link__arg__J9EHM6G6 = $mol_type_enforce<
 		({ 
 			'section': string,
 		}) 
 		,
 		ReturnType< $mol_link['arg'] >
 	>
-	type $mol_list__rows__MPGK710M = $mol_type_enforce<
+	type $mol_list__rows__61L5LL0J = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_list['rows'] >
 	>
-	type $mol_drop__receive__O7JJVSKX = $mol_type_enforce<
+	type $mol_drop__receive__XX7JQPGV = $mol_type_enforce<
 		ReturnType< $mpds_visavis_app['drop_file'] >
 		,
 		ReturnType< $mol_drop['receive'] >
 	>
-	type $mol_drop__Sub__LQ5FERIA = $mol_type_enforce<
+	type $mol_drop__Sub__GN1CYS4I = $mol_type_enforce<
 		ReturnType< $mpds_visavis_app['Start_page_content'] >
 		,
 		ReturnType< $mol_drop['Sub'] >
 	>
-	type $mol_link__title__A5Y6TFM9 = $mol_type_enforce<
+	type $mol_link__title__ZHCO8KHF = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_link['title'] >
 	>
-	type $mol_link__arg__Z95VSXTN = $mol_type_enforce<
+	type $mol_link__arg__1F7PCZX9 = $mol_type_enforce<
 		({ 
 			'section': any,
 		}) 
 		,
 		ReturnType< $mol_link['arg'] >
 	>
-	type $mol_link__title__UFWDZO7B = $mol_type_enforce<
+	type $mol_link__title__RSZ36Z1Y = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_link['title'] >
 	>
-	type $mol_link__arg__E6EYXZKA = $mol_type_enforce<
+	type $mol_link__arg__IUP94UQE = $mol_type_enforce<
 		({ 
 			'section': string,
 			'file': any,
@@ -26226,139 +26229,139 @@ declare namespace $ {
 		,
 		ReturnType< $mol_link['arg'] >
 	>
-	type $mol_link_iconed__uri__PCX0UE2V = $mol_type_enforce<
+	type $mol_link_iconed__uri__IEJCEFFH = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_link_iconed['uri'] >
 	>
-	type $mol_link_iconed__title__GJPXWSCS = $mol_type_enforce<
+	type $mol_link_iconed__title__RCAYXW0E = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_link_iconed['title'] >
 	>
-	type $mol_paragraph__title__WP44URL7 = $mol_type_enforce<
+	type $mol_paragraph__title__6WYS7JTM = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_paragraph['title'] >
 	>
-	type $mol_button_open_native__accept__3DVEG4WJ = $mol_type_enforce<
+	type $mol_button_open_native__accept__WWTDAR38 = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_button_open_native['accept'] >
 	>
-	type $mol_button_open_native__files__CGAASXTH = $mol_type_enforce<
+	type $mol_button_open_native__files__3Y26EQO9 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_app['files_read'] >
 		,
 		ReturnType< $mol_button_open_native['files'] >
 	>
-	type $mol_button_minor__sub__EBRGXNIP = $mol_type_enforce<
+	type $mol_button_minor__sub__K5XY0XZ3 = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_button_minor['sub'] >
 	>
-	type $mol_drop__receive__O802XZFX = $mol_type_enforce<
+	type $mol_drop__receive__GUFRFC3X = $mol_type_enforce<
 		ReturnType< $mpds_visavis_app['drop_file'] >
 		,
 		ReturnType< $mol_drop['receive'] >
 	>
-	type $mol_drop__Sub__SO60JSEH = $mol_type_enforce<
+	type $mol_drop__Sub__BOQX5IHF = $mol_type_enforce<
 		ReturnType< $mpds_visavis_app['History_upload'] >
 		,
 		ReturnType< $mol_drop['Sub'] >
 	>
-	type $mol_button_minor__click__QZEVWTIB = $mol_type_enforce<
+	type $mol_button_minor__click__QWME6MA0 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_app['history_drop'] >
 		,
 		ReturnType< $mol_button_minor['click'] >
 	>
-	type $mol_button_minor__sub__REOSTB1B = $mol_type_enforce<
+	type $mol_button_minor__sub__PFWJVEP8 = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_button_minor['sub'] >
 	>
-	type $mol_view__sub__WT9YTL2O = $mol_type_enforce<
+	type $mol_view__sub__KX2PPSBO = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mol_list__rows__TO70SZQ8 = $mol_type_enforce<
+	type $mol_list__rows__U67FJ4SB = $mol_type_enforce<
 		ReturnType< $mpds_visavis_app['history_rows'] >
 		,
 		ReturnType< $mol_list['rows'] >
 	>
-	type $mol_list__title__IEMEPV0R = $mol_type_enforce<
+	type $mol_list__title__TYXO88CU = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_list['title'] >
 	>
-	type $mol_list__sub__ZA2ZULZS = $mol_type_enforce<
+	type $mol_list__sub__VJVX4VZB = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_list['sub'] >
 	>
-	type $mol_link__arg__MRI8V763 = $mol_type_enforce<
+	type $mol_link__arg__DGI9I26I = $mol_type_enforce<
 		({ 
 			'file': ReturnType< $mpds_visavis_app['plot_id'] >,
 		}) 
 		,
 		ReturnType< $mol_link['arg'] >
 	>
-	type $mol_link__title__ULX80I4X = $mol_type_enforce<
+	type $mol_link__title__OBRDXTAX = $mol_type_enforce<
 		ReturnType< $mpds_visavis_app['plot_id'] >
 		,
 		ReturnType< $mol_link['title'] >
 	>
-	type $mol_list__title__ID25OP5L = $mol_type_enforce<
+	type $mol_list__title__TDPXQ7CS = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_list['title'] >
 	>
-	type $mol_list__rows__8J4WTWYM = $mol_type_enforce<
+	type $mol_list__rows__GHDLD3S4 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_app['example_rows'] >
 		,
 		ReturnType< $mol_list['rows'] >
 	>
-	type $mol_page__title__EQJDVCXN = $mol_type_enforce<
+	type $mol_page__title__7OE7XGLU = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_page['title'] >
 	>
-	type $mol_page__tools__W7FLWYKC = $mol_type_enforce<
+	type $mol_page__tools__CNLIKWHE = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_page['tools'] >
 	>
-	type $mol_page__body__T4NHWBFU = $mol_type_enforce<
+	type $mol_page__body__KGXGL8J9 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_app['menu_body'] >
 		,
 		ReturnType< $mol_page['body'] >
 	>
-	type $mpds_visavis_plot__plot_raw__14GIRXG5 = $mol_type_enforce<
+	type $mpds_visavis_plot__plot_raw__7U364W9S = $mol_type_enforce<
 		ReturnType< $mpds_visavis_app['plot_raw'] >
 		,
 		ReturnType< $mpds_visavis_plot['plot_raw'] >
 	>
-	type $mpds_visavis_plot__show_setup__812KJ6FH = $mol_type_enforce<
+	type $mpds_visavis_plot__show_setup__GIS4Z2NZ = $mol_type_enforce<
 		boolean
 		,
 		ReturnType< $mpds_visavis_plot['show_setup'] >
 	>
-	type $mpds_visavis_plot__show_fixel__JZG1KLU4 = $mol_type_enforce<
+	type $mpds_visavis_plot__show_fixel__WZQTAI8Y = $mol_type_enforce<
 		boolean
 		,
 		ReturnType< $mpds_visavis_plot['show_fixel'] >
 	>
-	type $mpds_visavis_plot__show_demo_warn__J1IRVTSC = $mol_type_enforce<
+	type $mpds_visavis_plot__show_demo_warn__TS8ZEAN6 = $mol_type_enforce<
 		boolean
 		,
 		ReturnType< $mpds_visavis_plot['show_demo_warn'] >
 	>
-	type $mol_page__title__TX2QYSC7 = $mol_type_enforce<
+	type $mol_page__title__HEM3ZPCC = $mol_type_enforce<
 		ReturnType< $mpds_visavis_app['plot_id'] >
 		,
 		ReturnType< $mol_page['title'] >
 	>
-	type $mol_page__Body_content__GSGKZHWB = $mol_type_enforce<
+	type $mol_page__Body_content__BR35MW1P = $mol_type_enforce<
 		ReturnType< $mpds_visavis_app['Plot_view'] >
 		,
 		ReturnType< $mol_page['Body_content'] >
