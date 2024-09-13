@@ -469,6 +469,8 @@ namespace $.$$ {
 			}
 
 			this.Root().dom_node_actual().replaceChildren( svg_element )
+
+			this.reorder( 0 )
 		}
 
 		@ $mol_mem_key
@@ -542,18 +544,17 @@ namespace $.$$ {
 			return this.y_op( next )
 		}
 
-		reordered_state = {
-			nonformers_checked: false,
-			intersection_only: false,
-		}
 		@ $mol_mem
 		auto_reorder(){
-			let duration = 600
-			if( this.nonformers_checked() != this.reordered_state.nonformers_checked ) duration = 0
-			if( this.intersection_only() != this.reordered_state.intersection_only ) duration = 0
-			this.reordered_state.nonformers_checked = this.nonformers_checked()
-			this.reordered_state.intersection_only = this.intersection_only()
+			this.x_sort()
+			this.y_sort()
+			this.x_op()
+			this.y_op()
+			this.reorder( 600 )
+		}
 
+		@ $mol_action
+		reorder( duration: number ){
 			const x_sort = this.x_sort() as Prop_name
 			const y_sort = this.y_sort() as Prop_name || x_sort
 			const x_op = this.x_op() as string | undefined
@@ -625,7 +626,6 @@ namespace $.$$ {
 			}
 
 		}
-
 
 	}
 
