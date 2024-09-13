@@ -17207,6 +17207,7 @@ var $;
                         .text((d, i) => this.nodes()[i].name);
                 }
                 this.Root().dom_node_actual().replaceChildren(svg_element);
+                this.reorder(0);
             }
             get_bin_domain(args) {
                 const { sort, op } = args;
@@ -17267,18 +17268,14 @@ var $;
                 }
                 return this.y_op(next);
             }
-            reordered_state = {
-                nonformers_checked: false,
-                intersection_only: false,
-            };
             auto_reorder() {
-                let duration = 600;
-                if (this.nonformers_checked() != this.reordered_state.nonformers_checked)
-                    duration = 0;
-                if (this.intersection_only() != this.reordered_state.intersection_only)
-                    duration = 0;
-                this.reordered_state.nonformers_checked = this.nonformers_checked();
-                this.reordered_state.intersection_only = this.intersection_only();
+                this.x_sort();
+                this.y_sort();
+                this.x_op();
+                this.y_op();
+                this.reorder(600);
+            }
+            reorder(duration) {
                 const x_sort = this.x_sort();
                 const y_sort = this.y_sort() || x_sort;
                 const x_op = this.x_op();
@@ -17437,6 +17434,9 @@ var $;
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot_matrix.prototype, "auto_reorder", null);
+        __decorate([
+            $mol_action
+        ], $mpds_visavis_plot_matrix.prototype, "reorder", null);
         $$.$mpds_visavis_plot_matrix = $mpds_visavis_plot_matrix;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));
