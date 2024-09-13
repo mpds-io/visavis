@@ -330,7 +330,7 @@ namespace $.$$ {
 		}
 
 		@ $mol_action
-		draw_row_cells( row_node: SVGElement, cells: Matrix_cell[], intersection_only: boolean ) {
+		draw_row_cells( row_node: SVGElement, cells_data: Matrix_cell[], intersection_only: boolean ) {
 			const that = this
 
 			const range = this.range()
@@ -338,7 +338,7 @@ namespace $.$$ {
 
 			const enters = d3.select(row_node)
 				.selectAll('.cell')
-				.data( cells.filter( d => {
+				.data( cells_data.filter( d => {
 					if( intersection_only ) return d.intersection ? true : false
 					if( d.z !== 0 || d.intersection ) return true
 					return false
@@ -346,9 +346,12 @@ namespace $.$$ {
 				// .join('rect') // for new d3 version
 				.enter()
 			
-			const rects = enters.append('rect')
+			const cells = enters.append('g')
+				cells.attr('class', 'cell')
+
+			const rects = cells.append('rect')
 			
-			rects.attr('class', (d: any) => d.nonformer ? 'nonformer cell' : 'cell')
+			rects.attr('class', (d: any) => d.nonformer ? 'nonformer' : '')
 				.attr('id', (d: any) => 'c_' + this.nodes()[d.x].num.toString() + '_' + this.nodes()[d.y].num.toString())
 				.attr('x', (d: any) => range(d.x) )
 				// .attr('width', range.bandwidth()) // for new d3 version
@@ -384,8 +387,9 @@ namespace $.$$ {
 			rects.append('svg:title').text((cell: any) => this.svg_title_text(cell))
 				// .attr('mpds_visavis_plot_matrix_intersection', true)
 				
-			enters.append('text')
+			cells.append('text')
 				.text((cell: any) => cell.intersection || '')
+				// .attr('x', (d: any) => range(d.x) )
 				.attr('x', (d: any) => range(d.x) + rangeBand / 2 )
 				.attr('dy', '.85em')
 				.attr('text-anchor', 'middle')
@@ -465,6 +469,8 @@ namespace $.$$ {
 			}
 
 			this.Root().dom_node_actual().replaceChildren( svg_element )
+
+			this.reorder( 0 )
 		}
 
 		@ $mol_mem_key
@@ -540,7 +546,15 @@ namespace $.$$ {
 
 		@ $mol_mem
 		auto_reorder(){
-			this.nonformers_checked()
+			this.x_sort()
+			this.y_sort()
+			this.x_op()
+			this.y_op()
+			this.reorder( 600 )
+		}
+
+		@ $mol_action
+		reorder( duration: number ){
 			const x_sort = this.x_sort() as Prop_name
 			const y_sort = this.y_sort() as Prop_name || x_sort
 			const x_op = this.x_op() as string | undefined
@@ -589,29 +603,29 @@ namespace $.$$ {
 			d3.selectAll("g.row text").classed("hidden", y_op);
 			d3.select("rect.bgmatrix").classed("hidden", (x_op || y_op));
 		
-			var t = svg.transition().duration(600);
+			var t = svg.transition().duration(duration);
 		
 			if (y_op){
-			t.selectAll(".row")
-				.attr("transform", null)
-				.selectAll(".cell")
-				.attr("x", null)
-				.attr("transform", (d: any)=> { return "translate(" + x_arrange(d) + "," + y_arrange(d) + ")" });
+				t.selectAll(".row")
+					.attr("transform", null)
+					.selectAll(".cell")
+					.attr("x", null)
+					.attr("transform", (d: any)=> { return "translate(" + x_arrange(d) + "," + y_arrange(d) + ")" });
 		
 			} else {
-			t.selectAll(".row")
-				.attr("transform", (d: any, i: any)=> { return "translate(0," + y_arrange(d, i) + ")" }) // y-axis
-				.selectAll(".cell")
-				.attr("transform", null)
-				.attr("x", (d: any)=> { return x_arrange(d) }); // points, moved in x-direction
+				t.selectAll(".row")
+					.attr("transform", (d: any, i: any)=> { return "translate(0," + y_arrange(d, i) + ")" }) // y-axis
+					.selectAll(".cell")
+					.attr("transform", null)
+					.attr("x", (d: any)=> { return x_arrange(d) }); // points, moved in x-direction
 			}
 		
 			if (!x_op){
-			t.selectAll(".column")
-				.attr("transform", (d: any, i: any)=> { return "translate(" + x_arrange(d, i) + ")rotate(-90)" }); // x-axis
+				t.selectAll(".column")
+					.attr("transform", (d: any, i: any)=> { return "translate(" + x_arrange(d, i) + ")rotate(-90)" }); // x-axis
 			}
-		}
 
+		}
 
 	}
 
