@@ -2,7 +2,7 @@ $mpds_visavis_plot $mol_view
 	attr *
 		^
 		mol_theme \$mol_theme_light
-		fullscreen <= fullscreen?
+		fullscreen? true
 	Locale $mol_locale_select
 		value <= locale \en
 	json_request? null
@@ -14,9 +14,7 @@ $mpds_visavis_plot $mol_view
 	plot_raw null
 	show_setup false
 	notify? null
-	Fullscreen $mol_check
-		Icon <= Expand_icon $mol_icon_arrow_expand_all
-		checked? <=> fullscreen? false
+	Fullscreen null
 	show_demo_warn? false
 	Demo_warn $mol_paragraph
 		title \You are using the limited demo. Buy the full access and support our work.
@@ -25,7 +23,7 @@ $mpds_visavis_plot $mol_view
 			plot_raw <= plot_raw
 			multi_jsons <= multi_jsons
 			show_setup <= show_setup
-			nonformers_checked? <=> nonformers_checked? false
+			nonformers_checked? <=> nonformers_checked? true
 			fixel_checked? <=> matrix_fixel_checked? true
 			x_op? => matrix_x_op?
 			y_op? => matrix_y_op?
