@@ -188,7 +188,7 @@ $mol_icon_delete $mol_icon path \M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0
 
 $mol_page $mol_view
 	dom_name \article
-	field *
+	attr *
 		^
 		tabIndex <= tabindex -1
 	sub /
@@ -211,10 +211,6 @@ $mol_page $mol_view
 		<= Foot $mol_view
 			dom_name \footer
 			sub <= foot /$mol_view
-
-$mol_icon_arrow_expand $mol_icon path \M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z
-
-$mol_icon_arrow_expand_all $mol_icon path \M9.5,13.09L10.91,14.5L6.41,19H10V21H3V14H5V17.59L9.5,13.09M10.91,9.5L9.5,10.91L5,6.41V10H3V3H10V5H6.41L10.91,9.5M14.5,13.09L19,17.59V14H21V21H14V19H17.59L13.09,14.5L14.5,13.09M13.09,9.5L17.59,5H14V3H21V10H19V6.41L14.5,10.91L13.09,9.5Z
 
 $mpds_visavis_plot_legend_cmp $mol_view
 	sub /
@@ -420,8 +416,10 @@ $mol_search $mol_pop
 				sub /
 					<= Clear_icon $mol_icon_close
 	bubble_content /$mol_view_content
-		<= Menu $mol_list
-			rows <= menu_items /$mol_view
+		<= Bubble_pane $mol_scroll
+			sub /
+				<= Menu $mol_list
+					rows <= menu_items /$mol_view
 	Suggest* $mol_button_minor
 		click?event <=> suggest_select*?event null
 		sub <= suggest_content* /$mol_view_content
@@ -7951,7 +7949,7 @@ $mpds_visavis_plot $mol_view
 	attr *
 		^
 		mol_theme \$mol_theme_light
-		fullscreen <= fullscreen?
+		fullscreen? true
 	Locale $mol_locale_select
 		value <= locale \en
 	json_request? null
@@ -7963,9 +7961,7 @@ $mpds_visavis_plot $mol_view
 	plot_raw null
 	show_setup false
 	notify? null
-	Fullscreen $mol_check
-		Icon <= Expand_icon $mol_icon_arrow_expand_all
-		checked? <=> fullscreen? false
+	Fullscreen null
 	show_demo_warn? false
 	Demo_warn $mol_paragraph
 		title \You are using the limited demo. Buy the full access and support our work.
@@ -7974,7 +7970,7 @@ $mpds_visavis_plot $mol_view
 			plot_raw <= plot_raw
 			multi_jsons <= multi_jsons
 			show_setup <= show_setup
-			nonformers_checked? <=> nonformers_checked? false
+			nonformers_checked? <=> nonformers_checked? true
 			fixel_checked? <=> matrix_fixel_checked? true
 			x_op? => matrix_x_op?
 			y_op? => matrix_y_op?
