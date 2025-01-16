@@ -4882,6 +4882,28 @@ var $;
 })($ || ($ = {}));
 
 ;
+	($.$mol_icon_arrow_expand) = class $mol_icon_arrow_expand extends ($.$mol_icon) {
+		path(){
+			return "M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z";
+		}
+	};
+
+
+;
+"use strict";
+
+;
+	($.$mol_icon_arrow_expand_all) = class $mol_icon_arrow_expand_all extends ($.$mol_icon) {
+		path(){
+			return "M9.5,13.09L10.91,14.5L6.41,19H10V21H3V14H5V17.59L9.5,13.09M10.91,9.5L9.5,10.91L5,6.41V10H3V3H10V5H6.41L10.91,9.5M14.5,13.09L19,17.59V14H21V21H14V19H17.59L13.09,14.5L14.5,13.09M13.09,9.5L17.59,5H14V3H21V10H19V6.41L14.5,10.91L13.09,9.5Z";
+		}
+	};
+
+
+;
+"use strict";
+
+;
 	($.$mpds_visavis_plot_legend_cmp) = class $mpds_visavis_plot_legend_cmp extends ($.$mol_view) {
 		label(id){
 			return "";
@@ -21622,9 +21644,17 @@ var $;
 		locale(){
 			return "en";
 		}
+		Expand_icon(){
+			const obj = new this.$.$mol_icon_arrow_expand_all();
+			return obj;
+		}
+		fullscreen(next){
+			if(next !== undefined) return next;
+			return false;
+		}
 		nonformers_checked(next){
 			if(next !== undefined) return next;
-			return true;
+			return false;
 		}
 		matrix_fixel_checked(next){
 			if(next !== undefined) return next;
@@ -21794,7 +21824,7 @@ var $;
 			return {
 				...(super.attr()), 
 				"mol_theme": "$mol_theme_light", 
-				"fullscreen": true
+				"fullscreen": (this.fullscreen())
 			};
 		}
 		Locale(){
@@ -21834,7 +21864,10 @@ var $;
 			return null;
 		}
 		Fullscreen(){
-			return null;
+			const obj = new this.$.$mol_check();
+			(obj.Icon) = () => ((this.Expand_icon()));
+			(obj.checked) = (next) => ((this.fullscreen(next)));
+			return obj;
 		}
 		show_demo_warn(next){
 			if(next !== undefined) return next;
@@ -21861,6 +21894,8 @@ var $;
 			};
 		}
 	};
+	($mol_mem(($.$mpds_visavis_plot.prototype), "Expand_icon"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "fullscreen"));
 	($mol_mem(($.$mpds_visavis_plot.prototype), "nonformers_checked"));
 	($mol_mem(($.$mpds_visavis_plot.prototype), "matrix_fixel_checked"));
 	($mol_mem(($.$mpds_visavis_plot.prototype), "matrix_click"));
@@ -21890,6 +21925,7 @@ var $;
 	($mol_mem(($.$mpds_visavis_plot.prototype), "json_cmp_request"));
 	($mol_mem(($.$mpds_visavis_plot.prototype), "multi_requests"));
 	($mol_mem(($.$mpds_visavis_plot.prototype), "notify"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "Fullscreen"));
 	($mol_mem(($.$mpds_visavis_plot.prototype), "show_demo_warn"));
 	($mol_mem(($.$mpds_visavis_plot.prototype), "Demo_warn"));
 
@@ -21976,7 +22012,7 @@ var $;
             static fetch_plot_json(request) {
                 if (request == null)
                     return null;
-                const json = $mol_fetch.json(request);
+                const json = $mol_fetch.json(request, { credentials: 'include' });
                 if (json && json.error)
                     return $mol_fail(new $mol_data_error(json.error));
                 if (!json || !json.use_visavis_type)
@@ -22135,6 +22171,15 @@ var $;
     var $$;
     (function ($$) {
         $mol_style_define($mpds_visavis_plot, {
+            Fullscreen: {
+                position: 'absolute',
+                right: 0,
+                Icon: {
+                    width: '1.5rem',
+                    height: '1.5rem',
+                },
+                zIndex: 5,
+            },
             Demo_warn: {
                 position: 'absolute',
                 left: 0,

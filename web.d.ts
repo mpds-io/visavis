@@ -1726,6 +1726,24 @@ declare namespace $.$$ {
 
 declare namespace $ {
 
+	export class $mol_icon_arrow_expand extends $mol_icon {
+		path( ): string
+	}
+	
+}
+
+//# sourceMappingURL=expand.view.tree.d.ts.map
+declare namespace $ {
+
+	export class $mol_icon_arrow_expand_all extends $mol_icon {
+		path( ): string
+	}
+	
+}
+
+//# sourceMappingURL=all.view.tree.d.ts.map
+declare namespace $ {
+
 	type $mpds_visavis_plot_legend_cmp_label__label_mpds_visavis_plot_legend_cmp_1 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_legend_cmp['label'] >
 		,
@@ -26110,13 +26128,25 @@ declare namespace $ {
 		,
 		ReturnType< $mol_locale_select['value'] >
 	>
-	type $mol_paragraph__title_mpds_visavis_plot_47 = $mol_type_enforce<
+	type $mol_check__Icon_mpds_visavis_plot_47 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['Expand_icon'] >
+		,
+		ReturnType< $mol_check['Icon'] >
+	>
+	type $mol_check__checked_mpds_visavis_plot_48 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['fullscreen'] >
+		,
+		ReturnType< $mol_check['checked'] >
+	>
+	type $mol_paragraph__title_mpds_visavis_plot_49 = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_paragraph['title'] >
 	>
 	export class $mpds_visavis_plot extends $mol_view {
 		locale( ): string
+		Expand_icon( ): $mol_icon_arrow_expand_all
+		fullscreen( next?: boolean ): boolean
 		nonformers_checked( next?: boolean ): boolean
 		matrix_fixel_checked( next?: boolean ): boolean
 		matrix_x_op( next?: ReturnType< ReturnType< $mpds_visavis_plot['Matrix'] >['x_op'] > ): ReturnType< ReturnType< $mpds_visavis_plot['Matrix'] >['x_op'] >
@@ -26156,7 +26186,7 @@ declare namespace $ {
 		Graph( ): $mpds_visavis_plot_graph
 		attr( ): ({ 
 			'mol_theme': string,
-			fullscreen( next?: boolean ): boolean,
+			'fullscreen': ReturnType< $mpds_visavis_plot['fullscreen'] >,
 		})  & ReturnType< $mol_view['attr'] >
 		Locale( ): $mol_locale_select
 		json_request( next?: any ): any
@@ -26168,7 +26198,7 @@ declare namespace $ {
 		plot_raw( ): any
 		show_setup( ): boolean
 		notify( next?: any ): any
-		Fullscreen( ): any
+		Fullscreen( ): $mol_check
 		show_demo_warn( next?: boolean ): boolean
 		Demo_warn( ): $mol_paragraph
 		plots( ): ({ 
@@ -26200,7 +26230,7 @@ declare namespace $.$$ {
         json_cmp_request(next?: string | null): string | null;
         inconsistent_projection(): boolean;
         plot_raw(): $mpds_visavis_plot_raw | null;
-        sub(): any[];
+        sub(): ($.$mol_paragraph | $.$mol_check | $.$mpds_visavis_plot_matrix | $.$mpds_visavis_plot_cube | $.$mpds_visavis_plot_phase | $.$mpds_visavis_plot_bar | $.$mpds_visavis_plot_discovery | $.$mpds_visavis_plot_eigen | $.$mpds_visavis_plot_pie | $.$mpds_visavis_plot_scatter | $.$mpds_visavis_plot_customscatter | $.$mpds_visavis_plot_heatmap | $.$mpds_visavis_plot_graph)[];
         matrix_fixel_checked(next?: any): boolean;
         cube_fixel_checked(next?: any): boolean;
         on_fixel_checked(checked: boolean): void;

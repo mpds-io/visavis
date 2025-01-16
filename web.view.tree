@@ -212,6 +212,10 @@ $mol_page $mol_view
 			dom_name \footer
 			sub <= foot /$mol_view
 
+$mol_icon_arrow_expand $mol_icon path \M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z
+
+$mol_icon_arrow_expand_all $mol_icon path \M9.5,13.09L10.91,14.5L6.41,19H10V21H3V14H5V17.59L9.5,13.09M10.91,9.5L9.5,10.91L5,6.41V10H3V3H10V5H6.41L10.91,9.5M14.5,13.09L19,17.59V14H21V21H14V19H17.59L13.09,14.5L14.5,13.09M13.09,9.5L17.59,5H14V3H21V10H19V6.41L14.5,10.91L13.09,9.5Z
+
 $mpds_visavis_plot_legend_cmp $mol_view
 	sub /
 		<= Label*0 $mpds_visavis_plot_legend_cmp_label
@@ -7949,7 +7953,7 @@ $mpds_visavis_plot $mol_view
 	attr *
 		^
 		mol_theme \$mol_theme_light
-		fullscreen? true
+		fullscreen <= fullscreen?
 	Locale $mol_locale_select
 		value <= locale \en
 	json_request? null
@@ -7961,7 +7965,9 @@ $mpds_visavis_plot $mol_view
 	plot_raw null
 	show_setup false
 	notify? null
-	Fullscreen null
+	Fullscreen $mol_check
+		Icon <= Expand_icon $mol_icon_arrow_expand_all
+		checked? <=> fullscreen? false
 	show_demo_warn? false
 	Demo_warn $mol_paragraph
 		title \You are using the limited demo. Buy the full access and support our work.
@@ -7970,7 +7976,7 @@ $mpds_visavis_plot $mol_view
 			plot_raw <= plot_raw
 			multi_jsons <= multi_jsons
 			show_setup <= show_setup
-			nonformers_checked? <=> nonformers_checked? true
+			nonformers_checked? <=> nonformers_checked? false
 			fixel_checked? <=> matrix_fixel_checked? true
 			x_op? => matrix_x_op?
 			y_op? => matrix_y_op?
