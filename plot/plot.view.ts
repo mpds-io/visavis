@@ -6,7 +6,7 @@ namespace $.$$ {
 		static fetch_plot_json( request: RequestInfo | null ){
 			if ( request == null ) return null
 
-			const json = $mol_fetch.json( request ) as any
+			const json = $mol_fetch.json( request, { credentials: 'include' } ) as any
 
 			if ( json && json.error ) return $mol_fail( new $mol_data_error( json.error ) )
 			if ( !json || !json.use_visavis_type ) return $mol_fail( new $mol_data_error( 'Error: unknown data format' ) )
