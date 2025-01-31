@@ -14,12 +14,14 @@ $mpds_visavis_plot $mol_view
 	plot_raw null
 	show_setup false
 	notify? null
-	Fullscreen $mol_check
-		Icon <= Expand_icon $mol_icon_arrow_expand_all
-		checked? <=> fullscreen? false
 	show_demo_warn? false
-	Demo_warn $mol_paragraph
-		title \You are using the limited demo. Buy the full access and support our work.
+	sub /
+		^ demo_warn_visible / <= Demo_warn $mol_paragraph
+			title \You are using the limited demo. Buy the full access and support our work.
+		<= Fullscreen $mol_check
+			Icon <= Expand_icon $mol_icon_arrow_expand_all
+			checked? <=> fullscreen? false
+		<= Plot $mol_view
 	plots *
 		matrix <= Matrix $mpds_visavis_plot_matrix
 			plot_raw <= plot_raw
@@ -36,7 +38,7 @@ $mpds_visavis_plot $mol_view
 			plot_raw <= plot_raw
 			multi_jsons <= multi_jsons
 			show_setup <= show_setup
-			show_fixel? <= show_fixel? true
+			- show_fixel? <= show_fixel? true
 			nonformers_checked? <=> nonformers_checked?
 			fixel_checked? <=> cube_fixel_checked? false
 			x_op? => x_op?

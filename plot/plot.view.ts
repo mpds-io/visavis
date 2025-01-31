@@ -71,17 +71,24 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		sub() {
-			const phase_data_demo = this.plot_raw()?.type()! == 'pd' ? this.phase_data_demo() : false
-			const show_demo_warn = this.show_demo_warn()
-				&& ! [ 'matrix', 'discovery' ].includes( this.plot_raw()?.type()! )
-				&& ! phase_data_demo
+		plot_type(): ReturnType< $mpds_visavis_plot_raw['type'] > {
+			return this.plot_raw()?.type()!
+		}
 
-			return this.plot_raw() ? [
-				... show_demo_warn ? [ this.Demo_warn() ] : [],
-				this.Fullscreen(),
-				this.plots()[ this.plot_raw()!.type() ]
-			] : []
+		@ $mol_mem
+		demo_warn_visible() {
+			if( !this.show_demo_warn() ) return []
+
+			if( this.plot_type() == 'matrix' ) return []
+			if( this.plot_type() == 'discovery' ) return []
+			if( this.plot_type() == 'pd' && !this.phase_data_demo() ) return []
+
+			return [ this.Demo_warn() ]
+		}
+
+		@ $mol_mem
+		Plot() {
+			return this.plot_type() ? this.plots()[ this.plot_type()! ] : super.Plot()
 		}
 
 		@ $mol_mem
