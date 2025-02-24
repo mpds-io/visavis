@@ -6,10 +6,10 @@ $mpds_visavis_plot $mol_view
 	Locale $mol_locale_select
 		value <= locale \en
 	json_request? null
-	json null
 	json_cmp_request? null
-	json_cmp null
 	multi_requests? /string
+		\https://api.mpds.io/v0/visavis/cube?q=%7B%22elements%22%3A%22Li-O%22%2C%22search_type%22%3A0%7D
+		\https://api.mpds.io/v0/visavis/cube?q=%7B%22props%22%3A%22crystal%20structure%22%2C%22classes%22%3A%22non-disordered%22%2C%22years%22%3A%222000-2020%22%7D
 	multi_jsons null
 	plot_raw null
 	show_setup false
@@ -22,10 +22,11 @@ $mpds_visavis_plot $mol_view
 			Icon <= Expand_icon $mol_icon_arrow_expand_all
 			checked? <=> fullscreen? false
 		<= Plot $mol_view
+		^ error_visible / <= Error $mol_view
+			sub / <= error_message \
 	plots *
 		matrix <= Matrix $mpds_visavis_plot_matrix
 			plot_raw <= plot_raw
-			multi_jsons <= multi_jsons
 			show_setup <= show_setup
 			nonformers_checked? <=> nonformers_checked? false
 			fixel_checked? <=> matrix_fixel_checked? true
@@ -36,9 +37,8 @@ $mpds_visavis_plot $mol_view
 			matrix_click? <=> matrix_click? null
 		plot3d <= Cube $mpds_visavis_plot_cube
 			plot_raw <= plot_raw
-			multi_jsons <= multi_jsons
 			show_setup <= show_setup
-			- show_fixel? <= show_fixel? true
+			show_fixel? <= show_fixel? true
 			nonformers_checked? <=> nonformers_checked?
 			fixel_checked? <=> cube_fixel_checked? false
 			x_op? => x_op?
@@ -57,7 +57,6 @@ $mpds_visavis_plot $mol_view
 			bar_click? <=> bar_click? null
 		discovery <= Discovery $mpds_visavis_plot_discovery
 			plot_raw <= plot_raw
-			json_cmp <= json_cmp
 			show_setup <= show_setup
 			elementals_on? => discovery_elementals_on?
 			discovery_click? <=> discovery_click? null

@@ -16,7 +16,7 @@ namespace $.$$ {
 	export class $mpds_visavis_plot_bar extends $.$mpds_visavis_plot_bar {
 
 		json() {
-			return $mpds_visavis_plot_bar_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_bar_json( this.plot_raw().jsons()[0] )
 		}
 
 		@ $mol_mem

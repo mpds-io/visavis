@@ -8,7 +8,7 @@ namespace $.$$ {
 
 				const data = $mol_wire_sync( this.$ ).$mol_blob_json( file )
 
-				const plot_raw = $mol_wire_sync( this.$ ).$mpds_visavis_plot_raw_from_json( data, file.name )
+				const plot_raw = $mol_wire_sync( this.$ ).$mpds_visavis_plot_raw_from_jsons( [ data ], file.name )
 				
 				this.plot_opened_id( this.history_add( plot_raw ) )
 			}
@@ -45,11 +45,13 @@ namespace $.$$ {
 			return this.$.$mol_state_local.value( `${this}.history_plot_ids()` , next ) ?? []
 		}
 
+
 		@ $mol_mem_key
 		plot_raw(id: string, next?: $mpds_visavis_plot_raw | null) {
+
 			if ( this.json_request_hash() ) {
 				const json = $mpds_visavis_plot.fetch_plot_json( this.json_request_hash() )
-				return $mpds_visavis_plot_raw_from_json( json, this.json_request_hash()! )
+				return $mpds_visavis_plot_raw_from_jsons( [ json ], this.json_request_hash()! )
 			}
 
 			if ( this.menu_section() == 'examples' ) {
@@ -63,10 +65,10 @@ namespace $.$$ {
 		@ $mol_mem_key
 		plot_raw_example(id: string) {
 			const data: $mpds_visavis_plot_raw['data_default'] | null = this.$.$mol_state_local.value( `${this}.plot_raw_example('${id}')` )
-			if ( data ) return new $mpds_visavis_plot_raw( data )
+			if ( data?.jsons ) return new $mpds_visavis_plot_raw( data )
 
 			const json = $mol_fetch.json( this.examples()[ id ] )
-			const plot_raw = $mpds_visavis_plot_raw_from_json( json, id )
+			const plot_raw = $mpds_visavis_plot_raw_from_jsons( [ json ], id )
 			this.$.$mol_state_local.value( `${this}.plot_raw_example('${id}')`, plot_raw.data() )
 			return plot_raw
 		}

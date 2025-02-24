@@ -29,7 +29,7 @@ namespace $.$$ {
 		setup() {
 			return [
 				... this.show_fixel() ? [ this.Fixel() ] : [],
-				... this.multi_jsons() ? [ this.Intersection_on() ] : [],
+				... this.plot_raw().jsons().length > 1 ? [ this.Intersection_on() ] : [],
 				this.Nonformers(),
 				... this.show_setup() ? [ this.X_order(), this.Y_order(), this.Z_order() ] : [],
 			]
@@ -39,13 +39,13 @@ namespace $.$$ {
 		plot_body() {
 			return [
 				this.Root(),
-				... this.multi_jsons() ? [ this.Cmp_legend() ] : [],
+				... this.plot_raw().jsons().length > 1 ? [ this.Cmp_legend() ] : [],
 				... this.heatmap() ? [ this.Side_right() ] : [],
 			]
 		}
 
 		json() {
-			return $mpds_visavis_plot_cube_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_cube_json( this.plot_raw().jsons()[0] )
 		}
 
 		@ $mol_mem
@@ -74,7 +74,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		heatmap_diif() {
-			const jsons = this.multi_jsons() as typeof $mpds_visavis_plot_cube_json.Value[]
+			const jsons = this.plot_raw().jsons() as typeof $mpds_visavis_plot_cube_json.Value[]
 			if( jsons?.length == 2 ) {
 				return jsons.every( json => json.payload.points.v.some(val => Math.floor(val) !== val) )
 			}
@@ -85,7 +85,7 @@ namespace $.$$ {
 		heatmap() {
 			if( this.heatmap_diif() ) return this.intersection_only()
 
-			const jsons = this.multi_jsons() as typeof $mpds_visavis_plot_cube_json.Value[]
+			const jsons = this.plot_raw().jsons() as typeof $mpds_visavis_plot_cube_json.Value[]
 			let json = this.json()
 			if( jsons?.length == 1 ) json = jsons[0]
 
@@ -171,7 +171,7 @@ namespace $.$$ {
 		@ $mol_mem
 		points_traversed() {
 
-			const jsons = this.multi_jsons() ?? [ this.json() ]
+			const jsons = this.plot_raw().jsons()
 
 			const values_by_label: Record<
 				string/*json index*/, 
@@ -297,7 +297,7 @@ namespace $.$$ {
 		@ $mol_mem
 		multi_dataset(): any[] | null {
 
-			if( ! this.multi_jsons() ) return null
+			if( this.plot_raw().jsons().length === 1 ) return null
 
 			this.nonformers_checked( false )
 
@@ -310,7 +310,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		cmp_labels() {
-			return this.multi_jsons() ? this.multi_jsons()!.map( (json: any) => json.answerto ) : []
+			return this.plot_raw().jsons().length > 1 ? this.plot_raw().jsons()!.map( (json: any) => json.answerto ) : []
 		}
 
 		@ $mol_mem

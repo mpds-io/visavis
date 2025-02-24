@@ -14,32 +14,54 @@ namespace $.$$ {
 			return json
 		}
 
+		@ $mol_mem
+		requests() {
+			if( this.json_cmp_request() ) return [ this.json_request()!, this.json_cmp_request()! ]
+			if( this.multi_requests().length > 0 ) return this.multi_requests()
+			return [ this.json_request() ]
+		}
+
 		@ $mol_mem_key
 		json_fetched( request: string ) {
 			return $mpds_visavis_plot.fetch_plot_json( request )
 		}
 
 		@ $mol_mem
-		json() {
-			return this.json_fetched( this.json_request() )
+		jsons_fetched() {
+			const requests = this.requests()
+			return requests.map( req => this.json_fetched( req ) )
 		}
 
+		jsons_cached?: any[] | null
 		@ $mol_mem
-		json_cmp(): any {
-			return this.multi_jsons()?.[1] ?? null
+		jsons() {
+			try {
+				const jsons = this.jsons_fetched()
+				this.jsons_cached = jsons
+				return jsons
+
+			} catch( error ) {
+				if( !this.$.$mol_promise_like( error ) && this.jsons_cached ) {
+					console.error( error )
+					return this.jsons_cached
+				}
+				throw error
+			}
 		}
 
-		@ $mol_mem
-		multi_requests( next?: string[] ): readonly string[] {
-			if( next !== undefined ) return next
-			if( this.json_cmp_request() ) return [ this.json_request()!, this.json_cmp_request()! ]
-			return super.multi_requests()
+		error_visible() {
+			return this.error_message() ? super.error_visible() : []
 		}
 
-		@ $mol_mem
-		multi_jsons() {
-			let requests = this.multi_requests()
-			return requests.length > 0 ? requests.map( req => this.json_fetched( req ) ) : null
+		error_message(): string {
+			try {
+				this.jsons_fetched()
+				return ''
+
+			} catch( error: any ) {
+				if( this.$.$mol_promise_like( error ) ) throw error
+				return error.message || String( error )
+			}
 		}
 
 		@ $mol_mem
@@ -53,7 +75,7 @@ namespace $.$$ {
 		@ $mol_mem
 		inconsistent_projection() {
 			const fixels = new Set
-			this.multi_jsons()?.forEach( json => fixels.add( json.payload?.fixel ) )
+			this.jsons().forEach( json => fixels.add( json.payload?.fixel ) )
 			return fixels.size > 1
 		}
 
@@ -63,11 +85,7 @@ namespace $.$$ {
 				this.notify( 'Error: inconsistent datasets projection' )
 			}
 
-			return this.multi_jsons()
-				? $mpds_visavis_plot_raw_from_json( this.multi_jsons()![0] )
-				: this.json()
-					? $mpds_visavis_plot_raw_from_json( this.json() )
-					: null
+			return $mpds_visavis_plot_raw_from_jsons( this.jsons() )
 		}
 
 		@ $mol_mem

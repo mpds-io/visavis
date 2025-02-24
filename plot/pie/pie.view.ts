@@ -38,7 +38,7 @@ namespace $.$$ {
 	export class $mpds_visavis_plot_pie extends $.$mpds_visavis_plot_pie {
 
 		json() {
-			return $mpds_visavis_plot_pie_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_pie_json( this.plot_raw().jsons()[0] )
 		}
 
 		@ $mol_mem
