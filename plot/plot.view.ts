@@ -155,6 +155,14 @@ namespace $.$$ {
 			alert( msg )
 		}
 
+		@ $mol_action
+		reset() {
+			const sub = [ ...this.sub() ]
+			this.sub( [] )
+
+			setTimeout( ()=> this.sub( sub ), 0 )
+		}
+
 	}
 
 	$mol_view_component( $mpds_visavis_plot )

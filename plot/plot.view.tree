@@ -13,7 +13,8 @@ $mpds_visavis_plot $mol_view
 	show_setup false
 	notify? null
 	show_demo_warn? false
-	sub /
+	reset null
+	sub? /
 		^ demo_warn_visible / <= Demo_warn $mol_paragraph
 			title \You are using the limited demo. Buy the full access and support our work.
 		<= Fullscreen $mol_check
