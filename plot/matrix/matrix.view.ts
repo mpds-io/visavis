@@ -52,8 +52,8 @@ namespace $.$$ {
 		@ $mol_mem
 		setup() {
 			return [
-				... this.json().payload.fixel ? [ this.Fixel() ] : [],
-				... this.multi_jsons() ? [ this.Intersection_on() ] : [],
+				... this.json_master().payload.fixel ? [ this.Fixel() ] : [],
+				... this.plot_raw().jsons().length > 1 ? [ this.Intersection_on() ] : [],
 				this.Nonformers(),
 				... this.show_setup() ? this.sorting() : [],
 			]
@@ -65,14 +65,9 @@ namespace $.$$ {
 				this.Root(),
 				... this.x_op() ? [ this.X_label() ] : [],
 				... this.y_op() ? [ this.Y_label() ] : [],
-				... this.multi_jsons() ? [ this.Cmp_legend() ] : [],
+				... this.plot_raw().jsons().length > 1 ? [ this.Cmp_legend() ] : [],
 				... this.heatmap() ? [ this.Side_right() ] : [],
 			]
-		}
-
-		@ $mol_mem
-		json() {
-			return $mpds_visavis_plot_matrix_json( this.plot_raw().json() as any )
 		}
 
 		@ $mol_mem
@@ -94,14 +89,13 @@ namespace $.$$ {
 
 		@ $mol_mem
 		cmp_labels() {
-			return this.multi_jsons() ? this.multi_jsons()!.map( (json: any) => json.answerto ) : []
+			const jsons = this.plot_raw().jsons()
+			return jsons.length > 1 ? jsons.map( json => json.answerto ) : []
 		}
 
 		@ $mol_mem
 		json_master() {
-			if ( ! this.multi_jsons() ) return this.json()
-
-			const jsons: any[] = this.multi_jsons()!
+			const jsons = this.plot_raw().jsons()
 			
 			const json_master = JSON.parse( JSON.stringify(
 				$mpds_visavis_plot_matrix_json( jsons[0] ) 
@@ -203,7 +197,7 @@ namespace $.$$ {
 				return 'entries'
 			}
 			
-			const datesets_quantity = this.multi_jsons()?.length || 1
+			const datesets_quantity = this.plot_raw().jsons().length
 			if( datesets_quantity == heatmap_datasets.size && heatmap_datasets.size <= 2 ) {
 				return 'heatmap'
 			}

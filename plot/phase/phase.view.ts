@@ -158,7 +158,7 @@ namespace $.$$ {
 	export class $mpds_visavis_plot_phase extends $.$mpds_visavis_plot_phase {
 
 		json() {
-			return $mpds_visavis_plot_phase_rect_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_phase_rect_json( this.plot_raw().jsons()[0] )
 		}
 
 		json_title_b() {

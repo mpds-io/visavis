@@ -61,7 +61,7 @@ namespace $.$$ {
 	export class $mpds_visavis_plot_eigen extends $.$mpds_visavis_plot_eigen {
 
 		json() {
-			return $mpds_visavis_plot_eigen_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_eigen_json( this.plot_raw().jsons()[0] )
 		}
 
 		@ $mol_mem

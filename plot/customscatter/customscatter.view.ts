@@ -21,7 +21,7 @@ namespace $.$$ {
 	export class $mpds_visavis_plot_customscatter extends $.$mpds_visavis_plot_customscatter {
 
 		json() {
-			return $mpds_visavis_plot_customscatter_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_customscatter_json( this.plot_raw().jsons()[0] )
 		}
 
 		@ $mol_mem

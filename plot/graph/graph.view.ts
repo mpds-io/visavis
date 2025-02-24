@@ -37,7 +37,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		json() {
-			return $mpds_visavis_plot_graph_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_graph_json( this.plot_raw().jsons()[0] )
 		}
 
 		plot_title() {

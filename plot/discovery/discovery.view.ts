@@ -110,7 +110,12 @@ namespace $.$$ {
 		}
 
 		json() {
-			return $mpds_visavis_plot_discovery_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_discovery_json( this.plot_raw().jsons()[0] )
+		}
+
+		json_cmp() {
+			const json_cmp = this.plot_raw().jsons()[1]
+			return json_cmp ? $mpds_visavis_plot_discovery_json( json_cmp ) : null
 		}
 
 		elementals_dict() {
@@ -214,7 +219,7 @@ namespace $.$$ {
 		data() {
 		
 			const json = this.json()
-			const json_cmp = this.json_cmp() ? $mpds_visavis_plot_discovery_json( this.json_cmp() ) : null
+			const json_cmp = this.json_cmp()
 
 			const elementals_on = this.elementals_on()
 
@@ -245,7 +250,8 @@ namespace $.$$ {
 
 		@ $mol_mem
 		cmp_labels() {
-			return this.json_cmp() ? [ this.json().answerto, this.json_cmp().answerto ] : []
+			const cmp = this.json_cmp()
+			return cmp ? [ this.json().answerto, cmp.answerto ] : []
 		}
 
 	}
