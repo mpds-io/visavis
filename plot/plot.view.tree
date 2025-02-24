@@ -8,8 +8,6 @@ $mpds_visavis_plot $mol_view
 	json_request? null
 	json_cmp_request? null
 	multi_requests? /string
-		\https://api.mpds.io/v0/visavis/cube?q=%7B%22elements%22%3A%22Li-O%22%2C%22search_type%22%3A0%7D
-		\https://api.mpds.io/v0/visavis/cube?q=%7B%22props%22%3A%22crystal%20structure%22%2C%22classes%22%3A%22non-disordered%22%2C%22years%22%3A%222000-2020%22%7D
 	multi_jsons null
 	plot_raw null
 	show_setup false
