@@ -6,24 +6,26 @@ $mpds_visavis_plot $mol_view
 	Locale $mol_locale_select
 		value <= locale \en
 	json_request? null
-	json null
 	json_cmp_request? null
-	json_cmp null
 	multi_requests? /string
 	multi_jsons null
 	plot_raw null
 	show_setup false
 	notify? null
-	Fullscreen $mol_check
-		Icon <= Expand_icon $mol_icon_arrow_expand_all
-		checked? <=> fullscreen? false
 	show_demo_warn? false
-	Demo_warn $mol_paragraph
-		title \You are using the limited demo. Buy the full access and support our work.
+	reset null
+	sub? /
+		^ demo_warn_visible / <= Demo_warn $mol_paragraph
+			title \You are using the limited demo. Buy the full access and support our work.
+		<= Fullscreen $mol_check
+			Icon <= Expand_icon $mol_icon_arrow_expand_all
+			checked? <=> fullscreen? false
+		<= Plot $mol_view
+		^ error_visible / <= Error $mol_view
+			sub / <= error_message \
 	plots *
 		matrix <= Matrix $mpds_visavis_plot_matrix
 			plot_raw <= plot_raw
-			multi_jsons <= multi_jsons
 			show_setup <= show_setup
 			nonformers_checked? <=> nonformers_checked? false
 			fixel_checked? <=> matrix_fixel_checked? true
@@ -34,7 +36,6 @@ $mpds_visavis_plot $mol_view
 			matrix_click? <=> matrix_click? null
 		plot3d <= Cube $mpds_visavis_plot_cube
 			plot_raw <= plot_raw
-			multi_jsons <= multi_jsons
 			show_setup <= show_setup
 			show_fixel? <= show_fixel? true
 			nonformers_checked? <=> nonformers_checked?
@@ -55,7 +56,6 @@ $mpds_visavis_plot $mol_view
 			bar_click? <=> bar_click? null
 		discovery <= Discovery $mpds_visavis_plot_discovery
 			plot_raw <= plot_raw
-			json_cmp <= json_cmp
 			show_setup <= show_setup
 			elementals_on? => discovery_elementals_on?
 			discovery_click? <=> discovery_click? null

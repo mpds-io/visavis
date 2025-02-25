@@ -3,14 +3,14 @@ namespace $ {
 	interface Plot_raw {
 		id: string
 		type: 'matrix' | 'plot3d' | 'pd' | 'bar' | 'discovery' | 'eigenplot' | 'pie' | 'scatter' | 'customscatter' | 'heatmap' | 'graph'
-		json: unknown
+		jsons: any[]
 	}
 
-	export function $mpds_visavis_plot_raw_from_json( json: any, id?: string ){
+	export function $mpds_visavis_plot_raw_from_jsons( jsons: any[], id?: string ){
 		return new $mpds_visavis_plot_raw({
 			id: id || $mol_guid(),
-			type: json.use_visavis_type ?? 'unknown',
-			json,
+			type: jsons[0].use_visavis_type ?? 'unknown',
+			jsons,
 		})
 	}
 
@@ -24,8 +24,8 @@ namespace $ {
 			return this.value('type')
 		}
 
-		json() {
-			return this.value('json')
+		jsons() {
+			return this.value('jsons')
 		}
 
 	}

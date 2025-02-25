@@ -3,7 +3,6 @@ $mpds_visavis_plot_matrix $mol_view
 	auto /
 		<= size_debounced 0
 		<= auto_reorder null
-	multi_jsons? null
 	json_master null
 	show_setup true
 	size? 0

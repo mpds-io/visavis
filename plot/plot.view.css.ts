@@ -24,7 +24,32 @@ namespace $.$$ {
 			},
 			zIndex: 1,
 			cursor: 'default',
-		}
+		},
+
+		Error: {
+			position: 'absolute',
+			width: '50%',
+			height: '50%',
+			left: '25%',
+			top: '25%',
+
+			justify: {
+				content: 'center'
+			},
+			align: {
+				items: 'center',
+			},
+
+			background: {
+				color: $mol_theme.back,
+			},
+			border: {
+				radius: $mol_gap.round,
+			},
+
+			zIndex: 1,
+			cursor: 'default',
+		},
 
 	} )
 

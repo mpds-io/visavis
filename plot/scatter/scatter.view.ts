@@ -46,7 +46,7 @@ namespace $.$$ {
 
 		json() {
 			// notify('Cannot get plot data, please, try again');
-			return $mpds_visavis_plot_scatter_json( this.plot_raw().json() as any )
+			return $mpds_visavis_plot_scatter_json( this.plot_raw().jsons()[0] )
 		}
 
 		@ $mol_mem

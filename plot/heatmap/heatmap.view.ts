@@ -5,7 +5,7 @@ namespace $.$$ {
 	export class $mpds_visavis_plot_heatmap extends $.$mpds_visavis_plot_heatmap {
 
 		json() {
-			return this.plot_raw().json() as any
+			return this.plot_raw().jsons()[0]
 			// return $mpds_visavis_plot_heatmap_json( this.plot_raw().json() as any )
 		}
 
