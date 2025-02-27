@@ -7,6 +7,12 @@ namespace $ {
 	}
 
 	export function $mpds_visavis_plot_raw_from_jsons( jsons: any[], id?: string ){
+
+		jsons.forEach( json => {
+			if ( json && json.error ) return $mol_fail( new $mol_data_error( json.error ) )
+			if ( !json || !json.use_visavis_type ) return $mol_fail( new $mol_data_error( 'Error: unknown data format' ) )
+		} )
+
 		return new $mpds_visavis_plot_raw({
 			id: id || $mol_guid(),
 			type: jsons[0].use_visavis_type ?? 'unknown',

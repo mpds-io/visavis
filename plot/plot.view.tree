@@ -8,7 +8,7 @@ $mpds_visavis_plot $mol_view
 	json_request? null
 	json_cmp_request? null
 	multi_requests? /string
-	multi_jsons null
+	jsons /
 	plot_raw null
 	show_setup false
 	notify? null
