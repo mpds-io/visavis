@@ -22284,7 +22284,7 @@ var $;
 		}
 		Matrix(){
 			const obj = new this.$.$mpds_visavis_plot_matrix();
-			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.plot_raw) = () => ((this.plot_raw_visible()));
 			(obj.show_setup) = () => ((this.show_setup()));
 			(obj.nonformers_checked) = (next) => ((this.nonformers_checked(next)));
 			(obj.fixel_checked) = (next) => ((this.matrix_fixel_checked(next)));
@@ -22323,7 +22323,7 @@ var $;
 		}
 		Cube(){
 			const obj = new this.$.$mpds_visavis_plot_cube();
-			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.plot_raw) = () => ((this.plot_raw_visible()));
 			(obj.show_setup) = () => ((this.show_setup()));
 			(obj.show_fixel) = (next) => ((this.show_fixel()));
 			(obj.nonformers_checked) = (next) => ((this.nonformers_checked(next)));
@@ -22340,7 +22340,7 @@ var $;
 		}
 		Phase(){
 			const obj = new this.$.$mpds_visavis_plot_phase();
-			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.plot_raw) = () => ((this.plot_raw_visible()));
 			(obj.phase_click) = (next) => ((this.phase_click(next)));
 			return obj;
 		}
@@ -22350,7 +22350,7 @@ var $;
 		}
 		Bar(){
 			const obj = new this.$.$mpds_visavis_plot_bar();
-			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.plot_raw) = () => ((this.plot_raw_visible()));
 			(obj.bar_click) = (next) => ((this.bar_click(next)));
 			return obj;
 		}
@@ -22363,14 +22363,14 @@ var $;
 		}
 		Discovery(){
 			const obj = new this.$.$mpds_visavis_plot_discovery();
-			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.plot_raw) = () => ((this.plot_raw_visible()));
 			(obj.show_setup) = () => ((this.show_setup()));
 			(obj.discovery_click) = (next) => ((this.discovery_click(next)));
 			return obj;
 		}
 		Eigen(){
 			const obj = new this.$.$mpds_visavis_plot_eigen();
-			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.plot_raw) = () => ((this.plot_raw_visible()));
 			return obj;
 		}
 		pie_click(next){
@@ -22379,13 +22379,13 @@ var $;
 		}
 		Pie(){
 			const obj = new this.$.$mpds_visavis_plot_pie();
-			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.plot_raw) = () => ((this.plot_raw_visible()));
 			(obj.pie_click) = (next) => ((this.pie_click(next)));
 			return obj;
 		}
 		Scatter(){
 			const obj = new this.$.$mpds_visavis_plot_scatter();
-			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.plot_raw) = () => ((this.plot_raw_visible()));
 			(obj.notify) = (next) => ((this.notify(next)));
 			return obj;
 		}
@@ -22399,14 +22399,14 @@ var $;
 		}
 		Customscatter(){
 			const obj = new this.$.$mpds_visavis_plot_customscatter();
-			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.plot_raw) = () => ((this.plot_raw_visible()));
 			(obj.nplots_changed) = (next) => ((this.nplots_changed(next)));
 			(obj.legend_click) = (next) => ((this.legend_click(next)));
 			return obj;
 		}
 		Heatmap(){
 			const obj = new this.$.$mpds_visavis_plot_heatmap();
-			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.plot_raw) = () => ((this.plot_raw_visible()));
 			return obj;
 		}
 		graph_rel(next){
@@ -22418,7 +22418,7 @@ var $;
 		}
 		Graph(){
 			const obj = new this.$.$mpds_visavis_plot_graph();
-			(obj.plot_raw) = () => ((this.plot_raw()));
+			(obj.plot_raw) = () => ((this.plot_raw_visible()));
 			(obj.graph_click) = (next) => ((this.graph_click(next)));
 			(obj.notify) = (next) => ((this.notify(next)));
 			return obj;
@@ -22452,6 +22452,9 @@ var $;
 			return [];
 		}
 		plot_raw(){
+			return null;
+		}
+		plot_raw_visible(){
 			return null;
 		}
 		show_setup(){
@@ -22784,7 +22787,7 @@ var $;
     (function ($$) {
         class $mpds_visavis_plot extends $.$mpds_visavis_plot {
             sub(next) {
-                if (this.jsons().length == 0)
+                if (!this.plot_raw_visible())
                     return [];
                 return next ?? super.sub();
             }
@@ -22813,7 +22816,7 @@ var $;
             }
             error_message() {
                 try {
-                    $mpds_visavis_plot_raw_from_jsons(this.jsons());
+                    this.plot_raw();
                     return '';
                 }
                 catch (error) {
@@ -22833,13 +22836,20 @@ var $;
                 this.jsons().forEach(json => fixels.add(json.payload?.fixel));
                 return fixels.size > 1;
             }
-            plot_raw_cached;
             plot_raw() {
+                if (this.jsons().length == 0)
+                    return null;
+                return $mpds_visavis_plot_raw_from_jsons(this.jsons());
+            }
+            plot_raw_cached;
+            plot_raw_visible() {
+                if (this.jsons().length == 0)
+                    return null;
                 if (this.inconsistent_projection()) {
                     this.notify('Error: inconsistent datasets projection');
                 }
                 try {
-                    const plot_raw = $mpds_visavis_plot_raw_from_jsons(this.jsons());
+                    const plot_raw = this.plot_raw();
                     this.plot_raw_cached = plot_raw;
                     return plot_raw;
                 }
@@ -22852,7 +22862,7 @@ var $;
                 }
             }
             plot_type() {
-                return this.plot_raw()?.type();
+                return this.plot_raw_visible()?.type();
             }
             demo_warn_visible() {
                 if (!this.show_demo_warn())
@@ -22908,6 +22918,9 @@ var $;
         }
         __decorate([
             $mol_mem
+        ], $mpds_visavis_plot.prototype, "sub", null);
+        __decorate([
+            $mol_mem
         ], $mpds_visavis_plot.prototype, "requests", null);
         __decorate([
             $mol_mem_key
@@ -22924,6 +22937,9 @@ var $;
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot.prototype, "plot_raw", null);
+        __decorate([
+            $mol_mem
+        ], $mpds_visavis_plot.prototype, "plot_raw_visible", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot.prototype, "plot_type", null);

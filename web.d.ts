@@ -26090,7 +26090,7 @@ declare namespace $ {
 		Parameters< ReturnType< $mpds_visavis_plot['Matrix'] >['y_sort'] >[0]
 	>
 	type $mpds_visavis_plot_matrix__plot_raw_mpds_visavis_plot_9 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		ReturnType< $mpds_visavis_plot['plot_raw_visible'] >
 		,
 		ReturnType< $mpds_visavis_plot_matrix['plot_raw'] >
 	>
@@ -26145,7 +26145,7 @@ declare namespace $ {
 		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['z_sort'] >[0]
 	>
 	type $mpds_visavis_plot_cube__plot_raw_mpds_visavis_plot_20 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		ReturnType< $mpds_visavis_plot['plot_raw_visible'] >
 		,
 		ReturnType< $mpds_visavis_plot_cube['plot_raw'] >
 	>
@@ -26175,7 +26175,7 @@ declare namespace $ {
 		ReturnType< $mpds_visavis_plot_cube['cube_click'] >
 	>
 	type $mpds_visavis_plot_phase__plot_raw_mpds_visavis_plot_26 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		ReturnType< $mpds_visavis_plot['plot_raw_visible'] >
 		,
 		ReturnType< $mpds_visavis_plot_phase['plot_raw'] >
 	>
@@ -26185,7 +26185,7 @@ declare namespace $ {
 		ReturnType< $mpds_visavis_plot_phase['phase_click'] >
 	>
 	type $mpds_visavis_plot_bar__plot_raw_mpds_visavis_plot_28 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		ReturnType< $mpds_visavis_plot['plot_raw_visible'] >
 		,
 		ReturnType< $mpds_visavis_plot_bar['plot_raw'] >
 	>
@@ -26200,7 +26200,7 @@ declare namespace $ {
 		Parameters< ReturnType< $mpds_visavis_plot['Discovery'] >['elementals_on'] >[0]
 	>
 	type $mpds_visavis_plot_discovery__plot_raw_mpds_visavis_plot_31 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		ReturnType< $mpds_visavis_plot['plot_raw_visible'] >
 		,
 		ReturnType< $mpds_visavis_plot_discovery['plot_raw'] >
 	>
@@ -26215,12 +26215,12 @@ declare namespace $ {
 		ReturnType< $mpds_visavis_plot_discovery['discovery_click'] >
 	>
 	type $mpds_visavis_plot_eigen__plot_raw_mpds_visavis_plot_34 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		ReturnType< $mpds_visavis_plot['plot_raw_visible'] >
 		,
 		ReturnType< $mpds_visavis_plot_eigen['plot_raw'] >
 	>
 	type $mpds_visavis_plot_pie__plot_raw_mpds_visavis_plot_35 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		ReturnType< $mpds_visavis_plot['plot_raw_visible'] >
 		,
 		ReturnType< $mpds_visavis_plot_pie['plot_raw'] >
 	>
@@ -26230,7 +26230,7 @@ declare namespace $ {
 		ReturnType< $mpds_visavis_plot_pie['pie_click'] >
 	>
 	type $mpds_visavis_plot_scatter__plot_raw_mpds_visavis_plot_37 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		ReturnType< $mpds_visavis_plot['plot_raw_visible'] >
 		,
 		ReturnType< $mpds_visavis_plot_scatter['plot_raw'] >
 	>
@@ -26240,7 +26240,7 @@ declare namespace $ {
 		ReturnType< $mpds_visavis_plot_scatter['notify'] >
 	>
 	type $mpds_visavis_plot_customscatter__plot_raw_mpds_visavis_plot_39 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		ReturnType< $mpds_visavis_plot['plot_raw_visible'] >
 		,
 		ReturnType< $mpds_visavis_plot_customscatter['plot_raw'] >
 	>
@@ -26255,7 +26255,7 @@ declare namespace $ {
 		ReturnType< $mpds_visavis_plot_customscatter['legend_click'] >
 	>
 	type $mpds_visavis_plot_heatmap__plot_raw_mpds_visavis_plot_42 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		ReturnType< $mpds_visavis_plot['plot_raw_visible'] >
 		,
 		ReturnType< $mpds_visavis_plot_heatmap['plot_raw'] >
 	>
@@ -26265,7 +26265,7 @@ declare namespace $ {
 		Parameters< ReturnType< $mpds_visavis_plot['Graph'] >['graph_rel'] >[0]
 	>
 	type $mpds_visavis_plot_graph__plot_raw_mpds_visavis_plot_44 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		ReturnType< $mpds_visavis_plot['plot_raw_visible'] >
 		,
 		ReturnType< $mpds_visavis_plot_graph['plot_raw'] >
 	>
@@ -26342,6 +26342,7 @@ declare namespace $ {
 		multi_requests( next?: readonly(string)[] ): readonly(string)[]
 		jsons( next?: readonly(any)[] ): readonly(any)[]
 		plot_raw( ): any
+		plot_raw_visible( ): any
 		show_setup( ): boolean
 		notify( next?: any ): any
 		show_demo_warn( next?: boolean ): boolean
@@ -26376,8 +26377,9 @@ declare namespace $.$$ {
         error_message(): string;
         json_cmp_request(next?: string | null): string | null;
         inconsistent_projection(): boolean;
+        plot_raw(): $mpds_visavis_plot_raw | null;
         plot_raw_cached?: $mpds_visavis_plot_raw;
-        plot_raw(): $mpds_visavis_plot_raw;
+        plot_raw_visible(): $mpds_visavis_plot_raw | null;
         plot_type(): ReturnType<$mpds_visavis_plot_raw['type']>;
         demo_warn_visible(): $.$mol_paragraph[];
         Plot(): $mol_view | $.$mpds_visavis_plot_matrix | $.$mpds_visavis_plot_cube | $.$mpds_visavis_plot_phase | $.$mpds_visavis_plot_bar | $.$mpds_visavis_plot_discovery | $.$mpds_visavis_plot_eigen | $.$mpds_visavis_plot_pie | $.$mpds_visavis_plot_scatter | $.$mpds_visavis_plot_customscatter | $.$mpds_visavis_plot_heatmap | $.$mpds_visavis_plot_graph;
