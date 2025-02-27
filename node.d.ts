@@ -26521,7 +26521,7 @@ declare namespace $.$$ {
         inconsistent_projection(): boolean;
         plot_raw(): $mpds_visavis_plot_raw | null;
         plot_raw_cached?: $mpds_visavis_plot_raw;
-        plot_raw_visible(): $mpds_visavis_plot_raw | null;
+        plot_raw_visible(): $mpds_visavis_plot_raw;
         plot_type(): ReturnType<$mpds_visavis_plot_raw['type']>;
         demo_warn_visible(): $.$mol_paragraph[];
         Plot(): $mol_view | $.$mpds_visavis_plot_matrix | $.$mpds_visavis_plot_cube | $.$mpds_visavis_plot_phase | $.$mpds_visavis_plot_bar | $.$mpds_visavis_plot_discovery | $.$mpds_visavis_plot_eigen | $.$mpds_visavis_plot_pie | $.$mpds_visavis_plot_scatter | $.$mpds_visavis_plot_customscatter | $.$mpds_visavis_plot_heatmap | $.$mpds_visavis_plot_graph;

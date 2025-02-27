@@ -22212,8 +22212,6 @@ var $;
             }
             plot_raw_cached;
             plot_raw_visible() {
-                if (this.jsons().length == 0)
-                    return null;
                 if (this.inconsistent_projection()) {
                     this.notify('Error: inconsistent datasets projection');
                 }
