@@ -1,5 +1,7 @@
 $mpds_visavis_app $mol_book2
-	attr * mol_theme \$mol_theme_light
+	attr *
+		^
+		mol_theme \$mol_theme_light
 	title \Vis-à-vis
 	examples *string
 		\Bar plot
