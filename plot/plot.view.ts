@@ -2,6 +2,12 @@ namespace $.$$ {
 
 	export class $mpds_visavis_plot extends $.$mpds_visavis_plot {
 
+		@ $mol_mem
+		sub( next?: readonly ( any )[] ): readonly ( any )[] {
+			if( !this.plot_raw_visible() ) return []
+			return next ?? super.sub()
+		}
+
 		@ $mol_action
 		static fetch_plot_json( request: RequestInfo | null ){
 			if ( request == null ) return null
@@ -13,7 +19,7 @@ namespace $.$$ {
 		requests() {
 			if( this.json_cmp_request() ) return [ this.json_request()!, this.json_cmp_request()! ]
 			if( this.multi_requests().length > 0 ) return this.multi_requests()
-			return [ this.json_request() ]
+			return this.json_request() ? [ this.json_request() ] : []
 		}
 
 		@ $mol_mem_key
@@ -22,26 +28,9 @@ namespace $.$$ {
 		}
 
 		@ $mol_mem
-		jsons_fetched() {
+		jsons( next?: any[] ) {
 			const requests = this.requests()
-			return requests.map( req => this.json_fetched( req ) )
-		}
-
-		jsons_cached?: any[] | null
-		@ $mol_mem
-		jsons() {
-			try {
-				const jsons = this.jsons_fetched()
-				this.jsons_cached = jsons
-				return jsons
-
-			} catch( error ) {
-				if( !this.$.$mol_promise_like( error ) && this.jsons_cached ) {
-					console.error( error )
-					return this.jsons_cached
-				}
-				throw error
-			}
+			return next ?? requests.map( req => this.json_fetched( req ) )
 		}
 
 		error_visible() {
@@ -50,7 +39,7 @@ namespace $.$$ {
 
 		error_message(): string {
 			try {
-				this.jsons_fetched()
+				this.plot_raw()
 				return ''
 
 			} catch( error: any ) {
@@ -76,16 +65,34 @@ namespace $.$$ {
 
 		@ $mol_mem
 		plot_raw() {
+			if( this.jsons().length == 0 ) return null
+			return $mpds_visavis_plot_raw_from_jsons( this.jsons() )
+		}
+
+		plot_raw_cached?: $mpds_visavis_plot_raw
+		@ $mol_mem
+		plot_raw_visible() {
 			if( this.inconsistent_projection() ) {
 				this.notify( 'Error: inconsistent datasets projection' )
 			}
 
-			return $mpds_visavis_plot_raw_from_jsons( this.jsons() )
+			try {
+				const plot_raw = this.plot_raw()!
+				this.plot_raw_cached = plot_raw
+				return plot_raw
+
+			} catch( error ) {
+				if( !this.$.$mol_promise_like( error ) && this.plot_raw_cached ) {
+					console.error( error )
+					return this.plot_raw_cached
+				}
+				throw error
+			}
 		}
 
 		@ $mol_mem
 		plot_type(): ReturnType< $mpds_visavis_plot_raw['type'] > {
-			return this.plot_raw()?.type()!
+			return this.plot_raw_visible()?.type()!
 		}
 
 		@ $mol_mem
