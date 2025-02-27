@@ -2510,11 +2510,11 @@ var $;
         }
         *view_find(check, path = []) {
             if (path.length === 0 && check(this))
-                return yield [...path, this];
+                return yield [this];
             try {
                 for (const item of this.sub()) {
                     if (item instanceof $mol_view && check(item)) {
-                        return yield [...path, item];
+                        return yield [...path, this, item];
                     }
                 }
                 for (const item of this.sub()) {
@@ -21987,7 +21987,8 @@ var $;
 			if(next !== undefined) return next;
 			return [];
 		}
-		jsons(){
+		jsons(next){
+			if(next !== undefined) return next;
 			return [];
 		}
 		plot_raw(){
@@ -22066,6 +22067,7 @@ var $;
 	($mol_mem(($.$mpds_visavis_plot.prototype), "json_request"));
 	($mol_mem(($.$mpds_visavis_plot.prototype), "json_cmp_request"));
 	($mol_mem(($.$mpds_visavis_plot.prototype), "multi_requests"));
+	($mol_mem(($.$mpds_visavis_plot.prototype), "jsons"));
 	($mol_mem(($.$mpds_visavis_plot.prototype), "notify"));
 	($mol_mem(($.$mpds_visavis_plot.prototype), "show_demo_warn"));
 	($mol_mem(($.$mpds_visavis_plot.prototype), "sub"));
@@ -22150,6 +22152,11 @@ var $;
     var $$;
     (function ($$) {
         class $mpds_visavis_plot extends $.$mpds_visavis_plot {
+            sub(next) {
+                if (this.jsons().length == 0)
+                    return [];
+                return next ?? super.sub();
+            }
             static fetch_plot_json(request) {
                 if (request == null)
                     return null;
@@ -22161,36 +22168,21 @@ var $;
                     return [this.json_request(), this.json_cmp_request()];
                 if (this.multi_requests().length > 0)
                     return this.multi_requests();
-                return [this.json_request()];
+                return this.json_request() ? [this.json_request()] : [];
             }
             json_fetched(request) {
                 return $mpds_visavis_plot.fetch_plot_json(request);
             }
-            jsons_fetched() {
+            jsons(next) {
                 const requests = this.requests();
-                return requests.map(req => this.json_fetched(req));
-            }
-            jsons_cached;
-            jsons() {
-                try {
-                    const jsons = this.jsons_fetched();
-                    this.jsons_cached = jsons;
-                    return jsons;
-                }
-                catch (error) {
-                    if (!this.$.$mol_promise_like(error) && this.jsons_cached) {
-                        console.error(error);
-                        return this.jsons_cached;
-                    }
-                    throw error;
-                }
+                return next ?? requests.map(req => this.json_fetched(req));
             }
             error_visible() {
                 return this.error_message() ? super.error_visible() : [];
             }
             error_message() {
                 try {
-                    this.jsons_fetched();
+                    $mpds_visavis_plot_raw_from_jsons(this.jsons());
                     return '';
                 }
                 catch (error) {
@@ -22210,11 +22202,23 @@ var $;
                 this.jsons().forEach(json => fixels.add(json.payload?.fixel));
                 return fixels.size > 1;
             }
+            plot_raw_cached;
             plot_raw() {
                 if (this.inconsistent_projection()) {
                     this.notify('Error: inconsistent datasets projection');
                 }
-                return $mpds_visavis_plot_raw_from_jsons(this.jsons());
+                try {
+                    const plot_raw = $mpds_visavis_plot_raw_from_jsons(this.jsons());
+                    this.plot_raw_cached = plot_raw;
+                    return plot_raw;
+                }
+                catch (error) {
+                    if (!this.$.$mol_promise_like(error) && this.plot_raw_cached) {
+                        console.error(error);
+                        return this.plot_raw_cached;
+                    }
+                    throw error;
+                }
             }
             plot_type() {
                 return this.plot_raw()?.type();
@@ -22277,9 +22281,6 @@ var $;
         __decorate([
             $mol_mem_key
         ], $mpds_visavis_plot.prototype, "json_fetched", null);
-        __decorate([
-            $mol_mem
-        ], $mpds_visavis_plot.prototype, "jsons_fetched", null);
         __decorate([
             $mol_mem
         ], $mpds_visavis_plot.prototype, "jsons", null);

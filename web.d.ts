@@ -26340,7 +26340,7 @@ declare namespace $ {
 		json_request( next?: any ): any
 		json_cmp_request( next?: any ): any
 		multi_requests( next?: readonly(string)[] ): readonly(string)[]
-		jsons( ): readonly(any)[]
+		jsons( next?: readonly(any)[] ): readonly(any)[]
 		plot_raw( ): any
 		show_setup( ): boolean
 		notify( next?: any ): any
@@ -26367,16 +26367,16 @@ declare namespace $ {
 //# sourceMappingURL=plot.view.tree.d.ts.map
 declare namespace $.$$ {
     class $mpds_visavis_plot extends $.$mpds_visavis_plot {
+        sub(next?: readonly (any)[]): readonly (any)[];
         static fetch_plot_json(request: RequestInfo | null): any;
         requests(): any[] | readonly string[];
         json_fetched(request: string): any;
-        jsons_fetched(): any[];
-        jsons_cached?: any[] | null;
-        jsons(): any[];
+        jsons(next?: any[]): any[];
         error_visible(): readonly any[];
         error_message(): string;
         json_cmp_request(next?: string | null): string | null;
         inconsistent_projection(): boolean;
+        plot_raw_cached?: $mpds_visavis_plot_raw;
         plot_raw(): $mpds_visavis_plot_raw;
         plot_type(): ReturnType<$mpds_visavis_plot_raw['type']>;
         demo_warn_visible(): $.$mol_paragraph[];
