@@ -45,6 +45,10 @@ Second request URL to get JSON for comparison (matrix, cube and discovery plots)
 
 Multiple request URLs to get JSON for comparison (matrix and cube plots)
 
+**`jsons( next?: any[] ) : any[]`**
+
+JSON plot datasets
+
 **`notify( msg: string ) : void`**
 
 Called inside the component for display notification
