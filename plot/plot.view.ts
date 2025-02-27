@@ -2,8 +2,9 @@ namespace $.$$ {
 
 	export class $mpds_visavis_plot extends $.$mpds_visavis_plot {
 
+		@ $mol_mem
 		sub( next?: readonly ( any )[] ): readonly ( any )[] {
-			if( this.jsons().length == 0 ) return []
+			if( !this.plot_raw_visible() ) return []
 			return next ?? super.sub()
 		}
 
@@ -38,7 +39,7 @@ namespace $.$$ {
 
 		error_message(): string {
 			try {
-				$mpds_visavis_plot_raw_from_jsons( this.jsons() )
+				this.plot_raw()
 				return ''
 
 			} catch( error: any ) {
@@ -62,15 +63,23 @@ namespace $.$$ {
 			return fixels.size > 1
 		}
 
-		plot_raw_cached?: $mpds_visavis_plot_raw
 		@ $mol_mem
 		plot_raw() {
+			if( this.jsons().length == 0 ) return null
+			return $mpds_visavis_plot_raw_from_jsons( this.jsons() )
+		}
+
+		plot_raw_cached?: $mpds_visavis_plot_raw
+		@ $mol_mem
+		plot_raw_visible() {
+			if( this.jsons().length == 0 ) return null
+
 			if( this.inconsistent_projection() ) {
 				this.notify( 'Error: inconsistent datasets projection' )
 			}
 
 			try {
-				const plot_raw = $mpds_visavis_plot_raw_from_jsons( this.jsons() )
+				const plot_raw = this.plot_raw()!
 				this.plot_raw_cached = plot_raw
 				return plot_raw
 
@@ -85,7 +94,7 @@ namespace $.$$ {
 
 		@ $mol_mem
 		plot_type(): ReturnType< $mpds_visavis_plot_raw['type'] > {
-			return this.plot_raw()?.type()!
+			return this.plot_raw_visible()?.type()!
 		}
 
 		@ $mol_mem

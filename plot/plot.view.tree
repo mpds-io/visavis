@@ -10,6 +10,7 @@ $mpds_visavis_plot $mol_view
 	multi_requests? /string
 	jsons? /
 	plot_raw null
+	plot_raw_visible null
 	show_setup false
 	notify? null
 	show_demo_warn? false
@@ -25,7 +26,7 @@ $mpds_visavis_plot $mol_view
 			sub / <= error_message \
 	plots *
 		matrix <= Matrix $mpds_visavis_plot_matrix
-			plot_raw <= plot_raw
+			plot_raw <= plot_raw_visible
 			show_setup <= show_setup
 			nonformers_checked? <=> nonformers_checked? false
 			fixel_checked? <=> matrix_fixel_checked? true
@@ -35,7 +36,7 @@ $mpds_visavis_plot $mol_view
 			y_sort? => matrix_y_sort?
 			matrix_click? <=> matrix_click? null
 		plot3d <= Cube $mpds_visavis_plot_cube
-			plot_raw <= plot_raw
+			plot_raw <= plot_raw_visible
 			show_setup <= show_setup
 			show_fixel? <= show_fixel? true
 			nonformers_checked? <=> nonformers_checked?
@@ -48,33 +49,33 @@ $mpds_visavis_plot $mol_view
 			z_sort? => z_sort?
 			cube_click? <=> cube_click? null
 		pd <= Phase $mpds_visavis_plot_phase
-			plot_raw <= plot_raw
+			plot_raw <= plot_raw_visible
 			phase_click? <=> phase_click? null
 			data_demo => phase_data_demo
 		bar <= Bar $mpds_visavis_plot_bar
-			plot_raw <= plot_raw
+			plot_raw <= plot_raw_visible
 			bar_click? <=> bar_click? null
 		discovery <= Discovery $mpds_visavis_plot_discovery
-			plot_raw <= plot_raw
+			plot_raw <= plot_raw_visible
 			show_setup <= show_setup
 			elementals_on? => discovery_elementals_on?
 			discovery_click? <=> discovery_click? null
 		eigenplot <= Eigen $mpds_visavis_plot_eigen
-			plot_raw <= plot_raw
+			plot_raw <= plot_raw_visible
 		pie <= Pie $mpds_visavis_plot_pie
-			plot_raw <= plot_raw
+			plot_raw <= plot_raw_visible
 			pie_click? <=> pie_click? null
 		scatter <= Scatter $mpds_visavis_plot_scatter
-			plot_raw <= plot_raw
+			plot_raw <= plot_raw_visible
 			notify? <=> notify?
 		customscatter <= Customscatter $mpds_visavis_plot_customscatter
-			plot_raw <= plot_raw
+			plot_raw <= plot_raw_visible
 			nplots_changed? <=> nplots_changed? null
 			legend_click? <=> legend_click? null
 		heatmap <= Heatmap $mpds_visavis_plot_heatmap
-			plot_raw <= plot_raw
+			plot_raw <= plot_raw_visible
 		graph <= Graph $mpds_visavis_plot_graph
-			plot_raw <= plot_raw
+			plot_raw <= plot_raw_visible
 			graph_rel? => graph_rel?
 			graph_click? <=> graph_click? null
 			notify? <=> notify?
