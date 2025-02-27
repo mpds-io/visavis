@@ -1,9 +1,9 @@
 $mol_scroll $mol_view
 	scroll_top? 0
 	scroll_left? 0
-	field *
+	attr *
 		^
-		tabIndex <= tabindex -1
+		tabindex <= tabindex -1
 	event *
 		^
 		scroll?event <=> event_scroll?event null
@@ -216,6 +216,19 @@ $mol_icon_arrow_expand $mol_icon path \M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.
 
 $mol_icon_arrow_expand_all $mol_icon path \M9.5,13.09L10.91,14.5L6.41,19H10V21H3V14H5V17.59L9.5,13.09M10.91,9.5L9.5,10.91L5,6.41V10H3V3H10V5H6.41L10.91,9.5M14.5,13.09L19,17.59V14H21V21H14V19H17.59L13.09,14.5L14.5,13.09M13.09,9.5L17.59,5H14V3H21V10H19V6.41L14.5,10.91L13.09,9.5Z
 
+$mol_check $mol_button_minor
+	attr *
+		^
+		mol_check_checked <= checked? false
+		aria-checked <= aria_checked \false
+		role <= aria_role \checkbox
+	sub /$mol_view_content
+		<= Icon null
+		<= label /
+			<= Title $mol_view
+				sub /
+					<= title \
+
 $mpds_visavis_plot_legend_cmp $mol_view
 	sub /
 		<= Label*0 $mpds_visavis_plot_legend_cmp_label
@@ -232,19 +245,6 @@ $mpds_visavis_plot_legend_cmp_label $mol_view
 	style *
 		^
 		background <= background \
-
-$mol_check $mol_button_minor
-	attr *
-		^
-		mol_check_checked <= checked? false
-		aria-checked <= aria_checked \false
-		role <= aria_role \checkbox
-	sub /$mol_view_content
-		<= Icon null
-		<= label /
-			<= Title $mol_view
-				sub /
-					<= title \
 
 $mol_icon_tick $mol_icon path \M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z
 
@@ -472,7 +472,6 @@ $mpds_visavis_plot_matrix $mol_view
 	auto /
 		<= size_debounced 0
 		<= auto_reorder null
-	multi_jsons? null
 	json_master null
 	show_setup true
 	size? 0
@@ -7544,7 +7543,6 @@ $mpds_visavis_plot_cube $mol_view
 	plot_raw $mpds_visavis_plot_raw
 	auto /
 		<= subscribe_click null
-	multi_jsons? null
 	show_setup true
 	show_fixel? true
 	heatmap? false
@@ -7817,7 +7815,7 @@ $mpds_visavis_plot_discovery $mol_view
 	plot_raw $mpds_visavis_plot_raw
 	auto /
 		<= subscribe_click null
-	json_cmp? null
+	json_cmp null
 	elementals_on? /
 	show_setup true
 	discovery_click? null
@@ -7957,24 +7955,26 @@ $mpds_visavis_plot $mol_view
 	Locale $mol_locale_select
 		value <= locale \en
 	json_request? null
-	json null
 	json_cmp_request? null
-	json_cmp null
 	multi_requests? /string
-	multi_jsons null
+	jsons /
 	plot_raw null
 	show_setup false
 	notify? null
-	Fullscreen $mol_check
-		Icon <= Expand_icon $mol_icon_arrow_expand_all
-		checked? <=> fullscreen? false
 	show_demo_warn? false
-	Demo_warn $mol_paragraph
-		title \You are using the limited demo. Buy the full access and support our work.
+	reset null
+	sub? /
+		^ demo_warn_visible / <= Demo_warn $mol_paragraph
+			title \You are using the limited demo. Buy the full access and support our work.
+		<= Fullscreen $mol_check
+			Icon <= Expand_icon $mol_icon_arrow_expand_all
+			checked? <=> fullscreen? false
+		<= Plot $mol_view
+		^ error_visible / <= Error $mol_view
+			sub / <= error_message \
 	plots *
 		matrix <= Matrix $mpds_visavis_plot_matrix
 			plot_raw <= plot_raw
-			multi_jsons <= multi_jsons
 			show_setup <= show_setup
 			nonformers_checked? <=> nonformers_checked? false
 			fixel_checked? <=> matrix_fixel_checked? true
@@ -7985,7 +7985,6 @@ $mpds_visavis_plot $mol_view
 			matrix_click? <=> matrix_click? null
 		plot3d <= Cube $mpds_visavis_plot_cube
 			plot_raw <= plot_raw
-			multi_jsons <= multi_jsons
 			show_setup <= show_setup
 			show_fixel? <= show_fixel? true
 			nonformers_checked? <=> nonformers_checked?
@@ -8006,7 +8005,6 @@ $mpds_visavis_plot $mol_view
 			bar_click? <=> bar_click? null
 		discovery <= Discovery $mpds_visavis_plot_discovery
 			plot_raw <= plot_raw
-			json_cmp <= json_cmp
 			show_setup <= show_setup
 			elementals_on? => discovery_elementals_on?
 			discovery_click? <=> discovery_click? null
@@ -8031,7 +8029,9 @@ $mpds_visavis_plot $mol_view
 			notify? <=> notify?
 
 $mpds_visavis_app $mol_book2
-	attr * mol_theme \$mol_theme_light
+	attr *
+		^
+		mol_theme \$mol_theme_light
 	title \Vis-à-vis
 	examples *string
 		\Bar plot

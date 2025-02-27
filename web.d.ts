@@ -496,6 +496,20 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    class $mol_promise<Result = void> extends Promise<Result> {
+        done: (value: Result | PromiseLike<Result>) => void;
+        fail: (reason?: any) => void;
+        constructor(executor?: (done: (value: Result | PromiseLike<Result>) => void, fail: (reason?: any) => void) => void);
+    }
+}
+
+declare namespace $ {
+    class $mol_promise_blocker<Result> extends $mol_promise<Result> {
+        static [Symbol.toStringTag]: string;
+    }
+}
+
+declare namespace $ {
     class $mol_decor<Value> {
         readonly value: Value;
         constructor(value: Value);
@@ -918,9 +932,9 @@ declare namespace $ {
 		event_scroll( next?: any ): any
 		scroll_top( next?: number ): number
 		scroll_left( next?: number ): number
-		field( ): ({ 
-			'tabIndex': ReturnType< $mol_scroll['tabindex'] >,
-		})  & ReturnType< $mol_view['field'] >
+		attr( ): ({ 
+			'tabindex': ReturnType< $mol_scroll['tabindex'] >,
+		})  & ReturnType< $mol_view['attr'] >
 		event( ): ({ 
 			scroll( next?: ReturnType< $mol_scroll['event_scroll'] > ): ReturnType< $mol_scroll['event_scroll'] >,
 		})  & ReturnType< $mol_view['event'] >
@@ -1438,6 +1452,7 @@ declare namespace $ {
         static make_link(next: {
             [key: string]: string | null;
         }): string;
+        static commit(): void;
         static go(next: {
             [key: string]: string | null;
         }): void;
@@ -1743,6 +1758,44 @@ declare namespace $ {
 
 //# sourceMappingURL=all.view.tree.d.ts.map
 declare namespace $ {
+}
+
+declare namespace $ {
+
+	type $mol_view__sub_mol_check_1 = $mol_type_enforce<
+		readonly(any)[]
+		,
+		ReturnType< $mol_view['sub'] >
+	>
+	export class $mol_check extends $mol_button_minor {
+		checked( next?: boolean ): boolean
+		aria_checked( ): string
+		aria_role( ): string
+		Icon( ): any
+		title( ): string
+		Title( ): $mol_view
+		label( ): readonly(any)[]
+		attr( ): ({ 
+			'mol_check_checked': ReturnType< $mol_check['checked'] >,
+			'aria-checked': ReturnType< $mol_check['aria_checked'] >,
+			'role': ReturnType< $mol_check['aria_role'] >,
+		})  & ReturnType< $mol_button_minor['attr'] >
+		sub( ): readonly($mol_view_content)[]
+	}
+	
+}
+
+//# sourceMappingURL=check.view.tree.d.ts.map
+declare namespace $.$$ {
+    class $mol_check extends $.$mol_check {
+        click(next?: Event): void;
+        sub(): readonly $mol_view_content[];
+        label(): readonly any[];
+        aria_checked(): string;
+    }
+}
+
+declare namespace $ {
 
 	type $mpds_visavis_plot_legend_cmp_label__label_mpds_visavis_plot_legend_cmp_1 = $mol_type_enforce<
 		ReturnType< $mpds_visavis_plot_legend_cmp['label'] >
@@ -1795,44 +1848,6 @@ declare namespace $.$$ {
 }
 
 declare namespace $.$$ {
-}
-
-declare namespace $ {
-}
-
-declare namespace $ {
-
-	type $mol_view__sub_mol_check_1 = $mol_type_enforce<
-		readonly(any)[]
-		,
-		ReturnType< $mol_view['sub'] >
-	>
-	export class $mol_check extends $mol_button_minor {
-		checked( next?: boolean ): boolean
-		aria_checked( ): string
-		aria_role( ): string
-		Icon( ): any
-		title( ): string
-		Title( ): $mol_view
-		label( ): readonly(any)[]
-		attr( ): ({ 
-			'mol_check_checked': ReturnType< $mol_check['checked'] >,
-			'aria-checked': ReturnType< $mol_check['aria_checked'] >,
-			'role': ReturnType< $mol_check['aria_role'] >,
-		})  & ReturnType< $mol_button_minor['attr'] >
-		sub( ): readonly($mol_view_content)[]
-	}
-	
-}
-
-//# sourceMappingURL=check.view.tree.d.ts.map
-declare namespace $.$$ {
-    class $mol_check extends $.$mol_check {
-        click(next?: Event): void;
-        sub(): readonly $mol_view_content[];
-        label(): readonly any[];
-        aria_checked(): string;
-    }
 }
 
 declare namespace $ {
@@ -2445,7 +2460,7 @@ declare namespace $ {
     class $mol_fetch_response extends $mol_object2 {
         readonly native: Response;
         constructor(native: Response);
-        status(): "unknown" | "success" | "inform" | "redirect" | "wrong" | "failed";
+        status(): "success" | "unknown" | "inform" | "redirect" | "wrong" | "failed";
         code(): number;
         message(): string;
         headers(): Headers;
@@ -2964,6 +2979,22 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    class $mol_error_mix<Cause extends {} = {}> extends AggregateError {
+        readonly cause: Cause;
+        name: string;
+        constructor(message: string, cause?: Cause, ...errors: readonly Error[]);
+        static [Symbol.toPrimitive](): string;
+        static toString(): string;
+        static make(...params: ConstructorParameters<typeof $mol_error_mix>): $mol_error_mix<{}>;
+    }
+}
+
+declare namespace $ {
+    class $mol_data_error extends $mol_error_mix {
+    }
+}
+
+declare namespace $ {
     class $mol_store<Data> extends $mol_object2 {
         data_default?: Data | undefined;
         constructor(data_default?: Data | undefined);
@@ -2981,13 +3012,13 @@ declare namespace $ {
     interface Plot_raw {
         id: string;
         type: 'matrix' | 'plot3d' | 'pd' | 'bar' | 'discovery' | 'eigenplot' | 'pie' | 'scatter' | 'customscatter' | 'heatmap' | 'graph';
-        json: unknown;
+        jsons: any[];
     }
-    export function $mpds_visavis_plot_raw_from_json(json: any, id?: string): $mpds_visavis_plot_raw;
+    export function $mpds_visavis_plot_raw_from_jsons(jsons: any[], id?: string): $mpds_visavis_plot_raw;
     export class $mpds_visavis_plot_raw extends $mol_store<Plot_raw> {
         id(next?: string): string;
         type(): "matrix" | "plot3d" | "pd" | "bar" | "discovery" | "eigenplot" | "pie" | "scatter" | "customscatter" | "heatmap" | "graph";
-        json(): {};
+        jsons(): any[];
     }
     export {};
 }
@@ -3018,22 +3049,6 @@ declare namespace $ {
         config: Sub;
         Value: Readonly<$mol_type_merge<$mol_type_override<Partial<{ [key in keyof Sub]: ReturnType<Sub[key]>; }>, Pick<{ [key in keyof Sub]: ReturnType<Sub[key]>; }, { [Field in keyof { [key in keyof Sub]: ReturnType<Sub[key]>; }]: undefined extends { [key in keyof Sub]: ReturnType<Sub[key]>; }[Field] ? never : Field; }[keyof Sub]>>>>;
     };
-}
-
-declare namespace $ {
-    class $mol_error_mix<Cause extends {} = {}> extends AggregateError {
-        readonly cause: Cause;
-        name: string;
-        constructor(message: string, cause?: Cause, ...errors: Error[]);
-        static [Symbol.toPrimitive](): string;
-        static toString(): string;
-        static make(...params: ConstructorParameters<typeof $mol_error_mix>): $mol_error_mix<{}>;
-    }
-}
-
-declare namespace $ {
-    class $mol_data_error extends $mol_error_mix {
-    }
 }
 
 declare namespace $ {
@@ -20888,13 +20903,6 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    function $mol_promise<Result = void>(): Promise<Result> & {
-        done: (res: Result | PromiseLike<Result>) => void;
-        fail: (error?: any) => void;
-    };
-}
-
-declare namespace $ {
     function $mol_wait_timeout_async(this: $, timeout: number): Promise<void>;
     function $mol_wait_timeout(this: $, timeout: number): void;
 }
@@ -21153,7 +21161,6 @@ declare namespace $ {
 		Setup( ): $mol_view
 		plot_raw( ): $mpds_visavis_plot_raw
 		auto( ): readonly(any)[]
-		multi_jsons( next?: any ): any
 		json_master( ): any
 		show_setup( ): boolean
 		size( next?: number ): number
@@ -21189,34 +21196,6 @@ declare namespace $.$$ {
     export class $mpds_visavis_plot_matrix extends $.$mpds_visavis_plot_matrix {
         setup(): any[];
         plot_body(): ($mol_view | $.$mpds_visavis_plot_legend_cmp)[];
-        json(): Readonly<{
-            answerto?: string | undefined;
-            use_visavis_type: string;
-            payload: Readonly<{
-                nodes: readonly Readonly<{
-                    count?: number | undefined;
-                    num: number;
-                    nump: number;
-                    size: number;
-                    rea: number;
-                    rpp: number;
-                    rion: number;
-                    rcov: number;
-                    rmet: number;
-                    tmelt: number;
-                    eneg: number;
-                    name: string;
-                }>[];
-                links: readonly Readonly<{
-                    cmp?: number | undefined;
-                    source: number;
-                    target: number;
-                    value: number;
-                    cmt: string;
-                }>[];
-                fixel: number | null;
-            }>;
-        }>;
         sort_dict(): Readonly<{
             num: string;
             nump: string;
@@ -21231,7 +21210,7 @@ declare namespace $.$$ {
         }>;
         x_label(): string;
         y_label(): string;
-        cmp_labels(): any;
+        cmp_labels(): any[];
         json_master(): Readonly<{
             answerto?: string | undefined;
             use_visavis_type: string;
@@ -21589,7 +21568,6 @@ declare namespace $ {
 		Setup( ): $mol_view
 		plot_raw( ): $mpds_visavis_plot_raw
 		auto( ): readonly(any)[]
-		multi_jsons( next?: any ): any
 		show_setup( ): boolean
 		show_fixel( next?: boolean ): boolean
 		heatmap( next?: boolean ): boolean
@@ -21891,7 +21869,7 @@ declare namespace $.$$ {
             };
         };
         multi_dataset(): any[] | null;
-        cmp_labels(): any;
+        cmp_labels(): any[];
         data_shown(): any[];
         scene(): {
             aspectmode: string;
@@ -22691,7 +22669,7 @@ declare namespace $ {
 		Setup( ): $mol_view
 		plot_raw( ): $mpds_visavis_plot_raw
 		auto( ): readonly(any)[]
-		json_cmp( next?: any ): any
+		json_cmp( ): any
 		elementals_on( next?: readonly(any)[] ): readonly(any)[]
 		show_setup( ): boolean
 		discovery_click( next?: any ): any
@@ -22758,6 +22736,13 @@ declare namespace $.$$ {
                 points: readonly (readonly number[])[];
             }>;
         }>;
+        json_cmp(): Readonly<{
+            use_visavis_type: string;
+            answerto: string;
+            payload: Readonly<{
+                points: readonly (readonly number[])[];
+            }>;
+        }> | null;
         elementals_dict(): Readonly<{
             num: string;
             nump: string;
@@ -22836,7 +22821,7 @@ declare namespace $.$$ {
                 symbol: string;
             };
         }[];
-        cmp_labels(): any[];
+        cmp_labels(): string[];
     }
 }
 
@@ -24713,8 +24698,8 @@ declare namespace $.$$ {
         ytitle?: string | undefined;
         xrpd?: boolean | undefined;
         plots: readonly {
-            name: string;
             type: string;
+            name: string;
             x: readonly number[];
             y: readonly number[];
             mode: string;
@@ -24726,8 +24711,8 @@ declare namespace $.$$ {
         ytitle?: string | undefined;
         xrpd?: boolean | undefined;
         plots: readonly Readonly<{
-            name: string;
             type: string;
+            name: string;
             x: readonly number[];
             y: readonly number[];
             mode: string;
@@ -24737,27 +24722,27 @@ declare namespace $.$$ {
     }>) & {
         config: {
             plots: ((val: readonly {
-                name: string;
                 type: string;
+                name: string;
                 x: readonly number[];
                 y: readonly number[];
                 mode: string;
             }[]) => readonly Readonly<{
-                name: string;
                 type: string;
+                name: string;
                 x: readonly number[];
                 y: readonly number[];
                 mode: string;
             }>[]) & {
                 config: ((val: {
-                    name: string;
                     type: string;
+                    name: string;
                     x: readonly number[];
                     y: readonly number[];
                     mode: string;
                 }) => Readonly<{
-                    name: string;
                     type: string;
+                    name: string;
                     x: readonly number[];
                     y: readonly number[];
                     mode: string;
@@ -24776,16 +24761,16 @@ declare namespace $.$$ {
                         };
                     };
                     Value: Readonly<{
-                        name: string;
                         type: string;
+                        name: string;
                         x: readonly number[];
                         y: readonly number[];
                         mode: string;
                     }>;
                 };
                 Value: readonly Readonly<{
-                    name: string;
                     type: string;
+                    name: string;
                     x: readonly number[];
                     y: readonly number[];
                     mode: string;
@@ -24826,8 +24811,8 @@ declare namespace $.$$ {
             ytitle?: string | undefined;
             xrpd?: boolean | undefined;
             plots: readonly Readonly<{
-                name: string;
                 type: string;
+                name: string;
                 x: readonly number[];
                 y: readonly number[];
                 mode: string;
@@ -24842,8 +24827,8 @@ declare namespace $.$$ {
             ytitle?: string | undefined;
             xrpd?: boolean | undefined;
             plots: readonly Readonly<{
-                name: string;
                 type: string;
+                name: string;
                 x: readonly number[];
                 y: readonly number[];
                 mode: string;
@@ -24904,8 +24889,8 @@ declare namespace $.$$ {
             };
         };
         data(): readonly Readonly<{
-            name: string;
             type: string;
+            name: string;
             x: readonly number[];
             y: readonly number[];
             mode: string;
@@ -25216,8 +25201,8 @@ declare namespace $.$$ {
     export const $mpds_visavis_plot_graph_json: ((val: {
         payload: readonly {
             source: string;
-            target: string | number;
             type: string;
+            target: string | number;
         }[];
         error: string | null;
         warning: string | null;
@@ -25225,8 +25210,8 @@ declare namespace $.$$ {
     }) => Readonly<{
         payload: readonly Readonly<{
             source: string;
-            target: string | number;
             type: string;
+            target: string | number;
         }>[];
         error: string | null;
         warning: string | null;
@@ -25244,21 +25229,21 @@ declare namespace $.$$ {
             graph_rel: (val: string) => string;
             payload: ((val: readonly {
                 source: string;
-                target: string | number;
                 type: string;
+                target: string | number;
             }[]) => readonly Readonly<{
                 source: string;
-                target: string | number;
                 type: string;
+                target: string | number;
             }>[]) & {
                 config: ((val: {
                     source: string;
-                    target: string | number;
                     type: string;
+                    target: string | number;
                 }) => Readonly<{
                     source: string;
-                    target: string | number;
                     type: string;
+                    target: string | number;
                 }>) & {
                     config: {
                         source: (val: string) => string;
@@ -25270,22 +25255,22 @@ declare namespace $.$$ {
                     };
                     Value: Readonly<{
                         source: string;
-                        target: string | number;
                         type: string;
+                        target: string | number;
                     }>;
                 };
                 Value: readonly Readonly<{
                     source: string;
-                    target: string | number;
                     type: string;
+                    target: string | number;
                 }>[];
             };
         };
         Value: Readonly<{
             payload: readonly Readonly<{
                 source: string;
-                target: string | number;
                 type: string;
+                target: string | number;
             }>[];
             error: string | null;
             warning: string | null;
@@ -25296,8 +25281,8 @@ declare namespace $.$$ {
         json(): Readonly<{
             payload: readonly Readonly<{
                 source: string;
-                target: string | number;
                 type: string;
+                target: string | number;
             }>[];
             error: string | null;
             warning: string | null;
@@ -25327,106 +25312,189 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
-    let $hyoo_lingua_langs: {
+    const $mol_lang_iso639: {
+        ab: string;
+        aa: string;
         af: string;
+        ak: string;
+        sq: string;
         am: string;
         ar: string;
-        ast: string;
+        an: string;
+        hy: string;
+        as: string;
+        av: string;
+        ae: string;
+        ay: string;
         az: string;
+        bm: string;
         ba: string;
+        eu: string;
         be: string;
-        bg: string;
         bn: string;
-        br: string;
+        bi: string;
+        nb: string;
         bs: string;
+        br: string;
+        bg: string;
+        my: string;
         ca: string;
-        ceb: string;
+        ch: string;
+        ce: string;
+        zh: string;
+        cu: string;
+        cv: string;
+        kw: string;
+        co: string;
+        cr: string;
+        hr: string;
         cs: string;
-        cy: string;
         da: string;
-        de: string;
-        el: string;
+        dv: string;
+        nl: string;
+        dz: string;
         en: string;
-        es: string;
+        eo: string;
         et: string;
-        fa: string;
-        ff: string;
+        ee: string;
+        fo: string;
+        fj: string;
         fi: string;
         fr: string;
         fy: string;
-        ga: string;
+        ff: string;
         gd: string;
         gl: string;
+        lg: string;
+        ka: string;
+        de: string;
+        el: string;
+        gn: string;
         gu: string;
+        ht: string;
         ha: string;
         he: string;
+        hz: string;
         hi: string;
-        hr: string;
-        ht: string;
+        ho: string;
         hu: string;
-        hy: string;
-        id: string;
-        ig: string;
-        ilo: string;
         is: string;
+        io: string;
+        ig: string;
+        id: string;
+        ia: string;
+        ie: string;
+        iu: string;
+        ik: string;
+        ga: string;
         it: string;
         ja: string;
         jv: string;
-        ka: string;
+        kl: string;
+        kn: string;
+        kr: string;
+        ks: string;
         kk: string;
         km: string;
-        kn: string;
+        ki: string;
+        rw: string;
+        ky: string;
+        kv: string;
+        kg: string;
         ko: string;
-        lb: string;
-        lg: string;
-        ln: string;
+        kj: string;
+        ku: string;
         lo: string;
-        lt: string;
+        la: string;
         lv: string;
-        mg: string;
+        li: string;
+        ln: string;
+        lt: string;
+        lu: string;
+        lb: string;
         mk: string;
-        ml: string;
-        mn: string;
-        mr: string;
+        mg: string;
         ms: string;
-        my: string;
+        ml: string;
+        mt: string;
+        gv: string;
+        mi: string;
+        mr: string;
+        mh: string;
+        mn: string;
+        na: string;
+        nv: string;
+        nd: string;
+        ng: string;
         ne: string;
-        nl: string;
         no: string;
-        ns: string;
+        ny: string;
+        nn: string;
         oc: string;
+        oj: string;
         or: string;
-        pa: string;
-        pl: string;
+        om: string;
+        os: string;
+        pi: string;
         ps: string;
+        fa: string;
+        pl: string;
         pt: string;
+        pa: string;
+        qu: string;
         ro: string;
+        rm: string;
+        rn: string;
         ru: string;
+        se: string;
+        sm: string;
+        sg: string;
+        sa: string;
+        sc: string;
+        sr: string;
+        sn: string;
+        ii: string;
         sd: string;
         si: string;
         sk: string;
         sl: string;
         so: string;
-        sq: string;
-        sr: string;
-        ss: string;
+        st: string;
+        nr: string;
+        es: string;
         su: string;
-        sv: string;
         sw: string;
-        ta: string;
-        th: string;
+        ss: string;
+        sv: string;
         tl: string;
+        ty: string;
+        tg: string;
+        ta: string;
+        tt: string;
+        te: string;
+        th: string;
+        bo: string;
+        ti: string;
+        to: string;
+        ts: string;
         tn: string;
         tr: string;
+        tk: string;
+        tw: string;
+        ug: string;
         uk: string;
         ur: string;
         uz: string;
+        ve: string;
         vi: string;
+        vo: string;
+        wa: string;
+        cy: string;
         wo: string;
         xh: string;
         yi: string;
         yo: string;
-        zh: string;
+        za: string;
         zu: string;
     };
 }
@@ -25443,105 +25511,188 @@ declare namespace $.$$ {
     class $mol_locale_select extends $.$mol_locale_select {
         value(next?: string): string;
         dictionary(): {
+            ab: string;
+            aa: string;
             af: string;
+            ak: string;
+            sq: string;
             am: string;
             ar: string;
-            ast: string;
+            an: string;
+            hy: string;
+            as: string;
+            av: string;
+            ae: string;
+            ay: string;
             az: string;
+            bm: string;
             ba: string;
+            eu: string;
             be: string;
-            bg: string;
             bn: string;
-            br: string;
+            bi: string;
+            nb: string;
             bs: string;
+            br: string;
+            bg: string;
+            my: string;
             ca: string;
-            ceb: string;
+            ch: string;
+            ce: string;
+            zh: string;
+            cu: string;
+            cv: string;
+            kw: string;
+            co: string;
+            cr: string;
+            hr: string;
             cs: string;
-            cy: string;
             da: string;
-            de: string;
-            el: string;
+            dv: string;
+            nl: string;
+            dz: string;
             en: string;
-            es: string;
+            eo: string;
             et: string;
-            fa: string;
-            ff: string;
+            ee: string;
+            fo: string;
+            fj: string;
             fi: string;
             fr: string;
             fy: string;
-            ga: string;
+            ff: string;
             gd: string;
             gl: string;
+            lg: string;
+            ka: string;
+            de: string;
+            el: string;
+            gn: string;
             gu: string;
+            ht: string;
             ha: string;
             he: string;
+            hz: string;
             hi: string;
-            hr: string;
-            ht: string;
+            ho: string;
             hu: string;
-            hy: string;
-            id: string;
-            ig: string;
-            ilo: string;
             is: string;
+            io: string;
+            ig: string;
+            id: string;
+            ia: string;
+            ie: string;
+            iu: string;
+            ik: string;
+            ga: string;
             it: string;
             ja: string;
             jv: string;
-            ka: string;
+            kl: string;
+            kn: string;
+            kr: string;
+            ks: string;
             kk: string;
             km: string;
-            kn: string;
+            ki: string;
+            rw: string;
+            ky: string;
+            kv: string;
+            kg: string;
             ko: string;
-            lb: string;
-            lg: string;
-            ln: string;
+            kj: string;
+            ku: string;
             lo: string;
-            lt: string;
+            la: string;
             lv: string;
-            mg: string;
+            li: string;
+            ln: string;
+            lt: string;
+            lu: string;
+            lb: string;
             mk: string;
-            ml: string;
-            mn: string;
-            mr: string;
+            mg: string;
             ms: string;
-            my: string;
+            ml: string;
+            mt: string;
+            gv: string;
+            mi: string;
+            mr: string;
+            mh: string;
+            mn: string;
+            na: string;
+            nv: string;
+            nd: string;
+            ng: string;
             ne: string;
-            nl: string;
             no: string;
-            ns: string;
+            ny: string;
+            nn: string;
             oc: string;
+            oj: string;
             or: string;
-            pa: string;
-            pl: string;
+            om: string;
+            os: string;
+            pi: string;
             ps: string;
+            fa: string;
+            pl: string;
             pt: string;
+            pa: string;
+            qu: string;
             ro: string;
+            rm: string;
+            rn: string;
             ru: string;
+            se: string;
+            sm: string;
+            sg: string;
+            sa: string;
+            sc: string;
+            sr: string;
+            sn: string;
+            ii: string;
             sd: string;
             si: string;
             sk: string;
             sl: string;
             so: string;
-            sq: string;
-            sr: string;
-            ss: string;
+            st: string;
+            nr: string;
+            es: string;
             su: string;
-            sv: string;
             sw: string;
-            ta: string;
-            th: string;
+            ss: string;
+            sv: string;
             tl: string;
+            ty: string;
+            tg: string;
+            ta: string;
+            tt: string;
+            te: string;
+            th: string;
+            bo: string;
+            ti: string;
+            to: string;
+            ts: string;
             tn: string;
             tr: string;
+            tk: string;
+            tw: string;
+            ug: string;
             uk: string;
             ur: string;
             uz: string;
+            ve: string;
             vi: string;
+            vo: string;
+            wa: string;
+            cy: string;
             wo: string;
             xh: string;
             yi: string;
             yo: string;
-            zh: string;
+            za: string;
             zu: string;
         };
     }
@@ -25898,255 +26049,252 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type __mpds_visavis_plot_1 = $mol_type_enforce<
-		Parameters< $mpds_visavis_plot['matrix_x_op'] >[0]
-		,
-		Parameters< ReturnType< $mpds_visavis_plot['Matrix'] >['x_op'] >[0]
-	>
-	type __mpds_visavis_plot_2 = $mol_type_enforce<
-		Parameters< $mpds_visavis_plot['matrix_y_op'] >[0]
-		,
-		Parameters< ReturnType< $mpds_visavis_plot['Matrix'] >['y_op'] >[0]
-	>
-	type __mpds_visavis_plot_3 = $mol_type_enforce<
-		Parameters< $mpds_visavis_plot['matrix_x_sort'] >[0]
-		,
-		Parameters< ReturnType< $mpds_visavis_plot['Matrix'] >['x_sort'] >[0]
-	>
-	type __mpds_visavis_plot_4 = $mol_type_enforce<
-		Parameters< $mpds_visavis_plot['matrix_y_sort'] >[0]
-		,
-		Parameters< ReturnType< $mpds_visavis_plot['Matrix'] >['y_sort'] >[0]
-	>
-	type $mpds_visavis_plot_matrix__plot_raw_mpds_visavis_plot_5 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
-		,
-		ReturnType< $mpds_visavis_plot_matrix['plot_raw'] >
-	>
-	type $mpds_visavis_plot_matrix__multi_jsons_mpds_visavis_plot_6 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['multi_jsons'] >
-		,
-		ReturnType< $mpds_visavis_plot_matrix['multi_jsons'] >
-	>
-	type $mpds_visavis_plot_matrix__show_setup_mpds_visavis_plot_7 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['show_setup'] >
-		,
-		ReturnType< $mpds_visavis_plot_matrix['show_setup'] >
-	>
-	type $mpds_visavis_plot_matrix__nonformers_checked_mpds_visavis_plot_8 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['nonformers_checked'] >
-		,
-		ReturnType< $mpds_visavis_plot_matrix['nonformers_checked'] >
-	>
-	type $mpds_visavis_plot_matrix__fixel_checked_mpds_visavis_plot_9 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['matrix_fixel_checked'] >
-		,
-		ReturnType< $mpds_visavis_plot_matrix['fixel_checked'] >
-	>
-	type $mpds_visavis_plot_matrix__matrix_click_mpds_visavis_plot_10 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['matrix_click'] >
-		,
-		ReturnType< $mpds_visavis_plot_matrix['matrix_click'] >
-	>
-	type __mpds_visavis_plot_11 = $mol_type_enforce<
-		Parameters< $mpds_visavis_plot['x_op'] >[0]
-		,
-		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['x_op'] >[0]
-	>
-	type __mpds_visavis_plot_12 = $mol_type_enforce<
-		Parameters< $mpds_visavis_plot['y_op'] >[0]
-		,
-		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['y_op'] >[0]
-	>
-	type __mpds_visavis_plot_13 = $mol_type_enforce<
-		Parameters< $mpds_visavis_plot['z_op'] >[0]
-		,
-		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['z_op'] >[0]
-	>
-	type __mpds_visavis_plot_14 = $mol_type_enforce<
-		Parameters< $mpds_visavis_plot['x_sort'] >[0]
-		,
-		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['x_sort'] >[0]
-	>
-	type __mpds_visavis_plot_15 = $mol_type_enforce<
-		Parameters< $mpds_visavis_plot['y_sort'] >[0]
-		,
-		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['y_sort'] >[0]
-	>
-	type __mpds_visavis_plot_16 = $mol_type_enforce<
-		Parameters< $mpds_visavis_plot['z_sort'] >[0]
-		,
-		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['z_sort'] >[0]
-	>
-	type $mpds_visavis_plot_cube__plot_raw_mpds_visavis_plot_17 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
-		,
-		ReturnType< $mpds_visavis_plot_cube['plot_raw'] >
-	>
-	type $mpds_visavis_plot_cube__multi_jsons_mpds_visavis_plot_18 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['multi_jsons'] >
-		,
-		ReturnType< $mpds_visavis_plot_cube['multi_jsons'] >
-	>
-	type $mpds_visavis_plot_cube__show_setup_mpds_visavis_plot_19 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['show_setup'] >
-		,
-		ReturnType< $mpds_visavis_plot_cube['show_setup'] >
-	>
-	type $mpds_visavis_plot_cube__show_fixel_mpds_visavis_plot_20 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['show_fixel'] >
-		,
-		ReturnType< $mpds_visavis_plot_cube['show_fixel'] >
-	>
-	type $mpds_visavis_plot_cube__nonformers_checked_mpds_visavis_plot_21 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['nonformers_checked'] >
-		,
-		ReturnType< $mpds_visavis_plot_cube['nonformers_checked'] >
-	>
-	type $mpds_visavis_plot_cube__fixel_checked_mpds_visavis_plot_22 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['cube_fixel_checked'] >
-		,
-		ReturnType< $mpds_visavis_plot_cube['fixel_checked'] >
-	>
-	type $mpds_visavis_plot_cube__cube_click_mpds_visavis_plot_23 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['cube_click'] >
-		,
-		ReturnType< $mpds_visavis_plot_cube['cube_click'] >
-	>
-	type $mpds_visavis_plot_phase__plot_raw_mpds_visavis_plot_24 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
-		,
-		ReturnType< $mpds_visavis_plot_phase['plot_raw'] >
-	>
-	type $mpds_visavis_plot_phase__phase_click_mpds_visavis_plot_25 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['phase_click'] >
-		,
-		ReturnType< $mpds_visavis_plot_phase['phase_click'] >
-	>
-	type $mpds_visavis_plot_bar__plot_raw_mpds_visavis_plot_26 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
-		,
-		ReturnType< $mpds_visavis_plot_bar['plot_raw'] >
-	>
-	type $mpds_visavis_plot_bar__bar_click_mpds_visavis_plot_27 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['bar_click'] >
-		,
-		ReturnType< $mpds_visavis_plot_bar['bar_click'] >
-	>
-	type __mpds_visavis_plot_28 = $mol_type_enforce<
-		Parameters< $mpds_visavis_plot['discovery_elementals_on'] >[0]
-		,
-		Parameters< ReturnType< $mpds_visavis_plot['Discovery'] >['elementals_on'] >[0]
-	>
-	type $mpds_visavis_plot_discovery__plot_raw_mpds_visavis_plot_29 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
-		,
-		ReturnType< $mpds_visavis_plot_discovery['plot_raw'] >
-	>
-	type $mpds_visavis_plot_discovery__json_cmp_mpds_visavis_plot_30 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['json_cmp'] >
-		,
-		ReturnType< $mpds_visavis_plot_discovery['json_cmp'] >
-	>
-	type $mpds_visavis_plot_discovery__show_setup_mpds_visavis_plot_31 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['show_setup'] >
-		,
-		ReturnType< $mpds_visavis_plot_discovery['show_setup'] >
-	>
-	type $mpds_visavis_plot_discovery__discovery_click_mpds_visavis_plot_32 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['discovery_click'] >
-		,
-		ReturnType< $mpds_visavis_plot_discovery['discovery_click'] >
-	>
-	type $mpds_visavis_plot_eigen__plot_raw_mpds_visavis_plot_33 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
-		,
-		ReturnType< $mpds_visavis_plot_eigen['plot_raw'] >
-	>
-	type $mpds_visavis_plot_pie__plot_raw_mpds_visavis_plot_34 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
-		,
-		ReturnType< $mpds_visavis_plot_pie['plot_raw'] >
-	>
-	type $mpds_visavis_plot_pie__pie_click_mpds_visavis_plot_35 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['pie_click'] >
-		,
-		ReturnType< $mpds_visavis_plot_pie['pie_click'] >
-	>
-	type $mpds_visavis_plot_scatter__plot_raw_mpds_visavis_plot_36 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
-		,
-		ReturnType< $mpds_visavis_plot_scatter['plot_raw'] >
-	>
-	type $mpds_visavis_plot_scatter__notify_mpds_visavis_plot_37 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['notify'] >
-		,
-		ReturnType< $mpds_visavis_plot_scatter['notify'] >
-	>
-	type $mpds_visavis_plot_customscatter__plot_raw_mpds_visavis_plot_38 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
-		,
-		ReturnType< $mpds_visavis_plot_customscatter['plot_raw'] >
-	>
-	type $mpds_visavis_plot_customscatter__nplots_changed_mpds_visavis_plot_39 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['nplots_changed'] >
-		,
-		ReturnType< $mpds_visavis_plot_customscatter['nplots_changed'] >
-	>
-	type $mpds_visavis_plot_customscatter__legend_click_mpds_visavis_plot_40 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['legend_click'] >
-		,
-		ReturnType< $mpds_visavis_plot_customscatter['legend_click'] >
-	>
-	type $mpds_visavis_plot_heatmap__plot_raw_mpds_visavis_plot_41 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
-		,
-		ReturnType< $mpds_visavis_plot_heatmap['plot_raw'] >
-	>
-	type __mpds_visavis_plot_42 = $mol_type_enforce<
-		Parameters< $mpds_visavis_plot['graph_rel'] >[0]
-		,
-		Parameters< ReturnType< $mpds_visavis_plot['Graph'] >['graph_rel'] >[0]
-	>
-	type $mpds_visavis_plot_graph__plot_raw_mpds_visavis_plot_43 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['plot_raw'] >
-		,
-		ReturnType< $mpds_visavis_plot_graph['plot_raw'] >
-	>
-	type $mpds_visavis_plot_graph__graph_click_mpds_visavis_plot_44 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['graph_click'] >
-		,
-		ReturnType< $mpds_visavis_plot_graph['graph_click'] >
-	>
-	type $mpds_visavis_plot_graph__notify_mpds_visavis_plot_45 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['notify'] >
-		,
-		ReturnType< $mpds_visavis_plot_graph['notify'] >
-	>
-	type $mol_locale_select__value_mpds_visavis_plot_46 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['locale'] >
-		,
-		ReturnType< $mol_locale_select['value'] >
-	>
-	type $mol_check__Icon_mpds_visavis_plot_47 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['Expand_icon'] >
-		,
-		ReturnType< $mol_check['Icon'] >
-	>
-	type $mol_check__checked_mpds_visavis_plot_48 = $mol_type_enforce<
-		ReturnType< $mpds_visavis_plot['fullscreen'] >
-		,
-		ReturnType< $mol_check['checked'] >
-	>
-	type $mol_paragraph__title_mpds_visavis_plot_49 = $mol_type_enforce<
+	type $mol_paragraph__title_mpds_visavis_plot_1 = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_paragraph['title'] >
 	>
+	type $mol_check__Icon_mpds_visavis_plot_2 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['Expand_icon'] >
+		,
+		ReturnType< $mol_check['Icon'] >
+	>
+	type $mol_check__checked_mpds_visavis_plot_3 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['fullscreen'] >
+		,
+		ReturnType< $mol_check['checked'] >
+	>
+	type $mol_view__sub_mpds_visavis_plot_4 = $mol_type_enforce<
+		readonly(any)[]
+		,
+		ReturnType< $mol_view['sub'] >
+	>
+	type __mpds_visavis_plot_5 = $mol_type_enforce<
+		Parameters< $mpds_visavis_plot['matrix_x_op'] >[0]
+		,
+		Parameters< ReturnType< $mpds_visavis_plot['Matrix'] >['x_op'] >[0]
+	>
+	type __mpds_visavis_plot_6 = $mol_type_enforce<
+		Parameters< $mpds_visavis_plot['matrix_y_op'] >[0]
+		,
+		Parameters< ReturnType< $mpds_visavis_plot['Matrix'] >['y_op'] >[0]
+	>
+	type __mpds_visavis_plot_7 = $mol_type_enforce<
+		Parameters< $mpds_visavis_plot['matrix_x_sort'] >[0]
+		,
+		Parameters< ReturnType< $mpds_visavis_plot['Matrix'] >['x_sort'] >[0]
+	>
+	type __mpds_visavis_plot_8 = $mol_type_enforce<
+		Parameters< $mpds_visavis_plot['matrix_y_sort'] >[0]
+		,
+		Parameters< ReturnType< $mpds_visavis_plot['Matrix'] >['y_sort'] >[0]
+	>
+	type $mpds_visavis_plot_matrix__plot_raw_mpds_visavis_plot_9 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		,
+		ReturnType< $mpds_visavis_plot_matrix['plot_raw'] >
+	>
+	type $mpds_visavis_plot_matrix__show_setup_mpds_visavis_plot_10 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['show_setup'] >
+		,
+		ReturnType< $mpds_visavis_plot_matrix['show_setup'] >
+	>
+	type $mpds_visavis_plot_matrix__nonformers_checked_mpds_visavis_plot_11 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['nonformers_checked'] >
+		,
+		ReturnType< $mpds_visavis_plot_matrix['nonformers_checked'] >
+	>
+	type $mpds_visavis_plot_matrix__fixel_checked_mpds_visavis_plot_12 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['matrix_fixel_checked'] >
+		,
+		ReturnType< $mpds_visavis_plot_matrix['fixel_checked'] >
+	>
+	type $mpds_visavis_plot_matrix__matrix_click_mpds_visavis_plot_13 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['matrix_click'] >
+		,
+		ReturnType< $mpds_visavis_plot_matrix['matrix_click'] >
+	>
+	type __mpds_visavis_plot_14 = $mol_type_enforce<
+		Parameters< $mpds_visavis_plot['x_op'] >[0]
+		,
+		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['x_op'] >[0]
+	>
+	type __mpds_visavis_plot_15 = $mol_type_enforce<
+		Parameters< $mpds_visavis_plot['y_op'] >[0]
+		,
+		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['y_op'] >[0]
+	>
+	type __mpds_visavis_plot_16 = $mol_type_enforce<
+		Parameters< $mpds_visavis_plot['z_op'] >[0]
+		,
+		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['z_op'] >[0]
+	>
+	type __mpds_visavis_plot_17 = $mol_type_enforce<
+		Parameters< $mpds_visavis_plot['x_sort'] >[0]
+		,
+		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['x_sort'] >[0]
+	>
+	type __mpds_visavis_plot_18 = $mol_type_enforce<
+		Parameters< $mpds_visavis_plot['y_sort'] >[0]
+		,
+		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['y_sort'] >[0]
+	>
+	type __mpds_visavis_plot_19 = $mol_type_enforce<
+		Parameters< $mpds_visavis_plot['z_sort'] >[0]
+		,
+		Parameters< ReturnType< $mpds_visavis_plot['Cube'] >['z_sort'] >[0]
+	>
+	type $mpds_visavis_plot_cube__plot_raw_mpds_visavis_plot_20 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		,
+		ReturnType< $mpds_visavis_plot_cube['plot_raw'] >
+	>
+	type $mpds_visavis_plot_cube__show_setup_mpds_visavis_plot_21 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['show_setup'] >
+		,
+		ReturnType< $mpds_visavis_plot_cube['show_setup'] >
+	>
+	type $mpds_visavis_plot_cube__show_fixel_mpds_visavis_plot_22 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['show_fixel'] >
+		,
+		ReturnType< $mpds_visavis_plot_cube['show_fixel'] >
+	>
+	type $mpds_visavis_plot_cube__nonformers_checked_mpds_visavis_plot_23 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['nonformers_checked'] >
+		,
+		ReturnType< $mpds_visavis_plot_cube['nonformers_checked'] >
+	>
+	type $mpds_visavis_plot_cube__fixel_checked_mpds_visavis_plot_24 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['cube_fixel_checked'] >
+		,
+		ReturnType< $mpds_visavis_plot_cube['fixel_checked'] >
+	>
+	type $mpds_visavis_plot_cube__cube_click_mpds_visavis_plot_25 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['cube_click'] >
+		,
+		ReturnType< $mpds_visavis_plot_cube['cube_click'] >
+	>
+	type $mpds_visavis_plot_phase__plot_raw_mpds_visavis_plot_26 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		,
+		ReturnType< $mpds_visavis_plot_phase['plot_raw'] >
+	>
+	type $mpds_visavis_plot_phase__phase_click_mpds_visavis_plot_27 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['phase_click'] >
+		,
+		ReturnType< $mpds_visavis_plot_phase['phase_click'] >
+	>
+	type $mpds_visavis_plot_bar__plot_raw_mpds_visavis_plot_28 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		,
+		ReturnType< $mpds_visavis_plot_bar['plot_raw'] >
+	>
+	type $mpds_visavis_plot_bar__bar_click_mpds_visavis_plot_29 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['bar_click'] >
+		,
+		ReturnType< $mpds_visavis_plot_bar['bar_click'] >
+	>
+	type __mpds_visavis_plot_30 = $mol_type_enforce<
+		Parameters< $mpds_visavis_plot['discovery_elementals_on'] >[0]
+		,
+		Parameters< ReturnType< $mpds_visavis_plot['Discovery'] >['elementals_on'] >[0]
+	>
+	type $mpds_visavis_plot_discovery__plot_raw_mpds_visavis_plot_31 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		,
+		ReturnType< $mpds_visavis_plot_discovery['plot_raw'] >
+	>
+	type $mpds_visavis_plot_discovery__show_setup_mpds_visavis_plot_32 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['show_setup'] >
+		,
+		ReturnType< $mpds_visavis_plot_discovery['show_setup'] >
+	>
+	type $mpds_visavis_plot_discovery__discovery_click_mpds_visavis_plot_33 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['discovery_click'] >
+		,
+		ReturnType< $mpds_visavis_plot_discovery['discovery_click'] >
+	>
+	type $mpds_visavis_plot_eigen__plot_raw_mpds_visavis_plot_34 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		,
+		ReturnType< $mpds_visavis_plot_eigen['plot_raw'] >
+	>
+	type $mpds_visavis_plot_pie__plot_raw_mpds_visavis_plot_35 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		,
+		ReturnType< $mpds_visavis_plot_pie['plot_raw'] >
+	>
+	type $mpds_visavis_plot_pie__pie_click_mpds_visavis_plot_36 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['pie_click'] >
+		,
+		ReturnType< $mpds_visavis_plot_pie['pie_click'] >
+	>
+	type $mpds_visavis_plot_scatter__plot_raw_mpds_visavis_plot_37 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		,
+		ReturnType< $mpds_visavis_plot_scatter['plot_raw'] >
+	>
+	type $mpds_visavis_plot_scatter__notify_mpds_visavis_plot_38 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['notify'] >
+		,
+		ReturnType< $mpds_visavis_plot_scatter['notify'] >
+	>
+	type $mpds_visavis_plot_customscatter__plot_raw_mpds_visavis_plot_39 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		,
+		ReturnType< $mpds_visavis_plot_customscatter['plot_raw'] >
+	>
+	type $mpds_visavis_plot_customscatter__nplots_changed_mpds_visavis_plot_40 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['nplots_changed'] >
+		,
+		ReturnType< $mpds_visavis_plot_customscatter['nplots_changed'] >
+	>
+	type $mpds_visavis_plot_customscatter__legend_click_mpds_visavis_plot_41 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['legend_click'] >
+		,
+		ReturnType< $mpds_visavis_plot_customscatter['legend_click'] >
+	>
+	type $mpds_visavis_plot_heatmap__plot_raw_mpds_visavis_plot_42 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		,
+		ReturnType< $mpds_visavis_plot_heatmap['plot_raw'] >
+	>
+	type __mpds_visavis_plot_43 = $mol_type_enforce<
+		Parameters< $mpds_visavis_plot['graph_rel'] >[0]
+		,
+		Parameters< ReturnType< $mpds_visavis_plot['Graph'] >['graph_rel'] >[0]
+	>
+	type $mpds_visavis_plot_graph__plot_raw_mpds_visavis_plot_44 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['plot_raw'] >
+		,
+		ReturnType< $mpds_visavis_plot_graph['plot_raw'] >
+	>
+	type $mpds_visavis_plot_graph__graph_click_mpds_visavis_plot_45 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['graph_click'] >
+		,
+		ReturnType< $mpds_visavis_plot_graph['graph_click'] >
+	>
+	type $mpds_visavis_plot_graph__notify_mpds_visavis_plot_46 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['notify'] >
+		,
+		ReturnType< $mpds_visavis_plot_graph['notify'] >
+	>
+	type $mol_locale_select__value_mpds_visavis_plot_47 = $mol_type_enforce<
+		ReturnType< $mpds_visavis_plot['locale'] >
+		,
+		ReturnType< $mol_locale_select['value'] >
+	>
 	export class $mpds_visavis_plot extends $mol_view {
 		locale( ): string
+		Demo_warn( ): $mol_paragraph
+		demo_warn_visible( ): readonly(any)[]
 		Expand_icon( ): $mol_icon_arrow_expand_all
 		fullscreen( next?: boolean ): boolean
+		Fullscreen( ): $mol_check
+		Plot( ): $mol_view
+		error_message( ): string
+		Error( ): $mol_view
+		error_visible( ): readonly(any)[]
 		nonformers_checked( next?: boolean ): boolean
 		matrix_fixel_checked( next?: boolean ): boolean
 		matrix_x_op( next?: ReturnType< ReturnType< $mpds_visavis_plot['Matrix'] >['x_op'] > ): ReturnType< ReturnType< $mpds_visavis_plot['Matrix'] >['x_op'] >
@@ -26190,17 +26338,15 @@ declare namespace $ {
 		})  & ReturnType< $mol_view['attr'] >
 		Locale( ): $mol_locale_select
 		json_request( next?: any ): any
-		json( ): any
 		json_cmp_request( next?: any ): any
-		json_cmp( ): any
 		multi_requests( next?: readonly(string)[] ): readonly(string)[]
-		multi_jsons( ): any
+		jsons( ): readonly(any)[]
 		plot_raw( ): any
 		show_setup( ): boolean
 		notify( next?: any ): any
-		Fullscreen( ): $mol_check
 		show_demo_warn( next?: boolean ): boolean
-		Demo_warn( ): $mol_paragraph
+		reset( ): any
+		sub( next?: readonly(any)[] ): readonly(any)[]
 		plots( ): ({ 
 			'matrix': ReturnType< $mpds_visavis_plot['Matrix'] >,
 			'plot3d': ReturnType< $mpds_visavis_plot['Cube'] >,
@@ -26222,21 +26368,26 @@ declare namespace $ {
 declare namespace $.$$ {
     class $mpds_visavis_plot extends $.$mpds_visavis_plot {
         static fetch_plot_json(request: RequestInfo | null): any;
+        requests(): any[] | readonly string[];
         json_fetched(request: string): any;
-        json(): any;
-        json_cmp(): any;
-        multi_requests(next?: string[]): readonly string[];
-        multi_jsons(): any[] | null;
+        jsons_fetched(): any[];
+        jsons_cached?: any[] | null;
+        jsons(): any[];
+        error_visible(): readonly any[];
+        error_message(): string;
         json_cmp_request(next?: string | null): string | null;
         inconsistent_projection(): boolean;
-        plot_raw(): $mpds_visavis_plot_raw | null;
-        sub(): ($.$mol_paragraph | $.$mol_check | $.$mpds_visavis_plot_matrix | $.$mpds_visavis_plot_cube | $.$mpds_visavis_plot_phase | $.$mpds_visavis_plot_bar | $.$mpds_visavis_plot_discovery | $.$mpds_visavis_plot_eigen | $.$mpds_visavis_plot_pie | $.$mpds_visavis_plot_scatter | $.$mpds_visavis_plot_customscatter | $.$mpds_visavis_plot_heatmap | $.$mpds_visavis_plot_graph)[];
+        plot_raw(): $mpds_visavis_plot_raw;
+        plot_type(): ReturnType<$mpds_visavis_plot_raw['type']>;
+        demo_warn_visible(): $.$mol_paragraph[];
+        Plot(): $mol_view | $.$mpds_visavis_plot_matrix | $.$mpds_visavis_plot_cube | $.$mpds_visavis_plot_phase | $.$mpds_visavis_plot_bar | $.$mpds_visavis_plot_discovery | $.$mpds_visavis_plot_eigen | $.$mpds_visavis_plot_pie | $.$mpds_visavis_plot_scatter | $.$mpds_visavis_plot_customscatter | $.$mpds_visavis_plot_heatmap | $.$mpds_visavis_plot_graph;
         matrix_fixel_checked(next?: any): boolean;
         cube_fixel_checked(next?: any): boolean;
         on_fixel_checked(checked: boolean): void;
         url_unfixel(url: string): string;
         url_fixel(url: string): string;
         notify(msg: string): void;
+        reset(): void;
     }
 }
 
@@ -26514,7 +26665,7 @@ declare namespace $ {
 		Plot_view( id: any): $mpds_visavis_plot
 		attr( ): ({ 
 			'mol_theme': string,
-		}) 
+		})  & ReturnType< $mol_book2['attr'] >
 		title( ): string
 		examples( ): Record<string, string>
 		Placeholder( ): any
