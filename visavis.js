@@ -3,7 +3,7 @@
  * Author: Evgeny Blokhin /
  * Tilde Materials Informatics
  * eb@tilde.pro
- * Version: 0.8.0
+ * Version: 0.8.1
  */
 "use strict";
 
@@ -2409,7 +2409,16 @@ function visavis__customscatter(json){
         {
             height: document.body.clientHeight,
             width: document.body.clientWidth,
-            showlegend: true,
+            showlegend: !json.xrpd,
+            annotations: json.xrpd ? [{
+                x: 3,
+                y: 100,
+                xref: 'x',
+                yref: 'y',
+                text: 'simulated Cu K-alpha',
+                font: {family: "Exo2", size: 13},
+                showarrow: false
+            }] : false,
             legend: {x: 100, y: 1, font: {family: "Exo2", size: 14}},
             xaxis: {
                 type: json.xlog ? 'log' : '-',
@@ -2426,19 +2435,19 @@ function visavis__customscatter(json){
             yaxis: {
                 type: json.ylog ? 'log' : '-',
                 autorange: true,
-                showgrid: true,
-                showline: true,
-                showticklabels: true,
+                showgrid: !json.xrpd,
+                showline: !json.xrpd,
+                showticklabels: !json.xrpd,
                 zeroline: true,
                 zerolinecolor: '#999',
                 zerolinewidth: 0.5,
-                ticklen: 4,
+                ticklen: json.xrpd ? 0 : 4,
                 title: json.ytitle
             },
             font: {family: "Exo2", size: 13},
             margin: {
                 t: 0,
-                r: 0
+                r: json.xrpd ? 20 : 0
             }
         },
         {displaylogo: false, displayModeBar: false, staticPlot: true},
@@ -2451,7 +2460,8 @@ function visavis__customscatter(json){
                         name: evt.data[evt.curveNumber].name}, '*');
             });
             // API CORRECT
-            //if (window.parent) window.parent.postMessage({type: 'nplots', nplots: json.plots.length}, '*');
+            if (visavis.mpds_embedded) document.getElementById('cross').style.display = 'block';
+            else if (window.parent) window.parent.postMessage({type: 'nplots', nplots: json.plots.length}, '*');
         }
     );
 }
