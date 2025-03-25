@@ -2216,6 +2216,10 @@ function visavis__pd(json){
                     window.parent.postMessage({type: 'pd', comp: [comp1, comp2], temp: [temp1, temp2]}, '*');
             });
         }
+        // yet another iframe communication API for mpds-labs via postMessage
+        // API CORRECT
+        if (json.original === false)
+            window.parent.postMessage({type: 'cdr'}, '*');
     });
 }
 
