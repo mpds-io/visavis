@@ -523,51 +523,6 @@ function get_pd_filling(nphases){
     else return '#eee';
 }
 
-function make_absolute_context(element, root){
-    return function(x, y){
-        var offset = root.getBoundingClientRect();
-        var matrix = element.getScreenCTM();
-        return {
-            x: (matrix.a * x) + (matrix.c * y) + matrix.e - offset.left,
-            y: (matrix.b * x) + (matrix.d * y) + matrix.f - offset.top
-        }
-    }
-}
-
-function get_absolute_coords(el, ref){
-    var fn = make_absolute_context(el, ref);
-    var b = el.getBBox();
-    return fn(b.x, b.y);
-}
-
-function pd_fix_triangle(){
-    var svgroot = Plotly.d3.select("svg.main-svg")[0][0], // window
-        graph_node = Plotly.d3.select("g.toplevel.plotbg")[0][0], // graph frame
-        graph_coords = get_absolute_coords(graph_node, svgroot),
-        svg_el = Plotly.d3.select("g.layer-above"), // actual drawing
-        svg_node = svg_el[0][0];
-
-    graph_node = graph_node.getBoundingClientRect();
-    svg_node = svg_node.getBoundingClientRect();
-
-    var scaleX = graph_node.width / svg_node.width,
-        scaleY = graph_node.height / svg_node.height,
-        centerX = graph_coords.x + graph_node.width / 2,
-        centerY = graph_coords.y + graph_node.height; // NB!
-
-    var origdims = [];
-    Plotly.d3.selectAll("text.annotation-text").each(function(){
-        origdims.push(parseInt(this.getBoundingClientRect().left));
-    });
-
-    svg_el.attr("transform", "translate("+(-centerX*(scaleX-1))+", "+(-centerY*(scaleY-1))+") scale("+scaleX+", "+scaleY+")");
-
-    Plotly.d3.selectAll("g.annotation").each(function(d, i){
-        Plotly.d3.select(this).attr("transform", "translate("+(-centerX*(scaleX-1))+", "+(-centerY*(scaleY-1))+") scale("+scaleX+", "+scaleY+") translate("+(-origdims[i]/1.25)+", 0) scale(1.75, 1)");
-    });
-    //console.log('Fixed SVG triangle!');
-}
-
 function is_integer(num){
     return num % 1 === 0;
 }
@@ -1982,35 +1937,19 @@ function visavis__pd(json){
                 color: '#333',
                 family: "Exo2"
             },
-            ternary: {
-                aaxis: {
-                    title: json.title_b,
-                    ticks: '',
-                    showline: true,
-                    showgrid: false,
-                    fixedrange: true,
-                    linewidth: 1
-                },
-                baxis: {
-                    title: json.title_a,
-                    ticks: '',
-                    showline: true,
-                    showgrid: false,
-                    fixedrange: true,
-                    linewidth: 1
-                },
-                caxis: {
-                    title: json.title_c,
-                    ticks: '',
-                    showline: true,
-                    showgrid: false,
-                    fixedrange: true,
-                    linewidth: 1
-                }
+            xaxis: {
+                showgrid: false,
+                zeroline: false,
+                showticklabels: false
+            },
+            yaxis: {
+                showgrid: false,
+                zeroline: false,
+                showticklabels: false
             },
             shapes: layout_shapes,
             annotations: []
-        };
+        }
 
         layout_shapes.unshift({
             type: 'path',
@@ -2080,7 +2019,7 @@ function visavis__pd(json){
             },
             shapes: layout_shapes,
             annotations: []
-        };
+        }
     }
 
     for (var i = 0; i < json.labels.length; i++){
@@ -2096,7 +2035,7 @@ function visavis__pd(json){
 
     if (json.title_c && json.arity > 2 && !data_demo)
         layout.annotations.push({
-            text: (json.diatype ? json.diatype + " " : "") + (json.temp[0] ? json.temp[0] + " &deg;C" : ""), x: -0.25, y: 0.96, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 15, family: "Exo2"}
+            text: (json.diatype ? json.diatype + " " : "") + (json.temp[0] ? json.temp[0] + " &deg;C" : ""), x: 0, y: 0.99, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 14, family: "Exo2"}
         });
     if (json.naxes == 2)
         layout.annotations.extend([{
@@ -2107,10 +2046,6 @@ function visavis__pd(json){
 
     run(pd_datamock, layout, {displaylogo: false, displayModeBar: false, staticPlot: true},
     function(){
-
-        var canvas = document.getElementById('visavis');
-        if (json.naxes == 3) // triangle
-            pd_fix_triangle();
 
         if (visavis.mpds_embedded)
             document.getElementById('cross').style.display = 'block';
@@ -2158,6 +2093,8 @@ function visavis__pd(json){
 
         // skip pd tracing for demo
         if (data_demo) return;
+
+        var canvas = document.getElementById('visavis');
 
         if (json.naxes == 3){
             // triangle
