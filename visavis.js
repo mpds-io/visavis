@@ -2033,10 +2033,17 @@ function visavis__pd(json){
         });
     }
 
-    if (json.title_c && json.arity > 2 && !data_demo)
-        layout.annotations.push({
+    if (json.title_c && json.arity > 2 && !data_demo){
+        layout.annotations.extend([{
             text: (json.diatype ? json.diatype + " " : "") + (json.temp[0] ? json.temp[0] + " &deg;C" : ""), x: 0, y: 0.99, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 14, family: "Exo2"}
-        });
+        }, {
+            text: json.title_a, x: -0.03, y: -0.11, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 16, family: "Exo2"}
+        }, {
+            text: json.title_b, x: 0.5, y: 1.03, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 16, family: "Exo2"}
+        }, {
+            text: json.title_c, x: 1.03, y: -0.11, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 16, family: "Exo2"}
+        }]);
+    }
     if (json.naxes == 2)
         layout.annotations.extend([{
             text: json.title_a, x: -0.03, y: -0.11, showarrow: false, xref: 'paper', yref: 'paper', font: {size: 20, family: "Exo2"}
@@ -2116,6 +2123,7 @@ function visavis__pd(json){
 
                 } else document.getElementById('pdtracer').style.display = 'none';
             });
+
         } else {
             // rectangle
             var fixed = fix_comp_impossible(json.comp_range, json.comp_start, json.comp_end);
@@ -2137,6 +2145,7 @@ function visavis__pd(json){
                 } else document.getElementById('pdtracer').style.display = 'none';
             });
 
+            // FIXME does not seem to work right
             canvas.addEventListener('project', function(evt){
                 //console.log('Received', evt.detail.x1, evt.detail.y1, evt.detail.x2, evt.detail.y2);
                 var comp1 = xaxis.p2c(evt.detail.x1 - margin_l),
