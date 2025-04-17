@@ -2124,6 +2124,20 @@ function visavis__pd(json){
                 } else document.getElementById('pdtracer').style.display = 'none';
             });
 
+            canvas.addEventListener('project', function(evt){
+                //console.log('Received', evt.detail.x1, evt.detail.y1, evt.detail.x2, evt.detail.y2);
+                var triangle = false;
+
+                if (inside_triangle((evt.detail.x1 + evt.detail.x2) / 2, (evt.detail.y1 + evt.detail.y2) / 2, origin_a[0], origin_a[1], origin_b[0], origin_b[1], origin_c[0], origin_c[1])){
+                    var x0 = (evt.x - domrect.x)/domrect.width,
+                        y0 = Math.sqrt(3)/2 * (1 - (evt.y - domrect.y)/domrect.height);
+                    triangle = cartesian_to_ternary(x0, y0);
+                }
+                // yet another communication API for *data curation* vs. *visavis*
+                // API CORRECT
+                window.parent.postMessage({type: 'pd', comp: triangle, temp: json.temp}, '*');
+            });
+
         } else {
             // rectangle
             var fixed = fix_comp_impossible(json.comp_range, json.comp_start, json.comp_end);
@@ -2145,27 +2159,31 @@ function visavis__pd(json){
                 } else document.getElementById('pdtracer').style.display = 'none';
             });
 
-            // FIXME does not seem to work right
             canvas.addEventListener('project', function(evt){
                 //console.log('Received', evt.detail.x1, evt.detail.y1, evt.detail.x2, evt.detail.y2);
                 var comp1 = xaxis.p2c(evt.detail.x1 - margin_l),
                     comp2 = xaxis.p2c(evt.detail.x2 - margin_l),
-                    temp1 = parseInt(yaxis.p2c(evt.detail.y1 - margin_t)),
-                    temp2 = parseInt(yaxis.p2c(evt.detail.y2 - margin_t)),
+                    temp1 = yaxis.p2c(evt.detail.y1 - margin_t),
+                    temp2 = yaxis.p2c(evt.detail.y2 - margin_t),
                     comp_chk = (comp1 + comp2) / 2,
-                    temp_chk = (temp1 + temp2) / 2;
+                    temp_chk = (temp1 + temp2) / 2,
+                    comp = false,
+                    temp = false;
                 //console.log('Checking', comp_chk, temp_chk);
 
-                // yet another iframe communication API for mpds-labs via postMessage
+                if (comp_chk > json.comp_range[0] && comp_chk < json.comp_range[1] && temp_chk > json.temp[0] && temp_chk < json.temp[1]){
+                    comp = [comp1, comp2];
+                    temp = [temp1, temp2];
+                }
+                // yet another communication API for *data curation* vs. *visavis*
                 // API CORRECT
-                if (comp_chk > json.comp_range[0] && comp_chk < json.comp_range[1] && temp_chk > json.temp[0] && temp_chk < json.temp[1])
-                    window.parent.postMessage({type: 'pd', comp: [comp1, comp2], temp: [temp1, temp2]}, '*');
+                window.parent.postMessage({type: 'pd', comp: comp, temp: temp}, '*');
             });
         }
-        // yet another iframe communication API for mpds-labs via postMessage
+        // yet another communication API for *data curation* vs. *visavis*
         // API CORRECT
         if (json.original === false)
-            window.parent.postMessage({type: 'cdr'}, '*');
+            window.parent.postMessage({type: 'cdr', original: false}, '*');
     });
 }
 
@@ -2398,7 +2416,7 @@ function visavis__customscatter(json){
         },
         {displaylogo: false, displayModeBar: false, staticPlot: true},
         function(){
-            // yet another iframe communication API for mpds-labs via postMessage
+            // yet another communication API for *data curation* vs. *visavis*
             document.getElementById('visavis').on('plotly_legendclick', function(evt){
                 // API CORRECT
                 if (window.parent)
@@ -2407,7 +2425,7 @@ function visavis__customscatter(json){
             });
             // API CORRECT
             if (visavis.mpds_embedded) document.getElementById('cross').style.display = 'block';
-            else if (window.parent) window.parent.postMessage({type: 'nplots', nplots: json.plots.length}, '*');
+            //else if (window.parent) window.parent.postMessage({type: 'nplots', nplots: json.plots.length}, '*');
         }
     );
 }
@@ -2421,8 +2439,10 @@ function visavis__customscatter(json){
     window.addEventListener('hashchange', init_download, false);
 
     window.addEventListener('message', function(event){
-        // yet another iframe communication API for mpds-labs via postMessage
+        // yet another communication API for *data curation* vs. *visavis*
+        if (event.data.type !== 'dims') return notify('Unknown communication: ' + event.data.type);
         //console.log('Message', event.data.x1, event.data.y1, event.data.x2, event.data.y2);
+
         document.getElementById('visavis').dispatchEvent(new CustomEvent('project', {
             detail: {x1: event.data.x1, y1: event.data.y1, x2: event.data.x2, y2: event.data.y2}
         }));
