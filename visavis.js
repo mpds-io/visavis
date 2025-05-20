@@ -2423,6 +2423,20 @@ function visavis__customscatter(json){
                     window.parent.postMessage({type: 'curve', plotindex: evt.curveNumber,
                         name: evt.data[evt.curveNumber].name}, '*');
             });
+
+            var canvas = document.getElementById('visavis');
+            canvas.addEventListener('project', function(evt){
+                var xaxis = canvas._fullLayout.xaxis,
+                    yaxis = canvas._fullLayout.yaxis,
+                    margin_l = canvas._fullLayout.margin.l,
+                    margin_t = canvas._fullLayout.margin.t,
+                    xproj = xaxis.p2c(evt.detail.x - margin_l),
+                    yproj = yaxis.p2c(evt.detail.y - margin_t);
+
+                // API CORRECT
+                window.parent.postMessage({type: 'proj', xproj: xproj, yproj: yproj}, '*');
+            });
+
             // API CORRECT
             if (visavis.mpds_embedded) document.getElementById('cross').style.display = 'block';
             //else if (window.parent) window.parent.postMessage({type: 'nplots', nplots: json.plots.length}, '*');
@@ -2440,12 +2454,18 @@ function visavis__customscatter(json){
 
     window.addEventListener('message', function(event){
         // yet another communication API for *data curation* vs. *visavis*
-        if (event.data.type !== 'dims') return notify('Unknown communication: ' + event.data.type);
-        //console.log('Message', event.data.x1, event.data.y1, event.data.x2, event.data.y2);
+        if (['dims', 'proj'].indexOf(event.data.type) == -1) return console.error('Unknown communication: ' + event.data.type);
 
-        document.getElementById('visavis').dispatchEvent(new CustomEvent('project', {
-            detail: {x1: event.data.x1, y1: event.data.y1, x2: event.data.x2, y2: event.data.y2}
-        }));
+        if (event.data.type == 'dims'){
+            document.getElementById('visavis').dispatchEvent(new CustomEvent('project', {
+                detail: {x1: event.data.x1, y1: event.data.y1, x2: event.data.x2, y2: event.data.y2}
+            }));
+
+        } else if (event.data.type == 'proj') {
+            document.getElementById('visavis').dispatchEvent(new CustomEvent('project', {
+                detail: {x: event.data.x, y: event.data.y}
+            }));
+        }
     });
 
     if (visavis.local_supported){
