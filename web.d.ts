@@ -393,6 +393,115 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    var $mol_dom: typeof globalThis;
+}
+
+declare namespace $ {
+    enum $mol_keyboard_code {
+        backspace = 8,
+        tab = 9,
+        enter = 13,
+        shift = 16,
+        ctrl = 17,
+        alt = 18,
+        pause = 19,
+        capsLock = 20,
+        escape = 27,
+        space = 32,
+        pageUp = 33,
+        pageDown = 34,
+        end = 35,
+        home = 36,
+        left = 37,
+        up = 38,
+        right = 39,
+        down = 40,
+        insert = 45,
+        delete = 46,
+        key0 = 48,
+        key1 = 49,
+        key2 = 50,
+        key3 = 51,
+        key4 = 52,
+        key5 = 53,
+        key6 = 54,
+        key7 = 55,
+        key8 = 56,
+        key9 = 57,
+        A = 65,
+        B = 66,
+        C = 67,
+        D = 68,
+        E = 69,
+        F = 70,
+        G = 71,
+        H = 72,
+        I = 73,
+        J = 74,
+        K = 75,
+        L = 76,
+        M = 77,
+        N = 78,
+        O = 79,
+        P = 80,
+        Q = 81,
+        R = 82,
+        S = 83,
+        T = 84,
+        U = 85,
+        V = 86,
+        W = 87,
+        X = 88,
+        Y = 89,
+        Z = 90,
+        metaLeft = 91,
+        metaRight = 92,
+        select = 93,
+        numpad0 = 96,
+        numpad1 = 97,
+        numpad2 = 98,
+        numpad3 = 99,
+        numpad4 = 100,
+        numpad5 = 101,
+        numpad6 = 102,
+        numpad7 = 103,
+        numpad8 = 104,
+        numpad9 = 105,
+        multiply = 106,
+        add = 107,
+        subtract = 109,
+        decimal = 110,
+        divide = 111,
+        F1 = 112,
+        F2 = 113,
+        F3 = 114,
+        F4 = 115,
+        F5 = 116,
+        F6 = 117,
+        F7 = 118,
+        F8 = 119,
+        F9 = 120,
+        F10 = 121,
+        F11 = 122,
+        F12 = 123,
+        numLock = 144,
+        scrollLock = 145,
+        semicolon = 186,
+        equals = 187,
+        comma = 188,
+        dash = 189,
+        period = 190,
+        forwardSlash = 191,
+        graveAccent = 192,
+        bracketOpen = 219,
+        slashBack = 220,
+        slashBackLeft = 226,
+        bracketClose = 221,
+        quoteSingle = 222
+    }
+}
+
+declare namespace $ {
 }
 
 declare namespace $ {
@@ -410,10 +519,6 @@ declare namespace $ {
     class $mol_memo extends $mol_wrapper {
         static wrap<This extends object, Value>(task: (this: This, next?: Value) => Value): (this: This, next?: Value) => Value | undefined;
     }
-}
-
-declare namespace $ {
-    var $mol_dom: typeof globalThis;
 }
 
 declare namespace $ {
@@ -600,7 +705,7 @@ declare namespace $ {
 
 declare namespace $ {
     export type $mol_style_properties = Partial<$mol_type_override<CSSStyleDeclaration, Overrides>>;
-    type Common = 'inherit' | 'initial' | 'unset' | 'revert' | 'revert-layer' | $mol_style_func<'var'>;
+    type Common = 'inherit' | 'initial' | 'unset' | 'revert' | 'revert-layer' | 'none' | $mol_style_func<'var'>;
     export type $mol_style_properties_color = 'aliceblue' | 'antiquewhite' | 'aqua' | 'aquamarine' | 'azure' | 'beige' | 'bisque' | 'black' | 'blanchedalmond' | 'blue' | 'blueviolet' | 'brown' | 'burlywood' | 'cadetblue' | 'chartreuse' | 'chocolate' | 'coral' | 'cornflowerblue' | 'cornsilk' | 'crimson' | 'cyan' | 'darkblue' | 'darkcyan' | 'darkgoldenrod' | 'darkgray' | 'darkgreen' | 'darkgrey' | 'darkkhaki' | 'darkmagenta' | 'darkolivegreen' | 'darkorange' | 'darkorchid' | 'darkred' | 'darksalmon' | 'darkseagreen' | 'darkslateblue' | 'darkslategrey' | 'darkturquoise' | 'darkviolet' | 'deeppink' | 'deepskyblue' | 'dimgray' | 'dimgrey' | 'dodgerblue' | 'firebrick' | 'floralwhite' | 'forestgreen' | 'fuchsia' | 'gainsboro' | 'ghostwhite' | 'gold' | 'goldenrod' | 'gray' | 'green' | 'greenyellow' | 'grey' | 'honeydew' | 'hotpink' | 'indianred' | 'indigo' | 'ivory' | 'khaki' | 'lavender' | 'lavenderblush' | 'lawngreen' | 'lemonchiffon' | 'lightblue' | 'lightcoral' | 'lightcyan' | 'lightgoldenrodyellow' | 'lightgray' | 'lightgreen' | 'lightgrey' | 'lightpink' | 'lightsalmon' | 'lightseagreen' | 'lightskyblue' | 'lightslategray' | 'lightslategrey' | 'lightsteelblue' | 'lightyellow' | 'lime' | 'limegreen' | 'linen' | 'magenta' | 'maroon' | 'mediumaquamarine' | 'mediumblue' | 'mediumorchid' | 'mediumpurple' | 'mediumseagreen' | 'mediumslateblue' | 'mediumspringgreen' | 'mediumturquoise' | 'mediumvioletred' | 'midnightblue' | 'mintcream' | 'mistyrose' | 'moccasin' | 'navajowhite' | 'navy' | 'oldlace' | 'olive' | 'olivedrab' | 'orange' | 'orangered' | 'orchid' | 'palegoldenrod' | 'palegreen' | 'paleturquoise' | 'palevioletred' | 'papayawhip' | 'peachpuff' | 'peru' | 'pink' | 'plum' | 'powderblue' | 'purple' | 'rebeccapurple' | 'red' | 'rosybrown' | 'royalblue' | 'saddlebrown' | 'salmon' | 'sandybrown' | 'seagreen' | 'seashell' | 'sienna' | 'silver' | 'skyblue' | 'slateblue' | 'slategray' | 'slategrey' | 'snow' | 'springgreen' | 'steelblue' | 'tan' | 'teal' | 'thistle' | 'tomato' | 'turquoise' | 'violet' | 'wheat' | 'white' | 'whitesmoke' | 'yellow' | 'yellowgreen' | 'transparent' | 'currentcolor' | $mol_style_func<'hsla' | 'rgba' | 'var'> | `#${string}`;
     type Length = 0 | `${number}${$mol_style_unit_length}` | $mol_style_func<'calc' | 'var' | 'clamp'>;
     type Size = 'auto' | 'max-content' | 'min-content' | 'fit-content' | Length | Common;
@@ -673,7 +778,7 @@ declare namespace $ {
             image?: readonly (readonly [$mol_style_func<$mol_style_func_image> | string & {}])[] | 'none' | Common;
             repeat?: Repeat | [Repeat, Repeat] | Common;
             position?: 'left' | 'right' | 'top' | 'bottom' | 'center' | Common;
-            size?: (BG_size | [BG_size, BG_size])[];
+            size?: (BG_size | [BG_size] | [BG_size, BG_size])[];
         };
         box?: {
             shadow?: readonly ([
@@ -757,7 +862,7 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    const $mol_theme: Record<"image" | "line" | "text" | "field" | "focus" | "back" | "hover" | "card" | "current" | "special" | "control" | "shade", $mol_style_func<"var", unknown>>;
+    const $mol_theme: Record<"image" | "line" | "text" | "field" | "focus" | "back" | "hover" | "card" | "current" | "special" | "control" | "shade" | "spirit", $mol_style_func<"var", unknown>>;
 }
 
 declare namespace $ {
@@ -973,17 +1078,29 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mol_view__title_mol_book2_1 = $mol_type_enforce<
+	type $mol_book2_sub__1 = $mol_type_enforce<
+		ReturnType< $mol_book2['pages'] >[number]
+		,
+		$mol_view
+	>
+	type $mol_book2_sub__2 = $mol_type_enforce<
+		ReturnType< $mol_book2['placeholders'] >[number]
+		,
+		$mol_view
+	>
+	type $mol_view__title_mol_book2_3 = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_view['title'] >
 	>
 	export class $mol_book2 extends $mol_scroll {
-		pages( ): readonly($mol_view)[]
-		menu_title( ): string
-		sub( ): ReturnType< $mol_book2['pages'] >
-		minimal_width( ): number
+		pages_deep( ): readonly($mol_view)[]
+		pages( ): ReturnType< $mol_book2['pages_deep'] >
 		Placeholder( ): $mol_view
+		placeholders( ): readonly($mol_view)[]
+		menu_title( ): string
+		sub( ): readonly($mol_view)[]
+		minimal_width( ): number
 		Gap( id: any): $mol_view
 	}
 	
@@ -992,9 +1109,10 @@ declare namespace $ {
 //# sourceMappingURL=book2.view.tree.d.ts.map
 declare namespace $.$$ {
     class $mol_book2 extends $.$mol_book2 {
+        pages_deep(): $mol_view[];
         title(): string;
         menu_title(): string;
-        sub(): readonly $mol_view[];
+        sub(): $mol_view[];
         bring(): void;
     }
 }
@@ -1036,6 +1154,7 @@ declare namespace $ {
 	export class $mol_speck extends $mol_view {
 		theme( ): string
 		value( ): any
+		minimal_width( ): number
 		attr( ): ({ 
 			'mol_theme': ReturnType< $mol_speck['theme'] >,
 		})  & ReturnType< $mol_view['attr'] >
@@ -1048,111 +1167,6 @@ declare namespace $ {
 }
 
 //# sourceMappingURL=speck.view.tree.d.ts.map
-declare namespace $ {
-    enum $mol_keyboard_code {
-        backspace = 8,
-        tab = 9,
-        enter = 13,
-        shift = 16,
-        ctrl = 17,
-        alt = 18,
-        pause = 19,
-        capsLock = 20,
-        escape = 27,
-        space = 32,
-        pageUp = 33,
-        pageDown = 34,
-        end = 35,
-        home = 36,
-        left = 37,
-        up = 38,
-        right = 39,
-        down = 40,
-        insert = 45,
-        delete = 46,
-        key0 = 48,
-        key1 = 49,
-        key2 = 50,
-        key3 = 51,
-        key4 = 52,
-        key5 = 53,
-        key6 = 54,
-        key7 = 55,
-        key8 = 56,
-        key9 = 57,
-        A = 65,
-        B = 66,
-        C = 67,
-        D = 68,
-        E = 69,
-        F = 70,
-        G = 71,
-        H = 72,
-        I = 73,
-        J = 74,
-        K = 75,
-        L = 76,
-        M = 77,
-        N = 78,
-        O = 79,
-        P = 80,
-        Q = 81,
-        R = 82,
-        S = 83,
-        T = 84,
-        U = 85,
-        V = 86,
-        W = 87,
-        X = 88,
-        Y = 89,
-        Z = 90,
-        metaLeft = 91,
-        metaRight = 92,
-        select = 93,
-        numpad0 = 96,
-        numpad1 = 97,
-        numpad2 = 98,
-        numpad3 = 99,
-        numpad4 = 100,
-        numpad5 = 101,
-        numpad6 = 102,
-        numpad7 = 103,
-        numpad8 = 104,
-        numpad9 = 105,
-        multiply = 106,
-        add = 107,
-        subtract = 109,
-        decimal = 110,
-        divide = 111,
-        F1 = 112,
-        F2 = 113,
-        F3 = 114,
-        F4 = 115,
-        F5 = 116,
-        F6 = 117,
-        F7 = 118,
-        F8 = 119,
-        F9 = 120,
-        F10 = 121,
-        F11 = 122,
-        F12 = 123,
-        numLock = 144,
-        scrollLock = 145,
-        semicolon = 186,
-        equals = 187,
-        comma = 188,
-        dash = 189,
-        period = 190,
-        forwardSlash = 191,
-        graveAccent = 192,
-        bracketOpen = 219,
-        slashBack = 220,
-        slashBackLeft = 226,
-        bracketClose = 221,
-        quoteSingle = 222
-    }
-}
-
 declare namespace $ {
 
 	type $mol_speck__value_mol_button_1 = $mol_type_enforce<
@@ -1405,6 +1419,8 @@ declare namespace $ {
 		Empty( ): $mol_view
 		Gap_before( ): $mol_view
 		Gap_after( ): $mol_view
+		item_height_min( id: any): number
+		item_width_min( id: any): number
 		view_window( ): readonly(any)[]
 	}
 	
@@ -1416,10 +1432,13 @@ declare namespace $.$$ {
         sub(): readonly $mol_view[];
         render_visible_only(): boolean;
         view_window(next?: [number, number]): [number, number];
+        item_height_min(index: number): number;
+        row_width_min(index: number): number;
         gap_before(): number;
         gap_after(): number;
         sub_visible(): $mol_view[];
         minimal_height(): number;
+        minimal_width(): number;
         force_render(path: Set<$mol_view>): void;
     }
 }
@@ -1587,7 +1606,6 @@ declare namespace $ {
 		natural_height( ): number
 		load( next?: any ): any
 		dom_name( ): string
-		field( ): Record<string, any> & ReturnType< $mol_view['field'] >
 		attr( ): Record<string, any> & ReturnType< $mol_view['attr'] >
 		event( ): Record<string, any>
 		minimal_width( ): number
@@ -2737,52 +2755,57 @@ declare namespace $ {
 		,
 		ReturnType< $mol_button_minor['hint'] >
 	>
-	type $mol_button_minor__click_mol_search_11 = $mol_type_enforce<
+	type $mol_button_minor__enabled_mol_search_11 = $mol_type_enforce<
+		ReturnType< $mol_search['enabled'] >
+		,
+		ReturnType< $mol_button_minor['enabled'] >
+	>
+	type $mol_button_minor__click_mol_search_12 = $mol_type_enforce<
 		ReturnType< $mol_search['clear'] >
 		,
 		ReturnType< $mol_button_minor['click'] >
 	>
-	type $mol_button_minor__sub_mol_search_12 = $mol_type_enforce<
+	type $mol_button_minor__sub_mol_search_13 = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_button_minor['sub'] >
 	>
-	type $mol_list__rows_mol_search_13 = $mol_type_enforce<
+	type $mol_list__rows_mol_search_14 = $mol_type_enforce<
 		ReturnType< $mol_search['menu_items'] >
 		,
 		ReturnType< $mol_list['rows'] >
 	>
-	type $mol_scroll__sub_mol_search_14 = $mol_type_enforce<
+	type $mol_scroll__sub_mol_search_15 = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_scroll['sub'] >
 	>
-	type $mol_dimmer__haystack_mol_search_15 = $mol_type_enforce<
+	type $mol_dimmer__haystack_mol_search_16 = $mol_type_enforce<
 		ReturnType< $mol_search['suggest_label'] >
 		,
 		ReturnType< $mol_dimmer['haystack'] >
 	>
-	type $mol_dimmer__needle_mol_search_16 = $mol_type_enforce<
+	type $mol_dimmer__needle_mol_search_17 = $mol_type_enforce<
 		ReturnType< $mol_search['query'] >
 		,
 		ReturnType< $mol_dimmer['needle'] >
 	>
-	type $mol_search_plugins__17 = $mol_type_enforce<
+	type $mol_search_plugins__18 = $mol_type_enforce<
 		ReturnType< $mol_pop['plugins'] >[number]
 		,
 		$mol_plugin
 	>
-	type $mol_view__sub_mol_search_18 = $mol_type_enforce<
+	type $mol_view__sub_mol_search_19 = $mol_type_enforce<
 		ReturnType< $mol_search['anchor_content'] >
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mol_button_minor__click_mol_search_19 = $mol_type_enforce<
+	type $mol_button_minor__click_mol_search_20 = $mol_type_enforce<
 		ReturnType< $mol_search['suggest_select'] >
 		,
 		ReturnType< $mol_button_minor['click'] >
 	>
-	type $mol_button_minor__sub_mol_search_20 = $mol_type_enforce<
+	type $mol_button_minor__sub_mol_search_21 = $mol_type_enforce<
 		ReturnType< $mol_search['suggest_content'] >
 		,
 		ReturnType< $mol_button_minor['sub'] >
@@ -24995,8 +25018,14 @@ declare namespace $ {
         added1(this: $mol_vector<number, Length>, diff: readonly number[] & {
             length: Length;
         }): this;
+        substracted1(this: $mol_vector<number, Length>, diff: readonly number[] & {
+            length: Length;
+        }): this;
         multed0(this: $mol_vector<number, Length>, mult: number): this;
         multed1(this: $mol_vector<number, Length>, mults: readonly number[] & {
+            length: Length;
+        }): this;
+        divided1(this: $mol_vector<number, Length>, mults: readonly number[] & {
             length: Length;
         }): this;
         powered0(this: $mol_vector<number, Length>, mult: number): this;
@@ -25731,13 +25760,14 @@ declare namespace $ {
             click(): void;
             hidePopover(): void;
             showPopover(): void;
-            togglePopover(force?: boolean): boolean;
+            togglePopover(options?: boolean): boolean;
             addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
             addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
             removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
             removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
             readonly attributes: NamedNodeMap;
-            readonly classList: DOMTokenList;
+            get classList(): DOMTokenList;
+            set classList(value: string);
             className: string;
             readonly clientHeight: number;
             readonly clientLeft: number;
@@ -25752,7 +25782,8 @@ declare namespace $ {
             onfullscreenerror: ((this: Element, ev: Event) => any) | null;
             outerHTML: string;
             readonly ownerDocument: Document;
-            readonly part: DOMTokenList;
+            get part(): DOMTokenList;
+            set part(value: string);
             readonly prefix: string | null;
             readonly scrollHeight: number;
             scrollLeft: number;
@@ -25829,7 +25860,7 @@ declare namespace $ {
             readonly previousSibling: ChildNode | null;
             textContent: string | null;
             appendChild<T extends Node>(node: T): T;
-            cloneNode(deep?: boolean): Node;
+            cloneNode(subtree?: boolean): Node;
             compareDocumentPosition(other: Node): number;
             contains(other: Node | null): boolean;
             getRootNode(options?: GetRootNodeOptions): Node;
@@ -25891,6 +25922,7 @@ declare namespace $ {
             ariaPosInSet: string | null;
             ariaPressed: string | null;
             ariaReadOnly: string | null;
+            ariaRelevant: string | null;
             ariaRequired: string | null;
             ariaRoleDescription: string | null;
             ariaRowCount: string | null;
@@ -25932,7 +25964,8 @@ declare namespace $ {
             replaceChildren(...nodes: (Node | string)[]): void;
             readonly assignedSlot: HTMLSlotElement | null;
             readonly attributeStyleMap: StylePropertyMap;
-            readonly style: CSSStyleDeclaration;
+            get style(): CSSStyleDeclaration;
+            set style(cssText: string);
             contentEditable: string;
             enterKeyHint: string;
             inputMode: string;

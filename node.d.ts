@@ -322,6 +322,10 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    function $mol_maybe<Value>(value: Value | null | undefined): Value[];
+}
+
+declare namespace $ {
     type $mol_tree2_path = Array<string | number | null>;
     type $mol_tree2_hack<Context> = (input: $mol_tree2, belt: $mol_tree2_belt<Context>, context: Context) => readonly $mol_tree2[];
     type $mol_tree2_belt<Context> = Record<string, $mol_tree2_hack<Context>>;
@@ -342,6 +346,7 @@ declare namespace $ {
         static fromString(str: string, uri?: string): $mol_tree2;
         toString(): string;
         insert(value: $mol_tree2 | null, ...path: $mol_tree2_path): $mol_tree2;
+        update(value: readonly $mol_tree2[], ...path: $mol_tree2_path): readonly $mol_tree2[];
         select(...path: $mol_tree2_path): $mol_tree2;
         filter(path: string[], value?: string): $mol_tree2;
         hack_self<Context extends {
@@ -537,8 +542,8 @@ declare namespace $ {
         dir: string;
     }> {
     }
-    const $mol_run_spawn: (command: string, args: readonly string[], options: import("child_process").SpawnOptions) => import("child_process").ChildProcess;
-    const $mol_run_spawn_sync: (command: string, args?: readonly string[] | undefined, options?: import("child_process").SpawnSyncOptions | undefined) => import("child_process").SpawnSyncReturns<string | Buffer<ArrayBufferLike>>;
+    const $mol_run_spawn: (...args: Parameters<(typeof $node)["child_process"]["spawn"]>) => import("child_process").ChildProcess;
+    const $mol_run_spawn_sync: (...args: Parameters<(typeof $node)["child_process"]["spawnSync"]>) => import("child_process").SpawnSyncReturns<string | Buffer<ArrayBufferLike>>;
     type $mol_run_options = {
         command: readonly string[] | string;
         dir: string;
@@ -773,7 +778,7 @@ declare namespace $ {
 
 declare namespace $ {
     export type $mol_style_properties = Partial<$mol_type_override<CSSStyleDeclaration, Overrides>>;
-    type Common = 'inherit' | 'initial' | 'unset' | 'revert' | 'revert-layer' | $mol_style_func<'var'>;
+    type Common = 'inherit' | 'initial' | 'unset' | 'revert' | 'revert-layer' | 'none' | $mol_style_func<'var'>;
     export type $mol_style_properties_color = 'aliceblue' | 'antiquewhite' | 'aqua' | 'aquamarine' | 'azure' | 'beige' | 'bisque' | 'black' | 'blanchedalmond' | 'blue' | 'blueviolet' | 'brown' | 'burlywood' | 'cadetblue' | 'chartreuse' | 'chocolate' | 'coral' | 'cornflowerblue' | 'cornsilk' | 'crimson' | 'cyan' | 'darkblue' | 'darkcyan' | 'darkgoldenrod' | 'darkgray' | 'darkgreen' | 'darkgrey' | 'darkkhaki' | 'darkmagenta' | 'darkolivegreen' | 'darkorange' | 'darkorchid' | 'darkred' | 'darksalmon' | 'darkseagreen' | 'darkslateblue' | 'darkslategrey' | 'darkturquoise' | 'darkviolet' | 'deeppink' | 'deepskyblue' | 'dimgray' | 'dimgrey' | 'dodgerblue' | 'firebrick' | 'floralwhite' | 'forestgreen' | 'fuchsia' | 'gainsboro' | 'ghostwhite' | 'gold' | 'goldenrod' | 'gray' | 'green' | 'greenyellow' | 'grey' | 'honeydew' | 'hotpink' | 'indianred' | 'indigo' | 'ivory' | 'khaki' | 'lavender' | 'lavenderblush' | 'lawngreen' | 'lemonchiffon' | 'lightblue' | 'lightcoral' | 'lightcyan' | 'lightgoldenrodyellow' | 'lightgray' | 'lightgreen' | 'lightgrey' | 'lightpink' | 'lightsalmon' | 'lightseagreen' | 'lightskyblue' | 'lightslategray' | 'lightslategrey' | 'lightsteelblue' | 'lightyellow' | 'lime' | 'limegreen' | 'linen' | 'magenta' | 'maroon' | 'mediumaquamarine' | 'mediumblue' | 'mediumorchid' | 'mediumpurple' | 'mediumseagreen' | 'mediumslateblue' | 'mediumspringgreen' | 'mediumturquoise' | 'mediumvioletred' | 'midnightblue' | 'mintcream' | 'mistyrose' | 'moccasin' | 'navajowhite' | 'navy' | 'oldlace' | 'olive' | 'olivedrab' | 'orange' | 'orangered' | 'orchid' | 'palegoldenrod' | 'palegreen' | 'paleturquoise' | 'palevioletred' | 'papayawhip' | 'peachpuff' | 'peru' | 'pink' | 'plum' | 'powderblue' | 'purple' | 'rebeccapurple' | 'red' | 'rosybrown' | 'royalblue' | 'saddlebrown' | 'salmon' | 'sandybrown' | 'seagreen' | 'seashell' | 'sienna' | 'silver' | 'skyblue' | 'slateblue' | 'slategray' | 'slategrey' | 'snow' | 'springgreen' | 'steelblue' | 'tan' | 'teal' | 'thistle' | 'tomato' | 'turquoise' | 'violet' | 'wheat' | 'white' | 'whitesmoke' | 'yellow' | 'yellowgreen' | 'transparent' | 'currentcolor' | $mol_style_func<'hsla' | 'rgba' | 'var'> | `#${string}`;
     type Length = 0 | `${number}${$mol_style_unit_length}` | $mol_style_func<'calc' | 'var' | 'clamp'>;
     type Size = 'auto' | 'max-content' | 'min-content' | 'fit-content' | Length | Common;
@@ -846,7 +851,7 @@ declare namespace $ {
             image?: readonly (readonly [$mol_style_func<$mol_style_func_image> | string & {}])[] | 'none' | Common;
             repeat?: Repeat | [Repeat, Repeat] | Common;
             position?: 'left' | 'right' | 'top' | 'bottom' | 'center' | Common;
-            size?: (BG_size | [BG_size, BG_size])[];
+            size?: (BG_size | [BG_size] | [BG_size, BG_size])[];
         };
         box?: {
             shadow?: readonly ([
@@ -930,7 +935,7 @@ declare namespace $ {
 }
 
 declare namespace $ {
-    const $mol_theme: Record<"image" | "line" | "text" | "field" | "focus" | "back" | "hover" | "card" | "current" | "special" | "control" | "shade", $mol_style_func<"var", unknown>>;
+    const $mol_theme: Record<"image" | "line" | "text" | "field" | "focus" | "back" | "hover" | "card" | "current" | "special" | "control" | "shade" | "spirit", $mol_style_func<"var", unknown>>;
 }
 
 declare namespace $ {
@@ -1140,17 +1145,29 @@ declare namespace $ {
 
 declare namespace $ {
 
-	type $mol_view__title_mol_book2_1 = $mol_type_enforce<
+	type $mol_book2_sub__1 = $mol_type_enforce<
+		ReturnType< $mol_book2['pages'] >[number]
+		,
+		$mol_view
+	>
+	type $mol_book2_sub__2 = $mol_type_enforce<
+		ReturnType< $mol_book2['placeholders'] >[number]
+		,
+		$mol_view
+	>
+	type $mol_view__title_mol_book2_3 = $mol_type_enforce<
 		string
 		,
 		ReturnType< $mol_view['title'] >
 	>
 	export class $mol_book2 extends $mol_scroll {
-		pages( ): readonly($mol_view)[]
-		menu_title( ): string
-		sub( ): ReturnType< $mol_book2['pages'] >
-		minimal_width( ): number
+		pages_deep( ): readonly($mol_view)[]
+		pages( ): ReturnType< $mol_book2['pages_deep'] >
 		Placeholder( ): $mol_view
+		placeholders( ): readonly($mol_view)[]
+		menu_title( ): string
+		sub( ): readonly($mol_view)[]
+		minimal_width( ): number
 		Gap( id: any): $mol_view
 	}
 	
@@ -1159,9 +1176,10 @@ declare namespace $ {
 //# sourceMappingURL=book2.view.tree.d.ts.map
 declare namespace $.$$ {
     class $mol_book2 extends $.$mol_book2 {
+        pages_deep(): $mol_view[];
         title(): string;
         menu_title(): string;
-        sub(): readonly $mol_view[];
+        sub(): $mol_view[];
         bring(): void;
     }
 }
@@ -1203,6 +1221,7 @@ declare namespace $ {
 	export class $mol_speck extends $mol_view {
 		theme( ): string
 		value( ): any
+		minimal_width( ): number
 		attr( ): ({ 
 			'mol_theme': ReturnType< $mol_speck['theme'] >,
 		})  & ReturnType< $mol_view['attr'] >
@@ -1572,6 +1591,8 @@ declare namespace $ {
 		Empty( ): $mol_view
 		Gap_before( ): $mol_view
 		Gap_after( ): $mol_view
+		item_height_min( id: any): number
+		item_width_min( id: any): number
 		view_window( ): readonly(any)[]
 	}
 	
@@ -1583,10 +1604,13 @@ declare namespace $.$$ {
         sub(): readonly $mol_view[];
         render_visible_only(): boolean;
         view_window(next?: [number, number]): [number, number];
+        item_height_min(index: number): number;
+        row_width_min(index: number): number;
         gap_before(): number;
         gap_after(): number;
         sub_visible(): $mol_view[];
         minimal_height(): number;
+        minimal_width(): number;
         force_render(path: Set<$mol_view>): void;
     }
 }
@@ -1747,7 +1771,6 @@ declare namespace $ {
 		natural_height( ): number
 		load( next?: any ): any
 		dom_name( ): string
-		field( ): Record<string, any> & ReturnType< $mol_view['field'] >
 		attr( ): Record<string, any> & ReturnType< $mol_view['attr'] >
 		event( ): Record<string, any>
 		minimal_width( ): number
@@ -1917,10 +1940,6 @@ declare namespace $ {
 }
 
 //# sourceMappingURL=all.view.tree.d.ts.map
-declare namespace $ {
-    function $mol_maybe<Value>(value: Value | null | undefined): Value[];
-}
-
 declare namespace $ {
 }
 
@@ -2851,52 +2870,57 @@ declare namespace $ {
 		,
 		ReturnType< $mol_button_minor['hint'] >
 	>
-	type $mol_button_minor__click_mol_search_11 = $mol_type_enforce<
+	type $mol_button_minor__enabled_mol_search_11 = $mol_type_enforce<
+		ReturnType< $mol_search['enabled'] >
+		,
+		ReturnType< $mol_button_minor['enabled'] >
+	>
+	type $mol_button_minor__click_mol_search_12 = $mol_type_enforce<
 		ReturnType< $mol_search['clear'] >
 		,
 		ReturnType< $mol_button_minor['click'] >
 	>
-	type $mol_button_minor__sub_mol_search_12 = $mol_type_enforce<
+	type $mol_button_minor__sub_mol_search_13 = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_button_minor['sub'] >
 	>
-	type $mol_list__rows_mol_search_13 = $mol_type_enforce<
+	type $mol_list__rows_mol_search_14 = $mol_type_enforce<
 		ReturnType< $mol_search['menu_items'] >
 		,
 		ReturnType< $mol_list['rows'] >
 	>
-	type $mol_scroll__sub_mol_search_14 = $mol_type_enforce<
+	type $mol_scroll__sub_mol_search_15 = $mol_type_enforce<
 		readonly(any)[]
 		,
 		ReturnType< $mol_scroll['sub'] >
 	>
-	type $mol_dimmer__haystack_mol_search_15 = $mol_type_enforce<
+	type $mol_dimmer__haystack_mol_search_16 = $mol_type_enforce<
 		ReturnType< $mol_search['suggest_label'] >
 		,
 		ReturnType< $mol_dimmer['haystack'] >
 	>
-	type $mol_dimmer__needle_mol_search_16 = $mol_type_enforce<
+	type $mol_dimmer__needle_mol_search_17 = $mol_type_enforce<
 		ReturnType< $mol_search['query'] >
 		,
 		ReturnType< $mol_dimmer['needle'] >
 	>
-	type $mol_search_plugins__17 = $mol_type_enforce<
+	type $mol_search_plugins__18 = $mol_type_enforce<
 		ReturnType< $mol_pop['plugins'] >[number]
 		,
 		$mol_plugin
 	>
-	type $mol_view__sub_mol_search_18 = $mol_type_enforce<
+	type $mol_view__sub_mol_search_19 = $mol_type_enforce<
 		ReturnType< $mol_search['anchor_content'] >
 		,
 		ReturnType< $mol_view['sub'] >
 	>
-	type $mol_button_minor__click_mol_search_19 = $mol_type_enforce<
+	type $mol_button_minor__click_mol_search_20 = $mol_type_enforce<
 		ReturnType< $mol_search['suggest_select'] >
 		,
 		ReturnType< $mol_button_minor['click'] >
 	>
-	type $mol_button_minor__sub_mol_search_20 = $mol_type_enforce<
+	type $mol_button_minor__sub_mol_search_21 = $mol_type_enforce<
 		ReturnType< $mol_search['suggest_content'] >
 		,
 		ReturnType< $mol_button_minor['sub'] >
@@ -25098,8 +25122,14 @@ declare namespace $ {
         added1(this: $mol_vector<number, Length>, diff: readonly number[] & {
             length: Length;
         }): this;
+        substracted1(this: $mol_vector<number, Length>, diff: readonly number[] & {
+            length: Length;
+        }): this;
         multed0(this: $mol_vector<number, Length>, mult: number): this;
         multed1(this: $mol_vector<number, Length>, mults: readonly number[] & {
+            length: Length;
+        }): this;
+        divided1(this: $mol_vector<number, Length>, mults: readonly number[] & {
             length: Length;
         }): this;
         powered0(this: $mol_vector<number, Length>, mult: number): this;
@@ -25873,13 +25903,14 @@ declare namespace $ {
             click(): void;
             hidePopover(): void;
             showPopover(): void;
-            togglePopover(force?: boolean): boolean;
+            togglePopover(options?: boolean): boolean;
             addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
             addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
             removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
             removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
             readonly attributes: NamedNodeMap;
-            readonly classList: DOMTokenList;
+            get classList(): DOMTokenList;
+            set classList(value: string);
             className: string;
             readonly clientHeight: number;
             readonly clientLeft: number;
@@ -25894,7 +25925,8 @@ declare namespace $ {
             onfullscreenerror: ((this: Element, ev: Event) => any) | null;
             outerHTML: string;
             readonly ownerDocument: Document;
-            readonly part: DOMTokenList;
+            get part(): DOMTokenList;
+            set part(value: string);
             readonly prefix: string | null;
             readonly scrollHeight: number;
             scrollLeft: number;
@@ -25971,7 +26003,7 @@ declare namespace $ {
             readonly previousSibling: ChildNode | null;
             textContent: string | null;
             appendChild<T extends Node>(node: T): T;
-            cloneNode(deep?: boolean): Node;
+            cloneNode(subtree?: boolean): Node;
             compareDocumentPosition(other: Node): number;
             contains(other: Node | null): boolean;
             getRootNode(options?: GetRootNodeOptions): Node;
@@ -26033,6 +26065,7 @@ declare namespace $ {
             ariaPosInSet: string | null;
             ariaPressed: string | null;
             ariaReadOnly: string | null;
+            ariaRelevant: string | null;
             ariaRequired: string | null;
             ariaRoleDescription: string | null;
             ariaRowCount: string | null;
@@ -26074,7 +26107,8 @@ declare namespace $ {
             replaceChildren(...nodes: (Node | string)[]): void;
             readonly assignedSlot: HTMLSlotElement | null;
             readonly attributeStyleMap: StylePropertyMap;
-            readonly style: CSSStyleDeclaration;
+            get style(): CSSStyleDeclaration;
+            set style(cssText: string);
             contentEditable: string;
             enterKeyHint: string;
             inputMode: string;

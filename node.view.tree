@@ -10,9 +10,11 @@ $mol_scroll $mol_view
 
 $mol_book2 $mol_scroll
 	menu_title \
-	sub <= pages /$mol_view
+	sub /$mol_view
+		^ pages <= pages_deep /$mol_view
+		^ placeholders /$mol_view
+			<= Placeholder $mol_view
 	minimal_width 0
-	Placeholder $mol_view
 	Gap* $mol_view title \
 
 $mol_paragraph $mol_view
@@ -23,6 +25,7 @@ $mol_paragraph $mol_view
 	sub / <= title
 
 $mol_speck $mol_view
+	minimal_width 12
 	attr *
 		^
 		mol_theme <= theme \$mol_theme_accent
@@ -114,6 +117,8 @@ $mol_list $mol_view
 	Empty $mol_view
 	Gap_before $mol_view style * paddingTop <= gap_before 0
 	Gap_after $mol_view style * paddingTop <= gap_after 0
+	item_height_min* 1
+	item_width_min* 1
 	view_window /
 		0
 		0
@@ -159,15 +164,13 @@ $mol_drop $mol_ghost
 
 $mol_image $mol_view
 	dom_name \img
-	field *any
+	attr *any
 		^
 		src <= uri \
 		alt <= title
 		loading <= loading \eager
 		decoding <= decoding \async
 		crossOrigin <= cors null
-	attr *any
-		^
 		width <= natural_width 0
 		height <= natural_height 0
 	event *any
@@ -416,6 +419,7 @@ $mol_search $mol_pop
 				bring => bring
 			<= Clear $mol_button_minor
 				hint @ \Clear
+				enabled <= enabled true
 				click?event <=> clear?event null
 				sub /
 					<= Clear_icon $mol_icon_close
