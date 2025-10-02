@@ -13,8 +13,8 @@ namespace $.$$ {
 		),
 		xtitle: $mol_data_optional( $mol_data_string ),
 		ytitle: $mol_data_optional( $mol_data_string ),
-		xlog: $mol_data_nullable( $mol_data_boolean ),
-		ylog: $mol_data_nullable( $mol_data_boolean ),
+		xlog: $mol_data_nullable( $mol_data_integer ),
+		ylog: $mol_data_nullable( $mol_data_integer ),
 		xrpd: $mol_data_optional( $mol_data_boolean ),
 	})
 
